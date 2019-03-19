@@ -1,27 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PierManager : MonoBehaviour
 {
-    public string label;
-    public float raidTime;
-    public int reward;
-    public Ship ship;
-    public GameObject bacon;
+    [Header("|Информация о корабле|")]
+    public Sprite shipIcon;
+    public int minLvl;
+    [Header("Префаб корабля")]
+    public GameObject shipPref;
+    [Header("Начальная позиция")]
+    public float size;
+    public float rise;
+    public float angle;
+    [Header("Начальные характеристики")]
+    public string shipName;
+    public float startRaidTime;
+    public int startReward;
+    [Header("Скорость движения")]
+    public float speedAngle, speedLinear;
+    [Header("Первый параметр")]
+    [Header("|Прокачка|")]
+    public string detailName1;
+    public int detailMaxLvl1, detailCurrentLvl1, detailStartCost1, detailCostIncrease1, detailChangeReward1;
+    public float detailChangeRaidTime1;
+    public Sprite detailMiniature1;
 
-    private int bodyLvl = 0, sailLvl = 0, gunLvl = 0;
+    [Header("Второй параметр")]
+    public string detailName2;
+    public int detailMaxLvl2, detailCurrentLvl2, detailStartCost2, detailCostIncrease2, detailChangeReward2;
+    public float detailChangeRaidTime2;
+    public Sprite detailMiniature2;
+
+    [Header("Третий параметр")]
+    public string detailName3;
+    public int detailMaxLvl3, detailCurrentLvl3, detailStartCost3, detailCostIncrease3, detailChangeReward3;
+    public float detailChangeRaidTime3;
+    public Sprite detailMiniature3;
+
+    [Header("|Информация о пристани|")]
+    public bool shipExist;
+    public bool maxLvl;
+    public bool upgradeAvailable;
+    public GameObject flag;
+    public UpgradeMenuManager upgradeMenu;
+    public Transform ships;
+
     private Island island;
-
-    [Header("Элементы UpgradeMenu")]
-    public UpgradeMenuManager upgradeMenuManager;
-
-    [Header("Параметры улучшения")]
-    public int startCost = 10;
-    public int costIncrease = 10;
-    public float rewardIncrease = 0.2f;
-    public float raidTimeReduce = 0.1f;
-    public int maxLvl = 10;
+    private GameObject ship;
 
     private void Awake()
     {
@@ -30,30 +57,24 @@ public class PierManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateShip();
+        if (shipExist)
+        {
+            if (ship == null) CreateShip();
+            else UpdadeShipInfo();
+        }
     }
 
     private void Update()
     {
-        if (island.GetMoney() < GetUpgradeCost())
+        if (maxLvl) return;
+        if (flag.activeInHierarchy && island.GetMoney() < GetUpgradeCost())
+            flag.SetActive(false);
+        else if (!flag.activeInHierarchy && island.GetMoney() >= GetUpgradeCost())
+            flag.SetActive(true);
+        if(shipExist && ship == null)
         {
-            bacon.SetActive(false);
+            CreateShip();
         }
-        else
-        {
-            bacon.SetActive(true);
-        }
-    }
-
-    public void OpenMenu()
-    {
-        upgradeMenuManager.GenerateMenu(this);
-    }
-
-    private void UpdateShip()
-    {
-        ship.raidTime = GetRaidTime(sailLvl);
-        ship.reward = GetReward(bodyLvl, gunLvl);
     }
 
     private void OnMouseUpAsButton()
@@ -61,68 +82,82 @@ public class PierManager : MonoBehaviour
         OpenMenu();
     }
 
-    public int GetRaidTime(int sail)
+    private void OpenMenu()
     {
-        float raidTimeMultiplier = 1f - sail * raidTimeReduce;
-        return (int)(raidTime * (raidTimeMultiplier < 0 ? 0 : raidTimeMultiplier) + 0.5f);
+        upgradeMenu.GenerateMenu(this);
     }
 
-    public int GetReward(int body, int gun)
+    /// <summary>
+    /// Создает корабль на основе префаба со всеми начальными параметрами
+    /// </summary>
+    public void CreateShip()
     {
-        float rewardMultiplier = 1f + (body + gun) * rewardIncrease;
-        return (int)(reward * rewardMultiplier + 0.5f);
+        if (ship != null) return;
+        ship = Instantiate(shipPref, ships);
+        ship.GetComponent<Ship>()
+            .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, GetRaidTime(), GetReward());
+    }
+
+    /// <summary>
+    /// Обновляет информацию о Характеристиках корабля.
+    /// </summary>
+    public void UpdadeShipInfo()
+    {
+        if (ship != null)
+            ship.GetComponent<Ship>().SetRaid(GetRaidTime(), GetReward());
+    }
+
+    public float GetRaidTime()
+    {
+        float time = startRaidTime
+            + (detailChangeRaidTime1 * detailCurrentLvl1)
+            + (detailChangeRaidTime2 * detailCurrentLvl2)
+            + (detailChangeRaidTime3 * detailCurrentLvl3);
+        return time < 0f ? 0f : time;
+    }
+
+    public int GetReward()
+    {
+        return startReward
+            + (detailChangeReward1 * detailCurrentLvl1)
+            + (detailChangeReward2 * detailCurrentLvl2)
+            + (detailChangeReward3 * detailCurrentLvl3);
     }
 
     public int GetUpgradeCost()
     {
-        return startCost + costIncrease * (bodyLvl + sailLvl + gunLvl);
-    }
-
-    public int GetMaxLevel()
-    {
-        return maxLvl;
-    }
-
-    public int GetBodyLevel()
-    {
-        return bodyLvl;
-    }
-
-    public int GetSailLevel()
-    {
-        return sailLvl;
-    }
-
-    public int GetGunLevel()
-    {
-        return gunLvl;
+        return detailStartCost1 + (detailCurrentLvl1 * detailCostIncrease1)
+            + (detailCurrentLvl1 != detailMaxLvl1 ? 0 : (detailStartCost2 + (detailCurrentLvl2 * detailCostIncrease2)
+            + (detailCurrentLvl2 != detailMaxLvl2 ? 0 : (detailStartCost3 + (detailCurrentLvl3 * detailCostIncrease3)))));
     }
 
     public void Upgrade()
     {
-        if(bodyLvl < maxLvl)
+        if (maxLvl) return;
+        if (!island.ChangeMoney(-GetUpgradeCost())) return;
+        if (!shipExist)
         {
-            if (island.ChangeMoney(-GetUpgradeCost()))
-            {
-                bodyLvl++;
-            }
-            UpdateShip();
+            shipExist = true;
         }
-        else if (sailLvl < maxLvl)
+        else if (detailCurrentLvl1 < detailMaxLvl1)
         {
-            if (island.ChangeMoney(-GetUpgradeCost()))
-            {
-                sailLvl++;
-            }
-            UpdateShip();
+            detailCurrentLvl1++;
         }
-        else if (gunLvl < maxLvl)
+        else if (detailCurrentLvl2 < detailMaxLvl2)
         {
-            if (island.ChangeMoney(-GetUpgradeCost()))
-            {
-                gunLvl++;
-            }
-            UpdateShip();
+            detailCurrentLvl2++;
+        }
+        else if (detailCurrentLvl3 < detailMaxLvl3)
+        {
+            detailCurrentLvl3++;
+        }
+        UpdadeShipInfo();
+        if (detailCurrentLvl3 == detailMaxLvl3)
+        {
+            maxLvl = true;
+            flag.SetActive(true);
+            flag.GetComponent<Image>().color = Color.black;
+            flag.GetComponentInChildren<Text>().text = "?";
         }
     }
 }

@@ -31,54 +31,85 @@ public class UpgradeMenuManager : MonoBehaviour
         upgradeBtn.onClick.AddListener(UpdateInfo);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (gameObject.activeInHierarchy == false) return;
-        if (upgradeBtn.interactable == true && island.GetMoney() < pier.GetUpgradeCost())
+        if (gameObject.activeInHierarchy == false)
+        {
+            return;
+        }
+        if ((pier.maxLvl || pier.minLvl > Levels.level) && upgradeBtn.interactable)
         {
             upgradeBtn.interactable = false;
         }
-        if (upgradeBtn.interactable == false && island.GetMoney() >= pier.GetUpgradeCost())
+        else
         {
-            upgradeBtn.interactable = true;
+            if (upgradeBtn.interactable && island.GetMoney() < pier.GetUpgradeCost())
+            {
+                upgradeBtn.interactable = false;
+            }
+            if (!upgradeBtn.interactable && island.GetMoney() >= pier.GetUpgradeCost())
+            {
+                upgradeBtn.interactable = true;
+            }
         }
     }
 
     private void UpdateCost()
     {
+        if (pier.minLvl > Levels.level || pier.maxLvl) return;
         upgradeBtnTM.text = pier.GetUpgradeCost().ToString();
     }
 
     private void UpdateInfo()
     {
-        labelTM.text = pier.label;
+        labelTM.text = pier.shipName;
 
-        int bodyLvl = pier.GetBodyLevel();
-        int sailLvl = pier.GetSailLevel();
-        int gunLvl = pier.GetGunLevel();
+        chRaidTimeTM.text = pier.GetRaidTime().ToString();
+        chProfitTM.text = pier.GetReward().ToString();
 
-        chRaidTimeTM.text = pier.GetRaidTime(sailLvl).ToString();
-        chProfitTM.text = pier.GetReward(bodyLvl, gunLvl).ToString();
-
-        if (bodyLvl < pier.GetMaxLevel())
+        if (pier.minLvl > Levels.level)
         {
-            miniIcon.sprite = body;
-            bodyLvl++;
+            miniIcon.sprite = null;
+            gRaidTimeTM.text = "---";
+            gProfitTM.text = "---";
+            upgradeBtnTM.text = "LOCKED";
+            return;
         }
-        else if (sailLvl < pier.GetMaxLevel())
+        else if (!pier.shipExist)
         {
-            miniIcon.sprite = sail;
-            sailLvl++;
-        }
-        else if (gunLvl < pier.GetMaxLevel())
-        {
-            miniIcon.sprite = gun;
-            gunLvl++;
+            miniIcon.sprite = pier.shipIcon;
+            gRaidTimeTM.text = "---";
+            gProfitTM.text = "---";
+            upgradeBtnTM.text = "UNLOCK";
+            return;
         }
 
-        gRaidTimeTM.text = pier.GetRaidTime(sailLvl).ToString();
-        gProfitTM.text = pier.GetReward(bodyLvl, gunLvl).ToString();
+        if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
+        {
+            miniIcon.sprite = pier.detailMiniature1;
+            gRaidTimeTM.text = (pier.GetRaidTime() + pier.detailChangeRaidTime1).ToString();
+            gProfitTM.text = (pier.GetReward() + pier.detailChangeReward1).ToString();
+        }
+        else if (pier.detailCurrentLvl2 < pier.detailMaxLvl2)
+        {
+            miniIcon.sprite = pier.detailMiniature2;
+            gRaidTimeTM.text = (pier.GetRaidTime() + pier.detailChangeRaidTime2).ToString();
+            gProfitTM.text = (pier.GetReward() + pier.detailChangeReward2).ToString();
+        }
+        else if (pier.detailCurrentLvl3 < pier.detailMaxLvl3)
+        {
+            miniIcon.sprite = pier.detailMiniature3;
+            gRaidTimeTM.text = (pier.GetRaidTime() + pier.detailChangeRaidTime3).ToString();
+            gProfitTM.text = (pier.GetReward() + pier.detailChangeReward3).ToString();
+        }
+        else
+        {
+            miniIcon.sprite = null;
+            gRaidTimeTM.text = pier.GetRaidTime().ToString();
+            gProfitTM.text = pier.GetReward().ToString();
+            upgradeBtnTM.text = "MAX LEVEL";
+        }
 
-        icon.sprite = pier.ship.sprite;
+        icon.sprite = pier.shipIcon;
     }
 }

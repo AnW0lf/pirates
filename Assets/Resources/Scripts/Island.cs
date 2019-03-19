@@ -6,7 +6,7 @@ public class Island
 {
     private static Island island;
     //_______________________________________________________________________________
-    private int money;
+    private int money = 10000;
     //_______________________________________________________________________________
     private Island() {}
 
@@ -29,5 +29,12 @@ public class Island
     public int GetMoney()
     {
         return money;
+    }
+
+    public int GetLevel()
+    {
+        if (!PlayerPrefs.HasKey("Level"))
+            PlayerPrefs.SetInt("Level", 1);
+        return PlayerPrefs.GetInt("Level");
     }
 }

@@ -12,9 +12,15 @@ public class Levels : MonoBehaviour
     public Text levelNumber;
 
     private int maxExp;
+    private Island island;
 
     public static int level;
     public static int curExp;
+
+    private void Awake()
+    {
+        island = Island.Instance();
+    }
 
     void Start()
     {
