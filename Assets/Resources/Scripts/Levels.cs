@@ -62,4 +62,11 @@ public class Levels : MonoBehaviour
         curExp = 0;
         maxExp = (int)(startExp * Mathf.Pow(expModifier, level));
     }
+
+    public void Resetting()
+    {
+        PlayerPrefs.SetInt("Level", 1);
+        PlayerPrefs.SetInt("Exp", 0);
+        SetLevel();
+    }
 }

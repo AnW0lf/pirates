@@ -6,7 +6,7 @@ public class Island
 {
     private static Island island;
     //_______________________________________________________________________________
-    private int money = 10000;
+    private int money;
     //_______________________________________________________________________________
     private Island() {}
 
