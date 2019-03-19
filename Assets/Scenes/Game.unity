@@ -1140,7 +1140,7 @@ MonoBehaviour:
   rise: 400
   angle: -60
   direction: 0
-  size: 20
+  size: 23
   speed: 125
   raidSpeedModifier: 5
   reward: 5
@@ -7302,7 +7302,7 @@ MonoBehaviour:
   rise: 300
   angle: 0
   direction: 1
-  size: 25
+  size: 28
   speed: 150
   raidSpeedModifier: 5
   reward: 5
@@ -7365,7 +7365,7 @@ MonoBehaviour:
   rise: 500
   angle: 150
   direction: 1
-  size: 15
+  size: 18
   speed: 100
   raidSpeedModifier: 5
   reward: 5
