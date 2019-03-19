@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BonusBehavior : MonoBehaviour
 {
-    public bool bonusMoney, bonusSpeed;
+    public bool bonusMoney, bonusSpeed, bonusWheel;
     public int modifier;
 
 }

@@ -19,7 +19,7 @@ public class PierManager : MonoBehaviour
     public float startRaidTime;
     public int startReward;
     [Header("Скорость движения")]
-    public float speedAngle, speedLinear;
+    public float speedAngle, speedLinear, speedRaidModifier;
     [Header("Первый параметр")]
     [Header("|Прокачка|")]
     public string detailName1;
@@ -67,9 +67,9 @@ public class PierManager : MonoBehaviour
     private void Update()
     {
         if (maxLvl) return;
-        if (flag.activeInHierarchy && island.GetMoney() < GetUpgradeCost())
+        if (flag.activeInHierarchy && (island.GetMoney() < GetUpgradeCost() || minLvl > Levels.level))
             flag.SetActive(false);
-        else if (!flag.activeInHierarchy && island.GetMoney() >= GetUpgradeCost())
+        else if (!flag.activeInHierarchy && island.GetMoney() >= GetUpgradeCost() && minLvl <= Levels.level)
             flag.SetActive(true);
         if(shipExist && ship == null)
         {
@@ -95,7 +95,7 @@ public class PierManager : MonoBehaviour
         if (ship != null) return;
         ship = Instantiate(shipPref, ships);
         ship.GetComponent<Ship>()
-            .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, GetRaidTime(), GetReward());
+            .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward());
     }
 
     /// <summary>

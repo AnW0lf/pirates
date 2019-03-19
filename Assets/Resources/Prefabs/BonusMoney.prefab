@@ -129,7 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusMoney: 1
   bonusSpeed: 0
-  modifier: 2
+  bonusWheel: 0
+  modifier: 1
 --- !u!111 &8593790868163300883
 Animation:
   m_ObjectHideFlags: 0

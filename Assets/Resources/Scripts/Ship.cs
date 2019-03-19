@@ -6,22 +6,21 @@ using Random = UnityEngine.Random;
 
 public class Ship : MonoBehaviour
 {
-    private float rise = 400f;
-    private float angle = 0f;
+    private float rise;
+    private float angle;
     private bool direction = false;
-    private float size = 20f;
+    private float size;
 
     public int reward;
     public float raidTime;
 
     public int rewardModifier = 1;
-    public float raidSpeedModifier = 1f;
-    public float raidTimeModifier = 1f;
+    public float raidTimeModifier = 0f;
 
     //Рейд
     private bool visible = false;
     private bool inRaid = false;
-    private float speedAngle, speedLinear, circle = 0f;
+    private float speedAngle, speedLinear, speedRaidModifier, circle = 0f;
     private RectTransform _riseRT, _iconRT;
 
     [Header("Детали корабля")]
@@ -69,8 +68,7 @@ public class Ship : MonoBehaviour
         speedLinear = Math.Abs(speedLinear) * (direction ? 1 : -1);
 
         rewardModifier = 1;
-        raidTimeModifier = 1f;
-        //raidSpeedModifier = 1f;
+        raidTimeModifier = 0f;
     }
 
     public bool InRaid()
@@ -92,10 +90,10 @@ public class Ship : MonoBehaviour
         do
         {
             visible = _icon.GetComponent<ShipClick>().IsVisible();
-            _iconRT.localPosition += Vector3.down * (speedLinear * raidSpeedModifier) * Time.deltaTime;
+            _iconRT.localPosition += Vector3.down * (speedLinear * speedRaidModifier) * Time.deltaTime;
             yield return null;
         } while (visible);
-        float seconds = raidTime / raidTimeModifier;
+        float seconds = raidTime / Mathf.Pow(2f, raidTimeModifier);
         yield return new WaitForSeconds(seconds);
 
         _coin.GetComponent<CoinCatcher>().ActivateCoin(reward * rewardModifier);
@@ -107,7 +105,7 @@ public class Ship : MonoBehaviour
 
         while(Mathf.Abs(_iconRT.localPosition.y) > 5f)
         {
-            _iconRT.localPosition += Vector3.up * (speedLinear * raidSpeedModifier) * Time.deltaTime;
+            _iconRT.localPosition += Vector3.up * speedLinear * Time.deltaTime;
             yield return null;
         }
         UpdateShip();
@@ -117,20 +115,25 @@ public class Ship : MonoBehaviour
 
     public void SetLocation(float rise, float angle)
     {
-        _rise.GetComponent<RectTransform>().sizeDelta = new Vector2(rise, 10f);
-        _rise.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * angle;
+        this.rise = rise;
+        this.angle = angle;
+        //_rise.GetComponent<RectTransform>().sizeDelta = new Vector2(rise, 10f);
+        //_rise.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * angle;
     }
 
     public void SetShip(float size, Sprite sprite)
     {
-        _icon.GetComponent<RectTransform>().localScale = Vector3.right * size + Vector3.up * size + Vector3.forward;
+        //_icon.GetComponent<RectTransform>().localScale = Vector3.right * size + Vector3.up * size + Vector3.forward;
+        this.size = size;
         _icon.GetComponent<SpriteRenderer>().sprite = sprite;
     }
 
-    public void SetSpeed(float speedAngle, float speedLinear)
+    public void SetSpeed(float speedAngle, float speedLinear, float speedRaidModifier)
     {
         this.speedAngle = speedAngle;
         this.speedLinear = speedLinear;
+        this.speedRaidModifier = speedRaidModifier;
+
     }
 
     public void SetRaid(float raidTime, int reward)
@@ -139,11 +142,11 @@ public class Ship : MonoBehaviour
         this.reward = reward;
     }
 
-    public void CreateShip(float rise, float angle, float size, Sprite sprite, float speedAngle, float speedLinear, float raidTime, int reward)
+    public void CreateShip(float rise, float angle, float size, Sprite sprite, float speedAngle, float speedLinear, float speedRaidModifier, float raidTime, int reward)
     {
         SetLocation(rise, angle);
         SetShip(size, sprite);
-        SetSpeed(speedAngle, speedLinear);
+        SetSpeed(speedAngle, speedLinear, speedRaidModifier);
         SetRaid(raidTime, reward);
     }
 }

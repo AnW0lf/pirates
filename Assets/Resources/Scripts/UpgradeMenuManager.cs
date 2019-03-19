@@ -43,11 +43,11 @@ public class UpgradeMenuManager : MonoBehaviour
         }
         else
         {
-            if (upgradeBtn.interactable && island.GetMoney() < pier.GetUpgradeCost())
+            if (upgradeBtn.interactable && island.GetMoney() < pier.GetUpgradeCost() || pier.minLvl > Levels.level)
             {
                 upgradeBtn.interactable = false;
             }
-            if (!upgradeBtn.interactable && island.GetMoney() >= pier.GetUpgradeCost())
+            if (!upgradeBtn.interactable && island.GetMoney() >= pier.GetUpgradeCost() && pier.minLvl <= Levels.level)
             {
                 upgradeBtn.interactable = true;
             }
@@ -72,7 +72,7 @@ public class UpgradeMenuManager : MonoBehaviour
             miniIcon.sprite = null;
             gRaidTimeTM.text = "---";
             gProfitTM.text = "---";
-            upgradeBtnTM.text = "LOCKED";
+            upgradeBtnTM.text = "LEVEL " + pier.minLvl;
             return;
         }
         else if (!pier.shipExist)
