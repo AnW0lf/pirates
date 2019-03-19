@@ -916,6 +916,7 @@ GameObject:
   - component: {fileID: 394111224}
   - component: {fileID: 394111223}
   - component: {fileID: 394111225}
+  - component: {fileID: 394111226}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1033,6 +1034,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!111 &394111226
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394111221}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &412821129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3821,6 +3838,7 @@ GameObject:
   - component: {fileID: 1100936251}
   - component: {fileID: 1100936250}
   - component: {fileID: 1100936249}
+  - component: {fileID: 1100936252}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3960,6 +3978,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100936247}
   m_CullTransparentMesh: 0
+--- !u!111 &1100936252
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100936247}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1115974616
 GameObject:
   m_ObjectHideFlags: 0
