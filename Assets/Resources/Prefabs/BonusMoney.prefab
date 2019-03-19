@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6532589404821189186}
   - component: {fileID: 1802602043663929953}
   - component: {fileID: 4724342242100932441}
+  - component: {fileID: 8593790868163300883}
   m_Layer: 0
   m_Name: BonusMoney
   m_TagString: Bonus
@@ -129,3 +130,19 @@ MonoBehaviour:
   bonusMoney: 1
   bonusSpeed: 0
   modifier: 2
+--- !u!111 &8593790868163300883
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8520050891739744424}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

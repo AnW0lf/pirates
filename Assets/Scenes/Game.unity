@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 45303673}
   - component: {fileID: 45303674}
   - component: {fileID: 45303675}
+  - component: {fileID: 45303676}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -206,7 +207,7 @@ RectTransform:
   m_GameObject: {fileID: 45303671}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 177936297}
   m_RootOrder: 0
@@ -292,6 +293,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430d4846459a2bd4c95055bb86295bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &45303676
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45303671}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 8f564fb7ce77a0b4c8f907dd9cf1d0f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8f564fb7ce77a0b4c8f907dd9cf1d0f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &46073901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1213,7 @@ MonoBehaviour:
   direction: 0
   size: 23
   speed: 125
-  raidSpeedModifier: 5
+  raidSpeedModifier: 7.5
   reward: 5
   rewardModifier: 0
   raidTime: 1
@@ -1834,6 +1851,7 @@ GameObject:
   - component: {fileID: 608384971}
   - component: {fileID: 608384973}
   - component: {fileID: 608384972}
+  - component: {fileID: 608384974}
   m_Layer: 0
   m_Name: Bacon
   m_TagString: Untagged
@@ -1898,6 +1916,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608384970}
   m_CullTransparentMesh: 0
+--- !u!111 &608384974
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608384970}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &654673306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +1944,7 @@ GameObject:
   - component: {fileID: 654673310}
   - component: {fileID: 654673309}
   - component: {fileID: 654673308}
+  - component: {fileID: 654673311}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -2012,6 +2047,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &654673311
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654673306}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 8f564fb7ce77a0b4c8f907dd9cf1d0f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8f564fb7ce77a0b4c8f907dd9cf1d0f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &663304911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,6 +3297,7 @@ GameObject:
   - component: {fileID: 914526501}
   - component: {fileID: 914526503}
   - component: {fileID: 914526502}
+  - component: {fileID: 914526504}
   m_Layer: 0
   m_Name: Bacon
   m_TagString: Untagged
@@ -3310,6 +3362,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914526500}
   m_CullTransparentMesh: 0
+--- !u!111 &914526504
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914526500}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &934225587
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,6 +6173,7 @@ GameObject:
   - component: {fileID: 1649251136}
   - component: {fileID: 1649251138}
   - component: {fileID: 1649251137}
+  - component: {fileID: 1649251139}
   m_Layer: 0
   m_Name: Bacon
   m_TagString: Untagged
@@ -6169,6 +6238,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649251135}
   m_CullTransparentMesh: 0
+--- !u!111 &1649251139
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649251135}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1654516457
 GameObject:
   m_ObjectHideFlags: 0
@@ -6642,6 +6727,7 @@ GameObject:
   - component: {fileID: 1740117433}
   - component: {fileID: 1740117432}
   - component: {fileID: 1740117431}
+  - component: {fileID: 1740117434}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -6744,6 +6830,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &1740117434
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740117429}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 8f564fb7ce77a0b4c8f907dd9cf1d0f3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8f564fb7ce77a0b4c8f907dd9cf1d0f3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1753050430
 GameObject:
   m_ObjectHideFlags: 0
@@ -8087,7 +8189,7 @@ MonoBehaviour:
   direction: 1
   size: 28
   speed: 150
-  raidSpeedModifier: 5
+  raidSpeedModifier: 7.5
   reward: 5
   rewardModifier: 0
   raidTime: 1
@@ -8150,7 +8252,7 @@ MonoBehaviour:
   direction: 1
   size: 18
   speed: 100
-  raidSpeedModifier: 5
+  raidSpeedModifier: 7.5
   reward: 5
   rewardModifier: 0
   raidTime: 1
