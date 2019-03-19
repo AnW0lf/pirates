@@ -28,6 +28,11 @@ public class CoinCatcher : MonoBehaviour
     public void CatchCoin()
     {
         island.ChangeMoney(money);
+
+        // Set modifiers to 1
+        GetComponentInParent<ShipClick>().ship.rewardModifier = 1;
+        GetComponentInParent<ShipClick>().ship.raidTimeModifier = 1;
+
         GetComponentInParent<CapsuleCollider2D>().enabled = true;
         gameObject.SetActive(false);
     }

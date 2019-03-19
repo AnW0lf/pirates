@@ -8,6 +8,7 @@ public class PierManager : MonoBehaviour
     public float raidTime;
     public int reward;
     public Ship ship;
+    public GameObject bacon;
 
     private int bodyLvl = 0, sailLvl = 0, gunLvl = 0;
     private Island island;
@@ -30,6 +31,18 @@ public class PierManager : MonoBehaviour
     private void Start()
     {
         UpdateShip();
+    }
+
+    private void Update()
+    {
+        if (island.GetMoney() < GetUpgradeCost())
+        {
+            bacon.SetActive(false);
+        }
+        else
+        {
+            bacon.SetActive(true);
+        }
     }
 
     public void OpenMenu()

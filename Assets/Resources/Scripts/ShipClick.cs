@@ -27,4 +27,19 @@ public class ShipClick : MonoBehaviour
     {
         visible = true;
     }
+
+    // Собираем бонус
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+         if (other.gameObject.CompareTag("Bonus"))
+        {
+            other.gameObject.GetComponentInParent<BonusPoint>().active = false;
+            Destroy(other.gameObject);
+
+            if (other.gameObject.GetComponent<BonusBehavior>().bonusMoney)
+                ship.rewardModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
+            if (other.gameObject.GetComponent<BonusBehavior>().bonusSpeed)
+                ship.raidTimeModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
+        }
+    }
 }

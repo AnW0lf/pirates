@@ -14,10 +14,13 @@ public class Ship : MonoBehaviour
 
     [Header("Движение")]
     public float speed;
+    public float raidSpeedModifier;
 
     [Header("Характеристики")]
     public int reward;
+    public int rewardModifier;
     public float raidTime;
+    public float raidTimeModifier;
 
     [Header("Вид корабля")]
     public Sprite sprite;
@@ -37,6 +40,7 @@ public class Ship : MonoBehaviour
     {
         _riseRT = _rise.GetComponent<RectTransform>();
         _iconRT = _icon.GetComponent<RectTransform>();
+        rewardModifier = 1; raidTimeModifier = 1;
     }
 
     private void Start()
@@ -92,13 +96,13 @@ public class Ship : MonoBehaviour
         do
         {
             visible = _icon.GetComponent<ShipClick>().IsVisible();
-            _iconRT.localPosition += Vector3.down * linearSpeed * Time.deltaTime;
+            _iconRT.localPosition += Vector3.down * (linearSpeed * raidSpeedModifier) * Time.deltaTime;
             yield return null;
         } while (visible);
-        float seconds = raidTime;
+        float seconds = raidTime / raidTimeModifier;
         yield return new WaitForSeconds(seconds);
 
-        _coin.GetComponent<CoinCatcher>().ActivateCoin((reward));
+        _coin.GetComponent<CoinCatcher>().ActivateCoin((reward * rewardModifier));
         angle = Random.Range(0f, 359f);
         _riseRT.localEulerAngles = Vector3.forward * angle;
         direction = !direction;
@@ -107,7 +111,7 @@ public class Ship : MonoBehaviour
 
         while(Mathf.Abs(_iconRT.localPosition.y) > 5f)
         {
-            _iconRT.localPosition += Vector3.up * linearSpeed * Time.deltaTime;
+            _iconRT.localPosition += Vector3.up * (linearSpeed) * Time.deltaTime;
             yield return null;
         }
         UpdateShip();
