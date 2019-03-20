@@ -45,8 +45,8 @@ public class Ship : MonoBehaviour
     {
         if(!inRaid)
         {
-            circle += speedAngle * Time.fixedDeltaTime;
-            angle += speedAngle * Time.fixedDeltaTime;
+            circle += (speedAngle * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.fixedDeltaTime;
+            angle += (speedAngle * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.fixedDeltaTime;
             _riseRT.localEulerAngles = Vector3.forward * angle;
         }
         if(Mathf.Abs(circle) >= 360f)
@@ -90,13 +90,13 @@ public class Ship : MonoBehaviour
         do
         {
             visible = _icon.GetComponent<ShipClick>().IsVisible();
-            _iconRT.localPosition += Vector3.down * (speedLinear * speedRaidModifier) * Time.deltaTime;
+            _iconRT.localPosition += Vector3.down * (speedLinear * speedRaidModifier * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.deltaTime;
             yield return null;
         } while (visible);
         float seconds = raidTime / Mathf.Pow(2f, raidTimeModifier);
         yield return new WaitForSeconds(seconds);
 
-        _coin.GetComponent<CoinCatcher>().ActivateCoin(reward * rewardModifier);
+        _coin.GetComponent<CoinCatcher>().ActivateCoin((int)(reward * rewardModifier * PlayerPrefs.GetFloat("GlobalEarnings")));
         angle = Random.Range(0f, 359f);
         _riseRT.localEulerAngles = Vector3.forward * angle;
         direction = !direction;

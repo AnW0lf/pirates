@@ -147,8 +147,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37.5, y: 70}
-  m_SizeDelta: {x: 300, y: 200}
+  m_AnchoredPosition: {x: 37, y: 70}
+  m_SizeDelta: {x: 180, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8589005
 MonoBehaviour:
@@ -174,7 +174,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 4
@@ -183,7 +183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Price
+  m_Text: Speed
 --- !u!222 &8589006
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -714,7 +714,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81.399994, y: 41.5}
+  m_AnchoredPosition: {x: -100, y: 41.5}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &200762714
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.4575472, b: 0.4575472, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1618,6 +1618,7 @@ GameObject:
   - component: {fileID: 582072146}
   - component: {fileID: 582072148}
   - component: {fileID: 582072147}
+  - component: {fileID: 582072149}
   m_Layer: 8
   m_Name: Upgrade1
   m_TagString: Untagged
@@ -1684,6 +1685,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582072145}
   m_CullTransparentMesh: 0
+--- !u!114 &582072149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582072145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9439401c1bea6e74cbd53cb0ce964929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifierName: GlobalSpeed
+  descriptionName: Speed
+  startPrice: 100
+  modifier: 0.05
+  startReward: 1
+  descriptionText: {fileID: 8589005}
+  rewardText: {fileID: 1939648844}
+  priceText: {fileID: 869245883}
+  buttonIcon: {fileID: 2053570949}
+  buttonColors:
+  - {r: 0, g: 0.6792453, b: 0.023694614, a: 1}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
 --- !u!1 &605586150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,8 +2268,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81.4, y: 41.5}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchoredPosition: {x: -100, y: 41.5}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726091969
 MonoBehaviour:
@@ -2266,7 +2291,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1906c87ac39b2f14b8b3a4be691639d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3327,6 +3352,7 @@ GameObject:
   - component: {fileID: 1008909844}
   - component: {fileID: 1008909846}
   - component: {fileID: 1008909845}
+  - component: {fileID: 1008909847}
   m_Layer: 8
   m_Name: Upgrade3
   m_TagString: Untagged
@@ -3393,6 +3419,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008909843}
   m_CullTransparentMesh: 0
+--- !u!114 &1008909847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008909843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9439401c1bea6e74cbd53cb0ce964929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifierName: GlobalSpins
+  descriptionName: Max Spins
+  startPrice: 100
+  modifier: 1
+  startReward: 3
+  descriptionText: {fileID: 1614318574}
+  rewardText: {fileID: 1092895292}
+  priceText: {fileID: 1783563341}
+  buttonIcon: {fileID: 1694793623}
+  buttonColors:
+  - {r: 0, g: 0.6792453, b: 0.023694614, a: 1}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
 --- !u!1 &1041836054
 GameObject:
   m_ObjectHideFlags: 0
@@ -4508,6 +4558,7 @@ GameObject:
   - component: {fileID: 1391727954}
   - component: {fileID: 1391727956}
   - component: {fileID: 1391727955}
+  - component: {fileID: 1391727957}
   m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
@@ -4572,6 +4623,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391727953}
   m_CullTransparentMesh: 0
+--- !u!114 &1391727957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391727953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1391727955}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1677833583}
+        m_MethodName: Upgrade
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1677833583}
+          m_ObjectArgumentAssemblyTypeName: GlobalUpgradeButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1420007991
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,8 +5609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37.5, y: 70}
-  m_SizeDelta: {x: 300, y: 200}
+  m_AnchoredPosition: {x: 37, y: 70}
+  m_SizeDelta: {x: 180, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614318574
 MonoBehaviour:
@@ -5532,7 +5636,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 4
@@ -5541,7 +5645,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Price
+  m_Text: Max Spins
 --- !u!222 &1614318575
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6046,7 +6150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5990aaf46dedf2847ac381455b77380a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusDelay: 2
+  bonusDelay: 30
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
@@ -6062,6 +6166,7 @@ GameObject:
   - component: {fileID: 1677833580}
   - component: {fileID: 1677833582}
   - component: {fileID: 1677833581}
+  - component: {fileID: 1677833583}
   m_Layer: 8
   m_Name: Upgrade2
   m_TagString: Untagged
@@ -6128,6 +6233,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677833579}
   m_CullTransparentMesh: 0
+--- !u!114 &1677833583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677833579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9439401c1bea6e74cbd53cb0ce964929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifierName: GlobalEarnings
+  descriptionName: Earnings
+  startPrice: 100
+  modifier: 0.05
+  startReward: 1
+  descriptionText: {fileID: 2131234104}
+  rewardText: {fileID: 165639992}
+  priceText: {fileID: 1786215332}
+  buttonIcon: {fileID: 1391727955}
+  buttonColors:
+  - {r: 0, g: 0.6792453, b: 0.023694614, a: 1}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
 --- !u!1 &1694793621
 GameObject:
   m_ObjectHideFlags: 0
@@ -6139,6 +6268,7 @@ GameObject:
   - component: {fileID: 1694793622}
   - component: {fileID: 1694793624}
   - component: {fileID: 1694793623}
+  - component: {fileID: 1694793625}
   m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
@@ -6203,6 +6333,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694793621}
   m_CullTransparentMesh: 0
+--- !u!114 &1694793625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694793621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1694793623}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1008909847}
+        m_MethodName: Upgrade
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1008909847}
+          m_ObjectArgumentAssemblyTypeName: GlobalUpgradeButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1736711102
 GameObject:
   m_ObjectHideFlags: 0
@@ -6900,7 +7083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81.4, y: 41.5}
+  m_AnchoredPosition: {x: -100, y: 41.5}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1881804273
@@ -7535,6 +7718,7 @@ GameObject:
   - component: {fileID: 2053570948}
   - component: {fileID: 2053570950}
   - component: {fileID: 2053570949}
+  - component: {fileID: 2053570951}
   m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
@@ -7599,6 +7783,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053570947}
   m_CullTransparentMesh: 0
+--- !u!114 &2053570951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053570947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2053570949}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 582072149}
+        m_MethodName: Upgrade
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 582072149}
+          m_ObjectArgumentAssemblyTypeName: GlobalUpgradeButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2055044339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7720,8 +7957,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37.5, y: 70}
-  m_SizeDelta: {x: 300, y: 200}
+  m_AnchoredPosition: {x: 37, y: 70}
+  m_SizeDelta: {x: 180, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131234104
 MonoBehaviour:
@@ -7747,7 +7984,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 4
@@ -7756,7 +7993,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Price
+  m_Text: Earnings
 --- !u!222 &2131234105
 CanvasRenderer:
   m_ObjectHideFlags: 0
