@@ -2,28 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinManager : MonoBehaviour
+public class PriceManager : MonoBehaviour
 {
-    public string prefix = "";
-
-    [SerializeField]
-    private int money;
-    private string postfix = "";
+    public string prefix = "", postfix = "";
     private TextManager tm;
-    private Island island;
-
-    private void Awake()
-    {
-        island = Island.Instance();
-    }
 
     private void Start()
     {
         tm = GetComponent<TextManager>();
-        UpdateMoney();
     }
 
-    private void UpdateMoney()
+    public void SetPrice(int money)
     {
         tm.prefix = prefix;
         int degree = 0;
@@ -70,14 +59,5 @@ public class CoinManager : MonoBehaviour
             strValue = strValue.Substring(0, 3);
         tm.text = strValue;
         tm.postfix = postfix;
-    }
-
-    private void Update()
-    {
-        if(money != island.Money)
-        {
-            money = island.Money;
-            UpdateMoney();
-        }
     }
 }

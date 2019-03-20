@@ -8,7 +8,8 @@ public class GlobalUpgradeButton : MonoBehaviour
     public string modifierName, descriptionName;
     public int startPrice;
     public float modifier, startReward;
-    public Text descriptionText, rewardText, priceText;
+    public Text descriptionText, rewardText;
+    public PriceManager priceText;
     public Image buttonIcon;
     public Color[] buttonColors;
 
@@ -23,17 +24,14 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey(modifierName))
-            PlayerPrefs.SetFloat(modifierName, 1);
-        if (!PlayerPrefs.HasKey(modifierName + "_level"))
-            PlayerPrefs.SetInt(modifierName + "_level", 1);
-
+        island.InitParameter(modifierName, 1.0f);
+        island.InitParameter(modifierName + "_level", 1);
         SetButtonPrefs();
     }
 
     private void Update()
     {
-        if (island.GetMoney() >= price)
+        if (island.Money >= price)
             buttonIcon.color = buttonColors[0];
         else
             buttonIcon.color = buttonColors[1];
@@ -41,20 +39,22 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private void SetButtonPrefs()
     {
-        price = (int)(startPrice * Mathf.Pow(1.3f, (PlayerPrefs.GetInt(modifierName + "_level") - 1)));
-        reward = startReward + modifier * (PlayerPrefs.GetInt(modifierName + "_level") - 1);
+        price = (int)(startPrice * Mathf.Pow(1.3f, (island.GetParameter(modifierName + "_level", 0) - 1)));
+        reward = startReward + modifier * (island.GetParameter(modifierName + "_level", 0) - 1);
 
         descriptionText.text = descriptionName;
         rewardText.text = reward.ToString();
-        priceText.text = "Upgrade\n$" + price.ToString();
-        PlayerPrefs.SetFloat(modifierName, reward);
+        priceText.prefix = "Upgrade\n";
+        priceText.postfix = "$";
+        priceText.SetPrice(price);
+        island.SetParameter(modifierName, reward);
     }
 
     public void Upgrade(GlobalUpgradeButton button)
     {
-        if (island.GetMoney() >= button.price)
+        if (island.ChangeMoney(-button.price))
         {
-            PlayerPrefs.SetInt(modifierName + "_level", PlayerPrefs.GetInt(modifierName + "_level") + 1);
+            island.SetParameter(modifierName + "_level", island.GetParameter(modifierName + "_level", 0) + 1);
             SetButtonPrefs();
         }
     }

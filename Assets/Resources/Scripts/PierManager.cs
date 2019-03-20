@@ -42,7 +42,6 @@ public class PierManager : MonoBehaviour
     [Header("|Информация о пристани|")]
     public bool shipExist;
     public bool maxLvl;
-    public bool upgradeAvailable;
     public GameObject flag;
     public UpgradeMenuManager upgradeMenu;
     public Transform ships;
@@ -57,21 +56,39 @@ public class PierManager : MonoBehaviour
 
     private void Start()
     {
+        island.InitParameter(shipName + "_" + detailName1, detailCurrentLvl1);
+        island.InitParameter(shipName + "_" + detailName2, detailCurrentLvl2);
+        island.InitParameter(shipName + "_" + detailName3, detailCurrentLvl3);
+        island.InitParameter(shipName + "_maxLvl", 0);
+        island.InitParameter(shipName + "_shipExist", 0);
+
+        detailCurrentLvl1 = island.GetParameter(shipName + "_" + detailName1, detailCurrentLvl1);
+        detailCurrentLvl2 = island.GetParameter(shipName + "_" + detailName2, detailCurrentLvl2);
+        detailCurrentLvl3 = island.GetParameter(shipName + "_" + detailName3, detailCurrentLvl3);
+        maxLvl = island.GetParameter(shipName + "_maxLvl", 0) != 0;
+        shipExist = island.GetParameter(shipName + "_shipExist", 0) != 0;
+
         if (shipExist)
         {
             if (ship == null) CreateShip();
             else UpdadeShipInfo();
+        }
+
+        if (maxLvl)
+        {
+            flag.GetComponent<Image>().color = Color.black;
+            flag.GetComponentInChildren<Text>().text = "?";
         }
     }
 
     private void Update()
     {
         if (maxLvl) return;
-        if (flag.activeInHierarchy && (island.GetMoney() < GetUpgradeCost() || minLvl > Levels.level))
+        if (flag.activeInHierarchy && (island.Money < GetUpgradeCost() || minLvl > island.Level))
             flag.SetActive(false);
-        else if (!flag.activeInHierarchy && island.GetMoney() >= GetUpgradeCost() && minLvl <= Levels.level)
+        else if (!flag.activeInHierarchy && island.Money >= GetUpgradeCost() && minLvl <= island.Level)
             flag.SetActive(true);
-        if(shipExist && ship == null)
+        if (shipExist && ship == null)
         {
             CreateShip();
         }
@@ -138,23 +155,28 @@ public class PierManager : MonoBehaviour
         if (!shipExist)
         {
             shipExist = true;
+            island.SetParameter(shipName + "_shipExist", 1);
         }
         else if (detailCurrentLvl1 < detailMaxLvl1)
         {
             detailCurrentLvl1++;
+            island.SetParameter(shipName + "_" + detailName1, detailCurrentLvl1);
         }
         else if (detailCurrentLvl2 < detailMaxLvl2)
         {
             detailCurrentLvl2++;
+            island.SetParameter(shipName + "_" + detailName2, detailCurrentLvl2);
         }
         else if (detailCurrentLvl3 < detailMaxLvl3)
         {
             detailCurrentLvl3++;
+            island.SetParameter(shipName + "_" + detailName3, detailCurrentLvl3);
         }
         UpdadeShipInfo();
         if (detailCurrentLvl3 == detailMaxLvl3)
         {
             maxLvl = true;
+            island.SetParameter(shipName + "_maxLvl", 1);
             flag.SetActive(true);
             flag.GetComponent<Image>().color = Color.black;
             flag.GetComponentInChildren<Text>().text = "?";

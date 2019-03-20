@@ -1,21 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Levels : MonoBehaviour
 {
-    public int startExp;
-    public float expModifier;
     public GameObject levelProgress, levelUp;
     public Image levelBar;
     public Text levelNumber;
 
-    private int maxExp;
     private Island island;
-
-    public static int level;
-    public static int curExp;
+    private int maxExp;
 
     private void Awake()
     {
@@ -24,18 +20,18 @@ public class Levels : MonoBehaviour
 
     void Start()
     {
-        SetLevel();
+        Load();
     }
 
     void Update()
     {
-        levelNumber.text = "Level " + level;
+        levelNumber.text = "Level " + island.Level;
 
-        if (curExp < maxExp)
+        if (island.Exp < maxExp)
         {
             levelUp.SetActive(false);
             levelProgress.SetActive(true);
-            levelBar.fillAmount = (float)curExp / (float)maxExp;
+            levelBar.fillAmount = (float)island.Exp / maxExp;
         }
         else
         {
@@ -44,29 +40,20 @@ public class Levels : MonoBehaviour
         }
     }
 
-    private void SetLevel()
+    private void Load()
     {
-        if (!PlayerPrefs.HasKey("Level"))
-            PlayerPrefs.SetInt("Level", 1);
-
-        level = PlayerPrefs.GetInt("Level");
-
-        curExp = PlayerPrefs.GetInt("Exp");
-        maxExp = (int)(startExp * Mathf.Pow(expModifier, level));
+        maxExp = island.GetMaxExp();
     }
 
     public void LevelUp()
     {
-        level += 1;
-        PlayerPrefs.SetInt("Level", level);
-        curExp = 0;
-        maxExp = (int)(startExp * Mathf.Pow(expModifier, level));
+        island.LevelUp();
+        Load();
     }
 
     public void Resetting()
     {
-        PlayerPrefs.SetInt("Level", 1);
-        PlayerPrefs.SetInt("Exp", 0);
-        SetLevel();
+        island.Resetting();
+        Load();
     }
 }

@@ -39,17 +39,17 @@ public class UpgradeMenuManager : MonoBehaviour
         {
             return;
         }
-        if ((pier.maxLvl || pier.minLvl > Levels.level) && upgradeBtn.interactable)
+        if ((pier.maxLvl || pier.minLvl > island.Level) && upgradeBtn.interactable)
         {
             upgradeBtn.interactable = false;
         }
         else
         {
-            if (upgradeBtn.interactable && island.GetMoney() < pier.GetUpgradeCost() || pier.minLvl > Levels.level)
+            if (upgradeBtn.interactable && island.Money < pier.GetUpgradeCost() || pier.minLvl > island.Level)
             {
                 upgradeBtn.interactable = false;
             }
-            if (!upgradeBtn.interactable && island.GetMoney() >= pier.GetUpgradeCost() && pier.minLvl <= Levels.level)
+            if (!upgradeBtn.interactable && island.Money >= pier.GetUpgradeCost() && pier.minLvl <= island.Level)
             {
                 upgradeBtn.interactable = true;
             }
@@ -58,7 +58,7 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private void UpdateCost()
     {
-        if (pier.minLvl > Levels.level || pier.maxLvl) return;
+        if (pier.minLvl > island.Level || pier.maxLvl) return;
         upgradeBtnTM.text = pier.GetUpgradeCost().ToString();
     }
 
@@ -69,7 +69,7 @@ public class UpgradeMenuManager : MonoBehaviour
         chRaidTimeTM.text = pier.GetRaidTime().ToString();
         chProfitTM.text = pier.GetReward().ToString();
 
-        if (pier.minLvl > Levels.level)
+        if (pier.minLvl > island.Level)
         {
             miniIcon.sprite = null;
             gRaidTimeTM.text = "---";

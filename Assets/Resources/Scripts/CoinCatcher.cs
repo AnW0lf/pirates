@@ -34,8 +34,7 @@ public class CoinCatcher : MonoBehaviour
         GetComponentInParent<ShipClick>().ship.raidTimeModifier = 1;
 
         //Gain Exp
-        Levels.curExp += 1;
-        PlayerPrefs.SetInt("Exp", Levels.curExp);
+        island.ExpUp(1);
 
         GetComponentInParent<CapsuleCollider2D>().enabled = true;
         gameObject.SetActive(false);
