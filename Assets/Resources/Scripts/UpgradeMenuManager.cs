@@ -58,8 +58,18 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private void UpdateCost()
     {
-        if (pier.minLvl > island.Level || pier.maxLvl) return;
+        if (pier.minLvl > island.Level || pier.maxLvl)
+        {
+            upgradeBtnTM.prefix = "";
+            upgradeBtnTM.text = "MAX LEVEL";
+            upgradeBtnTM.postfix = "";
+        }
+        if (!pier.shipExist)
+            upgradeBtnTM.prefix = "Unlock\n";
+        else
+            upgradeBtnTM.prefix = "Upgrade\n";
         upgradeBtnTM.text = pier.GetUpgradeCost().ToString();
+        upgradeBtnTM.postfix = "(C)";
     }
 
     private void UpdateInfo()
@@ -74,7 +84,6 @@ public class UpgradeMenuManager : MonoBehaviour
             miniIcon.sprite = null;
             gRaidTimeTM.text = "---";
             gProfitTM.text = "---";
-            upgradeBtnTM.text = "LEVEL " + pier.minLvl;
             lockedFade.SetActive(true);
             lockedFadeLevel.text = "LEVEL " + pier.minLvl;
             return;
@@ -84,7 +93,6 @@ public class UpgradeMenuManager : MonoBehaviour
             miniIcon.sprite = pier.shipIcon;
             gRaidTimeTM.text = "---";
             gProfitTM.text = "---";
-            upgradeBtnTM.text = "UNLOCK";
             lockedFade.SetActive(false);
             return;
         }
@@ -116,7 +124,6 @@ public class UpgradeMenuManager : MonoBehaviour
             miniIcon.sprite = null;
             gRaidTimeTM.text = pier.GetRaidTime().ToString();
             gProfitTM.text = pier.GetReward().ToString();
-            upgradeBtnTM.text = "MAX LEVEL";
         }
 
         icon.sprite = pier.shipIcon;

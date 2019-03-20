@@ -1414,6 +1414,7 @@ MonoBehaviour:
   detailChangeReward1: 1
   detailChangeRaidTime1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
+  detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
@@ -1422,6 +1423,7 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
+  detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
@@ -1430,6 +1432,7 @@ MonoBehaviour:
   detailChangeReward3: 10
   detailChangeRaidTime3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
+  detailShipSprites3: []
   shipExist: 1
   maxLvl: 0
   flag: {fileID: 608384970}
@@ -5132,7 +5135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85166cc90c8df045b7444fb9acf842e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefix: $
+  prefix: '(C) '
   money: 0
 --- !u!1 &1432719152
 GameObject:
@@ -6089,6 +6092,7 @@ MonoBehaviour:
   detailChangeReward1: 400
   detailChangeRaidTime1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
+  detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 10
   detailCurrentLvl2: 0
@@ -6097,6 +6101,7 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
+  detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 10
   detailCurrentLvl3: 0
@@ -6105,6 +6110,7 @@ MonoBehaviour:
   detailChangeReward3: 15000
   detailChangeRaidTime3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
+  detailShipSprites3: []
   shipExist: 0
   maxLvl: 0
   flag: {fileID: 914526500}
@@ -7713,6 +7719,7 @@ MonoBehaviour:
   detailChangeReward1: 50
   detailChangeRaidTime1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
+  detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 10
   detailCurrentLvl2: 0
@@ -7721,6 +7728,7 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
+  detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 10
   detailCurrentLvl3: 0
@@ -7729,6 +7737,7 @@ MonoBehaviour:
   detailChangeReward3: 100
   detailChangeRaidTime3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
+  detailShipSprites3: []
   shipExist: 0
   maxLvl: 0
   flag: {fileID: 1649251135}
