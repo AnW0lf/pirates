@@ -1400,6 +1400,7 @@ MonoBehaviour:
   rise: 350
   angle: 90
   shipName: Santa Maria
+  startPrice: 100
   startRaidTime: 10
   startReward: 10
   speedAngle: 20
@@ -1431,7 +1432,6 @@ MonoBehaviour:
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   shipExist: 1
   maxLvl: 0
-  upgradeAvailable: 0
   flag: {fileID: 608384970}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
@@ -6075,6 +6075,7 @@ MonoBehaviour:
   rise: 550
   angle: 270
   shipName: Flying Dutchman
+  startPrice: 2500
   startRaidTime: 10
   startReward: 1000
   speedAngle: 14
@@ -6106,7 +6107,6 @@ MonoBehaviour:
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   shipExist: 0
   maxLvl: 0
-  upgradeAvailable: 0
   flag: {fileID: 914526500}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
@@ -7699,6 +7699,7 @@ MonoBehaviour:
   rise: 450
   angle: 160
   shipName: King Georg
+  startPrice: 500
   startRaidTime: 10
   startReward: 300
   speedAngle: 17
@@ -7730,7 +7731,6 @@ MonoBehaviour:
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   shipExist: 0
   maxLvl: 0
-  upgradeAvailable: 0
   flag: {fileID: 1649251135}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}

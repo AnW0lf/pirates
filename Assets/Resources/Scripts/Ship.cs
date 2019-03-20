@@ -128,6 +128,11 @@ public class Ship : MonoBehaviour
         _icon.GetComponent<SpriteRenderer>().sprite = sprite;
     }
 
+    public void SetSize(float size)
+    {
+        this.size = size;
+    }
+
     public void SetSpeed(float speedAngle, float speedLinear, float speedRaidModifier)
     {
         this.speedAngle = speedAngle;
