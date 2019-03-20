@@ -8,6 +8,8 @@ public class UpgradeMenuManager : MonoBehaviour
     public TextManager labelTM, chRaidTimeTM, chProfitTM, gRaidTimeTM, gProfitTM, upgradeBtnTM;
     public Button exitBtn, upgradeBtn;
     public Image icon, miniIcon;
+    public GameObject lockedFade;
+    public Text lockedFadeLevel;
 
     public Sprite body, sail, gun;
 
@@ -73,6 +75,8 @@ public class UpgradeMenuManager : MonoBehaviour
             gRaidTimeTM.text = "---";
             gProfitTM.text = "---";
             upgradeBtnTM.text = "LEVEL " + pier.minLvl;
+            lockedFade.SetActive(true);
+            lockedFadeLevel.text = "LEVEL " + pier.minLvl;
             return;
         }
         else if (!pier.shipExist)
@@ -81,7 +85,12 @@ public class UpgradeMenuManager : MonoBehaviour
             gRaidTimeTM.text = "---";
             gProfitTM.text = "---";
             upgradeBtnTM.text = "UNLOCK";
+            lockedFade.SetActive(false);
             return;
+        }
+        else
+        {
+            lockedFade.SetActive(false);
         }
 
         if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
