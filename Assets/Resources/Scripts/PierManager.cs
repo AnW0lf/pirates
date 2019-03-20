@@ -16,6 +16,7 @@ public class PierManager : MonoBehaviour
     public float angle;
     [Header("Начальные характеристики")]
     public string shipName;
+    public int startPrice;
     public float startRaidTime;
     public int startReward;
     [Header("Скорость движения")]
@@ -143,9 +144,10 @@ public class PierManager : MonoBehaviour
 
     public int GetUpgradeCost()
     {
-        return detailStartCost1 + (detailCurrentLvl1 * detailCostIncrease1)
+        return shipExist ? detailStartCost1 + (detailCurrentLvl1 * detailCostIncrease1)
             + (detailCurrentLvl1 != detailMaxLvl1 ? 0 : (detailStartCost2 + (detailCurrentLvl2 * detailCostIncrease2)
-            + (detailCurrentLvl2 != detailMaxLvl2 ? 0 : (detailStartCost3 + (detailCurrentLvl3 * detailCostIncrease3)))));
+            + (detailCurrentLvl2 != detailMaxLvl2 ? 0 : (detailStartCost3 + (detailCurrentLvl3 * detailCostIncrease3)))))
+            : startPrice;
     }
 
     public void Upgrade()
