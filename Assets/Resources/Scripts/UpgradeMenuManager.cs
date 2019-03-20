@@ -58,11 +58,19 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private void UpdateCost()
     {
-        if (pier.minLvl > island.Level || pier.maxLvl)
+        if (pier.minLvl > island.Level)
         {
             upgradeBtnTM.prefix = "";
-            upgradeBtnTM.text = "MAX LEVEL";
+            upgradeBtnTM.text = "Locked";
             upgradeBtnTM.postfix = "";
+            return;
+        }
+        else if (pier.maxLvl)
+        {
+            upgradeBtnTM.prefix = "";
+            upgradeBtnTM.text = "Max Level";
+            upgradeBtnTM.postfix = "";
+            return;
         }
         if (!pier.shipExist)
             upgradeBtnTM.prefix = "Unlock\n";

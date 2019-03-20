@@ -61,20 +61,15 @@ public class CoinManager : MonoBehaviour
                 break;
         }
         string strValue = value.ToString();
-        if (value < 100)
-        {
-            if (strValue.Length >= 4)
-                strValue = strValue.Substring(0, 4);
-        }
-        else
-            strValue = strValue.Substring(0, 3);
+        if (strValue.Length >= 5)
+            strValue = strValue.Substring(0, 5);
         tm.text = strValue;
         tm.postfix = postfix;
     }
 
     private void Update()
     {
-        if(money != island.Money)
+        if (money != island.Money)
         {
             money = island.Money;
             UpdateMoney();

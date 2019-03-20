@@ -7,7 +7,7 @@ public class PriceManager : MonoBehaviour
     public string prefix = "", postfix = "";
     private TextManager tm;
 
-    private void Start()
+    private void Awake()
     {
         tm = GetComponent<TextManager>();
     }
@@ -50,13 +50,8 @@ public class PriceManager : MonoBehaviour
                 break;
         }
         string strValue = value.ToString();
-        if (value < 100)
-        {
-            if (strValue.Length >= 4)
-                strValue = strValue.Substring(0, 4);
-        }
-        else
-            strValue = strValue.Substring(0, 3);
+        if (strValue.Length >= 5)
+            strValue = strValue.Substring(0, 5);
         tm.text = strValue;
         tm.postfix = postfix;
     }
