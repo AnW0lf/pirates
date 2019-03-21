@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Ship : MonoBehaviour
@@ -28,7 +29,7 @@ public class Ship : MonoBehaviour
     public Transform _icon;
     public Transform _coin;
 
-    private float riseOutOfScreen = 1000f;
+    private float riseOutOfScreen = 1400f;
 
     private void Awake()
     {
@@ -62,7 +63,7 @@ public class Ship : MonoBehaviour
     {
         _rise.GetComponent<RectTransform>().sizeDelta = new Vector2(rise, 10f);
         _rise.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * angle;
-        _icon.GetComponent<SpriteRenderer>().flipY = direction;
+        _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
         _icon.GetComponent<RectTransform>().localScale = Vector3.right * size + Vector3.up * size + Vector3.forward;
         speedAngle = Math.Abs(speedAngle) * (direction ? 1 : -1);
         speedLinear = Math.Abs(speedLinear) * (direction ? 1 : -1);
@@ -92,7 +93,7 @@ public class Ship : MonoBehaviour
             visible = _icon.GetComponent<ShipClick>().IsVisible();
             _iconRT.localPosition += Vector3.down * (speedLinear * speedRaidModifier * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.deltaTime;
             yield return null;
-        } while (visible);
+        } while (Mathf.Abs(_iconRT.localPosition.y) < riseOutOfScreen);
         float seconds = raidTime / Mathf.Pow(2f, raidTimeModifier);
         yield return new WaitForSeconds(seconds);
 
@@ -101,9 +102,9 @@ public class Ship : MonoBehaviour
         _riseRT.localEulerAngles = Vector3.forward * angle;
         direction = !direction;
         _iconRT.localPosition = Vector3.left * rise + Vector3.up * riseOutOfScreen * (direction ? 1 : -1);
-        _icon.GetComponent<SpriteRenderer>().flipY = direction;
+        _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
 
-        while(Mathf.Abs(_iconRT.localPosition.y) > 5f)
+        while (Mathf.Abs(_iconRT.localPosition.y) > 5f)
         {
             _iconRT.localPosition += Vector3.up * speedLinear * Time.deltaTime;
             yield return null;
@@ -125,7 +126,7 @@ public class Ship : MonoBehaviour
     {
         //_icon.GetComponent<RectTransform>().localScale = Vector3.right * size + Vector3.up * size + Vector3.forward;
         this.size = size;
-        _icon.GetComponent<SpriteRenderer>().sprite = sprite;
+        _icon.GetComponent<Image>().sprite = sprite;
     }
 
     public void SetSize(float size)
