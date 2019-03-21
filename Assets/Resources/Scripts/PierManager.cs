@@ -119,6 +119,7 @@ public class PierManager : MonoBehaviour
     {
         if (ship != null) return;
         ship = Instantiate(shipPref, ships);
+        ship.transform.SetAsFirstSibling();
         ship.GetComponent<Ship>()
             .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward());
     }

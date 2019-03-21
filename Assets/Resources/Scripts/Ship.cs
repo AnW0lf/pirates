@@ -98,8 +98,6 @@ public class Ship : MonoBehaviour
         yield return new WaitForSeconds(seconds);
 
         _coin.GetComponent<CoinCatcher>().ActivateCoin((int)(reward * rewardModifier * PlayerPrefs.GetFloat("GlobalEarnings")));
-        angle = Random.Range(0f, 359f);
-        _riseRT.localEulerAngles = Vector3.forward * angle;
         direction = !direction;
         _iconRT.localPosition = Vector3.left * rise + Vector3.up * riseOutOfScreen * (direction ? 1 : -1);
         _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
