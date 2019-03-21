@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FlyingText : MonoBehaviour
 {
-    public bool money, speed, wheel;
-    public GameObject moneyText, speedText, wheelText;
+    public bool money, speed, wheel, reward;
+    public GameObject moneyText, speedText, wheelText,rewardText;
 
     // Update is called once per frame
     void Update()
@@ -16,6 +16,8 @@ public class FlyingText : MonoBehaviour
             speedText.SetActive(true);
         if (wheel)
             wheelText.SetActive(true);
+        if (reward)
+            rewardText.SetActive(true);
 
         if (!GetComponent<Animation>().isPlaying)
         {

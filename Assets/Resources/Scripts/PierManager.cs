@@ -73,8 +73,8 @@ public class PierManager : MonoBehaviour
         detailCurrentLvl3 = island.GetParameter(shipName + "_" + detailName3, detailCurrentLvl3);
         maxLvl = island.GetParameter(shipName + "_maxLvl", 0) != 0;
         shipExist = island.GetParameter(shipName + "_shipExist", 0) != 0;
-        size = island.GetParameter(shipName + "_size", size);
-        shipIcon = Resources.Load<Sprite>("Sprites\\" + island.GetParameter(shipName + "_shipIcon", ""));
+        //size = island.GetParameter(shipName + "_size", size);
+        //shipIcon = Resources.Load<Sprite>("Sprites\\" + island.GetParameter(shipName + "_shipIcon", ""));
 
         if (shipExist)
         {
