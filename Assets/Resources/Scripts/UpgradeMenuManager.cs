@@ -122,6 +122,7 @@ public class UpgradeMenuManager : MonoBehaviour
         grade.SetActive(false);
         miniIcon.gameObject.SetActive(false);
         description.SetActive(true);
+        description.GetComponent<Text>().text = pier.shipDescription;
         lockedFade.SetActive(true);
         titleFade.SetActive(true);
         lockedFadeLevel.text = "LEVEL " + pier.minLvl;
@@ -132,6 +133,7 @@ public class UpgradeMenuManager : MonoBehaviour
         grade.SetActive(false);
         miniIcon.gameObject.SetActive(false);
         description.SetActive(true);
+        description.GetComponent<Text>().text = pier.shipDescription;
         lockedFade.SetActive(false);
         titleFade.SetActive(false);
     }

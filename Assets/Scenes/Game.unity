@@ -3316,6 +3316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 0
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -3787,6 +3788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 20
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -4064,6 +4066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 0
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -4766,6 +4769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 15
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -7236,6 +7240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 15
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -9386,6 +9391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 15
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -9885,6 +9891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 20
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -10775,6 +10782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 10
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -12394,6 +12402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 20
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -13465,6 +13474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 10
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -13705,6 +13715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 5
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -15353,6 +15364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 5
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -17359,6 +17371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 10
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -19659,7 +19672,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 550, y: 300}
+  m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871181661
 MonoBehaviour:
@@ -19694,9 +19707,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: 'Choice of the
+  m_Text: 'XXXXXXXXXX
 
-    true corsair.'
+    XXXXXXXXXX'
 --- !u!222 &1871181662
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20395,6 +20408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 5
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75
@@ -21267,6 +21281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
   minLvl: 0
+  shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 75

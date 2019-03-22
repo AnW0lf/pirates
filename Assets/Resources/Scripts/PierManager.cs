@@ -8,6 +8,7 @@ public class PierManager : MonoBehaviour
     [Header("|Информация о корабле|")]
     public Sprite shipIcon;
     public int minLvl;
+    public string shipDescription;
     [Header("Префаб корабля")]
     public GameObject shipPref;
     [Header("Начальная позиция")]
