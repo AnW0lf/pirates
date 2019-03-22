@@ -20,7 +20,7 @@ public class Ship : MonoBehaviour
 
     //Рейд
     private bool visible = false;
-    private bool inRaid = false;
+    private bool inRaid = false, isRotate = true;
     private float speedAngle, speedLinear, speedRaidModifier, circle = 0f;
     private RectTransform _riseRT, _iconRT;
 
@@ -44,7 +44,7 @@ public class Ship : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!inRaid)
+        if(!inRaid && isRotate)
         {
             circle += (speedAngle * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.fixedDeltaTime;
             angle += (speedAngle * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.fixedDeltaTime;
@@ -82,15 +82,18 @@ public class Ship : MonoBehaviour
         if (!inRaid)
         {
             inRaid = true;
+            if (_coin.gameObject.activeInHierarchy)
+                _coin.GetComponent<CoinCatcher>().CatchCoin();
+            StopCoroutine(Raid());
             StartCoroutine(Raid());
         }
     }
 
     private IEnumerator Raid()
     {
+        isRotate = false;
         do
         {
-            visible = _icon.GetComponent<ShipClick>().IsVisible();
             _iconRT.localPosition += Vector3.down * (speedLinear * speedRaidModifier * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.deltaTime;
             yield return null;
         } while (Mathf.Abs(_iconRT.localPosition.y) < riseOutOfScreen);
@@ -102,13 +105,17 @@ public class Ship : MonoBehaviour
         _iconRT.localPosition = Vector3.left * rise + Vector3.up * riseOutOfScreen * (direction ? 1 : -1);
         _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
 
+        inRaid = false;
+        UpdateShip();
+
         while (Mathf.Abs(_iconRT.localPosition.y) > 5f)
         {
-            _iconRT.localPosition += Vector3.up * speedLinear * Time.deltaTime;
+            _iconRT.localPosition += Vector3.down * speedLinear * Time.deltaTime;
             yield return null;
         }
-        UpdateShip();
-        inRaid = false;
+
+
+        isRotate = true;
     }
 
 
