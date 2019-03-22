@@ -8,7 +8,7 @@ public class UpgradeMenuManager : MonoBehaviour
     public TextManager labelTM, chRaidTimeTM, chProfitTM, gRaidTimeTM, gProfitTM, upgradeBtnTM, detailTM;
     public Button exitBtn, upgradeBtn;
     public Image icon, miniIcon;
-    public GameObject lockedFade, grade, description;
+    public GameObject lockedFade, titleFade, grade, description;
     public Text lockedFadeLevel;
 
     public Sprite body, sail, gun;
@@ -82,7 +82,10 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private void UpdateInfo()
     {
-        labelTM.text = pier.shipName;
+        if (pier.shipExist)
+            labelTM.text = "Level " + (pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3 + 1) + "/" + (pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1);
+        else
+            labelTM.text = "Level " + (pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3) + "/" + (pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1);
 
         chRaidTimeTM.text = pier.GetRaidTime().ToString();
         chProfitTM.text = pier.GetReward().ToString();
@@ -120,15 +123,17 @@ public class UpgradeMenuManager : MonoBehaviour
         miniIcon.gameObject.SetActive(false);
         description.SetActive(true);
         lockedFade.SetActive(true);
+        titleFade.SetActive(true);
         lockedFadeLevel.text = "LEVEL " + pier.minLvl;
     }
 
     private void Unlocked()
     {
-        grade.SetActive(true);
-        miniIcon.gameObject.SetActive(true);
-        description.SetActive(false);
+        grade.SetActive(false);
+        miniIcon.gameObject.SetActive(false);
+        description.SetActive(true);
         lockedFade.SetActive(false);
+        titleFade.SetActive(false);
     }
 
     private void NotBought()
@@ -143,27 +148,35 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private void Bought()
     {
-        detailTM.prefix = "SAIL";
+        grade.SetActive(true);
+        miniIcon.gameObject.SetActive(true);
+        description.SetActive(false);
+        lockedFade.SetActive(false);
+        titleFade.SetActive(false);
+
         if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
         {
+            detailTM.prefix = "HULL ";
             miniIcon.sprite = pier.detailMiniature1;
             gRaidTimeTM.text = (pier.GetRaidTime() + pier.detailChangeRaidTime1).ToString();
             gProfitTM.text = (pier.GetReward() + pier.detailChangeReward1).ToString();
-            detailTM.text = pier.detailCurrentLvl1 + "/" + pier.detailMaxLvl1;
+            detailTM.text = (pier.detailCurrentLvl1 + 1) + "/" + pier.detailMaxLvl1;
         }
         else if (pier.detailCurrentLvl2 < pier.detailMaxLvl2)
         {
+            detailTM.prefix = "SAIL ";
             miniIcon.sprite = pier.detailMiniature2;
             gRaidTimeTM.text = (pier.GetRaidTime() + pier.detailChangeRaidTime2).ToString();
             gProfitTM.text = (pier.GetReward() + pier.detailChangeReward2).ToString();
-            detailTM.text = pier.detailCurrentLvl2 + "/" + pier.detailMaxLvl2;
+            detailTM.text = (pier.detailCurrentLvl2 + 1) + "/" + pier.detailMaxLvl2;
         }
         else if (pier.detailCurrentLvl3 < pier.detailMaxLvl3)
         {
+            detailTM.prefix = "GUNS ";
             miniIcon.sprite = pier.detailMiniature3;
             gRaidTimeTM.text = (pier.GetRaidTime() + pier.detailChangeRaidTime3).ToString();
             gProfitTM.text = (pier.GetReward() + pier.detailChangeReward3).ToString();
-            detailTM.text = pier.detailCurrentLvl3 + "/" + pier.detailMaxLvl3;
+            detailTM.text = (pier.detailCurrentLvl3 + 1) + "/" + pier.detailMaxLvl3;
         }
         else
         {
