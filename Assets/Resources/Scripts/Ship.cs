@@ -19,7 +19,6 @@ public class Ship : MonoBehaviour
     public float raidTimeModifier = 0f;
 
     //Рейд
-    private bool visible = false;
     private bool inRaid = false, isRotate = true;
     private float speedAngle, speedLinear, speedRaidModifier, circle = 0f;
     private RectTransform _riseRT, _iconRT;
