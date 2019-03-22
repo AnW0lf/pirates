@@ -83,7 +83,7 @@ public class Ship : MonoBehaviour
             inRaid = true;
             if (_coin.gameObject.activeInHierarchy)
                 _coin.GetComponent<CoinCatcher>().CatchCoin();
-            StopCoroutine(Raid());
+            StopAllCoroutines();
             StartCoroutine(Raid());
         }
     }
