@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class UpgradeMenuManager : MonoBehaviour
 {
-    public TextManager labelTM, chRaidTimeTM, chProfitTM, gRaidTimeTM, gProfitTM, upgradeBtnTM, detailTM;
-    public Button exitBtn, upgradeBtn;
+    public TextManager titleTM, upLevelTM, raidTimeTM, rewardTM, detailLevelTM, bonusTM, upBtnTM, fadeLevelTM, descriptionTM;
     public Image icon, miniIcon;
-    public GameObject lockedFade, titleFade, grade, description;
-    public Text lockedFadeLevel;
+    public GameObject windowFade, iconFade;
+    public Button exitBtn, upgradeBtn;
 
     public Sprite body, sail, gun;
 
@@ -21,178 +20,171 @@ public class UpgradeMenuManager : MonoBehaviour
         island = Island.Instance();
     }
 
+    private void Update()
+    {
+        if (!pier.maxLvl && pier.shipExist && island.Money >= pier.GetUpgradeCost())
+        {
+            if (!upgradeBtn.interactable)
+                upgradeBtn.interactable = true;
+        }
+        else
+            upgradeBtn.interactable = false;
+    }
+
     public void GenerateMenu(PierManager pier)
     {
         gameObject.SetActive(true);
         this.pier = pier;
         UpdateInfo();
-        UpdateCost();
         upgradeBtn.onClick.RemoveAllListeners();
         upgradeBtn.onClick.AddListener(pier.Upgrade);
-        upgradeBtn.onClick.AddListener(UpdateCost);
         upgradeBtn.onClick.AddListener(UpdateInfo);
-    }
-
-    private void Update()
-    {
-        if (gameObject.activeInHierarchy == false)
-        {
-            return;
-        }
-        if ((pier.maxLvl || pier.minLvl > island.Level) && upgradeBtn.interactable)
-        {
-            upgradeBtn.interactable = false;
-        }
-        else
-        {
-            if (upgradeBtn.interactable && island.Money < pier.GetUpgradeCost() || pier.minLvl > island.Level)
-            {
-                upgradeBtn.interactable = false;
-            }
-            if (!upgradeBtn.interactable && island.Money >= pier.GetUpgradeCost() && pier.minLvl <= island.Level)
-            {
-                upgradeBtn.interactable = true;
-            }
-        }
-    }
-
-    private void UpdateCost()
-    {
-        if (pier.minLvl > island.Level)
-        {
-            upgradeBtnTM.prefix = "";
-            upgradeBtnTM.text = "LOCKED";
-            upgradeBtnTM.postfix = "";
-            return;
-        }
-        else if (pier.maxLvl)
-        {
-            upgradeBtnTM.prefix = "";
-            upgradeBtnTM.text = "MAX LEVEL";
-            upgradeBtnTM.postfix = "";
-            return;
-        }
-        if (!pier.shipExist)
-            upgradeBtnTM.prefix = "UNLOCK\n";
-        else
-            upgradeBtnTM.prefix = "UPGRADE\n";
-        upgradeBtnTM.text = pier.GetUpgradeCost().ToString();
-        upgradeBtnTM.postfix = "(C)";
     }
 
     private void UpdateInfo()
     {
-        if (pier.shipExist)
-            labelTM.text = "Level " + (pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3 + 1) + "/" + (pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1);
-        else
-            labelTM.text = "Level " + (pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3) + "/" + (pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1);
-
-        chRaidTimeTM.text = pier.GetRaidTime().ToString();
-        chProfitTM.text = pier.GetReward().ToString();
-
         if (pier.minLvl > island.Level)
-        {
             Locked();
-            return;
-        }
         else if (!pier.shipExist)
-        {
             NotBought();
-            return;
-        }
         else if (pier.maxLvl)
-        {
             MaxLevel();
-        }
         else
-        {
-            Unlocked();
-        }
-
-        Bought();
-
-        icon.sprite = pier.shipIcon;
+            Bought();
     }
 
     private void Locked()
     {
-        miniIcon.sprite = null;
-        gRaidTimeTM.text = "---";
-        gProfitTM.text = "---";
-        grade.SetActive(false);
-        miniIcon.gameObject.SetActive(false);
-        description.SetActive(true);
-        description.GetComponent<Text>().text = pier.shipDescription;
-        lockedFade.SetActive(true);
-        titleFade.SetActive(true);
-        lockedFadeLevel.text = "LEVEL " + pier.minLvl;
-    }
+        SetState(titleTM, pier.shipName);
+        int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
+        SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
+        SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
+        SetState(rewardTM, pier.GetReward().ToString());
+        detailLevelTM.gameObject.SetActive(false);
+        bonusTM.gameObject.SetActive(false);
+        SetState(descriptionTM, "Choice of the true corsair");
+        SetState(upBtnTM, pier.minLvl.ToString(), "LEVEl ");
+        SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
 
-    private void Unlocked()
-    {
-        grade.SetActive(false);
-        miniIcon.gameObject.SetActive(false);
-        description.SetActive(true);
-        description.GetComponent<Text>().text = pier.shipDescription;
-        lockedFade.SetActive(false);
-        titleFade.SetActive(false);
+        if (!icon.sprite.Equals(pier.shipIcon))
+            icon.sprite = pier.shipIcon;
+        if (miniIcon.gameObject.activeInHierarchy)
+            miniIcon.gameObject.SetActive(false);
+
+        if (iconFade.activeInHierarchy)
+            iconFade.SetActive(false);
+        if (!windowFade.activeInHierarchy)
+            windowFade.SetActive(true);
+        if (upgradeBtn.interactable)
+            upgradeBtn.interactable = false;
     }
 
     private void NotBought()
     {
-        Unlocked();
-        miniIcon.sprite = pier.shipIcon;
-        gRaidTimeTM.text = "---";
-        gProfitTM.text = "---";
-        detailTM.prefix = "";
-        detailTM.text = pier.shipName;
+        SetState(titleTM, pier.shipName);
+        int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
+        SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
+        SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
+        SetState(rewardTM, pier.GetReward().ToString());
+        detailLevelTM.gameObject.SetActive(false);
+        bonusTM.gameObject.SetActive(false);
+        SetState(descriptionTM, "Choice of the true corsair");
+        SetState(upBtnTM, pier.GetUpgradeCost().ToString(), "Unlock ");
+        SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
+
+        if (!icon.sprite.Equals(pier.shipIcon))
+            icon.sprite = pier.shipIcon;
+        if (miniIcon.gameObject.activeInHierarchy)
+            miniIcon.gameObject.SetActive(false);
+
+        if (!iconFade.activeInHierarchy)
+            iconFade.SetActive(true);
+        if (windowFade.activeInHierarchy)
+            windowFade.SetActive(false);
     }
 
     private void Bought()
     {
-        grade.SetActive(true);
-        miniIcon.gameObject.SetActive(true);
-        description.SetActive(false);
-        lockedFade.SetActive(false);
-        titleFade.SetActive(false);
+        SetState(titleTM, pier.shipName);
+        int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
+        int curLvl = pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3 + 1;
+        SetState(upLevelTM, curLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
+        SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
+        SetState(rewardTM, pier.GetReward().ToString());
 
+        if (!miniIcon.gameObject.activeInHierarchy)
+            miniIcon.gameObject.SetActive(true);
+        if (!icon.sprite.Equals(pier.shipIcon))
+            icon.sprite = pier.shipIcon;
+
+        float a = 0f;
+        int b = 0;
         if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
         {
-            detailTM.prefix = "HULL ";
+            SetState(detailLevelTM, pier.detailCurrentLvl1.ToString() + "/" + pier.detailMaxLvl1, "HULL ");
+            a = pier.detailChangeRaidTime1;
+            b = pier.detailChangeReward1;
             miniIcon.sprite = pier.detailMiniature1;
-            gRaidTimeTM.text = (pier.GetRaidTime() + pier.detailChangeRaidTime1).ToString();
-            gProfitTM.text = (pier.GetReward() + pier.detailChangeReward1).ToString();
-            detailTM.text = (pier.detailCurrentLvl1 + 1) + "/" + pier.detailMaxLvl1;
         }
         else if (pier.detailCurrentLvl2 < pier.detailMaxLvl2)
         {
-            detailTM.prefix = "SAIL ";
+            SetState(detailLevelTM, pier.detailCurrentLvl2.ToString() + "/" + pier.detailMaxLvl2, "SAIL ");
+            a = pier.detailChangeRaidTime2;
+            b = pier.detailChangeReward2;
             miniIcon.sprite = pier.detailMiniature2;
-            gRaidTimeTM.text = (pier.GetRaidTime() + pier.detailChangeRaidTime2).ToString();
-            gProfitTM.text = (pier.GetReward() + pier.detailChangeReward2).ToString();
-            detailTM.text = (pier.detailCurrentLvl2 + 1) + "/" + pier.detailMaxLvl2;
         }
         else if (pier.detailCurrentLvl3 < pier.detailMaxLvl3)
         {
-            detailTM.prefix = "GUNS ";
+            SetState(detailLevelTM, pier.detailCurrentLvl3.ToString() + "/" + pier.detailMaxLvl3, "GUNS ");
+            a = pier.detailChangeRaidTime3;
+            b = pier.detailChangeReward3;
             miniIcon.sprite = pier.detailMiniature3;
-            gRaidTimeTM.text = (pier.GetRaidTime() + pier.detailChangeRaidTime3).ToString();
-            gProfitTM.text = (pier.GetReward() + pier.detailChangeReward3).ToString();
-            detailTM.text = (pier.detailCurrentLvl3 + 1) + "/" + pier.detailMaxLvl3;
         }
-        else
-        {
-            miniIcon.sprite = null;
-            gRaidTimeTM.text = pier.GetRaidTime().ToString();
-            gProfitTM.text = pier.GetReward().ToString();
-        }
+
+        string bonus = (a == 0f ? "" : (a < 0f ? "" : "+") + a.ToString() + "s")
+                + (b == 0 ? "" : (a < 0f ? " " : " +") + b.ToString() + "(C)");
+        SetState(bonusTM, bonus);
+
+        descriptionTM.gameObject.SetActive(false);
+        SetState(upBtnTM, pier.GetUpgradeCost().ToString(), "Upgrade ");
+
+        if (iconFade.activeInHierarchy)
+            iconFade.SetActive(false);
+        if (windowFade.activeInHierarchy)
+            windowFade.SetActive(false);
     }
 
     private void MaxLevel()
     {
-        grade.SetActive(false);
-        miniIcon.gameObject.SetActive(false);
-        description.SetActive(true);
-        icon.color = new Color(0.5f, 0.5f, 0.5f, 1f);
+        SetState(titleTM, pier.shipName);
+        int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
+        SetState(upLevelTM, maxLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
+        SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
+        SetState(rewardTM, pier.GetReward().ToString());
+        detailLevelTM.gameObject.SetActive(false);
+        bonusTM.gameObject.SetActive(false);
+        SetState(descriptionTM, "Choice of the true corsair");
+        SetState(upBtnTM, "MAX LEVEL");
+
+        if (!icon.sprite.Equals(pier.shipIcon))
+            icon.sprite = pier.shipIcon;
+        if (miniIcon.gameObject.activeInHierarchy)
+            miniIcon.gameObject.SetActive(false);
+
+        if (!iconFade.activeInHierarchy)
+            iconFade.SetActive(true);
+        if (windowFade.activeInHierarchy)
+            windowFade.SetActive(false);
+        if (upgradeBtn.interactable)
+            upgradeBtn.interactable = false;
+    }
+
+    private void SetState(TextManager tm, string text, string prefix = "", string postfix = "")
+    {
+        if (!tm.gameObject.activeInHierarchy)
+            tm.gameObject.SetActive(true);
+        tm.text = text;
+        tm.prefix = prefix;
+        tm.postfix = postfix;
     }
 }
