@@ -7,7 +7,7 @@ public class UpgradeMenuManager : MonoBehaviour
 {
     public TextManager titleTM, upLevelTM, raidTimeTM, rewardTM, detailLevelTM, bonusTM, upBtnTM, fadeLevelTM, descriptionTM;
     public Image icon, miniIcon;
-    public GameObject windowFade, iconFade;
+    public GameObject windowFade, iconFade, titleFade;
     public Button exitBtn, upgradeBtn;
 
     public Sprite body, sail, gun;
@@ -22,7 +22,7 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (!pier.maxLvl && pier.shipExist && island.Money >= pier.GetUpgradeCost())
+        if (!pier.maxLvl && island.Money >= pier.GetUpgradeCost())
         {
             if (!upgradeBtn.interactable)
                 upgradeBtn.interactable = true;
@@ -75,6 +75,8 @@ public class UpgradeMenuManager : MonoBehaviour
             iconFade.SetActive(false);
         if (!windowFade.activeInHierarchy)
             windowFade.SetActive(true);
+        if (!titleFade.activeInHierarchy)
+            titleFade.SetActive(true);
         if (upgradeBtn.interactable)
             upgradeBtn.interactable = false;
     }
@@ -101,6 +103,8 @@ public class UpgradeMenuManager : MonoBehaviour
             iconFade.SetActive(true);
         if (windowFade.activeInHierarchy)
             windowFade.SetActive(false);
+        if (titleFade.activeInHierarchy)
+            titleFade.SetActive(false);
     }
 
     private void Bought()
@@ -152,6 +156,8 @@ public class UpgradeMenuManager : MonoBehaviour
             iconFade.SetActive(false);
         if (windowFade.activeInHierarchy)
             windowFade.SetActive(false);
+        if (titleFade.activeInHierarchy)
+            titleFade.SetActive(false);
     }
 
     private void MaxLevel()
@@ -175,6 +181,8 @@ public class UpgradeMenuManager : MonoBehaviour
             iconFade.SetActive(true);
         if (windowFade.activeInHierarchy)
             windowFade.SetActive(false);
+        if (titleFade.activeInHierarchy)
+            titleFade.SetActive(false);
         if (upgradeBtn.interactable)
             upgradeBtn.interactable = false;
     }

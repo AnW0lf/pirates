@@ -860,7 +860,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e4849b9d859f853489402a1f59502820, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1094,7 +1094,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 400, y: 400}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71592725
 MonoBehaviour:
@@ -2472,10 +2472,10 @@ RectTransform:
   m_Father: {fileID: 1352775269}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38, y: 6}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 11, y: -3}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &275541850
 Animation:
@@ -2719,8 +2719,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -59, y: -1}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: -66, y: -73}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &281763769
 Animation:
@@ -3170,7 +3170,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e4849b9d859f853489402a1f59502820, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -3225,10 +3225,10 @@ RectTransform:
   m_Father: {fileID: 819486585}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2, y: -1}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -5, y: 4}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &331661724
 Animation:
@@ -3317,10 +3317,10 @@ RectTransform:
   m_Father: {fileID: 509415000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -28, y: 11}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &371150552
 Animation:
@@ -4549,8 +4549,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: -119}
-  m_SizeDelta: {x: 60, y: 50}
+  m_AnchoredPosition: {x: -9, y: -172}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509415001
 MonoBehaviour:
@@ -4569,30 +4569,30 @@ MonoBehaviour:
   shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 75
-  rise: 300
+  size: 110
+  rise: 350
   angle: 0
   shipName: Santa Maria
-  startPrice: 1
+  startPrice: 10
   startRaidTime: 5
-  startReward: 1
-  speedAngle: 20
-  speedLinear: 240
+  startReward: 12
+  speedAngle: 30
+  speedLinear: 350
   speedRaidModifier: 3.5
-  detailName1: Body
+  detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 2
-  detailCostIncrease1: 1
-  detailChangeReward1: 2
+  detailStartCost1: 20
+  detailCostIncrease1: 10
+  detailChangeReward1: 6
   detailChangeRaidTime1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 12
-  detailCostIncrease2: 4
+  detailStartCost2: 50
+  detailCostIncrease2: 20
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
@@ -4600,9 +4600,9 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 35
-  detailCostIncrease3: 7
-  detailChangeReward3: 3
+  detailStartCost3: 120
+  detailCostIncrease3: 30
+  detailChangeReward3: 10
   detailChangeRaidTime3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
@@ -4635,7 +4635,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 60, y: 50}
+  m_Size: {x: 130, y: 130}
   m_EdgeRadius: 0
 --- !u!114 &509415003
 MonoBehaviour:
@@ -4644,7 +4644,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509414999}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -5033,10 +5033,10 @@ RectTransform:
   m_Father: {fileID: 1102792146}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -59, y: -2}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5, y: -2}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &534180347
 Animation:
@@ -6500,6 +6500,7 @@ MonoBehaviour:
   miniIcon: {fileID: 851197281}
   windowFade: {fileID: 564701085}
   iconFade: {fileID: 34738962}
+  titleFade: {fileID: 1608102953}
   exitBtn: {fileID: 1115974621}
   upgradeBtn: {fileID: 1288871441}
   body: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
@@ -7775,7 +7776,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e4849b9d859f853489402a1f59502820, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -7833,8 +7834,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 131, y: -18}
-  m_SizeDelta: {x: 60, y: 50}
+  m_AnchoredPosition: {x: 214, y: -7}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819486586
 MonoBehaviour:
@@ -7849,44 +7850,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
-  minLvl: 15
+  minLvl: 0
   shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 75
-  rise: 525
-  angle: 0
+  size: 146
+  rise: 350
+  angle: 210
   shipName: Rattlesnake
-  startPrice: 325
-  startRaidTime: 15
-  startReward: 30
-  speedAngle: 14
-  speedLinear: 240
+  startPrice: 15000
+  startRaidTime: 22
+  startReward: 110
+  speedAngle: 30
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 400
-  detailCostIncrease1: 50
-  detailChangeReward1: 8
+  detailStartCost1: 16250
+  detailCostIncrease1: 1250
+  detailChangeReward1: 70
   detailChangeRaidTime1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 575
-  detailCostIncrease2: 75
+  detailStartCost2: 28000
+  detailCostIncrease2: 3500
   detailChangeReward2: 0
-  detailChangeRaidTime2: -2
+  detailChangeRaidTime2: -3
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 800
-  detailCostIncrease3: 100
-  detailChangeReward3: 12
+  detailStartCost3: 52500
+  detailCostIncrease3: 6250
+  detailChangeReward3: 95
   detailChangeRaidTime3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
@@ -7919,7 +7920,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 60, y: 50}
+  m_Size: {x: 130, y: 130}
   m_EdgeRadius: 0
 --- !u!114 &819486588
 MonoBehaviour:
@@ -7928,7 +7929,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819486584}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -11090,7 +11091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dc3748d0568574b823f1728eeb4932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ships: {fileID: 1634620421}
+  ships: {fileID: 453755323}
   modifier: 20
 --- !u!1 &1092895290
 GameObject:
@@ -11468,8 +11469,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -98, y: -74}
-  m_SizeDelta: {x: 60, y: 50}
+  m_AnchoredPosition: {x: -160, y: -102}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102792147
 MonoBehaviour:
@@ -11484,34 +11485,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
-  minLvl: 10
+  minLvl: 0
   shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 75
-  rise: 450
-  angle: 0
+  size: 134
+  rise: 500
+  angle: 140
   shipName: Flying Dutchman
-  startPrice: 325
+  startPrice: 1760
   startRaidTime: 15
-  startReward: 30
-  speedAngle: 14
-  speedLinear: 240
+  startReward: 60
+  speedAngle: 30
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 400
-  detailCostIncrease1: 50
-  detailChangeReward1: 8
+  detailStartCost1: 1910
+  detailCostIncrease1: 145
+  detailChangeReward1: 50
   detailChangeRaidTime1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 575
-  detailCostIncrease2: 75
+  detailStartCost2: 3300
+  detailCostIncrease2: 410
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
@@ -11519,9 +11520,9 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 800
-  detailCostIncrease3: 100
-  detailChangeReward3: 12
+  detailStartCost3: 6180
+  detailCostIncrease3: 720
+  detailChangeReward3: 65
   detailChangeRaidTime3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
@@ -11554,7 +11555,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 60, y: 50}
+  m_Size: {x: 130, y: 130}
   m_EdgeRadius: 0
 --- !u!114 &1102792149
 MonoBehaviour:
@@ -11563,7 +11564,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102792145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -13182,8 +13183,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116, y: 27}
-  m_SizeDelta: {x: 60, y: 50}
+  m_AnchoredPosition: {x: -190, y: 40}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271726490
 MonoBehaviour:
@@ -13198,44 +13199,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
-  minLvl: 20
+  minLvl: 0
   shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 75
-  rise: 600
-  angle: 0
+  size: 158
+  rise: 425
+  angle: 280
   shipName: Master
-  startPrice: 325
-  startRaidTime: 15
-  startReward: 30
-  speedAngle: 14
-  speedLinear: 240
+  startPrice: 130000
+  startRaidTime: 30
+  startReward: 210
+  speedAngle: 30
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 400
-  detailCostIncrease1: 50
-  detailChangeReward1: 8
+  detailStartCost1: 142500
+  detailCostIncrease1: 10000
+  detailChangeReward1: 110
   detailChangeRaidTime1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 575
-  detailCostIncrease2: 75
+  detailStartCost2: 244000
+  detailCostIncrease2: 30500
   detailChangeReward2: 0
-  detailChangeRaidTime2: -2
+  detailChangeRaidTime2: -4
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 800
-  detailCostIncrease3: 100
-  detailChangeReward3: 12
+  detailStartCost3: 458000
+  detailCostIncrease3: 57250
+  detailChangeReward3: 160
   detailChangeRaidTime3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
@@ -13268,7 +13269,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 60, y: 50}
+  m_Size: {x: 130, y: 130}
   m_EdgeRadius: 0
 --- !u!114 &1271726492
 MonoBehaviour:
@@ -13277,7 +13278,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271726488}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -14496,8 +14497,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 101, y: -83}
-  m_SizeDelta: {x: 60, y: 50}
+  m_AnchoredPosition: {x: 154, y: -126}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352775270
 MonoBehaviour:
@@ -14512,34 +14513,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ef1fd45245b673444b627b1b27fb22ca, type: 3}
-  minLvl: 5
+  minLvl: 0
   shipDescription: Choice of the true corsair.
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 75
-  rise: 375
-  angle: 0
+  size: 122
+  rise: 425
+  angle: 70
   shipName: King Georg
-  startPrice: 75
+  startPrice: 200
   startRaidTime: 10
-  startReward: 10
-  speedAngle: 17
-  speedLinear: 240
+  startReward: 35
+  speedAngle: 30
+  speedLinear: 350
   speedRaidModifier: 3.5
-  detailName1: Body
+  detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 100
+  detailStartCost1: 220
   detailCostIncrease1: 15
-  detailChangeReward1: 4
+  detailChangeReward1: 25
   detailChangeRaidTime1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 150
-  detailCostIncrease2: 20
+  detailStartCost2: 370
+  detailCostIncrease2: 50
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
@@ -14547,9 +14548,9 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 220
-  detailCostIncrease3: 30
-  detailChangeReward3: 6
+  detailStartCost3: 700
+  detailCostIncrease3: 90
+  detailChangeReward3: 40
   detailChangeRaidTime3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
@@ -14582,7 +14583,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 60, y: 50}
+  m_Size: {x: 130, y: 130}
   m_EdgeRadius: 0
 --- !u!114 &1352775272
 MonoBehaviour:
@@ -14591,7 +14592,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352775268}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 

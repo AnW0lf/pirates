@@ -33,7 +33,7 @@ public class Island
     private void Load()
     {
         if (!PlayerPrefs.HasKey("Money"))
-            PlayerPrefs.SetInt("Money", 2);
+            PlayerPrefs.SetInt("Money", 500000000);
         Money = PlayerPrefs.GetInt("Money");
 
         if (!PlayerPrefs.HasKey("Level"))
