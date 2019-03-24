@@ -88,6 +88,8 @@ public class PierManager : MonoBehaviour
             flag.GetComponent<Image>().color = Color.black;
             flag.GetComponentInChildren<Text>().text = "?";
         }
+
+        GetComponent<Button>().onClick.AddListener(OpenMenu);
     }
 
     private void Update()
@@ -101,11 +103,6 @@ public class PierManager : MonoBehaviour
         {
             CreateShip();
         }
-    }
-
-    private void OnMouseUpAsButton()
-    {
-        OpenMenu();
     }
 
     private void OpenMenu()
