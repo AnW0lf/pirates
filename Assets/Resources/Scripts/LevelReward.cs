@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LevelReward : MonoBehaviour
 {
-    public GameObject ships;
+    public List<GameObject> shipsList;
     public float modifier;
 
     private int money;
@@ -19,10 +19,12 @@ public class LevelReward : MonoBehaviour
     void OnEnable()
     {
         money = 0;
-
-        foreach (Transform child in ships.transform)
+        foreach (GameObject ships in shipsList)
         {
-            money += (int)(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier);
+            foreach (Transform child in ships.transform)
+            {
+                money += (int)(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier);
+            }
         }
 
         GetComponent<Text>().text = money.ToString();

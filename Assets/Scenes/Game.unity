@@ -3852,6 +3852,7 @@ MonoBehaviour:
   detailCostIncrease1: 1
   detailChangeReward1: 2
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -3861,6 +3862,7 @@ MonoBehaviour:
   detailCostIncrease2: 4
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -3870,6 +3872,7 @@ MonoBehaviour:
   detailCostIncrease3: 7
   detailChangeReward3: 3
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1
@@ -4324,6 +4327,7 @@ MonoBehaviour:
   detailCostIncrease1: 50
   detailChangeReward1: 8
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -4333,6 +4337,7 @@ MonoBehaviour:
   detailCostIncrease2: 75
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -4342,6 +4347,7 @@ MonoBehaviour:
   detailCostIncrease3: 100
   detailChangeReward3: 12
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -4618,6 +4624,7 @@ MonoBehaviour:
   detailCostIncrease1: 10
   detailChangeReward1: 6
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -4627,6 +4634,7 @@ MonoBehaviour:
   detailCostIncrease2: 20
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -4636,6 +4644,7 @@ MonoBehaviour:
   detailCostIncrease3: 30
   detailChangeReward3: 10
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1
@@ -5337,6 +5346,7 @@ MonoBehaviour:
   detailCostIncrease1: 50
   detailChangeReward1: 8
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -5346,6 +5356,7 @@ MonoBehaviour:
   detailCostIncrease2: 75
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -5355,6 +5366,7 @@ MonoBehaviour:
   detailCostIncrease3: 100
   detailChangeReward3: 12
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -7935,6 +7947,7 @@ MonoBehaviour:
   detailCostIncrease1: 1250
   detailChangeReward1: 70
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -7944,6 +7957,7 @@ MonoBehaviour:
   detailCostIncrease2: 3500
   detailChangeReward2: 0
   detailChangeRaidTime2: -3
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -7953,6 +7967,7 @@ MonoBehaviour:
   detailCostIncrease3: 6250
   detailChangeReward3: 95
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -10102,6 +10117,7 @@ MonoBehaviour:
   detailCostIncrease1: 50
   detailChangeReward1: 8
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -10111,6 +10127,7 @@ MonoBehaviour:
   detailCostIncrease2: 75
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -10120,6 +10137,7 @@ MonoBehaviour:
   detailCostIncrease3: 100
   detailChangeReward3: 12
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -10754,6 +10772,7 @@ MonoBehaviour:
   detailCostIncrease1: 50
   detailChangeReward1: 8
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -10763,6 +10782,7 @@ MonoBehaviour:
   detailCostIncrease2: 75
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -10772,6 +10792,7 @@ MonoBehaviour:
   detailCostIncrease3: 100
   detailChangeReward3: 12
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -11246,7 +11267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dc3748d0568574b823f1728eeb4932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ships: {fileID: 453755323}
+  shipsList:
+  - {fileID: 453755323}
+  - {fileID: 1533493861}
+  - {fileID: 1634620421}
   modifier: 20
 --- !u!1 &1092895290
 GameObject:
@@ -11661,6 +11685,7 @@ MonoBehaviour:
   detailCostIncrease1: 145
   detailChangeReward1: 50
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -11670,6 +11695,7 @@ MonoBehaviour:
   detailCostIncrease2: 410
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -11679,6 +11705,7 @@ MonoBehaviour:
   detailCostIncrease3: 720
   detailChangeReward3: 65
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -13434,6 +13461,7 @@ MonoBehaviour:
   detailCostIncrease1: 10000
   detailChangeReward1: 110
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -13443,6 +13471,7 @@ MonoBehaviour:
   detailCostIncrease2: 30500
   detailChangeReward2: 0
   detailChangeRaidTime2: -4
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -13452,6 +13481,7 @@ MonoBehaviour:
   detailCostIncrease3: 57250
   detailChangeReward3: 160
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -14523,6 +14553,7 @@ MonoBehaviour:
   detailCostIncrease1: 50
   detailChangeReward1: 8
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -14532,6 +14563,7 @@ MonoBehaviour:
   detailCostIncrease2: 75
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -14541,6 +14573,7 @@ MonoBehaviour:
   detailCostIncrease3: 100
   detailChangeReward3: 12
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -14780,6 +14813,7 @@ MonoBehaviour:
   detailCostIncrease1: 15
   detailChangeReward1: 25
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -14789,6 +14823,7 @@ MonoBehaviour:
   detailCostIncrease2: 50
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -14798,6 +14833,7 @@ MonoBehaviour:
   detailCostIncrease3: 90
   detailChangeReward3: 40
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -16445,6 +16481,7 @@ MonoBehaviour:
   detailCostIncrease1: 15
   detailChangeReward1: 4
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -16454,6 +16491,7 @@ MonoBehaviour:
   detailCostIncrease2: 20
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -16463,6 +16501,7 @@ MonoBehaviour:
   detailCostIncrease3: 30
   detailChangeReward3: 6
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -18633,6 +18672,7 @@ MonoBehaviour:
   detailCostIncrease1: 50
   detailChangeReward1: 8
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -18642,6 +18682,7 @@ MonoBehaviour:
   detailCostIncrease2: 75
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -18651,6 +18692,7 @@ MonoBehaviour:
   detailCostIncrease3: 100
   detailChangeReward3: 12
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -21957,6 +21999,7 @@ MonoBehaviour:
   detailCostIncrease1: 15
   detailChangeReward1: 4
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -21966,6 +22009,7 @@ MonoBehaviour:
   detailCostIncrease2: 20
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -21975,6 +22019,7 @@ MonoBehaviour:
   detailCostIncrease3: 30
   detailChangeReward3: 6
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -22846,6 +22891,7 @@ MonoBehaviour:
   detailCostIncrease1: 1
   detailChangeReward1: 2
   detailChangeRaidTime1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -22855,6 +22901,7 @@ MonoBehaviour:
   detailCostIncrease2: 4
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -22864,6 +22911,7 @@ MonoBehaviour:
   detailCostIncrease3: 7
   detailChangeReward3: 3
   detailChangeRaidTime3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1

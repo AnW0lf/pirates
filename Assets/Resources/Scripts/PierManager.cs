@@ -26,21 +26,21 @@ public class PierManager : MonoBehaviour
     [Header("|Прокачка|")]
     public string detailName1;
     public int detailMaxLvl1, detailCurrentLvl1, detailStartCost1, detailCostIncrease1, detailChangeReward1;
-    public float detailChangeRaidTime1;
+    public float detailChangeRaidTime1, detailSizeModifier1;
     public Sprite detailMiniature1;
     public List<Sprite> detailShipSprites1;
 
     [Header("Второй параметр")]
     public string detailName2;
     public int detailMaxLvl2, detailCurrentLvl2, detailStartCost2, detailCostIncrease2, detailChangeReward2;
-    public float detailChangeRaidTime2;
+    public float detailChangeRaidTime2, detailSizeModifier2;
     public Sprite detailMiniature2;
     public List<Sprite> detailShipSprites2;
 
     [Header("Третий параметр")]
     public string detailName3;
     public int detailMaxLvl3, detailCurrentLvl3, detailStartCost3, detailCostIncrease3, detailChangeReward3;
-    public float detailChangeRaidTime3;
+    public float detailChangeRaidTime3, detailSizeModifier3;
     public Sprite detailMiniature3;
     public List<Sprite> detailShipSprites3;
 
@@ -169,40 +169,43 @@ public class PierManager : MonoBehaviour
         {
             detailCurrentLvl1++;
             island.SetParameter(shipName + "_" + detailName1, detailCurrentLvl1);
+            if (detailCurrentLvl1 == 1)
+                size *= detailSizeModifier1;
             if (detailShipSprites1.Count >= detailCurrentLvl1)
             {
-                //ship.GetComponent<Ship>().SetShip(size * (1 + detailCurrentLvl1 * 0.05f)
-                //    , detailShipSprites1[detailCurrentLvl1 - 1]);
+                ship.GetComponent<Ship>().SetShip(size, detailShipSprites1[detailCurrentLvl1 - 1]);
                 island.SetParameter(shipName + "_shipIcon", detailShipSprites1[detailCurrentLvl1 - 1].name);
             }
-            //else
-                //ship.GetComponent<Ship>().SetSize(size * (1 + detailCurrentLvl1 * 0.05f));
+            else
+                ship.GetComponent<Ship>().SetSize(size);
         }
         else if (detailCurrentLvl2 < detailMaxLvl2)
         {
             detailCurrentLvl2++;
             island.SetParameter(shipName + "_" + detailName2, detailCurrentLvl2);
+            if (detailCurrentLvl2 == 1)
+                size *= detailSizeModifier2;
             if (detailShipSprites2.Count >= detailCurrentLvl2)
             {
-                //ship.GetComponent<Ship>().SetShip(size * (1 + (detailCurrentLvl1 + detailCurrentLvl2) * 0.05f)
-                //    , detailShipSprites1[detailCurrentLvl2 - 1]);
+                ship.GetComponent<Ship>().SetShip(size, detailShipSprites1[detailCurrentLvl2 - 1]);
                 island.SetParameter(shipName + "_shipIcon", detailShipSprites1[detailCurrentLvl2 - 1].name);
             }
-            //else
-                //ship.GetComponent<Ship>().SetSize(size * (1 + (detailCurrentLvl1 + detailCurrentLvl2) * 0.05f));
+            else
+                ship.GetComponent<Ship>().SetSize(size);
         }
         else if (detailCurrentLvl3 < detailMaxLvl3)
         {
             detailCurrentLvl3++;
             island.SetParameter(shipName + "_" + detailName3, detailCurrentLvl3);
+            if (detailCurrentLvl3 == 1)
+                size *= detailSizeModifier3;
             if (detailShipSprites2.Count >= detailCurrentLvl2)
             {
-                //ship.GetComponent<Ship>().SetShip(size * (1 + (detailCurrentLvl1 + detailCurrentLvl2 + detailCurrentLvl3) * 0.05f)
-                //    , detailShipSprites1[detailCurrentLvl2 - 1]);
+                ship.GetComponent<Ship>().SetShip(size, detailShipSprites1[detailCurrentLvl2 - 1]);
                 island.SetParameter(shipName + "_shipIcon", detailShipSprites1[detailCurrentLvl3 - 1].name);
             }
-            //else
-                //ship.GetComponent<Ship>().SetSize(size * (1 + (detailCurrentLvl1 + detailCurrentLvl2 + detailCurrentLvl3) * 0.05f));
+            else
+                ship.GetComponent<Ship>().SetSize(size);
         }
         UpdadeShipInfo();
         if (detailCurrentLvl3 == detailMaxLvl3)
