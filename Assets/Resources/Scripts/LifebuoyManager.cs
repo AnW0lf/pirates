@@ -15,6 +15,8 @@ public class LifebuoyManager : MonoBehaviour
     [Header("Время востановления")]
     public int seconds;
 
+    public GameObject flag, spinButton;
+
     private int max, cur, lvl, s;
     private bool isTimer = false;
 
@@ -44,9 +46,50 @@ public class LifebuoyManager : MonoBehaviour
     private void Update()
     {
         if (cur < max && !isTimer)
+        {
             StartCoroutine(Timer(seconds));
+            if (!timer.gameObject.activeInHierarchy)
+            {
+                timer.gameObject.SetActive(true);
+            }
+        }
         if (cur == max && isTimer)
+        {
             StopAllCoroutines();
+        }
+        if (cur >= max)
+        {
+            if (timer.gameObject.activeInHierarchy)
+            {
+                timer.gameObject.SetActive(false);
+            }
+        }
+
+        // FLAG AND SPIN BUTTON
+        if (cur > 0)
+        {
+            if (!spinButton.GetComponent<Button>().interactable)
+            {
+                spinButton.GetComponent<Button>().interactable = true;
+            }
+
+            if (!flag.activeInHierarchy)
+            {
+                flag.SetActive(true);
+            }
+        }
+        else
+        {
+            if (spinButton.GetComponent<Button>().interactable)
+            {
+                spinButton.GetComponent<Button>().interactable = false;
+            }
+
+            if (flag.activeInHierarchy)
+            {
+                flag.SetActive(false);
+            }
+        }
     }
 
     private void UpdateInfo()
@@ -56,6 +99,7 @@ public class LifebuoyManager : MonoBehaviour
         cur = island.GetParameter(modifierName + "_current", 0);
         bar.fillAmount = (float)cur / max;
         tm.text = cur + "/" + max;
+        flag.GetComponentInChildren<Text>().text = cur.ToString();
     }
 
     public void AddLifebuoy()
@@ -69,6 +113,7 @@ public class LifebuoyManager : MonoBehaviour
         if(cur > 0)
         {
             island.SetParameter(modifierName + "_current", --cur);
+            UpdateInfo();
             return true;
         }
         return false;
@@ -80,7 +125,7 @@ public class LifebuoyManager : MonoBehaviour
         WaitForSeconds wait = new WaitForSeconds(1);
         for (s = seconds; s > 0; --s)
         {
-            timer.prefix = (s / 60).ToString();
+            timer.prefix = "+1 in " + (s / 60).ToString();
             if (s % 60 < 10)
             {
                 island.SetParameter(modifierName + "_timer", s);

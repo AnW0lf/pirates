@@ -31,10 +31,23 @@ public class RouletteRotation : MonoBehaviour
 
     public void Roll(int sectionNumber)
     {
-        if (IsRolling && !lm.SubtractLifebuoy()) return;
-        section = sectionNumber;
-        float angle = Mathf.Abs(sectionNumber * (360f / sectorCount) + ((180f / sectorCount))) % 360f;
-        StartCoroutine(Rolling(angle));
+        if (IsRolling)
+        {
+            return;
+        }
+        else
+        {
+            if (!lm.SubtractLifebuoy())
+            {
+                return;
+            }
+            else
+            {
+                section = sectionNumber;
+                float angle = Mathf.Abs(sectionNumber * (360f / sectorCount) + ((180f / sectorCount))) % 360f;
+                StartCoroutine(Rolling(angle));
+            }
+        }
     }
 
     private IEnumerator Rolling(float angle)
