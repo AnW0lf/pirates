@@ -25637,6 +25637,7 @@ MonoBehaviour:
   direction: 1
   speed: 500
   rotationTime: 1
+  lm: {fileID: 502075262}
   sectorCount: 10
   rewardValue:
   - 0
