@@ -7,11 +7,12 @@ public class BonusGenerator : MonoBehaviour
     public int bonusDelay;
     public GameObject[] bonuses;
 
-    private int activeBonuses, maxBonuses, randomPoint, randomBonus;
+    private int activeBonuses, maxBonuses, randomPoint, randomBonus, curDelay;
     private GameObject _bonus;
 
-    void Start()
+    void OnEnable()
     {
+        curDelay = bonusDelay;
         activeBonuses = 0; maxBonuses = 0;
         StartCoroutine(BonusSpawner());
     }
@@ -25,8 +26,8 @@ public class BonusGenerator : MonoBehaviour
     {
         while (true)
         {
-
-            yield return new WaitForSeconds(bonusDelay);
+            Debug.Log(curDelay);
+            yield return new WaitForSeconds(curDelay);
 
             maxBonuses = 0; activeBonuses = 0;
 

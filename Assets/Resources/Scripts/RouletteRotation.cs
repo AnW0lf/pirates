@@ -24,10 +24,11 @@ public class RouletteRotation : MonoBehaviour
 
     private IEnumerator Rolling(float angle)
     {
+        float curRotationTime = Random.Range(0.8f * rotationTime, 1.2f * rotationTime);
         IsRolling = true;
         float a = .0f;
         Vector3 direction = Vector3.back * (this.direction ? -1f : 1f);
-        while (a < rotationTime)
+        while (a < curRotationTime)
         {
             rect.Rotate(direction, speed * Time.deltaTime);
             a += Time.deltaTime;
