@@ -27,7 +27,7 @@ public class WheelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        wheelCounter.text = "Lifebuoys: " + wheelTokens + "/" + PlayerPrefs.GetFloat("GlobalSpins");
+        //wheelCounter.text = "Lifebuoys: " + wheelTokens + "/" + PlayerPrefs.GetFloat("GlobalSpins");
         //parent.Translate(Vector3.forward * (parent.position.y - (IsOpen ? posOn: posOff)) * Time.deltaTime);
     }
 

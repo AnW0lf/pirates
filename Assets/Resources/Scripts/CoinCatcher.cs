@@ -17,9 +17,9 @@ public class CoinCatcher : MonoBehaviour
         island = Island.Instance();
     }
 
-    private void OnMouseUp()
+    private void Start()
     {
-        CatchCoin();
+        GetComponent<Button>().onClick.AddListener(CatchCoin);
     }
 
     public void ActivateCoin(int money)

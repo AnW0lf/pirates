@@ -8,17 +8,31 @@ public class RouletteRotation : MonoBehaviour
     public float speed, rotationTime;
     public bool IsRolling { get; private set; }
 
+    [Header("Количество секторов")]
+    public int sectorCount;
+
+    [Header("Награда")]
+    public float[] rewardValue;
+    public RewardType[] rewardType;
+
     private RectTransform rect;
+    private int section;
+    private Island island;
+
+    public enum RewardType { Money, Bonus, BlackMark};
 
     private void Awake()
     {
         rect = GetComponent<RectTransform>();
         IsRolling = false;
+        island = Island.Instance();
     }
 
-    public void Roll(float angle)
+    public void Roll(int sectionNumber)
     {
         if (IsRolling) return;
+        section = sectionNumber;
+        float angle = Mathf.Abs(sectionNumber * (360f / sectorCount) + ((180f / sectorCount))) % 360f;
         StartCoroutine(Rolling(angle));
     }
 
@@ -34,13 +48,14 @@ public class RouletteRotation : MonoBehaviour
             a += Time.deltaTime;
             yield return null;
         }
-        a = angle - 180f < 0f ? angle - 180f + 360f : angle - 180f;
+        float r = Random.Range(180f, 360f);
+        a = angle - r < 0f ? angle - r + 360f : angle - r;
         while (Mathf.Abs(rect.localEulerAngles.z - a) >= 4f)
         {
             rect.Rotate(direction, speed * Time.deltaTime);
             yield return null;
         }
-        a = speed * speed / 360f;
+        a = speed * speed / (2f * r);
         float stopSpeed = speed;
         while (Mathf.Abs(rect.localEulerAngles.z - angle) >= 1f && stopSpeed > 0f)
         {
@@ -49,6 +64,22 @@ public class RouletteRotation : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         IsRolling = false;
+        Reward();
     }
 
+    private void Reward()
+    {
+        if (rewardType.Length <= section) return;
+        switch (rewardType[section])
+        {
+            case RewardType.Money:
+                if (rewardValue.Length <= section) return;
+                island.ChangeMoney((int)rewardValue[section]);
+                break;
+            case RewardType.Bonus:
+                break;
+            case RewardType.BlackMark:
+                break;
+        }
+    }
 }

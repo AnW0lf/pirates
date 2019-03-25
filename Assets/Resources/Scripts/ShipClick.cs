@@ -9,12 +9,6 @@ public class ShipClick : MonoBehaviour
     public GameObject flyingText;
     private GameObject _flyingText;
 
-    private void OnMouseUp()
-    {
-        if (!ship.InRaid())
-            ship.BeginRaid();
-    }
-
     // Собираем бонус
     public void OnTriggerEnter2D(Collider2D other)
     {
