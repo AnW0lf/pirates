@@ -105,7 +105,7 @@ public class PierManager : MonoBehaviour
         }
     }
 
-    private void OpenMenu()
+    public void OpenMenu()
     {
         upgradeMenu.GenerateMenu(this);
     }

@@ -49,6 +49,7 @@ public class BonusGenerator : MonoBehaviour
 
                 randomBonus = (int)Random.Range(0f, bonuses.Length);
                 _bonus = Instantiate(bonuses[randomBonus], transform.GetChild(randomPoint));
+                _bonus.transform.localPosition = new Vector3(Random.Range(-_bonus.GetComponent<RectTransform>().sizeDelta.x / 2f, _bonus.GetComponent<RectTransform>().sizeDelta.x / 2f), Random.Range(-_bonus.GetComponent<RectTransform>().sizeDelta.y / 2f, _bonus.GetComponent<RectTransform>().sizeDelta.y / 2f), _bonus.transform.localPosition.z);
                 transform.GetChild(randomPoint).gameObject.GetComponent<BonusPoint>().active = true;
             }
         }

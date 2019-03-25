@@ -9,7 +9,7 @@ public class ShipClick : MonoBehaviour
     public GameObject flyingText;
     private GameObject _flyingText;
 
-    private void OnMouseUpAsButton()
+    private void OnMouseUp()
     {
         if (!ship.InRaid())
             ship.BeginRaid();
