@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ShipClick : MonoBehaviour
 {
     public Ship ship;
+    public LifebuoyManager lifebuoys;
     public GameObject flyingText;
     private GameObject _flyingText;
 
@@ -34,7 +35,7 @@ public class ShipClick : MonoBehaviour
             }
             if (other.gameObject.GetComponent<BonusBehavior>().bonusWheel)
             {
-                WheelManager.wheelTokens += 1;
+                lifebuoys.AddLifebuoy();
                 _flyingText.GetComponent<FlyingText>().wheel = true;
             }
 

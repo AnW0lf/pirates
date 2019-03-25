@@ -4355,6 +4355,7 @@ MonoBehaviour:
   flag: {fileID: 608384970}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  lifebuoys: {fileID: 502075262}
 --- !u!1 &413878822
 GameObject:
   m_ObjectHideFlags: 0
@@ -4996,6 +4997,7 @@ MonoBehaviour:
   flag: {fileID: 15519024}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &474116523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5321,6 +5323,7 @@ MonoBehaviour:
   flag: {fileID: 371150550}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &509415002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6138,6 +6141,7 @@ MonoBehaviour:
   flag: {fileID: 112800653}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &574795771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9227,6 +9231,7 @@ MonoBehaviour:
   flag: {fileID: 331661722}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &819486587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11545,6 +11550,7 @@ MonoBehaviour:
   flag: {fileID: 1094397698}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &961560144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12237,6 +12243,7 @@ MonoBehaviour:
   flag: {fileID: 1196568614}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &1002243224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13319,6 +13326,7 @@ MonoBehaviour:
   flag: {fileID: 534180345}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &1102792148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15317,6 +15325,7 @@ MonoBehaviour:
   flag: {fileID: 281763767}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &1271726491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16582,6 +16591,7 @@ MonoBehaviour:
   flag: {fileID: 693506830}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &1344485248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16842,6 +16852,7 @@ MonoBehaviour:
   flag: {fileID: 275541848}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &1352775271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18578,6 +18589,7 @@ MonoBehaviour:
   flag: {fileID: 1282718690}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &1484323902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21088,6 +21100,7 @@ MonoBehaviour:
   flag: {fileID: 914526500}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &1646693178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24972,6 +24985,7 @@ MonoBehaviour:
   flag: {fileID: 1649251135}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &1974946853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25808,15 +25822,15 @@ MonoBehaviour:
   sectorCount: 10
   rewardValue:
   - 0
-  - 3000
-  - 10000
-  - 0
-  - 5000
-  - 1000
+  - 25
+  - 50
   - 0
   - 100
+  - 300
   - 0
-  - 500
+  - 1500
+  - 0
+  - 10000
   rewardType: 01000000000000000000000001000000000000000000000001000000000000000200000000000000
 --- !u!1 &2060215190
 GameObject:
@@ -26102,6 +26116,7 @@ MonoBehaviour:
   flag: {fileID: 421323252}
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &2076579704
 MonoBehaviour:
   m_ObjectHideFlags: 0

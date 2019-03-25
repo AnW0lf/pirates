@@ -54,6 +54,9 @@ public class PierManager : MonoBehaviour
     private Island island;
     private GameObject ship;
 
+    //Счетчик спасательных кругов. Для расчета бонусов
+    public LifebuoyManager lifebuoys;
+
     private void Awake()
     {
         island = Island.Instance();
@@ -118,6 +121,7 @@ public class PierManager : MonoBehaviour
         if (ship != null) return;
         ship = Instantiate(shipPref, ships);
         ship.transform.SetAsFirstSibling();
+        ship.GetComponent<Ship>()._icon.GetComponent<ShipClick>().lifebuoys = lifebuoys;
         ship.GetComponent<Ship>()
             .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward());
     }
