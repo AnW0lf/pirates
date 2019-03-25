@@ -64,6 +64,16 @@ public class LifebuoyManager : MonoBehaviour
         UpdateInfo();
     }
 
+    public bool SubtractLifebuoy()
+    {
+        if(cur > 0)
+        {
+            island.SetParameter(modifierName + "_current", --cur);
+            return true;
+        }
+        return false;
+    }
+
     private IEnumerator Timer(int seconds)
     {
         isTimer = true;

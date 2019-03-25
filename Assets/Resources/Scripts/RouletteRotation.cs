@@ -7,6 +7,7 @@ public class RouletteRotation : MonoBehaviour
     public bool direction;
     public float speed, rotationTime;
     public bool IsRolling { get; private set; }
+    public LifebuoyManager lm;
 
     [Header("Количество секторов")]
     public int sectorCount;
@@ -30,7 +31,7 @@ public class RouletteRotation : MonoBehaviour
 
     public void Roll(int sectionNumber)
     {
-        if (IsRolling) return;
+        if (IsRolling && !lm.SubtractLifebuoy()) return;
         section = sectionNumber;
         float angle = Mathf.Abs(sectionNumber * (360f / sectorCount) + ((180f / sectorCount))) % 360f;
         StartCoroutine(Rolling(angle));
