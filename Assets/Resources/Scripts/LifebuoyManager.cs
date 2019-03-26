@@ -48,10 +48,6 @@ public class LifebuoyManager : MonoBehaviour
         if (cur < max && !isTimer)
         {
             StartCoroutine(Timer(seconds));
-            if (!timer.gameObject.activeInHierarchy)
-            {
-                timer.gameObject.SetActive(true);
-            }
         }
         if (cur == max && isTimer)
         {
@@ -62,6 +58,13 @@ public class LifebuoyManager : MonoBehaviour
             if (timer.gameObject.activeInHierarchy)
             {
                 timer.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            if (!timer.gameObject.activeInHierarchy)
+            {
+                timer.gameObject.SetActive(true);
             }
         }
 

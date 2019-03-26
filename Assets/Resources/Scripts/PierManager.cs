@@ -174,7 +174,7 @@ public class PierManager : MonoBehaviour
             detailCurrentLvl1++;
             island.SetParameter(shipName + "_" + detailName1, detailCurrentLvl1);
             if (detailCurrentLvl1 == 1)
-                size *= detailSizeModifier1;
+                size += detailSizeModifier1;
             if (detailShipSprites1.Count >= detailCurrentLvl1)
             {
                 ship.GetComponent<Ship>().SetShip(size, detailShipSprites1[detailCurrentLvl1 - 1]);
@@ -188,7 +188,7 @@ public class PierManager : MonoBehaviour
             detailCurrentLvl2++;
             island.SetParameter(shipName + "_" + detailName2, detailCurrentLvl2);
             if (detailCurrentLvl2 == 1)
-                size *= detailSizeModifier2;
+                size += detailSizeModifier2;
             if (detailShipSprites2.Count >= detailCurrentLvl2)
             {
                 ship.GetComponent<Ship>().SetShip(size, detailShipSprites1[detailCurrentLvl2 - 1]);
@@ -202,7 +202,7 @@ public class PierManager : MonoBehaviour
             detailCurrentLvl3++;
             island.SetParameter(shipName + "_" + detailName3, detailCurrentLvl3);
             if (detailCurrentLvl3 == 1)
-                size *= detailSizeModifier3;
+                size += detailSizeModifier3;
             if (detailShipSprites2.Count >= detailCurrentLvl2)
             {
                 ship.GetComponent<Ship>().SetShip(size, detailShipSprites1[detailCurrentLvl2 - 1]);
