@@ -6598,6 +6598,7 @@ MonoBehaviour:
   buttonColors:
   - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  lifebuoys: {fileID: 1716059816}
 --- !u!114 &433251333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8871,6 +8872,7 @@ MonoBehaviour:
   buttonColors:
   - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  lifebuoys: {fileID: 888275832}
 --- !u!114 &582072150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13504,6 +13506,7 @@ MonoBehaviour:
   buttonColors:
   - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &851836014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13622,6 +13625,7 @@ MonoBehaviour:
   buttonColors:
   - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &855860229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14920,6 +14924,7 @@ MonoBehaviour:
   buttonColors:
   - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  lifebuoys: {fileID: 1716059816}
 --- !u!114 &935118089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16666,6 +16671,7 @@ MonoBehaviour:
   buttonColors:
   - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  lifebuoys: {fileID: 888275832}
 --- !u!114 &1008909848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24343,6 +24349,7 @@ MonoBehaviour:
   buttonColors:
   - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  lifebuoys: {fileID: 1716059816}
 --- !u!114 &1443409986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26523,6 +26530,7 @@ MonoBehaviour:
   buttonColors:
   - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  lifebuoys: {fileID: 502075262}
 --- !u!114 &1573445910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28550,6 +28558,7 @@ MonoBehaviour:
   buttonColors:
   - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  lifebuoys: {fileID: 888275832}
 --- !u!114 &1677833584
 MonoBehaviour:
   m_ObjectHideFlags: 0

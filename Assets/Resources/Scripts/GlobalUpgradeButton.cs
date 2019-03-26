@@ -12,6 +12,7 @@ public class GlobalUpgradeButton : MonoBehaviour
     public PriceManager priceText;
     public Image buttonIcon;
     public Color[] buttonColors;
+    public LifebuoyManager lifebuoys;
 
     private int price;
     private float reward;
@@ -55,6 +56,7 @@ public class GlobalUpgradeButton : MonoBehaviour
         if (island.ChangeMoney(-button.price))
         {
             island.SetParameter(modifierName + "_level", island.GetParameter(modifierName + "_level", 0) + 1);
+            lifebuoys.UpdateInfo();
             SetButtonPrefs();
         }
     }
