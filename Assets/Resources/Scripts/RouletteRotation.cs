@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RouletteRotation : MonoBehaviour
 {
+    public string rouletteName;
     public bool direction;
     public float speed, rotationTime;
     public bool IsRolling { get; private set; }
@@ -16,12 +17,13 @@ public class RouletteRotation : MonoBehaviour
     [Header("Награда")]
     public float[] rewardValue;
     public RewardType[] rewardType;
+    public int[] nums;
 
     private RectTransform rect;
-    private int section;
+    private int section, num;
     private Island island;
 
-    public enum RewardType { Money, Bonus, BlackMark};
+    public enum RewardType { Money, Bonus, BlackMark };
 
     private void Awake()
     {
@@ -30,24 +32,31 @@ public class RouletteRotation : MonoBehaviour
         island = Island.Instance();
     }
 
-    public void Roll(int sectionNumber)
+    private void Start()
     {
-        if (IsRolling)
+        island.InitParameter(rouletteName + "_num", 0);
+        num = island.GetParameter(rouletteName + "_num", 0);
+    }
+
+    public void Roll()
+    {
+        if (IsRolling || !lm.SubtractLifebuoy())
         {
             return;
         }
         else
         {
-            if (!lm.SubtractLifebuoy())
+            if (num < nums.Length)
             {
-                return;
+                section = nums[num++];
+                island.SetParameter(rouletteName + "_num", num);
             }
             else
             {
-                section = sectionNumber;
-                float angle = Mathf.Abs(sectionNumber * (360f / sectorCount) + ((180f / sectorCount))) % 360f;
-                StartCoroutine(Rolling(angle));
+                section = Random.Range(0, sectorCount);
             }
+            float angle = Mathf.Abs(section * (360f / sectorCount) + ((180f / sectorCount))) % 360f;
+            StartCoroutine(Rolling(angle));
         }
     }
 
