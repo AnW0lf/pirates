@@ -52,6 +52,7 @@ public class LifebuoyManager : MonoBehaviour
         if (cur == max && isTimer)
         {
             StopAllCoroutines();
+            isTimer = false;
         }
         if (cur >= max)
         {
