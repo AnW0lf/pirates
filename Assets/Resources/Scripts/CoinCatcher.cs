@@ -33,6 +33,9 @@ public class CoinCatcher : MonoBehaviour
     {
         island.ChangeMoney(money);
 
+        //Write Time for Offline Reward
+        PlayerPrefs.SetString("QuitTime", DateTime.Now.ToString());
+
         // Set modifiers to 1
         GetComponentInParent<ShipClick>().ship.rewardModifier = 1;
         GetComponentInParent<ShipClick>().ship.raidTimeModifier = 1;
