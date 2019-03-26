@@ -100,7 +100,7 @@ public class RouletteRotation : MonoBehaviour
                 island.ChangeMoney((int)rewardValue[section]);
                 break;
             case RewardType.Bonus:
-                bg.Bonus((int)rewardValue[section]);
+                bg.Bonus((int)rewardValue[section], 3);
                 break;
             case RewardType.BlackMark:
                 break;
