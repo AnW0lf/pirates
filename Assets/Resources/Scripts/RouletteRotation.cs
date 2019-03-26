@@ -8,6 +8,7 @@ public class RouletteRotation : MonoBehaviour
     public float speed, rotationTime;
     public bool IsRolling { get; private set; }
     public LifebuoyManager lm;
+    public BonusGenerator bg;
 
     [Header("Количество секторов")]
     public int sectorCount;
@@ -83,14 +84,14 @@ public class RouletteRotation : MonoBehaviour
 
     private void Reward()
     {
-        if (rewardType.Length <= section) return;
+        if (rewardType.Length <= section || rewardValue.Length <= section) return;
         switch (rewardType[section])
         {
             case RewardType.Money:
-                if (rewardValue.Length <= section) return;
                 island.ChangeMoney((int)rewardValue[section]);
                 break;
             case RewardType.Bonus:
+                bg.Bonus((int)rewardValue[section]);
                 break;
             case RewardType.BlackMark:
                 break;

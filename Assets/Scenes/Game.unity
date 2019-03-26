@@ -13161,6 +13161,7 @@ MonoBehaviour:
   speed: 500
   rotationTime: 1
   lm: {fileID: 888275832}
+  bg: {fileID: 0}
   sectorCount: 10
   rewardValue:
   - 0
@@ -20644,7 +20645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00048828125}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 5760}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1233723226
@@ -32681,6 +32682,7 @@ MonoBehaviour:
   speed: 500
   rotationTime: 1
   lm: {fileID: 1716059816}
+  bg: {fileID: 0}
   sectorCount: 10
   rewardValue:
   - 0
@@ -35047,15 +35049,16 @@ MonoBehaviour:
   speed: 500
   rotationTime: 1
   lm: {fileID: 502075262}
+  bg: {fileID: 945456226}
   sectorCount: 10
   rewardValue:
   - 0
   - 25
   - 50
-  - 0
+  - 1
   - 100
   - 300
-  - 0
+  - 2
   - 1500
   - 0
   - 10000
