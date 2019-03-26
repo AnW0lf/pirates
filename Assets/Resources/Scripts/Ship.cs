@@ -108,7 +108,9 @@ public class Ship : MonoBehaviour
         inRaid = false;
         UpdateShip();
 
-        while (Mathf.Abs(_iconRT.localPosition.y) > 5f)
+        float error = Mathf.Abs(speedLinear * speedRaidModifier * Time.deltaTime * 2f);
+
+        while (Mathf.Abs(_iconRT.localPosition.y) > error)
         {
             _iconRT.localPosition += Vector3.down * speedLinear * Time.deltaTime;
             yield return null;
