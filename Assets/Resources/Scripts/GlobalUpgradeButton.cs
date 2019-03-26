@@ -39,7 +39,7 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private void SetButtonPrefs()
     {
-        price = (int)(startPrice * Mathf.Pow(1.3f, (island.GetParameter(modifierName + "_level", 0) - 1)));
+        price = (int)(startPrice * Mathf.Pow(1.5f, (island.GetParameter(modifierName + "_level", 0) - 1)));
         reward = startReward + modifier * (island.GetParameter(modifierName + "_level", 0) - 1);
 
         descriptionText.text = descriptionName;
