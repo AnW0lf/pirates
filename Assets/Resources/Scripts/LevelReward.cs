@@ -23,7 +23,7 @@ public class LevelReward : MonoBehaviour
         {
             foreach (Transform child in ships.transform)
             {
-                money += (int)(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier);
+                money += (int)(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * PlayerPrefs.GetInt("Level"));
             }
         }
 
