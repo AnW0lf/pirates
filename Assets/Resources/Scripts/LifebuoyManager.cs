@@ -123,6 +123,12 @@ public class LifebuoyManager : MonoBehaviour
         return false;
     }
 
+    public void MaximizeLifebuoys()
+    {
+        island.SetParameter(modifierName + "_current", max);
+        UpdateInfo();
+    }
+
     private IEnumerator Timer(int seconds)
     {
         isTimer = true;
