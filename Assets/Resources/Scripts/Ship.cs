@@ -64,7 +64,7 @@ public class Ship : MonoBehaviour
         _rise.GetComponent<RectTransform>().sizeDelta = new Vector2(rise, 10f);
         _rise.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * angle;
         _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
-        _icon.GetComponent<RectTransform>().localScale = Vector3.right * size + Vector3.up * size + Vector3.forward;
+        _icon.GetComponent<RectTransform>().localScale = Vector3.right * size * (!direction ? 1 : -1) + Vector3.up * size + Vector3.forward;
         speedAngle = Math.Abs(speedAngle) * (direction ? 1 : -1);
         speedLinear = Math.Abs(speedLinear) * (direction ? 1 : -1);
 
@@ -103,6 +103,7 @@ public class Ship : MonoBehaviour
         _coin.GetComponent<CoinCatcher>().ActivateCoin((int)(reward * rewardModifier * PlayerPrefs.GetFloat("GlobalEarnings")));
         direction = !direction;
         _iconRT.localPosition = Vector3.left * rise + Vector3.up * riseOutOfScreen * (direction ? 1 : -1);
+        _icon.GetComponent<RectTransform>().localScale = Vector3.right * size * (!direction ? 1 : -1) + Vector3.up * size + Vector3.forward;
         _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
 
         inRaid = false;
@@ -119,7 +120,6 @@ public class Ship : MonoBehaviour
 
         isRotate = true;
     }
-
 
     public void SetLocation(float rise, float angle)
     {
