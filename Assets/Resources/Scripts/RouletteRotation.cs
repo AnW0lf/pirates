@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RouletteRotation : MonoBehaviour
 {
@@ -10,18 +11,22 @@ public class RouletteRotation : MonoBehaviour
     public bool IsRolling { get; private set; }
     public LifebuoyManager lm;
     public BonusGenerator bg;
+    public GameObject flyingReward, arrow;
 
     [Header("Количество секторов")]
     public int sectorCount;
 
     [Header("Награда")]
+    public GameObject[] rewardObjects;
     public float[] rewardValue;
     public RewardType[] rewardType;
     public int[] nums;
+    public GameObject spinButton;
 
     private RectTransform rect;
     private int section, num;
     private Island island;
+    private GameObject _flyingReward;
 
     public enum RewardType { Money, Bonus, BlackMark };
 
@@ -36,6 +41,20 @@ public class RouletteRotation : MonoBehaviour
     {
         island.InitParameter(rouletteName + "_num", 0);
         num = island.GetParameter(rouletteName + "_num", 0);
+    }
+
+    private void Update()
+    {
+        if (IsRolling)
+        {
+            if (spinButton.GetComponent<Button>().interactable)
+                spinButton.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            if (!spinButton.GetComponent<Button>().interactable)
+                spinButton.GetComponent<Button>().interactable = true;
+        }
     }
 
     public void Roll()
@@ -105,5 +124,10 @@ public class RouletteRotation : MonoBehaviour
             case RewardType.BlackMark:
                 break;
         }
+
+        _flyingReward = Instantiate(flyingReward, transform.parent.transform);
+        _flyingReward.GetComponent<FlyingWheelReward>().text.text = rewardObjects[section].GetComponentInChildren<Text>().text;
+        _flyingReward.GetComponent<FlyingWheelReward>().image.sprite = rewardObjects[section].GetComponentInChildren<Image>().sprite;
+        _flyingReward.GetComponent<FlyingWheelReward>().image.color = rewardObjects[section].GetComponentInChildren<Image>().color;
     }
 }

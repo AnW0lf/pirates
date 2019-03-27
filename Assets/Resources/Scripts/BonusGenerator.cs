@@ -79,7 +79,7 @@ public class BonusGenerator : MonoBehaviour
         for (int i = 0; children.Count > 0 && i < count; i++)
         {
             Transform child = children[Random.Range(0, children.Count)];
-            SetBonus(child, Random.Range(0, bonuses.Length));
+            SetBonus(child, bonus);
             children.Remove(child);
         }
     }

@@ -15,7 +15,7 @@ public class LifebuoyManager : MonoBehaviour
     [Header("Время востановления")]
     public int seconds;
 
-    public GameObject flag, spinButton;
+    public GameObject flag, spinButton, wheelButton;
 
     private int max, cur, lvl, s;
     private bool isTimer = false;
@@ -77,6 +77,11 @@ public class LifebuoyManager : MonoBehaviour
                 spinButton.GetComponent<Button>().interactable = true;
             }
 
+            if (wheelButton.GetComponent<Image>().color != new Color(1f, 1f, 1f))
+            {
+                wheelButton.GetComponent<Image>().color = new Color(1f, 1f, 1f);
+            }
+
             if (!flag.activeInHierarchy)
             {
                 flag.SetActive(true);
@@ -87,6 +92,11 @@ public class LifebuoyManager : MonoBehaviour
             if (spinButton.GetComponent<Button>().interactable)
             {
                 spinButton.GetComponent<Button>().interactable = false;
+            }
+
+            if (wheelButton.GetComponent<Image>().color == new Color(1f, 1f, 1f))
+            {
+                wheelButton.GetComponent<Image>().color = new Color(0.85f, 0.85f, 0.85f);
             }
 
             if (flag.activeInHierarchy)
@@ -125,7 +135,10 @@ public class LifebuoyManager : MonoBehaviour
 
     public void MaximizeLifebuoys()
     {
-        island.SetParameter(modifierName + "_current", max);
+        if (cur < max)
+        {
+            island.SetParameter(modifierName + "_current", max);
+        }
         UpdateInfo();
     }
 
