@@ -9,6 +9,7 @@ public class PierManager : MonoBehaviour
     public Sprite shipIcon;
     public int minLvl;
     public string shipDescription;
+    public bool black = false;
     [Header("Префаб корабля")]
     public GameObject shipPref;
     [Header("Начальная позиция")]
@@ -163,7 +164,7 @@ public class PierManager : MonoBehaviour
     public void Upgrade()
     {
         if (maxLvl) return;
-        if (!island.ChangeMoney(-GetUpgradeCost())) return;
+        if (!black && !island.ChangeMoney(-GetUpgradeCost())) return;
         if (!shipExist)
         {
             shipExist = true;

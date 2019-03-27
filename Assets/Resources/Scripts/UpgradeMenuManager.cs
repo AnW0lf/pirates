@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private PierManager pier;
     private Island island;
+    private bool isBlackUpgraded = true;
 
     private void Awake()
     {
@@ -22,13 +24,16 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (!pier.maxLvl && island.Money >= pier.GetUpgradeCost())
+        if (pier.black && !isBlackUpgraded && !pier.maxLvl && island.Money >= pier.GetUpgradeCost())
         {
             if (!upgradeBtn.interactable)
                 upgradeBtn.interactable = true;
         }
         else
-            upgradeBtn.interactable = false;
+        {
+            if (upgradeBtn.interactable)
+                upgradeBtn.interactable = false;
+        }
     }
 
     public void GenerateMenu(PierManager pier)
@@ -39,11 +44,23 @@ public class UpgradeMenuManager : MonoBehaviour
         upgradeBtn.onClick.RemoveAllListeners();
         upgradeBtn.onClick.AddListener(pier.Upgrade);
         upgradeBtn.onClick.AddListener(UpdateInfo);
+        if (pier.black)
+            isBlackUpgraded = false;
     }
 
     private void UpdateInfo()
     {
-        if (pier.minLvl > island.Level)
+        if (pier.black)
+        {
+            BlackShip();
+            if (!pier.shipExist)
+                NotBought();
+            else if (pier.maxLvl)
+                MaxLevel();
+            else
+                Bought();
+        }
+        else if (pier.minLvl > island.Level)
             Locked();
         else if (!pier.shipExist)
             NotBought();
@@ -194,5 +211,17 @@ public class UpgradeMenuManager : MonoBehaviour
         tm.text = text;
         tm.prefix = prefix;
         tm.postfix = postfix;
+    }
+
+    private void BlackShip()
+    {
+        exitBtn.gameObject.SetActive(false);
+        upgradeBtn.onClick.AddListener(IsBlackUpgraded);
+    }
+
+    private void IsBlackUpgraded()
+    {
+        isBlackUpgraded = true;
+        exitBtn.gameObject.SetActive(true);
     }
 }

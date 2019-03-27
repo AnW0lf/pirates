@@ -12,6 +12,7 @@ public class RouletteRotation : MonoBehaviour
     public LifebuoyManager lm;
     public BonusGenerator bg;
     public GameObject flyingReward, arrow;
+    public PierManager blackShip;
 
     [Header("Количество секторов")]
     public int sectorCount;
@@ -122,6 +123,7 @@ public class RouletteRotation : MonoBehaviour
                 bg.Bonus((int)rewardValue[section], 3);
                 break;
             case RewardType.BlackMark:
+                blackShip.OpenMenu();
                 break;
         }
 
