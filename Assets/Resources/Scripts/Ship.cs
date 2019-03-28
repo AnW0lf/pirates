@@ -105,7 +105,10 @@ public class Ship : MonoBehaviour
         }
     }
 
-
+    public bool IsRotate()
+    {
+        return isRotate;
+    }
 
     private IEnumerator Raid()
     {
