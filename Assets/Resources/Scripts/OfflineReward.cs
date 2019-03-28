@@ -66,6 +66,9 @@ public class OfflineReward : MonoBehaviour
 
         GetComponent<Text>().text = money.ToString();
 
+        //Write Time for Offline Reward
+        PlayerPrefs.SetString("QuitTime", DateTime.Now.ToString());
+
         if (money == 0)
         {
             window.SetActive(false);
@@ -74,9 +77,6 @@ public class OfflineReward : MonoBehaviour
 
     public void AddOfflineReward()
     {
-        //Write Time for Offline Reward
-        PlayerPrefs.SetString("QuitTime", DateTime.Now.ToString());
-
         island.ChangeMoney(money);
     }
 }

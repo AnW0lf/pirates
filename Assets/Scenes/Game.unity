@@ -1357,6 +1357,7 @@ GameObject:
   - component: {fileID: 71592725}
   - component: {fileID: 71592727}
   - component: {fileID: 71592728}
+  - component: {fileID: 71592729}
   m_Layer: 0
   m_Name: Island
   m_TagString: Untagged
@@ -1486,6 +1487,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ships: {fileID: 453755324}
+--- !u!111 &71592729
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71592723}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &78038004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,28 +2175,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f8db58e40c0fe479c50e714b197b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipIcon: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
+  shipIcon: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
   minLvl: 0
-  shipDescription: Choice of the true corsair.
+  shipDescription: Fifteen men on the dead man's chest!
   black: 1
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 135
-  rise: 425
-  angle: 0
+  size: 250
+  rise: 500
+  angle: 300
   shipName: BlackShip1
-  startPrice: 10
-  startRaidTime: 5
-  startReward: 12
+  startPrice: 1
+  startRaidTime: 60
+  startReward: 300
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 20
-  detailCostIncrease1: 10
-  detailChangeReward1: 6
+  detailStartCost1: 1
+  detailCostIncrease1: 0
+  detailChangeReward1: 150
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
@@ -2187,19 +2204,19 @@ MonoBehaviour:
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 50
-  detailCostIncrease2: 20
+  detailStartCost2: 1
+  detailCostIncrease2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -1
+  detailChangeRaidTime2: -6
   detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 120
-  detailCostIncrease3: 30
-  detailChangeReward3: 10
+  detailStartCost3: 1
+  detailCostIncrease3: 0
+  detailChangeReward3: 350
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
@@ -8242,28 +8259,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f8db58e40c0fe479c50e714b197b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipIcon: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
-  minLvl: 50
-  shipDescription: Choice of the true corsair.
+  shipIcon: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
+  minLvl: 0
+  shipDescription: Fifteen men on the dead man's chest!
   black: 1
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 135
-  rise: 425
-  angle: 0
+  size: 250
+  rise: 500
+  angle: 300
   shipName: BlackShip3
   startPrice: 1
-  startRaidTime: 5
-  startReward: 1
+  startRaidTime: 60
+  startReward: 300
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
-  detailName1: Body
+  detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 2
-  detailCostIncrease1: 1
-  detailChangeReward1: 2
+  detailStartCost1: 1
+  detailCostIncrease1: 0
+  detailChangeReward1: 150
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
@@ -8271,28 +8288,28 @@ MonoBehaviour:
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 12
-  detailCostIncrease2: 4
+  detailStartCost2: 1
+  detailCostIncrease2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -1
+  detailChangeRaidTime2: -6
   detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 35
-  detailCostIncrease3: 7
-  detailChangeReward3: 3
+  detailStartCost3: 1
+  detailCostIncrease3: 0
+  detailChangeReward3: 350
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1
   maxLvl: 0
-  flag: {fileID: 95956509}
+  flag: {fileID: 1058226770}
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 1634620422}
+  ships: {fileID: 453755324}
   lifebuoys: {fileID: 502075262}
 --- !u!114 &529420254
 MonoBehaviour:
@@ -11682,6 +11699,7 @@ GameObject:
   - component: {fileID: 734579070}
   - component: {fileID: 734579073}
   - component: {fileID: 734579072}
+  - component: {fileID: 734579074}
   m_Layer: 0
   m_Name: Island
   m_TagString: Untagged
@@ -11811,6 +11829,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!111 &734579074
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734579068}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &736115662
 GameObject:
   m_ObjectHideFlags: 0
@@ -12623,6 +12657,7 @@ GameObject:
   - component: {fileID: 775851543}
   - component: {fileID: 775851546}
   - component: {fileID: 775851545}
+  - component: {fileID: 775851547}
   m_Layer: 0
   m_Name: Island
   m_TagString: Untagged
@@ -12752,6 +12787,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!111 &775851547
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775851541}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &776003653
 GameObject:
   m_ObjectHideFlags: 0
@@ -13276,7 +13327,7 @@ MonoBehaviour:
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
-  detailName1: Body
+  detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
   detailStartCost1: 16250
@@ -18794,7 +18845,7 @@ MonoBehaviour:
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
-  detailName1: Body
+  detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
   detailStartCost1: 1910
@@ -21677,7 +21728,7 @@ MonoBehaviour:
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
-  detailName1: Body
+  detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
   detailStartCost1: 142500
@@ -23696,57 +23747,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f8db58e40c0fe479c50e714b197b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipIcon: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
-  minLvl: 25
-  shipDescription: Choice of the true corsair.
+  shipIcon: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
+  minLvl: 0
+  shipDescription: Fifteen men on the dead man's chest!
   black: 1
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 135
-  rise: 425
-  angle: 0
+  size: 250
+  rise: 500
+  angle: 300
   shipName: BlackShip2
-  startPrice: 1000000
-  startRaidTime: 5
-  startReward: 12
+  startPrice: 1
+  startRaidTime: 60
+  startReward: 300
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 2000000
-  detailCostIncrease1: 1000000
-  detailChangeReward1: 6
+  detailStartCost1: 1
+  detailCostIncrease1: 0
+  detailChangeReward1: 150
   detailChangeRaidTime1: 0
-  detailSizeModifier1: 0
+  detailSizeModifier1: 0.02
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 5000000
-  detailCostIncrease2: 2000000
+  detailStartCost2: 1
+  detailCostIncrease2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -1
-  detailSizeModifier2: 0
+  detailChangeRaidTime2: -6
+  detailSizeModifier2: 0.02
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 12000000
-  detailCostIncrease3: 3000000
-  detailChangeReward3: 10
+  detailStartCost3: 1
+  detailCostIncrease3: 0
+  detailChangeReward3: 350
   detailChangeRaidTime3: 0
-  detailSizeModifier3: 0
+  detailSizeModifier3: 0.02
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
-  shipExist: 0
+  shipExist: 1
   maxLvl: 0
-  flag: {fileID: 652519007}
+  flag: {fileID: 1058226770}
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 1533493862}
+  ships: {fileID: 453755324}
   lifebuoys: {fileID: 502075262}
 --- !u!114 &1361359933
 MonoBehaviour:
@@ -27420,7 +27471,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: 430, y: 134}
+  m_SizeDelta: {x: 430, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1522836449
 MonoBehaviour:
@@ -27469,7 +27520,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.7
+    m_LineSpacing: 0.75
   m_Text: Unlock 255[c]
 --- !u!222 &1522836451
 CanvasRenderer:
@@ -32945,7 +32996,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 300}
+  m_SizeDelta: {x: 600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871181660
 MonoBehaviour:
@@ -35994,7 +36045,7 @@ MonoBehaviour:
   - 0
   - 10000
   rewardType: 01000000000000000000000001000000000000000000000001000000000000000200000000000000
-  nums: 04000000010000000000000005000000010000000200000001000000030000000400000006000000020000000000000002000000070000000100000001000000030000000400000006000000020000000000000001000000010000000000000002000000090000000400000001000000000000000500000001000000020000000300000004000000060000000500000005000000020000000000000007000000
+  nums: 04000000010000000000000005000000010000000200000001000000030000000400000006000000020000000000000002000000070000000100000001000000030000000400000006000000020000000000000007000000010000000000000008000000
   spinButton: {fileID: 413878822}
 --- !u!1 &2060215190
 GameObject:
@@ -37441,7 +37492,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 375}
-  m_SizeDelta: {x: 600, y: 220}
+  m_SizeDelta: {x: 625, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2122078283
 MonoBehaviour:

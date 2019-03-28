@@ -21,11 +21,6 @@ public class BonusGenerator : MonoBehaviour
         StopAllCoroutines();
     }
 
-    void Update()
-    {
-        
-    }
-
     IEnumerator BonusSpawner()
     {
         while (true)

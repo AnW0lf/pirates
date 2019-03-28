@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class LifebuoyManager : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class LifebuoyManager : MonoBehaviour
 
     public GameObject flag, spinButton, wheelButton;
 
-    private int max, cur, lvl, s;
+    private int max, cur, lvl, s, lifebuoysOffline;
     private bool isTimer = false;
 
 
@@ -33,12 +34,15 @@ public class LifebuoyManager : MonoBehaviour
     {
         modifierName = upgrade.modifierName;
         island.InitParameter(modifierName + "_level", 1);
-        island.InitParameter(modifierName + "_current", 0);
+        island.InitParameter(modifierName + "_current", 3);
         island.InitParameter(modifierName + "_timer", 0);
         lvl = island.GetParameter(modifierName + "_level", 0);
         max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
         cur = island.GetParameter(modifierName + "_current", 0);
         s = island.GetParameter(modifierName + "_timer", 0);
+
+        LifebuoysOffline();
+
         UpdateInfo();
         if (s != 0) StartCoroutine(Timer(s));
     }
@@ -161,6 +165,37 @@ public class LifebuoyManager : MonoBehaviour
         AddLifebuoy();
         isTimer = false;
     }
+
+    private void LifebuoysOffline()
+    {
+        if (PlayerPrefs.HasKey("QuitTime"))
+        {
+            OfflineReward.ts = DateTime.Now - DateTime.Parse(PlayerPrefs.GetString("QuitTime"));
+        }
+        else
+        {
+            OfflineReward.ts = DateTime.Now - DateTime.Now;
+        }
+        int timeModifier = (((int)OfflineReward.ts.Seconds)) + (((int)OfflineReward.ts.Minutes) * 60) + (((int)OfflineReward.ts.Hours) * 60 * 60) + (((int)OfflineReward.ts.Days) * 60 * 60 * 24);
+
+        lifebuoysOffline = timeModifier / seconds;
+
+        if (lifebuoysOffline > 0)
+        {
+            for (int i = 0; i < lifebuoysOffline; i++)
+            {
+                if (cur < max)
+                {
+                    AddLifebuoy();
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+    }
+
 
     private void OnApplicationPause(bool pause)
     {

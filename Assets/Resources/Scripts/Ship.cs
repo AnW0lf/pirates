@@ -89,6 +89,24 @@ public class Ship : MonoBehaviour
         }
     }
 
+    public void BeginRaidFromIslandClick()
+    {
+        if (!inRaid)
+        {
+            if (isRotate)
+            {
+                inRaid = true;
+                if (_coin.gameObject.activeInHierarchy)
+                    _coin.GetComponent<CoinCatcher>().CatchCoin();
+                StopAllCoroutines();
+                StartCoroutine(Raid());
+
+            }
+        }
+    }
+
+
+
     private IEnumerator Raid()
     {
         isRotate = false;
@@ -119,6 +137,8 @@ public class Ship : MonoBehaviour
 
 
         isRotate = true;
+        if (_coin.gameObject.activeInHierarchy)
+            _coin.GetComponent<CoinCatcher>().CatchCoin();
     }
 
     public void SetLocation(float rise, float angle)
@@ -161,5 +181,10 @@ public class Ship : MonoBehaviour
         SetShip(size, sprite);
         SetSpeed(speedAngle, speedLinear, speedRaidModifier);
         SetRaid(raidTime, reward);
+    }
+
+    public bool isShipRotating()
+    {
+        return isRotate;
     }
 }

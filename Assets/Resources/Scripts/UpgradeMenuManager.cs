@@ -24,7 +24,7 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (pier.black && !isBlackUpgraded && !pier.maxLvl && island.Money >= pier.GetUpgradeCost())
+        if ((pier.black && !isBlackUpgraded) || (!pier.black && !pier.maxLvl && island.Money >= pier.GetUpgradeCost()))
         {
             if (!upgradeBtn.interactable)
                 upgradeBtn.interactable = true;
@@ -34,18 +34,32 @@ public class UpgradeMenuManager : MonoBehaviour
             if (upgradeBtn.interactable)
                 upgradeBtn.interactable = false;
         }
+
+        if (pier.black && !isBlackUpgraded)
+        {
+            exitBtn.gameObject.SetActive(false);
+        }
+        else
+        {
+            exitBtn.gameObject.SetActive(true);
+        }
     }
 
     public void GenerateMenu(PierManager pier)
     {
         gameObject.SetActive(true);
         this.pier = pier;
-        UpdateInfo();
-        upgradeBtn.onClick.RemoveAllListeners();
-        upgradeBtn.onClick.AddListener(pier.Upgrade);
-        upgradeBtn.onClick.AddListener(UpdateInfo);
         if (pier.black)
             isBlackUpgraded = false;
+
+        UpdateInfo();
+        upgradeBtn.onClick.RemoveAllListeners();
+        if (pier.black)
+        {
+            BlackShip();
+        }
+        upgradeBtn.onClick.AddListener(pier.Upgrade);
+        upgradeBtn.onClick.AddListener(UpdateInfo);
     }
 
     private void UpdateInfo()
@@ -79,7 +93,7 @@ public class UpgradeMenuManager : MonoBehaviour
         SetState(rewardTM, pier.GetReward().ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
-        SetState(descriptionTM, "Choice of the true corsair");
+        SetState(descriptionTM, pier.shipDescription);
         SetState(upBtnTM, pier.minLvl.ToString(), "LEVEl ");
         SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
 
@@ -107,8 +121,21 @@ public class UpgradeMenuManager : MonoBehaviour
         SetState(rewardTM, pier.GetReward().ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
-        SetState(descriptionTM, "Choice of the true corsair");
-        SetState(upBtnTM, pier.GetUpgradeCost().ToString(), "Unlock ");
+        SetState(descriptionTM, pier.shipDescription);
+
+        if (!pier.black)
+        {
+            SetState(upBtnTM, pier.GetUpgradeCost().ToString(), "Unlock ");
+        }
+        else if (!isBlackUpgraded)
+        {
+            SetState(upBtnTM, "Unlock");
+        }
+        else
+        {
+            SetState(upBtnTM, "Catch upgrade in Lucky Wheel");
+        }
+
         SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
 
         if (!icon.sprite.Equals(pier.shipIcon))
@@ -167,7 +194,19 @@ public class UpgradeMenuManager : MonoBehaviour
         SetState(bonusTM, bonus);
 
         descriptionTM.gameObject.SetActive(false);
-        SetState(upBtnTM, pier.GetUpgradeCost().ToString(), "Upgrade ");
+
+        if (!pier.black)
+        {
+            SetState(upBtnTM, pier.GetUpgradeCost().ToString(), "Upgrade ");
+        }
+        else if (!isBlackUpgraded)
+        {
+            SetState(upBtnTM, "Upgrade");
+        }
+        else
+        {
+            SetState(upBtnTM, "Catch upgrade in Lucky Wheel");
+        }
 
         if (iconFade.activeInHierarchy)
             iconFade.SetActive(false);
@@ -215,13 +254,11 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private void BlackShip()
     {
-        exitBtn.gameObject.SetActive(false);
         upgradeBtn.onClick.AddListener(IsBlackUpgraded);
     }
 
     private void IsBlackUpgraded()
     {
         isBlackUpgraded = true;
-        exitBtn.gameObject.SetActive(true);
     }
 }
