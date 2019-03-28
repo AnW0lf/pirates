@@ -1212,7 +1212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &56784387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22595,6 +22595,8 @@ MonoBehaviour:
   - {fileID: 1634620421}
   modifier: 2
   maxTime: 10800
+  bonusModifier: 1
+  bgs: []
 --- !u!114 &1214653217
 MonoBehaviour:
   m_ObjectHideFlags: 0

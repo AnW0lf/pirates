@@ -10,6 +10,8 @@ public class OfflineReward : MonoBehaviour
     public List<GameObject> shipsList;
     public float modifier;
     public int maxTime;
+    public int bonusModifier = 1;
+    public BonusGenerator[] bgs;
 
     public static TimeSpan ts;
 
@@ -50,6 +52,10 @@ public class OfflineReward : MonoBehaviour
                 expToAdd += (int)(timeModifier / ship.raidTime / 10f);
             }
         }
+
+        //Добавлям бонусы
+        for (int i = 0; i <= Mathf.Clamp(island.Level / 25, 0, bgs.Length - 1); i++)
+            bgs[i].RandomBonus(timeModifier / bonusModifier);
 
         //Выдаем ЛЕВЕЛ-АП
         island.ExpUp(expToAdd);

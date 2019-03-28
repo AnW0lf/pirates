@@ -78,4 +78,24 @@ public class BonusGenerator : MonoBehaviour
             children.Remove(child);
         }
     }
+
+    public void RandomBonus(int count)
+    {
+        List<Transform> children = new List<Transform>();
+
+        foreach (BonusPoint child in GetComponentsInChildren<BonusPoint>())
+        {
+            if (!child.GetComponent<BonusPoint>().active)
+            {
+                children.Add(child.transform);
+            }
+        }
+
+        for (int i = 0; children.Count > 0 && i < count; i++)
+        {
+            Transform child = children[Random.Range(0, children.Count)];
+            SetBonus(child, Random.Range(0, bonuses.Length));
+            children.Remove(child);
+        }
+    }
 }
