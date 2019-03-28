@@ -35,10 +35,15 @@ public class Tutorial : MonoBehaviour
                 tutorials[stage].SetActive(true);
         }
         else gameObject.SetActive(false);
+        if (island.Level > 2)
+        {
+            GetComponentInParent<Tutorial>().NextStage();
+        }
     }
 
     public void NextStage()
     {
         tutorials[stage++].SetActive(false);
+        island.SetParameter(stageParameter, stage);
     }
 }
