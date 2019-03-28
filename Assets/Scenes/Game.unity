@@ -22596,7 +22596,10 @@ MonoBehaviour:
   modifier: 2
   maxTime: 10800
   bonusModifier: 1
-  bgs: []
+  bgs:
+  - {fileID: 945456226}
+  - {fileID: 644108693}
+  - {fileID: 1654516459}
 --- !u!114 &1214653217
 MonoBehaviour:
   m_ObjectHideFlags: 0

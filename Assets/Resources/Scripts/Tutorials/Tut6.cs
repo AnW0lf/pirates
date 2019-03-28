@@ -33,5 +33,9 @@ public class Tut6 : MonoBehaviour
             if (childUpgrade.activeInHierarchy)
                 childUpgrade.SetActive(false);
         }
+        if (island.Level > 2)
+        {
+            GetComponentInParent<Tutorial>().NextStage();
+        }
     }
 }
