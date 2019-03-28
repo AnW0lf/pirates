@@ -15,23 +15,18 @@ public class OfflineReward : MonoBehaviour
 
     private int money, timeModifier, expToAdd;
     private Island island;
+    private Text text;
 
     private void Awake()
     {
         island = Island.Instance();
+        text = GetComponent<Text>();
     }
 
     void OnEnable()
     {
-        if (PlayerPrefs.HasKey("QuitTime"))
-        {
-            ts = DateTime.Now - DateTime.Parse(PlayerPrefs.GetString("QuitTime"));
-            Debug.Log(ts.Hours + " " + ts.Minutes + " " + ts.Seconds + " ");
-        }
-        else
-        {
-            ts = DateTime.Now - DateTime.Now;
-        }
+        island.InitParameter("QuitTime", (DateTime.Now - DateTime.Now).ToString());
+        ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
 
         //Пересчитываем в секунды
         if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 10f)
@@ -40,12 +35,7 @@ public class OfflineReward : MonoBehaviour
         }
         else
         {
-
-            timeModifier = (((int)ts.Seconds)) + (((int)ts.Minutes) * 60) + (((int)ts.Hours) * 60 * 60) + (((int)ts.Days) * 60 * 60 * 24);
-            if (timeModifier > maxTime)
-            {
-                timeModifier = maxTime;
-            }
+            timeModifier = Mathf.Clamp(ts.Seconds + ts.Minutes * 60 + ts.Hours * 60 * 60 + ts.Days * 60 * 60 * 24, 0, maxTime);
         }
 
         //Считаем бабки и левел-ап
@@ -55,8 +45,9 @@ public class OfflineReward : MonoBehaviour
         {
             foreach (Transform child in ships.transform)
             {
-                money += (int)(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * timeModifier / modifier) + 100;
-                expToAdd += (int)(timeModifier / child.GetComponent<Ship>().raidTime / 10f);
+                Ship ship = child.GetComponent<Ship>();
+                money += (int)(ship.reward / ship.raidTime * timeModifier / modifier) + 100;
+                expToAdd += (int)(timeModifier / ship.raidTime / 10f);
             }
         }
 
@@ -64,10 +55,10 @@ public class OfflineReward : MonoBehaviour
         island.ExpUp(expToAdd);
 
 
-        GetComponent<Text>().text = money.ToString();
+        text.text = money.ToString();
 
         //Write Time for Offline Reward
-        PlayerPrefs.SetString("QuitTime", DateTime.Now.ToString());
+        island.SetParameter("QuitTime", DateTime.Now.ToString());
 
         if (money == 0)
         {
