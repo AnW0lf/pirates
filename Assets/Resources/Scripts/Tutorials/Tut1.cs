@@ -16,6 +16,6 @@ public class Tut1 : MonoBehaviour
     private void Update()
     {
         if (ship.InRaid())
-            GetComponentInParent<Tutorial>().NextStage();
+            gameObject.transform.parent.gameObject.GetComponentInParent<Tutorial>().NextStage();
     }
 }

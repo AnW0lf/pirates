@@ -27,7 +27,7 @@ public class OfflineReward : MonoBehaviour
 
     void OnEnable()
     {
-        island.InitParameter("QuitTime", (DateTime.Now - DateTime.Now).ToString());
+        island.InitParameter("QuitTime", (DateTime.Now).ToString());
         ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
 
         //Пересчитываем в секунды

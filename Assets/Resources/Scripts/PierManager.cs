@@ -89,8 +89,11 @@ public class PierManager : MonoBehaviour
 
         if (maxLvl)
         {
-            flag.GetComponent<Image>().color = Color.black;
-            flag.GetComponentInChildren<Text>().text = "?";
+            flag.GetComponent<Animation>().enabled = false;
+            flag.GetComponentInChildren<Animation>().enabled = false;
+            flag.GetComponent<Image>().color = new Color(0f, 176f / 255f, 4f / 255f);
+            flag.GetComponentInChildren<Text>().text = "Max";
+            flag.GetComponentInChildren<Text>().fontSize = 35;
         }
 
         GetComponent<Button>().onClick.AddListener(OpenMenu);
@@ -218,8 +221,11 @@ public class PierManager : MonoBehaviour
             maxLvl = true;
             island.SetParameter(shipName + "_maxLvl", 1);
             flag.SetActive(true);
-            flag.GetComponent<Image>().color = Color.black;
-            flag.GetComponentInChildren<Text>().text = "?";
+            flag.GetComponent<Animation>().enabled = false;
+            flag.GetComponent<Image>().color = new Color (0f, 176f/255f, 4f/255f);
+            flag.GetComponentInChildren<Text>().text = "Max";
+            flag.GetComponentInChildren<Text>().fontSize = 35;
+            
         }
         island.SetParameter(shipName + "_size", size);
     }
