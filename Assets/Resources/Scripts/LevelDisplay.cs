@@ -45,4 +45,9 @@ public class LevelDisplay : MonoBehaviour
         fill.fillAmount = (float)island.Exp / island.GetMaxExp();
         title.text = "Level " + island.Level;
     }
+
+    public void Resetting()
+    {
+        island.Resetting();
+    }
 }
