@@ -3549,7 +3549,7 @@ RectTransform:
   - {fileID: 669598680}
   - {fileID: 1892183445}
   m_Father: {fileID: 1251920140}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -18254,7 +18254,7 @@ RectTransform:
   m_Children:
   - {fileID: 150080843}
   m_Father: {fileID: 1251920140}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19454,7 +19454,7 @@ MonoBehaviour:
   bonuses: {fileID: 644108691}
   screenUI: {fileID: 1266460712}
   wheel: {fileID: 1465840305}
-  progress: {fileID: 0}
+  progress: {fileID: 1251920139}
   text: {fileID: 327611537}
 --- !u!114 &983260905
 MonoBehaviour:
@@ -19953,7 +19953,7 @@ RectTransform:
   - {fileID: 2064681828}
   - {fileID: 1753468124}
   m_Father: {fileID: 1012764574}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -20156,8 +20156,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1006740600}
   - {fileID: 1413844144}
+  - {fileID: 1006740600}
   m_Father: {fileID: 1299872646}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20180,8 +20180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progress: {fileID: 1006740600}
   button: {fileID: 1413844143}
-  minLevel: 51
-  maxLevel: 75
+  minLevel: 50
+  maxLevel: 74
 --- !u!1 &1016345924
 GameObject:
   m_ObjectHideFlags: 0
@@ -22418,7 +22418,7 @@ MonoBehaviour:
   bonuses: {fileID: 1654516457}
   screenUI: {fileID: 222044755}
   wheel: {fileID: 1214142690}
-  progress: {fileID: 0}
+  progress: {fileID: 1012764573}
   text: {fileID: 52585128}
 --- !u!114 &1147431232
 MonoBehaviour:
@@ -24815,8 +24815,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 199642198}
   - {fileID: 952772855}
+  - {fileID: 199642198}
   m_Father: {fileID: 1757774580}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24839,8 +24839,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progress: {fileID: 199642198}
   button: {fileID: 952772854}
-  minLevel: 26
-  maxLevel: 50
+  minLevel: 25
+  maxLevel: 49
 --- !u!1 &1253266340
 GameObject:
   m_ObjectHideFlags: 0
@@ -26131,7 +26131,7 @@ RectTransform:
   - {fileID: 1567017832}
   - {fileID: 1830080690}
   m_Father: {fileID: 1427430236}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -28359,7 +28359,7 @@ RectTransform:
   m_Children:
   - {fileID: 1162300487}
   m_Father: {fileID: 1012764574}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -28910,8 +28910,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1292382621}
   - {fileID: 1598108538}
+  - {fileID: 1292382621}
   m_Father: {fileID: 1581203832}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28935,7 +28935,7 @@ MonoBehaviour:
   progress: {fileID: 1292382621}
   button: {fileID: 1598108537}
   minLevel: 0
-  maxLevel: 25
+  maxLevel: 24
 --- !u!1 &1429629385
 GameObject:
   m_ObjectHideFlags: 0
@@ -32931,7 +32931,7 @@ RectTransform:
   m_Children:
   - {fileID: 1235344113}
   m_Father: {fileID: 1427430236}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
