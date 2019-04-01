@@ -8,6 +8,7 @@ public class ScreenLevel : MonoBehaviour
 {
     public Transform progress;
     public GameObject button;
+    public Text title;
     public int minLevel, maxLevel;
 
     private Island island;
@@ -31,11 +32,16 @@ public class ScreenLevel : MonoBehaviour
 
     private void ShowFill(object[] arg0)
     {
-        if (minLevel > island.Level || maxLevel < island.Level) return;
+        if (minLevel > island.Level || maxLevel < island.Level)
+        {
+            title.text = "Level " + (maxLevel - minLevel + 1).ToString() + "/25";
+            return;
+        }
         if (island.Exp >= island.GetMaxExp())
         {
             button.SetActive(true);
         }
+        title.text = "Level " + (island.Level - minLevel).ToString() + "/25";
         StartCoroutine(Fill());
     }
     
