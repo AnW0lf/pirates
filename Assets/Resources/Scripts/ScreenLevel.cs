@@ -48,9 +48,12 @@ public class ScreenLevel : MonoBehaviour
                 button.SetActive(true);
             }
             title.text = "Level " + (island.Level - minLevel).ToString() + "/25";
+            if(oldExp < island.GetMaxExp())
+            {
             if (filled)
                 StopAllCoroutines();
             StartCoroutine(Fill());
+            }
         }
     }
 
