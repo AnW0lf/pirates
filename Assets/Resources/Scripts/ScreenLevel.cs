@@ -13,6 +13,7 @@ public class ScreenLevel : MonoBehaviour
 
     private Island island;
     private int oldExp;
+    private bool filled = false;
 
     private void Awake()
     {
@@ -23,6 +24,10 @@ public class ScreenLevel : MonoBehaviour
     {
         EventManager.Subscribe("AddExp", ShowFill);
         oldExp = island.Exp;
+        if (minLevel > island.Level || maxLevel < island.Level)
+            title.text = "Level " + (maxLevel - minLevel + 1).ToString() + "/25";
+        else
+            title.text = "Level " + (island.Level - minLevel).ToString() + "/25";
     }
 
     private void OnDisable()
@@ -35,16 +40,20 @@ public class ScreenLevel : MonoBehaviour
         if (minLevel > island.Level || maxLevel < island.Level)
         {
             title.text = "Level " + (maxLevel - minLevel + 1).ToString() + "/25";
-            return;
         }
-        if (island.Exp >= island.GetMaxExp())
+        else
         {
-            button.SetActive(true);
+            if (island.Exp >= island.GetMaxExp())
+            {
+                button.SetActive(true);
+            }
+            title.text = "Level " + (island.Level - minLevel).ToString() + "/25";
+            if (filled)
+                StopAllCoroutines();
+            StartCoroutine(Fill());
         }
-        title.text = "Level " + (island.Level - minLevel).ToString() + "/25";
-        StartCoroutine(Fill());
     }
-    
+
     public void LevelUp()
     {
         island.LevelUp();
@@ -53,11 +62,16 @@ public class ScreenLevel : MonoBehaviour
 
     private IEnumerator Fill()
     {
+        filled = true;
         WaitForSeconds wait = new WaitForSeconds(0.04f);
         Animation progressBar = progress.GetChild(0).GetComponent<Animation>();
         Image fill = progress.GetChild(0).GetChild(0).GetComponent<Image>();
         progressBar.gameObject.SetActive(true);
+        title.gameObject.SetActive(true);
+        progressBar.Stop();
+        title.GetComponent<Animation>().Stop();
         progressBar.Play();
+        title.GetComponent<Animation>().Play();
         fill.fillAmount = (float)oldExp / island.GetMaxExp();
 
         for (int i = 0; i < 25; i++)
@@ -67,7 +81,9 @@ public class ScreenLevel : MonoBehaviour
         }
 
         progressBar.gameObject.SetActive(false);
+        title.gameObject.SetActive(false);
         oldExp = island.Exp;
+        filled = false;
     }
 
 }
