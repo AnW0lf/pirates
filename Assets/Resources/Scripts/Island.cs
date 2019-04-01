@@ -49,7 +49,7 @@ public class Island
         StartExp = PlayerPrefs.GetInt("StartExp");
 
         if (!PlayerPrefs.HasKey("ExpModifier"))
-            PlayerPrefs.SetFloat("ExpModifier", 1.2f);
+            PlayerPrefs.SetFloat("ExpModifier", 12f);
         ExpModifier = PlayerPrefs.GetFloat("ExpModifier");
     }
 
@@ -91,10 +91,10 @@ public class Island
 
     public int GetMaxExp()
     {
-        if (Level <= 10)
+        if (Level <= 25)
             return (int)(StartExp * Mathf.Pow(ExpModifier, Level));
         else
-            return (int)(StartExp * Mathf.Pow(ExpModifier, 11));
+            return (int)(StartExp * Mathf.Pow(ExpModifier, 26));
     }
 
     public int GetParameter(string parameter, int useless)

@@ -31,7 +31,7 @@ public class CoinCatcher : MonoBehaviour
 
     public void CatchCoin()
     {
-        island.ChangeMoney(money);
+        island.ExpUp(money);
 
         //Write Time for Offline Reward
         PlayerPrefs.SetString("QuitTime", DateTime.Now.ToString());
@@ -39,9 +39,6 @@ public class CoinCatcher : MonoBehaviour
         // Set modifiers to 1
         GetComponentInParent<ShipClick>().ship.rewardModifier = 1;
         GetComponentInParent<ShipClick>().ship.raidTimeModifier = 1;
-
-        //Gain Exp
-        island.ExpUp(1);
 
         _flyingText = Instantiate(flyingText, transform.parent.transform.parent.transform.parent);
         _flyingText.transform.localPosition = new Vector3(0f, 0f, 0f);

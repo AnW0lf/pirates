@@ -5,24 +5,49 @@ using UnityEngine.UI;
 
 public class IslandController : MonoBehaviour
 {
-    public Transform ships;
-    private bool hasShips;
+    public int minLevel;
+    public float delay = 0.5f, modifier;
 
-    public void BeginRaids()
+    private Island island;
+    private bool clicked = false, active = false;
+    private Animation anim;
+
+    private void Awake()
     {
-        hasShips = false;
-        foreach(Ship ship in ships.GetComponentsInChildren<Ship>())
-        {
-            if (ship.isShipRotating())
-            {
-                hasShips = true;
-            }
-            ship.BeginRaidFromIslandClick();
-        }
+        island = Island.Instance();
+        anim = GetComponent<Animation>();
+    }
 
-        if (hasShips && GetComponent<Animation>())
+    private void Start()
+    {
+        if (island.Level >= minLevel)
         {
-            GetComponent<Animation>().Play();
+            StartCoroutine(GenerateMoney());
+            active = true;
         }
+    }
+
+    private void Update()
+    {
+        if(!active && island.Level >= minLevel)
+        {
+            StartCoroutine(GenerateMoney());
+            active = true;
+        }
+    }
+
+    public void Click()
+    {
+        clicked = true;
+    }
+
+    private IEnumerator GenerateMoney()
+    {
+        float time = clicked ? delay / 2f : delay;
+        clicked = false;
+        yield return new WaitForSeconds(time);
+        anim.Play();
+        island.ChangeMoney((int)(island.Level * island.Level * modifier));
+        StartCoroutine(GenerateMoney());
     }
 }
