@@ -12853,7 +12853,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -3261}
+  m_AnchoredPosition: {x: 0, y: 579}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746874635
@@ -18224,6 +18224,7 @@ MonoBehaviour:
   bonuses: {fileID: 644108691}
   screenUI: {fileID: 1266460712}
   wheel: {fileID: 1465840305}
+  progress: {fileID: 1827631801}
   text: {fileID: 327611537}
 --- !u!114 &983260905
 MonoBehaviour:
@@ -21024,6 +21025,7 @@ MonoBehaviour:
   bonuses: {fileID: 1654516457}
   screenUI: {fileID: 222044755}
   wheel: {fileID: 1214142690}
+  progress: {fileID: 746874633}
   text: {fileID: 52585128}
 --- !u!114 &1147431232
 MonoBehaviour:
@@ -22971,7 +22973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0009765625}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 5760}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1233723226
@@ -35244,7 +35246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1341}
+  m_AnchoredPosition: {x: 0, y: 579}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1827631803
@@ -37476,7 +37478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1966261410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37514,6 +37516,7 @@ MonoBehaviour:
   bonuses: {fileID: 945456224}
   screenUI: {fileID: 1989740895}
   wheel: {fileID: 396537682}
+  progress: {fileID: 1427430235}
   text: {fileID: 809632326}
 --- !u!114 &1966261412
 MonoBehaviour:

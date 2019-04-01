@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameLevelFadeManager : MonoBehaviour
 {
     public int level;
-    public GameObject bonuses, screenUI, wheel;
+    public GameObject bonuses, screenUI, wheel, progress;
     public TextManager text;
 
     private Island island;
@@ -24,6 +24,7 @@ public class GameLevelFadeManager : MonoBehaviour
         wheel.SetActive(false);
         bonuses.SetActive(false);
         screenUI.SetActive(false);
+        progress.SetActive(false);
         btn.interactable = false;
         if (island.Level >= level)
             Unlock();
@@ -43,6 +44,7 @@ public class GameLevelFadeManager : MonoBehaviour
         wheel.SetActive(true);
         bonuses.SetActive(true);
         screenUI.SetActive(true);
+        progress.SetActive(true);
         Destroy(gameObject);
     }
 }
