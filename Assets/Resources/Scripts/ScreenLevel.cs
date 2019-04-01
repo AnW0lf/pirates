@@ -8,6 +8,7 @@ public class ScreenLevel : MonoBehaviour
 {
     public Transform progress;
     public GameObject button;
+    public int minLevel, maxLevel;
 
     private Island island;
     private int oldExp;
@@ -30,6 +31,7 @@ public class ScreenLevel : MonoBehaviour
 
     private void ShowFill(object[] arg0)
     {
+        if (minLevel > island.Level || maxLevel < island.Level) return;
         if (island.Exp >= island.GetMaxExp())
         {
             button.SetActive(true);
