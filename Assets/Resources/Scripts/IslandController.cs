@@ -7,10 +7,12 @@ public class IslandController : MonoBehaviour
 {
     public int minLevel;
     public float delay = 0.5f, modifier;
+    public GameObject flyingText;
 
     private Island island;
     private bool clicked = false, active = false;
     private Animation anim;
+    private GameObject _flyingText;
 
     private void Awake()
     {
@@ -47,7 +49,15 @@ public class IslandController : MonoBehaviour
         clicked = false;
         yield return new WaitForSeconds(time);
         anim.Play();
-        island.ChangeMoney((int)(island.Level * island.Level * modifier));
+
+        int reward = (int)(island.Level * island.Level * modifier);
+
+        _flyingText = Instantiate(flyingText, transform);
+        _flyingText.transform.localPosition = new Vector3(0f, 0f, 0f);
+        _flyingText.GetComponent<FlyingText>().reward = true;
+        _flyingText.GetComponent<FlyingText>().rewardText.GetComponent<Text>().text = reward.ToString();
+
+        island.ChangeMoney(reward);
         StartCoroutine(GenerateMoney());
     }
 }
