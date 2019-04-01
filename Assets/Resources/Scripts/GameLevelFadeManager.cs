@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,9 +29,10 @@ public class GameLevelFadeManager : MonoBehaviour
         btn.interactable = false;
         if (island.Level >= level)
             Unlock();
+        EventManager.Subscribe("LevelUp", SetUnlockButton);
     }
 
-    private void Update()
+    private void SetUnlockButton(object[] arg0)
     {
         if (island.Level >= level && !btn.interactable)
         {
