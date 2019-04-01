@@ -43,10 +43,6 @@ public class ScreenLevel : MonoBehaviour
         }
         else
         {
-            if (island.Exp >= island.GetMaxExp())
-            {
-                button.SetActive(true);
-            }
             title.text = "Level " + (island.Level - minLevel).ToString() + "/25";
             if(oldExp < island.GetMaxExp())
             {
@@ -87,6 +83,11 @@ public class ScreenLevel : MonoBehaviour
         title.gameObject.SetActive(false);
         oldExp = island.Exp;
         filled = false;
+
+        if (island.Exp >= island.GetMaxExp())
+        {
+            button.SetActive(true);
+        }
     }
 
 }
