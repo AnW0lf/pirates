@@ -9,6 +9,7 @@ public class Levels : MonoBehaviour
     public GameObject levelProgress, levelUp;
     public Image levelBar;
     public Text levelNumber;
+    public int minLevel, maxLevel;
 
     private Island island;
     private int maxExp;
@@ -26,6 +27,14 @@ public class Levels : MonoBehaviour
     void Update()
     {
         levelNumber.text = "Level " + island.Level;
+        if(island.Level < minLevel || island.Level > maxLevel)
+        {
+            if (levelProgress.activeInHierarchy)
+                levelProgress.SetActive(false);
+            if (levelUp.activeInHierarchy)
+                levelUp.SetActive(false);
+            return;
+        }
 
         if (island.Exp < maxExp)
         {
