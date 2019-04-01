@@ -84,6 +84,7 @@ public class Island
         if (Money + value >= 0)
         {
             Money += value;
+            EventManager.SendEvent("ChangeMoney");
             return true;
         }
         return false;
@@ -121,12 +122,14 @@ public class Island
     public void ExpUp(int exp)
     {
         Exp += exp;
+        EventManager.SendEvent("AddExp");
         Save();
     }
 
     public void LevelUp()
     {
         Level++; Exp = 0;
+        EventManager.SendEvent("LevelUp");
         Save();
     }
 
