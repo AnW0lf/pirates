@@ -10,39 +10,58 @@ public class UpgradeMenuManager : MonoBehaviour
 
     private WindowsManager wm;
     private MiniaturesManager mm;
+    private Island island;
 
     private void Awake()
     {
         wm = windows.GetComponent<WindowsManager>();
         mm = miniatures.GetComponent<MiniaturesManager>();
+        island = Island.Instance();
     }
 
     private void OnEnable()
     {
         EventManager.Subscribe("OpenShipUpgradeMenu", Open);
-        EventManager.Subscribe("CloseShipUpgradeMenu", Close);
     }
 
     private void OnDisable()
     {
         EventManager.Unsubscribe("OpenShipUpgradeMenu", Open);
-        EventManager.Unsubscribe("CloseShipUpgradeMenu", Close);
     }
 
     private void Open(object[] arg0)
     {
-        Debug.Log("Opening");
         if (arg0.Length > 0)
         {
             windows.SetActive(true);
             miniatures.SetActive(true);
-            wm.SetWindows((List<PierManager>)arg0[0]);
-            mm.SetMiniatures((List<PierManager>)arg0[0]);
-            Debug.Log("Opened");
+            List<PierManager> piers = (List<PierManager>)arg0[0];
+            wm.SetWindows(piers);
+            mm.SetMiniatures(piers);
+
+            int cur = 0;
+            for(int i = 0; i < piers.Count; i++)
+            {
+                if (piers[i].minLvl <= island.Level && !piers[i].maxLvl && piers[i].GetUpgradeCost() <= island.Money)
+                    cur = i;
+            }
+            if (cur == 0)
+            {
+                for (int i = piers.Count - 1; i >= 0 ; i--)
+                {
+                    if (piers[i].minLvl <= island.Level && piers[i].shipExist)
+                    {
+                        cur = i;
+                        break;
+                    }
+                }
+            }
+            mm.FocusMiniature(cur);
+            wm.FocusWindow(cur);
         }
     }
 
-    private void Close(object[] arg0)
+    public void Close()
     {
         windows.SetActive(false);
         miniatures.SetActive(false);

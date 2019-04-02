@@ -11,4 +11,9 @@ public class MiniaturesManager : MonoBehaviour
         for (int i = 0; i < piers.Count && i < mcs.Length; i++)
             mcs[i].SetInfo(piers[i]);
     }
+
+    public void FocusMiniature(int id)
+    {
+        mcs[id].FocusThis();
+    }
 }

@@ -35,7 +35,7 @@ public class LevelReward : MonoBehaviour
         {
             foreach (Transform child in piers.transform)
             {
-                if ((PlayerPrefs.GetInt("Level") + 1) < child.GetComponent<PierManager>().minLvl)
+                if (island.Level + 1 < child.GetComponent<PierManager>().minLvl)
                 {
                     if ((child.GetComponent<PierManager>().minLvl - (PlayerPrefs.GetInt("Level") + 1)) < levelsToShip)
                     {

@@ -20,6 +20,14 @@ public class ScreenLevel : MonoBehaviour
         island = Island.Instance();
     }
 
+    private void Start()
+    {
+        if (island.Exp >= island.GetMaxExp())
+        {
+            button.SetActive(true);
+        }
+    }
+
     private void OnEnable()
     {
         EventManager.Subscribe("AddExp", ShowFill);
