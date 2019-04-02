@@ -123,7 +123,7 @@ public class RouletteRotation : MonoBehaviour
                 bg.Bonus((int)rewardValue[section], 3);
                 break;
             case RewardType.BlackMark:
-                blackShip.OpenMenu();
+                //blackShip.OpenMenu();
                 break;
         }
 

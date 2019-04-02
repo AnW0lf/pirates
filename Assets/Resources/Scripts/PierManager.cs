@@ -48,7 +48,6 @@ public class PierManager : MonoBehaviour
     [Header("|Информация о пристани|")]
     public bool shipExist;
     public bool maxLvl;
-    public GameObject flag;
     public UpgradeMenuManager upgradeMenu;
     public Transform ships;
 
@@ -86,35 +85,15 @@ public class PierManager : MonoBehaviour
             if (ship == null) CreateShip();
             else UpdadeShipInfo();
         }
-
-        if (maxLvl)
-        {
-            flag.GetComponent<Animation>().enabled = false;
-            flag.GetComponentInChildren<Animation>().enabled = false;
-            flag.GetComponent<Image>().color = new Color(0f, 176f / 255f, 4f / 255f);
-            flag.GetComponentInChildren<Text>().text = "Max";
-            flag.GetComponentInChildren<Text>().fontSize = 35;
-        }
-
-        GetComponent<Button>().onClick.AddListener(OpenMenu);
     }
 
     private void Update()
     {
         if (maxLvl) return;
-        if (flag.activeInHierarchy && (island.Money < GetUpgradeCost() || minLvl > island.Level))
-            flag.SetActive(false);
-        else if (!flag.activeInHierarchy && island.Money >= GetUpgradeCost() && minLvl <= island.Level)
-            flag.SetActive(true);
         if (shipExist && ship == null)
         {
             CreateShip();
         }
-    }
-
-    public void OpenMenu()
-    {
-        upgradeMenu.GenerateMenu(this);
     }
 
     /// <summary>
@@ -220,11 +199,6 @@ public class PierManager : MonoBehaviour
         {
             maxLvl = true;
             island.SetParameter(shipName + "_maxLvl", 1);
-            flag.SetActive(true);
-            flag.GetComponent<Animation>().enabled = false;
-            flag.GetComponent<Image>().color = new Color (0f, 176f/255f, 4f/255f);
-            flag.GetComponentInChildren<Text>().text = "Max";
-            flag.GetComponentInChildren<Text>().fontSize = 35;
             
         }
         island.SetParameter(shipName + "_size", size);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeMenuManager : MonoBehaviour
+public class WindowController : MonoBehaviour
 {
     public TextManager titleTM, upLevelTM, raidTimeTM, rewardTM, detailLevelTM, bonusTM, upBtnTM, fadeLevelTM, descriptionTM;
     public Image icon, miniIcon;
@@ -22,32 +22,27 @@ public class UpgradeMenuManager : MonoBehaviour
         island = Island.Instance();
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if ((pier.black && !isBlackUpgraded) || (!pier.black && !pier.maxLvl && island.Money >= pier.GetUpgradeCost()))
-        {
-            if (!upgradeBtn.interactable)
-                upgradeBtn.interactable = true;
-        }
-        else
-        {
-            if (upgradeBtn.interactable)
-                upgradeBtn.interactable = false;
-        }
+        EventManager.Subscribe("ChangeMoney", UpdateInfo);
+        EventManager.Subscribe("AddExp", UpdateInfo);
+        EventManager.Subscribe("LevelUp", UpdateInfo);
+    }
 
-        if (pier.black && !isBlackUpgraded)
-        {
-            exitBtn.gameObject.SetActive(false);
-        }
-        else
-        {
-            exitBtn.gameObject.SetActive(true);
-        }
+    private void OnDisable()
+    {
+        EventManager.Unsubscribe("ChangeMoney", UpdateInfo);
+        EventManager.Unsubscribe("AddExp", UpdateInfo);
+        EventManager.Unsubscribe("LevelUp", UpdateInfo);
+    }
+
+    private void UpdateInfo(object[] arg0)
+    {
+        UpdateInfo();
     }
 
     public void GenerateMenu(PierManager pier)
     {
-        gameObject.SetActive(true);
         this.pier = pier;
         if (pier.black)
             isBlackUpgraded = false;
@@ -82,6 +77,11 @@ public class UpgradeMenuManager : MonoBehaviour
             MaxLevel();
         else
             Bought();
+
+        if (pier.minLvl <= island.Level && !pier.maxLvl && pier.GetUpgradeCost() <= island.Money)
+            upgradeBtn.interactable = true;
+        else
+            upgradeBtn.interactable = false;
     }
 
     private void Locked()

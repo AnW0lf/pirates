@@ -28,6 +28,8 @@ public class ScreenLevel : MonoBehaviour
             title.text = "Level " + (maxLevel - minLevel + 1).ToString() + "/25";
         else
             title.text = "Level " + (island.Level - minLevel).ToString() + "/25";
+
+        ShowFill(new object[0]);
     }
 
     private void OnDisable()
