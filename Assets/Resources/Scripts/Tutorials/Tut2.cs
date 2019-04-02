@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Tut2 : MonoBehaviour
 {
-    public GameObject ships;
+    public PierManager pier;
 
-    private Ship ship;
+    private Island island;
 
     private void OnEnable()
     {
-        ship = ships.GetComponentInChildren<Ship>();
+        island = Island.Instance();
     }
 
     private void Update()
     {
-        if (ship.IsRotate())
-            GetComponentInParent<Tutorial>().NextStage();
+        if (pier.shipExist)
+        {
+            gameObject.transform.parent.gameObject.GetComponentInParent<Tutorial>().NextStage();
+        }
     }
 }

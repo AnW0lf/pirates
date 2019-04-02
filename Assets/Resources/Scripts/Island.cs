@@ -33,7 +33,7 @@ public class Island
     private void Load()
     {
         if (!PlayerPrefs.HasKey("Money"))
-            PlayerPrefs.SetInt("Money", 25);
+            PlayerPrefs.SetInt("Money", 0);
         Money = PlayerPrefs.GetInt("Money");
 
         if (!PlayerPrefs.HasKey("Level"))
@@ -45,11 +45,11 @@ public class Island
         Exp = PlayerPrefs.GetInt("Exp");
 
         if (!PlayerPrefs.HasKey("StartExp"))
-            PlayerPrefs.SetInt("StartExp", 4);
+            PlayerPrefs.SetInt("StartExp", 120);
         StartExp = PlayerPrefs.GetInt("StartExp");
 
         if (!PlayerPrefs.HasKey("ExpModifier"))
-            PlayerPrefs.SetFloat("ExpModifier", 12f);
+            PlayerPrefs.SetFloat("ExpModifier", 1.85f);
         ExpModifier = PlayerPrefs.GetFloat("ExpModifier");
     }
 
@@ -92,10 +92,10 @@ public class Island
 
     public int GetMaxExp()
     {
-        if (Level <= 25)
-            return (int)(StartExp * Mathf.Pow(ExpModifier, Level));
+        if (Level <= 20)
+            return (int)(StartExp * Mathf.Pow(Level, ExpModifier));
         else
-            return (int)(StartExp * Mathf.Pow(ExpModifier, 26));
+            return (int)(StartExp * Mathf.Pow(21, ExpModifier));
     }
 
     public int GetParameter(string parameter, int useless)

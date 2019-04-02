@@ -45,15 +45,17 @@ public class IslandController : MonoBehaviour
 
     private IEnumerator GenerateMoney()
     {
-        float time = clicked ? delay / 2f : delay;
+        float time = clicked ? delay / 2.5f : delay;
         clicked = false;
         yield return new WaitForSeconds(time);
         anim.Play();
 
-        int reward = (int)(island.Level * island.Level * modifier);
+        //int reward = (int)(island.Level * island.Level * modifier);
+
+        int reward = (int)(Mathf.Pow(island.Level, 2.2f) * modifier);
 
         _flyingText = Instantiate(flyingText, transform);
-        _flyingText.transform.localPosition = new Vector3(0f, 0f, 0f);
+        _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);
         _flyingText.GetComponent<FlyingText>().reward = true;
         _flyingText.GetComponent<FlyingText>().rewardText.GetComponent<Text>().text = reward.ToString();
 

@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Tut1 : MonoBehaviour
 {
-    public GameObject ships;
+    public PierManager pier;
 
-    private Ship ship;
+    private Island island;
 
     private void OnEnable()
     {
-        ship = ships.GetComponentInChildren<Ship>();
+        island = Island.Instance();
     }
 
     private void Update()
     {
-        if (ship.InRaid())
+        if (island.Money >= pier.startPrice)
+        {
             gameObject.transform.parent.gameObject.GetComponentInParent<Tutorial>().NextStage();
+        }
     }
 }

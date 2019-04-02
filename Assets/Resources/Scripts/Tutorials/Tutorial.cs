@@ -20,11 +20,6 @@ public class Tutorial : MonoBehaviour
     {
         island.InitParameter(stageParameter, 0);
         stage = island.GetParameter(stageParameter, 0);
-        if(stage == 0 && !pier.shipExist)
-        {
-            pier.Upgrade();
-            pier.CreateShip();
-        }
     }
 
     private void Update()
