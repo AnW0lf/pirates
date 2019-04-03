@@ -53,6 +53,7 @@ public class PierManager : MonoBehaviour
 
     private Island island;
     private GameObject ship;
+    private int blackMark;
 
     //Счетчик спасательных кругов. Для расчета бонусов
     public LifebuoyManager lifebuoys;
@@ -71,6 +72,11 @@ public class PierManager : MonoBehaviour
         island.InitParameter(shipName + "_shipExist", 0);
         island.InitParameter(shipName + "_size", size);
         island.InitParameter(shipName + "_shipIcon", shipIcon.name);
+        if(black)
+        {
+            island.InitParameter(shipName + "_blackMark", 0);
+            blackMark = island.GetParameter(shipName + "_blackMark", 0);
+        }
 
         detailCurrentLvl1 = island.GetParameter(shipName + "_" + detailName1, detailCurrentLvl1);
         detailCurrentLvl2 = island.GetParameter(shipName + "_" + detailName2, detailCurrentLvl2);
@@ -146,7 +152,7 @@ public class PierManager : MonoBehaviour
     public void Upgrade()
     {
         if (maxLvl) return;
-        if (!black && !island.ChangeMoney(-GetUpgradeCost())) return;
+        if (!black && !island.ChangeMoney(-GetUpgradeCost()) || black && !ChangeBlackMark(-1)) return;
         if (!shipExist)
         {
             shipExist = true;
@@ -202,5 +208,21 @@ public class PierManager : MonoBehaviour
             
         }
         island.SetParameter(shipName + "_size", size);
+    }
+
+    public int GetBlackMark()
+    {
+        return blackMark;
+
+    } 
+
+    public bool ChangeBlackMark(int value)
+    {
+        if (blackMark + value >= 0)
+        {
+            blackMark += value;
+            return true;
+        }
+        return false;
     }
 }

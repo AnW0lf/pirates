@@ -64,7 +64,7 @@ public class MiniatureContoller : MonoBehaviour
         }
         else if (!pier.shipExist)
         {
-            icon.color = Color.black;
+            icon.color = Color.white;
             level.text = "0/" + (1 + pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3).ToString();
         }
         else if (!pier.maxLvl)
@@ -78,6 +78,6 @@ public class MiniatureContoller : MonoBehaviour
             icon.color = Color.white;
             level.text = "Max";
         }
-        Light.SetActive(pier.minLvl <= island.Level && pier.GetUpgradeCost() <= island.Money && !pier.maxLvl);
+        Light.SetActive(pier.black ? pier.GetBlackMark() > 0 : pier.minLvl <= island.Level && pier.GetUpgradeCost() <= island.Money && !pier.maxLvl);
     }
 }
