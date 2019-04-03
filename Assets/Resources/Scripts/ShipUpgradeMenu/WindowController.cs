@@ -110,6 +110,8 @@ public class WindowController : MonoBehaviour
             titleFade.SetActive(true);
         if (upgradeBtn.interactable)
             upgradeBtn.interactable = false;
+
+        icon.color = Color.black;
     }
 
     private void NotBought()
@@ -149,6 +151,8 @@ public class WindowController : MonoBehaviour
             windowFade.SetActive(false);
         if (titleFade.activeInHierarchy)
             titleFade.SetActive(false);
+
+        icon.color = Color.white;
     }
 
     private void Bought()
@@ -214,6 +218,8 @@ public class WindowController : MonoBehaviour
             windowFade.SetActive(false);
         if (titleFade.activeInHierarchy)
             titleFade.SetActive(false);
+
+        icon.color = Color.white;
     }
 
     private void MaxLevel()
@@ -241,6 +247,8 @@ public class WindowController : MonoBehaviour
             titleFade.SetActive(false);
         if (upgradeBtn.interactable)
             upgradeBtn.interactable = false;
+
+        icon.color = Color.white;
     }
 
     private void SetState(TextManager tm, string text, string prefix = "", string postfix = "")

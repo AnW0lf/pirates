@@ -38,7 +38,6 @@ public class Ship : MonoBehaviour
 
     private void Start()
     {
-        _icon.GetComponent<Button>().onClick.AddListener(BeginRaid);
         UpdateShip();
     }
 
