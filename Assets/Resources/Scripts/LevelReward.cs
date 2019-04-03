@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LevelReward : MonoBehaviour
 {
     public List<GameObject> shipsList;
-    public List<GameObject> piersList;
+    public List<PiersUpgrade> piersList;
     public float modifier;
     public Text levelsToShipsText;
     public string oneLevelToShip, someLevelsToShip, noLevelsToShip;
@@ -31,15 +31,15 @@ public class LevelReward : MonoBehaviour
         }
 
         levelsToShip = 999;
-        foreach (GameObject piers in piersList)
+        foreach (PiersUpgrade piers in piersList)
         {
-            foreach (Transform child in piers.transform)
+            foreach (PierManager pier in piers.piers)
             {
-                if (island.Level + 1 < child.GetComponent<PierManager>().minLvl)
+                if (island.Level + 1 < pier.minLvl)
                 {
-                    if ((child.GetComponent<PierManager>().minLvl - (PlayerPrefs.GetInt("Level") + 1)) < levelsToShip)
+                    if ((pier.minLvl - (island.Level + 1)) < levelsToShip)
                     {
-                        levelsToShip = child.GetComponent<PierManager>().minLvl - (PlayerPrefs.GetInt("Level") + 1);
+                        levelsToShip = pier.minLvl - (island.Level + 1);
                     }
                 }
             }
