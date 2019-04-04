@@ -62,6 +62,7 @@ public class SnapScrolling : MonoBehaviour
                 selectedPanID = i;
             }
         }
+        EventManager.SendEvent("SnapScrolling", selectedPanID);
     }
 
     public void SetPan(int id)

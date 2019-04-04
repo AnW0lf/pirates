@@ -23,7 +23,6 @@ public class WheelUnlock : MonoBehaviour
     {
         if (island.Level < minLevel)
         {
-            btn.interactable = false;
             child.SetActive(false);
         }
         else
@@ -42,7 +41,6 @@ public class WheelUnlock : MonoBehaviour
 
     public void UnlockWheel()
     {
-        btn.interactable = true;
         child.SetActive(true);
         this.enabled = false;
     }

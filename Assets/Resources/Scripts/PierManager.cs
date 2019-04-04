@@ -221,6 +221,7 @@ public class PierManager : MonoBehaviour
         if (blackMark + value >= 0)
         {
             blackMark += value;
+            island.SetParameter(shipName + "_blackMark", blackMark);
             return true;
         }
         return false;

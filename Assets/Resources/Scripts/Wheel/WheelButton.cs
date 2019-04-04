@@ -10,12 +10,12 @@ public class WheelButton : MonoBehaviour
     {
         if (!wheelOpened)
         {
-            gameObject.GetComponent<Animation>().Play("WheelOpen");
+            GetComponent<Animation>().Play("WheelOpen");
             wheelOpened = true;
         }
         else
         {
-            gameObject.GetComponent<Animation>().Play("WheelClose");
+            GetComponent<Animation>().Play("WheelClose");
             wheelOpened = false;
         }
     }

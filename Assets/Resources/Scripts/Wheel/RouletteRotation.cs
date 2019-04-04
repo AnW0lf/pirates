@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,9 +19,7 @@ public class RouletteRotation : MonoBehaviour
     public int sectorCount;
 
     [Header("Награда")]
-    public GameObject[] rewardObjects;
-    public float[] rewardValue;
-    public RewardType[] rewardType;
+    public SectorController[] sectors;
     public int[] nums;
     public GameObject spinButton;
 
@@ -42,20 +41,7 @@ public class RouletteRotation : MonoBehaviour
     {
         island.InitParameter(rouletteName + "_num", 0);
         num = island.GetParameter(rouletteName + "_num", 0);
-    }
-
-    private void Update()
-    {
-        if (IsRolling)
-        {
-            if (spinButton.GetComponent<Button>().interactable)
-                spinButton.GetComponent<Button>().interactable = false;
-        }
-        else
-        {
-            if (!spinButton.GetComponent<Button>().interactable)
-                spinButton.GetComponent<Button>().interactable = true;
-        }
+        spinButton.GetComponent<Button>().interactable = !IsRolling;
     }
 
     public void Roll()
@@ -73,7 +59,7 @@ public class RouletteRotation : MonoBehaviour
             }
             else
             {
-                section = Random.Range(0, sectorCount);
+                section = UnityEngine.Random.Range(0, sectorCount);
             }
             float angle = Mathf.Abs(section * (360f / sectorCount) + ((180f / sectorCount))) % 360f;
             StartCoroutine(Rolling(angle));
@@ -82,8 +68,9 @@ public class RouletteRotation : MonoBehaviour
 
     private IEnumerator Rolling(float angle)
     {
-        float curRotationTime = Random.Range(0.8f * rotationTime, 1.2f * rotationTime);
+        float curRotationTime = UnityEngine.Random.Range(0.8f * rotationTime, 1.2f * rotationTime);
         IsRolling = true;
+        spinButton.GetComponent<Button>().interactable = !IsRolling;
         float a = .0f;
         Vector3 direction = Vector3.back * (this.direction ? -1f : 1f);
         while (a < curRotationTime)
@@ -92,7 +79,7 @@ public class RouletteRotation : MonoBehaviour
             a += Time.deltaTime;
             yield return null;
         }
-        float r = Random.Range(180f, 360f);
+        float r = UnityEngine.Random.Range(180f, 360f);
         a = angle - r < 0f ? angle - r + 360f : angle - r;
         while (Mathf.Abs(rect.localEulerAngles.z - a) >= 4f)
         {
@@ -109,27 +96,16 @@ public class RouletteRotation : MonoBehaviour
         }
         IsRolling = false;
         Reward();
+        spinButton.GetComponent<Button>().interactable = !IsRolling;
     }
 
     private void Reward()
     {
-        if (rewardType.Length <= section || rewardValue.Length <= section) return;
-        switch (rewardType[section])
-        {
-            case RewardType.Money:
-                island.ChangeMoney((int)rewardValue[section]);
-                break;
-            case RewardType.Bonus:
-                bg.Bonus((int)rewardValue[section], 3);
-                break;
-            case RewardType.BlackMark:
-                blackShip.ChangeBlackMark(1);
-                break;
-        }
+        sectors[section].Reward();
 
         _flyingReward = Instantiate(flyingReward, transform.parent.transform);
-        _flyingReward.GetComponent<FlyingWheelReward>().text.text = rewardObjects[section].GetComponentInChildren<Text>().text;
-        _flyingReward.GetComponent<FlyingWheelReward>().image.sprite = rewardObjects[section].GetComponentInChildren<Image>().sprite;
-        _flyingReward.GetComponent<FlyingWheelReward>().image.color = rewardObjects[section].GetComponentInChildren<Image>().color;
+        _flyingReward.GetComponent<FlyingWheelReward>().text.text = sectors[section].GetComponentInChildren<Text>().text;
+        _flyingReward.GetComponent<FlyingWheelReward>().image.sprite = sectors[section].GetComponentInChildren<Image>().sprite;
+        _flyingReward.GetComponent<FlyingWheelReward>().image.color = sectors[section].GetComponentInChildren<Image>().color;
     }
 }
