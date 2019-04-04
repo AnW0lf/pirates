@@ -41,8 +41,6 @@ public class SectorController : MonoBehaviour
                 title.text = "X" + reward.ToString();
                 break;
         }
-        if (minLevel == 0)
-            Debug.Log(name + " : " + reward);
     }
 
     public void UpdateReward(float[] modifiers)

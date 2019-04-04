@@ -189,4 +189,9 @@ public class Ship : MonoBehaviour
     {
         return isRotate;
     }
+
+    public float GetRaidTime()
+    {
+        return raidTime / Mathf.Pow(2f, raidTimeModifier);
+    }
 }
