@@ -112,6 +112,7 @@ public class LifebuoyManager : MonoBehaviour
 
     public void UpdateInfo()
     {
+        island.InitParameter(modifierName + "_level", 0);
         lvl = island.GetParameter(modifierName + "_level", 0);
         max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
         cur = island.GetParameter(modifierName + "_current", 0);
