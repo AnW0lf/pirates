@@ -10,6 +10,7 @@ public class RouletteRotation : MonoBehaviour
     public bool direction;
     public float speed, rotationTime;
     public bool IsRolling { get; private set; }
+    public WheelButton wb;
     public LifebuoyManager lm;
     public BonusGenerator bg;
     public GameObject flyingReward, arrow;
@@ -20,6 +21,8 @@ public class RouletteRotation : MonoBehaviour
 
     [Header("Награда")]
     public SectorController[] sectors;
+    public List<int> levels;
+    public List<float> modifiers;
     public int[] nums;
     public GameObject spinButton;
 
@@ -35,6 +38,35 @@ public class RouletteRotation : MonoBehaviour
         rect = GetComponent<RectTransform>();
         IsRolling = false;
         island = Island.Instance();
+    }
+
+    private void OnEnable()
+    {
+        EventManager.Subscribe("LevelUp", UpdateInfo);
+        UpdateInfo();
+    }
+
+    private void UpdateInfo(object[] arg0)
+    {
+        UpdateInfo();
+    }
+
+    private void UpdateInfo()
+    {
+        if (levels.Contains(island.Level))
+        {
+            float[] mods = modifiers.GetRange(0, levels.IndexOf(island.Level) + 1).ToArray();
+            foreach(SectorController sector in sectors)
+            {
+                sector.UpdateReward(mods);
+            }
+            EventManager.SendEvent("UpgradeWheel", mods[mods.Length - 1], wb);
+        }
+    }
+
+    private void OnDisable()
+    {
+        EventManager.Unsubscribe("LevelUp", UpdateInfo);
     }
 
     private void Start()

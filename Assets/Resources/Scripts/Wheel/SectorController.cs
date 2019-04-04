@@ -11,7 +11,7 @@ public class SectorController : MonoBehaviour
     public BonusGenerator bg;
     public PierManager blackShip;
 
-    private int reward = 0;
+    private int reward = 0, modifier;
     private Island island;
     private Text title;
 
@@ -19,44 +19,44 @@ public class SectorController : MonoBehaviour
     {
         island = Island.Instance();
         title = GetComponentInChildren<Text>();
+        reward = startReward;
     }
 
     private void OnEnable()
-    {
-        EventManager.Subscribe("LevelUp", UpdateInfo);
-        UpdateInfo();
-    }
-
-    private void OnDisable()
-    {
-        EventManager.Unsubscribe("LevelUp", UpdateInfo);
-    }
-
-    private void UpdateInfo(object[] arg0)
     {
         UpdateInfo();
     }
 
     private void UpdateInfo()
     {
-        int level = Mathf.Clamp(island.Level - minLevel, 0, maxLevel);
         switch (type)
         {
             case RouletteRotation.RewardType.Money:
-                reward = (int)Mathf.Pow(2, level / levelDifference) * startReward;
                 title.text = reward.ToString();
                 break;
             case RouletteRotation.RewardType.Bonus:
-                reward = (level / levelDifference + 1) * startReward;
                 title.text = "X" + reward.ToString();
                 break;
             case RouletteRotation.RewardType.BlackMark:
-                reward = 1;
                 title.text = "X" + reward.ToString();
                 break;
         }
         if (minLevel == 0)
             Debug.Log(name + " : " + reward);
+    }
+
+    public void UpdateReward(float[] modifiers)
+    {
+        if(type == RouletteRotation.RewardType.Money)
+        {
+            float mod = 1f;
+            foreach(float m in modifiers)
+            {
+                mod *= m;
+            }
+            reward = (int)(startReward * mod);
+        }
+        UpdateInfo();
     }
 
     public void Reward()
