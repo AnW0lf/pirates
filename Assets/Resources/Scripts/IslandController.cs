@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class IslandController : MonoBehaviour
 {
     public int minLevel;
-    public float delay = 0.5f, modifier;
+    public float delay, tapDelay, modifier;
     public GameObject flyingText;
 
     private Island island;
     private bool clicked = false, active = false;
     private Animation anim;
     private GameObject _flyingText;
+    private float time;
 
     private void Awake()
     {
@@ -45,14 +46,26 @@ public class IslandController : MonoBehaviour
 
     private IEnumerator GenerateMoney()
     {
-        float time = clicked ? delay / 2.5f : delay;
+        if (clicked)
+        {
+            time = tapDelay;
+        }
+        else if ((delay - (island.GetParameter("Level", 0) - 1) / 10)  > tapDelay)
+        {
+            time = delay - (island.GetParameter("Level", 0) - 1) / 10;
+        }
+        else
+        {
+            delay = tapDelay;
+        }
+
         clicked = false;
         yield return new WaitForSeconds(time);
         anim.Play();
 
         //int reward = (int)(island.Level * island.Level * modifier);
 
-        int reward = (int)(Mathf.Pow(island.Level, 2.3f) * modifier);
+        int reward = (int)(Mathf.Pow(island.Level, 2.15f) * modifier);
 
         _flyingText = Instantiate(flyingText, transform);
         _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);
