@@ -9,20 +9,19 @@ public class ShipTimer : MonoBehaviour
     public Image clock, icon;
 
     private bool isTimerActive;
-    private Vector3 startPos, startAngles;
+    private Vector3 startPos, startAngles, startScale;
     private Ship ship;
 
     private void Awake()
     {
         startPos = pointer.localPosition;
         startAngles = arrow.localEulerAngles;
+        startScale = pointer.localScale;
         ship = transform.parent.GetComponentInParent<Ship>();
     }
 
     private void Start()
     {
-        pointer.localScale = new Vector3(pointer.localScale.x, pointer.localScale.y * Mathf.Sign(transform.localScale.x), pointer.localScale.z);
-        icon.transform.localEulerAngles = new Vector3(0f, 0f, icon.transform.localEulerAngles.z * Mathf.Sign(transform.localScale.x));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,6 +43,7 @@ public class ShipTimer : MonoBehaviour
         icon.sprite = GetComponent<Image>().sprite;
         pointer.SetParent(transform.parent, true);
         timer.eulerAngles = Vector3.zero;
+        pointer.localScale = new Vector3(pointer.localScale.x, pointer.localScale.y * Mathf.Sign(transform.localScale.x), pointer.localScale.z);
         WaitForFixedUpdate wait = new WaitForFixedUpdate();
         for (float i = 0f; i < time; i += Time.fixedDeltaTime)
         {
@@ -52,10 +52,9 @@ public class ShipTimer : MonoBehaviour
         }
         pointer.SetParent(transform);
         pointer.localPosition = startPos;
+        pointer.localScale = startScale;
         timer.localEulerAngles = startAngles;
         pointer.gameObject.SetActive(false);
-        pointer.localScale = new Vector3(pointer.localScale.x, pointer.localScale.y * Mathf.Sign(transform.localScale.x), pointer.localScale.z);
-        icon.transform.localEulerAngles = new Vector3(0f, 0f, icon.transform.localEulerAngles.z * Mathf.Sign(transform.localScale.x));
         isTimerActive = false;
     }
 }
