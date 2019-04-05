@@ -42,7 +42,7 @@ public class ShipTimer : MonoBehaviour
         WaitForFixedUpdate wait = new WaitForFixedUpdate();
         for (float i = 0f; i < time; i += Time.fixedDeltaTime)
         {
-            clock.fillAmount = 1f - i / time;
+            clock.fillAmount = i / time;
             yield return wait;
         }
         pointer.SetParent(transform);
