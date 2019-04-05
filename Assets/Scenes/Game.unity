@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLevel: 0
   delay: 1
-  tapDelay: 0.4
+  tapDelay: 0.8
   modifier: 1
   flyingText: {fileID: 7659205956303974338, guid: 6a18c187d1a370949b69a053f95a0a6e,
     type: 3}
@@ -16763,7 +16763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLevel: 25
   delay: 1
-  tapDelay: 0
+  tapDelay: 0.8
   modifier: 2
   flyingText: {fileID: 7659205956303974338, guid: b383675a349d433449b7d3cbc5e55930,
     type: 3}
@@ -18072,7 +18072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLevel: 50
   delay: 1
-  tapDelay: 0
+  tapDelay: 0.8
   modifier: 3
   flyingText: {fileID: 7659205956303974338, guid: b383675a349d433449b7d3cbc5e55930,
     type: 3}
@@ -31352,7 +31352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0009765625}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 5760}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1233723226

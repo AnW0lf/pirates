@@ -64,7 +64,6 @@ public class IslandController : MonoBehaviour
             delay = tapDelay;
         }
 
-        yield return new WaitForSeconds(time);
         anim.Play();
 
         //int reward = (int)(island.Level * island.Level * modifier);
@@ -77,7 +76,9 @@ public class IslandController : MonoBehaviour
         _flyingText.GetComponent<FlyingText>().rewardText.GetComponent<Text>().text = reward.ToString();
 
         island.ChangeMoney(reward);
+        yield return new WaitForSeconds(time / 2);
         clicked = false;
+        yield return new WaitForSeconds(time / 2);
         StartCoroutine(GenerateMoney());
     }
 }
