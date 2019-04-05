@@ -100,7 +100,7 @@ public class LifebuoyManager : MonoBehaviour
 
             if (wheelButton.GetComponent<Image>().color == new Color(1f, 1f, 1f))
             {
-                wheelButton.GetComponent<Image>().color = new Color(0.85f, 0.85f, 0.85f);
+                wheelButton.GetComponent<Image>().color = new Color(1f, 1f, 1f);
             }
 
             if (flag.activeInHierarchy)
