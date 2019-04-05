@@ -10,15 +10,14 @@ public class SectorController : MonoBehaviour
     public int minLevel, maxLevel, levelDifference, startReward, bonusId;
     public BonusGenerator bg;
     public PierManager blackShip;
+    public Text title;
 
     private int reward = 0, modifier;
     private Island island;
-    private Text title;
 
     private void Awake()
     {
         island = Island.Instance();
-        title = GetComponentInChildren<Text>();
         reward = startReward;
     }
 

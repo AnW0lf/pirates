@@ -43,12 +43,29 @@ public class RouletteRotation : MonoBehaviour
     private void OnEnable()
     {
         EventManager.Subscribe("LevelUp", UpdateInfo);
-        UpdateInfo();
+        InitInfo();
     }
 
     private void UpdateInfo(object[] arg0)
     {
         UpdateInfo();
+    }
+
+    private void InitInfo()
+    {
+        for(int i = island.Level; i > 0; i--)
+        {
+            if (levels.Contains(i))
+            {
+                float[] mods = modifiers.GetRange(0, levels.IndexOf(i) + 1).ToArray();
+                foreach (SectorController sector in sectors)
+                {
+                    sector.UpdateReward(mods);
+                }
+                EventManager.SendEvent("UpgradeWheel", mods[mods.Length - 1], wb);
+                return;
+            }
+        }
     }
 
     private void UpdateInfo()

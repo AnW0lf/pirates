@@ -7503,6 +7503,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 1290911348}
 --- !u!1 &325460181
 GameObject:
   m_ObjectHideFlags: 0
@@ -10484,6 +10485,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 748695288}
 --- !u!1 &460155220
 GameObject:
   m_ObjectHideFlags: 0
@@ -11371,6 +11373,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 259268811}
 --- !u!1 &496210714
 GameObject:
   m_ObjectHideFlags: 0
@@ -12426,6 +12429,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 1415297572}
 --- !u!1 &549650494
 GameObject:
   m_ObjectHideFlags: 0
@@ -12533,6 +12537,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 2076252195}
 --- !u!1 &550978289
 GameObject:
   m_ObjectHideFlags: 0
@@ -14330,6 +14335,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 1793542860}
 --- !u!1 &633509108
 GameObject:
   m_ObjectHideFlags: 0
@@ -17296,7 +17302,7 @@ MonoBehaviour:
   direction: 1
   speed: 500
   rotationTime: 1
-  wb: {fileID: 0}
+  wb: {fileID: 1465840311}
   lm: {fileID: 893217027}
   bg: {fileID: 644108693}
   flyingReward: {fileID: 7455523717367949559, guid: 1baedb412cbdf524ab8f96e6aee21372,
@@ -19800,6 +19806,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 1751997725}
 --- !u!1 &841865785
 GameObject:
   m_ObjectHideFlags: 0
@@ -20901,6 +20908,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 455968595}
 --- !u!1 &871031311
 GameObject:
   m_ObjectHideFlags: 0
@@ -21690,7 +21698,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7aef74b969e97b04fb795905775fdcae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e4cf7ab50bd8d64d903429bcf64f704, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23897,6 +23905,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 1150192903}
 --- !u!1 &953673659
 GameObject:
   m_ObjectHideFlags: 0
@@ -25183,6 +25192,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 958304516}
 --- !u!1 &990309591
 GameObject:
   m_ObjectHideFlags: 0
@@ -26781,6 +26791,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 710937081}
 --- !u!1 &1071287827
 GameObject:
   m_ObjectHideFlags: 0
@@ -26967,6 +26978,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 69066247}
 --- !u!1 &1081166935
 GameObject:
   m_ObjectHideFlags: 0
@@ -27392,6 +27404,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 1466575784}
 --- !u!1 &1100936247
 GameObject:
   m_ObjectHideFlags: 0
@@ -28233,7 +28246,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7aef74b969e97b04fb795905775fdcae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e4cf7ab50bd8d64d903429bcf64f704, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29891,6 +29904,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 2121378549}
 --- !u!1 &1184766763
 GameObject:
   m_ObjectHideFlags: 0
@@ -30652,6 +30666,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 195132060}
 --- !u!1 &1213582329
 GameObject:
   m_ObjectHideFlags: 0
@@ -32889,6 +32904,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 512999212}
 --- !u!1 &1288871438
 GameObject:
   m_ObjectHideFlags: 0
@@ -33587,6 +33603,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 284748900}
 --- !u!1 &1303660565
 GameObject:
   m_ObjectHideFlags: 0
@@ -33645,6 +33662,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 269042135}
 --- !u!1 &1313490182
 GameObject:
   m_ObjectHideFlags: 0
@@ -36523,6 +36541,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 615600319}
 --- !u!1 &1416558759
 GameObject:
   m_ObjectHideFlags: 0
@@ -37922,7 +37941,7 @@ MonoBehaviour:
   direction: 1
   speed: 500
   rotationTime: 1
-  wb: {fileID: 0}
+  wb: {fileID: 1214142696}
   lm: {fileID: 1924054145}
   bg: {fileID: 1654516459}
   flyingReward: {fileID: 7455523717367949559, guid: 1baedb412cbdf524ab8f96e6aee21372,
@@ -38174,6 +38193,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 1657377170}
 --- !u!1 &1461903349
 GameObject:
   m_ObjectHideFlags: 0
@@ -39264,6 +39284,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 343115935}
 --- !u!1 &1495595996
 GameObject:
   m_ObjectHideFlags: 0
@@ -40020,6 +40041,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 2091032502}
 --- !u!1 &1521592353
 GameObject:
   m_ObjectHideFlags: 0
@@ -41770,6 +41792,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 1917486893}
 --- !u!1 &1573445907
 GameObject:
   m_ObjectHideFlags: 0
@@ -42683,6 +42706,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 743810023}
 --- !u!1 &1610708347
 GameObject:
   m_ObjectHideFlags: 0
@@ -44736,6 +44760,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 1546171439}
 --- !u!1 &1670445091
 GameObject:
   m_ObjectHideFlags: 0
@@ -45574,6 +45599,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 1991669152}
 --- !u!1 &1712530130
 GameObject:
   m_ObjectHideFlags: 0
@@ -49267,7 +49293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1824645013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51440,6 +51466,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 245972558}
 --- !u!1 &1917486890
 GameObject:
   m_ObjectHideFlags: 0
@@ -54798,6 +54825,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
+  title: {fileID: 156953825}
 --- !u!1 &2047508173
 GameObject:
   m_ObjectHideFlags: 0
@@ -55153,7 +55181,7 @@ MonoBehaviour:
   direction: 1
   speed: 500
   rotationTime: 1
-  wb: {fileID: 0}
+  wb: {fileID: 396537688}
   lm: {fileID: 502075262}
   bg: {fileID: 945456226}
   flyingReward: {fileID: 7455523717367949559, guid: 1baedb412cbdf524ab8f96e6aee21372,
@@ -55169,7 +55197,7 @@ MonoBehaviour:
   - {fileID: 1459822686}
   - {fileID: 1608523556}
   - {fileID: 2070587865}
-  - {fileID: 0}
+  - {fileID: 987091779}
   - {fileID: 457200529}
   - {fileID: 1903746060}
   levels: 05000000090000001000000015000000
@@ -55593,6 +55621,7 @@ MonoBehaviour:
   bonusId: 2
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
+  title: {fileID: 609981629}
 --- !u!1 &2071952830
 GameObject:
   m_ObjectHideFlags: 0
@@ -58049,6 +58078,7 @@ MonoBehaviour:
   bonusId: 0
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
+  title: {fileID: 619266647}
 --- !u!1 &2139522850
 GameObject:
   m_ObjectHideFlags: 0
