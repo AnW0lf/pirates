@@ -19479,6 +19479,7 @@ GameObject:
   - component: {fileID: 830645292}
   - component: {fileID: 830645291}
   - component: {fileID: 830645290}
+  - component: {fileID: 830645294}
   m_Layer: 8
   m_Name: Price
   m_TagString: Untagged
@@ -19578,6 +19579,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830645288}
   m_CullTransparentMesh: 0
+--- !u!114 &830645294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830645288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &833219022
 GameObject:
   m_ObjectHideFlags: 0
@@ -20128,7 +20144,7 @@ MonoBehaviour:
   priceText: {fileID: 1486737888}
   buttonIcon: {fileID: 407048190}
   buttonColors:
-  - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
   lifebuoys: {fileID: 502075262}
 --- !u!114 &851836014
@@ -20247,7 +20263,7 @@ MonoBehaviour:
   priceText: {fileID: 830645290}
   buttonIcon: {fileID: 946113064}
   buttonColors:
-  - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
   lifebuoys: {fileID: 502075262}
 --- !u!114 &855860229
@@ -24458,6 +24474,7 @@ GameObject:
   - component: {fileID: 965982303}
   - component: {fileID: 965982302}
   - component: {fileID: 965982301}
+  - component: {fileID: 965982305}
   m_Layer: 8
   m_Name: Price
   m_TagString: Untagged
@@ -24557,6 +24574,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965982299}
   m_CullTransparentMesh: 0
+--- !u!114 &965982305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965982299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &967194529
 GameObject:
   m_ObjectHideFlags: 0
@@ -38985,6 +39017,7 @@ GameObject:
   - component: {fileID: 1486737890}
   - component: {fileID: 1486737889}
   - component: {fileID: 1486737888}
+  - component: {fileID: 1486737892}
   m_Layer: 8
   m_Name: Price
   m_TagString: Untagged
@@ -39084,6 +39117,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486737886}
   m_CullTransparentMesh: 0
+--- !u!114 &1486737892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486737886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1494224101
 GameObject:
   m_ObjectHideFlags: 0
@@ -41786,7 +41834,7 @@ MonoBehaviour:
   priceText: {fileID: 965982301}
   buttonIcon: {fileID: 1342772242}
   buttonColors:
-  - {r: 0.15294118, g: 0.7529412, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
   lifebuoys: {fileID: 502075262}
 --- !u!114 &1573445910
