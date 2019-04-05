@@ -32,7 +32,7 @@ public class IslandController : MonoBehaviour
 
     private void Update()
     {
-        if(!active && island.Level >= minLevel)
+        if (!active && island.Level >= minLevel)
         {
             StartCoroutine(GenerateMoney());
             active = true;
@@ -41,7 +41,12 @@ public class IslandController : MonoBehaviour
 
     public void Click()
     {
-        clicked = true;
+        if (!clicked)
+        {
+            clicked = true;
+            StopAllCoroutines();
+            StartCoroutine(GenerateMoney());
+        }
     }
 
     private IEnumerator GenerateMoney()
@@ -50,7 +55,7 @@ public class IslandController : MonoBehaviour
         {
             time = tapDelay;
         }
-        else if ((delay - (island.GetParameter("Level", 0) - 1) / 10)  > tapDelay)
+        else if ((delay - (island.GetParameter("Level", 0) - 1) / 10) > tapDelay)
         {
             time = delay - (island.GetParameter("Level", 0) - 1) / 10;
         }
@@ -59,7 +64,6 @@ public class IslandController : MonoBehaviour
             delay = tapDelay;
         }
 
-        clicked = false;
         yield return new WaitForSeconds(time);
         anim.Play();
 
@@ -73,6 +77,7 @@ public class IslandController : MonoBehaviour
         _flyingText.GetComponent<FlyingText>().rewardText.GetComponent<Text>().text = reward.ToString();
 
         island.ChangeMoney(reward);
+        clicked = false;
         StartCoroutine(GenerateMoney());
     }
 }
