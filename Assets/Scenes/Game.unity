@@ -3346,6 +3346,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  color: {r: 0, g: 0, b: 0, a: 1}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &143323658
 GameObject:
@@ -9948,6 +9949,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &413878822
 GameObject:
@@ -11029,6 +11031,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &481058128
 GameObject:
@@ -11788,6 +11791,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &510381711
 GameObject:
@@ -12296,6 +12300,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &537196810
 GameObject:
@@ -13048,6 +13053,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &582072145
 GameObject:
@@ -19165,6 +19171,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  color: {r: 0.6981132, g: 0.20745817, b: 0.20745817, a: 1}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &821408876
 GameObject:
@@ -24355,6 +24362,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &963954973
 GameObject:
@@ -25385,6 +25393,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1008909843
 GameObject:
@@ -27855,6 +27864,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  color: {r: 0.030437866, g: 0.61642855, b: 0.7169812, a: 1}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1103756739
 GameObject:
@@ -32716,6 +32726,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  color: {r: 0, g: 0.8679245, b: 0.22010887, a: 1}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1278628644
 GameObject:
@@ -34751,6 +34762,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1345143483
 GameObject:
@@ -34929,6 +34941,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1361359929
 GameObject:
@@ -35028,6 +35041,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1362872320
 GameObject:
@@ -38930,6 +38944,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1485120615
 GameObject:
@@ -43931,6 +43946,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1654516457
 GameObject:
@@ -53028,6 +53044,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1979078435
 GameObject:
@@ -56082,6 +56099,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
+  color: {r: 0, g: 0, b: 0, a: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &2077713344
 GameObject:

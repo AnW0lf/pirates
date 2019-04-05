@@ -51,6 +51,9 @@ public class PierManager : MonoBehaviour
     public UpgradeMenuManager upgradeMenu;
     public Transform ships;
 
+    [Header("Цвет указателя")]
+    public Color color;
+
     private Island island;
     private GameObject ship;
     private int blackMark;
@@ -113,6 +116,7 @@ public class PierManager : MonoBehaviour
         ship.GetComponent<Ship>()._icon.GetComponent<ShipClick>().lifebuoys = lifebuoys;
         ship.GetComponent<Ship>()
             .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward());
+        ship.GetComponentInChildren<ShipTimer>().color = color;
     }
 
     /// <summary>

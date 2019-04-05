@@ -21,21 +21,14 @@ public class IslandController : MonoBehaviour
         anim = GetComponent<Animation>();
     }
 
-    private void Start()
-    {
-        if (island.Level >= minLevel)
-        {
-            StartCoroutine(GenerateMoney());
-            active = true;
-        }
-    }
-
     private void Update()
     {
         if (!active && island.Level >= minLevel)
         {
-            StartCoroutine(GenerateMoney());
+            clicked = true;
             active = true;
+            StopAllCoroutines();
+            StartCoroutine(GenerateMoney());
         }
     }
 
@@ -51,6 +44,7 @@ public class IslandController : MonoBehaviour
 
     private IEnumerator GenerateMoney()
     {
+        Debug.Log("Money");
         if (clicked)
         {
             time = tapDelay;

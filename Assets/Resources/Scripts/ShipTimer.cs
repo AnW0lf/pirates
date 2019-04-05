@@ -5,23 +5,19 @@ using UnityEngine.UI;
 
 public class ShipTimer : MonoBehaviour
 {
-    public Transform pointer, arrow, timer;
-    public Image clock, icon;
+    public Transform pointer, arrow;
+    public Image clock;
+    public Color color;
 
     private bool isTimerActive;
-    private Vector3 startPos, startAngles, startScale;
+    private Vector3 startPos, startScale;
     private Ship ship;
 
     private void Awake()
     {
         startPos = pointer.localPosition;
-        startAngles = arrow.localEulerAngles;
         startScale = pointer.localScale;
         ship = transform.parent.GetComponentInParent<Ship>();
-    }
-
-    private void Start()
-    {
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,10 +35,9 @@ public class ShipTimer : MonoBehaviour
     private IEnumerator Timer(float time)
     {
         isTimerActive = true;
+        arrow.GetComponent<Image>().color = color;
         pointer.gameObject.SetActive(true);
-        icon.sprite = GetComponent<Image>().sprite;
         pointer.SetParent(transform.parent, true);
-        timer.eulerAngles = Vector3.zero;
         pointer.localScale = new Vector3(pointer.localScale.x, pointer.localScale.y * Mathf.Sign(transform.localScale.x), pointer.localScale.z);
         WaitForFixedUpdate wait = new WaitForFixedUpdate();
         for (float i = 0f; i < time; i += Time.fixedDeltaTime)
@@ -53,7 +48,6 @@ public class ShipTimer : MonoBehaviour
         pointer.SetParent(transform);
         pointer.localPosition = startPos;
         pointer.localScale = startScale;
-        timer.localEulerAngles = startAngles;
         pointer.gameObject.SetActive(false);
         isTimerActive = false;
     }
