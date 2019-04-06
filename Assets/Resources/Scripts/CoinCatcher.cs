@@ -41,7 +41,7 @@ public class CoinCatcher : MonoBehaviour
         GetComponentInParent<ShipClick>().ship.raidTimeModifier = 1;
 
         _flyingText = Instantiate(flyingText, transform.parent.parent.parent.parent.parent.GetChild(1));
-        _flyingText.transform.localPosition = new Vector3(-180f, 0f, 0f);
+        _flyingText.transform.localPosition = new Vector3(-240f, 0f, 0f);
         _flyingText.transform.eulerAngles = new Vector3(0f, 0f, 0f);
         _flyingText.GetComponent<FlyingText>().exp = true;
         _flyingText.GetComponent<FlyingText>().expText.GetComponent<Text>().text = money.ToString();
