@@ -42,14 +42,14 @@ public class RouletteRotation : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.Subscribe("LevelUp", UpdateInfo);
+        //EventManager.Subscribe("LevelUp", UpdateInfo);
         InitInfo();
     }
 
-    private void UpdateInfo(object[] arg0)
-    {
-        UpdateInfo();
-    }
+    //private void UpdateInfo(object[] arg0)
+    //{
+    //    UpdateInfo();
+    //}
 
     private void InitInfo()
     {
@@ -68,8 +68,10 @@ public class RouletteRotation : MonoBehaviour
         }
     }
 
-    private void UpdateInfo()
+    public void UpdateInfo()
     {
+        if (island == null) return;
+
         if (levels.Contains(island.Level))
         {
             float[] mods = modifiers.GetRange(0, levels.IndexOf(island.Level) + 1).ToArray();
@@ -83,7 +85,7 @@ public class RouletteRotation : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.Unsubscribe("LevelUp", UpdateInfo);
+        //EventManager.Unsubscribe("LevelUp", UpdateInfo);
     }
 
     private void Start()

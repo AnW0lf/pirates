@@ -62,11 +62,22 @@ public class WindowController : MonoBehaviour
         if (pier.black)
         {
             BlackShip();
-            if (!pier.shipExist)
+            BlackShip();
+
+            if (pier.GetBlackMark() > 0)
+
+                NotBought();
+
+            else if (!pier.shipExist)
+
                 Locked();
+
             else if (pier.maxLvl)
+
                 MaxLevel();
+
             else
+
                 Bought();
         }
         else if (pier.minLvl > island.Level)

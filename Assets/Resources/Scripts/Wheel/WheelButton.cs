@@ -20,5 +20,11 @@ public class WheelButton : MonoBehaviour
         }
     }
 
+    public void WheelSwitchOn()
+    {
+        GetComponent<Animation>().Play("WheelOpen");
+        wheelOpened = true;
+    }
+
 
 }

@@ -54,7 +54,7 @@ public class IslandController : MonoBehaviour
         }
         else
         {
-            delay = tapDelay;
+            time = tapDelay;
         }
 
         anim.Play();
