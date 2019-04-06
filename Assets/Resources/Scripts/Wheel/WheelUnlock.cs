@@ -31,7 +31,7 @@ public class WheelUnlock : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void Open()
     {
         if (island.Level >= minLevel && !child.activeInHierarchy)
         {
