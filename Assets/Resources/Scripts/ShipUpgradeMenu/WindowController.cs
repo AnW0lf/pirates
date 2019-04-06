@@ -62,22 +62,14 @@ public class WindowController : MonoBehaviour
         if (pier.black)
         {
             BlackShip();
-            BlackShip();
 
-            if (pier.GetBlackMark() > 0)
-
+            if (pier.GetBlackMark() > 0 && !pier.shipExist)
                 NotBought();
-
             else if (!pier.shipExist)
-
                 Locked();
-
             else if (pier.maxLvl)
-
                 MaxLevel();
-
             else
-
                 Bought();
         }
         else if (pier.minLvl > island.Level)
@@ -164,8 +156,10 @@ public class WindowController : MonoBehaviour
             windowFade.SetActive(false);
         if (titleFade.activeInHierarchy)
             titleFade.SetActive(false);
-
-        icon.color = Color.white;
+        if (pier.black)
+            icon.color = Color.black;
+        else
+            icon.color = Color.white;
     }
 
     private void Bought()
