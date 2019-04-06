@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UpgradeWheelWindow : MonoBehaviour
 {
-    public GameObject child;
+    public GameObject child, childRays;
     public Text text;
     public Button btn;
 
@@ -27,15 +27,18 @@ public class UpgradeWheelWindow : MonoBehaviour
             float mod = (float)arg0[0];
             WheelButton wb = (WheelButton)arg0[1];
             child.SetActive(true);
+            childRays.SetActive(true);
             btn.onClick.RemoveAllListeners();
             btn.onClick.AddListener(wb.WheelSwitch);
             btn.onClick.AddListener(Close);
-            text.text = "All rewards increased by " + mod.ToString();
+            //text.text = "All rewards increased by " + mod.ToString();
+            text.text = "Rewards Upgraded!";
         }
     }
 
     private void Close()
     {
         child.SetActive(false);
+        childRays.SetActive(false);
     }
 }
