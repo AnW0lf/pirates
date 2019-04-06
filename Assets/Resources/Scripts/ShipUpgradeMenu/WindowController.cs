@@ -95,10 +95,9 @@ public class WindowController : MonoBehaviour
         bonusTM.gameObject.SetActive(false);
         SetState(descriptionTM, pier.shipDescription);
         if (pier.black)
-            SetState(fadeLevelTM, "Catch unlock in Lucky Wheel");
+            SetState(upBtnTM, "Catch unlock in Lucky Wheel");
         else
-            SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
-        SetState(upBtnTM, pier.minLvl.ToString(), "LEVEl ");
+            SetState(upBtnTM, pier.minLvl.ToString(), "LEVEl ");
 
         if (!icon.sprite.Equals(pier.shipIcon))
             icon.sprite = pier.shipIcon;
