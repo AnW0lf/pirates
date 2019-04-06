@@ -44,7 +44,6 @@ public class IslandController : MonoBehaviour
 
     private IEnumerator GenerateMoney()
     {
-        Debug.Log("Money");
         if (clicked)
         {
             time = tapDelay;

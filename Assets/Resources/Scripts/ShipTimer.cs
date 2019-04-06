@@ -13,11 +13,14 @@ public class ShipTimer : MonoBehaviour
     private Vector3 startPos, startScale;
     private Ship ship;
 
+    private Vector3 scale = new Vector3(0.006f, 0.006f, 1f);
+
     private void Awake()
     {
         startPos = pointer.localPosition;
         startScale = pointer.localScale;
         ship = transform.parent.GetComponentInParent<Ship>();
+        pointer.localScale = scale;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,7 +41,6 @@ public class ShipTimer : MonoBehaviour
         arrow.GetComponent<Image>().color = color;
         pointer.gameObject.SetActive(true);
         pointer.SetParent(transform.parent, true);
-        pointer.localScale = new Vector3(pointer.localScale.x, pointer.localScale.y * Mathf.Sign(transform.localScale.x), pointer.localScale.z);
         WaitForFixedUpdate wait = new WaitForFixedUpdate();
         for (float i = 0f; i < time; i += Time.fixedDeltaTime)
         {
@@ -50,5 +52,6 @@ public class ShipTimer : MonoBehaviour
         pointer.localScale = startScale;
         pointer.gameObject.SetActive(false);
         isTimerActive = false;
+        pointer.localScale = Vector3.right * pointer.localScale.x + Vector3.up * pointer.localScale.y * Mathf.Sign(transform.localScale.x) + Vector3.forward * pointer.localScale.z;
     }
 }

@@ -30,7 +30,7 @@ public class LifebuoyManager : MonoBehaviour
         island = Island.Instance();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         modifierName = upgrade.modifierName;
         island.InitParameter(modifierName + "_level", 1);
@@ -41,10 +41,24 @@ public class LifebuoyManager : MonoBehaviour
         cur = island.GetParameter(modifierName + "_current", 0);
         s = island.GetParameter(modifierName + "_timer", 0);
 
+        MaximizeLifebuoys();
+
         LifebuoysOffline();
 
         UpdateInfo();
         if (s != 0) StartCoroutine(Timer(s));
+
+        EventManager.Subscribe("LevelUp", MaximizeLifebuoys);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.Unsubscribe("LevelUp", MaximizeLifebuoys);
+    }
+
+    private void MaximizeLifebuoys(object[] arg0)
+    {
+        MaximizeLifebuoys();
     }
 
     private void Update()
@@ -112,6 +126,7 @@ public class LifebuoyManager : MonoBehaviour
 
     public void UpdateInfo()
     {
+        modifierName = upgrade.modifierName;
         island.InitParameter(modifierName + "_level", 0);
         lvl = island.GetParameter(modifierName + "_level", 0);
         max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;

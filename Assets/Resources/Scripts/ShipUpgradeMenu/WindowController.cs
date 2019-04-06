@@ -63,7 +63,7 @@ public class WindowController : MonoBehaviour
         {
             BlackShip();
             if (!pier.shipExist)
-                NotBought();
+                Locked();
             else if (pier.maxLvl)
                 MaxLevel();
             else
@@ -94,8 +94,11 @@ public class WindowController : MonoBehaviour
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         SetState(descriptionTM, pier.shipDescription);
+        if (pier.black)
+            SetState(fadeLevelTM, "Catch unlock in Lucky Wheel");
+        else
+            SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
         SetState(upBtnTM, pier.minLvl.ToString(), "LEVEl ");
-        SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
 
         if (!icon.sprite.Equals(pier.shipIcon))
             icon.sprite = pier.shipIcon;

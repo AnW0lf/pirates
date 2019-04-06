@@ -64,7 +64,10 @@ public class MiniatureContoller : MonoBehaviour
         }
         else if (!pier.shipExist)
         {
-            icon.color = Color.white;
+            if (pier.black)
+                icon.color = Color.black;
+            else
+                icon.color = Color.white;
             level.text = "0/" + (1 + pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3).ToString();
         }
         else if (!pier.maxLvl)
