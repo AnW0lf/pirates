@@ -41,8 +41,9 @@ public class GameLevelFadeManager : MonoBehaviour
         }
     }
 
-    private void Unlock()
+    public void Unlock()
     {
+        if (island.Level < level) return;
         wheel.SetActive(true);
         bonuses.SetActive(true);
         screenUI.SetActive(true);
