@@ -8,8 +8,9 @@ public class WindowController : MonoBehaviour
 {
     public TextManager titleTM, upLevelTM, raidTimeTM, rewardTM, detailLevelTM, bonusTM, upBtnTM, fadeLevelTM, descriptionTM;
     public Image icon, miniIcon;
-    public GameObject windowFade, iconFade, titleFade;
+    public GameObject windowFade, iconFade, titleFade, cost;
     public Button exitBtn, upgradeBtn;
+    public Text costTxt;
 
     public Sprite body, sail, gun;
 
@@ -117,6 +118,7 @@ public class WindowController : MonoBehaviour
             upgradeBtn.interactable = false;
 
         icon.color = Color.black;
+        cost.SetActive(false);
     }
 
     private void NotBought()
@@ -132,15 +134,19 @@ public class WindowController : MonoBehaviour
 
         if (!pier.black)
         {
-            SetState(upBtnTM, pier.GetUpgradeCost().ToString(), "Unlock ");
+            SetState(upBtnTM, "Unlock\n");
+            cost.SetActive(true);
+            costTxt.text = CheckRange(pier.GetUpgradeCost());
         }
-        else if (!isBlackUpgraded)
+        else if (pier.GetBlackMark() > 0)
         {
             SetState(upBtnTM, "Unlock");
+            cost.SetActive(false);
         }
         else
         {
             SetState(upBtnTM, "Catch upgrade in Lucky Wheel");
+            cost.SetActive(false);
         }
 
         SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
@@ -208,15 +214,19 @@ public class WindowController : MonoBehaviour
 
         if (!pier.black)
         {
-            SetState(upBtnTM, pier.GetUpgradeCost().ToString(), "Upgrade ");
+            SetState(upBtnTM, "Upgrade\n");
+            cost.SetActive(true);
+            costTxt.text = CheckRange(pier.GetUpgradeCost());
         }
-        else if (!isBlackUpgraded)
+        else if (pier.GetBlackMark() > 0)
         {
             SetState(upBtnTM, "Upgrade");
+            cost.SetActive(false);
         }
         else
         {
             SetState(upBtnTM, "Catch upgrade in Lucky Wheel");
+            cost.SetActive(false);
         }
 
         if (iconFade.activeInHierarchy)
@@ -256,6 +266,7 @@ public class WindowController : MonoBehaviour
             upgradeBtn.interactable = false;
 
         icon.color = Color.white;
+        cost.SetActive(false);
     }
 
     private void SetState(TextManager tm, string text, string prefix = "", string postfix = "")
@@ -275,5 +286,38 @@ public class WindowController : MonoBehaviour
     private void IsBlackUpgraded()
     {
         isBlackUpgraded = true;
+    }
+
+    private string CheckRange(int v)
+    {
+        int degree = 0;
+        float value = v;
+        while (value >= 1000)
+        {
+            value /= 1000;
+            degree++;
+        }
+        string strValue = value.ToString();
+        if (strValue.Length >= 5)
+            strValue = strValue.Substring(0, 5);
+        switch (degree)
+        {
+            case 0:
+                return strValue;
+            case 1:
+                return strValue + "K";
+            case 2:
+                return strValue + "M";
+            case 3:
+                return strValue + "B";
+            case 4:
+                return strValue + "T";
+            case 5:
+                return strValue + "Q";
+            case 6:
+                return strValue + "A";
+            default:
+                return strValue + "?";
+        }
     }
 }
