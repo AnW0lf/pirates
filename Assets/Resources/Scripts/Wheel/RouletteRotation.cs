@@ -62,7 +62,6 @@ public class RouletteRotation : MonoBehaviour
                 {
                     sector.UpdateReward(mods);
                 }
-                EventManager.SendEvent("UpgradeWheel", mods[mods.Length - 1], wb);
                 return;
             }
         }
