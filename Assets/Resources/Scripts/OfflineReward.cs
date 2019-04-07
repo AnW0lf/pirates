@@ -18,57 +18,69 @@ public class OfflineReward : MonoBehaviour
     private int money, timeModifier, expToAdd;
     private Island island;
     private Text text;
+    private bool rewardGained;
 
     private void Awake()
     {
         island = Island.Instance();
         text = GetComponent<Text>();
+        rewardGained = false;
     }
 
-    void OnEnable()
+    void Update()
     {
-        island.InitParameter("QuitTime", (DateTime.Now).ToString());
-        ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
+        if (!rewardGained)
+        {
+            island.InitParameter("QuitTime", (DateTime.Now).ToString());
+            ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
 
-        //Пересчитываем в секунды
-        if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 10f)
-        {
-            window.SetActive(false);
-        }
-        else
-        {
-            timeModifier = Mathf.Clamp(ts.Seconds + ts.Minutes * 60 + ts.Hours * 60 * 60 + ts.Days * 60 * 60 * 24, 0, maxTime);
-        }
+            Debug.Log(ts);
 
-        //Считаем бабки и левел-ап
-        money = 0;
-        expToAdd = 0;
-        foreach (GameObject ships in shipsList)
-        {
-            foreach (Transform child in ships.transform)
+            //Пересчитываем в секунды
+            if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 10f)
             {
-                Ship ship = child.GetComponent<Ship>();
-                money += (int)(ship.reward / ship.raidTime * timeModifier / modifier) + 100;
-                expToAdd += (int)(timeModifier / ship.raidTime / 10f);
+                rewardGained = true;
+                window.SetActive(false);
             }
-        }
+            else
+            {
+                timeModifier = Mathf.Clamp(ts.Seconds + ts.Minutes * 60 + ts.Hours * 60 * 60 + ts.Days * 60 * 60 * 24, 0, maxTime);
+            }
 
-        //Добавлям бонусы
-        for (int i = 0; i <= Mathf.Clamp(island.Level / 25, 0, bgs.Length - 1); i++)
-            bgs[i].RandomBonus(timeModifier / bonusModifier);
+            //Считаем бабки и левел-ап
+            money = 0;
+            expToAdd = 0;
+            foreach (GameObject ships in shipsList)
+            {
+                foreach (Transform child in ships.transform)
+                {
+                    Debug.Log(child.gameObject.name);
+                    Ship ship = child.GetComponent<Ship>();
+                    money += (int)(ship.reward / ship.raidTime * timeModifier / modifier) + 100;
+                    expToAdd += (int)(timeModifier / ship.raidTime / 10f);
+                }
+            }
 
-        //Выдаем ЛЕВЕЛ-АП
-        island.ExpUp(expToAdd);
+            //Добавлям бонусы
+            for (int i = 0; i <= Mathf.Clamp(island.Level / 25, 0, bgs.Length - 1); i++)
+                bgs[i].RandomBonus(timeModifier / bonusModifier);
+
+            //Выдаем ЛЕВЕЛ-АП
+            island.ExpUp(expToAdd);
 
 
-        text.text = money.ToString();
+            text.text = money.ToString();
 
-        //Write Time for Offline Reward
-        island.SetParameter("QuitTime", DateTime.Now.ToString());
+            //Write Time for Offline Reward
+            island.SetParameter("QuitTime", DateTime.Now.ToString());
 
-        if (money == 0)
-        {
-            window.SetActive(false);
+            if (money == 0)
+            {
+                rewardGained = true;
+                window.SetActive(false);
+            }
+
+            rewardGained = true;
         }
     }
 
