@@ -15,7 +15,7 @@ public class IslandSpriteController : MonoBehaviour
     private void Awake()
     {
         island = Island.Instance();
-        image.GetComponent<Image>();
+        image = GetComponent<Image>();
     }
 
     private void Start()
