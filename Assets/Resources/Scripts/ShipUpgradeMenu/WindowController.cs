@@ -16,7 +16,6 @@ public class WindowController : MonoBehaviour
 
     private PierManager pier;
     private Island island;
-    private bool isBlackUpgraded = true;
 
     private void Awake()
     {
@@ -45,15 +44,9 @@ public class WindowController : MonoBehaviour
     public void GenerateMenu(PierManager pier)
     {
         this.pier = pier;
-        if (pier.black)
-            isBlackUpgraded = false;
 
         UpdateInfo();
         upgradeBtn.onClick.RemoveAllListeners();
-        if (pier.black)
-        {
-            BlackShip();
-        }
         upgradeBtn.onClick.AddListener(pier.Upgrade);
         upgradeBtn.onClick.AddListener(UpdateInfo);
     }
@@ -62,8 +55,6 @@ public class WindowController : MonoBehaviour
     {
         if (pier.black)
         {
-            BlackShip();
-
             if (pier.GetBlackMark() > 0 && !pier.shipExist)
                 NotBought();
             else if (!pier.shipExist)
@@ -276,16 +267,6 @@ public class WindowController : MonoBehaviour
         tm.text = text;
         tm.prefix = prefix;
         tm.postfix = postfix;
-    }
-
-    private void BlackShip()
-    {
-        upgradeBtn.onClick.AddListener(IsBlackUpgraded);
-    }
-
-    private void IsBlackUpgraded()
-    {
-        isBlackUpgraded = true;
     }
 
     private string CheckRange(int v)

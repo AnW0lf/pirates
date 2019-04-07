@@ -50,7 +50,7 @@ public class IslandController : MonoBehaviour
         }
         else if ((delay - (island.GetParameter("Level", 0) - 1) / 10) > tapDelay)
         {
-            time = delay - (island.GetParameter("Level", 0) - 1) / 10;
+            time = delay - (island.GetParameter("Level", 0) - 1) / 50;
         }
         else
         {
