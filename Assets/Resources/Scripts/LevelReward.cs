@@ -11,8 +11,9 @@ public class LevelReward : MonoBehaviour
     public Text levelsToShipsText;
     public string oneLevelToShip, someLevelsToShip, noLevelsToShip;
 
-    private int money, levelsToShip;
+    private int levelsToShip;
     private Island island;
+    private BigDigit money;
 
     private void Awake()
     {
@@ -21,12 +22,12 @@ public class LevelReward : MonoBehaviour
 
     void OnEnable()
     {
-        money = 0;
+        money = BigDigit.zero;
         foreach (GameObject ships in shipsList)
         {
             foreach (Transform child in ships.transform)
             {
-                money += (int)(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * PlayerPrefs.GetInt("Level"));
+                money += new BigDigit(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * PlayerPrefs.GetInt("Level"));
             }
         }
 

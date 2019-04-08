@@ -12,8 +12,13 @@ public class SectorController : MonoBehaviour
     public PierManager blackShip;
     public Text title;
 
+    public float startRewardMantissa;
+    public int startRewardExponent;
+
     private int reward = 0, modifier;
     private Island island;
+
+    private BigDigit startMoneyReward, moneyReward;
 
     private void Awake()
     {
@@ -23,6 +28,8 @@ public class SectorController : MonoBehaviour
 
     private void OnEnable()
     {
+        startMoneyReward = new BigDigit(startRewardMantissa, startRewardExponent);
+        moneyReward = startMoneyReward;
         UpdateInfo();
     }
 
@@ -31,7 +38,7 @@ public class SectorController : MonoBehaviour
         switch (type)
         {
             case RouletteRotation.RewardType.Money:
-                title.text = reward.ToString();
+                title.text = moneyReward.ToString();
                 break;
             case RouletteRotation.RewardType.Bonus:
                 title.text = "X" + reward.ToString();
@@ -51,7 +58,7 @@ public class SectorController : MonoBehaviour
             {
                 mod *= m;
             }
-            reward = (int)(startReward * mod);
+            moneyReward = startMoneyReward * mod;
         }
         UpdateInfo();
     }
@@ -61,7 +68,7 @@ public class SectorController : MonoBehaviour
         switch (type)
         {
             case RouletteRotation.RewardType.Money:
-                island.ChangeMoney(reward);
+                island.ChangeMoney(moneyReward);
                 break;
             case RouletteRotation.RewardType.Bonus:
                 bg.Bonus(bonusId, reward);

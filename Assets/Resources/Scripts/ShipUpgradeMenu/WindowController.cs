@@ -127,7 +127,7 @@ public class WindowController : MonoBehaviour
         {
             SetState(upBtnTM, "Unlock\n");
             cost.SetActive(true);
-            costTxt.text = CheckRange(pier.GetUpgradeCost());
+            costTxt.text = pier.GetUpgradeCost().ToString();
         }
         else if (pier.GetBlackMark() > 0)
         {
@@ -207,7 +207,7 @@ public class WindowController : MonoBehaviour
         {
             SetState(upBtnTM, "Upgrade\n");
             cost.SetActive(true);
-            costTxt.text = CheckRange(pier.GetUpgradeCost());
+            costTxt.text = pier.GetUpgradeCost().ToString();
         }
         else if (pier.GetBlackMark() > 0)
         {

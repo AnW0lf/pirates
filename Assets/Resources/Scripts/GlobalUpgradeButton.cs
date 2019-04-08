@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class GlobalUpgradeButton : MonoBehaviour
 {
     public string modifierName, descriptionName;
-    public int startPrice;
+    public double startPriceMantissa;
+    public long startPriceExponent;
     public float modifier, startReward, maxReward;
     public GameObject cost;
     public Text descriptionText, rewardText, stateText, costText;
@@ -14,7 +15,7 @@ public class GlobalUpgradeButton : MonoBehaviour
     public Color[] buttonColors;
     public LifebuoyManager lifebuoys;
 
-    private int price;
+    private BigDigit startPrice, price;
     private bool max = false;
     private float reward;
     private Island island;
@@ -26,6 +27,7 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private void Start()
     {
+        startPrice = new BigDigit(startPriceMantissa, startPriceExponent);
         island.InitParameter(modifierName, 1.0f);
         island.InitParameter(modifierName + "_level", 1);
         SetButtonPrefs();
@@ -45,7 +47,7 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private void SetButtonPrefs()
     {
-        price = (int)(startPrice * Mathf.Pow(1.5f, (island.GetParameter(modifierName + "_level", 0) - 1)));
+        price = (startPrice * Mathf.Pow(1.5f, (island.GetParameter(modifierName + "_level", 0) - 1)));
         reward = startReward + modifier * (island.GetParameter(modifierName + "_level", 0) - 1);
 
         if (reward >= maxReward)
@@ -59,7 +61,7 @@ public class GlobalUpgradeButton : MonoBehaviour
         else
         {
             stateText.text = "Upgrade\n";
-            costText.text = CheckRange(price);
+            costText.text = price.ToString();
             island.SetParameter(modifierName, reward);
         }
         descriptionText.text = descriptionName;
@@ -68,44 +70,11 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     public void Upgrade(GlobalUpgradeButton button)
     {
-        if (!max && island.ChangeMoney(-button.price))
+        if (!max && island.ChangeMoney(BigDigit.Reverse(button.price)))
         {
             island.SetParameter(modifierName + "_level", island.GetParameter(modifierName + "_level", 0) + 1);
             lifebuoys.UpdateInfo();
             SetButtonPrefs();
-        }
-    }
-
-    private string CheckRange(int v)
-    {
-        int degree = 0;
-        float value = v;
-        while (value >= 1000)
-        {
-            value /= 1000;
-            degree++;
-        }
-        string strValue = value.ToString();
-        if (strValue.Length >= 5)
-            strValue = strValue.Substring(0, 5);
-        switch (degree)
-        {
-            case 0:
-                return strValue;
-            case 1:
-                return strValue + "K";
-            case 2:
-                return strValue + "M";
-            case 3:
-                return strValue + "B";
-            case 4:
-                return strValue + "T";
-            case 5:
-                return strValue + "Q";
-            case 6:
-                return strValue + "A";
-            default:
-                return strValue + "?";
         }
     }
 }

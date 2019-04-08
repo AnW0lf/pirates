@@ -15,16 +15,18 @@ public class OfflineReward : MonoBehaviour
 
     public static TimeSpan ts;
 
-    private int money, timeModifier, expToAdd;
+    private int timeModifier, expToAdd;
     private Island island;
     private Text text;
     private bool rewardGained;
+    private BigDigit money;
 
     private void Awake()
     {
         island = Island.Instance();
         text = GetComponent<Text>();
         rewardGained = false;
+        money = BigDigit.zero;
     }
 
     void Update()
@@ -48,7 +50,7 @@ public class OfflineReward : MonoBehaviour
             }
 
             //Считаем бабки и левел-ап
-            money = 0;
+            money = BigDigit.zero;
             expToAdd = 0;
             foreach (GameObject ships in shipsList)
             {
@@ -56,7 +58,7 @@ public class OfflineReward : MonoBehaviour
                 {
                     Debug.Log(child.gameObject.name);
                     Ship ship = child.GetComponent<Ship>();
-                    money += (int)(ship.reward / ship.raidTime * timeModifier / modifier) + 100;
+                    money += new BigDigit(ship.reward / ship.raidTime * timeModifier / modifier) + new BigDigit(100d);
                     expToAdd += (int)(timeModifier / ship.raidTime / 10f);
                 }
             }
@@ -74,7 +76,7 @@ public class OfflineReward : MonoBehaviour
             //Write Time for Offline Reward
             island.SetParameter("QuitTime", DateTime.Now.ToString());
 
-            if (money == 0)
+            if (money.EqualsZero())
             {
                 rewardGained = true;
                 window.SetActive(false);

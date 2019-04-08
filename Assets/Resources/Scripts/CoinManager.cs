@@ -7,8 +7,7 @@ public class CoinManager : MonoBehaviour
     public string prefix = "";
 
     [SerializeField]
-    private int money;
-    private string postfix = "";
+    private BigDigit money;
     private TextManager tm;
     private Island island;
 
@@ -19,52 +18,16 @@ public class CoinManager : MonoBehaviour
 
     private void Start()
     {
+        money = BigDigit.zero;
         tm = GetComponent<TextManager>();
+        tm.postfix = "";
         UpdateMoney();
     }
 
     private void UpdateMoney()
     {
         tm.prefix = prefix;
-        int degree = 0;
-        float value = money;
-        while (value >= 1000)
-        {
-            value /= 1000;
-            degree++;
-        }
-        switch (degree)
-        {
-            case 0:
-                postfix = "";
-                break;
-            case 1:
-                postfix = "K";
-                break;
-            case 2:
-                postfix = "M";
-                break;
-            case 3:
-                postfix = "B";
-                break;
-            case 4:
-                postfix = "T";
-                break;
-            case 5:
-                postfix = "q";
-                break;
-            case 6:
-                postfix = "Q";
-                break;
-            default:
-                postfix = "?";
-                break;
-        }
-        string strValue = value.ToString();
-        if (strValue.Length >= 5)
-            strValue = strValue.Substring(0, 5);
-        tm.text = strValue;
-        tm.postfix = postfix;
+        tm.text = money.ToString();
     }
 
     private void Update()

@@ -61,7 +61,7 @@ public class IslandController : MonoBehaviour
 
         //int reward = (int)(island.Level * island.Level * modifier);
 
-        int reward = (int)(Mathf.Pow(island.Level, 2.15f) * modifier);
+        BigDigit reward = new BigDigit(Mathf.Pow(island.Level, 2.15f) * modifier);
 
         _flyingText = Instantiate(flyingText, transform);
         _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);

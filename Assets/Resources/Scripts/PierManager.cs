@@ -18,7 +18,8 @@ public class PierManager : MonoBehaviour
     public float angle;
     [Header("Начальные характеристики")]
     public string shipName;
-    public int startPrice;
+    public double startPriceMantissa;
+    public long startPriceExponent;
     public float startRaidTime;
     public int startReward;
     [Header("Скорость движения")]
@@ -26,24 +27,39 @@ public class PierManager : MonoBehaviour
     [Header("Первый параметр")]
     [Header("|Прокачка|")]
     public string detailName1;
-    public int detailMaxLvl1, detailCurrentLvl1, detailStartCost1, detailCostIncrease1, detailChangeReward1;
+    public int detailMaxLvl1, detailCurrentLvl1, detailChangeReward1;
     public float detailChangeRaidTime1, detailSizeModifier1;
+    public double detailStartCostMantissa1;
+    public long detailStartCostExponent1;
+    public double detailCostIncreaseMantissa1;
+    public long detailCostIncreaseExponent1;
     public Sprite detailMiniature1;
     public List<Sprite> detailShipSprites1;
+    private BigDigit detailStartCost1, detailCostIncrease1;
 
     [Header("Второй параметр")]
     public string detailName2;
-    public int detailMaxLvl2, detailCurrentLvl2, detailStartCost2, detailCostIncrease2, detailChangeReward2;
+    public int detailMaxLvl2, detailCurrentLvl2, detailChangeReward2;
     public float detailChangeRaidTime2, detailSizeModifier2;
+    public double detailStartCostMantissa2;
+    public long detailStartCostExponent2;
+    public double detailCostIncreaseMantissa2;
+    public long detailCostIncreaseExponent2;
     public Sprite detailMiniature2;
     public List<Sprite> detailShipSprites2;
+    private BigDigit detailStartCost2, detailCostIncrease2;
 
     [Header("Третий параметр")]
     public string detailName3;
-    public int detailMaxLvl3, detailCurrentLvl3, detailStartCost3, detailCostIncrease3, detailChangeReward3;
+    public int detailMaxLvl3, detailCurrentLvl3, detailChangeReward3;
     public float detailChangeRaidTime3, detailSizeModifier3;
+    public double detailStartCostMantissa3;
+    public long detailStartCostExponent3;
+    public double detailCostIncreaseMantissa3;
+    public long detailCostIncreaseExponent3;
     public Sprite detailMiniature3;
     public List<Sprite> detailShipSprites3;
+    private BigDigit detailStartCost3, detailCostIncrease3;
 
     [Header("|Информация о пристани|")]
     public bool shipExist;
@@ -57,6 +73,8 @@ public class PierManager : MonoBehaviour
     private Island island;
     private GameObject ship;
     private int blackMark;
+
+    public BigDigit startPrice { get; private set; }
 
     //Счетчик спасательных кругов. Для расчета бонусов
     public LifebuoyManager lifebuoys;
@@ -94,6 +112,16 @@ public class PierManager : MonoBehaviour
             if (ship == null) CreateShip();
             else UpdadeShipInfo();
         }
+
+        startPrice = new BigDigit(startPriceMantissa, startPriceExponent);
+
+        detailStartCost1 = new BigDigit(detailStartCostMantissa1, detailStartCostExponent1);
+        detailStartCost2 = new BigDigit(detailStartCostMantissa2, detailStartCostExponent2);
+        detailStartCost3 = new BigDigit(detailStartCostMantissa3, detailStartCostExponent3);
+
+        detailCostIncrease1 = new BigDigit(detailCostIncreaseMantissa1, detailCostIncreaseExponent1);
+        detailCostIncrease2 = new BigDigit(detailCostIncreaseMantissa2, detailCostIncreaseExponent2);
+        detailCostIncrease3 = new BigDigit(detailCostIncreaseMantissa3, detailCostIncreaseExponent3);
     }
 
     private void Update()
@@ -145,18 +173,18 @@ public class PierManager : MonoBehaviour
             + (detailChangeReward3 * detailCurrentLvl3);
     }
 
-    public int GetUpgradeCost()
+    public BigDigit GetUpgradeCost()
     {
         return shipExist ? detailStartCost1 + (detailCurrentLvl1 * detailCostIncrease1)
-            + (detailCurrentLvl1 != detailMaxLvl1 ? 0 : (detailStartCost2 + (detailCurrentLvl2 * detailCostIncrease2)
-            + (detailCurrentLvl2 != detailMaxLvl2 ? 0 : (detailStartCost3 + (detailCurrentLvl3 * detailCostIncrease3)))))
+            + (detailCurrentLvl1 != detailMaxLvl1 ? BigDigit.zero : (detailStartCost2 + (detailCurrentLvl2 * detailCostIncrease2)
+            + (detailCurrentLvl2 != detailMaxLvl2 ? BigDigit.zero : (detailStartCost3 + (detailCurrentLvl3 * detailCostIncrease3)))))
             : startPrice;
     }
 
     public void Upgrade()
     {
         if (maxLvl) return;
-        if (!black && !island.ChangeMoney(-GetUpgradeCost()) || black && !ChangeBlackMark(-1)) return;
+        if (!black && !island.ChangeMoney(BigDigit.Reverse(GetUpgradeCost())) || black && !ChangeBlackMark(-1)) return;
         if (!shipExist)
         {
             shipExist = true;

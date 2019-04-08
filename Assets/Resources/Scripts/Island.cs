@@ -7,7 +7,7 @@ public class Island
 {
     private static Island island;
     //_______________________________________________________________________________
-    public int Money { get; private set; }
+    public BigDigit Money { get; private set; }
     public int Level { get; private set; }
     public int Exp { get; private set; }
     public int StartExp { get; private set; }
@@ -32,9 +32,9 @@ public class Island
 
     private void Load()
     {
-        if (!PlayerPrefs.HasKey("Money"))
-            PlayerPrefs.SetInt("Money", 0);
-        Money = PlayerPrefs.GetInt("Money");
+        InitParameter("MoneyMantissa", 0f);
+        InitParameter("MoneyExponent", 0);
+        Money = new BigDigit(GetParameter("MoneyMantissa", 0f), GetParameter("MoneyExponent", 0));
 
         if (!PlayerPrefs.HasKey("Level"))
             PlayerPrefs.SetInt("Level", 1);
@@ -55,7 +55,8 @@ public class Island
 
     public void Save()
     {
-        PlayerPrefs.SetInt("Money", Money);
+        SetParameter("MoneyMantissa", (float)Money.Mantissa);
+        SetParameter("MoneyExponent", (int)Money.Exponent);
         PlayerPrefs.SetInt("Level", Level);
         PlayerPrefs.SetInt("Exp", Exp);
         PlayerPrefs.SetInt("StartExp", StartExp);
@@ -79,11 +80,11 @@ public class Island
         Load();
     }
 
-    public bool ChangeMoney(int value)
+    public bool ChangeMoney(BigDigit other)
     {
-        if (Money + value >= 0)
+        if (BigDigit.Sum(Money, other).LargeThen(BigDigit.zero))
         {
-            Money += value;
+            Money.Sum(other);
             EventManager.SendEvent("ChangeMoney");
             return true;
         }
