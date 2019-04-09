@@ -42,10 +42,7 @@ public class BigDigit
         double lesserMantissa, largerMantissa;
         long lesserExponent, largerExponent;
 
-        if (first < zero && second >= zero) return second - first;
-        else if (second < zero && first >= zero) return first - second;
-
-        else if (first.Exponent > second.Exponent)
+        if (first.Exponent > second.Exponent)
         {
             largerMantissa = first.Mantissa;
             largerExponent = first.Exponent;
@@ -63,7 +60,7 @@ public class BigDigit
         {
             return new BigDigit(first.Mantissa + second.Mantissa, first.Exponent);
         }
-
+        
         while (largerExponent > lesserExponent)
         {
             lesserExponent++;
@@ -96,7 +93,7 @@ public class BigDigit
         {
             return new BigDigit(first.Mantissa - second.Mantissa, first.Exponent);
         }
-
+        
         while (largerExponent > lesserExponent)
         {
             lesserExponent++;
@@ -108,7 +105,12 @@ public class BigDigit
 
     public static bool operator >(BigDigit first, BigDigit second)
     {
-        if (first.Exponent > second.Exponent) return true;
+        if (first.Mantissa > 0d && second.Mantissa <= 0d
+            || first.Mantissa >= 0d && second.Mantissa < 0d) return true;
+        else if (first.Mantissa < 0d && second.Mantissa >= 0d
+            || first.Mantissa <= 0d && second.Mantissa > 0d) return false;
+        else if (first == second) return false;
+        else if (first.Exponent > second.Exponent) return true;
         else if (first.Exponent == second.Exponent)
         {
             if (first.Mantissa > second.Mantissa)
@@ -120,7 +122,12 @@ public class BigDigit
 
     public static bool operator <(BigDigit first, BigDigit second)
     {
-        if (first.Exponent < second.Exponent) return true;
+        if (first.Mantissa > 0d && second.Mantissa <= 0d
+            || first.Mantissa >= 0d && second.Mantissa < 0d) return false;
+        else if (first.Mantissa < 0d && second.Mantissa >= 0d
+            || first.Mantissa <= 0d && second.Mantissa > 0d) return true;
+        else if (first == second) return false;
+        else if (first.Exponent < second.Exponent) return true;
         else if (first.Exponent == second.Exponent)
         {
             if (first.Mantissa < second.Mantissa)
@@ -132,7 +139,11 @@ public class BigDigit
 
     public static bool operator >=(BigDigit first, BigDigit second)
     {
-        if (first.Exponent >= second.Exponent) return true;
+        if (first.Mantissa >= 0d && second.Mantissa <= 0d
+            || first.Mantissa >= 0d && second.Mantissa <= 0d) return true;
+        else if (first.Mantissa <= 0d && second.Mantissa >= 0d
+            || first.Mantissa <= 0d && second.Mantissa >= 0d) return false;
+        else if (first.Exponent > second.Exponent) return true;
         else if (first.Exponent == second.Exponent)
         {
             if (first.Mantissa >= second.Mantissa)
@@ -144,7 +155,11 @@ public class BigDigit
 
     public static bool operator <=(BigDigit first, BigDigit second)
     {
-        if (first.Exponent <= second.Exponent) return true;
+        if (first.Mantissa >= 0d && second.Mantissa <= 0d
+            || first.Mantissa >= 0d && second.Mantissa <= 0d) return false;
+        else if (first.Mantissa < 0d && second.Mantissa >= 0d
+            || first.Mantissa <= 0d && second.Mantissa > 0d) return true;
+        else if (first.Exponent < second.Exponent) return true;
         else if (first.Exponent == second.Exponent)
         {
             if (first.Mantissa <= second.Mantissa)
@@ -365,18 +380,18 @@ public class BigDigit
         {
             Exponent = 0;
         }
-        else if (Mantissa > 10d)
+        else if (Math.Abs(Mantissa) > 10d)
         {
-            while (Mantissa > 10d)
+            while (Math.Abs(Mantissa) > 10d)
             {
                 Mantissa /= 10d;
                 Exponent++;
             }
             return;
         }
-        else if (Mantissa < 1d)
+        else if (Math.Abs(Mantissa) < 1d)
         {
-            while (Mantissa < 10d)
+            while (Math.Abs(Mantissa) < 10d)
             {
                 Mantissa *= 10d;
                 Exponent--;

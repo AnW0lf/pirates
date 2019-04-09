@@ -84,7 +84,7 @@ public class Island
     {
         Debug.Log(other.ToString());
 
-        if (Money + other >= BigDigit.zero)
+        if ((Money + other) >= BigDigit.zero)
         {
             Money.Sum(other);
             EventManager.SendEvent("ChangeMoney");
