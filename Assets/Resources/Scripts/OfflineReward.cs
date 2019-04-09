@@ -8,7 +8,7 @@ public class OfflineReward : MonoBehaviour
 {
     public GameObject window;
     public List<GameObject> shipsList;
-    public float modifier;
+    public int modifier, expModifier;
     public int maxTime;
     public int bonusModifier = 1;
     public BonusGenerator[] bgs;
@@ -52,14 +52,16 @@ public class OfflineReward : MonoBehaviour
             //Считаем бабки и левел-ап
             money = BigDigit.zero;
             expToAdd = 0;
+
+            money = new BigDigit(IslandController.islandReward * (timeModifier / modifier)) + new BigDigit(100d);
+
             foreach (GameObject ships in shipsList)
             {
                 foreach (Transform child in ships.transform)
                 {
                     Debug.Log(child.gameObject.name);
                     Ship ship = child.GetComponent<Ship>();
-                    money += new BigDigit(ship.reward / ship.raidTime * timeModifier / modifier) + new BigDigit(100d);
-                    expToAdd += (int)(timeModifier / ship.raidTime / 10f);
+                    expToAdd += ship.reward / (int)ship.raidTime * timeModifier / expModifier;
                 }
             }
 

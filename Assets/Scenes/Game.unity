@@ -34323,7 +34323,8 @@ MonoBehaviour:
   - {fileID: 453755323}
   - {fileID: 1533493861}
   - {fileID: 1634620421}
-  modifier: 5
+  modifier: 12
+  expModifier: 12
   maxTime: 10800
   bonusModifier: 480
   bgs:

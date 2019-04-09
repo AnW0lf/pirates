@@ -9,6 +9,8 @@ public class IslandController : MonoBehaviour
     public float delay, tapDelay, modifier;
     public GameObject flyingText;
 
+    public static BigDigit islandReward;
+
     private Island island;
     private bool clicked = false, active = false;
     private Animation anim;
@@ -19,10 +21,13 @@ public class IslandController : MonoBehaviour
     {
         island = Island.Instance();
         anim = GetComponent<Animation>();
+
     }
 
     private void Update()
     {
+        islandReward = new BigDigit(Mathf.Pow(island.Level, 2.15f) * modifier);
+
         if (!active && island.Level >= minLevel)
         {
             clicked = true;
@@ -59,9 +64,7 @@ public class IslandController : MonoBehaviour
 
         anim.Play();
 
-        //int reward = (int)(island.Level * island.Level * modifier);
-
-        BigDigit reward = new BigDigit(Mathf.Pow(island.Level, 2.15f) * modifier);
+        BigDigit reward = new BigDigit(islandReward);
 
         _flyingText = Instantiate(flyingText, transform);
         _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);
