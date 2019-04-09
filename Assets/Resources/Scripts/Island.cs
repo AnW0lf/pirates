@@ -82,7 +82,9 @@ public class Island
 
     public bool ChangeMoney(BigDigit other)
     {
-        if (BigDigit.Sum(Money, other).LargeThen(BigDigit.zero))
+        Debug.Log(other.ToString());
+
+        if (Money + other >= BigDigit.zero)
         {
             Money.Sum(other);
             EventManager.SendEvent("ChangeMoney");

@@ -41,7 +41,11 @@ public class BigDigit
     {
         double lesserMantissa, largerMantissa;
         long lesserExponent, largerExponent;
-        if (first.Exponent > second.Exponent)
+
+        if (first < zero && second >= zero) return second - first;
+        else if (second < zero && first >= zero) return first - second;
+
+        else if (first.Exponent > second.Exponent)
         {
             largerMantissa = first.Mantissa;
             largerExponent = first.Exponent;
@@ -73,6 +77,7 @@ public class BigDigit
     {
         double lesserMantissa, largerMantissa;
         long lesserExponent, largerExponent;
+
         if (first.Exponent > second.Exponent)
         {
             largerMantissa = first.Mantissa;
@@ -197,6 +202,11 @@ public class BigDigit
     public static BigDigit operator *(double val, BigDigit other)
     {
         return new BigDigit(other.Mantissa * val, other.Exponent);
+    }
+
+    public static BigDigit operator -(BigDigit other)
+    {
+        return new BigDigit(-other.Mantissa, other.Exponent);
     }
 
     public void Sum(BigDigit other)

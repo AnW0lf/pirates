@@ -53,6 +53,7 @@ public class WindowController : MonoBehaviour
 
     private void UpdateInfo()
     {
+
         if (pier.black)
         {
             if (pier.GetBlackMark() > 0 && !pier.shipExist)

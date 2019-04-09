@@ -8,7 +8,7 @@ public class GlobalUpgradeButton : MonoBehaviour
     public string modifierName, descriptionName;
     public double startPriceMantissa;
     public long startPriceExponent;
-    public float modifier, startReward, maxReward;
+    public float modifier, increase, startReward, maxReward;
     public GameObject cost;
     public Text descriptionText, rewardText, stateText, costText;
     public Image buttonIcon;
@@ -47,15 +47,16 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private void SetButtonPrefs()
     {
-        price = (startPrice * Mathf.Pow(1.5f, (island.GetParameter(modifierName + "_level", 0) - 1)));
-        reward = startReward + modifier * (island.GetParameter(modifierName + "_level", 0) - 1);
 
-        if (reward >= maxReward)
+            price = (startPrice * Mathf.Pow(increase, (island.GetParameter(modifierName + "_level", 0) - 1)));
+            reward = startReward + modifier * (island.GetParameter(modifierName + "_level", 0) - 1);
+
+            if (reward >= maxReward)
             max = true;
 
         if (max)
         {
-            stateText.text = "Max grade";
+            stateText.text = "Max";
             cost.SetActive(false);
         }
         else
@@ -65,12 +66,22 @@ public class GlobalUpgradeButton : MonoBehaviour
             island.SetParameter(modifierName, reward);
         }
         descriptionText.text = descriptionName;
-        rewardText.text = reward.ToString();
+
+        if (modifierName == "GlobalSpins")
+        {
+            rewardText.text = reward.ToString() + "/" + maxReward;
+        }
+        else
+        {
+            rewardText.text = reward.ToString();
+        }
+
+
     }
 
     public void Upgrade(GlobalUpgradeButton button)
     {
-        if (!max && island.ChangeMoney(BigDigit.Reverse(button.price)))
+        if (!max && island.ChangeMoney(-(button.price)))
         {
             island.SetParameter(modifierName + "_level", island.GetParameter(modifierName + "_level", 0) + 1);
             lifebuoys.UpdateInfo();

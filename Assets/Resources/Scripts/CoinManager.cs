@@ -34,7 +34,7 @@ public class CoinManager : MonoBehaviour
     {
         if (money != island.Money)
         {
-            money = island.Money;
+            money = new BigDigit(island.Money);
             UpdateMoney();
         }
     }

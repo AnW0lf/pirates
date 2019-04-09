@@ -4081,7 +4081,8 @@ MonoBehaviour:
   rise: 500
   angle: 300
   shipName: BlackShip1
-  startPrice: 1
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 60
   startReward: 300
   speedAngle: 25
@@ -4090,31 +4091,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 1
-  detailCostIncrease1: 0
   detailChangeReward1: 150
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 1
-  detailCostIncrease2: 0
   detailChangeReward2: 0
   detailChangeRaidTime2: -6
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 1
-  detailCostIncrease3: 0
   detailChangeReward3: 350
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1
@@ -8817,6 +8824,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 1290911348}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &325460181
 GameObject:
   m_ObjectHideFlags: 0
@@ -11106,7 +11115,8 @@ MonoBehaviour:
   rise: 425
   angle: 0
   shipName: Ship3_1
-  startPrice: 1
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 5
   startReward: 1
   speedAngle: 25
@@ -11115,31 +11125,37 @@ MonoBehaviour:
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 2
-  detailCostIncrease1: 1
   detailChangeReward1: 2
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 12
-  detailCostIncrease2: 4
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 35
-  detailCostIncrease3: 7
   detailChangeReward3: 3
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1
@@ -11855,8 +11871,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalSpeed
   descriptionName: Speed
-  startPrice: 250
+  startPriceMantissa: 0
+  startPriceExponent: 0
   modifier: 0.02
+  increase: 0
   startReward: 1
   maxReward: 5
   cost: {fileID: 521455572}
@@ -12411,6 +12429,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 748695288}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &460155220
 GameObject:
   m_ObjectHideFlags: 0
@@ -12841,7 +12861,8 @@ MonoBehaviour:
   rise: 425
   angle: 240
   shipName: Ship2_5
-  startPrice: 2147483647
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 30
   startReward: 210
   speedAngle: 25
@@ -12850,31 +12871,37 @@ MonoBehaviour:
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 142500
-  detailCostIncrease1: 10000
   detailChangeReward1: 110
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 2147483647
-  detailCostIncrease2: 2147483647
   detailChangeReward2: 0
   detailChangeRaidTime2: -4
   detailSizeModifier2: 0
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 2147483647
-  detailCostIncrease3: 2147483647
   detailChangeReward3: 160
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -13328,6 +13355,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 259268811}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &496730377
 GameObject:
   m_ObjectHideFlags: 0
@@ -13721,7 +13750,8 @@ MonoBehaviour:
   rise: 425
   angle: 0
   shipName: Santa Maria
-  startPrice: 20
+  startPriceMantissa: 2
+  startPriceExponent: 1
   startRaidTime: 5
   startReward: 12
   speedAngle: 25
@@ -13730,31 +13760,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 20
-  detailCostIncrease1: 10
   detailChangeReward1: 6
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 2
+  detailStartCostExponent1: 1
+  detailCostIncreaseMantissa1: 1
+  detailCostIncreaseExponent1: 1
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 50
-  detailCostIncrease2: 20
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 5
+  detailStartCostExponent2: 1
+  detailCostIncreaseMantissa2: 2
+  detailCostIncreaseExponent2: 1
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 120
-  detailCostIncrease3: 30
   detailChangeReward3: 10
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 1.2
+  detailStartCostExponent3: 2
+  detailCostIncreaseMantissa3: 3
+  detailCostIncreaseExponent3: 1
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -14449,7 +14485,8 @@ MonoBehaviour:
   rise: 500
   angle: 300
   shipName: BlackShip3
-  startPrice: 1
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 60
   startReward: 300
   speedAngle: 25
@@ -14458,31 +14495,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 1
-  detailCostIncrease1: 0
   detailChangeReward1: 150
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 1
-  detailCostIncrease2: 0
   detailChangeReward2: 0
   detailChangeRaidTime2: -6
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 1
-  detailCostIncrease3: 0
   detailChangeReward3: 350
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1
@@ -14719,6 +14762,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 1415297572}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &549650494
 GameObject:
   m_ObjectHideFlags: 0
@@ -14827,6 +14872,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 2076252195}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &550978289
 GameObject:
   m_ObjectHideFlags: 0
@@ -15451,7 +15498,8 @@ MonoBehaviour:
   rise: 500
   angle: 180
   shipName: Ship2_4
-  startPrice: 1500000000
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 22
   startReward: 110
   speedAngle: 25
@@ -15460,31 +15508,37 @@ MonoBehaviour:
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 1625000000
-  detailCostIncrease1: 125000000
   detailChangeReward1: 70
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 2147483647
-  detailCostIncrease2: 350000000
   detailChangeReward2: 0
   detailChangeRaidTime2: -3
   detailSizeModifier2: 0
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 2147483647
-  detailCostIncrease3: 625000000
   detailChangeReward3: 95
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -15586,8 +15640,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalSpeed
   descriptionName: Speed
-  startPrice: 250
+  startPriceMantissa: 0
+  startPriceExponent: 0
   modifier: 0.02
+  increase: 0
   startReward: 1
   maxReward: 5
   cost: {fileID: 749851193}
@@ -16874,6 +16930,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 1793542860}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &633509108
 GameObject:
   m_ObjectHideFlags: 0
@@ -21699,7 +21757,8 @@ MonoBehaviour:
   rise: 500
   angle: 180
   shipName: Rattlesnake
-  startPrice: 15000
+  startPriceMantissa: 1.5
+  startPriceExponent: 4
   startRaidTime: 22
   startReward: 110
   speedAngle: 25
@@ -21708,31 +21767,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 16250
-  detailCostIncrease1: 1250
   detailChangeReward1: 70
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 1.6
+  detailStartCostExponent1: 4
+  detailCostIncreaseMantissa1: 1
+  detailCostIncreaseExponent1: 3
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 28000
-  detailCostIncrease2: 3500
   detailChangeReward2: 0
   detailChangeRaidTime2: -3
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 2.45
+  detailStartCostExponent2: 4
+  detailCostIncreaseMantissa2: 2.5
+  detailCostIncreaseExponent2: 3
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 52500
-  detailCostIncrease3: 6250
   detailChangeReward3: 95
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 4
+  detailStartCostExponent3: 4
+  detailCostIncreaseMantissa3: 7.5
+  detailCostIncreaseExponent3: 3
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1
@@ -22444,6 +22509,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 1751997725}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &841865785
 GameObject:
   m_ObjectHideFlags: 0
@@ -22854,10 +22921,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalSpeed
   descriptionName: Speed
-  startPrice: 250
-  modifier: 0.02
+  startPriceMantissa: 2.9
+  startPriceExponent: 2
+  modifier: 0.03
+  increase: 1.24
   startReward: 1
-  maxReward: 5
+  maxReward: 1.6
   cost: {fileID: 885464092}
   descriptionText: {fileID: 1244548605}
   rewardText: {fileID: 953969396}
@@ -23052,10 +23121,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalEarnings
   descriptionName: Earnings
-  startPrice: 340
+  startPriceMantissa: 1.5
+  startPriceExponent: 2
   modifier: 0.05
-  startReward: 5
-  maxReward: 0
+  increase: 1.2
+  startReward: 1
+  maxReward: 2
   cost: {fileID: 127389191}
   descriptionText: {fileID: 2098623778}
   rewardText: {fileID: 845842852}
@@ -23664,6 +23735,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 455968595}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &871031311
 GameObject:
   m_ObjectHideFlags: 0
@@ -25810,8 +25883,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalSpins
   descriptionName: Max Spins
-  startPrice: 900
+  startPriceMantissa: 0
+  startPriceExponent: 0
   modifier: 1
+  increase: 0
   startReward: 3
   maxReward: 30
   cost: {fileID: 10001442}
@@ -26628,6 +26703,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 1150192903}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &948974219
 GameObject:
   m_ObjectHideFlags: 0
@@ -27327,7 +27404,8 @@ MonoBehaviour:
   rise: 500
   angle: 180
   shipName: Ship3_4
-  startPrice: 325
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 15
   startReward: 30
   speedAngle: 25
@@ -27336,31 +27414,37 @@ MonoBehaviour:
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 400
-  detailCostIncrease1: 50
   detailChangeReward1: 8
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 575
-  detailCostIncrease2: 75
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 800
-  detailCostIncrease3: 100
   detailChangeReward3: 12
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -28307,6 +28391,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 958304516}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &990309591
 GameObject:
   m_ObjectHideFlags: 0
@@ -28551,7 +28637,8 @@ MonoBehaviour:
   rise: 425
   angle: 240
   shipName: Ship3_5
-  startPrice: 325
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 15
   startReward: 30
   speedAngle: 25
@@ -28560,31 +28647,37 @@ MonoBehaviour:
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 400
-  detailCostIncrease1: 50
   detailChangeReward1: 8
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 575
-  detailCostIncrease2: 75
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 800
-  detailCostIncrease3: 100
   detailChangeReward3: 12
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -28781,8 +28874,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalSpins
   descriptionName: Max Spins
-  startPrice: 900
+  startPriceMantissa: 0
+  startPriceExponent: 0
   modifier: 1
+  increase: 0
   startReward: 3
   maxReward: 30
   cost: {fileID: 673002910}
@@ -29764,6 +29859,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 710937081}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1070358362
 GameObject:
   m_ObjectHideFlags: 0
@@ -30120,6 +30217,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 69066247}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1084732408
 GameObject:
   m_ObjectHideFlags: 0
@@ -30545,6 +30644,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 1466575784}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1100919614
 GameObject:
   m_ObjectHideFlags: 0
@@ -31080,7 +31181,8 @@ MonoBehaviour:
   rise: 425
   angle: 120
   shipName: Flying Dutchman
-  startPrice: 1760
+  startPriceMantissa: 1.76
+  startPriceExponent: 3
   startRaidTime: 15
   startReward: 60
   speedAngle: 25
@@ -31089,31 +31191,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 1910
-  detailCostIncrease1: 145
   detailChangeReward1: 50
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 1.91
+  detailStartCostExponent1: 3
+  detailCostIncreaseMantissa1: 1.45
+  detailCostIncreaseExponent1: 2
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 3300
-  detailCostIncrease2: 410
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 3.3
+  detailStartCostExponent2: 3
+  detailCostIncreaseMantissa2: 4.1
+  detailCostIncreaseExponent2: 2
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 6180
-  detailCostIncrease3: 720
   detailChangeReward3: 65
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 6.18
+  detailStartCostExponent3: 3
+  detailCostIncreaseMantissa3: 7.2
+  detailCostIncreaseExponent3: 2
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -33092,6 +33200,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 2121378549}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1184766763
 GameObject:
   m_ObjectHideFlags: 0
@@ -33911,6 +34021,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 195132060}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1213582329
 GameObject:
   m_ObjectHideFlags: 0
@@ -34211,7 +34323,7 @@ MonoBehaviour:
   - {fileID: 453755323}
   - {fileID: 1533493861}
   - {fileID: 1634620421}
-  modifier: 50
+  modifier: 5
   maxTime: 10800
   bonusModifier: 480
   bgs:
@@ -35867,7 +35979,8 @@ MonoBehaviour:
   rise: 425
   angle: 240
   shipName: Master
-  startPrice: 130000
+  startPriceMantissa: 1
+  startPriceExponent: 5
   startRaidTime: 30
   startReward: 210
   speedAngle: 25
@@ -35876,31 +35989,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 142500
-  detailCostIncrease1: 10000
   detailChangeReward1: 110
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 1.07
+  detailStartCostExponent1: 5
+  detailCostIncreaseMantissa1: 7
+  detailCostIncreaseExponent1: 3
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 244000
-  detailCostIncrease2: 30500
   detailChangeReward2: 0
   detailChangeRaidTime2: -4
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 1.45
+  detailStartCostExponent2: 5
+  detailCostIncreaseMantissa2: 1.45
+  detailCostIncreaseExponent2: 4
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 458000
-  detailCostIncrease3: 57250
   detailChangeReward3: 160
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 2.08
+  detailStartCostExponent3: 5
+  detailCostIncreaseMantissa3: 2.1
+  detailCostIncreaseExponent3: 4
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1
@@ -36042,6 +36161,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 512999212}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1288871438
 GameObject:
   m_ObjectHideFlags: 0
@@ -36740,6 +36861,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 284748900}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1303660565
 GameObject:
   m_ObjectHideFlags: 0
@@ -36799,6 +36922,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 269042135}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1303847716
 GameObject:
   m_ObjectHideFlags: 0
@@ -37689,7 +37814,8 @@ MonoBehaviour:
   rise: 425
   angle: 120
   shipName: Ship2_3
-  startPrice: 176000000
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 15
   startReward: 60
   speedAngle: 25
@@ -37698,31 +37824,37 @@ MonoBehaviour:
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 191000000
-  detailCostIncrease1: 14500000
   detailChangeReward1: 50
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 330000000
-  detailCostIncrease2: 41000000
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
   detailSizeModifier2: 0
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 618000000
-  detailCostIncrease3: 72000000
   detailChangeReward3: 65
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -37868,7 +38000,8 @@ MonoBehaviour:
   rise: 500
   angle: 60
   shipName: King Georg
-  startPrice: 200
+  startPriceMantissa: 2
+  startPriceExponent: 2
   startRaidTime: 10
   startReward: 35
   speedAngle: 25
@@ -37877,31 +38010,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 220
-  detailCostIncrease1: 15
   detailChangeReward1: 25
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 2.2
+  detailStartCostExponent1: 2
+  detailCostIncreaseMantissa1: 1.5
+  detailCostIncreaseExponent1: 1
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 370
-  detailCostIncrease2: 50
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 3.7
+  detailStartCostExponent2: 2
+  detailCostIncreaseMantissa2: 5
+  detailCostIncreaseExponent2: 1
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 700
-  detailCostIncrease3: 90
   detailChangeReward3: 40
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 7
+  detailStartCostExponent3: 2
+  detailCostIncreaseMantissa3: 9
+  detailCostIncreaseExponent3: 1
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -37968,7 +38107,8 @@ MonoBehaviour:
   rise: 500
   angle: 300
   shipName: BlackShip2
-  startPrice: 1
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 60
   startReward: 300
   speedAngle: 25
@@ -37977,31 +38117,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 1
-  detailCostIncrease1: 0
   detailChangeReward1: 150
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 1
-  detailCostIncrease2: 0
   detailChangeReward2: 0
   detailChangeRaidTime2: -6
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 1
-  detailCostIncrease3: 0
   detailChangeReward3: 350
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 1
@@ -39813,6 +39959,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 615600319}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1416558759
 GameObject:
   m_ObjectHideFlags: 0
@@ -40664,7 +40812,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefix: 
-  money: 0
 --- !u!114 &1429629391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41269,8 +41416,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalEarnings
   descriptionName: Earnings
-  startPrice: 340
+  startPriceMantissa: 0
+  startPriceExponent: 0
   modifier: 0.05
+  increase: 0
   startReward: 1
   maxReward: 5
   cost: {fileID: 1628031810}
@@ -41819,6 +41968,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 1657377170}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1461903349
 GameObject:
   m_ObjectHideFlags: 0
@@ -42402,7 +42553,8 @@ MonoBehaviour:
   rise: 500
   angle: 60
   shipName: Ship2_2
-  startPrice: 20000000
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 10
   startReward: 35
   speedAngle: 25
@@ -42411,31 +42563,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 22000000
-  detailCostIncrease1: 1500000
   detailChangeReward1: 25
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 37000000
-  detailCostIncrease2: 5000000
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
   detailSizeModifier2: 0
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 70000000
-  detailCostIncrease3: 9000000
   detailChangeReward3: 40
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -42710,6 +42868,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 343115935}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1495595996
 GameObject:
   m_ObjectHideFlags: 0
@@ -43782,6 +43942,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 2091032502}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1520153233
 GameObject:
   m_ObjectHideFlags: 0
@@ -45311,6 +45473,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 1917486893}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1573445907
 GameObject:
   m_ObjectHideFlags: 0
@@ -45367,10 +45531,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalSpins
   descriptionName: Max Spins
-  startPrice: 900
+  startPriceMantissa: 3.5
+  startPriceExponent: 3
   modifier: 1
+  increase: 1.7
   startReward: 3
-  maxReward: 30
+  maxReward: 10
   cost: {fileID: 1090398810}
   descriptionText: {fileID: 1187736715}
   rewardText: {fileID: 78038005}
@@ -46593,6 +46759,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 743810023}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1610708347
 GameObject:
   m_ObjectHideFlags: 0
@@ -47807,7 +47975,8 @@ MonoBehaviour:
   rise: 425
   angle: 120
   shipName: Ship3_3
-  startPrice: 325
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 15
   startReward: 30
   speedAngle: 25
@@ -47816,31 +47985,37 @@ MonoBehaviour:
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 400
-  detailCostIncrease1: 50
   detailChangeReward1: 8
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 575
-  detailCostIncrease2: 75
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 800
-  detailCostIncrease3: 100
   detailChangeReward3: 12
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -48731,6 +48906,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 1546171439}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1670445091
 GameObject:
   m_ObjectHideFlags: 0
@@ -48908,8 +49085,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalEarnings
   descriptionName: Earnings
-  startPrice: 340
+  startPriceMantissa: 0
+  startPriceExponent: 0
   modifier: 0.05
+  increase: 0
   startReward: 1
   maxReward: 5
   cost: {fileID: 738541473}
@@ -49366,6 +49545,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 1991669152}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1712530130
 GameObject:
   m_ObjectHideFlags: 0
@@ -55223,6 +55404,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 245972558}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &1905254020
 GameObject:
   m_ObjectHideFlags: 0
@@ -57269,7 +57452,8 @@ MonoBehaviour:
   rise: 500
   angle: 60
   shipName: Ship3_2
-  startPrice: 75
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 10
   startReward: 10
   speedAngle: 25
@@ -57278,31 +57462,37 @@ MonoBehaviour:
   detailName1: Body
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 100
-  detailCostIncrease1: 15
   detailChangeReward1: 4
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 150
-  detailCostIncrease2: 20
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
   detailSizeModifier2: 0.02
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 220
-  detailCostIncrease3: 30
   detailChangeReward3: 6
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -59344,6 +59534,8 @@ MonoBehaviour:
   bg: {fileID: 644108693}
   blackShip: {fileID: 1361359932}
   title: {fileID: 156953825}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &2047508173
 GameObject:
   m_ObjectHideFlags: 0
@@ -60370,6 +60562,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 609981629}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &2072406804
 GameObject:
   m_ObjectHideFlags: 0
@@ -60676,7 +60870,8 @@ MonoBehaviour:
   rise: 425
   angle: 0
   shipName: Ship2_1
-  startPrice: 1000000
+  startPriceMantissa: 0
+  startPriceExponent: 0
   startRaidTime: 5
   startReward: 12
   speedAngle: 25
@@ -60685,31 +60880,37 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailStartCost1: 2000000
-  detailCostIncrease1: 1000000
   detailChangeReward1: 6
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0
+  detailStartCostMantissa1: 0
+  detailStartCostExponent1: 0
+  detailCostIncreaseMantissa1: 0
+  detailCostIncreaseExponent1: 0
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
-  detailStartCost2: 5000000
-  detailCostIncrease2: 2000000
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
   detailSizeModifier2: 0
+  detailStartCostMantissa2: 0
+  detailStartCostExponent2: 0
+  detailCostIncreaseMantissa2: 0
+  detailCostIncreaseExponent2: 0
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailStartCost3: 12000000
-  detailCostIncrease3: 3000000
   detailChangeReward3: 10
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0
+  detailStartCostMantissa3: 0
+  detailStartCostExponent3: 0
+  detailCostIncreaseMantissa3: 0
+  detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -62666,6 +62867,8 @@ MonoBehaviour:
   bg: {fileID: 1654516459}
   blackShip: {fileID: 529420253}
   title: {fileID: 619266647}
+  startRewardMantissa: 0
+  startRewardExponent: 0
 --- !u!1 &2139522850
 GameObject:
   m_ObjectHideFlags: 0
