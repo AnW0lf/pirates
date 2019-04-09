@@ -69,6 +69,8 @@ public class PierManager : MonoBehaviour
 
     [Header("Цвет указателя")]
     public Color color;
+    [Header("Спрайт для меню")]
+    public Sprite spriteForMenu;
 
     private Island island;
     private GameObject ship;
@@ -82,6 +84,7 @@ public class PierManager : MonoBehaviour
     private void Awake()
     {
         island = Island.Instance();
+        if (spriteForMenu == null) spriteForMenu = shipIcon;
     }
 
     private void Start()

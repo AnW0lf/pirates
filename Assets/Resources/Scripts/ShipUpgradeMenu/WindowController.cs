@@ -95,8 +95,8 @@ public class WindowController : MonoBehaviour
         else
             SetState(upBtnTM, pier.minLvl.ToString(), "LEVEl ");
 
-        if (!icon.sprite.Equals(pier.shipIcon))
-            icon.sprite = pier.shipIcon;
+        if (!icon.sprite.Equals(pier.spriteForMenu))
+            icon.sprite = pier.spriteForMenu;
         if (miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
 
@@ -143,8 +143,8 @@ public class WindowController : MonoBehaviour
 
         SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
 
-        if (!icon.sprite.Equals(pier.shipIcon))
-            icon.sprite = pier.shipIcon;
+        if (!icon.sprite.Equals(pier.spriteForMenu))
+            icon.sprite = pier.spriteForMenu;
         if (miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
 
@@ -171,8 +171,8 @@ public class WindowController : MonoBehaviour
 
         if (!miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(true);
-        if (!icon.sprite.Equals(pier.shipIcon))
-            icon.sprite = pier.shipIcon;
+        if (!icon.sprite.Equals(pier.spriteForMenu))
+            icon.sprite = pier.spriteForMenu;
 
         float a = 0f;
         int b = 0;
@@ -243,8 +243,8 @@ public class WindowController : MonoBehaviour
         SetState(descriptionTM, "Choice of the true corsair");
         SetState(upBtnTM, "MAX LEVEL");
 
-        if (!icon.sprite.Equals(pier.shipIcon))
-            icon.sprite = pier.shipIcon;
+        if (!icon.sprite.Equals(pier.spriteForMenu))
+            icon.sprite = pier.spriteForMenu;
         if (miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
 
@@ -268,38 +268,5 @@ public class WindowController : MonoBehaviour
         tm.text = text;
         tm.prefix = prefix;
         tm.postfix = postfix;
-    }
-
-    private string CheckRange(int v)
-    {
-        int degree = 0;
-        float value = v;
-        while (value >= 1000)
-        {
-            value /= 1000;
-            degree++;
-        }
-        string strValue = value.ToString();
-        if (strValue.Length >= 5)
-            strValue = strValue.Substring(0, 5);
-        switch (degree)
-        {
-            case 0:
-                return strValue;
-            case 1:
-                return strValue + "K";
-            case 2:
-                return strValue + "M";
-            case 3:
-                return strValue + "B";
-            case 4:
-                return strValue + "T";
-            case 5:
-                return strValue + "Q";
-            case 6:
-                return strValue + "A";
-            default:
-                return strValue + "?";
-        }
     }
 }

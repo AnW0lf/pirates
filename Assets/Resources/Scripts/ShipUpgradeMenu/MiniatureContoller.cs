@@ -55,7 +55,7 @@ public class MiniatureContoller : MonoBehaviour
     private void UpdateInfo(object[] arg0)
     {
         if (pier == null) return;
-        icon.sprite = pier.shipIcon;
+        icon.sprite = pier.spriteForMenu;
 
         if (pier.minLvl > island.Level)
         {
