@@ -13751,7 +13751,7 @@ MonoBehaviour:
   angle: 0
   shipName: Santa Maria
   startPriceMantissa: 2
-  startPriceExponent: 1
+  startPriceExponent: 16
   startRaidTime: 5
   startReward: 12
   speedAngle: 25
