@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NewShipWindow : MonoBehaviour
 {
-    public GameObject rays, window;
+    public GameObject fade, window;
 
     public Text shipName;
     public Image shipIcon;
@@ -21,7 +21,7 @@ public class NewShipWindow : MonoBehaviour
 
     private void Start()
     {
-        rays.SetActive(false);
+        fade.SetActive(false);
         window.SetActive(false);
     }
 
@@ -33,7 +33,7 @@ public class NewShipWindow : MonoBehaviour
             {
                 if (pier.minLvl == island.Level)
                 {
-                    rays.SetActive(true);
+                    fade.SetActive(true);
                     window.SetActive(true);
                     shipName.text = pier.shipName;
                     shipIcon.sprite = pier.shipIcon;

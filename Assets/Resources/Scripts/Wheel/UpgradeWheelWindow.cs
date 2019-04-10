@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UpgradeWheelWindow : MonoBehaviour
 {
-    public GameObject child, childRays;
+    public GameObject child, fade;
     public Text text;
     public Button btn;
 
@@ -27,7 +27,7 @@ public class UpgradeWheelWindow : MonoBehaviour
             float mod = (float)arg0[0];
             WheelButton wb = (WheelButton)arg0[1];
             child.SetActive(true);
-            childRays.SetActive(true);
+            fade.SetActive(true);
             btn.onClick.RemoveAllListeners();
             btn.onClick.AddListener(wb.WheelSwitch);
             btn.onClick.AddListener(Close);
@@ -39,6 +39,6 @@ public class UpgradeWheelWindow : MonoBehaviour
     private void Close()
     {
         child.SetActive(false);
-        childRays.SetActive(false);
+        fade.SetActive(false);
     }
 }
