@@ -17,6 +17,7 @@ public class SectorController : MonoBehaviour
 
     private int reward = 0, modifier;
     private Island island;
+    private float mod = 1f;
 
     private BigDigit startMoneyReward, moneyReward;
 
@@ -29,7 +30,7 @@ public class SectorController : MonoBehaviour
     private void OnEnable()
     {
         startMoneyReward = new BigDigit(startRewardMantissa, startRewardExponent);
-        moneyReward = startMoneyReward;
+        moneyReward = startMoneyReward * mod;
         UpdateInfo();
     }
 
@@ -39,6 +40,7 @@ public class SectorController : MonoBehaviour
         {
             case RouletteRotation.RewardType.Money:
                 title.text = moneyReward.ToString();
+                Debug.Log(title.text);
                 break;
             case RouletteRotation.RewardType.Bonus:
                 title.text = "X" + reward.ToString();
@@ -53,12 +55,13 @@ public class SectorController : MonoBehaviour
     {
         if(type == RouletteRotation.RewardType.Money)
         {
-            float mod = 1f;
+            mod = 1f;
             foreach(float m in modifiers)
             {
                 mod *= m;
             }
             moneyReward = startMoneyReward * mod;
+            Debug.Log(moneyReward);
         }
         UpdateInfo();
     }

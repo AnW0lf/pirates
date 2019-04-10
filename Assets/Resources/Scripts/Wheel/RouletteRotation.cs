@@ -42,24 +42,22 @@ public class RouletteRotation : MonoBehaviour
 
     private void OnEnable()
     {
-        //EventManager.Subscribe("LevelUp", UpdateInfo);
+        Debug.Log("Init");
         InitInfo();
     }
 
-    //private void UpdateInfo(object[] arg0)
-    //{
-    //    UpdateInfo();
-    //}
-
     private void InitInfo()
     {
-        for(int i = island.Level; i > 0; i--)
+        for (int i = island.Level; i > 0; i--)
         {
             if (levels.Contains(i))
             {
+                Debug.Log("Contains");
                 float[] mods = modifiers.GetRange(0, levels.IndexOf(i) + 1).ToArray();
+                Debug.Log(mods.Length);
                 foreach (SectorController sector in sectors)
                 {
+                    Debug.Log(sector.name);
                     sector.UpdateReward(mods);
                 }
                 return;
@@ -74,17 +72,12 @@ public class RouletteRotation : MonoBehaviour
         if (levels.Contains(island.Level))
         {
             float[] mods = modifiers.GetRange(0, levels.IndexOf(island.Level) + 1).ToArray();
-            foreach(SectorController sector in sectors)
+            foreach (SectorController sector in sectors)
             {
                 sector.UpdateReward(mods);
             }
             EventManager.SendEvent("UpgradeWheel", mods[mods.Length - 1], wb);
         }
-    }
-
-    private void OnDisable()
-    {
-        //EventManager.Unsubscribe("LevelUp", UpdateInfo);
     }
 
     private void Start()

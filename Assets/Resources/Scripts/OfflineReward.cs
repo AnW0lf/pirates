@@ -37,13 +37,13 @@ public class OfflineReward : MonoBehaviour
             island.InitParameter("QuitTime", (DateTime.Now).ToString());
             ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
 
-            //Debug.Log(ts);
 
             //Пересчитываем в секунды
             if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 10f)
             {
                 rewardGained = true;
                 window.SetActive(false);
+                return;
             }
             else
             {
