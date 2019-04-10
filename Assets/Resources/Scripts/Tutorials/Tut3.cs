@@ -2,17 +2,18 @@
 
 public class Tut3 : MonoBehaviour
 {
-    public PierManager pier;
-    private Island island;
+    public GameObject ships;
 
-    private void Awake()
+    private Ship ship;
+
+    private void OnEnable()
     {
-        island = Island.Instance();
+        ship = ships.GetComponentInChildren<Ship>();
     }
 
     private void Update()
     {
-        if (island.GetParameter(pier.shipName + "_" + pier.detailName1, 0) > 0)
+        if (ship.InRaid())
             GetComponentInParent<Tutorial>().NextStage();
     }
 }
