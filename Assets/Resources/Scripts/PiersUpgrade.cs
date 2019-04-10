@@ -33,7 +33,7 @@ public class PiersUpgrade : MonoBehaviour
     {
         foreach (PierManager pier in piers)
         {
-            if (pier.black ? pier.GetBlackMark() > 0 : pier.minLvl <= island.Level && !pier.maxLvl && pier.GetUpgradeCost() <= island.Money)
+            if (pier.black ? pier.GetBlackMark() > 0 && !pier.maxLvl : pier.minLvl <= island.Level && !pier.maxLvl && pier.GetUpgradeCost() <= island.Money)
             {
                 if (!flag.activeInHierarchy)
                     flag.SetActive(true);

@@ -81,6 +81,6 @@ public class MiniatureContoller : MonoBehaviour
             icon.color = Color.white;
             level.text = "Max";
         }
-        Light.SetActive(pier.black ? pier.GetBlackMark() > 0 : pier.minLvl <= island.Level && pier.GetUpgradeCost() <= island.Money && !pier.maxLvl);
+        Light.SetActive(pier.black ? pier.GetBlackMark() > 0 && !pier.maxLvl: pier.minLvl <= island.Level && pier.GetUpgradeCost() <= island.Money && !pier.maxLvl);
     }
 }
