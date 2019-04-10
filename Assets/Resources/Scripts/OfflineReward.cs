@@ -8,6 +8,7 @@ public class OfflineReward : MonoBehaviour
 {
     public GameObject window;
     public List<GameObject> shipsList;
+    public IslandController[] islands;
     public int modifier, expModifier;
     public int maxTime;
     public int bonusModifier = 1;
@@ -36,7 +37,7 @@ public class OfflineReward : MonoBehaviour
             island.InitParameter("QuitTime", (DateTime.Now).ToString());
             ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
 
-            Debug.Log(ts);
+            //Debug.Log(ts);
 
             //Пересчитываем в секунды
             if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 10f)
@@ -53,14 +54,16 @@ public class OfflineReward : MonoBehaviour
             money = BigDigit.zero;
             expToAdd = 0;
 
-            //money = new BigDigit(IslandController.islandReward * (timeModifier / modifier)) + new BigDigit(100d);
-            money = new BigDigit(Mathf.Pow(island.Level, 2.15f) * (timeModifier / modifier)) + new BigDigit(100d);
+            foreach (IslandController land in islands)
+            {
+                if (land.minLevel <= island.Level)
+                    money += land.GetReward() * (timeModifier / modifier) + new BigDigit(100d);
+            }
 
             foreach (GameObject ships in shipsList)
             {
                 foreach (Transform child in ships.transform)
                 {
-                    Debug.Log(child.gameObject.name);
                     Ship ship = child.GetComponent<Ship>();
                     expToAdd += ship.reward / (int)ship.raidTime * timeModifier / expModifier;
                 }
@@ -79,13 +82,8 @@ public class OfflineReward : MonoBehaviour
             //Write Time for Offline Reward
             island.SetParameter("QuitTime", DateTime.Now.ToString());
 
-            if (money.EqualsZero())
-            {
-                rewardGained = true;
-                window.SetActive(false);
-            }
-
             rewardGained = true;
+            window.SetActive(!money.EqualsZero());
         }
     }
 

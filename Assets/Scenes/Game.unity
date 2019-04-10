@@ -2536,7 +2536,8 @@ MonoBehaviour:
   minLevel: 0
   delay: 1
   tapDelay: 0.6
-  modifier: 1
+  modifierMantissa: 1
+  modifierExponent: 0
   flyingText: {fileID: 7659205956303974338, guid: 6a18c187d1a370949b69a053f95a0a6e,
     type: 3}
 --- !u!111 &71592729
@@ -19363,7 +19364,8 @@ MonoBehaviour:
   minLevel: 25
   delay: 1
   tapDelay: 0.6
-  modifier: 2
+  modifierMantissa: 2
+  modifierExponent: 3
   flyingText: {fileID: 7659205956303974338, guid: 6a18c187d1a370949b69a053f95a0a6e,
     type: 3}
 --- !u!114 &673416821
@@ -21988,7 +21990,8 @@ MonoBehaviour:
   minLevel: 50
   delay: 1
   tapDelay: 0.8
-  modifier: 3
+  modifierMantissa: 3
+  modifierExponent: 7
   flyingText: {fileID: 7659205956303974338, guid: b383675a349d433449b7d3cbc5e55930,
     type: 3}
 --- !u!114 &775851546
@@ -35278,6 +35281,10 @@ MonoBehaviour:
   - {fileID: 453755323}
   - {fileID: 88929338}
   - {fileID: 1634620421}
+  islands:
+  - {fileID: 71592728}
+  - {fileID: 673416820}
+  - {fileID: 775851545}
   modifier: 12
   expModifier: 12
   maxTime: 10800

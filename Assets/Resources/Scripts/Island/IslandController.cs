@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class IslandController : MonoBehaviour
 {
     public int minLevel;
-    public float delay, tapDelay, modifier;
+    public float delay, tapDelay, modifierMantissa;
+    public long modifierExponent;
     public GameObject flyingText;
 
     public static BigDigit islandReward;
@@ -47,6 +48,11 @@ public class IslandController : MonoBehaviour
         }
     }
 
+    public BigDigit GetReward()
+    {
+        return new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f);
+    }
+
     private IEnumerator GenerateMoney()
     {
         if (clicked)
@@ -64,7 +70,7 @@ public class IslandController : MonoBehaviour
 
         anim.Play();
 
-        BigDigit reward = new BigDigit(Mathf.Pow(island.Level, 2.15f) * modifier);
+        BigDigit reward = GetReward();
 
         _flyingText = Instantiate(flyingText, transform);
         _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);
