@@ -26,7 +26,7 @@ public class IslandController : MonoBehaviour
 
     private void Update()
     {
-        islandReward = new BigDigit(Mathf.Pow(island.Level, 2.15f) * modifier);
+        //islandReward = new BigDigit(Mathf.Pow(island.Level, 2.15f) * modifier);
 
         if (!active && island.Level >= minLevel)
         {
@@ -64,7 +64,7 @@ public class IslandController : MonoBehaviour
 
         anim.Play();
 
-        BigDigit reward = new BigDigit(islandReward);
+        BigDigit reward = new BigDigit(Mathf.Pow(island.Level, 2.15f) * modifier);
 
         _flyingText = Instantiate(flyingText, transform);
         _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);

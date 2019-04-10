@@ -53,7 +53,8 @@ public class OfflineReward : MonoBehaviour
             money = BigDigit.zero;
             expToAdd = 0;
 
-            money = new BigDigit(IslandController.islandReward * (timeModifier / modifier)) + new BigDigit(100d);
+            //money = new BigDigit(IslandController.islandReward * (timeModifier / modifier)) + new BigDigit(100d);
+            money = new BigDigit(Mathf.Pow(island.Level, 2.15f));
 
             foreach (GameObject ships in shipsList)
             {

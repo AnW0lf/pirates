@@ -82,7 +82,6 @@ public class Island
 
     public bool ChangeMoney(BigDigit other)
     {
-        Debug.Log(other.ToString());
 
         if ((Money + other) >= BigDigit.zero)
         {

@@ -4129,6 +4129,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0, g: 0, b: 0, a: 1}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &144633741
 GameObject:
@@ -6345,7 +6346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6354,7 +6355,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
@@ -7093,7 +7094,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
@@ -11163,6 +11164,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &413878822
 GameObject:
@@ -12909,6 +12911,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &480941494
 GameObject:
@@ -13751,7 +13754,7 @@ MonoBehaviour:
   angle: 0
   shipName: Santa Maria
   startPriceMantissa: 2
-  startPriceExponent: 16
+  startPriceExponent: 1
   startRaidTime: 5
   startReward: 12
   speedAngle: 25
@@ -13798,6 +13801,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &510381711
 GameObject:
@@ -13960,7 +13964,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
@@ -14533,6 +14537,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &533401813
 GameObject:
@@ -15546,6 +15551,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &582072145
 GameObject:
@@ -16463,7 +16469,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
@@ -16930,8 +16936,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 1793542860}
-  startRewardMantissa: 0
-  startRewardExponent: 0
+  startRewardMantissa: 5
+  startRewardExponent: 1
 --- !u!1 &633509108
 GameObject:
   m_ObjectHideFlags: 0
@@ -19940,7 +19946,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
@@ -20035,7 +20041,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
@@ -21805,6 +21811,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &821408876
 GameObject:
@@ -26456,7 +26463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5990aaf46dedf2847ac381455b77380a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusDelay: 15
+  bonusDelay: 1
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
@@ -27180,7 +27187,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
@@ -27452,6 +27459,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &963954973
 GameObject:
@@ -28391,8 +28399,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 958304516}
-  startRewardMantissa: 0
-  startRewardExponent: 0
+  startRewardMantissa: 1.5
+  startRewardExponent: 3
 --- !u!1 &990309591
 GameObject:
   m_ObjectHideFlags: 0
@@ -28685,6 +28693,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1004384874
 GameObject:
@@ -31229,6 +31238,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1105775029
 GameObject:
@@ -36028,6 +36038,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1278628644
 GameObject:
@@ -37863,6 +37874,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1345143483
 GameObject:
@@ -38049,6 +38061,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1361359929
 GameObject:
@@ -38156,6 +38169,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1363231575
 GameObject:
@@ -41969,8 +41983,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 1657377170}
-  startRewardMantissa: 0
-  startRewardExponent: 0
+  startRewardMantissa: 1
+  startRewardExponent: 2
 --- !u!1 &1461903349
 GameObject:
   m_ObjectHideFlags: 0
@@ -42602,6 +42616,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1486737886
 GameObject:
@@ -43943,8 +43958,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 2091032502}
-  startRewardMantissa: 0
-  startRewardExponent: 0
+  startRewardMantissa: 2.5
+  startRewardExponent: 1
 --- !u!1 &1520153233
 GameObject:
   m_ObjectHideFlags: 0
@@ -46760,8 +46775,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 743810023}
-  startRewardMantissa: 0
-  startRewardExponent: 0
+  startRewardMantissa: 3
+  startRewardExponent: 2
 --- !u!1 &1610708347
 GameObject:
   m_ObjectHideFlags: 0
@@ -47509,7 +47524,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 636, y: 193}
+  m_SizeDelta: {x: 597, y: 157}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1624656374
 CanvasRenderer:
@@ -47532,19 +47547,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21807075, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0c646aae7f85489499feec9e85d9b025, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e59edfe59436f4b459f67955d08c728e, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.522
+  m_FillAmount: 0.452
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -48024,6 +48039,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1654516457
 GameObject:
@@ -48176,7 +48192,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
@@ -52357,7 +52373,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
@@ -55405,8 +55421,8 @@ MonoBehaviour:
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 245972558}
-  startRewardMantissa: 0
-  startRewardExponent: 0
+  startRewardMantissa: 1
+  startRewardExponent: 4
 --- !u!1 &1905254020
 GameObject:
   m_ObjectHideFlags: 0
@@ -57501,6 +57517,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1634620422}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1979078435
 GameObject:
@@ -60046,7 +60063,7 @@ MonoBehaviour:
   - {fileID: 987091779}
   - {fileID: 457200529}
   - {fileID: 1903746060}
-  levels: 05000000090000001000000015000000
+  levels: 04000000080000000c00000012000000
   modifiers:
   - 2
   - 2
@@ -60919,6 +60936,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 1533493862}
   color: {r: 0, g: 0, b: 0, a: 0}
+  spriteForMenu: {fileID: 0}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &2077713344
 GameObject:
@@ -61433,7 +61451,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 62
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6

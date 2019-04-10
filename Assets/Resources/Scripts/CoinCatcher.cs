@@ -38,7 +38,7 @@ public class CoinCatcher : MonoBehaviour
 
         // Set modifiers to 1
         GetComponentInParent<ShipClick>().ship.rewardModifier = 1;
-        GetComponentInParent<ShipClick>().ship.raidTimeModifier = 1;
+        GetComponentInParent<ShipClick>().ship.raidTimeModifier = 0;
 
         _flyingText = Instantiate(flyingText, transform.parent.parent.parent.parent.parent.GetChild(1));
         _flyingText.transform.localPosition = new Vector3(-240f, 0f, 0f);
