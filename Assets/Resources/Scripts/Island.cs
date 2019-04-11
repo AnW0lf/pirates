@@ -37,7 +37,7 @@ public class Island
         Money = new BigDigit(GetParameter("MoneyMantissa", 0f), GetParameter("MoneyExponent", 0));
 
         if (!PlayerPrefs.HasKey("Level"))
-            PlayerPrefs.SetInt("Level", 1);
+            PlayerPrefs.SetInt("Level", 5);
         Level = PlayerPrefs.GetInt("Level");
 
         if (!PlayerPrefs.HasKey("Exp"))

@@ -42,7 +42,6 @@ public class RouletteRotation : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("Init");
         InitInfo();
     }
 
@@ -52,12 +51,9 @@ public class RouletteRotation : MonoBehaviour
         {
             if (levels.Contains(i))
             {
-                Debug.Log("Contains");
                 float[] mods = modifiers.GetRange(0, levels.IndexOf(i) + 1).ToArray();
-                Debug.Log(mods.Length);
                 foreach (SectorController sector in sectors)
                 {
-                    Debug.Log(sector.name);
                     sector.UpdateReward(mods);
                 }
                 return;
@@ -107,6 +103,12 @@ public class RouletteRotation : MonoBehaviour
             float angle = Mathf.Abs(section * (360f / sectorCount) + ((180f / sectorCount))) % 360f;
             StartCoroutine(Rolling(angle));
         }
+    }
+
+    public void OpenWheel()
+    {
+        if (levels.Contains(island.Level))
+            wb.WheelSwitchOn();
     }
 
     private IEnumerator Rolling(float angle)

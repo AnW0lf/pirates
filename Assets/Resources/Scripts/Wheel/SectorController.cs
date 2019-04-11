@@ -40,7 +40,6 @@ public class SectorController : MonoBehaviour
         {
             case RouletteRotation.RewardType.Money:
                 title.text = moneyReward.ToString();
-                Debug.Log(title.text);
                 break;
             case RouletteRotation.RewardType.Bonus:
                 title.text = "X" + reward.ToString();
@@ -61,7 +60,6 @@ public class SectorController : MonoBehaviour
                 mod *= m;
             }
             moneyReward = startMoneyReward * mod;
-            Debug.Log(moneyReward);
         }
         UpdateInfo();
     }
