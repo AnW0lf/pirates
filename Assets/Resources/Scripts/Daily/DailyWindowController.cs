@@ -7,17 +7,16 @@ using UnityEngine.UI;
 public class DailyWindowController : MonoBehaviour
 {
     public Transform rewards;
-    public Button button;
+    public GameObject button;
+    public Text timer;
 
     private Island island;
     private int dailyDaysARaw, year, month, day;
     private DateTime now;
-    private Text btnTitle;
 
     private void Awake()
     {
         island = Island.Instance();
-        btnTitle = button.transform.GetComponentInChildren<Text>();
     }
 
     private void OnEnable()
@@ -41,12 +40,14 @@ public class DailyWindowController : MonoBehaviour
         now = DateTime.Now;
         if (year == now.Year && month == now.Month && day == now.Day)
         {
-            if (button.interactable) button.interactable = false;
-            btnTitle.text = "Next Bonus in" + SecondsToTime(ToSeconds(24, 0, 0) - ToSeconds(now.Hour, now.Minute, now.Second));
+            if (button.activeInHierarchy) button.SetActive(false);
+            if (!timer.gameObject.activeInHierarchy) timer.gameObject.SetActive(true);
+            timer.text = "Next Bonus in " + SecondsToTime(ToSeconds(24, 0, 0) - ToSeconds(now.Hour, now.Minute, now.Second));
         }
         else
         {
-            if (!button.interactable) button.interactable = true;
+            if (timer.gameObject.activeInHierarchy) timer.gameObject.SetActive(false);
+            if (!button.activeInHierarchy) button.SetActive(true);
         }
     }
 
