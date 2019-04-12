@@ -32,16 +32,16 @@ public class Island
 
     private void Load()
     {
-        InitParameter("MoneyMantissa", 0f);
-        InitParameter("MoneyExponent", 0);
+        InitParameter("MoneyMantissa", 1f);
+        InitParameter("MoneyExponent", 9);
         Money = new BigDigit(GetParameter("MoneyMantissa", 0f), GetParameter("MoneyExponent", 0));
 
         if (!PlayerPrefs.HasKey("Level"))
-            PlayerPrefs.SetInt("Level", 5);
+            PlayerPrefs.SetInt("Level", 24);
         Level = PlayerPrefs.GetInt("Level");
 
         if (!PlayerPrefs.HasKey("Exp"))
-            PlayerPrefs.SetInt("Exp", 0);
+            PlayerPrefs.SetInt("Exp", 60000);
         Exp = PlayerPrefs.GetInt("Exp");
 
         if (!PlayerPrefs.HasKey("StartExp"))

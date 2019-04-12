@@ -59,6 +59,7 @@ public class SectorController : MonoBehaviour
             {
                 mod *= m;
             }
+            startMoneyReward = new BigDigit(startRewardMantissa, startRewardExponent);
             moneyReward = startMoneyReward * mod;
         }
         UpdateInfo();

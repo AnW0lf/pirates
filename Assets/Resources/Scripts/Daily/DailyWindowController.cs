@@ -9,6 +9,7 @@ public class DailyWindowController : MonoBehaviour
     public Transform rewards;
     public GameObject button;
     public Text timer;
+    public LifebuoyManager[] lifebuoys;
 
     private Island island;
     private int dailyDaysARaw, year, month, day;
@@ -72,7 +73,16 @@ public class DailyWindowController : MonoBehaviour
 
     private void TakeReward(DailyRewardState dailyRewardState)
     {
-        Debug.Log("Given " + dailyRewardState.reward.ToString() + " black marks.");
+        foreach (LifebuoyManager l in lifebuoys)
+        {
+            if (l.gameObject.activeInHierarchy)
+            {
+                for (int i = 0; i < dailyRewardState.reward; i++)
+                {
+                    l.AddLifebuoy();
+                }
+            }
+        }
     }
 
     private int ToSeconds(int hours, int minutes, int seconds)

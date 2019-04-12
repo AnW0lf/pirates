@@ -2152,7 +2152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &56784387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11979,7 +11979,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.6}
   m_AnchorMax: {x: 0.5, y: 0.6}
   m_AnchoredPosition: {x: 0, y: 234}
-  m_SizeDelta: {x: 1050, y: 1050}
+  m_SizeDelta: {x: 1018, y: 1055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393756848
 MonoBehaviour:
@@ -11993,7 +11993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464d703e5dbf5fa41be3c062ac126c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rouletteName: 
+  rouletteName: Wheel2
   direction: 1
   speed: 500
   rotationTime: 1
@@ -13728,6 +13728,7 @@ GameObject:
   - component: {fileID: 443133854}
   - component: {fileID: 443133853}
   - component: {fileID: 443133852}
+  - component: {fileID: 443133856}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Untagged
@@ -13817,6 +13818,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &443133856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443133851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c480f90c3b0c4a4490a4416bc6d1c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minLevel: 25
+  unlockMenu: {fileID: 1529298164}
 --- !u!1 &446260838
 GameObject:
   m_ObjectHideFlags: 0
@@ -16792,7 +16807,7 @@ MonoBehaviour:
   level: 25
   bonuses: {fileID: 950925117}
   screenUI: {fileID: 217749281}
-  wheel: {fileID: 443133851}
+  wheel: {fileID: 2084003251}
   progress: {fileID: 753927302}
   text: {fileID: 1594919917}
 --- !u!114 &545054909
@@ -22755,8 +22770,8 @@ MonoBehaviour:
   progress: {fileID: 1176586877}
   button: {fileID: 585691495}
   title: {fileID: 1561676642}
-  minLevel: 0
-  maxLevel: 24
+  minLevel: 25
+  maxLevel: 49
 --- !u!224 &753927304
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33826,7 +33841,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 999K
@@ -34482,7 +34497,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 443133856}
         m_MethodName: Open
         m_Mode: 1
         m_Arguments:
@@ -34526,7 +34541,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 393756848}
         m_MethodName: UpdateInfo
         m_Mode: 1
         m_Arguments:
@@ -38035,7 +38050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1214142691
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45628,7 +45643,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.6}
   m_AnchorMax: {x: 0.5, y: 0.6}
   m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 1500, y: 1500}
+  m_SizeDelta: {x: 1018, y: 1055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453675866
 MonoBehaviour:
@@ -58116,7 +58131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1824645013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -62777,7 +62792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1966261410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -62814,7 +62829,7 @@ MonoBehaviour:
   level: 0
   bonuses: {fileID: 945456224}
   screenUI: {fileID: 1989740895}
-  wheel: {fileID: 396537682}
+  wheel: {fileID: 1824645012}
   progress: {fileID: 1427430235}
   text: {fileID: 809632326}
 --- !u!114 &1966261412
@@ -65353,9 +65368,6 @@ MonoBehaviour:
   - {fileID: 879121286}
   - {fileID: 98013672}
   - {fileID: 270095262}
-  - {fileID: 396537682}
-  - {fileID: 443133851}
-  - {fileID: 1214142690}
 --- !u!1 &2042828464
 GameObject:
   m_ObjectHideFlags: 0
@@ -65452,6 +65464,9 @@ MonoBehaviour:
   rewards: {fileID: 1842681105}
   button: {fileID: 1888775904}
   timer: {fileID: 553431755}
+  lifebuoys:
+  - {fileID: 502075262}
+  - {fileID: 999593072}
 --- !u!1 &2045221067
 GameObject:
   m_ObjectHideFlags: 0
@@ -66051,7 +66066,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.6}
   m_AnchorMax: {x: 0.5, y: 0.6}
   m_AnchoredPosition: {x: 0, y: 234}
-  m_SizeDelta: {x: 1050, y: 1050}
+  m_SizeDelta: {x: 1018, y: 1055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057804693
 MonoBehaviour:
@@ -66102,7 +66117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464d703e5dbf5fa41be3c062ac126c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rouletteName: 
+  rouletteName: Wheel1
   direction: 1
   speed: 500
   rotationTime: 1

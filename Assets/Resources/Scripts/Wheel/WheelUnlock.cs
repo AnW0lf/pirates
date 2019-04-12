@@ -33,6 +33,8 @@ public class WheelUnlock : MonoBehaviour
 
     public void Open()
     {
+        if (island == null) island = Island.Instance();
+        if (child == null) child = transform.GetChild(0).gameObject;
         if (island.Level >= minLevel && !child.activeInHierarchy)
         {
             unlockMenu.SetActive(true);
@@ -42,6 +44,6 @@ public class WheelUnlock : MonoBehaviour
     public void UnlockWheel()
     {
         child.SetActive(true);
-        this.enabled = false;
+        //this.enabled = false;
     }
 }
