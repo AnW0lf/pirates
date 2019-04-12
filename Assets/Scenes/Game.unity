@@ -12003,6 +12003,8 @@ MonoBehaviour:
   flyingReward: {fileID: 7455523717367949559, guid: 1baedb412cbdf524ab8f96e6aee21372,
     type: 3}
   arrow: {fileID: 2069182264}
+  rewardEffect: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
+    type: 3}
   blackShip: {fileID: 810971560}
   sectorCount: 10
   sectors:
@@ -20803,8 +20805,8 @@ MonoBehaviour:
   minLevel: 25
   delay: 1
   tapDelay: 0.6
-  modifierMantissa: 2
-  modifierExponent: 3
+  modifierMantissa: 1
+  modifierExponent: 1
   flyingText: {fileID: 7659205956303974338, guid: 6a18c187d1a370949b69a053f95a0a6e,
     type: 3}
 --- !u!114 &673416821
@@ -38463,7 +38465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00048828125}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 5760}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1233723226
@@ -45589,6 +45591,7 @@ MonoBehaviour:
   flyingReward: {fileID: 7455523717367949559, guid: 1baedb412cbdf524ab8f96e6aee21372,
     type: 3}
   arrow: {fileID: 886246662}
+  rewardEffect: {fileID: 0}
   blackShip: {fileID: 529420253}
   sectorCount: 10
   sectors:
@@ -62774,7 +62777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1966261410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -66109,6 +66112,8 @@ MonoBehaviour:
   flyingReward: {fileID: 7455523717367949559, guid: 1baedb412cbdf524ab8f96e6aee21372,
     type: 3}
   arrow: {fileID: 366139332}
+  rewardEffect: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
+    type: 3}
   blackShip: {fileID: 141904529}
   sectorCount: 10
   sectors:

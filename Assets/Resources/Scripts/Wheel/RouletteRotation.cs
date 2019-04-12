@@ -13,7 +13,7 @@ public class RouletteRotation : MonoBehaviour
     public WheelButton wb;
     public LifebuoyManager lm;
     public BonusGenerator bg;
-    public GameObject flyingReward, arrow;
+    public GameObject flyingReward, arrow, rewardEffect;
     public PierManager blackShip;
 
     [Header("Количество секторов")]
@@ -29,7 +29,7 @@ public class RouletteRotation : MonoBehaviour
     private RectTransform rect;
     private int section, num;
     private Island island;
-    private GameObject _flyingReward;
+    private GameObject _flyingReward, _rewardEffect;
 
     public enum RewardType { Money, Bonus, BlackMark };
 
@@ -152,5 +152,7 @@ public class RouletteRotation : MonoBehaviour
         _flyingReward.GetComponent<FlyingWheelReward>().text.text = sectors[section].GetComponentInChildren<Text>().text;
         _flyingReward.GetComponent<FlyingWheelReward>().image.sprite = sectors[section].GetComponentInChildren<Image>().sprite;
         _flyingReward.GetComponent<FlyingWheelReward>().image.color = sectors[section].GetComponentInChildren<Image>().color;
+
+        _rewardEffect = Instantiate(rewardEffect, transform);
     }
 }
