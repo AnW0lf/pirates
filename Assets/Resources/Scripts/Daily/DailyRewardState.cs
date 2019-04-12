@@ -25,6 +25,7 @@ public class DailyRewardState : MonoBehaviour
 
     public void SetState(int state)
     {
+        if (image == null) image = GetComponent<Image>();
         switch (state)
         {
             case 0:
