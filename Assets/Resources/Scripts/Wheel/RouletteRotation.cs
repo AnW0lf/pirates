@@ -153,6 +153,6 @@ public class RouletteRotation : MonoBehaviour
         _flyingReward.GetComponent<FlyingWheelReward>().image.sprite = sectors[section].GetComponentInChildren<Image>().sprite;
         _flyingReward.GetComponent<FlyingWheelReward>().image.color = sectors[section].GetComponentInChildren<Image>().color;
 
-        _rewardEffect = Instantiate(rewardEffect, transform);
+        _rewardEffect = Instantiate(rewardEffect, arrow.transform);
     }
 }
