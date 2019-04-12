@@ -34,7 +34,7 @@ public class RankController : MonoBehaviour
             {
                 currentRank = levels.IndexOf(i);
                 rankName.text = names[currentRank];
-                rankNumber.text = "Rank " + (currentRank + 1);
+                rankNumber.text = (currentRank + 1).ToString();
                 break;
             }
         }
@@ -59,7 +59,7 @@ public class RankController : MonoBehaviour
         {
             currentRank = levels.IndexOf(island.Level);
             rankName.text = names[currentRank];
-            rankNumber.text = "Rank " + (currentRank + 1);
+            rankNumber.text = (currentRank + 1).ToString();
         }
         if (levels.Count > currentRank + 1)
         {
