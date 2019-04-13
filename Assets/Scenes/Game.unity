@@ -2820,10 +2820,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f65225caece10847939bf9814827c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 0000000005000000
+  levels: 0000000004000000090000000e0000001300000018000000
   sprites:
-  - {fileID: 21300000, guid: f457e11a459345346b0a4658b3cb2ec5, type: 3}
-  - {fileID: 21300002, guid: f457e11a459345346b0a4658b3cb2ec5, type: 3}
+  - {fileID: 21300000, guid: 403284ce6d3f09b468d56816bc3df6bf, type: 3}
+  - {fileID: 21300000, guid: 405767e0bb1a185468f12ec0742b44cd, type: 3}
+  - {fileID: 21300000, guid: af910c549b1ddfd4fbe8fa78b3f47696, type: 3}
+  - {fileID: 21300000, guid: 1417a6a7680602744aa4c9eb9eaef546, type: 3}
+  - {fileID: 21300000, guid: da246a4c0613cce438a7ef24da4cab2c, type: 3}
+  - {fileID: 21300000, guid: 6d1f0dc898b8fac49b94d88958a0de77, type: 3}
 --- !u!1 &74118565
 GameObject:
   m_ObjectHideFlags: 0
