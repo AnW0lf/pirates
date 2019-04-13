@@ -13,8 +13,8 @@ public class TailController : MonoBehaviour
     private void Awake()
     {
         tr = GetComponent<TrailRenderer>();
-        content = GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<UnityEngine.UI.ScrollRect>().content;
-        sr = GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<TailScrollRect>();
+        content = GameObject.FindGameObjectWithTag("GameScrollView").GetComponent<UnityEngine.UI.ScrollRect>().content;
+        sr = GameObject.FindGameObjectWithTag("GameScrollView").GetComponent<TailScrollRect>();
     }
 
     private void FixedUpdate()
