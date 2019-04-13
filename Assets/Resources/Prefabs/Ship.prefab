@@ -683,7 +683,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.59000015
         inSlope: -1.1382716
         outSlope: -1.1382716
         tangentMode: 0
@@ -691,8 +691,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.11713666
       - serializedVersion: 3
-        time: 1
-        value: 0
+        time: 0.98747253
+        value: 0.5100002
         inSlope: -1.1220107
         outSlope: -1.1220107
         tangentMode: 0
@@ -737,7 +737,7 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.05
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!114 &1728971532345359199
@@ -752,8 +752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9e762d3823acc4ab59e35e0f4aff1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tr: {fileID: 0}
-  content: {fileID: 0}
 --- !u!1 &4797947767306085401
 GameObject:
   m_ObjectHideFlags: 0
