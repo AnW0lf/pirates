@@ -6,8 +6,7 @@ public class TailController : MonoBehaviour
 {
     private TrailRenderer tr;
     private Transform content;
-
-    UnityEngine.UI.ScrollRect sr;
+    private TailScrollRect sr;
 
     Vector3 pos;
 
@@ -15,13 +14,14 @@ public class TailController : MonoBehaviour
     {
         tr = GetComponent<TrailRenderer>();
         content = GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<UnityEngine.UI.ScrollRect>().content;
+        sr = GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<TailScrollRect>();
     }
 
     private void FixedUpdate()
     {
-        if (content.position == pos) tr.time = 0.75f;
-        if (content.position != pos) tr.time = 0f;
-        pos = content.position;
+        if (!sr.Scrolled) tr.time = 0.75f;
+        else tr.time = 0f;
+        pos = content.transform.position;
     }
 
 }
