@@ -2152,7 +2152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &56784387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -63983,7 +63983,7 @@ MonoBehaviour:
   level: 0
   bonuses: {fileID: 945456224}
   screenUI: {fileID: 1989740895}
-  wheel: {fileID: 1824645012}
+  wheel: {fileID: 396537682}
   progress: {fileID: 1427430235}
   text: {fileID: 809632326}
 --- !u!114 &1966261412
