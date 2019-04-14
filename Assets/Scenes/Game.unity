@@ -2127,13 +2127,13 @@ MonoBehaviour:
   minLevel: 0
   maxLevel: 25
   levelDifference: 5
-  startReward: 50
+  startReward: 2500
   bonusId: 0
   bg: {fileID: 950925118}
   blackShip: {fileID: 810971560}
   title: {fileID: 1205031567}
-  startRewardMantissa: 5
-  startRewardExponent: 1
+  startRewardMantissa: 2.5
+  startRewardExponent: 3
 --- !u!1 &56784386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,7 +2681,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 530}
+  m_SizeDelta: {x: 600, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71592725
 MonoBehaviour:
@@ -2703,7 +2703,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f457e11a459345346b0a4658b3cb2ec5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fde54a6d2985834e983a2777aede88c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2820,14 +2820,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f65225caece10847939bf9814827c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 0000000004000000090000000e0000001300000018000000
+  levels: 0000000003000000060000000a0000000f00000014000000
   sprites:
-  - {fileID: 21300000, guid: 403284ce6d3f09b468d56816bc3df6bf, type: 3}
-  - {fileID: 21300000, guid: 405767e0bb1a185468f12ec0742b44cd, type: 3}
-  - {fileID: 21300000, guid: af910c549b1ddfd4fbe8fa78b3f47696, type: 3}
-  - {fileID: 21300000, guid: 1417a6a7680602744aa4c9eb9eaef546, type: 3}
-  - {fileID: 21300000, guid: da246a4c0613cce438a7ef24da4cab2c, type: 3}
-  - {fileID: 21300000, guid: 6d1f0dc898b8fac49b94d88958a0de77, type: 3}
+  - {fileID: 21300000, guid: 5fde54a6d2985834e983a2777aede88c, type: 3}
+  - {fileID: 21300000, guid: 37ace5bc0be284d46b1812046da7bd9c, type: 3}
+  - {fileID: 21300000, guid: 639411b6c751c914a95cf0e0c3e09fbb, type: 3}
+  - {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
+  - {fileID: 21300000, guid: bad5941be9c5a8f40bfbb45ea19b47f2, type: 3}
+  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
 --- !u!1 &74118565
 GameObject:
   m_ObjectHideFlags: 0
@@ -4023,7 +4023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: 67e39eddf435b3044b857267eb5fb558, type: 3}
-  minLvl: 28
+  minLvl: 29
   shipDescription: Choice of the true corsair.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -4032,23 +4032,23 @@ MonoBehaviour:
   rise: 510
   angle: 60
   shipName: Pink Queen2
-  startPriceMantissa: 2
-  startPriceExponent: 6
+  startPriceMantissa: 1
+  startPriceExponent: 4
   startRaidTime: 10
-  startReward: 35
+  startReward: 1750
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 25
+  detailChangeReward1: 1250
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 2.2
-  detailStartCostExponent1: 6
-  detailCostIncreaseMantissa1: 1.5
-  detailCostIncreaseExponent1: 5
+  detailStartCostMantissa1: 1.1
+  detailStartCostExponent1: 4
+  detailCostIncreaseMantissa1: 7.5
+  detailCostIncreaseExponent1: 2
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -4057,28 +4057,28 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 3.7
-  detailStartCostExponent2: 6
-  detailCostIncreaseMantissa2: 5
-  detailCostIncreaseExponent2: 5
+  detailStartCostMantissa2: 1.85
+  detailStartCostExponent2: 4
+  detailCostIncreaseMantissa2: 2.5
+  detailCostIncreaseExponent2: 3
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 40
+  detailChangeReward3: 2000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 7
-  detailStartCostExponent3: 6
-  detailCostIncreaseMantissa3: 9
-  detailCostIncreaseExponent3: 5
+  detailStartCostMantissa3: 3.5
+  detailStartCostExponent3: 4
+  detailCostIncreaseMantissa3: 4.5
+  detailCostIncreaseExponent3: 3
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 88929339}
+  ships: {fileID: 453755324}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
   spriteForMenu: {fileID: 21300048, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -4467,7 +4467,7 @@ MonoBehaviour:
   detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
-  shipExist: 1
+  shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
@@ -5127,8 +5127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalSpeed
   descriptionName: Speed
-  startPriceMantissa: 5.8
-  startPriceExponent: 2
+  startPriceMantissa: 2.9
+  startPriceExponent: 4
   modifier: 0.03
   increase: 1.55
   startReward: 1
@@ -9714,8 +9714,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalSpins
   descriptionName: Max Spins
-  startPriceMantissa: 3.5
-  startPriceExponent: 3
+  startPriceMantissa: 1.75
+  startPriceExponent: 5
   modifier: 1
   increase: 1.7
   startReward: 3
@@ -12228,13 +12228,13 @@ MonoBehaviour:
   - {fileID: 1762622934}
   - {fileID: 512118582}
   - {fileID: 2144215061}
-  levels: 04000000080000000c00000012000000
+  levels: 1b0000001f0000002300000028000000
   modifiers:
   - 2
   - 2
   - 2
   - 2
-  nums: 04000000010000000000000005000000010000000200000001000000030000000400000006000000020000000000000002000000070000000100000001000000030000000400000006000000020000000000000007000000010000000000000008000000
+  nums: 
   spinButton: {fileID: 633751323}
 --- !u!114 &393756849
 MonoBehaviour:
@@ -13340,7 +13340,7 @@ RectTransform:
   - {fileID: 312831827}
   - {fileID: 454350968}
   - {fileID: 798507966}
-  - {fileID: 1324948162}
+  - {fileID: 965903101}
   m_Father: {fileID: 1815808006}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13365,17 +13365,17 @@ MonoBehaviour:
   rankNumber: {fileID: 454350970}
   rankName: {fileID: 798507968}
   names:
-  - Powder Monkey
-  - Cabin Boy
-  - Pirate
-  - Corsair
-  - Gunner
-  - Boatswain
-  - Navigator
-  - First Mate
-  - Captain
-  - Admiral
-  levels: 01000000050000000a0000000f000000140000001e00000028000000320000004b00000064000000
+  - SHIPBOY
+  - SAILOR
+  - PIRATE
+  - CORSAIR
+  - SKIPPER
+  - CAPTAIN
+  - SEA WOLF
+  - ADMIRAL
+  - GOVERNOR
+  - SEA GOD
+  levels: 0100000003000000060000000a0000000f000000190000001d00000021000000250000002a000000
 --- !u!1 &428599538
 GameObject:
   m_ObjectHideFlags: 0
@@ -14260,7 +14260,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.2, y: 0.7}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &454350969
 MonoBehaviour:
@@ -14269,7 +14269,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454350967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -14299,11 +14299,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 50
+    m_FontSize: 55
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 50
+    m_MaxSize: 55
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -17408,13 +17408,13 @@ MonoBehaviour:
   minLevel: 0
   maxLevel: 25
   levelDifference: 5
-  startReward: 300
+  startReward: 15000
   bonusId: 0
   bg: {fileID: 950925118}
   blackShip: {fileID: 810971560}
   title: {fileID: 2068079781}
-  startRewardMantissa: 3
-  startRewardExponent: 2
+  startRewardMantissa: 1.5
+  startRewardExponent: 4
 --- !u!1 &550978289
 GameObject:
   m_ObjectHideFlags: 0
@@ -18133,7 +18133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
-  minLvl: 40
+  minLvl: 42
   shipDescription: Choice of the true corsair.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -18142,23 +18142,23 @@ MonoBehaviour:
   rise: 450
   angle: 240
   shipName: Santa Maria2
-  startPriceMantissa: 1
-  startPriceExponent: 9
+  startPriceMantissa: 6.5
+  startPriceExponent: 6
   startRaidTime: 30
-  startReward: 210
+  startReward: 10500
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 110
+  detailChangeReward1: 5500
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.07
-  detailStartCostExponent1: 9
-  detailCostIncreaseMantissa1: 7
-  detailCostIncreaseExponent1: 7
+  detailStartCostMantissa1: 7.125
+  detailStartCostExponent1: 6
+  detailCostIncreaseMantissa1: 5
+  detailCostIncreaseExponent1: 5
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -18167,28 +18167,28 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -4
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 1.45
-  detailStartCostExponent2: 9
-  detailCostIncreaseMantissa2: 1.45
-  detailCostIncreaseExponent2: 8
+  detailStartCostMantissa2: 1.22
+  detailStartCostExponent2: 7
+  detailCostIncreaseMantissa2: 1.525
+  detailCostIncreaseExponent2: 6
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 160
+  detailChangeReward3: 8000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 2.08
-  detailStartCostExponent3: 9
-  detailCostIncreaseMantissa3: 2.1
-  detailCostIncreaseExponent3: 8
+  detailStartCostMantissa3: 2.29
+  detailStartCostExponent3: 7
+  detailCostIncreaseMantissa3: 2.87
+  detailCostIncreaseExponent3: 6
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
-  shipExist: 1
+  shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 88929339}
+  ships: {fileID: 453755324}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
   spriteForMenu: {fileID: 21300016, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -21250,10 +21250,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f65225caece10847939bf9814827c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 000000001e000000
+  levels: 000000001d00000021000000250000002a0000002f000000
   sprites:
-  - {fileID: 21300000, guid: f457e11a459345346b0a4658b3cb2ec5, type: 3}
-  - {fileID: 21300002, guid: f457e11a459345346b0a4658b3cb2ec5, type: 3}
+  - {fileID: 21300000, guid: 5fde54a6d2985834e983a2777aede88c, type: 3}
+  - {fileID: 21300000, guid: 37ace5bc0be284d46b1812046da7bd9c, type: 3}
+  - {fileID: 21300000, guid: 639411b6c751c914a95cf0e0c3e09fbb, type: 3}
+  - {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
+  - {fileID: 21300000, guid: bad5941be9c5a8f40bfbb45ea19b47f2, type: 3}
+  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
 --- !u!111 &673416819
 Animation:
   m_ObjectHideFlags: 0
@@ -24510,7 +24514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55, y: -23.11}
+  m_AnchoredPosition: {x: 55, y: -18.309952}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &798507967
@@ -24525,8 +24529,8 @@ MonoBehaviour:
   m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.81960785}
-  m_EffectDistance: {x: -5, y: 5}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
 --- !u!114 &798507968
 MonoBehaviour:
@@ -24550,18 +24554,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 20
+    m_FontSize: 45
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Powder Monkey
+  m_Text: SEA WOLF
 --- !u!222 &798507969
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24881,7 +24885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
-  minLvl: 25
+  minLvl: 0
   shipDescription: Fifteen men on the dead man's chest!
   black: 1
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -24893,14 +24897,14 @@ MonoBehaviour:
   startPriceMantissa: 0
   startPriceExponent: 0
   startRaidTime: 60
-  startReward: 300
+  startReward: 15000
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 150
+  detailChangeReward1: 7500
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 0
@@ -24924,7 +24928,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 350
+  detailChangeReward3: 17500
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 0
@@ -24933,10 +24937,10 @@ MonoBehaviour:
   detailCostIncreaseExponent3: 0
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
-  shipExist: 1
+  shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 88929339}
+  ships: {fileID: 453755324}
   color: {r: 0, g: 0, b: 0, a: 1}
   spriteForMenu: {fileID: 21300008, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -25297,9 +25301,9 @@ MonoBehaviour:
   detailChangeReward1: 70
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.6
+  detailStartCostMantissa1: 1.625
   detailStartCostExponent1: 4
-  detailCostIncreaseMantissa1: 1
+  detailCostIncreaseMantissa1: 1.25
   detailCostIncreaseExponent1: 3
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
@@ -25309,9 +25313,9 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -3
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 2.45
+  detailStartCostMantissa2: 2.8
   detailStartCostExponent2: 4
-  detailCostIncreaseMantissa2: 2.5
+  detailCostIncreaseMantissa2: 3.5
   detailCostIncreaseExponent2: 3
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
@@ -25321,13 +25325,13 @@ MonoBehaviour:
   detailChangeReward3: 95
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 4
+  detailStartCostMantissa3: 5.25
   detailStartCostExponent3: 4
-  detailCostIncreaseMantissa3: 7.5
+  detailCostIncreaseMantissa3: 6.25
   detailCostIncreaseExponent3: 3
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
-  shipExist: 1
+  shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
@@ -28272,13 +28276,13 @@ MonoBehaviour:
   minLevel: 0
   maxLevel: 25
   levelDifference: 5
-  startReward: 25
+  startReward: 5000
   bonusId: 0
   bg: {fileID: 950925118}
   blackShip: {fileID: 810971560}
   title: {fileID: 384966588}
-  startRewardMantissa: 2.5
-  startRewardExponent: 1
+  startRewardMantissa: 5
+  startRewardExponent: 3
 --- !u!1 &896639570
 GameObject:
   m_ObjectHideFlags: 0
@@ -31195,6 +31199,101 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &965903100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965903101}
+  - component: {fileID: 965903104}
+  - component: {fileID: 965903103}
+  - component: {fileID: 965903102}
+  m_Layer: 5
+  m_Name: Rank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &965903101
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965903100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 427607141}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 55, y: 29.8}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &965903102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965903100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &965903103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965903100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.911427, g: 1, b: 0.9103774, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 50
+    m_Alignment: 3
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: RANK
+--- !u!222 &965903104
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965903100}
+  m_CullTransparentMesh: 0
 --- !u!1 &965982299
 GameObject:
   m_ObjectHideFlags: 0
@@ -32914,13 +33013,13 @@ MonoBehaviour:
   minLevel: 0
   maxLevel: 25
   levelDifference: 5
-  startReward: 100
+  startReward: 7500
   bonusId: 0
   bg: {fileID: 950925118}
   blackShip: {fileID: 810971560}
   title: {fileID: 1905894719}
-  startRewardMantissa: 1
-  startRewardExponent: 2
+  startRewardMantissa: 7.5
+  startRewardExponent: 3
 --- !u!1 &1024408052
 GameObject:
   m_ObjectHideFlags: 0
@@ -34531,7 +34630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: 867846aa592926a4399ecac2f3e5112b, type: 3}
-  minLvl: 31
+  minLvl: 33
   shipDescription: Choice of the true corsair.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -34540,23 +34639,23 @@ MonoBehaviour:
   rise: 450
   angle: 120
   shipName: Sea Saber2
-  startPriceMantissa: 1.76
-  startPriceExponent: 7
+  startPriceMantissa: 1.25
+  startPriceExponent: 5
   startRaidTime: 15
-  startReward: 60
+  startReward: 3000
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 50
+  detailChangeReward1: 2500
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.91
-  detailStartCostExponent1: 7
-  detailCostIncreaseMantissa1: 1.45
-  detailCostIncreaseExponent1: 6
+  detailStartCostMantissa1: 1.335
+  detailStartCostExponent1: 5
+  detailCostIncreaseMantissa1: 1.125
+  detailCostIncreaseExponent1: 4
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -34565,28 +34664,28 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 3.3
-  detailStartCostExponent2: 7
-  detailCostIncreaseMantissa2: 4.1
-  detailCostIncreaseExponent2: 6
+  detailStartCostMantissa2: 2.35
+  detailStartCostExponent2: 5
+  detailCostIncreaseMantissa2: 3
+  detailCostIncreaseExponent2: 4
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 65
+  detailChangeReward3: 3250
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 6.18
-  detailStartCostExponent3: 7
-  detailCostIncreaseMantissa3: 7.2
-  detailCostIncreaseExponent3: 6
+  detailStartCostMantissa3: 4.45
+  detailStartCostExponent3: 5
+  detailCostIncreaseMantissa3: 5.5
+  detailCostIncreaseExponent3: 4
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 88929339}
+  ships: {fileID: 453755324}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
   spriteForMenu: {fileID: 21300032, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -34930,23 +35029,23 @@ MonoBehaviour:
   rise: 450
   angle: 0
   shipName: Rum Barrel2
-  startPriceMantissa: 2.5
-  startPriceExponent: 5
+  startPriceMantissa: 1
+  startPriceExponent: 3
   startRaidTime: 5
-  startReward: 12
+  startReward: 600
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 6
+  detailChangeReward1: 300
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 2.5
-  detailStartCostExponent1: 5
-  detailCostIncreaseMantissa1: 1
-  detailCostIncreaseExponent1: 5
+  detailStartCostMantissa1: 1
+  detailStartCostExponent1: 3
+  detailCostIncreaseMantissa1: 5
+  detailCostIncreaseExponent1: 2
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -34955,28 +35054,28 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 5
-  detailStartCostExponent2: 5
-  detailCostIncreaseMantissa2: 2
-  detailCostIncreaseExponent2: 5
+  detailStartCostMantissa2: 2.5
+  detailStartCostExponent2: 3
+  detailCostIncreaseMantissa2: 1
+  detailCostIncreaseExponent2: 3
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 10
+  detailChangeReward3: 500
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 1.2
-  detailStartCostExponent3: 6
-  detailCostIncreaseMantissa3: 3
-  detailCostIncreaseExponent3: 5
+  detailStartCostMantissa3: 6
+  detailStartCostExponent3: 3
+  detailCostIncreaseMantissa3: 1.5
+  detailCostIncreaseExponent3: 3
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 88929339}
+  ships: {fileID: 453755324}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
   spriteForMenu: {fileID: 21300058, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -35291,7 +35390,7 @@ MonoBehaviour:
   rise: 450
   angle: 120
   shipName: Sea Saber
-  startPriceMantissa: 1.76
+  startPriceMantissa: 2.5
   startPriceExponent: 3
   startRaidTime: 15
   startReward: 60
@@ -35304,9 +35403,9 @@ MonoBehaviour:
   detailChangeReward1: 50
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.91
+  detailStartCostMantissa1: 2.675
   detailStartCostExponent1: 3
-  detailCostIncreaseMantissa1: 1.45
+  detailCostIncreaseMantissa1: 2.25
   detailCostIncreaseExponent1: 2
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
@@ -35316,9 +35415,9 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -2
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 3.3
+  detailStartCostMantissa2: 4.7
   detailStartCostExponent2: 3
-  detailCostIncreaseMantissa2: 4.1
+  detailCostIncreaseMantissa2: 6
   detailCostIncreaseExponent2: 2
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
@@ -35328,10 +35427,10 @@ MonoBehaviour:
   detailChangeReward3: 65
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 6.18
+  detailStartCostMantissa3: 8.9
   detailStartCostExponent3: 3
-  detailCostIncreaseMantissa3: 7.2
-  detailCostIncreaseExponent3: 2
+  detailCostIncreaseMantissa3: 1.1
+  detailCostIncreaseExponent3: 3
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -40846,7 +40945,7 @@ MonoBehaviour:
   rise: 450
   angle: 240
   shipName: Santa Maria
-  startPriceMantissa: 1
+  startPriceMantissa: 1.3
   startPriceExponent: 5
   startRaidTime: 30
   startReward: 210
@@ -40859,10 +40958,10 @@ MonoBehaviour:
   detailChangeReward1: 110
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.07
+  detailStartCostMantissa1: 1.425
   detailStartCostExponent1: 5
-  detailCostIncreaseMantissa1: 7
-  detailCostIncreaseExponent1: 3
+  detailCostIncreaseMantissa1: 1
+  detailCostIncreaseExponent1: 4
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -40871,9 +40970,9 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -4
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 1.45
+  detailStartCostMantissa2: 2.44
   detailStartCostExponent2: 5
-  detailCostIncreaseMantissa2: 1.45
+  detailCostIncreaseMantissa2: 3.05
   detailCostIncreaseExponent2: 4
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
@@ -40883,13 +40982,13 @@ MonoBehaviour:
   detailChangeReward3: 160
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 2.08
+  detailStartCostMantissa3: 4.58
   detailStartCostExponent3: 5
-  detailCostIncreaseMantissa3: 2.1
+  detailCostIncreaseMantissa3: 5.725
   detailCostIncreaseExponent3: 4
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
-  shipExist: 1
+  shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
@@ -42354,117 +42453,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324254424}
-  m_CullTransparentMesh: 0
---- !u!1 &1324948161
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1324948162}
-  - component: {fileID: 1324948166}
-  - component: {fileID: 1324948165}
-  - component: {fileID: 1324948164}
-  - component: {fileID: 1324948163}
-  m_Layer: 5
-  m_Name: Rank
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1324948162
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324948161}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 427607141}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 154.1, y: 28}
-  m_SizeDelta: {x: 200, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1324948163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324948161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: -5, y: 5}
-  m_UseGraphicAlpha: 1
---- !u!114 &1324948164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324948161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: 1}
-  m_UseGraphicAlpha: 1
---- !u!114 &1324948165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324948161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 80
-    m_Alignment: 3
-    m_AlignByGeometry: 1
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Rank
---- !u!222 &1324948166
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324948161}
   m_CullTransparentMesh: 0
 --- !u!1 &1329949285
 GameObject:
@@ -52644,7 +52632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipIcon: {fileID: 21300000, guid: 4ed1a3a95997ffe469708981b5a30d11, type: 3}
-  minLvl: 35
+  minLvl: 37
   shipDescription: Choice of the true corsair.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -52653,23 +52641,23 @@ MonoBehaviour:
   rise: 510
   angle: 180
   shipName: King Georg2
-  startPriceMantissa: 1.5
-  startPriceExponent: 8
+  startPriceMantissa: 7.5
+  startPriceExponent: 5
   startRaidTime: 22
-  startReward: 110
+  startReward: 5500
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 70
+  detailChangeReward1: 3500
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.6
-  detailStartCostExponent1: 8
-  detailCostIncreaseMantissa1: 1
-  detailCostIncreaseExponent1: 7
+  detailStartCostMantissa1: 8.125
+  detailStartCostExponent1: 5
+  detailCostIncreaseMantissa1: 6.25
+  detailCostIncreaseExponent1: 4
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -52678,28 +52666,28 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -3
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 2.45
-  detailStartCostExponent2: 8
-  detailCostIncreaseMantissa2: 2.5
-  detailCostIncreaseExponent2: 7
+  detailStartCostMantissa2: 1.4
+  detailStartCostExponent2: 6
+  detailCostIncreaseMantissa2: 1.75
+  detailCostIncreaseExponent2: 5
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 95
+  detailChangeReward3: 4750
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 4
-  detailStartCostExponent3: 8
-  detailCostIncreaseMantissa3: 7.5
-  detailCostIncreaseExponent3: 7
+  detailStartCostMantissa3: 2.625
+  detailStartCostExponent3: 6
+  detailCostIncreaseMantissa3: 3.125
+  detailCostIncreaseExponent3: 5
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
-  shipExist: 1
+  shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 88929339}
+  ships: {fileID: 453755324}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
   spriteForMenu: {fileID: 21300024, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -55467,8 +55455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierName: GlobalEarnings
   descriptionName: Earnings
-  startPriceMantissa: 3
-  startPriceExponent: 2
+  startPriceMantissa: 1.5
+  startPriceExponent: 4
   modifier: 0.05
   increase: 1.5
   startReward: 1
@@ -56427,13 +56415,13 @@ MonoBehaviour:
   minLevel: 0
   maxLevel: 25
   levelDifference: 5
-  startReward: 1500
+  startReward: 75000
   bonusId: 0
   bg: {fileID: 950925118}
   blackShip: {fileID: 810971560}
   title: {fileID: 2016382847}
-  startRewardMantissa: 1.5
-  startRewardExponent: 3
+  startRewardMantissa: 7.5
+  startRewardExponent: 4
 --- !u!1 &1766982520
 GameObject:
   m_ObjectHideFlags: 0
@@ -70064,13 +70052,13 @@ MonoBehaviour:
   minLevel: 0
   maxLevel: 25
   levelDifference: 5
-  startReward: 10000
+  startReward: 400000
   bonusId: 0
   bg: {fileID: 950925118}
   blackShip: {fileID: 810971560}
   title: {fileID: 1984063594}
-  startRewardMantissa: 1
-  startRewardExponent: 4
+  startRewardMantissa: 4
+  startRewardExponent: 5
 --- !u!1 &2145737618
 GameObject:
   m_ObjectHideFlags: 0
