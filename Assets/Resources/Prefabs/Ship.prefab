@@ -714,16 +714,16 @@ TrailRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 19275
-      ctime2: 42791
+      ctime2: 36815
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 29491
-      atime2: 65535
-      atime3: 0
+      atime1: 18119
+      atime2: 39707
+      atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0
@@ -734,7 +734,7 @@ TrailRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.05
@@ -752,6 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9e762d3823acc4ab59e35e0f4aff1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ship: {fileID: 1561015050841590753}
 --- !u!1 &4797947767306085401
 GameObject:
   m_ObjectHideFlags: 0

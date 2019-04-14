@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TailController : MonoBehaviour
 {
+    public Ship ship;
+
     private TrailRenderer tr;
     private Transform content;
     private TailScrollRect sr;
@@ -19,7 +21,11 @@ public class TailController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!sr.Scrolled) tr.time = 0.75f;
+        if (!sr.Scrolled)
+        {
+            if (ship.InRaid()) tr.time = 0.4f;
+            else tr.time = 0.8f;
+        }
         else tr.time = 0f;
         pos = content.transform.position;
     }
