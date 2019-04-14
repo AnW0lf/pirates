@@ -4078,7 +4078,7 @@ MonoBehaviour:
   shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 453755324}
+  ships: {fileID: 88929339}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
   spriteForMenu: {fileID: 21300048, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -18188,7 +18188,7 @@ MonoBehaviour:
   shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 453755324}
+  ships: {fileID: 88929339}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
   spriteForMenu: {fileID: 21300016, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -24940,7 +24940,7 @@ MonoBehaviour:
   shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 453755324}
+  ships: {fileID: 88929339}
   color: {r: 0, g: 0, b: 0, a: 1}
   spriteForMenu: {fileID: 21300008, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -25791,7 +25791,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 300}
   m_SizeDelta: {x: 0, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &835071725
@@ -34685,7 +34685,7 @@ MonoBehaviour:
   shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 453755324}
+  ships: {fileID: 88929339}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
   spriteForMenu: {fileID: 21300032, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -35075,7 +35075,7 @@ MonoBehaviour:
   shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 453755324}
+  ships: {fileID: 88929339}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
   spriteForMenu: {fileID: 21300058, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -43630,7 +43630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 300}
   m_SizeDelta: {x: 0, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1367759902
@@ -47672,7 +47672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -175}
+  m_AnchoredPosition: {x: 0, y: -175.00024}
   m_SizeDelta: {x: 0, y: -350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1504076240
@@ -52687,7 +52687,7 @@ MonoBehaviour:
   shipExist: 0
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
-  ships: {fileID: 453755324}
+  ships: {fileID: 88929339}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
   spriteForMenu: {fileID: 21300024, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 999593072}
@@ -67501,7 +67501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 300}
   m_SizeDelta: {x: 0, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &2060418732
