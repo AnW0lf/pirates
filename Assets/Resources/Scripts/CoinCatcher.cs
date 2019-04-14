@@ -7,14 +7,17 @@ using UnityEngine.UI;
 public class CoinCatcher : MonoBehaviour
 {
     public GameObject flyingText;
+    public Sprite[] sprites;
 
     private int money = 0;
     private Island island;
     private GameObject _flyingText;
+    private Image image;
 
     private void Awake()
     {
         island = Island.Instance();
+        image = GetComponent<Image>();
     }
 
     private void Start()
@@ -27,6 +30,26 @@ public class CoinCatcher : MonoBehaviour
         gameObject.SetActive(true);
         this.money = money;
         GetComponentInParent<CapsuleCollider2D>().enabled = false;
+    }
+
+    private void OnEnable()
+    {
+        if (sprites.Length >= 3)
+        {
+            island = Island.Instance();
+            if (island.Level < 25)
+            {
+                image.sprite = sprites[0];
+            }
+            else if (island.Level < 50)
+            {
+                image.sprite = sprites[1];
+            }
+            else
+            {
+                image.sprite = sprites[2];
+            }
+        }
     }
 
     public void CatchCoin()

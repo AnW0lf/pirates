@@ -754,6 +754,11 @@ MonoBehaviour:
   wheelText: {fileID: 4640593706515122614}
   rewardText: {fileID: 6601502507555760928}
   expText: {fileID: 8705472697522503897}
+  sprites:
+  - {fileID: 21300000, guid: b812b2d193945084485d18369127ff19, type: 3}
+  - {fileID: 21300000, guid: 5354db22fcc0ad24d8eb3c0a4535f17c, type: 3}
+  - {fileID: 21300000, guid: 58895291260c40840ab2adc2c157deb1, type: 3}
+  expImage: {fileID: 7969086651144246017}
 --- !u!111 &1196453497808217090
 Animation:
   m_ObjectHideFlags: 0
