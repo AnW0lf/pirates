@@ -23,8 +23,8 @@ public class TailController : MonoBehaviour
     {
         if (!sr.Scrolled)
         {
-            if (ship.InRaid()) tr.time = 0.4f;
-            else tr.time = 0.8f;
+            if (ship.InRaid()) tr.time = 0.5f;
+            else tr.time = 1f;
         }
         else tr.time = 0f;
         pos = content.transform.position;
