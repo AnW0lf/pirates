@@ -7,13 +7,15 @@ using UnityEngine.UI;
 public class DailyWindowController : MonoBehaviour
 {
     public Transform rewards;
-    public GameObject button;
+    public GameObject button, rewardTextPref, claimEffectPref;
+    public Vector3 effectScale = new Vector3(200f, 200f, 0f);
     public Text timer;
     public LifebuoyManager[] lifebuoys;
 
     private Island island;
     private int dailyDaysARaw, year, month, day;
     private DateTime now;
+    private GameObject claimEffect, rewardText;
 
     private void Awake()
     {
@@ -49,6 +51,11 @@ public class DailyWindowController : MonoBehaviour
         {
             if (timer.gameObject.activeInHierarchy) timer.gameObject.SetActive(false);
             if (!button.activeInHierarchy) button.SetActive(true);
+            if (dailyDaysARaw > 6)
+            {
+                dailyDaysARaw %= 7;
+                UpdateRewardState(false);
+            }
         }
     }
 
@@ -63,7 +70,7 @@ public class DailyWindowController : MonoBehaviour
     public void Claim()
     {
         TakeReward(rewards.GetChild(dailyDaysARaw).GetComponent<DailyRewardState>());
-        dailyDaysARaw = ++dailyDaysARaw % 7;
+        dailyDaysARaw++;
         island.SetParameter("DailyDaysARaw", dailyDaysARaw);
         year = island.GetParameter("DailyYear", 0);
         month = island.GetParameter("DailyMonth", 0);
@@ -73,6 +80,15 @@ public class DailyWindowController : MonoBehaviour
 
     private void TakeReward(DailyRewardState dailyRewardState)
     {
+        if (claimEffect != null) Destroy(claimEffect);
+        claimEffect = Instantiate(claimEffectPref, dailyRewardState.transform);
+        claimEffect.transform.localScale = effectScale;
+
+        if (rewardText != null) Destroy(rewardText);
+        rewardText = Instantiate(rewardTextPref, dailyRewardState.transform);
+        rewardText.GetComponent<FlyingText>().wheel = true;
+        rewardText.GetComponent<FlyingText>().wheelText.GetComponent<Text>().text = "+" + dailyRewardState.reward.ToString();
+
         foreach (LifebuoyManager l in lifebuoys)
         {
             if (l.gameObject.activeInHierarchy)
