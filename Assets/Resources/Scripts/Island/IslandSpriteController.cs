@@ -8,20 +8,39 @@ public class IslandSpriteController : MonoBehaviour
 {
     public List<int> levels;
     public Sprite[] sprites;
+    public GameObject changeSpriteEffectPref;
+    public Vector3 effectScale = new Vector3(200f, 200f, 1f);
 
     private Image image;
     private Island island;
+    private GameObject changeSpriteEffect;
+    private bool change = false;
+    private Animation anim;
 
     private void Awake()
     {
         island = Island.Instance();
         image = GetComponent<Image>();
+        anim = GetComponent<Animation>();
     }
 
     private void Start()
     {
         EventManager.Subscribe("LevelUp", UpdateInfo);
         InitInfo();
+        changeSpriteEffect = Instantiate(changeSpriteEffectPref, transform);
+        changeSpriteEffect.transform.localScale = effectScale;
+        changeSpriteEffect.SetActive(false);
+    }
+
+    public void ChangeSprite()
+    {
+        if (change)
+        {
+            change = false;
+            StopAllCoroutines();
+            StartCoroutine(Change());
+        }
     }
 
     private void UpdateInfo(object[] arg0)
@@ -33,7 +52,7 @@ public class IslandSpriteController : MonoBehaviour
     {
         if (levels.Contains(island.Level) && sprites.Length > levels.IndexOf(island.Level))
         {
-            image.sprite = sprites[levels.IndexOf(island.Level)];
+            change = true;
         }
     }
 
@@ -55,5 +74,18 @@ public class IslandSpriteController : MonoBehaviour
                 image.sprite = sprites[0];
             }
         }
+    }
+
+    private IEnumerator Change()
+    {
+        Debug.Log("Effect");
+        WaitForSeconds wait = new WaitForSeconds(0.5f);
+        changeSpriteEffect.SetActive(false);
+        yield return wait;
+        image.sprite = sprites[levels.IndexOf(island.Level)];
+        changeSpriteEffect.SetActive(true);
+        anim.Play("UpgradeBonusPulse");
+        yield return wait;
+        changeSpriteEffect.SetActive(false);
     }
 }

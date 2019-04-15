@@ -79,12 +79,14 @@ public class WindowController : MonoBehaviour
         if(a != 0f && b == 0f)
         {
             timeAnim.Play();
+            if (rewardEffect != null) Destroy(rewardEffect);
             rewardEffect = Instantiate(rewardEffectPref, timeAnim.transform);
             rewardEffect.transform.localScale = effectScale;
         }
         else if (a == 0f && b != 0f)
         {
             coinAnim.Play();
+            if (rewardEffect != null) Destroy(rewardEffect);
             rewardEffect = Instantiate(rewardEffectPref, coinAnim.transform);
             rewardEffect.transform.localScale = effectScale;
         }

@@ -2864,6 +2864,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
+  - {fileID: 7400000, guid: 739be8dc66cd7a94aa87d531038b57bc, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2888,6 +2889,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
   - {fileID: 21300000, guid: bad5941be9c5a8f40bfbb45ea19b47f2, type: 3}
   - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
+  changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
+    type: 3}
+  effectScale: {x: 200, y: 200, z: 1}
 --- !u!1 &74939905
 GameObject:
   m_ObjectHideFlags: 0
@@ -21497,6 +21501,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
   - {fileID: 21300000, guid: bad5941be9c5a8f40bfbb45ea19b47f2, type: 3}
   - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
+  changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
+    type: 3}
+  effectScale: {x: 200, y: 200, z: 1}
 --- !u!111 &673416819
 Animation:
   m_ObjectHideFlags: 0
@@ -21509,6 +21516,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
+  - {fileID: 7400000, guid: 739be8dc66cd7a94aa87d531038b57bc, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -24700,6 +24708,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 7ecca2202542d0347af62436892f2e9d, type: 2}
+  - {fileID: 7400000, guid: 739be8dc66cd7a94aa87d531038b57bc, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -24718,6 +24727,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels: 
   sprites: []
+  changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
+    type: 3}
+  effectScale: {x: 200, y: 200, z: 1}
 --- !u!1 &780390553
 GameObject:
   m_ObjectHideFlags: 0
@@ -36044,6 +36056,39 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 566039959}
         m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 71592730}
+        m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 673416818}
+        m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 775851548}
+        m_MethodName: ChangeSprite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

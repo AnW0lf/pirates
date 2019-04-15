@@ -68,7 +68,7 @@ public class IslandController : MonoBehaviour
             time = tapDelay;
         }
 
-        anim.Play();
+        anim.Play("OnePulse");
 
         BigDigit reward = GetReward();
 
