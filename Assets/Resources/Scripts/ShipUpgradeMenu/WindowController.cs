@@ -8,14 +8,18 @@ public class WindowController : MonoBehaviour
 {
     public TextManager titleTM, upLevelTM, raidTimeTM, rewardTM, detailLevelTM, bonusTM, upBtnTM, fadeLevelTM, descriptionTM;
     public Image icon, miniIcon, profitIcon;
-    public GameObject windowFade, iconFade, titleFade, cost;
+    public GameObject windowFade, iconFade, titleFade, cost, rewardEffectPref;
+    public Vector3 effectScale = new Vector3(120f, 120f, 1f);
     public Button exitBtn, upgradeBtn;
     public Text costTxt;
 
     public Sprite body, sail, gun, coin, sandclock;
 
+    public Animation timeAnim, coinAnim;
+
     private PierManager pier;
     private Island island;
+    private GameObject rewardEffect;
 
     private void Awake()
     {
@@ -34,6 +38,7 @@ public class WindowController : MonoBehaviour
         EventManager.Unsubscribe("ChangeMoney", UpdateInfo);
         EventManager.Unsubscribe("AddExp", UpdateInfo);
         EventManager.Unsubscribe("LevelUp", UpdateInfo);
+        Destroy(rewardEffect);
     }
 
     private void UpdateInfo(object[] arg0)
@@ -49,6 +54,40 @@ public class WindowController : MonoBehaviour
         upgradeBtn.onClick.RemoveAllListeners();
         upgradeBtn.onClick.AddListener(pier.Upgrade);
         upgradeBtn.onClick.AddListener(UpdateInfo);
+        upgradeBtn.onClick.AddListener(BonusPulse);
+    }
+
+    public void BonusPulse()
+    {
+        float a = 0f;
+        int b = 0;
+        if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
+        {
+            a = pier.detailChangeRaidTime1;
+            b = pier.detailChangeReward1;
+        }
+        else if (pier.detailCurrentLvl2 < pier.detailMaxLvl2)
+        {
+            a = pier.detailChangeRaidTime2;
+            b = pier.detailChangeReward2;
+        }
+        else if (pier.detailCurrentLvl3 < pier.detailMaxLvl3)
+        {
+            a = pier.detailChangeRaidTime3;
+            b = pier.detailChangeReward3;
+        }
+        if(a != 0f && b == 0f)
+        {
+            timeAnim.Play();
+            rewardEffect = Instantiate(rewardEffectPref, timeAnim.transform);
+            rewardEffect.transform.localScale = effectScale;
+        }
+        else if (a == 0f && b != 0f)
+        {
+            coinAnim.Play();
+            rewardEffect = Instantiate(rewardEffectPref, coinAnim.transform);
+            rewardEffect.transform.localScale = effectScale;
+        }
     }
 
     private void UpdateInfo()
