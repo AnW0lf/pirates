@@ -41,8 +41,6 @@ public class LifebuoyManager : MonoBehaviour
         cur = island.GetParameter(modifierName + "_current", 0);
         s = island.GetParameter(modifierName + "_timer", 0);
 
-        MaximizeLifebuoys();
-
         LifebuoysOffline();
 
         UpdateInfo();
@@ -147,6 +145,7 @@ public class LifebuoyManager : MonoBehaviour
         if(cur > 0)
         {
             island.SetParameter(modifierName + "_current", --cur);
+            Debug.Log(island.GetParameter(modifierName + "_current", 0));
             UpdateInfo();
             return true;
         }
@@ -161,6 +160,7 @@ public class LifebuoyManager : MonoBehaviour
         }
         UpdateInfo();
     }
+
 
     private IEnumerator Timer(int seconds)
     {

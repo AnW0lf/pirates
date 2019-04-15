@@ -81,6 +81,8 @@ public class RouletteRotation : MonoBehaviour
         island.InitParameter(rouletteName + "_num", 0);
         num = island.GetParameter(rouletteName + "_num", 0);
         spinButton.GetComponent<Button>().interactable = !IsRolling;
+
+        if (num == 0) lm.MaximizeLifebuoys();
     }
 
     public void Roll()

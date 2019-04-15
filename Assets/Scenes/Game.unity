@@ -9712,7 +9712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9439401c1bea6e74cbd53cb0ce964929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifierName: GlobalSpins
+  modifierName: GlobalSpins2
   descriptionName: Max Spins
   startPriceMantissa: 1.75
   startPriceExponent: 5
@@ -32479,7 +32479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9439401c1bea6e74cbd53cb0ce964929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifierName: GlobalSpins
+  modifierName: GlobalSpins3
   descriptionName: Max Spins
   startPriceMantissa: 0
   startPriceExponent: 0
@@ -46628,7 +46628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464d703e5dbf5fa41be3c062ac126c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rouletteName: 
+  rouletteName: Wheel3
   direction: 1
   speed: 500
   rotationTime: 1
@@ -50106,7 +50106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9439401c1bea6e74cbd53cb0ce964929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifierName: GlobalSpins
+  modifierName: GlobalSpins1
   descriptionName: Max Spins
   startPriceMantissa: 3.5
   startPriceExponent: 3
