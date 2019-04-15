@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class WindowController : MonoBehaviour
 {
     public TextManager titleTM, upLevelTM, raidTimeTM, rewardTM, detailLevelTM, bonusTM, upBtnTM, fadeLevelTM, descriptionTM;
-    public Image icon, miniIcon;
+    public Image icon, miniIcon, profitIcon;
     public GameObject windowFade, iconFade, titleFade, cost;
     public Button exitBtn, upgradeBtn;
     public Text costTxt;
 
-    public Sprite body, sail, gun;
+    public Sprite body, sail, gun, coin, sandclock;
 
     private PierManager pier;
     private Island island;
@@ -89,6 +89,7 @@ public class WindowController : MonoBehaviour
         SetState(rewardTM, pier.GetReward().ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
+        profitIcon.gameObject.SetActive(false);
         SetState(descriptionTM, pier.shipDescription);
         if (pier.black)
             SetState(upBtnTM, "Catch unlock in Lucky Wheel");
@@ -122,6 +123,7 @@ public class WindowController : MonoBehaviour
         SetState(rewardTM, pier.GetReward().ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
+        profitIcon.gameObject.SetActive(false);
         SetState(descriptionTM, pier.shipDescription);
 
         if (!pier.black)
@@ -198,9 +200,11 @@ public class WindowController : MonoBehaviour
             miniIcon.sprite = pier.detailMiniature3;
         }
 
-        string bonus = (a == 0f ? "" : (a < 0f ? "" : "+") + a.ToString() + "s")
-                + (b == 0 ? "" : (a < 0f ? " " : " +") + b.ToString() + "(C)");
+        string bonus = (a == 0f ? "" : (a < 0f ? "" : "+") + a.ToString())
+                + (b == 0 ? "" : (b < 0f ? "" : " +") + b.ToString());
         SetState(bonusTM, bonus);
+        profitIcon.gameObject.SetActive(true);
+        profitIcon.sprite = a != 0 ? sandclock : coin;
 
         descriptionTM.gameObject.SetActive(false);
 
@@ -240,6 +244,7 @@ public class WindowController : MonoBehaviour
         SetState(rewardTM, pier.GetReward().ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
+        profitIcon.gameObject.SetActive(false);
         SetState(descriptionTM, "Choice of the true corsair");
         SetState(upBtnTM, "MAX LEVEL");
 
