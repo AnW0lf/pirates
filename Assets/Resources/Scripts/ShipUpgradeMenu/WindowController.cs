@@ -74,7 +74,7 @@ public class WindowController : MonoBehaviour
         else
             Bought();
 
-        if (pier.minLvl <= island.Level && !pier.maxLvl && pier.GetUpgradeCost() <= island.Money)
+        if (pier.minLvl <= island.Level && !pier.maxLvl && (!pier.black && pier.GetUpgradeCost() <= island.Money || pier.black && pier.GetBlackMark() > 0))
             upgradeBtn.interactable = true;
         else
             upgradeBtn.interactable = false;
