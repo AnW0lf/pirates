@@ -145,7 +145,6 @@ public class LifebuoyManager : MonoBehaviour
         if(cur > 0)
         {
             island.SetParameter(modifierName + "_current", --cur);
-            Debug.Log(island.GetParameter(modifierName + "_current", 0));
             UpdateInfo();
             return true;
         }

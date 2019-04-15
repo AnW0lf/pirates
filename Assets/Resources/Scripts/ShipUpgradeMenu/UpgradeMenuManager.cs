@@ -42,10 +42,15 @@ public class UpgradeMenuManager : MonoBehaviour
             int cur = 0;
             for(int i = 0; i < piers.Count; i++)
             {
+                if (piers[i].black && piers[i].GetBlackMark() > 0)
+                {
+                    cur = i;
+                    break;
+                }
                 if (piers[i].minLvl <= island.Level && !piers[i].maxLvl && piers[i].GetUpgradeCost() <= island.Money)
                     cur = i;
             }
-            if (cur == 0)
+            if (cur == 0 && piers[cur].GetBlackMark() == 0)
             {
                 for (int i = piers.Count - 1; i >= 0 ; i--)
                 {
