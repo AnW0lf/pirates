@@ -9,11 +9,17 @@ public class ShipClick : MonoBehaviour
     public LifebuoyManager lifebuoys;
     public GameObject flyingText;
     private GameObject _flyingText;
+    private Island island;
+
+    private void Awake()
+    {
+        island = Island.Instance();
+    }
 
     // Собираем бонус
     public void OnTriggerEnter2D(Collider2D other)
     {
-         if (other.gameObject.CompareTag("Bonus"))
+        if (other.gameObject.CompareTag("Bonus"))
         {
             other.gameObject.GetComponentInParent<BonusPoint>().active = false;
 
@@ -35,8 +41,11 @@ public class ShipClick : MonoBehaviour
             }
             if (other.gameObject.GetComponent<BonusBehavior>().bonusWheel)
             {
-                lifebuoys.AddLifebuoy();
-                _flyingText.GetComponent<FlyingText>().wheel = true;
+                if (island.Level >= 2)
+                {
+                    lifebuoys.AddLifebuoy();
+                    _flyingText.GetComponent<FlyingText>().wheel = true;
+                }
             }
 
             Destroy(other.gameObject);
