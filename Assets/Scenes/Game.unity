@@ -3538,7 +3538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f8db58e40c0fe479c50e714b197b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipIcon: {fileID: 21300000, guid: 67e39eddf435b3044b857267eb5fb558, type: 3}
+  shipIcon: {fileID: 21300000, guid: 553d5c1e02d51a24699f5be39c59bb93, type: 3}
   minLvl: 29
   shipDescription: Choice of the true corsair.
   black: 0
@@ -3596,7 +3596,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
-  spriteForMenu: {fileID: 21300048, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 553d5c1e02d51a24699f5be39c59bb93, type: 3}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &132635981
 GameObject:
@@ -18008,7 +18008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f8db58e40c0fe479c50e714b197b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  shipIcon: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
   minLvl: 42
   shipDescription: Choice of the true corsair.
   black: 0
@@ -18066,7 +18066,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300016, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &572901810
 GameObject:
@@ -26124,7 +26124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f8db58e40c0fe479c50e714b197b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipIcon: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
+  shipIcon: {fileID: 21300000, guid: 090db8b25ad2f264da41806b63e7aaf3, type: 3}
   minLvl: 0
   shipDescription: Fifteen men on the dead man's chest!
   black: 1
@@ -26182,7 +26182,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0, g: 0, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300008, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 090db8b25ad2f264da41806b63e7aaf3, type: 3}
   lifebuoys: {fileID: 999593072}
 --- !u!224 &810971561
 RectTransform:
@@ -36043,7 +36043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f8db58e40c0fe479c50e714b197b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipIcon: {fileID: 21300000, guid: 867846aa592926a4399ecac2f3e5112b, type: 3}
+  shipIcon: {fileID: 21300000, guid: e309b5101279c1e4d92c5e7fbcde1ec9, type: 3}
   minLvl: 33
   shipDescription: Choice of the true corsair.
   black: 0
@@ -36101,7 +36101,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
-  spriteForMenu: {fileID: 21300032, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: e309b5101279c1e4d92c5e7fbcde1ec9, type: 3}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &1088094026
 GameObject:
@@ -36592,7 +36592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f8db58e40c0fe479c50e714b197b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipIcon: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
+  shipIcon: {fileID: 21300000, guid: dd9a5b62cdd70924797d51eef09c34ca, type: 3}
   minLvl: 25
   shipDescription: Choice of the true corsair.
   black: 0
@@ -36650,7 +36650,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300058, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: dd9a5b62cdd70924797d51eef09c34ca, type: 3}
   lifebuoys: {fileID: 999593072}
 --- !u!224 &1099386693
 RectTransform:
@@ -54876,7 +54876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f8db58e40c0fe479c50e714b197b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipIcon: {fileID: 21300000, guid: 4ed1a3a95997ffe469708981b5a30d11, type: 3}
+  shipIcon: {fileID: 21300000, guid: 23ec1e1e7c6de7d4f966bff979f756ee, type: 3}
   minLvl: 37
   shipDescription: Choice of the true corsair.
   black: 0
@@ -54934,7 +54934,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300024, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 23ec1e1e7c6de7d4f966bff979f756ee, type: 3}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &1637883430
 GameObject:
