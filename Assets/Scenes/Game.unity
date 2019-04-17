@@ -21481,12 +21481,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels: 000000001d00000021000000250000002a0000002f000000
   sprites:
-  - {fileID: 21300000, guid: 5fde54a6d2985834e983a2777aede88c, type: 3}
-  - {fileID: 21300000, guid: 37ace5bc0be284d46b1812046da7bd9c, type: 3}
-  - {fileID: 21300000, guid: 639411b6c751c914a95cf0e0c3e09fbb, type: 3}
-  - {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
-  - {fileID: 21300000, guid: bad5941be9c5a8f40bfbb45ea19b47f2, type: 3}
-  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
+  - {fileID: 21300000, guid: 618b96cbb5091b74cae4a9215e7cb84f, type: 3}
+  - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
+  - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
+  - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
+  - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
+  - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
@@ -21599,7 +21599,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f457e11a459345346b0a4658b3cb2ec5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 618b96cbb5091b74cae4a9215e7cb84f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48950,11 +48950,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels: 000000001d00000021000000250000002a0000002f000000
   sprites:
-  - {fileID: 21300000, guid: 5fde54a6d2985834e983a2777aede88c, type: 3}
-  - {fileID: 21300000, guid: 37ace5bc0be284d46b1812046da7bd9c, type: 3}
-  - {fileID: 21300000, guid: 639411b6c751c914a95cf0e0c3e09fbb, type: 3}
   - {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
   - {fileID: 21300000, guid: bad5941be9c5a8f40bfbb45ea19b47f2, type: 3}
+  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
+  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
+  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
   - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
@@ -49068,7 +49068,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f457e11a459345346b0a4658b3cb2ec5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
