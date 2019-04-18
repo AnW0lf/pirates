@@ -178,10 +178,31 @@ public class PierManager : MonoBehaviour
 
     public BigDigit GetUpgradeCost()
     {
-        return shipExist ? detailStartCost1 + (detailCurrentLvl1 * detailCostIncrease1)
-            + (detailCurrentLvl1 != detailMaxLvl1 ? BigDigit.zero : (detailStartCost2 + (detailCurrentLvl2 * detailCostIncrease2)
-            + (detailCurrentLvl2 != detailMaxLvl2 ? BigDigit.zero : (detailStartCost3 + (detailCurrentLvl3 * detailCostIncrease3)))))
-            : startPrice;
+        //return shipExist ? detailStartCost1 + (detailCurrentLvl1 * detailCostIncrease1)
+        //    + (detailCurrentLvl1 != detailMaxLvl1 ? BigDigit.zero : (detailStartCost2 + (detailCurrentLvl2 * detailCostIncrease2)
+        //    + (detailCurrentLvl2 != detailMaxLvl2 ? BigDigit.zero : (detailStartCost3 + (detailCurrentLvl3 * detailCostIncrease3)))))
+        //    : startPrice;
+
+        if (shipExist)
+        {
+            if (detailCurrentLvl1 != detailMaxLvl1)
+            {
+                return detailStartCost1 + (detailCurrentLvl1 * detailCostIncrease1);
+            }
+            else if (detailCurrentLvl2 != detailMaxLvl2)
+            {
+                return detailStartCost2 + (detailCurrentLvl2 * detailCostIncrease2);
+            }
+            else
+            {
+                return detailStartCost3 + (detailCurrentLvl3 * detailCostIncrease3);
+            }
+        }
+        else
+        {
+            return startPrice;
+        }
+
     }
 
     public void Upgrade()
