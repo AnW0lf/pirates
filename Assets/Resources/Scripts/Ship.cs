@@ -49,7 +49,7 @@ public class Ship : MonoBehaviour
             angle += (speedAngle * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.fixedDeltaTime;
             _riseRT.localEulerAngles = Vector3.forward * angle;
         }
-        if(Mathf.Abs(circle) >= 360f)
+        if(Mathf.Abs(circle) >= 180f)
         {
             circle = 0f;
             if (_coin.gameObject.activeInHierarchy)
