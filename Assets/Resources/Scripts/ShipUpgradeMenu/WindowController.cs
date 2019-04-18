@@ -213,7 +213,7 @@ public class WindowController : MonoBehaviour
         SetState(rewardTM, pier.GetReward().ToString());
 
         if (!miniIcon.gameObject.activeInHierarchy)
-            miniIcon.gameObject.SetActive(true);
+            miniIcon.gameObject.SetActive(false);
         if (!icon.sprite.Equals(pier.spriteForMenu))
             icon.sprite = pier.spriteForMenu;
 
