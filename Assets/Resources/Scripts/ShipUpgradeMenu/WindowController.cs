@@ -8,7 +8,7 @@ public class WindowController : MonoBehaviour
 {
     public TextManager titleTM, upLevelTM, raidTimeTM, rewardTM, detailLevelTM, bonusTM, upBtnTM, fadeLevelTM, descriptionTM;
     public Image icon, miniIcon, profitIcon;
-    public GameObject windowFade, iconFade, titleFade, cost, rewardEffectPref;
+    public GameObject windowFade, iconFade, titleFade, cost, rewardEffectPref, characteristics;
     public Vector3 effectScale = new Vector3(120f, 120f, 1f);
     public Button exitBtn, upgradeBtn;
     public Text costTxt;
@@ -248,6 +248,7 @@ public class WindowController : MonoBehaviour
         profitIcon.sprite = a != 0 ? sandclock : coin;
 
         descriptionTM.gameObject.SetActive(false);
+        characteristics.gameObject.SetActive(true);
 
         if (!pier.black)
         {
@@ -305,6 +306,9 @@ public class WindowController : MonoBehaviour
 
         icon.color = Color.white;
         cost.SetActive(false);
+
+        descriptionTM.gameObject.SetActive(false);
+        characteristics.gameObject.SetActive(true);
     }
 
     private void SetState(TextManager tm, string text, string prefix = "", string postfix = "")

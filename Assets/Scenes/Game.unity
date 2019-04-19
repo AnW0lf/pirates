@@ -1416,7 +1416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &46073902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5680,7 +5680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &205665526
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19305,7 +19305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &602466748
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30188,6 +30188,7 @@ MonoBehaviour:
   cost: {fileID: 1288307779}
   rewardEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
+  characteristics: {fileID: 1354556467}
   effectScale: {x: 120, y: 120, z: 1}
   exitBtn: {fileID: 258905785}
   upgradeBtn: {fileID: 2109626302}
@@ -40055,6 +40056,7 @@ MonoBehaviour:
   cost: {fileID: 337640186}
   rewardEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
+  characteristics: {fileID: 602466747}
   effectScale: {x: 120, y: 120, z: 1}
   exitBtn: {fileID: 833325677}
   upgradeBtn: {fileID: 1378305485}
@@ -45964,7 +45966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1354556468
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47729,7 +47731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1394412457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51003,7 +51005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1514620357
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52495,6 +52497,7 @@ MonoBehaviour:
   cost: {fileID: 1059942745}
   rewardEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
+  characteristics: {fileID: 46073901}
   effectScale: {x: 120, y: 120, z: 1}
   exitBtn: {fileID: 1115974621}
   upgradeBtn: {fileID: 1288871441}
@@ -58940,6 +58943,7 @@ MonoBehaviour:
   cost: {fileID: 31667837}
   rewardEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
+  characteristics: {fileID: 1394412456}
   effectScale: {x: 120, y: 120, z: 1}
   exitBtn: {fileID: 974340044}
   upgradeBtn: {fileID: 974104433}
@@ -61151,6 +61155,7 @@ MonoBehaviour:
   cost: {fileID: 661830368}
   rewardEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
+  characteristics: {fileID: 1514620356}
   effectScale: {x: 120, y: 120, z: 1}
   exitBtn: {fileID: 995599183}
   upgradeBtn: {fileID: 1264643690}
@@ -64222,6 +64227,7 @@ MonoBehaviour:
   cost: {fileID: 1108124462}
   rewardEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
+  characteristics: {fileID: 205665525}
   effectScale: {x: 120, y: 120, z: 1}
   exitBtn: {fileID: 497267941}
   upgradeBtn: {fileID: 1819116731}
