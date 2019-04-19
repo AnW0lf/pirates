@@ -45,6 +45,7 @@ public class DailyState : MonoBehaviour
             title.text = SecondsToTime(ToSeconds(24, 0, 0) - ToSeconds(now.Hour, now.Minute, now.Second));
             if (image.color != disable) image.color = disable;
             if (flag.activeInHierarchy) flag.SetActive(false);
+            if (GetComponent<Animation>().enabled) GetComponent<Animation>().enabled = false;
         }
         else
         {
@@ -52,6 +53,7 @@ public class DailyState : MonoBehaviour
             if (image.color != enable) image.color = enable;
             if (title.text != enableText) title.text = enableText;
             if (!flag.activeInHierarchy) flag.SetActive(true);
+            if (!GetComponent<Animation>().enabled) GetComponent<Animation>().enabled = true;
         }
     }
 
