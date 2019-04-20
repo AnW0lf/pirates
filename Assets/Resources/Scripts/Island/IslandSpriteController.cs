@@ -67,6 +67,7 @@ public class IslandSpriteController : MonoBehaviour
                 {
                     image.sprite = sprites[levels.IndexOf(i)];
                     setted = true;
+                    break;
                 }
             }
             if (!setted)
