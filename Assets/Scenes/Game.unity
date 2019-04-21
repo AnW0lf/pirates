@@ -12212,7 +12212,7 @@ MonoBehaviour:
   - 2
   - 2
   nums: 
-  spinButton: {fileID: 633751323}
+  spinButton: {fileID: 633751325}
 --- !u!114 &393756849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54380,7 +54380,7 @@ MonoBehaviour:
   - 2
   - 2
   nums: 
-  spinButton: {fileID: 1789189240}
+  spinButton: {fileID: 1789189242}
 --- !u!114 &1599426459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69497,7 +69497,7 @@ MonoBehaviour:
   - 2
   - 2
   nums: 04000000010000000000000005000000010000000200000001000000030000000400000006000000020000000000000002000000070000000100000001000000030000000400000006000000020000000000000007000000010000000000000008000000
-  spinButton: {fileID: 413878822}
+  spinButton: {fileID: 413878824}
 --- !u!1 &2066463725
 GameObject:
   m_ObjectHideFlags: 0

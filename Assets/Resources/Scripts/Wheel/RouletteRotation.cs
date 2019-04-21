@@ -24,10 +24,11 @@ public class RouletteRotation : MonoBehaviour
     public List<int> levels;
     public List<float> modifiers;
     public int[] nums;
-    public GameObject spinButton;
+    public Button spinButton;
 
     private RectTransform rect;
     private int section, num;
+    private bool speedUp = false;
     private float anglePerItem;
     private Island island;
     private GameObject _flyingReward, _rewardEffect;
@@ -81,7 +82,7 @@ public class RouletteRotation : MonoBehaviour
     {
         island.InitParameter(rouletteName + "_num", 0);
         num = island.GetParameter(rouletteName + "_num", 0);
-        spinButton.GetComponent<Button>().interactable = !IsRolling;
+        spinButton.interactable = !IsRolling || speedUp;
 
         if (num == 0) lm.MaximizeLifebuoys();
         anglePerItem = 360f / sectors.Length;
@@ -103,6 +104,13 @@ public class RouletteRotation : MonoBehaviour
             float maxAngle = 360f + 360f * time + ((section + 6) * anglePerItem) + (anglePerItem / 2f);
             StartCoroutine(Rolling(5 * time, maxAngle));
         }
+        else if (IsRolling && !speedUp)
+        {
+            speedUp = true;
+            float maxAngle = ((section + 6) * anglePerItem) + (anglePerItem / 2f);
+            StopAllCoroutines();
+            StartCoroutine(Rolling(time / 2f, maxAngle));
+        }
     }
 
     public void OpenWheel()
@@ -114,7 +122,7 @@ public class RouletteRotation : MonoBehaviour
     private IEnumerator Rolling(float time, float maxAngle)
     {
         IsRolling = true;
-        spinButton.GetComponent<Button>().interactable = !IsRolling;
+        spinButton.interactable = !IsRolling || speedUp;
         float timer = 0.0f;
         float startAngle = transform.eulerAngles.z;
         maxAngle = maxAngle - startAngle;
@@ -129,8 +137,9 @@ public class RouletteRotation : MonoBehaviour
 
         transform.eulerAngles = new Vector3(0.0f, 0.0f, maxAngle + startAngle);
         IsRolling = false;
+        speedUp = false;
         Reward();
-        spinButton.GetComponent<Button>().interactable = !IsRolling;
+        spinButton.interactable = !IsRolling || speedUp;
     }
 
     private void Reward()
