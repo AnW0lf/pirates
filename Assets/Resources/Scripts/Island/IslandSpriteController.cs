@@ -10,6 +10,7 @@ public class IslandSpriteController : MonoBehaviour
     public Sprite[] sprites;
     public GameObject changeSpriteEffectPref;
     public Vector3 effectScale = new Vector3(200f, 200f, 1f);
+    public GameObject newShipWindow, wheelUpdateWindow;
 
     private Image image;
     private Island island;
@@ -79,8 +80,11 @@ public class IslandSpriteController : MonoBehaviour
 
     private IEnumerator Change()
     {
-        Debug.Log("Effect");
         WaitForSeconds wait = new WaitForSeconds(0.5f);
+
+        while (newShipWindow.activeInHierarchy || wheelUpdateWindow.activeInHierarchy)
+            yield return wait;
+
         changeSpriteEffect.SetActive(false);
         yield return wait;
         image.sprite = sprites[levels.IndexOf(island.Level)];
