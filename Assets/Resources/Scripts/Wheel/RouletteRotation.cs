@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class RouletteRotation : MonoBehaviour
 {
     public string rouletteName;
-    public bool direction;
-    public float speed, rotationTime;
+    public float time;
+    public AnimationCurve animationCurve;
     public bool IsRolling { get; private set; }
     public WheelButton wb;
     public LifebuoyManager lm;
@@ -28,6 +28,7 @@ public class RouletteRotation : MonoBehaviour
 
     private RectTransform rect;
     private int section, num;
+    private float anglePerItem;
     private Island island;
     private GameObject _flyingReward, _rewardEffect;
 
@@ -83,15 +84,12 @@ public class RouletteRotation : MonoBehaviour
         spinButton.GetComponent<Button>().interactable = !IsRolling;
 
         if (num == 0) lm.MaximizeLifebuoys();
+        anglePerItem = 360f / sectors.Length;
     }
 
     public void Roll()
     {
-        if (IsRolling || !lm.SubtractLifebuoy())
-        {
-            return;
-        }
-        else
+        if (!IsRolling && lm.SubtractLifebuoy())
         {
             if (num < nums.Length)
             {
@@ -102,8 +100,8 @@ public class RouletteRotation : MonoBehaviour
             {
                 section = UnityEngine.Random.Range(0, sectorCount);
             }
-            float angle = Mathf.Abs(section * (360f / sectorCount) + ((180f / sectorCount))) % 360f;
-            StartCoroutine(Rolling(angle));
+            float maxAngle = 360f + 360f * time + ((section + 6) * anglePerItem) + (anglePerItem / 2f);
+            StartCoroutine(Rolling(5 * time, maxAngle));
         }
     }
 
@@ -113,34 +111,23 @@ public class RouletteRotation : MonoBehaviour
             wb.WheelSwitchOn();
     }
 
-    private IEnumerator Rolling(float angle)
+    private IEnumerator Rolling(float time, float maxAngle)
     {
-        float curRotationTime = UnityEngine.Random.Range(0.8f * rotationTime, 1.2f * rotationTime);
         IsRolling = true;
         spinButton.GetComponent<Button>().interactable = !IsRolling;
-        float a = .0f;
-        Vector3 direction = Vector3.back * (this.direction ? -1f : 1f);
-        while (a < curRotationTime)
+        float timer = 0.0f;
+        float startAngle = transform.eulerAngles.z;
+        maxAngle = maxAngle - startAngle;
+
+        while (timer < time)
         {
-            rect.Rotate(direction, speed * Time.deltaTime);
-            a += Time.deltaTime;
-            yield return null;
+            float angle = maxAngle * animationCurve.Evaluate(timer / time);
+            transform.eulerAngles = new Vector3(0.0f, 0.0f, angle + startAngle);
+            timer += Time.deltaTime;
+            yield return 0;
         }
-        float r = UnityEngine.Random.Range(180f, 360f);
-        a = angle - r < 0f ? angle - r + 360f : angle - r;
-        while (Mathf.Abs(rect.localEulerAngles.z - a) >= 4f)
-        {
-            rect.Rotate(direction, speed * Time.deltaTime);
-            yield return null;
-        }
-        a = speed * speed / (2f * r);
-        float stopSpeed = speed;
-        while (Mathf.Abs(rect.localEulerAngles.z - angle) >= 1f && stopSpeed > 0f)
-        {
-            rect.Rotate(direction, stopSpeed * Time.deltaTime);
-            stopSpeed -= a * Time.deltaTime;
-            yield return new WaitForEndOfFrame();
-        }
+
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, maxAngle + startAngle);
         IsRolling = false;
         Reward();
         spinButton.GetComponent<Button>().interactable = !IsRolling;
