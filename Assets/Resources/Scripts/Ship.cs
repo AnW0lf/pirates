@@ -7,10 +7,10 @@ using Random = UnityEngine.Random;
 
 public class Ship : MonoBehaviour
 {
-    private float rise;
-    private float angle;
+    private float rise, globalSpeedModifier, angle, size;
     private bool direction = false;
-    private float size;
+    private int islandNumber = 1;
+    private Island island;
 
     public int reward;
     public float raidTime;
@@ -40,18 +40,18 @@ public class Ship : MonoBehaviour
     {
         UpdateShip();
         riseOutOfScreen = Mathf.Clamp(Mathf.Sqrt(Mathf.Pow(Screen.safeArea.height / 2f, 2f) + Mathf.Pow(Screen.safeArea.width / 2f, 2f)) * 1.05f, riseOutOfScreen, 5000f);
-        Debug.Log(riseOutOfScreen);
     }
 
     private void FixedUpdate()
     {
-        if(!inRaid && isRotate)
+        if (!inRaid && isRotate)
         {
-            circle += (speedAngle * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.fixedDeltaTime;
-            angle += (speedAngle * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.fixedDeltaTime;
+            globalSpeedModifier = island.GetParameter("GlobalSpeed" + islandNumber.ToString(), 0f);
+            circle += (speedAngle * globalSpeedModifier) * Time.fixedDeltaTime;
+            angle += (speedAngle * globalSpeedModifier) * Time.fixedDeltaTime;
             _riseRT.localEulerAngles = Vector3.forward * angle;
         }
-        if(Mathf.Abs(circle) >= 180f)
+        if (Mathf.Abs(circle) >= 180f)
         {
             circle = 0f;
             if (_coin.gameObject.activeInHierarchy)
@@ -114,15 +114,17 @@ public class Ship : MonoBehaviour
     private IEnumerator Raid()
     {
         isRotate = false;
+        globalSpeedModifier = island.GetParameter("GlobalSpeed" + islandNumber.ToString(), 0f);
         do
         {
-            _iconRT.localPosition += Vector3.down * (speedLinear * speedRaidModifier * PlayerPrefs.GetFloat("GlobalSpeed")) * Time.deltaTime;
+            _iconRT.localPosition += Vector3.down * (speedLinear * speedRaidModifier * globalSpeedModifier) * Time.deltaTime;
             yield return null;
         } while (Mathf.Abs(_iconRT.localPosition.y) < riseOutOfScreen);
         float seconds = raidTime / Mathf.Pow(2f, raidTimeModifier);
         yield return new WaitForSeconds(seconds);
 
-        _coin.GetComponent<CoinCatcher>().ActivateCoin((int)(reward * rewardModifier * PlayerPrefs.GetFloat("GlobalEarnings")));
+        float globalEarnings = island.GetParameter("GlobalEarnings" + islandNumber.ToString(), 0f);
+        _coin.GetComponent<CoinCatcher>().ActivateCoin((int)(reward * rewardModifier * globalEarnings));
         direction = !direction;
         _iconRT.localPosition = Vector3.left * rise + Vector3.up * riseOutOfScreen * (direction ? 1 : -1);
         _icon.GetComponent<RectTransform>().localScale = Vector3.right * size * (!direction ? 1 : -1) + Vector3.up * size + Vector3.forward;
@@ -179,12 +181,14 @@ public class Ship : MonoBehaviour
         this.reward = reward;
     }
 
-    public void CreateShip(float rise, float angle, float size, Sprite sprite, float speedAngle, float speedLinear, float speedRaidModifier, float raidTime, int reward)
+    public void CreateShip(float rise, float angle, float size, Sprite sprite, float speedAngle, float speedLinear, float speedRaidModifier, float raidTime, int reward, int islandNumber)
     {
+        island = Island.Instance();
         SetLocation(rise, angle);
         SetShip(size, sprite);
         SetSpeed(speedAngle, speedLinear, speedRaidModifier);
         SetRaid(raidTime, reward);
+        this.islandNumber = islandNumber;
     }
 
     public bool isShipRotating()

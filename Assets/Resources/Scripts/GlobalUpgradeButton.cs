@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GlobalUpgradeButton : MonoBehaviour
 {
+    public int islandNumber = 1;
     public string modifierName, descriptionName;
     public double startPriceMantissa;
     public long startPriceExponent;
@@ -28,8 +29,8 @@ public class GlobalUpgradeButton : MonoBehaviour
     private void Start()
     {
         startPrice = new BigDigit(startPriceMantissa, startPriceExponent);
-        island.InitParameter(modifierName, 1.0f);
-        island.InitParameter(modifierName + "_level", 1);
+        island.InitParameter(modifierName + islandNumber.ToString(), 1.0f);
+        island.InitParameter(modifierName + islandNumber.ToString() + "_level", 1);
         SetButtonPrefs();
     }
 
@@ -48,8 +49,8 @@ public class GlobalUpgradeButton : MonoBehaviour
     private void SetButtonPrefs()
     {
 
-            price = (startPrice * Mathf.Pow(increase, (island.GetParameter(modifierName + "_level", 0) - 1)));
-            reward = startReward + modifier * (island.GetParameter(modifierName + "_level", 0) - 1);
+            price = (startPrice * Mathf.Pow(increase, (island.GetParameter(modifierName + islandNumber.ToString() + "_level", 0) - 1)));
+            reward = startReward + modifier * (island.GetParameter(modifierName + islandNumber.ToString() + "_level", 0) - 1);
 
             if (reward >= maxReward)
             max = true;
@@ -63,7 +64,7 @@ public class GlobalUpgradeButton : MonoBehaviour
         {
             stateText.text = "Upgrade\n";
             costText.text = price.ToString();
-            island.SetParameter(modifierName, reward);
+            island.SetParameter(modifierName + islandNumber.ToString(), reward);
         }
         descriptionText.text = descriptionName;
 
@@ -83,7 +84,7 @@ public class GlobalUpgradeButton : MonoBehaviour
     {
         if (!max && island.ChangeMoney(-(button.price)))
         {
-            island.SetParameter(modifierName + "_level", island.GetParameter(modifierName + "_level", 0) + 1);
+            island.SetParameter(modifierName + islandNumber.ToString() + "_level", island.GetParameter(modifierName + islandNumber.ToString() + "_level", 0) + 1);
             lifebuoys.UpdateInfo();
             SetButtonPrefs();
         }

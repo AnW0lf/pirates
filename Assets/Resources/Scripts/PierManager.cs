@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PierManager : MonoBehaviour
 {
     [Header("|Информация о корабле|")]
+    public int islandNumber = 1;
     public Sprite shipIcon;
     public int minLvl;
     public string shipDescription;
@@ -146,7 +147,7 @@ public class PierManager : MonoBehaviour
         ship.transform.SetAsFirstSibling();
         ship.GetComponent<Ship>()._icon.GetComponent<ShipClick>().lifebuoys = lifebuoys;
         ship.GetComponent<Ship>()
-            .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward());
+            .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward(), islandNumber);
         ship.GetComponentInChildren<ShipTimer>().color = color;
     }
 
