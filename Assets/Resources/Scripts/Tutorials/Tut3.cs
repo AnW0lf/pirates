@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Tut3 : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class Tut3 : MonoBehaviour
     private void OnEnable()
     {
         ship = ships.GetComponentInChildren<Ship>();
+
+        if (Screen.safeArea.yMax != Screen.safeArea.height)
+        {
+            if (GetComponentInChildren<Text>()) GetComponentInChildren<Text>().enabled = false;
+        }
     }
 
     private void Update()

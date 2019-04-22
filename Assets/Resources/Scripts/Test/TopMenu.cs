@@ -11,7 +11,7 @@ public class TopMenu : MonoBehaviour
         if (Screen.safeArea.yMax != Screen.safeArea.height)
         {
             rect = GetComponent<RectTransform>();
-            rect.anchorMin = new Vector2(0f, 0.9f);
+            rect.anchorMin = new Vector2(0f, 0.9125f);
             rect.offsetMax = Vector2.zero;
             rect.offsetMin = Vector2.zero;
         }
