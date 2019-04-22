@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 0
+  - 419431218844463
   appLabels:
-  - App Name
+  - Pirate Tycoon
   cookie: 1
   logging: 1
   status: 1

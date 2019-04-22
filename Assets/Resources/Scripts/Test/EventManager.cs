@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using System.Collections.Generic;
 using System;
+using Facebook.Unity;
 
 public class EventManager : MonoBehaviour
 {
@@ -19,6 +20,17 @@ public class EventManager : MonoBehaviour
         _instance = GetComponent<EventManager>();
         if (_eventDictionary == null)
             _eventDictionary = new Dictionary<string, GameEvent>();
+
+        // FACEBOOK SDK
+        FB.Init();
+        if (FB.IsInitialized)
+        {
+            FB.ActivateApp();
+        }
+        else
+        {
+            FB.Init(() => { FB.ActivateApp(); });
+        }
     }
 
     /// <summary>Добавляем "слушателя" для события</summary>
