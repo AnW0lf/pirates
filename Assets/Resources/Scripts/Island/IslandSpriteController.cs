@@ -83,8 +83,14 @@ public class IslandSpriteController : MonoBehaviour
         WaitForSeconds wait = new WaitForSeconds(0.5f);
 
         while (newShipWindow.activeInHierarchy || wheelUpdateWindow.activeInHierarchy)
+        {
             yield return wait;
-
+        }
+        if (changeSpriteEffect == null)
+        {
+            changeSpriteEffect = Instantiate(changeSpriteEffectPref, transform);
+            changeSpriteEffect.transform.localScale = effectScale;
+        }
         changeSpriteEffect.SetActive(false);
         yield return wait;
         image.sprite = sprites[levels.IndexOf(island.Level)];
