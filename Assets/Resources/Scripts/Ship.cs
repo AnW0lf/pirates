@@ -10,6 +10,7 @@ public class Ship : MonoBehaviour
     private float rise, globalSpeedModifier, angle, size;
     private bool direction = false;
     private int islandNumber = 1;
+    public string ShipName { get; private set; }
     private Island island;
 
     public int reward;
@@ -56,7 +57,7 @@ public class Ship : MonoBehaviour
             circle = 0f;
             if (_coin.gameObject.activeInHierarchy)
                 _coin.GetComponent<CoinCatcher>().CatchCoin();
-            BeginRaid();
+            BeginRaidFromIsland();
         }
     }
 
@@ -87,10 +88,12 @@ public class Ship : MonoBehaviour
                 _coin.GetComponent<CoinCatcher>().CatchCoin();
             StopAllCoroutines();
             StartCoroutine(Raid());
+
+            EventManager.SendEvent("ShipGoToRaid", ShipName, false);
         }
     }
-
-    public void BeginRaidFromIslandClick()
+    
+    public void BeginRaidFromIsland()
     {
         if (!inRaid)
         {
@@ -102,6 +105,7 @@ public class Ship : MonoBehaviour
                 StopAllCoroutines();
                 StartCoroutine(Raid());
 
+                EventManager.SendEvent("ShipGoToRaid", ShipName, true);
             }
         }
     }
@@ -181,7 +185,8 @@ public class Ship : MonoBehaviour
         this.reward = reward;
     }
 
-    public void CreateShip(float rise, float angle, float size, Sprite sprite, float speedAngle, float speedLinear, float speedRaidModifier, float raidTime, int reward, int islandNumber)
+    public void CreateShip(float rise, float angle, float size, Sprite sprite, float speedAngle, float speedLinear
+        , float speedRaidModifier, float raidTime, int reward, int islandNumber, string shipName)
     {
         island = Island.Instance();
         SetLocation(rise, angle);
@@ -189,6 +194,7 @@ public class Ship : MonoBehaviour
         SetSpeed(speedAngle, speedLinear, speedRaidModifier);
         SetRaid(raidTime, reward);
         this.islandNumber = islandNumber;
+        this.ShipName = shipName;
     }
 
     public bool isShipRotating()

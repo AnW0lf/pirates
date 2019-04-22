@@ -147,7 +147,7 @@ public class PierManager : MonoBehaviour
         ship.transform.SetAsFirstSibling();
         ship.GetComponent<Ship>()._icon.GetComponent<ShipClick>().lifebuoys = lifebuoys;
         ship.GetComponent<Ship>()
-            .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward(), islandNumber);
+            .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward(), islandNumber, shipName);
         ship.GetComponentInChildren<ShipTimer>().color = color;
     }
 
@@ -214,11 +214,16 @@ public class PierManager : MonoBehaviour
         {
             shipExist = true;
             island.SetParameter(shipName + "_shipExist", 1);
+
+            EventManager.SendEvent("ShipBought", shipName);
         }
         else if (detailCurrentLvl1 < detailMaxLvl1)
         {
             detailCurrentLvl1++;
             island.SetParameter(shipName + "_" + detailName1, detailCurrentLvl1);
+
+            EventManager.SendEvent("ShipUpgraded", shipName, 1 + detailCurrentLvl1);
+
             if (detailCurrentLvl1 == 1)
                 size += detailSizeModifier1;
             if (detailShipSprites1.Count >= detailCurrentLvl1)
@@ -233,6 +238,9 @@ public class PierManager : MonoBehaviour
         {
             detailCurrentLvl2++;
             island.SetParameter(shipName + "_" + detailName2, detailCurrentLvl2);
+
+            EventManager.SendEvent("ShipUpgraded", shipName, 1 + detailCurrentLvl1 + detailCurrentLvl2);
+
             if (detailCurrentLvl2 == 1)
                 size += detailSizeModifier2;
             if (detailShipSprites2.Count >= detailCurrentLvl2)
@@ -247,6 +255,9 @@ public class PierManager : MonoBehaviour
         {
             detailCurrentLvl3++;
             island.SetParameter(shipName + "_" + detailName3, detailCurrentLvl3);
+
+            EventManager.SendEvent("ShipUpgraded", shipName, 1 + detailCurrentLvl1 + detailCurrentLvl2 + detailCurrentLvl3);
+
             if (detailCurrentLvl3 == 1)
                 size += detailSizeModifier3;
             if (detailShipSprites2.Count >= detailCurrentLvl2)

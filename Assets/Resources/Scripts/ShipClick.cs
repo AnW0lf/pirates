@@ -32,12 +32,15 @@ public class ShipClick : MonoBehaviour
                 _flyingText.GetComponent<FlyingText>().money = true;
                 _flyingText.GetComponent<FlyingText>().moneyText.GetComponent<Text>().text = "+" + (int)(ship.reward);
 
+                EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
             }
             if (other.gameObject.GetComponent<BonusBehavior>().bonusSpeed)
             {
                 ship.raidTimeModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
                 _flyingText.GetComponent<FlyingText>().speed = true;
                 _flyingText.GetComponent<FlyingText>().speedText.GetComponent<Text>().text = "-" + (int)(ship.raidTime / Mathf.Pow(2f, ship.raidTimeModifier)) + "s";
+
+                EventManager.SendEvent("BonusCollected", ship.ShipName, "Speed");
             }
             if (other.gameObject.GetComponent<BonusBehavior>().bonusWheel)
             {
@@ -45,6 +48,8 @@ public class ShipClick : MonoBehaviour
                 {
                     lifebuoys.AddLifebuoy();
                     _flyingText.GetComponent<FlyingText>().wheel = true;
+
+                    EventManager.SendEvent("BonusCollected", ship.ShipName, "WheelSpin");
                 }
             }
 

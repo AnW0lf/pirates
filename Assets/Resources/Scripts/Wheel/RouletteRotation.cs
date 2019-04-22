@@ -103,6 +103,7 @@ public class RouletteRotation : MonoBehaviour
             }
             float maxAngle = 360f + 360f * time + ((section + 6) * anglePerItem) + (anglePerItem / 2f);
             StartCoroutine(Rolling(5 * time, maxAngle));
+            EventManager.SendEvent("WheelSpinned", rouletteName, section);
         }
         else if (IsRolling && !speedUp)
         {

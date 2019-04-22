@@ -26,13 +26,90 @@ public class FBEventController : MonoBehaviour
 
     void Start()
     {
+        EventManager.Subscribe("ShipBought", ShipBought);
+
+        EventManager.Subscribe("ShipUpgraded", ShipUpgraded);
+
+        EventManager.Subscribe("ShipGoToRaid", ShipGoToRaid);
+
         EventManager.Subscribe("LevelUp", LevelUp);
+
+        EventManager.Subscribe("DailyBonusCollected", DailyBonusCollected);
+
+        EventManager.Subscribe("WheelSpinned", WheelSpinned);
+
+        EventManager.Subscribe("UpgradeBought", UpgradeBought);
+
+        EventManager.Subscribe("BonusCollected", BonusCollected);
+    }
+
+    private void BonusCollected(object[] arg0)
+    {
+        string shipName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        string bonusName = arg0.Length > 1 ? (string)arg0[1] : "Unknown";
+        LogBonusCollectedEvent(island.Level, shipName, bonusName, 1f);
+
+        //Debug.Log("BonusCollectedEvent : " + island.Level + " : " + shipName + " : " + bonusName + " : " + 1f);
+    }
+
+    private void UpgradeBought(object[] arg0)
+    {
+        string modifierName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        int modifierLevel = arg0.Length > 1 ? (int)arg0[1] : 0;
+        int islandNumber = arg0.Length > 2 ? (int)arg0[2] : 0;
+        LogUpgradeBoughtEvent(island.Level, modifierName, modifierLevel, islandNumber, 0f);
+
+        //Debug.Log("UpgradeBoughtEvent : " + island.Level + " : " + modifierName + " : " + modifierLevel + " : " + islandNumber + " : " + 0f);
+    }
+
+    private void WheelSpinned(object[] arg0)
+    {
+        string wheelName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        int sectorNumber = arg0.Length > 1 ? (int)arg0[1] : 0;
+        LogWheelSpinnedEvent(island.Level, wheelName, sectorNumber, 1f);
+
+        //Debug.Log("WheelSpinnedEvent : " + island.Level + " : " + wheelName + " : " + sectorNumber + " : " + 1f);
+    }
+
+    private void DailyBonusCollected(object[] arg0)
+    {
+        int bonusDay = arg0.Length > 0 ? (int)arg0[0] : 0;
+        LogDailyBonusCollectedEvent(bonusDay, island.Level, 1f);
+
+        //Debug.Log("DailyBonusCollectedEvent : " + bonusDay + " : " + island.Level + " : " + 1f);
+    }
+
+    private void ShipGoToRaid(object[] arg0)
+    {
+        string shipName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        bool autoRaid = arg0.Length > 1 ? (bool)arg0[1] : true;
+        LogShipGoToRaidEvent(shipName, autoRaid, (autoRaid ? 0f : 1f));
+
+        //Debug.Log("ShipGoToRaidEvent : " + shipName + " : " + autoRaid + " : " + (autoRaid ? 0f : 1f));
+    }
+
+    private void ShipUpgraded(object[] arg0)
+    {
+        string shipName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        int shipLevel = arg0.Length > 1 ? (int)arg0[1] : 0;
+        LogShipUpgradedEvent(shipName, island.Level, shipLevel, 0f);
+
+        //Debug.Log("ShipUpgradedEvent : " + shipName + " : " + island.Level + " : " + shipLevel + " : " + 0f);
+    }
+
+    private void ShipBought(object[] arg0)
+    {
+        string shipName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        LogShipBoughtEvent(shipName, island.Level, 0f);
+
+        //Debug.Log("ShipBoughtEvent : " + shipName + " : " + island.Level + " : " + 0f);
     }
 
     private void LevelUp(object[] arg0)
     {
-        Debug.Log("LevelUpEvent");
-        //LogLevelUpEvent(island.Level, island.Money, 1f);
+        LogLevelUpEvent(island.Level, island.Money, 1f);
+
+        //Debug.Log("LevelUpEvent : " + island.Level + " : " + island.Money + " : " + 1f);
     }
 
     /// <summary>

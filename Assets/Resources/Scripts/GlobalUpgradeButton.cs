@@ -87,6 +87,7 @@ public class GlobalUpgradeButton : MonoBehaviour
             island.SetParameter(modifierName + islandNumber.ToString() + "_level", island.GetParameter(modifierName + islandNumber.ToString() + "_level", 0) + 1);
             lifebuoys.UpdateInfo();
             SetButtonPrefs();
+            EventManager.SendEvent("UpgradeBought", modifierName, island.GetParameter(modifierName + islandNumber.ToString() + "_level", 0), islandNumber);
         }
     }
 }

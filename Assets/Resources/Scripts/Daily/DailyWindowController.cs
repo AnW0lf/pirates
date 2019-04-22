@@ -76,6 +76,7 @@ public class DailyWindowController : MonoBehaviour
         month = island.GetParameter("DailyMonth", 0);
         day = island.GetParameter("DailyDay", 0);
         UpdateRewardState(true);
+        EventManager.SendEvent("DailyBonusCollected", dailyDaysARaw);
     }
 
     private void TakeReward(DailyRewardState dailyRewardState)
