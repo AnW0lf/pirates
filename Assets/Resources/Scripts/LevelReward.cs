@@ -7,7 +7,7 @@ public class LevelReward : MonoBehaviour
 {
     public List<GameObject> shipsList;
     public List<PiersUpgrade> piersList;
-    public float modifier;
+    public float modifier, powModifier;
     public Text levelsToShipsText;
     public string oneLevelToShip, someLevelsToShip, noLevelsToShip;
 
@@ -27,7 +27,7 @@ public class LevelReward : MonoBehaviour
         {
             foreach (Transform child in ships.transform)
             {
-                money += new BigDigit(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * PlayerPrefs.GetInt("Level"));
+                money += new BigDigit(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * (int)(Mathf.Pow(powModifier,PlayerPrefs.GetInt("Level"))));
             }
         }
 
