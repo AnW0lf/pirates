@@ -32,7 +32,7 @@ public class LifebuoyManager : MonoBehaviour
 
     private void OnEnable()
     {
-        modifierName = upgrade.modifierName;
+        modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
         island.InitParameter(modifierName + "_level", 1);
         island.InitParameter(modifierName + "_current", 3);
         island.InitParameter(modifierName + "_timer", 0);
@@ -124,7 +124,7 @@ public class LifebuoyManager : MonoBehaviour
 
     public void UpdateInfo()
     {
-        modifierName = upgrade.modifierName;
+        modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
         island.InitParameter(modifierName + "_level", 0);
         lvl = island.GetParameter(modifierName + "_level", 0);
         max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
