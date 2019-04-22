@@ -28,7 +28,7 @@ public class Ship : MonoBehaviour
     public Transform _icon;
     public Transform _coin;
 
-    private float riseOutOfScreen = 1400f;
+    private float riseOutOfScreen = 1500f;
 
     private void Awake()
     {
@@ -39,6 +39,8 @@ public class Ship : MonoBehaviour
     private void Start()
     {
         UpdateShip();
+        riseOutOfScreen = Mathf.Sqrt(Mathf.Pow(Screen.safeArea.height / 2f, 2f) + Mathf.Pow(Screen.safeArea.width / 2f, 2f)) * 1.05f;
+        Debug.Log(riseOutOfScreen);
     }
 
     private void FixedUpdate()
