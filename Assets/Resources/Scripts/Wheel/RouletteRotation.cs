@@ -107,7 +107,7 @@ public class RouletteRotation : MonoBehaviour
         else if (IsRolling && !speedUp)
         {
             speedUp = true;
-            float maxAngle = ((section + 6) * anglePerItem) + (anglePerItem / 2f);
+            float maxAngle = 360f * time + ((section + 6) * anglePerItem) + (anglePerItem / 2f);
             StopAllCoroutines();
             StartCoroutine(Rolling(time / 2f, maxAngle));
         }
