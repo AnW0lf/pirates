@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class TopMenu : MonoBehaviour
 {
+    private RectTransform rect;
+
     void Start()
     {
-        if(Screen.safeArea.yMax != Screen.safeArea.height)
+        if (Screen.safeArea.yMax != Screen.safeArea.height)
         {
-            GetComponent<RectTransform>().sizeDelta -= Vector2.up * Mathf.Abs(Screen.safeArea.height - Screen.safeArea.yMax);
+            rect = GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(0f, 0.9f);
+            rect.offsetMax = Vector2.zero;
+            rect.offsetMin = Vector2.zero;
         }
+        this.enabled = false;
     }
 }

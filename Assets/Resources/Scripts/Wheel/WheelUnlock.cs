@@ -9,21 +9,19 @@ public class WheelUnlock : MonoBehaviour
 
     private Island island;
     private Button btn;
-    private GameObject child;
-    public GameObject unlockMenu; 
+    public GameObject unlockMenu, viewport; 
 
     private void Awake()
     {
         island = Island.Instance();
         btn = GetComponent<Button>();
-        child = transform.GetChild(0).gameObject;
     }
 
     private void Start()
     {
         if (island.Level < minLevel)
         {
-            child.SetActive(false);
+            viewport.SetActive(false);
         }
         else
         {
@@ -34,8 +32,8 @@ public class WheelUnlock : MonoBehaviour
     public void Open()
     {
         if (island == null) island = Island.Instance();
-        if (child == null) child = transform.GetChild(0).gameObject;
-        if (island.Level >= minLevel && !child.activeInHierarchy)
+        if (viewport == null) viewport = transform.GetChild(0).gameObject;
+        if (island.Level >= minLevel && !viewport.activeInHierarchy)
         {
             unlockMenu.SetActive(true);
         }
@@ -43,7 +41,7 @@ public class WheelUnlock : MonoBehaviour
 
     public void UnlockWheel()
     {
-        child.SetActive(true);
+        viewport.SetActive(true);
         //this.enabled = false;
     }
 }
