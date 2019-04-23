@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class BigDigit
 {
@@ -405,6 +406,26 @@ public class BigDigit
             }
             return;
         }
+    }
+
+    public static BigDigit Power(BigDigit other, float power)
+    {
+        return new BigDigit(Mathf.Pow((float)other.Mantissa, power), (long)(other.Exponent * power));
+    }
+
+    public static BigDigit Power(BigDigit other, int power)
+    {
+        return new BigDigit(Mathf.Pow((float)other.Mantissa, power), (long)(other.Exponent * power));
+    }
+
+    public static BigDigit Power(BigDigit other, double power)
+    {
+        return new BigDigit(Mathf.Pow((float)other.Mantissa, (float)power), (long)(other.Exponent * power));
+    }
+
+    public static BigDigit Power(BigDigit other, long power)
+    {
+        return new BigDigit(Mathf.Pow((float)other.Mantissa, power), (long)(other.Exponent * power));
     }
 
     public override int GetHashCode()
