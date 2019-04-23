@@ -1752,8 +1752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 2500
   bonusId: 0
@@ -7291,8 +7291,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 50
   bonuses: {fileID: 1983624738}
-  screenUI: {fileID: 1583467410}
-  wheel: {fileID: 1525224446}
+  screenUI: {fileID: 1034571588}
+  wheel: {fileID: 1034571588}
   progress: {fileID: 1331485358}
   text: {fileID: 164160176}
 --- !u!114 &262518607
@@ -14198,8 +14198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 7500
   bonusId: 0
@@ -14220,7 +14220,6 @@ GameObject:
   - component: {fileID: 443133854}
   - component: {fileID: 443133853}
   - component: {fileID: 443133852}
-  - component: {fileID: 443133856}
   - component: {fileID: 443133858}
   - component: {fileID: 443133857}
   m_Layer: 0
@@ -14312,21 +14311,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &443133856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443133851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c480f90c3b0c4a4490a4416bc6d1c73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minLevel: 25
-  unlockMenu: {fileID: 1529298164}
-  viewport: {fileID: 2084003251}
 --- !u!114 &443133857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16558,8 +16542,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 1
   bonusId: 0
@@ -17362,8 +17346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 400000
   bonusId: 0
@@ -17458,7 +17442,6 @@ GameObject:
   - component: {fileID: 545054911}
   - component: {fileID: 545054910}
   - component: {fileID: 545054908}
-  - component: {fileID: 545054909}
   m_Layer: 0
   m_Name: GameLevelFade
   m_TagString: Untagged
@@ -17502,52 +17485,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 25
   bonuses: {fileID: 950925117}
-  screenUI: {fileID: 217749281}
-  wheel: {fileID: 2084003251}
+  screenUI: {fileID: 1064142252}
+  wheel: {fileID: 1064142252}
   progress: {fileID: 753927302}
   text: {fileID: 1594919917}
---- !u!114 &545054909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545054906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 545054910}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &545054910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17636,8 +17577,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 15000
   bonusId: 0
@@ -22692,7 +22633,6 @@ GameObject:
   - component: {fileID: 677434900}
   - component: {fileID: 677434899}
   - component: {fileID: 677434895}
-  - component: {fileID: 677434898}
   - component: {fileID: 677434897}
   - component: {fileID: 677434896}
   m_Layer: 0
@@ -22753,21 +22693,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &677434898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677434894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c480f90c3b0c4a4490a4416bc6d1c73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minLevel: 25
-  unlockMenu: {fileID: 1529298164}
-  viewport: {fileID: 1525224446}
 --- !u!111 &677434899
 Animation:
   m_ObjectHideFlags: 0
@@ -30670,8 +30595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 5000
   bonusId: 0
@@ -32911,7 +32836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -34746,8 +34671,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 7500
   bonusId: 0
@@ -35968,12 +35893,12 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 0
+  m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1064142255
 MonoBehaviour:
@@ -36475,8 +36400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 1
   bonusId: 0
@@ -37610,7 +37535,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 443133856}
+      - m_Target: {fileID: 0}
         m_MethodName: Open
         m_Mode: 1
         m_Arguments:
@@ -46261,8 +46186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 5000
   bonusId: 0
@@ -49787,7 +49712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f65225caece10847939bf9814827c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 000000001d00000021000000250000002a0000002f000000
+  levels: 00000000360000003a0000003e0000004300000048000000
   sprites:
   - {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
   - {fileID: 21300000, guid: bad5941be9c5a8f40bfbb45ea19b47f2, type: 3}
@@ -49829,7 +49754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49def4e2af498884ebb1cd20346ed4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minLevel: 25
+  minLevel: 50
   delay: 1
   tapDelay: 0.6
   modifierMantissa: 1
@@ -50126,8 +50051,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 1
   bonusId: 0
@@ -50586,8 +50511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 75000
   bonusId: 0
@@ -51540,8 +51465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 1
   bonusId: 0
@@ -51756,7 +51681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &1525224447
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -55253,8 +55178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 1
   bonusId: 2
@@ -59797,8 +59722,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 75000
   bonusId: 0
@@ -61633,8 +61558,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 1
   bonusId: 0
@@ -64997,8 +64922,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 1
   bonusId: 0
@@ -66755,8 +66680,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 15000
   bonusId: 0
@@ -69969,8 +69894,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 50
+  maxLevel: 75
   levelDifference: 5
   startReward: 2500
   bonusId: 0
@@ -70176,7 +70101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2084003252
 RectTransform:
   m_ObjectHideFlags: 0
@@ -72261,8 +72186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 400000
   bonusId: 0
@@ -72322,8 +72247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  minLevel: 0
-  maxLevel: 25
+  minLevel: 25
+  maxLevel: 50
   levelDifference: 5
   startReward: 1
   bonusId: 2
