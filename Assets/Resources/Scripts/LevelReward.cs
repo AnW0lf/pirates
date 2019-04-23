@@ -41,8 +41,8 @@ public class LevelReward : MonoBehaviour
 
         foreach (IslandController island in islandsList)
         {
-            if (island.minLevel <= PlayerPrefs.GetInt("Level"))
-                money += (island.GetReward() * PlayerPrefs.GetInt("Level") * 13f);
+            if (island.minLevel <= this.island.Level)
+                money += (island.GetReward() * this.island.Level * 13f);
         }
 
         levelsToShip = 999;
