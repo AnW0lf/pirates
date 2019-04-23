@@ -23985,7 +23985,7 @@ RectTransform:
   - {fileID: 673416817}
   - {fileID: 98013673}
   m_Father: {fileID: 1370585978}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -31298,7 +31298,7 @@ RectTransform:
   - {fileID: 71592724}
   - {fileID: 879121287}
   m_Father: {fileID: 1581203832}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -31994,7 +31994,7 @@ RectTransform:
   - {fileID: 552608620}
   - {fileID: 589689375}
   m_Father: {fileID: 1581203832}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -32303,7 +32303,7 @@ RectTransform:
   - {fileID: 1220823988}
   - {fileID: 1928000891}
   m_Father: {fileID: 1370585978}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -37271,23 +37271,23 @@ MonoBehaviour:
   rise: 450
   angle: 0
   shipName: Rum Barrel2
-  startPriceMantissa: 1.2
-  startPriceExponent: 3
+  startPriceMantissa: 7.5
+  startPriceExponent: 5
   startRaidTime: 5
-  startReward: 600
+  startReward: 12000
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 300
+  detailChangeReward1: 6000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.2
-  detailStartCostExponent1: 3
-  detailCostIncreaseMantissa1: 6
-  detailCostIncreaseExponent1: 2
+  detailStartCostMantissa1: 9
+  detailStartCostExponent1: 5
+  detailCostIncreaseMantissa1: 4.5
+  detailCostIncreaseExponent1: 5
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -37296,22 +37296,22 @@ MonoBehaviour:
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 3
-  detailStartCostExponent2: 3
-  detailCostIncreaseMantissa2: 1.2
-  detailCostIncreaseExponent2: 3
+  detailStartCostMantissa2: 2.7
+  detailStartCostExponent2: 6
+  detailCostIncreaseMantissa2: 6
+  detailCostIncreaseExponent2: 5
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 500
+  detailChangeReward3: 10000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 7.2
-  detailStartCostExponent3: 3
-  detailCostIncreaseMantissa3: 1.8
-  detailCostIncreaseExponent3: 3
+  detailStartCostMantissa3: 5.7
+  detailStartCostExponent3: 6
+  detailCostIncreaseMantissa3: 9
+  detailCostIncreaseExponent3: 5
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -46702,8 +46702,8 @@ RectTransform:
   - {fileID: 183495897}
   - {fileID: 1367720168}
   - {fileID: 1709476850}
-  - {fileID: 716897922}
   - {fileID: 950925119}
+  - {fileID: 716897922}
   - {fileID: 753927304}
   - {fileID: 1064142253}
   - {fileID: 545054907}
@@ -53559,8 +53559,8 @@ RectTransform:
   - {fileID: 1292805655}
   - {fileID: 990309592}
   - {fileID: 1722030978}
-  - {fileID: 925833910}
   - {fileID: 945456225}
+  - {fileID: 925833910}
   - {fileID: 1427430236}
   - {fileID: 1762289952}
   - {fileID: 1966261410}
