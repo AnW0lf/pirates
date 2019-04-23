@@ -27,7 +27,14 @@ public class LevelReward : MonoBehaviour
         {
             foreach (Transform child in ships.transform)
             {
-                money += new BigDigit(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * (int)(Mathf.Pow(powModifier,PlayerPrefs.GetInt("Level"))));
+                if (PlayerPrefs.GetInt("Level") < 10)
+                {
+                    money += new BigDigit(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * PlayerPrefs.GetInt("Level"));
+                }
+                else
+                {
+                    money += new BigDigit(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * (int)(Mathf.Pow(powModifier, PlayerPrefs.GetInt("Level"))));
+                }
             }
         }
 

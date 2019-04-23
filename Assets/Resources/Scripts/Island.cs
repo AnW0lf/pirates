@@ -45,7 +45,7 @@ public class Island
         Exp = PlayerPrefs.GetInt("Exp");
 
         if (!PlayerPrefs.HasKey("StartExp"))
-            PlayerPrefs.SetInt("StartExp", 180);
+            PlayerPrefs.SetInt("StartExp", 150);
         StartExp = PlayerPrefs.GetInt("StartExp");
 
         if (!PlayerPrefs.HasKey("ExpModifier"))
