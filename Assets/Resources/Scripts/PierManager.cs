@@ -286,7 +286,7 @@ public class PierManager : MonoBehaviour
 
     public bool ChangeBlackMark(int value)
     {
-        if (blackMark + value >= 0)
+        if (!maxLvl && blackMark + value >= 0)
         {
             blackMark += value;
             island.SetParameter(shipName + "_blackMark", blackMark);
