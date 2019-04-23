@@ -65,7 +65,7 @@ public class RouletteRotation : MonoBehaviour
 
     public void UpdateInfo()
     {
-        if (island == null) return;
+        if (island == null) island = Island.Instance();
 
         if (levels.Contains(island.Level))
         {

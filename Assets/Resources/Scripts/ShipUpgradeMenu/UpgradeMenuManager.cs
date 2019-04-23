@@ -39,7 +39,7 @@ public class UpgradeMenuManager : MonoBehaviour
             wm.SetWindows(piers);
             mm.SetMiniatures(piers);
 
-            int cur = 1;
+            int cur = 0;
             bool canUp = false;
             for(int i = 0; i < piers.Count; i++)
             {
