@@ -44,6 +44,48 @@ public class FlyingText : MonoBehaviour
         }
     }
 
+    public void SetReward(int value)
+    {
+        rewardText.GetComponent<Text>().text = "+" + CheckRange(value);
+    }
+
+    public void SetExp(int value)
+    {
+        expText.GetComponent<Text>().text = "+" + CheckRange(value);
+    }
+
+    private string CheckRange(int value)
+    {
+        if (value < 10000)
+        {
+            return value.ToString();
+        }
+        else
+        {
+            float v = value, degree;
+            for (degree = 0; v > 1000f; degree++, v /= 1000f) ;
+
+            string str = v.ToString();
+            str = str.Length >= 5 ? str.Substring(0, 5) : str;
+            str = str.Replace(',', '.');
+            for (; str.Length < 5; str = str.Contains(".") ? str += "0" : str += ".") ;
+
+            switch (degree)
+            {
+                case 0: return str;
+                case 1: return str + "K";
+                case 2: return str + "M";
+                case 3: return str + "B";
+                case 4: return str + "T";
+                case 5: return str + "q";
+                case 6: return str + "Q";
+                case 7: return str + "s";
+                case 8: return str + "S";
+                default: return str + "?";
+            }
+        }
+    }
+
     private void Update()
     {
         if (!GetComponent<Animation>().isPlaying)

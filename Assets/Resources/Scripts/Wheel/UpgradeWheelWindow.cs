@@ -24,7 +24,7 @@ public class UpgradeWheelWindow : MonoBehaviour
     {
         if(arg0.Length == 2)
         {
-            float mod = (float)arg0[0];
+            //float mod = (float)arg0[0];
             WheelButton wb = (WheelButton)arg0[1];
             child.SetActive(true);
             fade.SetActive(true);

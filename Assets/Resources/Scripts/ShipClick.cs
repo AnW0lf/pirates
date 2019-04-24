@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,8 +30,8 @@ public class ShipClick : MonoBehaviour
             if (other.gameObject.GetComponent<BonusBehavior>().bonusMoney)
             {
                 ship.rewardModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
-                _flyingText.GetComponent<FlyingText>().money = true;
-                _flyingText.GetComponent<FlyingText>().moneyText.GetComponent<Text>().text = "+" + (int)(ship.reward);
+                _flyingText.GetComponent<FlyingText>().exp = true;
+                _flyingText.GetComponent<FlyingText>().SetExp(ship.reward);
 
                 EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
             }

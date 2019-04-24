@@ -7,7 +7,8 @@ public class LevelReward : MonoBehaviour
 {
     public List<GameObject> shipsList;
     public List<PiersUpgrade> piersList;
-    public float modifier, powModifier;
+    public List<IslandController> islandsList;
+    public float modifier;
     public Text levelsToShipsText;
     public string oneLevelToShip, someLevelsToShip, noLevelsToShip;
 
@@ -22,14 +23,35 @@ public class LevelReward : MonoBehaviour
 
     void OnEnable()
     {
+        // MoneyReward
         money = BigDigit.zero;
-        foreach (GameObject ships in shipsList)
+
+        if (island.Level <= 25)
         {
-            foreach (Transform child in ships.transform)
+            foreach (IslandController islandCont in islandsList)
             {
-                money += new BigDigit(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * (int)(Mathf.Pow(powModifier,PlayerPrefs.GetInt("Level"))));
+                if (islandCont.minLevel <= island.Level)
+                    money += (islandCont.GetReward() * island.Level * 13f);
             }
         }
+        else if (island.Level > 25 && island.Level <= 50)
+        {
+            foreach (IslandController islandCont in islandsList)
+            {
+                if (islandCont.minLevel <= island.Level)
+                    money += (islandCont.GetReward() * island.Level * 9f * (island.Level - 25));
+            }
+        }
+        else
+        {
+            foreach (IslandController islandCont in islandsList)
+            {
+                if (islandCont.minLevel <= island.Level)
+                    money += (islandCont.GetReward() * island.Level * 2f * (island.Level - 25) * (island.Level - 50));
+            }
+        }
+
+
 
         levelsToShip = 999;
         foreach (PiersUpgrade piers in piersList)

@@ -6,12 +6,15 @@ public class BonusGenerator : MonoBehaviour
 {
     public int bonusDelay;
     public GameObject[] bonuses;
+    public int[] chances;
 
     private int randomPoint, curDelay;
     private GameObject _bonus;
+    private Island island;
 
     void OnEnable()
     {
+        island = Island.Instance();
         curDelay = bonusDelay;
         StartCoroutine(BonusSpawner());
     }
@@ -31,9 +34,9 @@ public class BonusGenerator : MonoBehaviour
 
             List<Transform> children = new List<Transform>();
 
-            foreach(BonusPoint child in GetComponentsInChildren<BonusPoint>())
+            foreach (BonusPoint child in GetComponentsInChildren<BonusPoint>())
             {
-                if(!child.GetComponent<BonusPoint>().active)
+                if (!child.GetComponent<BonusPoint>().active)
                 {
                     children.Add(child.transform);
                 }
@@ -43,10 +46,29 @@ public class BonusGenerator : MonoBehaviour
             {
                 yield return wait;
                 Transform child = children[Random.Range(0, children.Count)];
-                SetBonus(child, Random.Range(0, bonuses.Length));
+                SetBonus(child, GetRandomBonusNumber());
                 children.Remove(child);
             }
         }
+    }
+
+    private int GetRandomBonusNumber()
+    {
+        if (chances.Length != bonuses.Length) return 0;
+        int i = 0;
+        int maxChance = 0;
+        foreach (int item in chances)
+            maxChance += item;
+        int chance = Random.Range(0, maxChance);
+        for (i = 0; i < chances.Length; i++)
+        {
+            if (chance - chances[i] <= 0)
+                break;
+            chance -= chances[i];
+        }
+        if (island.Level < 2 && i == chances.Length - 1 && i != 0)
+            i--;
+        return i;
     }
 
     private void SetBonus(Transform child, int bonus)
@@ -94,7 +116,7 @@ public class BonusGenerator : MonoBehaviour
         for (int i = 0; children.Count > 0 && i < count; i++)
         {
             Transform child = children[Random.Range(0, children.Count)];
-            SetBonus(child, Random.Range(0, bonuses.Length));
+            SetBonus(child, GetRandomBonusNumber());
             children.Remove(child);
         }
     }

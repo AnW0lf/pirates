@@ -45,7 +45,7 @@ public class Island
         Exp = PlayerPrefs.GetInt("Exp");
 
         if (!PlayerPrefs.HasKey("StartExp"))
-            PlayerPrefs.SetInt("StartExp", 180);
+            PlayerPrefs.SetInt("StartExp", 150);
         StartExp = PlayerPrefs.GetInt("StartExp");
 
         if (!PlayerPrefs.HasKey("ExpModifier"))
@@ -94,16 +94,16 @@ public class Island
 
     public int GetMaxExp()
     {
-        if (Level <= 20)
+        if (Level == 1)
+            return (int)(StartExp * Mathf.Pow(Level, ExpModifier) / 1.5f);
+        else if (Level <= 18)
             return (int)(StartExp * Mathf.Pow(Level, ExpModifier));
-        else if (Level > 20 && Level <= 25)
-            return (int)(StartExp * Mathf.Pow(21, ExpModifier));
+        else if (Level > 18 && Level <= 25)
+            return (int)(StartExp * Mathf.Pow(18, ExpModifier));
         else if (Level > 25 && Level <= 50)
-            return (int)(StartExp * Mathf.Pow(21, ExpModifier) * 50f);
-        else if (Level > 50 && Level <= 75)
-            return (int)(StartExp * Mathf.Pow(21, ExpModifier) * 2500f);
+            return (int)(StartExp * Mathf.Pow(Level, ExpModifier) * 12f * (Level - 25));
         else
-            return (int)(StartExp * Mathf.Pow(21, ExpModifier) * 2500f * 50f);
+            return (int)(StartExp * Mathf.Pow(Level, ExpModifier) * 12000f * (Level - 50));
     }
 
     public int GetParameter(string parameter, int useless)
