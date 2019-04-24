@@ -312,6 +312,7 @@ MonoBehaviour:
   arrow: {fileID: 4926474387140722539}
   clock: {fileID: 3819941415611035949}
   color: {r: 0.9056604, g: 0.68331265, b: 0.004271993, a: 1}
+  trail: {fileID: 869659716458610375}
 --- !u!114 &3427144260919526236
 MonoBehaviour:
   m_ObjectHideFlags: 0

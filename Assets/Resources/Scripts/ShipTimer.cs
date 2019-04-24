@@ -8,8 +8,10 @@ public class ShipTimer : MonoBehaviour
     public Transform pointer, arrow;
     public Image clock;
     public Color color;
+    public TrailRenderer trail;
 
     private bool isTimerActive;
+    private string borderName;
     private Vector3 startPos;
     private Ship ship;
     private Camera cam;
@@ -24,11 +26,19 @@ public class ShipTimer : MonoBehaviour
     {
         if (collision.CompareTag("Border") && !isTimerActive)
         {
-            transform.GetComponentInParent<CapsuleCollider2D>().enabled = false;
+            borderName = collision.gameObject.name;
+            Invoke("SwitchEmmiting", 0.15f);
             if (collision.gameObject.name.Equals("RightBorder") || collision.gameObject.name.Equals("LeftBorder"))
                 StartCoroutine(Timer(ship.GetRaidTime() + 1.5f, true));
             else
                 StartCoroutine(Timer(ship.GetRaidTime(), false));
+        }
+        else if (collision.CompareTag("Border") && isTimerActive && borderName == collision.gameObject.name)
+        {
+            borderName = "";
+            Invoke("SwitchEmmiting", 0.4f);
+            isTimerActive = false;
+            transform.GetComponentInParent<CapsuleCollider2D>().enabled = false;
         }
     }
 
@@ -48,6 +58,10 @@ public class ShipTimer : MonoBehaviour
             yield return null;
         }
         pointer.gameObject.SetActive(false);
-        isTimerActive = false;
+    }
+
+    private void SwitchEmmiting()
+    {
+        trail.emitting = !trail.emitting;
     }
 }

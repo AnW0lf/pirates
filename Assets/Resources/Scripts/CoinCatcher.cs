@@ -29,7 +29,7 @@ public class CoinCatcher : MonoBehaviour
     {
         gameObject.SetActive(true);
         this.money = money;
-        GetComponentInParent<CapsuleCollider2D>().enabled = false;
+        //GetComponentInParent<CapsuleCollider2D>().enabled = false;
     }
 
     private void OnEnable()
