@@ -36628,7 +36628,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 75}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1085413301
 MonoBehaviour:
@@ -36951,7 +36951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.85882354, g: 0.85882354, b: 0.85882354, a: 0.3372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3372549}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -40965,7 +40965,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 60}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214653215
 MonoBehaviour:
@@ -41479,7 +41479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.00048828125}
   m_SizeDelta: {x: 1080, y: 5760}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1233723226
@@ -46365,7 +46365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6037736, g: 0.5291903, b: 0.41295835, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -49749,7 +49749,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 530}
+  m_SizeDelta: {x: 550, y: 490}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1481291093
 MonoBehaviour:
@@ -49765,12 +49765,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels: 00000000360000003a0000003e0000004300000048000000
   sprites:
-  - {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
-  - {fileID: 21300000, guid: bad5941be9c5a8f40bfbb45ea19b47f2, type: 3}
-  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
-  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
-  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
-  - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
+  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
+  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
+  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
+  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
+  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
+  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
@@ -49885,7 +49885,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -58060,7 +58060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3025098, g: 0.6226415, b: 0.31457976, a: 0.45490196}
+  m_Color: {r: 0.46293163, g: 0.9716981, b: 0.48154503, a: 0.45490196}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
