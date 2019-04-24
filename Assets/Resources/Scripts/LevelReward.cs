@@ -8,7 +8,7 @@ public class LevelReward : MonoBehaviour
     public List<GameObject> shipsList;
     public List<PiersUpgrade> piersList;
     public List<IslandController> islandsList;
-    public float modifier, powModifier;
+    public float modifier;
     public Text levelsToShipsText;
     public string oneLevelToShip, someLevelsToShip, noLevelsToShip;
 
@@ -39,15 +39,7 @@ public class LevelReward : MonoBehaviour
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * island.Level * 13f * (island.Level - 25));
-            }
-        }
-        else if (island.Level > 50 && island.Level <= 75)
-        {
-            foreach (IslandController islandCont in islandsList)
-            {
-                if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * island.Level * 13f * (island.Level - 50));
+                    money += (islandCont.GetReward() * island.Level * 9f * (island.Level - 25));
             }
         }
         else
@@ -55,7 +47,7 @@ public class LevelReward : MonoBehaviour
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * island.Level * 13f * (island.Level - 75));
+                    money += (islandCont.GetReward() * island.Level * 2f * (island.Level - 25) * (island.Level - 50));
             }
         }
 

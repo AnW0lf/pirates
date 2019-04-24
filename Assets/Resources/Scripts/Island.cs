@@ -100,10 +100,8 @@ public class Island
             return (int)(StartExp * Mathf.Pow(18, ExpModifier));
         else if (Level > 25 && Level <= 50)
             return (int)(StartExp * Mathf.Pow(Level, ExpModifier) * 12f * (Level - 25));
-        else if (Level > 50 && Level <= 75)
-            return (int)(StartExp * Mathf.Pow(18, ExpModifier) * 12 * 12 * (Level - 50));
         else
-            return (int)(StartExp * Mathf.Pow(18, ExpModifier) * 12 * 12 * 12 * (Level - 75));
+            return (int)(StartExp * Mathf.Pow(Level, ExpModifier) * 12000f * (Level - 50));
     }
 
     public int GetParameter(string parameter, int useless)
