@@ -10421,7 +10421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 67e39eddf435b3044b857267eb5fb558, type: 3}
+  shipIcon: {fileID: 21300000, guid: 0cce8830ff5003f4a8852cce56b80318, type: 3}
   minLvl: 54
   shipDescription: Perfect for parties and expeditions.
   black: 0
@@ -10479,7 +10479,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
-  spriteForMenu: {fileID: 21300048, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 0cce8830ff5003f4a8852cce56b80318, type: 3}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &359000855
 RectTransform:
@@ -22553,7 +22553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
+  shipIcon: {fileID: 21300000, guid: 94d4322c1e08bfc46b4558caa06ac35d, type: 3}
   minLvl: 0
   shipDescription: Space ship of the world of ships.
   black: 1
@@ -22611,7 +22611,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 1, g: 1, b: 1, a: 1}
-  spriteForMenu: {fileID: 21300008, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 94d4322c1e08bfc46b4558caa06ac35d, type: 3}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &677157629
 RectTransform:
@@ -26431,7 +26431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 4ed1a3a95997ffe469708981b5a30d11, type: 3}
+  shipIcon: {fileID: 21300000, guid: 3debab17341b29b4f823a5fa1c242485, type: 3}
   minLvl: 62
   shipDescription: Don't buy it if you don't love speed.
   black: 0
@@ -26489,7 +26489,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300024, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 3debab17341b29b4f823a5fa1c242485, type: 3}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &793327575
 RectTransform:
@@ -30076,7 +30076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  shipIcon: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
   minLvl: 67
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
@@ -30134,7 +30134,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300016, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &881419878
 RectTransform:
@@ -38807,7 +38807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
+  shipIcon: {fileID: 21300000, guid: 3880b0215df006d4090c56f023601e3d, type: 3}
   minLvl: 50
   shipDescription: You'll love it. Definitely!
   black: 0
@@ -38865,7 +38865,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300058, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 3880b0215df006d4090c56f023601e3d, type: 3}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &1167156850
 RectTransform:
@@ -71892,7 +71892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 867846aa592926a4399ecac2f3e5112b, type: 3}
+  shipIcon: {fileID: 21300000, guid: 865b6c35521dbf14ba0b4eae50209839, type: 3}
   minLvl: 58
   shipDescription: Only for the rich and famous!
   black: 0
@@ -71950,7 +71950,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
-  spriteForMenu: {fileID: 21300032, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 865b6c35521dbf14ba0b4eae50209839, type: 3}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &2130707102
 RectTransform:
