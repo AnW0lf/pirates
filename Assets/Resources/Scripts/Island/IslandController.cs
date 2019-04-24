@@ -78,7 +78,24 @@ public class IslandController : MonoBehaviour
         BigDigit reward = GetReward();
 
         _flyingText = Instantiate(flyingText, transform);
-        _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);
+
+        //-110 -60
+        BigDigit firstOffset = new BigDigit(9.9f, 1);
+        BigDigit secondOffset = new BigDigit(9.99f, 2);
+        if (reward.LessThen(firstOffset))
+        {
+            _flyingText.transform.localPosition = new Vector3(-110f, 50f, 0f);
+        }
+        else if (reward.LessThen(secondOffset))
+        {
+            _flyingText.transform.localPosition = new Vector3(-60f, 50f, 0f);
+        }
+        else
+        {
+            _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);
+        }
+
+
         _flyingText.GetComponent<FlyingText>().reward = true;
         _flyingText.GetComponent<FlyingText>().rewardText.GetComponent<Text>().text = reward.ToString();
 
