@@ -67,7 +67,7 @@ public class CoinCatcher : MonoBehaviour
         _flyingText.transform.localPosition = new Vector3(-300f, 0f, 0f);
         _flyingText.transform.eulerAngles = new Vector3(0f, 0f, 0f);
         _flyingText.GetComponent<FlyingText>().exp = true;
-        _flyingText.GetComponent<FlyingText>().expText.GetComponent<Text>().text = money.ToString();
+        _flyingText.GetComponent<FlyingText>().SetExp(money);
 
         GetComponentInParent<CapsuleCollider2D>().enabled = true;
         gameObject.SetActive(false);

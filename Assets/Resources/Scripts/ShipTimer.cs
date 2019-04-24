@@ -38,7 +38,7 @@ public class ShipTimer : MonoBehaviour
             borderName = "";
             Invoke("SwitchEmmiting", 0.4f);
             isTimerActive = false;
-            transform.GetComponentInParent<CapsuleCollider2D>().enabled = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;
         }
     }
 

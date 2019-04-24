@@ -127,7 +127,7 @@ public class WindowController : MonoBehaviour
         int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
         SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetState(rewardTM, CheckRange(pier.GetReward()));
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
@@ -161,7 +161,7 @@ public class WindowController : MonoBehaviour
         int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
         SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetState(rewardTM, CheckRange(pier.GetReward()));
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
@@ -210,7 +210,7 @@ public class WindowController : MonoBehaviour
         int curLvl = pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3 + 1;
         SetState(upLevelTM, curLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetState(rewardTM, CheckRange(pier.GetReward()));
 
         if (!miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
@@ -283,7 +283,7 @@ public class WindowController : MonoBehaviour
         int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
         SetState(upLevelTM, maxLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetState(rewardTM, CheckRange(pier.GetReward()));
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
@@ -318,5 +318,37 @@ public class WindowController : MonoBehaviour
         tm.text = text;
         tm.prefix = prefix;
         tm.postfix = postfix;
+    }
+
+    private string CheckRange(int value)
+    {
+        if (value < 10000)
+        {
+            return value.ToString();
+        }
+        else
+        {
+            float v = value, degree;
+            for (degree = 0; v > 1000f; degree++, v /= 1000f) ;
+
+            string str = v.ToString();
+            str = str.Length >= 5 ? str.Substring(0, 5) : str;
+            str = str.Replace(',', '.');
+            for (; str.Length < 5; str = str.Contains(".") ? str += "0" : str += ".") ;
+
+            switch (degree)
+            {
+                case 0: return str;
+                case 1: return str + "K";
+                case 2: return str + "M";
+                case 3: return str + "B";
+                case 4: return str + "T";
+                case 5: return str + "q";
+                case 6: return str + "Q";
+                case 7: return str + "s";
+                case 8: return str + "S";
+                default: return str + "?";
+            }
+        }
     }
 }
