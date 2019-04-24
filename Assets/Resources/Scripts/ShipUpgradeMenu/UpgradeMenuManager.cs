@@ -46,7 +46,7 @@ public class UpgradeMenuManager : MonoBehaviour
                 if (piers[i].minLvl <= island.Level)
                 {
                     if(!piers[i].maxLvl
-                        && (piers[i].GetUpgradeCost() <= island.Money
+                        && ((!piers[i].black && piers[i].GetUpgradeCost() <= island.Money)
                         || (piers[i].black && piers[i].GetBlackMark() > 0)))
                     {
                         canUp = true;
