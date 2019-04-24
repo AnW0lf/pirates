@@ -65,8 +65,8 @@ public class IslandController : MonoBehaviour
             _clickEffect = Instantiate(clickEffect, transform);
             _clickEffect.GetComponent<RectTransform>().anchorMin = Vector2.zero;
             _clickEffect.GetComponent<RectTransform>().anchorMax = Vector2.one;
-            _clickEffect.GetComponent<RectTransform>().offsetMin = Vector2.zero;
-            _clickEffect.GetComponent<RectTransform>().offsetMax = Vector2.zero;
+            _clickEffect.GetComponent<RectTransform>().offsetMin = Vector2.up * 100f;
+            _clickEffect.GetComponent<RectTransform>().offsetMax = Vector2.up * 100f;
             _clickEffect.SetActive(true);
         }
         else if ((delay - (island.GetParameter("Level", 0) - 1) / 10) > tapDelay)
