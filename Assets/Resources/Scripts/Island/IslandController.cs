@@ -8,21 +8,20 @@ public class IslandController : MonoBehaviour
     public int minLevel;
     public float delay, tapDelay, modifierMantissa;
     public long modifierExponent;
-    public GameObject flyingText;
+    public GameObject flyingText, clickEffect;
 
     public static BigDigit islandReward;
 
     private Island island;
     private bool clicked = false, active = false;
     private Animation anim;
-    private GameObject _flyingText;
+    private GameObject _flyingText, _clickEffect;
     private float time;
 
     private void Awake()
     {
         island = Island.Instance();
         anim = GetComponent<Animation>();
-
     }
 
     private void Update()
@@ -63,6 +62,12 @@ public class IslandController : MonoBehaviour
         if (clicked)
         {
             time = tapDelay;
+            _clickEffect = Instantiate(clickEffect, transform);
+            _clickEffect.GetComponent<RectTransform>().anchorMin = Vector2.zero;
+            _clickEffect.GetComponent<RectTransform>().anchorMax = Vector2.one;
+            _clickEffect.GetComponent<RectTransform>().offsetMin = Vector2.zero;
+            _clickEffect.GetComponent<RectTransform>().offsetMax = Vector2.zero;
+            _clickEffect.SetActive(true);
         }
         else if ((delay - (island.GetParameter("Level", 0) - 1) / 10) > tapDelay)
         {
@@ -101,6 +106,7 @@ public class IslandController : MonoBehaviour
 
         island.ChangeMoney(reward);
         yield return new WaitForSeconds(time / 2);
+        clickEffect.SetActive(false);
         clicked = false;
         yield return new WaitForSeconds(time / 2);
         StartCoroutine(GenerateMoney());

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7778361478631114653}
   - component: {fileID: 1423363118567567839}
   m_Layer: 0
-  m_Name: YellowFireworks 1
+  m_Name: IslandFireworks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

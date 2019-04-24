@@ -2390,6 +2390,8 @@ MonoBehaviour:
   modifierExponent: 0
   flyingText: {fileID: 7659205956303974338, guid: 6a18c187d1a370949b69a053f95a0a6e,
     type: 3}
+  clickEffect: {fileID: 2882912284473947946, guid: 2453bd6347938e14fad6cbb4aa8d2844,
+    type: 3}
 --- !u!111 &71592729
 Animation:
   m_ObjectHideFlags: 0
@@ -22289,6 +22291,8 @@ MonoBehaviour:
   modifierExponent: 1
   flyingText: {fileID: 7659205956303974338, guid: 6a18c187d1a370949b69a053f95a0a6e,
     type: 3}
+  clickEffect: {fileID: 2882912284473947946, guid: 2453bd6347938e14fad6cbb4aa8d2844,
+    type: 3}
 --- !u!114 &673416821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38679,7 +38683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100.00049}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 0, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1163159926
@@ -49812,6 +49816,8 @@ MonoBehaviour:
   modifierExponent: 2
   flyingText: {fileID: 7659205956303974338, guid: 6a18c187d1a370949b69a053f95a0a6e,
     type: 3}
+  clickEffect: {fileID: 2882912284473947946, guid: 2453bd6347938e14fad6cbb4aa8d2844,
+    type: 3}
 --- !u!114 &1481291096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50884,7 +50890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -174.99976}
+  m_AnchoredPosition: {x: 0, y: -175}
   m_SizeDelta: {x: 0, y: -350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1504076240
