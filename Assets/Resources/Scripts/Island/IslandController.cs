@@ -50,7 +50,14 @@ public class IslandController : MonoBehaviour
 
     public BigDigit GetReward()
     {
-        return new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f);
+        if (island.Level <= 25)
+            return new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f);
+        else if (island.Level > 25 && island.Level <= 50)
+            return new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f) * (island.Level - 25);
+        else if (island.Level > 50 && island.Level <= 75)
+            return new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f) * (island.Level - 50);
+        else
+            return new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f) * (island.Level - 75);
     }
 
     private IEnumerator GenerateMoney()
