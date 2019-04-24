@@ -23,27 +23,43 @@ public class LevelReward : MonoBehaviour
 
     void OnEnable()
     {
+        // MoneyReward
         money = BigDigit.zero;
-        //foreach (GameObject ships in shipsList)
-        //{
-        //    foreach (Transform child in ships.transform)
-        //    { 
-        //        if (PlayerPrefs.GetInt("Level") < 10)
-        //        {
-        //            money += new BigDigit(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * PlayerPrefs.GetInt("Level"));
-        //        }
-        //        else
-        //        {
-        //            money += new BigDigit(child.GetComponent<Ship>().reward / child.GetComponent<Ship>().raidTime * modifier * (int)(Mathf.Pow(powModifier, PlayerPrefs.GetInt("Level"))));
-        //        }
-        //    }
-        //}
 
-        foreach (IslandController island in islandsList)
+        if (island.Level <= 25)
         {
-            if (island.minLevel <= this.island.Level)
-                money += (island.GetReward() * this.island.Level * 13f);
+            foreach (IslandController islandCont in islandsList)
+            {
+                if (islandCont.minLevel <= island.Level)
+                    money += (islandCont.GetReward() * island.Level * 13f);
+            }
         }
+        else if (island.Level > 25 && island.Level <= 50)
+        {
+            foreach (IslandController islandCont in islandsList)
+            {
+                if (islandCont.minLevel <= island.Level)
+                    money += (islandCont.GetReward() * island.Level * 13f * (island.Level - 25));
+            }
+        }
+        else if (island.Level > 50 && island.Level <= 75)
+        {
+            foreach (IslandController islandCont in islandsList)
+            {
+                if (islandCont.minLevel <= island.Level)
+                    money += (islandCont.GetReward() * island.Level * 13f * (island.Level - 50));
+            }
+        }
+        else
+        {
+            foreach (IslandController islandCont in islandsList)
+            {
+                if (islandCont.minLevel <= island.Level)
+                    money += (islandCont.GetReward() * island.Level * 13f * (island.Level - 75));
+            }
+        }
+
+
 
         levelsToShip = 999;
         foreach (PiersUpgrade piers in piersList)
