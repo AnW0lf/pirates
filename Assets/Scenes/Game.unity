@@ -4340,7 +4340,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
-  color: {r: 0, g: 0, b: 0, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &144584688
@@ -22610,7 +22610,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
-  color: {r: 0, g: 0, b: 0, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   spriteForMenu: {fileID: 21300008, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &677157629
@@ -27206,7 +27206,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
-  color: {r: 0, g: 0, b: 0, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 090db8b25ad2f264da41806b63e7aaf3, type: 3}
   lifebuoys: {fileID: 999593072}
 --- !u!224 &810971561
