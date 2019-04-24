@@ -36697,7 +36697,6 @@ MonoBehaviour:
   - {fileID: 673416820}
   - {fileID: 71592728}
   modifier: 10
-  powModifier: 1.26
   levelsToShipsText: {fileID: 658194306}
   oneLevelToShip: more level to the next ship!
   someLevelsToShip: more levels to the next ship!
