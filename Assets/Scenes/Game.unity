@@ -3875,14 +3875,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 553d5c1e02d51a24699f5be39c59bb93, type: 3}
   minLvl: 29
-  shipDescription: Choice of the true corsair.
+  shipDescription: Little boy with a great power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 157
   rise: 510
   angle: 60
-  shipName: Pink Queen2
+  shipName: Lil Beep
   startPriceMantissa: 1.35
   startPriceExponent: 7
   startRaidTime: 10
@@ -10423,14 +10423,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 67e39eddf435b3044b857267eb5fb558, type: 3}
   minLvl: 54
-  shipDescription: Choice of the true corsair.
+  shipDescription: Perfect for parties and expeditions.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 157
   rise: 510
   angle: 60
-  shipName: Pink Queen3
+  shipName: Lil Miracle
   startPriceMantissa: 4.05
   startPriceExponent: 11
   startRaidTime: 10
@@ -16433,7 +16433,7 @@ MonoBehaviour:
   islandNumber: 1
   shipIcon: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
   minLvl: 0
-  shipDescription: Choice of the true corsair.
+  shipDescription: Good choice to start!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
@@ -18288,14 +18288,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
   minLvl: 42
-  shipDescription: Choice of the true corsair.
+  shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 240
   rise: 450
   angle: 240
-  shipName: Santa Maria2
+  shipName: Gigantic
   startPriceMantissa: 4.86
   startPriceExponent: 9
   startRaidTime: 30
@@ -22555,14 +22555,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
   minLvl: 0
-  shipDescription: Fifteen men on the dead man's chest!
+  shipDescription: Space ship of the world of ships.
   black: 1
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 250
   rise: 510
   angle: 300
-  shipName: Black Terror3
+  shipName: Supernova
   startPriceMantissa: 0
   startPriceExponent: 0
   startRaidTime: 60
@@ -26433,14 +26433,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 4ed1a3a95997ffe469708981b5a30d11, type: 3}
   minLvl: 62
-  shipDescription: Choice of the true corsair.
+  shipDescription: Don't buy it if you don't love speed.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 207
   rise: 510
   angle: 180
-  shipName: King Georg3
+  shipName: Waveburner
   startPriceMantissa: 2.835
   startPriceExponent: 13
   startRaidTime: 22
@@ -27151,14 +27151,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 090db8b25ad2f264da41806b63e7aaf3, type: 3}
   minLvl: 0
-  shipDescription: Fifteen men on the dead man's chest!
+  shipDescription: Top secret warship of World War I.
   black: 1
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 250
   rise: 510
   angle: 300
-  shipName: Black Terror2
+  shipName: Sea Lord
   startPriceMantissa: 0
   startPriceExponent: 0
   startRaidTime: 60
@@ -27546,7 +27546,7 @@ MonoBehaviour:
   islandNumber: 1
   shipIcon: {fileID: 21300000, guid: 4ed1a3a95997ffe469708981b5a30d11, type: 3}
   minLvl: 10
-  shipDescription: Choice of the true corsair.
+  shipDescription: Serious ship for a serious person.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
@@ -30078,14 +30078,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
   minLvl: 67
-  shipDescription: Choice of the true corsair.
+  shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 240
   rise: 450
   angle: 240
-  shipName: Santa Maria3
+  shipName: Party King
   startPriceMantissa: 1.458
   startPriceExponent: 14
   startRaidTime: 30
@@ -36752,14 +36752,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: e309b5101279c1e4d92c5e7fbcde1ec9, type: 3}
   minLvl: 33
-  shipDescription: Choice of the true corsair.
+  shipDescription: Professional wave tamer.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 185
   rise: 450
   angle: 120
-  shipName: Sea Saber2
+  shipName: Needle
   startPriceMantissa: 1.485
   startPriceExponent: 8
   startRaidTime: 15
@@ -37228,14 +37228,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: dd9a5b62cdd70924797d51eef09c34ca, type: 3}
   minLvl: 25
-  shipDescription: Choice of the true corsair.
+  shipDescription: Elegant boat with a steam engine.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 135
   rise: 450
   angle: 0
-  shipName: Rum Barrel2
+  shipName: Devil's Boot
   startPriceMantissa: 6.75
   startPriceExponent: 5
   startRaidTime: 5
@@ -37802,14 +37802,14 @@ MonoBehaviour:
   islandNumber: 1
   shipIcon: {fileID: 21300000, guid: 867846aa592926a4399ecac2f3e5112b, type: 3}
   minLvl: 6
-  shipDescription: Choice of the true corsair.
+  shipDescription: Cuts through the waves.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 185
   rise: 450
   angle: 120
-  shipName: Sea Saber
+  shipName: Saber
   startPriceMantissa: 5.5
   startPriceExponent: 3
   startRaidTime: 15
@@ -38809,14 +38809,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
   minLvl: 50
-  shipDescription: Choice of the true corsair.
+  shipDescription: You'll love it. Definitely!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 135
   rise: 450
   angle: 0
-  shipName: Rum Barrel3
+  shipName: Golden Toy
   startPriceMantissa: 2.025
   startPriceExponent: 10
   startRaidTime: 5
@@ -43090,7 +43090,7 @@ MonoBehaviour:
   islandNumber: 1
   shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
   minLvl: 15
-  shipDescription: Choice of the true corsair.
+  shipDescription: Feel like a new Magellan!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
@@ -46092,7 +46092,7 @@ MonoBehaviour:
   islandNumber: 1
   shipIcon: {fileID: 21300000, guid: 67e39eddf435b3044b857267eb5fb558, type: 3}
   minLvl: 3
-  shipDescription: Choice of the true corsair.
+  shipDescription: Small, cozy, very pretty.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
@@ -55748,14 +55748,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 23ec1e1e7c6de7d4f966bff979f756ee, type: 3}
   minLvl: 37
-  shipDescription: Choice of the true corsair.
+  shipDescription: Synergy of beauty and power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 207
   rise: 510
   angle: 180
-  shipName: King Georg2
+  shipName: Triumpher
   startPriceMantissa: 9.45
   startPriceExponent: 8
   startRaidTime: 22
@@ -71894,14 +71894,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 867846aa592926a4399ecac2f3e5112b, type: 3}
   minLvl: 58
-  shipDescription: Choice of the true corsair.
+  shipDescription: Only for the rich and famous!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 185
   rise: 450
   angle: 120
-  shipName: Sea Saber3
+  shipName: Felicity
   startPriceMantissa: 4.455
   startPriceExponent: 12
   startRaidTime: 15
