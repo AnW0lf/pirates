@@ -5197,9 +5197,9 @@ MonoBehaviour:
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
-  detailMaxLvl1: 3
+  detailMaxLvl1: 4
   detailCurrentLvl1: 0
-  detailChangeReward1: 150
+  detailChangeReward1: 115
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 0
@@ -5209,10 +5209,10 @@ MonoBehaviour:
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
-  detailMaxLvl2: 3
+  detailMaxLvl2: 4
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -6
+  detailChangeRaidTime2: -5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 0
   detailStartCostExponent2: 0
@@ -5221,9 +5221,9 @@ MonoBehaviour:
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
-  detailMaxLvl3: 3
+  detailMaxLvl3: 4
   detailCurrentLvl3: 0
-  detailChangeReward3: 350
+  detailChangeReward3: 210
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 0
@@ -14516,7 +14516,7 @@ MonoBehaviour:
   - 2
   - 2
   - 2
-  nums: 
+  nums: 04000000010000000000000005000000010000000200000001000000030000000400000006000000020000000500000002000000070000000000000001000000030000000400000006000000020000000000000007000000010000000000000008000000
   spinButton: {fileID: 633751325}
 --- !u!114 &393756849
 MonoBehaviour:
@@ -14770,7 +14770,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27421,9 +27421,9 @@ MonoBehaviour:
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
-  detailMaxLvl1: 3
+  detailMaxLvl1: 4
   detailCurrentLvl1: 0
-  detailChangeReward1: 150000000
+  detailChangeReward1: 115000000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 0
@@ -27433,10 +27433,10 @@ MonoBehaviour:
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
-  detailMaxLvl2: 3
+  detailMaxLvl2: 4
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -6
+  detailChangeRaidTime2: -5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 0
   detailStartCostExponent2: 0
@@ -27445,9 +27445,9 @@ MonoBehaviour:
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
-  detailMaxLvl3: 3
+  detailMaxLvl3: 4
   detailCurrentLvl3: 0
-  detailChangeReward3: 350000000
+  detailChangeReward3: 210000000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 0
@@ -33121,9 +33121,9 @@ MonoBehaviour:
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
-  detailMaxLvl1: 3
+  detailMaxLvl1: 4
   detailCurrentLvl1: 0
-  detailChangeReward1: 150000
+  detailChangeReward1: 115000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 0
@@ -33133,10 +33133,10 @@ MonoBehaviour:
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
-  detailMaxLvl2: 3
+  detailMaxLvl2: 4
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -6
+  detailChangeRaidTime2: -5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 0
   detailStartCostExponent2: 0
@@ -33145,9 +33145,9 @@ MonoBehaviour:
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
-  detailMaxLvl3: 3
+  detailMaxLvl3: 4
   detailCurrentLvl3: 0
-  detailChangeReward3: 350000
+  detailChangeReward3: 210000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 0
@@ -45798,14 +45798,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1792453, g: 0.0769402, b: 0.17419139, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e3651ea005b732a41b7b81dda99b4363, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd54ea6df986ab04e9ea9bd04814e371, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -58250,13 +58250,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 428bcab4da082ec40a5f3be84283ea2f, type: 3}
+  m_Sprite: {fileID: 21300002, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -64979,7 +64979,7 @@ MonoBehaviour:
   - 2
   - 2
   - 2
-  nums: 
+  nums: 04000000010000000000000005000000010000000200000001000000030000000400000006000000020000000300000002000000070000000100000005000000030000000400000006000000020000000000000007000000010000000000000008000000
   spinButton: {fileID: 1789189242}
 --- !u!114 &1599426459
 MonoBehaviour:
@@ -65392,7 +65392,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 428bcab4da082ec40a5f3be84283ea2f, type: 3}
+  m_Sprite: {fileID: 21300002, guid: b31c5c998bb3d8543a0bdc18002403ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -81485,7 +81485,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 550, y: 490}
+  m_SizeDelta: {x: 968, y: 996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044854788
 MonoBehaviour:
@@ -81499,14 +81499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f65225caece10847939bf9814827c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 00000000360000003a0000003e0000004300000048000000
+  levels: 00000000
   sprites:
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
+  - {fileID: 21300000, guid: 2627da0c4c3725e4aa7d5821c36edea5, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
@@ -81616,14 +81611,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5283019, g: 0, b: 0.49093324, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2627da0c4c3725e4aa7d5821c36edea5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -82973,7 +82968,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086778442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
