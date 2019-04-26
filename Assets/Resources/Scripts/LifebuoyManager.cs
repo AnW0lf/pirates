@@ -124,6 +124,7 @@ public class LifebuoyManager : MonoBehaviour
 
     public void UpdateInfo()
     {
+        if (island == null) island = Island.Instance();
         modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
         island.InitParameter(modifierName + "_level", 0);
         lvl = island.GetParameter(modifierName + "_level", 0);
