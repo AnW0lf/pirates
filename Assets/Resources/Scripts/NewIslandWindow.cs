@@ -12,6 +12,7 @@ public class NewIslandWindow : MonoBehaviour
     public List<int> levels;
     public GameObject back, fade;
     public NewShipWindow nsw;
+    public ScrollManager sm;
 
     private Island island;
 
@@ -30,7 +31,16 @@ public class NewIslandWindow : MonoBehaviour
             int id = levels.IndexOf(level);
             islandName.text = islandNames[id];
             islandImage.sprite = islandSprites[id];
+            StartCoroutine(Center());
         }
         else nsw.Open();
+    }
+
+    private IEnumerator Center()
+    {
+        System.Func<bool> active = delegate { return (nsw.window.activeInHierarchy || back.activeInHierarchy); };
+        yield return new WaitWhile(active);
+        yield return new WaitForSeconds(0.5f);
+        sm.Center();
     }
 }

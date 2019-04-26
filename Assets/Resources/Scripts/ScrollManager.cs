@@ -6,6 +6,8 @@ public class ScrollManager : MonoBehaviour
 {
     public int level;
     public Canvas game;
+    public float speed = 15f;
+
     private RectTransform rect;
     private Island island;
     private float unit = 2436f;
@@ -33,9 +35,25 @@ public class ScrollManager : MonoBehaviour
 
     public void Center()
     {
+        StartCoroutine(GoToCenter());
+    }
+
+    private IEnumerator GoToCenter()
+    {
         childCount = transform.childCount;
         float sizeY = childCount * unit;
-        Vector2 pos = new Vector3(rect.localPosition.x, sizeY - (unit * (1 + island.Level / level)), rect.localPosition.z);
-        rect.localPosition = pos;
+        Vector3 newPos = new Vector3(rect.localPosition.x, sizeY - (unit * (1 + island.Level / level)), rect.localPosition.z);
+        Vector3 direction = newPos - rect.localPosition;
+        float err = speed * 4f;
+
+        System.Func<bool> move = delegate
+        {
+            direction = newPos - rect.localPosition;
+            transform.Translate(direction.normalized * Time.fixedDeltaTime * speed);
+            return Mathf.Abs(direction.magnitude) > err;
+        };
+
+        yield return new WaitWhile(move);
+        rect.localPosition = newPos;
     }
 }
