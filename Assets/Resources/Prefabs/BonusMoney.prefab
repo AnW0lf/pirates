@@ -181,6 +181,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels: 000000001900000032000000
   sprites:
-  - {fileID: 21300000, guid: b812b2d193945084485d18369127ff19, type: 3}
-  - {fileID: 21300000, guid: 5354db22fcc0ad24d8eb3c0a4535f17c, type: 3}
-  - {fileID: 21300000, guid: 58895291260c40840ab2adc2c157deb1, type: 3}
+  - {fileID: 21300000, guid: 1c5c59c69a0d00f48801d2d02d8c504b, type: 3}
+  - {fileID: 21300000, guid: 1c5c59c69a0d00f48801d2d02d8c504b, type: 3}
+  - {fileID: 21300000, guid: 1c5c59c69a0d00f48801d2d02d8c504b, type: 3}
