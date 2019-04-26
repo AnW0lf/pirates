@@ -12,6 +12,7 @@ public class GameLevelFadeManager : MonoBehaviour
 
     private Island island;
     private Button btn;
+    private int comingSoon = 10000;
 
     private void Awake()
     {
@@ -21,7 +22,16 @@ public class GameLevelFadeManager : MonoBehaviour
 
     private void Start()
     {
-        text.text = level.ToString();
+        if (level > comingSoon)
+        {
+            text.text = "coming soon";
+            text.prefix = "";
+        }
+        else
+        {
+            text.text = level.ToString();
+            text.prefix = "Level";
+        }
         wheel.SetActive(false);
         bonuses.SetActive(false);
         screenUI.SetActive(false);
