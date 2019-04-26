@@ -153,6 +153,7 @@ public class WindowController : MonoBehaviour
 
         icon.color = Color.black;
         cost.SetActive(false);
+        characteristics.gameObject.SetActive(false);
     }
 
     private void NotBought()
@@ -185,6 +186,7 @@ public class WindowController : MonoBehaviour
         }
 
         SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
+        characteristics.gameObject.SetActive(false);
 
         if (!icon.sprite.Equals(pier.spriteForMenu))
             icon.sprite = pier.spriteForMenu;
