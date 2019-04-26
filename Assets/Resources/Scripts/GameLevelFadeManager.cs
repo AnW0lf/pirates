@@ -34,11 +34,14 @@ public class GameLevelFadeManager : MonoBehaviour
 
     private void SetUnlockButton(object[] arg0)
     {
+        Unlock();
+        /*
         if (island.Level >= level && !btn.interactable)
         {
             btn.interactable = true;
             btn.onClick.AddListener(Unlock);
         }
+        */
     }
 
     public void Unlock()

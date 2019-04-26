@@ -62,9 +62,9 @@ public class IslandSpriteController : MonoBehaviour
         if (levels.Count > 0 && sprites.Length > 0)
         {
             bool setted = false;
-            for(int i = island.Level; i > 0; i--)
+            for (int i = island.Level; i > 0; i--)
             {
-                if(levels.Contains(i) && sprites.Length > levels.IndexOf(i))
+                if (levels.Contains(i) && sprites.Length > levels.IndexOf(i))
                 {
                     image.sprite = sprites[levels.IndexOf(i)];
                     setted = true;
@@ -82,10 +82,10 @@ public class IslandSpriteController : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(0.5f);
 
-        while (newShipWindow.activeInHierarchy || wheelUpdateWindow.activeInHierarchy)
+        do
         {
             yield return wait;
-        }
+        } while (newShipWindow.activeInHierarchy || wheelUpdateWindow.activeInHierarchy);
         if (changeSpriteEffect == null)
         {
             changeSpriteEffect = Instantiate(changeSpriteEffectPref, transform);
