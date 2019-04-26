@@ -14781,7 +14781,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20171,7 +20171,7 @@ MonoBehaviour:
   startPriceMantissa: 2.5
   startPriceExponent: 1
   startRaidTime: 5
-  startReward: 120000
+  startReward: 12
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
