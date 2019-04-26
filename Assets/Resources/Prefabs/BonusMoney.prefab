@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4724342242100932441}
   - component: {fileID: 8593790868163300883}
   - component: {fileID: 6706472652116737292}
+  - component: {fileID: 13801710691864201}
   m_Layer: 0
   m_Name: BonusMoney
   m_TagString: Bonus
@@ -166,3 +167,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.3137255}
   m_EffectDistance: {x: -5, y: 7}
   m_UseGraphicAlpha: 1
+--- !u!114 &13801710691864201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8520050891739744424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784f4bc6017c88046b5b77fcbb5b2723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels: 000000001900000032000000
+  sprites:
+  - {fileID: 21300000, guid: b812b2d193945084485d18369127ff19, type: 3}
+  - {fileID: 21300000, guid: 5354db22fcc0ad24d8eb3c0a4535f17c, type: 3}
+  - {fileID: 21300000, guid: 58895291260c40840ab2adc2c157deb1, type: 3}

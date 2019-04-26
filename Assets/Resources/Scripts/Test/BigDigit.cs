@@ -388,9 +388,9 @@ public class BigDigit
         {
             Exponent = 0;
         }
-        else if (Math.Abs(Mantissa) > 10d)
+        else if (Math.Abs(Mantissa) >= 10d)
         {
-            while (Math.Abs(Mantissa) > 10d)
+            while (Math.Abs(Mantissa) >= 10d)
             {
                 Mantissa /= 10d;
                 Exponent++;
