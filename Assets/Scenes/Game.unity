@@ -27092,10 +27092,10 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 618b96cbb5091b74cae4a9215e7cb84f, type: 3}
   - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
-  - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
-  - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
-  - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
-  - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
+  - {fileID: 21300000, guid: 04696d5a912ecc143aad653dfb58cfb6, type: 3}
+  - {fileID: 21300000, guid: a9937f875dc20dc4d83e8aa480d5818d, type: 3}
+  - {fileID: 21300000, guid: a9937f875dc20dc4d83e8aa480d5818d, type: 3}
+  - {fileID: 21300000, guid: a9937f875dc20dc4d83e8aa480d5818d, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
@@ -50488,7 +50488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.0078125}
   m_SizeDelta: {x: 1080, y: 9744}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1233723226
@@ -59407,11 +59407,11 @@ MonoBehaviour:
   levels: 00000000360000003a0000003e0000004300000048000000
   sprites:
   - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
-  - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
+  - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
+  - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
+  - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
+  - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
+  - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}

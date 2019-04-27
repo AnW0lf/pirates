@@ -80,7 +80,7 @@ public class IslandSpriteController : MonoBehaviour
 
     private IEnumerator Change()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.5f);
+        WaitForSeconds wait = new WaitForSeconds(0.25f);
 
         do
         {
