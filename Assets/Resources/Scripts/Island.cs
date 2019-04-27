@@ -40,9 +40,24 @@ public class Island
             PlayerPrefs.SetInt("Level", 1);
         Level = PlayerPrefs.GetInt("Level");
 
+        //Проверка на старый формат Exp
+        long oldExp = 0;
+        if (PlayerPrefs.HasKey("Exp"))
+        {
+            try
+            {
+                oldExp = PlayerPrefs.GetInt("Exp");
+            }
+            catch
+            {
+                oldExp = long.Parse(PlayerPrefs.GetString("Exp"));
+            }
+            PlayerPrefs.DeleteKey("Exp");
+        }
+
         if (!PlayerPrefs.HasKey("Exp"))
-            PlayerPrefs.SetString("Exp", "1");
-        Exp = long.Parse(PlayerPrefs.GetString("Exp"));
+            PlayerPrefs.SetString("Exp", "0");
+        Exp = long.Parse(PlayerPrefs.GetString("Exp")) + oldExp;
 
         if (!PlayerPrefs.HasKey("StartExp"))
             PlayerPrefs.SetString("StartExp", "150");
