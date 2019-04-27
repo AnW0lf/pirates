@@ -4770,7 +4770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 553d5c1e02d51a24699f5be39c59bb93, type: 3}
-  minLvl: 29
+  minLvl: 28
   shipDescription: Little boy with a great power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -14509,7 +14509,7 @@ MonoBehaviour:
   - {fileID: 1762622934}
   - {fileID: 512118582}
   - {fileID: 2144215061}
-  levels: 1b0000001f00000023000000280000002c000000
+  levels: 1b0000001e00000022000000260000002b000000
   modifiers:
   - 2
   - 2
@@ -22535,7 +22535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
-  minLvl: 42
+  minLvl: 41
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -44775,7 +44775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: e309b5101279c1e4d92c5e7fbcde1ec9, type: 3}
-  minLvl: 33
+  minLvl: 32
   shipDescription: Professional wave tamer.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -66381,7 +66381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 23ec1e1e7c6de7d4f966bff979f756ee, type: 3}
-  minLvl: 37
+  minLvl: 36
   shipDescription: Synergy of beauty and power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,

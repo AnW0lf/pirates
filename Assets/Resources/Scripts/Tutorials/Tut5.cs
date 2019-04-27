@@ -6,7 +6,7 @@ public class Tut5 : MonoBehaviour
 {
     private Island island;
     private bool active;
-    private int maxExp;
+    private long maxExp;
 
     private void Awake()
     {

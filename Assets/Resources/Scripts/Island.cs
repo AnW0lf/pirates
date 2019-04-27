@@ -92,18 +92,18 @@ public class Island
         return false;
     }
 
-    public int GetMaxExp()
+    public long GetMaxExp()
     {
         if (Level == 1)
-            return (int)(StartExp * Mathf.Pow(Level, ExpModifier) / 1.5f);
+            return (long)(StartExp * Mathf.Pow(Level, ExpModifier) / 1.5f);
         else if (Level <= 18)
-            return (int)(StartExp * Mathf.Pow(Level, ExpModifier));
+            return (long)(StartExp * Mathf.Pow(Level, ExpModifier));
         else if (Level > 18 && Level <= 25)
-            return (int)(StartExp * Mathf.Pow(18, ExpModifier));
+            return (long)(StartExp * Mathf.Pow(18, ExpModifier));
         else if (Level > 25 && Level <= 50)
-            return (int)(StartExp * Mathf.Pow(Level, ExpModifier) * 12f * (Level - 25));
+            return (long)(StartExp * Mathf.Pow(Level, ExpModifier) * 12f * (Level - 25));
         else
-            return (int)(StartExp * Mathf.Pow(Level, ExpModifier) * 12000f * (Level - 50));
+            return (long)(StartExp * Mathf.Pow(Level, ExpModifier) * 12000f * (Level - 50));
     }
 
     public int GetParameter(string parameter, int useless)
