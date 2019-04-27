@@ -24,13 +24,13 @@ public class GameLevelFadeManager : MonoBehaviour
     {
         if (level > comingSoon)
         {
-            text.text = "coming soon";
+            text.text = "COMING SOON";
             text.prefix = "";
         }
         else
         {
             text.text = level.ToString();
-            text.prefix = "Level";
+            text.prefix = "Level ";
         }
         wheel.SetActive(false);
         bonuses.SetActive(false);
