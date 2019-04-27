@@ -148,7 +148,7 @@ public class PierManager : MonoBehaviour
         ship.GetComponent<Ship>()._icon.GetComponent<ShipClick>().lifebuoys = lifebuoys;
         ship.GetComponent<Ship>()
             .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward(), islandNumber, shipName);
-        ship.GetComponentInChildren<ShipTimer>().color = color;
+        ship.GetComponentInChildren<ShipClick>().color = color;
     }
 
     /// <summary>

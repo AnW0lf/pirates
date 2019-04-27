@@ -9,8 +9,8 @@ public class Island
     //_______________________________________________________________________________
     public BigDigit Money { get; private set; }
     public int Level { get; private set; }
-    public int Exp { get; private set; }
-    public int StartExp { get; private set; }
+    public long Exp { get; private set; }
+    public long StartExp { get; private set; }
     public float ExpModifier { get; private set; }
 
     private List<string> parameters;
@@ -41,12 +41,12 @@ public class Island
         Level = PlayerPrefs.GetInt("Level");
 
         if (!PlayerPrefs.HasKey("Exp"))
-            PlayerPrefs.SetInt("Exp", 0);
-        Exp = PlayerPrefs.GetInt("Exp");
+            PlayerPrefs.SetString("Exp", "1");
+        Exp = long.Parse(PlayerPrefs.GetString("Exp"));
 
         if (!PlayerPrefs.HasKey("StartExp"))
-            PlayerPrefs.SetInt("StartExp", 150);
-        StartExp = PlayerPrefs.GetInt("StartExp");
+            PlayerPrefs.SetString("StartExp", "150");
+        StartExp = long.Parse(PlayerPrefs.GetString("StartExp"));
 
         if (!PlayerPrefs.HasKey("ExpModifier"))
             PlayerPrefs.SetFloat("ExpModifier", 1.85f);
@@ -58,8 +58,8 @@ public class Island
         SetParameter("MoneyMantissa", (float)Money.Mantissa);
         SetParameter("MoneyExponent", (int)Money.Exponent);
         PlayerPrefs.SetInt("Level", Level);
-        PlayerPrefs.SetInt("Exp", Exp);
-        PlayerPrefs.SetInt("StartExp", StartExp);
+        PlayerPrefs.SetString("Exp", Exp.ToString());
+        PlayerPrefs.SetString("StartExp", StartExp.ToString());
         PlayerPrefs.SetFloat("ExpModifier", ExpModifier);
     }
 

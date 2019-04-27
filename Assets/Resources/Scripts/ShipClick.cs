@@ -9,18 +9,28 @@ public class ShipClick : MonoBehaviour
     public Ship ship;
     public LifebuoyManager lifebuoys;
     public GameObject flyingText;
+    public Transform pointer, arrow;
+    public Image clock;
+    public Color color;
+    public TrailRenderer trail;
+
     private GameObject _flyingText;
     private Island island;
+    private Camera cam;
+    private Vector3 startPos;
+    private bool isTimerActive;
+    private string borderName;
 
     private void Awake()
     {
         island = Island.Instance();
+        cam = Camera.main;
     }
 
     // Собираем бонус
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Bonus"))
+        if (other.gameObject.CompareTag("Bonus") && !isTimerActive)
         {
             other.gameObject.GetComponentInParent<BonusPoint>().active = false;
 
@@ -56,5 +66,44 @@ public class ShipClick : MonoBehaviour
 
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("Border") && !isTimerActive)
+        {
+            borderName = other.gameObject.name;
+            Invoke("SwitchEmmiting", 0.15f);
+            if (other.gameObject.name.Equals("RightBorder") || other.gameObject.name.Equals("LeftBorder"))
+                StartCoroutine(Timer(ship.GetRaidTime() + 1.5f, true));
+            else
+                StartCoroutine(Timer(ship.GetRaidTime(), false));
+        }
+        else if (other.CompareTag("Border") && isTimerActive && borderName == other.gameObject.name)
+        {
+            borderName = "";
+            Invoke("SwitchEmmiting", 0.4f);
+            isTimerActive = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;
+        }
+    }
+
+    private IEnumerator Timer(float time, bool isSide)
+    {
+        isTimerActive = true;
+        arrow.GetComponent<Image>().color = color;
+        pointer.gameObject.SetActive(true);
+        float height = 2f * cam.orthographicSize, width = height * cam.aspect, xPos = transform.position.x, yPos = transform.position.y;
+        Vector3 pointerPos = new Vector3(isSide ? (xPos > 0f ? width / 2f : -width / 2f) : xPos,
+            isSide ? yPos : (yPos > 0f ? height / 2f - 0.5f : -height / 2f + 1.7f), transform.position.z);
+        pointer.position = pointerPos;
+        pointer.eulerAngles = transform.eulerAngles;
+        for (float i = 0f; i < time; i += Time.deltaTime)
+        {
+            clock.fillAmount = i / time;
+            yield return null;
+        }
+        pointer.gameObject.SetActive(false);
+    }
+
+    private void SwitchEmmiting()
+    {
+        trail.emitting = !trail.emitting;
     }
 }

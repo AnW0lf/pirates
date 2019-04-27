@@ -12,7 +12,7 @@ public class ScreenLevel : MonoBehaviour
     public int minLevel, maxLevel;
 
     private Island island;
-    private int oldExp;
+    private long oldExp;
     private bool filled = false;
 
     private void Awake()
