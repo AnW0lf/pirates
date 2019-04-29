@@ -41,6 +41,7 @@ public class IslandController : MonoBehaviour
     {
         if (!clicked)
         {
+            Taptic.Light();
             clicked = true;
             StopAllCoroutines();
             StartCoroutine(GenerateMoney());

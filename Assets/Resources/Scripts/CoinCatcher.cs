@@ -56,6 +56,8 @@ public class CoinCatcher : MonoBehaviour
     {
         island.ExpUp(money);
 
+        Taptic.Medium();
+
         //Write Time for Offline Reward
         PlayerPrefs.SetString("QuitTime", DateTime.Now.ToString());
 

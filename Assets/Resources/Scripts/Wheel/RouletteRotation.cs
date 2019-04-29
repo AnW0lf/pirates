@@ -145,6 +145,8 @@ public class RouletteRotation : MonoBehaviour
 
     private void Reward()
     {
+        Taptic.Heavy();
+
         sectors[section].Reward();
 
         _flyingReward = Instantiate(flyingReward, transform.parent.transform);
