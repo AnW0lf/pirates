@@ -53,6 +53,15 @@ public class Island
             PlayerPrefs.SetString("Exp", "0");
         Exp = long.Parse(PlayerPrefs.GetString("Exp"));
 
+        //Проверка на старый формат StartExp
+        if (!PlayerPrefs.HasKey("OldStartExpDeleted"))
+            PlayerPrefs.SetInt("OldStartExpDeleted", 0);
+        if (PlayerPrefs.GetInt("OldStartExpDeleted") == 0)
+        {
+            PlayerPrefs.DeleteKey("StartExp");
+            PlayerPrefs.SetInt("OldStartExpDeleted", 1);
+        }
+
         if (!PlayerPrefs.HasKey("StartExp"))
             PlayerPrefs.SetString("StartExp", "150");
         StartExp = long.Parse(PlayerPrefs.GetString("StartExp"));
@@ -72,13 +81,12 @@ public class Island
         PlayerPrefs.SetFloat("ExpModifier", ExpModifier);
     }
 
-    public void SetSettings(int money, int level, int exp, int startExp, int curExp, float expModifier)
+    public void SetSettings(int money, int level, long exp, long startExp, float expModifier)
     {
         PlayerPrefs.SetInt("Money", money);
         PlayerPrefs.SetInt("Level", level);
-        PlayerPrefs.SetInt("Exp", exp);
-        PlayerPrefs.SetInt("StartExp", startExp);
-        PlayerPrefs.SetInt("CurExp", curExp);
+        PlayerPrefs.SetString("Exp", Exp.ToString());
+        PlayerPrefs.SetString("StartExp", StartExp.ToString());
         PlayerPrefs.SetFloat("ExpModifier", expModifier);
         Load();
     }
