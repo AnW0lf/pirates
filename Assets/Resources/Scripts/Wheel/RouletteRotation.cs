@@ -145,7 +145,7 @@ public class RouletteRotation : MonoBehaviour
 
     private void Reward()
     {
-        Taptic.Heavy();
+        //Taptic.Heavy();
 
         sectors[section].Reward();
 
