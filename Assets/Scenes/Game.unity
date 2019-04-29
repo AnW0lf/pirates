@@ -81372,6 +81372,8 @@ MonoBehaviour:
   lifebuoys:
   - {fileID: 502075262}
   - {fileID: 999593072}
+  - {fileID: 718200915}
+  - {fileID: 1805108512}
 --- !u!1 &2044753361
 GameObject:
   m_ObjectHideFlags: 0
