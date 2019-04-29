@@ -27179,8 +27179,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
   - {fileID: 21300000, guid: 04696d5a912ecc143aad653dfb58cfb6, type: 3}
   - {fileID: 21300000, guid: a9937f875dc20dc4d83e8aa480d5818d, type: 3}
-  - {fileID: 21300000, guid: a9937f875dc20dc4d83e8aa480d5818d, type: 3}
-  - {fileID: 21300000, guid: a9937f875dc20dc4d83e8aa480d5818d, type: 3}
+  - {fileID: 21300000, guid: 21648498192d1be498b45413c00a39fc, type: 3}
+  - {fileID: 21300000, guid: 18388327826c6d74fb1794bd0c9cd3b0, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
@@ -59712,10 +59712,10 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
   - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
-  - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
-  - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
-  - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
-  - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
+  - {fileID: 21300000, guid: 01ce047614d665e4ab17e025a59bab01, type: 3}
+  - {fileID: 21300000, guid: 01ce047614d665e4ab17e025a59bab01, type: 3}
+  - {fileID: 21300000, guid: 01ce047614d665e4ab17e025a59bab01, type: 3}
+  - {fileID: 21300000, guid: 01ce047614d665e4ab17e025a59bab01, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
