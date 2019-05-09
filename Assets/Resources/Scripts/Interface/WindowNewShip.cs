@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewShipWindow : MonoBehaviour
+public class WindowNewShip : WindowBase
 {
-    public GameObject fade, window;
-
-    public Text shipName;
-    public Image shipIcon;
-    public Button lookBtn;
-    public Transform[] piersArray;
+    [SerializeField] protected Text shipName;
+    [SerializeField] protected Image shipIcon;
+    [SerializeField] protected Transform[] piersArray;
 
     private Island island;
 
@@ -19,13 +16,7 @@ public class NewShipWindow : MonoBehaviour
         island = Island.Instance();
     }
 
-    private void Start()
-    {
-        fade.SetActive(false);
-        window.SetActive(false);
-    }
-
-    public void Open()
+    public override void Open(object[] args)
     {
         foreach (Transform piers in piersArray)
         {
@@ -33,13 +24,19 @@ public class NewShipWindow : MonoBehaviour
             {
                 if (pier.minLvl == island.Level)
                 {
-                    fade.SetActive(true);
-                    window.SetActive(true);
+                    base.Open(args);
                     shipName.text = pier.shipName;
                     shipIcon.sprite = pier.shipIcon;
                     break;
                 }
             }
         }
+        if (!Opened) Close();
+    }
+
+    public override void Close()
+    {
+        base.Close();
+        transform.parent.GetComponent<InterfaceIerarchy>().Next();
     }
 }

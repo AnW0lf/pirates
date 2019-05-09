@@ -50,12 +50,15 @@ public class IslandController : MonoBehaviour
 
     public BigDigit GetReward()
     {
+        BigDigit digit;
         if (island.Level <= 25)
-            return new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f);
         else if (island.Level > 25 && island.Level <= 50)
-            return new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f) * (island.Level - 25);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f) * (island.Level - 25);
         else
-            return new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) * (island.Level - 50);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) * (island.Level - 50);
+        if (clicked) return digit * 1.5f;
+        return digit;
     }
 
     private IEnumerator GenerateMoney()
@@ -70,13 +73,13 @@ public class IslandController : MonoBehaviour
             _clickEffect.GetComponent<RectTransform>().offsetMax = Vector2.up * 100f;
             _clickEffect.SetActive(true);
         }
-        else if ((delay - (island.GetParameter("Level", 0) - 1) / 10) > tapDelay)
-        {
-            time = delay - (island.GetParameter("Level", 0) - 1) / 50;
-        }
+        //else if ((delay - (island.GetParameter("Level", 0) - 1) / 10) > tapDelay)
+        //{
+        //    time = delay - (island.GetParameter("Level", 0) - 1) / 50;
+        //}
         else
         {
-            time = tapDelay;
+            time = tapDelay * 1.6f;
         }
 
         anim.Play("OnePulse");

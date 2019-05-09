@@ -9,7 +9,7 @@ public class WheelUnlock : MonoBehaviour
 
     private Island island;
     private Button btn;
-    public GameObject unlockMenu, viewport; 
+    public GameObject viewport; 
 
     private void Awake()
     {
@@ -33,15 +33,10 @@ public class WheelUnlock : MonoBehaviour
     {
         if (island == null) island = Island.Instance();
         if (viewport == null) viewport = transform.GetChild(0).gameObject;
-        if (island.Level >= minLevel && !viewport.activeInHierarchy)
-        {
-            unlockMenu.SetActive(true);
-        }
     }
 
     public void UnlockWheel()
     {
         viewport.SetActive(true);
-        //this.enabled = false;
     }
 }
