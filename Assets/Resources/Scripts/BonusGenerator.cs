@@ -78,6 +78,7 @@ public class BonusGenerator : MonoBehaviour
             _bonus.GetComponent<RectTransform>().sizeDelta.x / 2f), Random.Range(-_bonus.GetComponent<RectTransform>().sizeDelta.y / 2f,
             _bonus.GetComponent<RectTransform>().sizeDelta.y / 2f), _bonus.transform.localPosition.z);
         child.GetComponent<BonusPoint>().active = true;
+        _bonus.GetComponent<Animation>().Play("BonusAppear");
     }
 
     public void Bonus(int bonus, int count)

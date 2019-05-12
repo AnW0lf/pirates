@@ -13,6 +13,34 @@ public class BonusBehavior : MonoBehaviour
 
     private GameObject _textOnClick;
 
+    private void Start()
+    {
+       // GetComponent<Animation>().Play("BonusAppear");
+    }
+
+    private void Update()
+    {
+
+        if (!GetComponent<Animation>().isPlaying)
+        {
+            try
+            {
+                GetComponent<Animation>().Play("BonusWaves");
+            }
+            catch { }
+            try
+            {
+                GetComponent<Animation>().Play("BonusMove");
+            }
+            catch { }
+            try
+            {
+                GetComponent<Animation>().Play("BonusRotation");
+            }
+            catch { }
+        }
+    }
+
     private void OnMouseUp()
     {
         _textOnClick = Instantiate(textOnClickObject, gameObject.transform);

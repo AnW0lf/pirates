@@ -65,7 +65,7 @@ public class PolundraTimer : MonoBehaviour
         bool b() { return anim.IsPlaying("PolundraAnimation"); }
         yield return new WaitWhile(b);
 
-        WaitForSeconds sec = new WaitForSeconds(1f);
+        WaitForSeconds sec = new WaitForSeconds(0.2f);
         for (int i = 0; i < 10; i++)
         {
             for(int j = 0; j <= island.Level / 25 && j < bgs.Count; j++)
