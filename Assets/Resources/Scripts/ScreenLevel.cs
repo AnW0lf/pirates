@@ -30,7 +30,7 @@ public class ScreenLevel : MonoBehaviour
 
     private void OnEnable()
     {
-        if(island == null) island = Island.Instance();
+        if (island == null) island = Island.Instance();
 
         EventManager.Subscribe("AddExp", ShowFill);
         oldExp = island.Exp;
@@ -56,11 +56,15 @@ public class ScreenLevel : MonoBehaviour
         else
         {
             title.text = "Level " + (island.Level - minLevel).ToString() + "/25";
-            if(oldExp < island.GetMaxExp())
+            if (oldExp < island.GetMaxExp())
             {
-            if (filled)
-                StopAllCoroutines();
-            StartCoroutine(Fill());
+                if (filled)
+                    StopAllCoroutines();
+                StartCoroutine(Fill());
+            }
+            else if (minLevel <= island.Level && maxLevel >= island.Level && island.Exp >= island.GetMaxExp())
+            {
+                button.SetActive(true);
             }
         }
     }

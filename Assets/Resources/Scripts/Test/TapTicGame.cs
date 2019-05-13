@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class TapTicGame : MonoBehaviour
 {
-    [SerializeField] Image tapticBackground;
-    [SerializeField] Image tapticIcon;
-    [SerializeField] Color backgroundOn;
-    [SerializeField] Color backgroundOff;
-    [SerializeField] Color iconOn;
-    [SerializeField] Color iconOff;
+    [SerializeField] Image tapticBackground = null;
+    [SerializeField] Image tapticIcon = null;
+    [SerializeField] Color backgroundOn = Color.green;
+    [SerializeField] Color backgroundOff = Color.red;
+    [SerializeField] Color iconOn = Color.green;
+    [SerializeField] Color iconOff = Color.red;
 
     public enum VibrationType { WARNING, FAILURE, SUCCESS, LIGHT, MEDIUM, HEAVY, DEFAULT, VIBRATE, SELECTION}
 

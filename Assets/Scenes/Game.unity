@@ -3438,6 +3438,11 @@ MonoBehaviour:
   rays: {fileID: 254132464}
   text: {fileID: 884513256}
   btn: {fileID: 367178569}
+  wheels:
+  - {fileID: 2057804695}
+  - {fileID: 393756848}
+  - {fileID: 1599426458}
+  - {fileID: 2021181328}
 --- !u!1 &75261509
 GameObject:
   m_ObjectHideFlags: 0

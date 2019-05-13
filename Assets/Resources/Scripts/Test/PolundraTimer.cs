@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class PolundraTimer : MonoBehaviour
 {
-    [SerializeField] private Text timer;
-    [SerializeField] private Image fill;
-    [SerializeField] private int minLevel;
-    [SerializeField] private int seconds;
-    [SerializeField] private GameObject pack, message;
-    [SerializeField] List<BonusGenerator> bgs;
+    [SerializeField] private Text timer = null;
+    [SerializeField] private Image fill = null;
+    [SerializeField] private int minLevel = 0;
+    [SerializeField] private int seconds = 0;
+    [SerializeField] private GameObject pack = null, message = null;
+    [SerializeField] List<BonusGenerator> bgs = null;
 
     private Island island;
 

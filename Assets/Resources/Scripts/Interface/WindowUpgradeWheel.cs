@@ -6,10 +6,17 @@ using UnityEngine.UI;
 
 public class WindowUpgradeWheel : WindowBase
 {
-    public Text text;
-    public Button btn;
+    [SerializeField] private Text text = null;
+    [SerializeField] private Button btn = null;
+    [SerializeField] private List<RouletteRotation> wheels = null;
 
     private WheelButton wb = null;
+    private Island island;
+
+    private void Awake()
+    {
+        island = Island.Instance();
+    }
 
     private void Start()
     {
@@ -24,15 +31,27 @@ public class WindowUpgradeWheel : WindowBase
 
     public override void Open(object[] args)
     {
-
-        //float mod = (float)arg0[0];
-        base.Open(args);
-        btn.onClick.RemoveAllListeners();
-        if (wb != null)
-            btn.onClick.AddListener(wb.WheelSwitch);
-        btn.onClick.AddListener(Close);
-        //text.text = "All rewards increased by " + mod.ToString();
-        text.text = "Rewards Upgraded!";
+        bool requaredLevel()
+        {
+            foreach (RouletteRotation w in wheels)
+            {
+                if (w.levels.Contains(island.Level))
+                    return true;
+            }
+            return false;
+        }
+        if (requaredLevel())
+        {
+            //float mod = (float)arg0[0];
+            base.Open(args);
+            btn.onClick.RemoveAllListeners();
+            if (wb != null)
+                btn.onClick.AddListener(wb.WheelSwitch);
+            btn.onClick.AddListener(Close);
+            //text.text = "All rewards increased by " + mod.ToString();
+            text.text = "Rewards Upgraded!";
+        }
+        else Close();
     }
 
     public override void Close()
