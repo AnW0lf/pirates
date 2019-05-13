@@ -12,7 +12,7 @@ public class ScreenLevel : MonoBehaviour
     public int minLevel, maxLevel;
 
     private Island island;
-    private long oldExp;
+    private BigDigit oldExp;
     private bool filled = false;
 
     private void Awake()
@@ -87,11 +87,11 @@ public class ScreenLevel : MonoBehaviour
         title.GetComponent<Animation>().Stop();
         progressBar.Play();
         title.GetComponent<Animation>().Play();
-        fill.fillAmount = (float)oldExp / island.GetMaxExp();
+        fill.fillAmount = (oldExp / island.GetMaxExp()).ToFloat();
 
         for (int i = 0; i < 25; i++)
         {
-            fill.fillAmount = ((float)oldExp + i * ((float)(island.Exp - oldExp) / 24f)) / island.GetMaxExp();
+            fill.fillAmount = ((oldExp + i * ((island.Exp - oldExp) / 24f)) / island.GetMaxExp()).ToFloat();
             yield return wait;
         }
 

@@ -24,6 +24,6 @@ public class ProgressBarFill : MonoBehaviour
     private void UpdateInfo()
     {
         text.text = "Level " + island.Level;
-        fill.fillAmount = (float)island.Exp / island.GetMaxExp();
+        fill.fillAmount = (island.Exp / island.GetMaxExp()).ToFloat();
     }
 }

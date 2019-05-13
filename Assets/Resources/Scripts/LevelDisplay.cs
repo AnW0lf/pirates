@@ -31,18 +31,18 @@ public class LevelDisplay : MonoBehaviour
 
     private void UpdateProgress(object[] arg0)
     {
-        fill.fillAmount = (float)island.Exp / island.GetMaxExp();
+        fill.fillAmount = (island.Exp / island.GetMaxExp()).ToFloat();
     }
 
     private void UpdateTitle(object[] arg0)
     {
-        fill.fillAmount = (float)island.Exp / island.GetMaxExp();
+        fill.fillAmount = (island.Exp / island.GetMaxExp()).ToFloat();
         title.text = "Level " + island.Level;
     }
 
     private void UpdateInfo()
     {
-        fill.fillAmount = (float)island.Exp / island.GetMaxExp();
+        fill.fillAmount = (island.Exp / island.GetMaxExp()).ToFloat();
         title.text = "Level " + island.Level;
     }
 

@@ -121,6 +121,46 @@ public class BigDigit
         return false;
     }
 
+    public static bool operator >(BigDigit other, int val)
+    {
+        return other > new BigDigit(val);
+    }
+
+    public static bool operator >(BigDigit other, float val)
+    {
+        return other > new BigDigit(val);
+    }
+
+    public static bool operator >(BigDigit other, long val)
+    {
+        return other > new BigDigit(val);
+    }
+
+    public static bool operator >(BigDigit other, double val)
+    {
+        return other > new BigDigit(val);
+    }
+
+    public static bool operator >(int val, BigDigit other)
+    {
+        return new BigDigit(val) > other;
+    }
+
+    public static bool operator >(float val, BigDigit other)
+    {
+        return new BigDigit(val) > other;
+    }
+
+    public static bool operator >(long val, BigDigit other)
+    {
+        return new BigDigit(val) > other;
+    }
+
+    public static bool operator >(double val, BigDigit other)
+    {
+        return new BigDigit(val) > other;
+    }
+
     public static bool operator <(BigDigit first, BigDigit second)
     {
         if (first.Mantissa > 0d && second.Mantissa <= 0d
@@ -136,6 +176,46 @@ public class BigDigit
             else return false;
         }
         return false;
+    }
+
+    public static bool operator <(BigDigit other, int val)
+    {
+        return other < new BigDigit(val);
+    }
+
+    public static bool operator <(BigDigit other, float val)
+    {
+        return other < new BigDigit(val);
+    }
+
+    public static bool operator <(BigDigit other, long val)
+    {
+        return other < new BigDigit(val);
+    }
+
+    public static bool operator <(BigDigit other, double val)
+    {
+        return other < new BigDigit(val);
+    }
+
+    public static bool operator <(int val, BigDigit other)
+    {
+        return new BigDigit(val) < other;
+    }
+
+    public static bool operator <(float val, BigDigit other)
+    {
+        return new BigDigit(val) < other;
+    }
+
+    public static bool operator <(long val, BigDigit other)
+    {
+        return new BigDigit(val) < other;
+    }
+
+    public static bool operator <(double val, BigDigit other)
+    {
+        return new BigDigit(val) < other;
     }
 
     public static bool operator >=(BigDigit first, BigDigit second)
@@ -154,6 +234,46 @@ public class BigDigit
         return false;
     }
 
+    public static bool operator >=(BigDigit other, int val)
+    {
+        return other >= new BigDigit(val);
+    }
+
+    public static bool operator >=(BigDigit other, float val)
+    {
+        return other >= new BigDigit(val);
+    }
+
+    public static bool operator >=(BigDigit other, long val)
+    {
+        return other >= new BigDigit(val);
+    }
+
+    public static bool operator >=(BigDigit other, double val)
+    {
+        return other >= new BigDigit(val);
+    }
+
+    public static bool operator >=(int val, BigDigit other)
+    {
+        return new BigDigit(val) >= other;
+    }
+
+    public static bool operator >=(float val, BigDigit other)
+    {
+        return new BigDigit(val) >= other;
+    }
+
+    public static bool operator >=(long val, BigDigit other)
+    {
+        return new BigDigit(val) >= other;
+    }
+
+    public static bool operator >=(double val, BigDigit other)
+    {
+        return new BigDigit(val) >= other;
+    }
+
     public static bool operator <=(BigDigit first, BigDigit second)
     {
         if (first.Mantissa >= 0d && second.Mantissa <= 0d
@@ -170,14 +290,139 @@ public class BigDigit
         return false;
     }
 
+    public static bool operator <=(BigDigit other, int val)
+    {
+        return other <= new BigDigit(val);
+    }
+
+    public static bool operator <=(BigDigit other, float val)
+    {
+        return other <= new BigDigit(val);
+    }
+
+    public static bool operator <=(BigDigit other, long val)
+    {
+        return other <= new BigDigit(val);
+    }
+
+    public static bool operator <=(BigDigit other, double val)
+    {
+        return other <= new BigDigit(val);
+    }
+
+    public static bool operator <=(int val, BigDigit other)
+    {
+        return new BigDigit(val) <= other;
+    }
+
+    public static bool operator <=(float val, BigDigit other)
+    {
+        return new BigDigit(val) <= other;
+    }
+
+    public static bool operator <=(long val, BigDigit other)
+    {
+        return new BigDigit(val) <= other;
+    }
+
+    public static bool operator <=(double val, BigDigit other)
+    {
+        return new BigDigit(val) <= other;
+    }
+
     public static bool operator ==(BigDigit first, BigDigit second)
     {
         return first.Equals(second);
     }
 
+    public static bool operator ==(BigDigit other, int val)
+    {
+        return other == new BigDigit(val);
+    }
+
+    public static bool operator ==(BigDigit other, float val)
+    {
+        return other == new BigDigit(val);
+    }
+
+    public static bool operator ==(BigDigit other, long val)
+    {
+        return other == new BigDigit(val);
+    }
+
+    public static bool operator ==(BigDigit other, double val)
+    {
+        return other == new BigDigit(val);
+    }
+
+    public static bool operator ==(int val, BigDigit other)
+    {
+        return new BigDigit(val) == other;
+    }
+
+    public static bool operator ==(float val, BigDigit other)
+    {
+        return new BigDigit(val) == other;
+    }
+
+    public static bool operator ==(long val, BigDigit other)
+    {
+        return new BigDigit(val) == other;
+    }
+
+    public static bool operator ==(double val, BigDigit other)
+    {
+        return new BigDigit(val) == other;
+    }
+
     public static bool operator !=(BigDigit first, BigDigit second)
     {
         return !first.Equals(second);
+    }
+
+    public static bool operator !=(BigDigit other, int val)
+    {
+        return other != new BigDigit(val);
+    }
+
+    public static bool operator !=(BigDigit other, float val)
+    {
+        return other != new BigDigit(val);
+    }
+
+    public static bool operator !=(BigDigit other, long val)
+    {
+        return other != new BigDigit(val);
+    }
+
+    public static bool operator !=(BigDigit other, double val)
+    {
+        return other != new BigDigit(val);
+    }
+
+    public static bool operator !=(int val, BigDigit other)
+    {
+        return new BigDigit(val) != other;
+    }
+
+    public static bool operator !=(float val, BigDigit other)
+    {
+        return new BigDigit(val) != other;
+    }
+
+    public static bool operator !=(long val, BigDigit other)
+    {
+        return new BigDigit(val) != other;
+    }
+
+    public static bool operator !=(double val, BigDigit other)
+    {
+        return new BigDigit(val) != other;
+    }
+
+    public static BigDigit operator *(BigDigit first, BigDigit second)
+    {
+        return new BigDigit(first.Mantissa * second.Mantissa, first.Exponent + second.Exponent);
     }
 
     public static BigDigit operator *(BigDigit other, int val)
@@ -218,6 +463,51 @@ public class BigDigit
     public static BigDigit operator *(double val, BigDigit other)
     {
         return new BigDigit(other.Mantissa * val, other.Exponent);
+    }
+
+    public static BigDigit operator /(BigDigit first, BigDigit second)
+    {
+        return new BigDigit(first.Mantissa / second.Mantissa, first.Exponent - second.Exponent);
+    }
+
+    public static BigDigit operator /(BigDigit other, int val)
+    {
+        return other / new BigDigit(val);
+    }
+
+    public static BigDigit operator /(BigDigit other, float val)
+    {
+        return other / new BigDigit(val);
+    }
+
+    public static BigDigit operator /(BigDigit other, long val)
+    {
+        return other / new BigDigit(val);
+    }
+
+    public static BigDigit operator /(BigDigit other, double val)
+    {
+        return other / new BigDigit(val);
+    }
+
+    public static BigDigit operator /(int val, BigDigit other)
+    {
+        return new BigDigit(val) / other;
+    }
+
+    public static BigDigit operator /(float val, BigDigit other)
+    {
+        return new BigDigit(val) / other;
+    }
+
+    public static BigDigit operator /(long val, BigDigit other)
+    {
+        return new BigDigit(val) / other;
+    }
+
+    public static BigDigit operator /(double val, BigDigit other)
+    {
+        return new BigDigit(val) / other;
     }
 
     public static BigDigit operator -(BigDigit other)
@@ -435,5 +725,15 @@ public class BigDigit
         hashCode = hashCode * -1521134295 + Exponent.GetHashCode();
         hashCode = hashCode * -1521134295 + EqualityComparer<string[]>.Default.GetHashCode(postfix);
         return hashCode;
+    }
+
+    public float ToFloat()
+    {
+        return (float)(Mantissa * Math.Pow(10d, Exponent));
+    }
+
+    public double ToDouble()
+    {
+        return Mantissa * Math.Pow(10d, Exponent);
     }
 }
