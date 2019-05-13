@@ -11,7 +11,7 @@ public class IslandSpriteController : MonoBehaviour
     public GameObject changeSpriteEffectPref;
     public Vector3 effectScale = new Vector3(200f, 200f, 1f);
     public GameObject newShipWindow, wheelUpdateWindow;
-    [SerializeField] private readonly float sizeIncrease = 0.04f;
+    [SerializeField] private float sizeIncrease = 0.03f;
 
     private Image image;
     private Island island;
@@ -39,9 +39,9 @@ public class IslandSpriteController : MonoBehaviour
                 if (levels.Contains(i))
                     return levels.IndexOf(i);
             }
-            return 1;
+            return 0;
         }
-        rect.sizeDelta = Vector2.one * startSizeDelta * mod() * (1f + sizeIncrease);
+        rect.sizeDelta = Vector2.one * startSizeDelta * Mathf.Pow((1f + sizeIncrease), mod());
         EventManager.Subscribe("LevelUp", UpdateInfo);
         InitInfo();
         changeSpriteEffect = Instantiate(changeSpriteEffectPref, transform);
@@ -111,7 +111,7 @@ public class IslandSpriteController : MonoBehaviour
         image.sprite = sprites[levels.IndexOf(island.Level)];
         changeSpriteEffect.SetActive(true);
         anim.Play("UpgradeBonusPulse");
-        rect.sizeDelta = Vector2.one * startSizeDelta * levels.IndexOf(island.Level) * (1f + sizeIncrease);
+        rect.sizeDelta = Vector2.one * startSizeDelta * Mathf.Pow((1f + sizeIncrease), levels.IndexOf(island.Level));
         yield return wait;
         changeSpriteEffect.SetActive(false);
     }
