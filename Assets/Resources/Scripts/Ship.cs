@@ -186,7 +186,7 @@ public class Ship : MonoBehaviour
     }
 
     public void CreateShip(float rise, float angle, float size, Sprite sprite, float speedAngle, float speedLinear
-        , float speedRaidModifier, float raidTime, int reward, int islandNumber, string shipName)
+        , float speedRaidModifier, float raidTime, int reward, int islandNumber, string shipName, IslandController islandController)
     {
         island = Island.Instance();
         SetLocation(rise, angle);
@@ -195,6 +195,7 @@ public class Ship : MonoBehaviour
         SetRaid(raidTime, reward);
         this.islandNumber = islandNumber;
         this.ShipName = shipName;
+        _icon.GetComponent<ShipClick>().islandController = islandController;
     }
 
     public bool isShipRotating()

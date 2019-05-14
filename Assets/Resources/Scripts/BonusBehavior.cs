@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BonusBehavior : MonoBehaviour
 {
-    public bool bonusMoney, bonusSpeed, bonusWheel;
+    public bool bonusMoney, bonusMaterial, bonusSpeed, bonusWheel;
     public int modifier;
 
     public string textOnClick;

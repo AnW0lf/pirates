@@ -4261,6 +4261,7 @@ MonoBehaviour:
   ships: {fileID: 2130923789}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 865b6c35521dbf14ba0b4eae50209839, type: 3}
+  islandController: {fileID: 2044854790}
   lifebuoys: {fileID: 1805108512}
 --- !u!1 &93384482
 GameObject:
@@ -4969,6 +4970,7 @@ MonoBehaviour:
   ships: {fileID: 88929339}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 553d5c1e02d51a24699f5be39c59bb93, type: 3}
+  islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &132635981
 GameObject:
@@ -5379,6 +5381,7 @@ MonoBehaviour:
   ships: {fileID: 453755324}
   color: {r: 1, g: 1, b: 1, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
+  islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &144584688
 GameObject:
@@ -5954,6 +5957,7 @@ MonoBehaviour:
   ships: {fileID: 2130923789}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 0cce8830ff5003f4a8852cce56b80318, type: 3}
+  islandController: {fileID: 2044854790}
   lifebuoys: {fileID: 1805108512}
 --- !u!1 &163898612
 GameObject:
@@ -6306,6 +6310,7 @@ MonoBehaviour:
   ships: {fileID: 2130923789}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 3880b0215df006d4090c56f023601e3d, type: 3}
+  islandController: {fileID: 2044854790}
   lifebuoys: {fileID: 1805108512}
 --- !u!1 &169753729
 GameObject:
@@ -12574,6 +12579,7 @@ MonoBehaviour:
   ships: {fileID: 573140490}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 0cce8830ff5003f4a8852cce56b80318, type: 3}
+  islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &359000855
 RectTransform:
@@ -17135,6 +17141,7 @@ MonoBehaviour:
   ships: {fileID: 2130923789}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 3debab17341b29b4f823a5fa1c242485, type: 3}
+  islandController: {fileID: 2044854790}
   lifebuoys: {fileID: 1805108512}
 --- !u!1 &441818254
 GameObject:
@@ -17931,6 +17938,7 @@ MonoBehaviour:
   ships: {fileID: 2130923789}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  islandController: {fileID: 2044854790}
   lifebuoys: {fileID: 1805108512}
 --- !u!1 &453755323
 GameObject:
@@ -20358,6 +20366,7 @@ MonoBehaviour:
   ships: {fileID: 453755324}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
+  islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &511142907
 GameObject:
@@ -22715,6 +22724,7 @@ MonoBehaviour:
   ships: {fileID: 88929339}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &572901810
 GameObject:
@@ -27616,6 +27626,7 @@ MonoBehaviour:
   ships: {fileID: 573140490}
   color: {r: 1, g: 1, b: 1, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 94d4322c1e08bfc46b4558caa06ac35d, type: 3}
+  islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &677157629
 RectTransform:
@@ -28172,7 +28183,7 @@ MonoBehaviour:
   maxLevel: 100
   levelDifference: 5
   startReward: 1
-  bonusId: 2
+  bonusId: 3
   bg: {fileID: 991487883}
   blackShip: {fileID: 1524385403}
   title: {fileID: 406481275}
@@ -32567,6 +32578,7 @@ MonoBehaviour:
   ships: {fileID: 573140490}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 3debab17341b29b4f823a5fa1c242485, type: 3}
+  islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &793327575
 RectTransform:
@@ -33380,6 +33392,7 @@ MonoBehaviour:
   ships: {fileID: 88929339}
   color: {r: 1, g: 1, b: 1, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 090db8b25ad2f264da41806b63e7aaf3, type: 3}
+  islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!224 &810971561
 RectTransform:
@@ -34053,6 +34066,7 @@ MonoBehaviour:
   ships: {fileID: 453755324}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 4ed1a3a95997ffe469708981b5a30d11, type: 3}
+  islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &821408876
 GameObject:
@@ -37122,6 +37136,7 @@ MonoBehaviour:
   ships: {fileID: 573140490}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &881419878
 RectTransform:
@@ -39238,8 +39253,9 @@ MonoBehaviour:
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
+  - {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef, type: 3}
   - {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6, type: 3}
-  chances: 030000000300000001000000
+  chances: 03000000030000000300000001000000
 --- !u!114 &945456227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39510,8 +39526,9 @@ MonoBehaviour:
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
+  - {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef, type: 3}
   - {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6, type: 3}
-  chances: 030000000300000001000000
+  chances: 03000000030000000300000001000000
 --- !u!224 &950925119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41758,8 +41775,9 @@ MonoBehaviour:
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
+  - {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef, type: 3}
   - {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6, type: 3}
-  chances: 030000000300000001000000
+  chances: 03000000030000000300000001000000
 --- !u!224 &991487884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45281,6 +45299,7 @@ MonoBehaviour:
   ships: {fileID: 88929339}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
   spriteForMenu: {fileID: 21300000, guid: e309b5101279c1e4d92c5e7fbcde1ec9, type: 3}
+  islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &1088094026
 GameObject:
@@ -45847,6 +45866,7 @@ MonoBehaviour:
   ships: {fileID: 88929339}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: dd9a5b62cdd70924797d51eef09c34ca, type: 3}
+  islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!224 &1099386693
 RectTransform:
@@ -46457,6 +46477,7 @@ MonoBehaviour:
   ships: {fileID: 453755324}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 867846aa592926a4399ecac2f3e5112b, type: 3}
+  islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1108124462
 GameObject:
@@ -47866,6 +47887,7 @@ MonoBehaviour:
   ships: {fileID: 573140490}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 3880b0215df006d4090c56f023601e3d, type: 3}
+  islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &1167156850
 RectTransform:
@@ -52924,6 +52946,7 @@ MonoBehaviour:
   ships: {fileID: 453755324}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1273333632
 GameObject:
@@ -56169,6 +56192,7 @@ MonoBehaviour:
   ships: {fileID: 453755324}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 67e39eddf435b3044b857267eb5fb558, type: 3}
+  islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1354556467
 GameObject:
@@ -63215,6 +63239,7 @@ MonoBehaviour:
   ships: {fileID: 2130923789}
   color: {r: 1, g: 1, b: 1, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 94d4322c1e08bfc46b4558caa06ac35d, type: 3}
+  islandController: {fileID: 2044854790}
   lifebuoys: {fileID: 1805108512}
 --- !u!224 &1524385404
 RectTransform:
@@ -67290,7 +67315,7 @@ MonoBehaviour:
   maxLevel: 75
   levelDifference: 5
   startReward: 1
-  bonusId: 2
+  bonusId: 3
   bg: {fileID: 1983624739}
   blackShip: {fileID: 677157628}
   title: {fileID: 604168373}
@@ -67851,6 +67876,7 @@ MonoBehaviour:
   ships: {fileID: 88929339}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 23ec1e1e7c6de7d4f966bff979f756ee, type: 3}
+  islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &1637883430
 GameObject:
@@ -80157,8 +80183,9 @@ MonoBehaviour:
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
+  - {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef, type: 3}
   - {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6, type: 3}
-  chances: 030000000300000001000000
+  chances: 03000000030000000300000001000000
 --- !u!224 &1983624740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -84222,7 +84249,7 @@ MonoBehaviour:
   maxLevel: 25
   levelDifference: 5
   startReward: 1
-  bonusId: 2
+  bonusId: 3
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 609981629}
@@ -86516,6 +86543,7 @@ MonoBehaviour:
   ships: {fileID: 573140490}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 865b6c35521dbf14ba0b4eae50209839, type: 3}
+  islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &2130707102
 RectTransform:
@@ -86926,7 +86954,7 @@ MonoBehaviour:
   maxLevel: 50
   levelDifference: 5
   startReward: 1
-  bonusId: 2
+  bonusId: 3
   bg: {fileID: 950925118}
   blackShip: {fileID: 810971560}
   title: {fileID: 1866948981}

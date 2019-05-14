@@ -72,6 +72,8 @@ public class PierManager : MonoBehaviour
     public Color color;
     [Header("Спрайт для меню")]
     public Sprite spriteForMenu;
+    [Header("Ссылка на остров")]
+    public IslandController islandController = null;
 
     private Island island;
     private GameObject ship;
@@ -147,7 +149,7 @@ public class PierManager : MonoBehaviour
         ship.transform.SetAsFirstSibling();
         ship.GetComponent<Ship>()._icon.GetComponent<ShipClick>().lifebuoys = lifebuoys;
         ship.GetComponent<Ship>()
-            .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward(), islandNumber, shipName);
+            .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward(), islandNumber, shipName, islandController);
         ship.GetComponentInChildren<ShipClick>().color = color;
     }
 

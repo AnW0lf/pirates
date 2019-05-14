@@ -13,6 +13,7 @@ public class ShipClick : MonoBehaviour
     public Image clock;
     public Color color;
     public TrailRenderer trail;
+    public IslandController islandController = null;
 
     private GameObject _flyingText;
     private Island island;
@@ -39,13 +40,21 @@ public class ShipClick : MonoBehaviour
             _flyingText = Instantiate(flyingText, other.transform.parent);
             _flyingText.transform.localPosition = new Vector3(0f, 0f, 0f);
 
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusMoney)
+            if (other.gameObject.GetComponent<BonusBehavior>().bonusMaterial)
             {
                 ship.rewardModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
                 _flyingText.GetComponent<FlyingText>().exp = true;
                 _flyingText.GetComponent<FlyingText>().SetExp(ship.reward);
 
-                EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
+                EventManager.SendEvent("BonusCollected", ship.ShipName, "Material");
+            }
+            if (other.gameObject.GetComponent<BonusBehavior>().bonusMoney)
+            {
+                if (islandController != null)
+                {
+                    islandController.GenerateBonusMoney();
+                    EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
+                }
             }
             if (other.gameObject.GetComponent<BonusBehavior>().bonusSpeed)
             {
