@@ -18131,7 +18131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapticBackground: {fileID: 815141394}
   tapticIcon: {fileID: 1041882200}
-  backgroundOn: {r: 1, g: 1, b: 1, a: 0}
+  backgroundOn: {r: 0, g: 0, b: 0, a: 0}
   backgroundOff: {r: 1, g: 1, b: 1, a: 1}
   iconOn: {r: 1, g: 1, b: 1, a: 1}
   iconOff: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
@@ -81650,7 +81650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2012604276

@@ -60,7 +60,7 @@ public class IslandSpriteController : MonoBehaviour
 
     private IEnumerator Change()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.25f);
+        WaitForSeconds wait = new WaitForSeconds(0.1f);
         
         if (changeSpriteEffect == null)
         {
