@@ -87,6 +87,12 @@ public class OfflineReward : MonoBehaviour
         }
     }
 
+    private void OnApplicationPause(bool pause)
+    {
+        rewardGained = false;
+        money = BigDigit.zero;
+    }
+
     public void AddOfflineReward()
     {
         island.ChangeMoney(money);
