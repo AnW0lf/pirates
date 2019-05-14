@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Tut3 : MonoBehaviour
 {
     public GameObject ships;
-
+    public PanelQuests quests;
     private Ship ship;
 
     private void OnEnable()
@@ -20,6 +20,9 @@ public class Tut3 : MonoBehaviour
     private void Update()
     {
         if (ship.InRaid())
+        {
+            quests.opened = true;
             GetComponentInParent<Tutorial>().NextStage();
+        }
     }
 }

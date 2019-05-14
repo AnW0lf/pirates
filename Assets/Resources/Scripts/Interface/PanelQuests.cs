@@ -9,7 +9,7 @@ public class PanelQuests : MonoBehaviour
     [SerializeField] private GameObject button = null;
     [SerializeField] private Image progressBar = null;
     [SerializeField] private Text lvlText = null, questText = null, rankText = null;
-    [SerializeField] private bool opened = false;
+    [SerializeField] public bool opened = false;
     [SerializeField] private List<int> levels = null;
     [SerializeField] private List<string> texts = null;
 
