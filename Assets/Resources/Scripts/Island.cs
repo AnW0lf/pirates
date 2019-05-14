@@ -128,8 +128,8 @@ public class Island
         }
         if (PlayerPrefs.GetInt("OldExpDeleted") == 1)
         {
-            float exp = long.Parse(PlayerPrefs.GetString("Exp"));
-            InitParameter("ExpMantissa", exp);
+            //float exp = long.Parse(PlayerPrefs.GetString("Exp"));
+            //InitParameter("ExpMantissa", exp);
             PlayerPrefs.DeleteKey("Exp");
             PlayerPrefs.SetInt("OldExpDeleted", 2);
         }
@@ -148,8 +148,8 @@ public class Island
         }
         if (PlayerPrefs.GetInt("OldStartExpDeleted") == 1)
         {
-            float startExp = long.Parse(PlayerPrefs.GetString("StartExp"));
-            InitParameter("StartExpMantissa", startExp);
+            //float startExp = long.Parse(PlayerPrefs.GetString("StartExp"));
+            //InitParameter("StartExpMantissa", startExp);
             PlayerPrefs.DeleteKey("StartExp");
             PlayerPrefs.SetInt("OldStartExpDeleted", 2);
         }
