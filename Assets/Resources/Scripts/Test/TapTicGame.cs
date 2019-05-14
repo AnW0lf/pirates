@@ -23,10 +23,19 @@ public class TapTicGame : MonoBehaviour
 
     void Start()
     {
+        /*
+#if UNITY_IOS
+        if (UIDevice.currentDevice().valueForKey("_feedbackSupportLevel") == 0)
+        {
+        if (tapticBackground != null) tapticBackground.gameObject.SetActive(false);
+        if (tapticIcon != null)  tapticIcon.gameObject.SetActive(false);
+        }
+#endif
+*/
         island.InitParameter("TapTic", 0);
         Taptic.tapticOn = island.GetParameter("TapTic", 0) != 0;
         if (tapticBackground != null) tapticBackground.color = Taptic.tapticOn ? backgroundOn : backgroundOff;
-        if (tapticIcon != null)  tapticIcon.color = Taptic.tapticOn ? iconOn : iconOff;
+        if (tapticIcon != null) tapticIcon.color = Taptic.tapticOn ? iconOn : iconOff;
     }
 
     public void TriggerTaptic(string type)

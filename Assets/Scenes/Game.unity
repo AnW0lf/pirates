@@ -173,96 +173,6 @@ MonoBehaviour:
   title: {fileID: 558609233}
   startRewardMantissa: 0
   startRewardExponent: 0
---- !u!1 &2084213
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2084214}
-  - component: {fileID: 2084217}
-  - component: {fileID: 2084216}
-  - component: {fileID: 2084215}
-  m_Layer: 5
-  m_Name: Icon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2084214
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084213}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 883255431}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 60, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2084215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 2, y: 2}
-  m_UseGraphicAlpha: 1
---- !u!114 &2084216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ac8a9c34c3ee2dc44891d066ee2e90f8, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &2084217
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084213}
-  m_CullTransparentMesh: 0
 --- !u!1 &4162680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3312,7 +3222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f65225caece10847939bf9814827c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 0000000003000000060000000a0000000f00000014000000
   sprites:
   - {fileID: 21300000, guid: 5fde54a6d2985834e983a2777aede88c, type: 3}
   - {fileID: 21300000, guid: 37ace5bc0be284d46b1812046da7bd9c, type: 3}
@@ -3323,9 +3232,8 @@ MonoBehaviour:
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
-  newShipWindow: {fileID: 493099931}
-  wheelUpdateWindow: {fileID: 1778456444}
   sizeIncrease: 0.05
+  islandNumber: 1
 --- !u!1 &71915574
 GameObject:
   m_ObjectHideFlags: 0
@@ -27324,7 +27232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f65225caece10847939bf9814827c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 000000001d00000021000000250000002a0000002f000000
   sprites:
   - {fileID: 21300000, guid: 618b96cbb5091b74cae4a9215e7cb84f, type: 3}
   - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
@@ -27335,9 +27242,8 @@ MonoBehaviour:
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
-  newShipWindow: {fileID: 493099931}
-  wheelUpdateWindow: {fileID: 1778456444}
   sizeIncrease: 0.05
+  islandNumber: 2
 --- !u!111 &673416819
 Animation:
   m_ObjectHideFlags: 0
@@ -37390,7 +37296,6 @@ RectTransform:
   - {fileID: 438581130}
   - {fileID: 1400601583}
   - {fileID: 857184235}
-  - {fileID: 2084214}
   m_Father: {fileID: 594801162}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46265,8 +46170,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 71592730}
-        m_MethodName: ChangeSprite
+      - m_Target: {fileID: 1599426458}
+        m_MethodName: UpdateInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46276,8 +46181,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 673416818}
-        m_MethodName: ChangeSprite
+      - m_Target: {fileID: 2021181328}
+        m_MethodName: UpdateInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55740,6 +55645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1347653238}
+  - component: {fileID: 1347653239}
   m_Layer: 5
   m_Name: Quest
   m_TagString: Untagged
@@ -55763,11 +55669,51 @@ RectTransform:
   m_Father: {fileID: 1815808006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3000, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 200}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1347653239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347653237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ad5fea2badae44d9b685f731b6cb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1579416676}
+  progressBar: {fileID: 1400601584}
+  lvlText: {fileID: 857184237}
+  questText: {fileID: 1230724947}
+  rankText: {fileID: 5908471}
+  opened: 0
+  levels: 050000000a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b00000050000000550000005a0000005f00000064000000
+  texts:
+  - Reach level 5
+  - Reach level 10
+  - Reach level 15
+  - Reach level 20
+  - Reach level 25
+  - Reach level 30
+  - Reach level 35
+  - Reach level 40
+  - Reach level 45
+  - Reach level 50
+  - Reach level 55
+  - Reach level 60
+  - Reach level 65
+  - Reach level 70
+  - Reach level 75
+  - Reach level 80
+  - Reach level 85
+  - Reach level 90
+  - Reach level 95
+  - Reach level 100
 --- !u!1 &1348054914
 GameObject:
   m_ObjectHideFlags: 0
@@ -60488,7 +60434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f65225caece10847939bf9814827c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 00000000360000003a0000003e0000004300000048000000
   sprites:
   - {fileID: 21300000, guid: 9a0c1e2433cee3c41876a864888447ac, type: 3}
   - {fileID: 21300000, guid: 2fa990a036b04f848b48b42107675ded, type: 3}
@@ -60499,9 +60444,8 @@ MonoBehaviour:
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
-  newShipWindow: {fileID: 493099931}
-  wheelUpdateWindow: {fileID: 1778456444}
   sizeIncrease: 0.04
+  islandNumber: 3
 --- !u!111 &1481291094
 Animation:
   m_ObjectHideFlags: 0
@@ -65230,13 +65174,14 @@ GameObject:
   - component: {fileID: 1579416679}
   - component: {fileID: 1579416678}
   - component: {fileID: 1579416680}
+  - component: {fileID: 1579416681}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1579416677
 RectTransform:
   m_ObjectHideFlags: 0
@@ -65310,6 +65255,103 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &1579416681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579416676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1579416678}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 71592730}
+        m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 673416818}
+        m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1481291093}
+        m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2044854788}
+        m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1347653239}
+        m_MethodName: QuestDone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1581203831
 GameObject:
   m_ObjectHideFlags: 0
@@ -83219,15 +83261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f65225caece10847939bf9814827c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 00000000
   sprites:
   - {fileID: 21300000, guid: 2627da0c4c3725e4aa7d5821c36edea5, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
-  newShipWindow: {fileID: 493099931}
-  wheelUpdateWindow: {fileID: 1778456444}
   sizeIncrease: 0.03
+  islandNumber: 4
 --- !u!111 &2044854789
 Animation:
   m_ObjectHideFlags: 0
