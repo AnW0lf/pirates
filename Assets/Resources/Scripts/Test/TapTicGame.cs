@@ -5,17 +5,26 @@ using UnityEngine.UI;
 
 public class TapTicGame : MonoBehaviour
 {
-    [SerializeField] Image tapticBackground = null;
-    [SerializeField] Image tapticIcon = null;
-    [SerializeField] Color backgroundOn = Color.green;
-    [SerializeField] Color backgroundOff = Color.red;
-    [SerializeField] Color iconOn = Color.green;
-    [SerializeField] Color iconOff = Color.red;
+    [SerializeField] private Image tapticBackground = null;
+    [SerializeField] private Image tapticIcon = null;
+    [SerializeField] private Color backgroundOn = Color.green;
+    [SerializeField] private Color backgroundOff = Color.red;
+    [SerializeField] private Color iconOn = Color.green;
+    [SerializeField] private Color iconOff = Color.red;
+
+    private Island island;
 
     public enum VibrationType { WARNING, FAILURE, SUCCESS, LIGHT, MEDIUM, HEAVY, DEFAULT, VIBRATE, SELECTION}
 
+    private void Awake()
+    {
+        island = Island.Instance();
+    }
+
     void Start()
     {
+        island.InitParameter("TapTic", 0);
+        Taptic.tapticOn = island.GetParameter("TapTic", 0) != 0;
         if (tapticBackground != null) tapticBackground.color = Taptic.tapticOn ? backgroundOn : backgroundOff;
         if (tapticIcon != null)  tapticIcon.color = Taptic.tapticOn ? iconOn : iconOff;
     }
@@ -40,6 +49,7 @@ public class TapTicGame : MonoBehaviour
     public void Toggle()
     {
         Taptic.tapticOn = !Taptic.tapticOn;
+        island.SetParameter("TapTic", Taptic.tapticOn ? 1 : 0);
         if (tapticBackground != null) tapticBackground.color = Taptic.tapticOn ? backgroundOn : backgroundOff;
         if (tapticIcon != null) tapticIcon.color = Taptic.tapticOn ? iconOn : iconOff;
         Taptic.Selection();
