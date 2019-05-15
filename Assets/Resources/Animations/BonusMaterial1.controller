@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BonusMaterial
+  m_Name: BonusMaterial1
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -91,7 +91,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0552094f23df798479cb4c7f64e10028, type: 2}
+  m_Motion: {fileID: 7400000, guid: 03d29c364a7680949ae3c2e42e9a1c1e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -47,7 +47,6 @@ public class TapTicGame : MonoBehaviour
                 break;
         }
 #endif
-        UnityEngine.iOS.DeviceGeneration gen = UnityEngine.iOS.Device.generation;
         island.InitParameter("TapTic", 0);
         Taptic.tapticOn = island.GetParameter("TapTic", 0) != 0;
         if (tapticBackground != null) tapticBackground.color = Taptic.tapticOn ? backgroundOn : backgroundOff;

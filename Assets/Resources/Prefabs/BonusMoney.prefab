@@ -31,17 +31,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4251425439836562024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90, y: 85}
+  m_SizeDelta: {x: 85, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5625324971883468745
 CanvasRenderer:
@@ -71,7 +71,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ac8a9c34c3ee2dc44891d066ee2e90f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46ceccbc2a01ded43a3dea21f3b2dbd3, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -166,9 +166,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels: 000000001900000032000000
   sprites:
-  - {fileID: 21300000, guid: ac8a9c34c3ee2dc44891d066ee2e90f8, type: 3}
-  - {fileID: 21300000, guid: ac8a9c34c3ee2dc44891d066ee2e90f8, type: 3}
-  - {fileID: 21300000, guid: ac8a9c34c3ee2dc44891d066ee2e90f8, type: 3}
+  - {fileID: 21300000, guid: 46ceccbc2a01ded43a3dea21f3b2dbd3, type: 3}
+  - {fileID: 21300000, guid: 46ceccbc2a01ded43a3dea21f3b2dbd3, type: 3}
+  - {fileID: 21300000, guid: 46ceccbc2a01ded43a3dea21f3b2dbd3, type: 3}
 --- !u!95 &1027810048386070996
 Animator:
   serializedVersion: 3
@@ -179,7 +179,7 @@ Animator:
   m_GameObject: {fileID: 4251425439836562024}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c8d559d90c97cb40865800be63e110a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3e5a4497669ba134393b7065729d6bec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
