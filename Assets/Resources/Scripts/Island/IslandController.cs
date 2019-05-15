@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -52,11 +52,11 @@ public class IslandController : MonoBehaviour
     {
         BigDigit digit;
         if (island.Level <= 25)
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) / 1.5f + 1);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) / 1.6f + 1);
         else if (island.Level > 25 && island.Level <= 50)
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) / 1.5f + 1);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) / 1.5f + 1);
         else
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) * (island.Level - 50) / 1.5f + 1);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) * (island.Level - 50) / 1.5f + 1);
         return digit;
     }
 

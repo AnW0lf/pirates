@@ -57,7 +57,7 @@ public class OfflineReward : MonoBehaviour
             foreach (IslandController land in islands)
             {
                 if (land.minLevel <= island.Level)
-                    money += land.GetReward() * (timeModifier / modifier) + new BigDigit(100d);
+                    money += land.GetReward() * 1.4f * (timeModifier / modifier) + new BigDigit(100d);
             }
 
             foreach (GameObject ships in shipsList)
