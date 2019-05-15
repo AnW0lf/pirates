@@ -69,7 +69,7 @@ public class IslandSpriteController : MonoBehaviour
         }
         changeSpriteEffect.SetActive(false);
         yield return wait;
-        image.sprite = sprites[IslandSpriteLevel++];
+        image.sprite = sprites[++IslandSpriteLevel];
         island.SetParameter("IslandSpriteLevel_" + islandNumber, IslandSpriteLevel);
         changeSpriteEffect.SetActive(true);
         anim.Play("UpgradeBonusPulse");
