@@ -5335,14 +5335,14 @@ MonoBehaviour:
   startPriceMantissa: 0
   startPriceExponent: 0
   startRaidTime: 60
-  startReward: 300
+  startReward: 900
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 4
   detailCurrentLvl1: 0
-  detailChangeReward1: 115
+  detailChangeReward1: 350
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 0
@@ -5366,7 +5366,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 4
   detailCurrentLvl3: 0
-  detailChangeReward3: 210
+  detailChangeReward3: 500
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 0
@@ -14530,7 +14530,7 @@ MonoBehaviour:
   - {fileID: 1762622934}
   - {fileID: 512118582}
   - {fileID: 2144215061}
-  levels: 1b0000001e00000022000000260000002b000000
+  levels: 1a0000001e00000022000000260000002b000000
   modifiers:
   - 2
   - 2
@@ -20327,7 +20327,7 @@ MonoBehaviour:
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 6
+  detailChangeReward1: 3
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 3
@@ -20351,7 +20351,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 10
+  detailChangeReward3: 4
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 1.9
@@ -34020,14 +34020,14 @@ MonoBehaviour:
   startPriceMantissa: 3.5
   startPriceExponent: 4
   startRaidTime: 22
-  startReward: 110
+  startReward: 600
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 70
+  detailChangeReward1: 25
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 3.7
@@ -34051,7 +34051,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 95
+  detailChangeReward3: 35
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 9.5
@@ -46431,14 +46431,14 @@ MonoBehaviour:
   startPriceMantissa: 5.5
   startPriceExponent: 3
   startRaidTime: 15
-  startReward: 60
+  startReward: 210
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 50
+  detailChangeReward1: 12
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 5.9
@@ -46462,7 +46462,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 65
+  detailChangeReward3: 18
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 1.95
@@ -52900,14 +52900,14 @@ MonoBehaviour:
   startPriceMantissa: 1.8
   startPriceExponent: 5
   startRaidTime: 30
-  startReward: 210
+  startReward: 1500
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 110
+  detailChangeReward1: 50
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 1.92
@@ -52931,7 +52931,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 160
+  detailChangeReward3: 75
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 4.8
@@ -55715,28 +55715,23 @@ MonoBehaviour:
   questText: {fileID: 1230724947}
   rankText: {fileID: 5908471}
   opened: 0
-  levels: 050000000a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b00000050000000550000005a0000005f00000064000000
+  levels: 0200000005000000090000000e000000140000001b0000001f00000023000000280000002d000000370000003c00000041000000460000004b000000
   texts:
+  - Reach level 2
   - Reach level 5
-  - Reach level 10
-  - Reach level 15
+  - Reach level 9
+  - Reach level 14
   - Reach level 20
-  - Reach level 25
-  - Reach level 30
+  - Reach level 27
+  - Reach level 31
   - Reach level 35
   - Reach level 40
   - Reach level 45
-  - Reach level 50
   - Reach level 55
   - Reach level 60
   - Reach level 65
   - Reach level 70
   - Reach level 75
-  - Reach level 80
-  - Reach level 85
-  - Reach level 90
-  - Reach level 95
-  - Reach level 100
 --- !u!1 &1348054914
 GameObject:
   m_ObjectHideFlags: 0
@@ -56146,14 +56141,14 @@ MonoBehaviour:
   startPriceMantissa: 5
   startPriceExponent: 2
   startRaidTime: 10
-  startReward: 35
+  startReward: 60
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 25
+  detailChangeReward1: 6
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 5.5
@@ -56177,7 +56172,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 40
+  detailChangeReward3: 9
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 2.5
@@ -83847,7 +83842,7 @@ MonoBehaviour:
   - {fileID: 987091779}
   - {fileID: 457200529}
   - {fileID: 1903746060}
-  levels: 04000000080000000c0000000e00000012000000
+  levels: 04000000080000000c0000001000000012000000
   modifiers:
   - 2
   - 2
