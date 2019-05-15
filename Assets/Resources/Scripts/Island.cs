@@ -110,6 +110,10 @@ public class Island
 
     private void Load()
     {
+        InitParameter("GlobalResetting", 0);
+        if (GetParameter("GlobalResetting", 0) < 1)
+            Resetting();
+
         InitParameter("MoneyMantissa", 0f);
         InitParameter("MoneyExponent", 0);
         Money = new BigDigit(GetParameter("MoneyMantissa", 0f), GetParameter("MoneyExponent", 0));
