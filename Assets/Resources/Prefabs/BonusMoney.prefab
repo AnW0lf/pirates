@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusMoney: 1
+  bonusMaterial: 0
   bonusSpeed: 0
   bonusWheel: 0
   modifier: 1

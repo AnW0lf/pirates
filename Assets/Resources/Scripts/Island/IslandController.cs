@@ -52,7 +52,7 @@ public class IslandController : MonoBehaviour
     {
         BigDigit digit;
         if (island.Level <= 25)
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) / 1.5f + 1);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) / 1.6f + 1);
         else if (island.Level > 25 && island.Level <= 50)
             digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) / 1.5f + 1);
         else
@@ -62,7 +62,7 @@ public class IslandController : MonoBehaviour
 
     public void GenerateBonusMoney()
     {
-        BigDigit reward = GetReward() * 10 * island.Level;
+        BigDigit reward = GetReward() * 5 * island.Level;
 
         _flyingText = Instantiate(flyingText, transform);
 
