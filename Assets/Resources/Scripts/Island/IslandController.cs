@@ -78,7 +78,7 @@ public class IslandController : MonoBehaviour
         //}
         else
         {
-            time = tapDelay * 2.5f;
+            time = island.Level > 10 ? 0.6f : 1f - ((island.Level - 1) * 0.04f) ;
         }
 
         anim.Play("OnePulse");
