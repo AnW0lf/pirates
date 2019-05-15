@@ -112,7 +112,10 @@ public class Island
     {
         InitParameter("GlobalResetting", 0);
         if (GetParameter("GlobalResetting", 0) < 1)
-            Resetting();
+        {
+            SetParameter("GlobalResetting", 1);
+            PlayerPrefs.DeleteAll();
+        }
 
         InitParameter("MoneyMantissa", 0f);
         InitParameter("MoneyExponent", 0);
