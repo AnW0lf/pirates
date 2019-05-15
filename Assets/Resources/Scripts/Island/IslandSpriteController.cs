@@ -10,7 +10,7 @@ public class IslandSpriteController : MonoBehaviour
     public GameObject changeSpriteEffectPref;
     public Vector3 effectScale = new Vector3(200f, 200f, 1f);
     [SerializeField] private float sizeIncrease = 0.03f;
-    [SerializeField] private int islandNumber = 1;
+    [SerializeField] private int islandNumber = 1, minLevel, maxLevel;
 
     private Image image;
     private Island island;
@@ -42,7 +42,7 @@ public class IslandSpriteController : MonoBehaviour
 
     public void ChangeSprite()
     {
-        if (IslandSpriteLevel < sprites.Count)
+        if (minLevel <= island.Level && maxLevel >= island.Level && IslandSpriteLevel < sprites.Count)
         {
             StopAllCoroutines();
             StartCoroutine(Change());
@@ -55,13 +55,13 @@ public class IslandSpriteController : MonoBehaviour
         {
             image.sprite = sprites[IslandSpriteLevel];
         }
-        else if(sprites.Count > 0) image.sprite = sprites[sprites.Count - 1];
+        else if (sprites.Count > 0) image.sprite = sprites[sprites.Count - 1];
     }
 
     private IEnumerator Change()
     {
         WaitForSeconds wait = new WaitForSeconds(0.1f);
-        
+
         if (changeSpriteEffect == null)
         {
             changeSpriteEffect = Instantiate(changeSpriteEffectPref, transform);
@@ -69,7 +69,12 @@ public class IslandSpriteController : MonoBehaviour
         }
         changeSpriteEffect.SetActive(false);
         yield return wait;
-        image.sprite = sprites[++IslandSpriteLevel];
+        IslandSpriteLevel++;
+        if (sprites.Count > IslandSpriteLevel)
+        {
+            image.sprite = sprites[IslandSpriteLevel];
+        }
+        else if (sprites.Count > 0) image.sprite = sprites[sprites.Count - 1];
         island.SetParameter("IslandSpriteLevel_" + islandNumber, IslandSpriteLevel);
         changeSpriteEffect.SetActive(true);
         anim.Play("UpgradeBonusPulse");
