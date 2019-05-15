@@ -26,7 +26,6 @@ public class PanelQuests : MonoBehaviour
         island.InitParameter("QuestLevel", 0);
         questLevel = island.GetParameter("QuestLevel", 0);
         UpdateInfo();
-        EventManager.Subscribe("LevelUp", UpdateInfo);
 
         island.InitParameter("QuestOpened", 0);
         opened = island.GetParameter("QuestOpened", 0) != 0;
@@ -36,12 +35,7 @@ public class PanelQuests : MonoBehaviour
             StartCoroutine(Open());
     }
 
-    private void UpdateInfo(object[] arg0)
-    {
-        UpdateInfo();
-    }
-
-    private void UpdateInfo()
+    public void UpdateInfo()
     {
         if (questLevel >= texts.Count || questLevel >= levels.Count) return;
         progressBar.fillAmount = (float)island.Level / levels[questLevel];

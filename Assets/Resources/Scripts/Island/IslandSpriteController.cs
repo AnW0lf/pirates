@@ -75,6 +75,6 @@ public class IslandSpriteController : MonoBehaviour
         anim.Play("UpgradeBonusPulse");
         rect.sizeDelta = Vector2.one * startSizeDelta * Mathf.Pow((1f + sizeIncrease), IslandSpriteLevel);
         yield return wait;
-        changeSpriteEffect.SetActive(false);
+        //changeSpriteEffect.SetActive(false);
     }
 }
