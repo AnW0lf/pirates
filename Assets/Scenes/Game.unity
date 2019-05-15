@@ -39832,7 +39832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5990aaf46dedf2847ac381455b77380a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusDelay: 12
+  bonusDelay: 18
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
@@ -40234,7 +40234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5990aaf46dedf2847ac381455b77380a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusDelay: 12
+  bonusDelay: 18
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
@@ -42484,7 +42484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5990aaf46dedf2847ac381455b77380a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusDelay: 12
+  bonusDelay: 18
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
@@ -81433,7 +81433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5990aaf46dedf2847ac381455b77380a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusDelay: 12
+  bonusDelay: 18
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
   - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
