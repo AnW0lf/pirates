@@ -20728,7 +20728,7 @@ MonoBehaviour:
   startPriceMantissa: 2.5
   startPriceExponent: 1
   startRaidTime: 5
-  startReward: 12000
+  startReward: 12
   speedAngle: 25
   speedLinear: 350
   speedRaidModifier: 3.5
