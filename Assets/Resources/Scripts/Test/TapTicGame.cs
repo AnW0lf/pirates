@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class TapTicGame : MonoBehaviour
 {
@@ -23,15 +24,31 @@ public class TapTicGame : MonoBehaviour
 
     void Start()
     {
-        /*
+        
 #if UNITY_IOS
-        if (UIDevice.currentDevice().valueForKey("_feedbackSupportLevel") == 0)
+        switch (UnityEngine.iOS.Device.generation)
         {
-        if (tapticBackground != null) tapticBackground.gameObject.SetActive(false);
-        if (tapticIcon != null)  tapticIcon.gameObject.SetActive(false);
+            case UnityEngine.iOS.DeviceGeneration.iPhone6S:
+            case UnityEngine.iOS.DeviceGeneration.iPhone6Plus:
+            case UnityEngine.iOS.DeviceGeneration.iPhone6SPlus:
+            case UnityEngine.iOS.DeviceGeneration.iPhone7:
+            case UnityEngine.iOS.DeviceGeneration.iPhone7Plus:
+            case UnityEngine.iOS.DeviceGeneration.iPhone8:
+            case UnityEngine.iOS.DeviceGeneration.iPhone8Plus:
+            case UnityEngine.iOS.DeviceGeneration.iPhoneX:
+            case UnityEngine.iOS.DeviceGeneration.iPhoneXR:
+            case UnityEngine.iOS.DeviceGeneration.iPhoneXS:
+            case UnityEngine.iOS.DeviceGeneration.iPhoneXSMax:
+                tapticBackground.gameObject.SetActive(true);
+                tapticIcon.gameObject.SetActive(true);
+                break;
+            default:
+                tapticBackground.gameObject.SetActive(false);
+                tapticIcon.gameObject.SetActive(false);
+                break;
         }
 #endif
-*/
+        UnityEngine.iOS.DeviceGeneration gen = UnityEngine.iOS.Device.generation;
         island.InitParameter("TapTic", 0);
         Taptic.tapticOn = island.GetParameter("TapTic", 0) != 0;
         if (tapticBackground != null) tapticBackground.color = Taptic.tapticOn ? backgroundOn : backgroundOff;
