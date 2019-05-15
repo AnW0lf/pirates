@@ -52,11 +52,11 @@ public class ShipClick : MonoBehaviour
             {
                 if (islandController != null)
                 {
-                    _flyingText.GetComponent<FlyingText>().money = true;
                     BigDigit reward = islandController.GetReward() * 10 * island.Level;
+                    _flyingText.GetComponent<FlyingText>().money = true;
                     _flyingText.GetComponent<FlyingText>().moneyText.GetComponent<Text>().text
-                        = reward.ToString();
-                    island.ChangeMoney(reward);
+                        = "+" + reward.ToString();
+                    islandController.GenerateBonusMoney(reward);
                     EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
                 }
             }
