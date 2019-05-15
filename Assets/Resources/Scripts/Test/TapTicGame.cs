@@ -29,7 +29,6 @@ public class TapTicGame : MonoBehaviour
         switch (UnityEngine.iOS.Device.generation)
         {
             case UnityEngine.iOS.DeviceGeneration.iPhone6S:
-            case UnityEngine.iOS.DeviceGeneration.iPhone6Plus:
             case UnityEngine.iOS.DeviceGeneration.iPhone6SPlus:
             case UnityEngine.iOS.DeviceGeneration.iPhone7:
             case UnityEngine.iOS.DeviceGeneration.iPhone7Plus:
