@@ -83,7 +83,7 @@ public class OfflineReward : MonoBehaviour
             island.SetParameter("QuitTime", DateTime.Now.ToString());
 
             rewardGained = true;
-            window.SetActive(!money.EqualsZero());
+            window.SetActive(!money.EqualsZero);
         }
     }
 

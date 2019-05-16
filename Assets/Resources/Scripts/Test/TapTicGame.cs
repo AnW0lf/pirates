@@ -47,7 +47,7 @@ public class TapTicGame : MonoBehaviour
                 break;
         }
 #endif
-        island.InitParameter("TapTic", 0);
+        island.InitParameter("TapTic", 1);
         Taptic.tapticOn = island.GetParameter("TapTic", 0) != 0;
         if (tapticBackground != null) tapticBackground.color = Taptic.tapticOn ? backgroundOn : backgroundOff;
         if (tapticIcon != null) tapticIcon.color = Taptic.tapticOn ? iconOn : iconOff;

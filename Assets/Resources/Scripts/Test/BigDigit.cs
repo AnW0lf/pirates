@@ -467,6 +467,7 @@ public class BigDigit
 
     public static BigDigit operator /(BigDigit first, BigDigit second)
     {
+        if (first.EqualsZero) return zero;
         return new BigDigit(first.Mantissa / second.Mantissa, first.Exponent - second.Exponent);
     }
 
@@ -605,12 +606,7 @@ public class BigDigit
         return new BigDigit(-other.Mantissa, other.Exponent);
     }
 
-    public bool EqualsZero()
-    {
-        if (Mantissa.Equals(0d) && Exponent.Equals(0))
-            return true;
-        else return false;
-    }
+    public bool EqualsZero { get { return Mantissa.Equals(0d) && Exponent.Equals(0); } }
 
     public bool LessThen(BigDigit other)
     {

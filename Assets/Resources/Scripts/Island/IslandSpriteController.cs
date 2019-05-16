@@ -10,7 +10,7 @@ public class IslandSpriteController : MonoBehaviour
     public GameObject changeSpriteEffectPref;
     public Vector3 effectScale = new Vector3(200f, 200f, 1f);
     [SerializeField] private float sizeIncrease = 0.03f;
-    [SerializeField] private int islandNumber = 1, minLevel, maxLevel;
+    [SerializeField] private int islandNumber = 1, minLevel = 0, maxLevel = 0;
 
     private Image image;
     private Island island;
