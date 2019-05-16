@@ -41,11 +41,11 @@ public class Island
         new BigDigit(3.32f, 4), // 23
         new BigDigit(3.32f, 4), // 24
         new BigDigit(1f, 5), // 25
-        new BigDigit(3.6f, 5), // 26
-        new BigDigit(8f, 5), // 27
-        new BigDigit(1.27f, 6), // 28
-        new BigDigit(1.81f, 6), // 29
-        new BigDigit(2.17f, 6), // 30
+        new BigDigit(2f, 5), // 26
+        new BigDigit(4.5f, 5), // 27
+        new BigDigit(1f, 6), // 28
+        new BigDigit(1.5f, 6), // 29
+        new BigDigit(2f, 6), // 30
         new BigDigit(2.75f, 6), // 31
         new BigDigit(3.4f, 6), // 32
         new BigDigit(4.1f, 6), // 33
