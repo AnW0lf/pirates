@@ -16,9 +16,9 @@ public class Island
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
         new BigDigit(3f, 1), // 0
-        new BigDigit(85f, 1), // 1
-        new BigDigit(35f, 2), // 2
-        new BigDigit(95f, 2), // 3
+        new BigDigit(8.5f, 1), // 1
+        new BigDigit(3.5f, 2), // 2
+        new BigDigit(9.5f, 2), // 3
         new BigDigit(1.45f, 3), // 4
         new BigDigit(2.1f, 3), // 5
         new BigDigit(3.25f, 3), // 6
@@ -33,13 +33,13 @@ public class Island
         new BigDigit(2.66f, 4), // 15
         new BigDigit(2.98f, 4), // 16
         new BigDigit(3.32f, 4), // 17
-        new BigDigit(3.32f, 4), // 18
-        new BigDigit(3.32f, 4), // 19
-        new BigDigit(3.32f, 4), // 20
-        new BigDigit(3.32f, 4), // 21
-        new BigDigit(3.32f, 4), // 22
-        new BigDigit(3.32f, 4), // 23
-        new BigDigit(3.32f, 4), // 24
+        new BigDigit(3.35f, 4), // 18
+        new BigDigit(3.37f, 4), // 19
+        new BigDigit(3.39f, 4), // 20
+        new BigDigit(3.41f, 4), // 21
+        new BigDigit(3.43f, 4), // 22
+        new BigDigit(3.45f, 4), // 23
+        new BigDigit(3.5f, 4), // 24
         new BigDigit(1f, 5), // 25
         new BigDigit(2f, 5), // 26
         new BigDigit(4.5f, 5), // 27
