@@ -15,7 +15,6 @@ public class Island
     private List<string> parameters;
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
-        new BigDigit(1f, 0),
         new BigDigit(3f, 1), // 0
         new BigDigit(1f, 2), // 1
         new BigDigit(4f, 2), // 2
