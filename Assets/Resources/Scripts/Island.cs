@@ -117,12 +117,12 @@ public class Island
             SetParameter("GlobalResetting", 1);
         }
 
-        InitParameter("MoneyMantissa", 0f);
-        InitParameter("MoneyExponent", 0);
+        InitParameter("MoneyMantissa", 1f);
+        InitParameter("MoneyExponent", 15);
         Money = new BigDigit(GetParameter("MoneyMantissa", 0f), GetParameter("MoneyExponent", 0));
 
         if (!PlayerPrefs.HasKey("Level"))
-            PlayerPrefs.SetInt("Level", 1);
+            PlayerPrefs.SetInt("Level", 51);
         Level = PlayerPrefs.GetInt("Level");
 
         //Проверка на старый формат Exp
@@ -228,9 +228,9 @@ public class Island
         return "";
     }
 
-    public void ExpUp(long exp)
+    public void ExpUp(BigDigit exp)
     {
-        Exp += new BigDigit(exp);
+        Exp += exp;
         EventManager.SendEvent("AddExp");
         Save();
     }

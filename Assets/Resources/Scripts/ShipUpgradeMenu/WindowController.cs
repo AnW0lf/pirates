@@ -127,7 +127,7 @@ public class WindowController : MonoBehaviour
         int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
         SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, CheckRange(pier.GetReward()));
+        SetState(rewardTM, pier.GetReward().ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
@@ -162,7 +162,7 @@ public class WindowController : MonoBehaviour
         int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
         SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, CheckRange(pier.GetReward()));
+        SetState(rewardTM, pier.GetReward().ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
@@ -212,7 +212,7 @@ public class WindowController : MonoBehaviour
         int curLvl = pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3 + 1;
         SetState(upLevelTM, curLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, CheckRange(pier.GetReward()));
+        SetState(rewardTM, pier.GetReward().ToString());
 
         if (!miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
@@ -285,7 +285,7 @@ public class WindowController : MonoBehaviour
         int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
         SetState(upLevelTM, maxLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, CheckRange(pier.GetReward()));
+        SetState(rewardTM, pier.GetReward().ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);

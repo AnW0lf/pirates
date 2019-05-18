@@ -16,11 +16,11 @@ public class OfflineReward : MonoBehaviour
 
     public static TimeSpan ts;
 
-    private int timeModifier, expToAdd;
+    private int timeModifier;
     private Island island;
     private Text text;
     private bool rewardGained;
-    private BigDigit money;
+    private BigDigit money, expToAdd;
 
     private void Awake()
     {
@@ -52,7 +52,7 @@ public class OfflineReward : MonoBehaviour
 
             //Считаем бабки и левел-ап
             money = BigDigit.zero;
-            expToAdd = 0;
+            expToAdd = BigDigit.zero;
 
             foreach (IslandController land in islands)
             {

@@ -9,7 +9,7 @@ public class CoinCatcher : MonoBehaviour
     public GameObject flyingText;
     public Sprite[] sprites;
 
-    private int money = 0;
+    private BigDigit money = BigDigit.zero;
     private Island island;
     private GameObject _flyingText;
     private Image image;
@@ -25,7 +25,7 @@ public class CoinCatcher : MonoBehaviour
         GetComponent<Button>().onClick.AddListener(CatchCoin);
     }
 
-    public void ActivateCoin(int money)
+    public void ActivateCoin(BigDigit money)
     {
         gameObject.SetActive(true);
         this.money = money;
@@ -68,8 +68,9 @@ public class CoinCatcher : MonoBehaviour
         _flyingText = Instantiate(flyingText, transform.parent.parent.parent.parent.parent.GetChild(1));
         _flyingText.transform.localPosition = new Vector3(-300f, 0f, 0f);
         _flyingText.transform.eulerAngles = new Vector3(0f, 0f, 0f);
-        _flyingText.GetComponent<FlyingText>().exp = true;
-        _flyingText.GetComponent<FlyingText>().SetExp(money);
+        FlyingText ft = _flyingText.GetComponent<FlyingText>();
+        ft.exp = true;
+        ft.expText.GetComponent<Text>().text = "+" + money.ToString();
 
         GetComponentInParent<CapsuleCollider2D>().enabled = true;
         gameObject.SetActive(false);

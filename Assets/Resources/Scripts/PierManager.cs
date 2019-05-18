@@ -171,12 +171,12 @@ public class PierManager : MonoBehaviour
         return time < 0f ? 0f : time;
     }
 
-    public int GetReward()
+    public BigDigit GetReward()
     {
-        return startReward
-            + (detailChangeReward1 * detailCurrentLvl1)
-            + (detailChangeReward2 * detailCurrentLvl2)
-            + (detailChangeReward3 * detailCurrentLvl3);
+        return new BigDigit(startReward)
+            + new BigDigit(detailChangeReward1 * detailCurrentLvl1)
+            + new BigDigit(detailChangeReward2 * detailCurrentLvl2)
+            + new BigDigit(detailChangeReward3 * detailCurrentLvl3);
     }
 
     public BigDigit GetUpgradeCost()

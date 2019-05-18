@@ -13,7 +13,7 @@ public class Ship : MonoBehaviour
     public string ShipName { get; private set; }
     private Island island;
 
-    public int reward;
+    public BigDigit reward;
     public float raidTime;
 
     public int rewardModifier = 1;
@@ -128,7 +128,7 @@ public class Ship : MonoBehaviour
         yield return new WaitForSeconds(seconds);
 
         float globalEarnings = island.GetParameter("GlobalEarnings" + islandNumber.ToString(), 0f);
-        _coin.GetComponent<CoinCatcher>().ActivateCoin((int)(reward * rewardModifier * globalEarnings));
+        _coin.GetComponent<CoinCatcher>().ActivateCoin(new BigDigit(reward) * rewardModifier * globalEarnings);
         direction = !direction;
         _iconRT.localPosition = Vector3.left * rise + Vector3.up * riseOutOfScreen * (direction ? 1 : -1);
         _icon.GetComponent<RectTransform>().localScale = Vector3.right * size * (!direction ? 1 : -1) + Vector3.up * size + Vector3.forward;
@@ -179,14 +179,14 @@ public class Ship : MonoBehaviour
 
     }
 
-    public void SetRaid(float raidTime, int reward)
+    public void SetRaid(float raidTime, BigDigit reward)
     {
         this.raidTime = raidTime;
         this.reward = reward;
     }
 
     public void CreateShip(float rise, float angle, float size, Sprite sprite, float speedAngle, float speedLinear
-        , float speedRaidModifier, float raidTime, int reward, int islandNumber, string shipName, IslandController islandController)
+        , float speedRaidModifier, float raidTime, BigDigit reward, int islandNumber, string shipName, IslandController islandController)
     {
         island = Island.Instance();
         SetLocation(rise, angle);

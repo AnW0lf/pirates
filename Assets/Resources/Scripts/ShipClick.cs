@@ -39,12 +39,13 @@ public class ShipClick : MonoBehaviour
 
             _flyingText = Instantiate(flyingText, other.transform.parent);
             _flyingText.transform.localPosition = new Vector3(0f, 0f, 0f);
+            FlyingText ft = _flyingText.GetComponent<FlyingText>();
 
             if (other.gameObject.GetComponent<BonusBehavior>().bonusMaterial)
             {
                 ship.rewardModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
-                _flyingText.GetComponent<FlyingText>().exp = true;
-                _flyingText.GetComponent<FlyingText>().SetExp(ship.reward);
+                ft.exp = true;
+                ft.expText.GetComponent<Text>().text = "+" + ship.reward.ToString();
 
                 EventManager.SendEvent("BonusCollected", ship.ShipName, "Material");
             }
@@ -53,9 +54,8 @@ public class ShipClick : MonoBehaviour
                 if (islandController != null)
                 {
                     BigDigit reward = islandController.GetReward() * 10 * island.Level;
-                    _flyingText.GetComponent<FlyingText>().money = true;
-                    _flyingText.GetComponent<FlyingText>().moneyText.GetComponent<Text>().text
-                        = "+" + reward.ToString();
+                    ft.money = true;
+                    ft.moneyText.GetComponent<Text>().text = "+" + reward.ToString();
                     islandController.GenerateBonusMoney(reward);
                     EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
                 }
@@ -63,8 +63,8 @@ public class ShipClick : MonoBehaviour
             if (other.gameObject.GetComponent<BonusBehavior>().bonusSpeed)
             {
                 ship.raidTimeModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
-                _flyingText.GetComponent<FlyingText>().speed = true;
-                _flyingText.GetComponent<FlyingText>().speedText.GetComponent<Text>().text = "-" + (int)(ship.raidTime / Mathf.Pow(2f, ship.raidTimeModifier)) + "s";
+                ft.speed = true;
+                ft.speedText.GetComponent<Text>().text = "-" + (int)(ship.raidTime / Mathf.Pow(2f, ship.raidTimeModifier)) + "s";
 
                 EventManager.SendEvent("BonusCollected", ship.ShipName, "Speed");
             }
