@@ -3360,6 +3360,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6bc64109f89072049b90d22b8917d661, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
+  changeSpriteTextPref: {fileID: 2278700032299362563, guid: 9b4a6b03c02536b4db6c23c83c09f7d0,
+    type: 3}
   effectScale: {x: 200, y: 200, z: 1}
   sizeIncrease: 0.05
   islandNumber: 1
@@ -27788,6 +27790,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 21648498192d1be498b45413c00a39fc, type: 3}
   - {fileID: 21300000, guid: 18388327826c6d74fb1794bd0c9cd3b0, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
+    type: 3}
+  changeSpriteTextPref: {fileID: 2278700032299362563, guid: 9b4a6b03c02536b4db6c23c83c09f7d0,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
   sizeIncrease: 0.05
@@ -61545,6 +61549,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 01ce047614d665e4ab17e025a59bab01, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
+  changeSpriteTextPref: {fileID: 2278700032299362563, guid: 9b4a6b03c02536b4db6c23c83c09f7d0,
+    type: 3}
   effectScale: {x: 200, y: 200, z: 1}
   sizeIncrease: 0.04
   islandNumber: 3
@@ -84664,6 +84670,8 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 2627da0c4c3725e4aa7d5821c36edea5, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
+    type: 3}
+  changeSpriteTextPref: {fileID: 2278700032299362563, guid: 9b4a6b03c02536b4db6c23c83c09f7d0,
     type: 3}
   effectScale: {x: 200, y: 200, z: 1}
   sizeIncrease: 0.03
