@@ -5187,7 +5187,7 @@ MonoBehaviour:
   startPriceExponent: 7
   startRaidTime: 10
   startReward: 54000
-  speedAngle: 25
+  speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -5672,7 +5672,7 @@ MonoBehaviour:
   startPriceExponent: 0
   startRaidTime: 60
   startReward: 500
-  speedAngle: 25
+  speedAngle: 30
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -12870,7 +12870,7 @@ MonoBehaviour:
   startPriceExponent: 11
   startRaidTime: 10
   startReward: 59400000
-  speedAngle: 25
+  speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -20744,7 +20744,7 @@ MonoBehaviour:
   startPriceExponent: 1
   startRaidTime: 5
   startReward: 12
-  speedAngle: 25
+  speedAngle: 30
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -23208,7 +23208,7 @@ MonoBehaviour:
   startPriceExponent: 9
   startRaidTime: 30
   startReward: 1350000
-  speedAngle: 25
+  speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -28125,7 +28125,7 @@ MonoBehaviour:
   startPriceExponent: 0
   startRaidTime: 60
   startReward: 495000000
-  speedAngle: 25
+  speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -33152,7 +33152,7 @@ MonoBehaviour:
   startPriceExponent: 13
   startRaidTime: 22
   startReward: 594000000
-  speedAngle: 25
+  speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -33966,7 +33966,7 @@ MonoBehaviour:
   startPriceExponent: 0
   startRaidTime: 60
   startReward: 450000
-  speedAngle: 25
+  speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -34640,7 +34640,7 @@ MonoBehaviour:
   startPriceExponent: 4
   startRaidTime: 22
   startReward: 600
-  speedAngle: 25
+  speedAngle: 30
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -37710,7 +37710,7 @@ MonoBehaviour:
   startPriceExponent: 14
   startRaidTime: 30
   startReward: 1485000000
-  speedAngle: 25
+  speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -46004,7 +46004,7 @@ MonoBehaviour:
   startPriceExponent: 8
   startRaidTime: 15
   startReward: 189000
-  speedAngle: 25
+  speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -46571,7 +46571,7 @@ MonoBehaviour:
   startPriceExponent: 5
   startRaidTime: 5
   startReward: 10800
-  speedAngle: 25
+  speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -47182,7 +47182,7 @@ MonoBehaviour:
   startPriceExponent: 3
   startRaidTime: 15
   startReward: 210
-  speedAngle: 25
+  speedAngle: 30
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -48592,7 +48592,7 @@ MonoBehaviour:
   startPriceExponent: 10
   startRaidTime: 5
   startReward: 11880000
-  speedAngle: 25
+  speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -53654,7 +53654,7 @@ MonoBehaviour:
   startPriceExponent: 5
   startRaidTime: 30
   startReward: 1500
-  speedAngle: 25
+  speedAngle: 30
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -56895,7 +56895,7 @@ MonoBehaviour:
   startPriceExponent: 2
   startRaidTime: 10
   startReward: 60
-  speedAngle: 25
+  speedAngle: 30
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -68918,7 +68918,7 @@ MonoBehaviour:
   startPriceExponent: 8
   startRaidTime: 22
   startReward: 540000
-  speedAngle: 25
+  speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
@@ -88054,7 +88054,7 @@ MonoBehaviour:
   startPriceExponent: 12
   startRaidTime: 15
   startReward: 207900000
-  speedAngle: 25
+  speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
