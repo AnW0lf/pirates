@@ -30,79 +30,76 @@ public class OfflineReward : MonoBehaviour
         money = BigDigit.zero;
     }
 
-    void Update()
+    private void Start()
     {
-        if (!rewardGained)
+        Reward();
+    }
+
+    private void Reward()
+    {
+        if (rewardGained) return;
+        island.InitParameter("QuitTime", (DateTime.Now).ToString());
+        ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
+
+
+        //Пересчитываем в секунды
+        if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 10f)
         {
-            island.InitParameter("QuitTime", (DateTime.Now).ToString());
-            ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
-
-
-            //Пересчитываем в секунды
-            if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 10f)
-            {
-                rewardGained = true;
-                window.SetActive(false);
-                return;
-            }
-            else
-            {
-                timeModifier = Mathf.Clamp(ts.Seconds + ts.Minutes * 60 + ts.Hours * 60 * 60 + ts.Days * 60 * 60 * 24, 0, maxTime);
-            }
-
-            //Считаем бабки и левел-ап
-            money = BigDigit.zero;
-            expToAdd = BigDigit.zero;
-
-            foreach (IslandController land in islands)
-            {
-                if (land.minLevel <= island.Level)
-                    money += land.GetReward() * (timeModifier / modifier) + new BigDigit(100d);
-            }
-
-            foreach (GameObject ships in shipsList)
-            {
-                foreach (Transform child in ships.transform)
-                {
-                    Ship ship = child.GetComponent<Ship>();
-                    expToAdd += ship.reward / (int)ship.raidTime * timeModifier / expModifier;
-                }
-            }
-
-            //Добавлям бонусы
-            for (int i = 0; i <= Mathf.Clamp(island.Level / 25, 0, bgs.Length - 1); i++)
-                bgs[i].RandomBonus(timeModifier / bonusModifier);
-
-            //Выдаем ЛЕВЕЛ-АП
-            island.ExpUp(expToAdd);
-
-
-            text.text = money.ToString();
-
-            //Write Time for Offline Reward
-            island.SetParameter("QuitTime", DateTime.Now.ToString());
-
             rewardGained = true;
-            window.SetActive(!money.EqualsZero);
+            window.SetActive(false);
+            return;
         }
+        else
+        {
+            timeModifier = Mathf.Clamp(ts.Seconds + ts.Minutes * 60 + ts.Hours * 60 * 60 + ts.Days * 60 * 60 * 24, 0, maxTime);
+        }
+
+        //Считаем бабки и левел-ап
+        money = BigDigit.zero;
+        expToAdd = BigDigit.zero;
+
+        foreach (IslandController land in islands)
+        {
+            if (land.minLevel <= island.Level)
+                money += land.GetReward() * (timeModifier / modifier) + new BigDigit(100d);
+        }
+
+        foreach (GameObject ships in shipsList)
+        {
+            foreach (Transform child in ships.transform)
+            {
+                Ship ship = child.GetComponent<Ship>();
+                expToAdd += ship.reward / (int)ship.raidTime * timeModifier / expModifier;
+            }
+        }
+
+        //Добавлям бонусы
+        for (int i = 0; i <= Mathf.Clamp(island.Level / 25, 0, bgs.Length - 1); i++)
+            bgs[i].RandomBonus(timeModifier / bonusModifier);
+
+        //Выдаем ЛЕВЕЛ-АП
+        island.ExpUp(expToAdd);
+
+
+        text.text = money.ToString();
+
+        //Write Time for Offline Reward
+        island.SetParameter("QuitTime", DateTime.Now.ToString());
+
+        rewardGained = true;
+        window.SetActive(!money.EqualsZero);
     }
 
     private void OnApplicationPause(bool pause)
     {
-        if (pause)
-        {
-            rewardGained = false;
-            money = BigDigit.zero;
-        }
+        if (pause) rewardGained = false;
+        else Reward();
     }
 
     private void OnApplicationFocus(bool focus)
     {
-        if (!focus)
-        {
-            rewardGained = false;
-            money = BigDigit.zero;
-        }
+        if (!focus) rewardGained = false;
+        else Reward();
     }
 
     public void AddOfflineReward()
