@@ -33,7 +33,7 @@ public class PolundraTimer : MonoBehaviour
             pack.SetActive(false);
             EventManager.Subscribe("LevelUp", CheckPolundra);
         }
-        island.InitParameter("PauseTime", "");
+        island.InitParameter("PauseTime", DateTime.Now.ToString());
     }
 
     private void CheckPolundra(object[] arg0)
@@ -52,7 +52,7 @@ public class PolundraTimer : MonoBehaviour
         for(int i = time; i >= 0; i--)
         {
             timer.text = SecondsToTimerString(i);
-            fill.fillAmount = 1f - ((float)i / time);
+            fill.fillAmount = 1f - ((float)i / seconds);
             yield return sec;
         }
         timer.text = "POLUNDRA";
@@ -86,6 +86,7 @@ public class PolundraTimer : MonoBehaviour
         return min + ":" + sec;
     }
 
+    /*
     private void OnApplicationPause(bool pause)
     {
         if (pause)
@@ -101,5 +102,20 @@ public class PolundraTimer : MonoBehaviour
                 StartCoroutine(Timer(90));
             }
         }
+    }
+    */
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+            ts = DateTime.Now - DateTime.Parse(island.GetParameter("PauseTime", ""));
+            if (ts.TotalMinutes > 10d)
+            {
+                StopAllCoroutines();
+                StartCoroutine(Timer(90));
+            }
+        }
+        else island.SetParameter("PauseTime", DateTime.Now.ToString());
     }
 }
