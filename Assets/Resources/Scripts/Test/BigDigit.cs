@@ -276,8 +276,8 @@ public class BigDigit
 
     public static bool operator <=(BigDigit first, BigDigit second)
     {
-        if (first.Mantissa >= 0d && second.Mantissa <= 0d
-            || first.Mantissa >= 0d && second.Mantissa <= 0d) return false;
+        if (first.Mantissa > 0d && second.Mantissa <= 0d
+            || first.Mantissa >= 0d && second.Mantissa < 0d) return false;
         else if (first.Mantissa < 0d && second.Mantissa >= 0d
             || first.Mantissa <= 0d && second.Mantissa > 0d) return true;
         else if (first.Exponent < second.Exponent) return true;

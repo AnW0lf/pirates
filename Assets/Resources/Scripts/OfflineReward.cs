@@ -32,12 +32,13 @@ public class OfflineReward : MonoBehaviour
 
     private void Start()
     {
-        Reward();
+        StartCoroutine(Reward());
     }
 
-    private void Reward()
+    private IEnumerator Reward()
     {
-        if (rewardGained) return;
+        if (rewardGained) yield break;
+        yield return new WaitForSeconds(0.1f);
         island.InitParameter("QuitTime", (DateTime.Now).ToString());
         ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
 
@@ -47,7 +48,7 @@ public class OfflineReward : MonoBehaviour
         {
             rewardGained = true;
             window.SetActive(false);
-            return;
+            yield break;
         }
         else
         {
@@ -90,16 +91,18 @@ public class OfflineReward : MonoBehaviour
         window.SetActive(!money.EqualsZero);
     }
 
+    /*
     private void OnApplicationPause(bool pause)
     {
         if (pause) rewardGained = false;
         else Reward();
     }
+    */
 
     private void OnApplicationFocus(bool focus)
     {
         if (!focus) rewardGained = false;
-        else Reward();
+        else StartCoroutine(Reward());
     }
 
     public void AddOfflineReward()
