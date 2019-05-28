@@ -38,7 +38,7 @@ public class OfflineReward : MonoBehaviour
     private IEnumerator Reward()
     {
         if (rewardGained) yield break;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForFixedUpdate();
         island.InitParameter("QuitTime", (DateTime.Now).ToString());
         ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
 
