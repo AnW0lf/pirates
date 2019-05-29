@@ -109,6 +109,7 @@ public class PolundraTimer : MonoBehaviour
     {
         if (focus)
         {
+            island.InitParameter("PauseTime", DateTime.Now.ToString());
             ts = DateTime.Now - DateTime.Parse(island.GetParameter("PauseTime", ""));
             if (ts.TotalMinutes > 10d)
             {
