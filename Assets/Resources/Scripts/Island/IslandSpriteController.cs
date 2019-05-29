@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class IslandSpriteController : MonoBehaviour
 {
     public List<Sprite> sprites;
-    public GameObject changeSpriteEffectPref;
+    public GameObject changeSpriteEffectPref, changeSpriteTextPref;
     public Vector3 effectScale = new Vector3(200f, 200f, 1f);
     [SerializeField] private float sizeIncrease = 0.03f;
     [SerializeField] private int islandNumber = 1, minLevel = 0, maxLevel = 0;
 
     private Image image;
     private Island island;
-    private GameObject changeSpriteEffect;
+    private GameObject changeSpriteEffect, changeSpriteText;
     private Animation anim;
     private RectTransform rect;
     private Vector2 startSizeDelta;
@@ -78,8 +78,23 @@ public class IslandSpriteController : MonoBehaviour
         island.SetParameter("IslandSpriteLevel_" + islandNumber, IslandSpriteLevel);
         changeSpriteEffect.SetActive(true);
         anim.Play("UpgradeBonusPulse");
+        if (changeSpriteText == null)
+        {
+            changeSpriteText = Instantiate(changeSpriteTextPref, transform);
+        }
         rect.sizeDelta = Vector2.one * startSizeDelta * Mathf.Pow((1f + sizeIncrease), IslandSpriteLevel);
         yield return wait;
         //changeSpriteEffect.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (changeSpriteText != null)
+        {
+            if (!changeSpriteText.GetComponent<Animation>().isPlaying)
+            {
+                Destroy(changeSpriteText);
+            }
+        }
     }
 }

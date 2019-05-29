@@ -14,6 +14,7 @@ public class PolundraTimer : MonoBehaviour
     [SerializeField] List<BonusGenerator> bgs = null;
 
     private Island island;
+    private TimeSpan ts;
 
     private void Awake()
     {
@@ -25,13 +26,14 @@ public class PolundraTimer : MonoBehaviour
         if (island.Level >= minLevel)
         {
             pack.SetActive(true);
-            StartCoroutine(Timer());
+            StartCoroutine(Timer(90));
         }
         else
         {
             pack.SetActive(false);
             EventManager.Subscribe("LevelUp", CheckPolundra);
         }
+        island.InitParameter("PauseTime", DateTime.Now.ToString());
     }
 
     private void CheckPolundra(object[] arg0)
@@ -39,15 +41,15 @@ public class PolundraTimer : MonoBehaviour
         if (island.Level >= minLevel)
         {
             pack.SetActive(true);
-            StartCoroutine(Timer());
+            StartCoroutine(Timer(90));
             EventManager.Unsubscribe("LevelUp", CheckPolundra);
         }
     }
 
-    private IEnumerator Timer()
+    private IEnumerator Timer(int time)
     {
         WaitForSeconds sec = new WaitForSeconds(1f);
-        for(int i = seconds; i >= 0; i--)
+        for(int i = time; i >= 0; i--)
         {
             timer.text = SecondsToTimerString(i);
             fill.fillAmount = 1f - ((float)i / seconds);
@@ -74,7 +76,7 @@ public class PolundraTimer : MonoBehaviour
             }
             yield return sec;
         }
-        StartCoroutine(Timer());
+        StartCoroutine(Timer(seconds));
     }
 
     private string SecondsToTimerString(int seconds)
@@ -82,5 +84,38 @@ public class PolundraTimer : MonoBehaviour
         string min = (seconds / 60).ToString();
         string sec = (seconds % 60) < 10 ? "0" + (seconds % 60).ToString() : (seconds % 60).ToString();
         return min + ":" + sec;
+    }
+
+    /*
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            island.SetParameter("PauseTime", DateTime.Now.ToString());
+        }
+        else
+        {
+            ts = DateTime.Now - DateTime.Parse(island.GetParameter("PauseTime", ""));
+            if (ts.TotalMinutes > 10d)
+            {
+                StopAllCoroutines();
+                StartCoroutine(Timer(90));
+            }
+        }
+    }
+    */
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+            ts = DateTime.Now - DateTime.Parse(island.GetParameter("PauseTime", ""));
+            if (ts.TotalMinutes > 10d)
+            {
+                StopAllCoroutines();
+                StartCoroutine(Timer(90));
+            }
+        }
+        else island.SetParameter("PauseTime", DateTime.Now.ToString());
     }
 }
