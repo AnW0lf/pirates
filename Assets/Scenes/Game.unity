@@ -4425,8 +4425,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d53f384c28ebd243a5a36e4b630b404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUpTitle: Time to Upgrade!
-  levelUpDescription: Tap to get Level Up, Lucky Wheel refill and bunch of bonuses!
+  levelUpTitle:
+  - Time to Level Up!
+  - Where's our captain?!
+  - Wheel Spins available!
+  - Come here, captain!
+  - 1 min to the POLUNDRA time!
+  levelUpDescription:
+  - Tap to get Level Up and Lucky Wheel refill!
+  - Tap to grab your Gold and upgrade ships!
+  - Tap to prove your luck. Win a Secret Ship!
+  - We're seeing tons of chests in the sea! Let's grab them!
+  - Tap here to see a beautiful bonus storm!
   dailyTitle: Daily Luck!
   dailyDescription: Tap to get free Lucky Wheel Spins and more!
 --- !u!4 &93384484
@@ -20516,7 +20526,7 @@ MonoBehaviour:
   tm: {fileID: 1664806128}
   bar: {fileID: 1624656375}
   timer: {fileID: 1995758689}
-  seconds: 60
+  seconds: 1800
   flag: {fileID: 1875319071}
   spinButton: {fileID: 413878822}
   wheelButton: {fileID: 1393203348}
@@ -30098,7 +30108,7 @@ MonoBehaviour:
   tm: {fileID: 1639203129}
   bar: {fileID: 337541490}
   timer: {fileID: 1375932103}
-  seconds: 60
+  seconds: 1800
   flag: {fileID: 2140429887}
   spinButton: {fileID: 1789189240}
   wheelButton: {fileID: 1886872325}
@@ -42773,7 +42783,7 @@ MonoBehaviour:
   tm: {fileID: 1724126229}
   bar: {fileID: 206987236}
   timer: {fileID: 785569984}
-  seconds: 60
+  seconds: 1800
   flag: {fileID: 51990273}
   spinButton: {fileID: 633751323}
   wheelButton: {fileID: 1497067137}
@@ -75058,7 +75068,7 @@ MonoBehaviour:
   tm: {fileID: 772462708}
   bar: {fileID: 1285182287}
   timer: {fileID: 538648933}
-  seconds: 60
+  seconds: 1800
   flag: {fileID: 331431421}
   spinButton: {fileID: 528562073}
   wheelButton: {fileID: 355772018}

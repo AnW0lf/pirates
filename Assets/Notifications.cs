@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Notifications : MonoBehaviour
 {
-    public string levelUpTitle, levelUpDescription;
+    public string[] levelUpTitle, levelUpDescription;
     public string dailyTitle, dailyDescription;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,17 +26,20 @@ public class Notifications : MonoBehaviour
 
                 if (pause)
                 {
-                    DateTime levelUpDateToNotify = DateTime.Now.AddHours(2);
+                    DateTime levelUpDateToNotify = DateTime.Now.AddHours(3);
                     DateTime dailyDateToNotify = DateTime.Now.AddDays(1);
             
                     // LEVEL UP
 
                     UnityEngine.iOS.LocalNotification levelUpNotif = new UnityEngine.iOS.LocalNotification();
                     levelUpNotif.fireDate = levelUpDateToNotify;
-                    levelUpNotif.alertTitle = levelUpTitle;
-                    levelUpNotif.alertBody = levelUpDescription;
 
-                    levelUpNotif.repeatInterval = UnityEngine.iOS.CalendarUnit.Hour;
+                    int randomDescr = (int)UnityEngine.Random.Range(0f, levelUpTitle.Length);
+
+                    levelUpNotif.alertTitle = levelUpTitle[randomDescr];
+                    levelUpNotif.alertBody = levelUpDescription[randomDescr];
+
+                    levelUpNotif.repeatInterval = UnityEngine.iOS.CalendarUnit.Day;
 
                     UnityEngine.iOS.NotificationServices.ScheduleLocalNotification(levelUpNotif);
 
