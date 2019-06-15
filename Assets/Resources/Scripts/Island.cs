@@ -15,32 +15,32 @@ public class Island
     private List<string> parameters;
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
-        new BigDigit(1.5f, 1), // 0
+        new BigDigit(4f, 1), // 0
         new BigDigit(7f, 1), // 1
-        new BigDigit(4f, 2), // 2
-        new BigDigit(6.3f, 2), // 3
-        new BigDigit(2.8f, 3), // 4
-        new BigDigit(4.6f, 3), // 5
-        new BigDigit(7f, 3), // 6
-        new BigDigit(9.3f, 3), // 7
-        new BigDigit(2.1f, 4), // 8
-        new BigDigit(2.2f, 4), // 9
-        new BigDigit(2.5f, 4), // 10
-        new BigDigit(4.4f, 4), // 11
-        new BigDigit(5.2f, 4), // 12
-        new BigDigit(6f, 4), // 13
-        new BigDigit(8f, 4), // 14
-        new BigDigit(1f, 5), // 15
-        new BigDigit(1.2f, 5), // 16
-        new BigDigit(1.8f, 5), // 17
-        new BigDigit(1.9f, 5), // 18
-        new BigDigit(2f, 5), // 19
-        new BigDigit(2.1f, 5), // 20
-        new BigDigit(2.2f, 5), // 21
-        new BigDigit(2.3f, 5), // 22
-        new BigDigit(2.4f, 5), // 23
-        new BigDigit(2.5f, 5), // 24
-        new BigDigit(2.6f, 5), // 25
+        new BigDigit(3.5f, 2), // 2
+        new BigDigit(4.7f, 2), // 3
+        new BigDigit(2.1f, 3), // 4
+        new BigDigit(3.3f, 3), // 5
+        new BigDigit(5f, 3), // 6
+        new BigDigit(6.7f, 3), // 7
+        new BigDigit(1.51f, 4), // 8
+        new BigDigit(1.58f, 4), // 9
+        new BigDigit(1.8f, 4), // 10
+        new BigDigit(3.168f, 4), // 11
+        new BigDigit(3.744f, 4), // 12
+        new BigDigit(4.32f, 4), // 13
+        new BigDigit(5.76f, 4), // 14
+        new BigDigit(7.2f, 4), // 15
+        new BigDigit(8.64f, 4), // 16
+        new BigDigit(1.296f, 5), // 17
+        new BigDigit(1.368f, 5), // 18
+        new BigDigit(1.44f, 5), // 19
+        new BigDigit(1.512f, 5), // 20
+        new BigDigit(1.584f, 5), // 21
+        new BigDigit(1.656f, 5), // 22
+        new BigDigit(1.728f, 5), // 23
+        new BigDigit(1.8f, 5), // 24
+        new BigDigit(1.95f, 5), // 25
         new BigDigit(2f, 5), // 26
         new BigDigit(4.5f, 5), // 27
         new BigDigit(1f, 6), // 28
