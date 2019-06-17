@@ -6676,7 +6676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
+  shipIcon: {fileID: 21300000, guid: fdefb56dca794414e8c46f9eb1130365, type: 3}
   minLvl: 0
   shipDescription: Fifteen men on the dead man's chest!
   black: 1
@@ -6684,7 +6684,7 @@ MonoBehaviour:
     type: 3}
   size: 250
   rise: 510
-  angle: 300
+  angle: 315
   shipName: Black Terror
   startPriceMantissa: 0
   startPriceExponent: 0
@@ -6734,7 +6734,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 1, g: 1, b: 1, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 0c7c8926b55f8294083ef05c5b6609ac, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: fdefb56dca794414e8c46f9eb1130365, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &142360240
@@ -24455,7 +24455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
+  shipIcon: {fileID: 21300000, guid: 15fc3d0fbe7c9bd4bb57e94e57dd9ae7, type: 3}
   minLvl: 0
   shipDescription: Good choice to start!
   black: 0
@@ -24513,7 +24513,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 0e74f076ee376cb47a436a35cbe5be47, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 15fc3d0fbe7c9bd4bb57e94e57dd9ae7, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &511142907
@@ -40354,15 +40354,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: 4ed1a3a95997ffe469708981b5a30d11, type: 3}
+  shipIcon: {fileID: 21300000, guid: e0c1dcac6dbe24a48a5d460b2182ba90, type: 3}
   minLvl: 5
   shipDescription: Serious ship for a serious person.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 207
+  size: 168
   rise: 510
-  angle: 180
+  angle: 105
   shipName: King Georg
   startPriceMantissa: 1.1
   startPriceExponent: 3
@@ -40412,7 +40412,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 4ed1a3a95997ffe469708981b5a30d11, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: e0c1dcac6dbe24a48a5d460b2182ba90, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &821408876
@@ -52119,15 +52119,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  shipIcon: {fileID: 21300000, guid: baac486b51e0c634681a6e7fa1661b1a, type: 3}
   minLvl: 12
   shipDescription: Feel like a new Magellan!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 201
   rise: 450
-  angle: 240
+  angle: 210
   shipName: 1_7
   startPriceMantissa: 1.85
   startPriceExponent: 4
@@ -52177,7 +52177,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: baac486b51e0c634681a6e7fa1661b1a, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1038229872
@@ -55962,15 +55962,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: 867846aa592926a4399ecac2f3e5112b, type: 3}
+  shipIcon: {fileID: 21300000, guid: 51957dccc136474449984c3ecc1ecc1f, type: 3}
   minLvl: 3
   shipDescription: Cuts through the waves.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 185
+  size: 157
   rise: 450
-  angle: 120
+  angle: 70
   shipName: Saber
   startPriceMantissa: 3
   startPriceExponent: 2
@@ -56020,7 +56020,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 867846aa592926a4399ecac2f3e5112b, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 51957dccc136474449984c3ecc1ecc1f, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1108078303
@@ -63781,15 +63781,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  shipIcon: {fileID: 21300000, guid: faf3c1474ce35fd418fceb425e9f34e5, type: 3}
   minLvl: 7
   shipDescription: Feel like a new Magellan!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 179
   rise: 450
-  angle: 240
+  angle: 140
   shipName: Santa Maria
   startPriceMantissa: 3
   startPriceExponent: 3
@@ -63839,7 +63839,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: faf3c1474ce35fd418fceb425e9f34e5, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1273333632
@@ -64064,15 +64064,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  shipIcon: {fileID: 21300000, guid: 9a8dbaef0c4f8a8459d5c5b22e6be9dc, type: 3}
   minLvl: 15
   shipDescription: Feel like a new Magellan!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 222
   rise: 450
-  angle: 240
+  angle: 245
   shipName: 1_8
   startPriceMantissa: 5.3
   startPriceExponent: 4
@@ -64122,7 +64122,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 9a8dbaef0c4f8a8459d5c5b22e6be9dc, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1277141324
@@ -67811,15 +67811,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: 67e39eddf435b3044b857267eb5fb558, type: 3}
+  shipIcon: {fileID: 21300000, guid: 2244f7ec1cbfd854b804735a1007ee4e, type: 3}
   minLvl: 2
   shipDescription: Small, cozy, very pretty.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 157
+  size: 146
   rise: 510
-  angle: 60
+  angle: 35
   shipName: Pink Queen
   startPriceMantissa: 5.5
   startPriceExponent: 1
@@ -67869,7 +67869,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 67e39eddf435b3044b857267eb5fb558, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 2244f7ec1cbfd854b804735a1007ee4e, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1352861208
@@ -68369,15 +68369,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  shipIcon: {fileID: 21300000, guid: 380bb3299e5813d49ad6cdc6c27bec7f, type: 3}
   minLvl: 9
   shipDescription: Feel like a new Magellan!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 190
   rise: 450
-  angle: 240
+  angle: 175
   shipName: 1_6
   startPriceMantissa: 9
   startPriceExponent: 3
@@ -68427,7 +68427,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 380bb3299e5813d49ad6cdc6c27bec7f, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1362370235
@@ -80516,15 +80516,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
-  shipIcon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  shipIcon: {fileID: 21300000, guid: 78f4bed60a5a6e840824f81bf2f88908, type: 3}
   minLvl: 18
   shipDescription: Feel like a new Magellan!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 234
   rise: 450
-  angle: 240
+  angle: 280
   shipName: 1_9
   startPriceMantissa: 1.5
   startPriceExponent: 5
@@ -80574,7 +80574,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 78f4bed60a5a6e840824f81bf2f88908, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
 --- !u!1 &1611082978
