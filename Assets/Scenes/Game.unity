@@ -68405,7 +68405,7 @@ MonoBehaviour:
   detailChangeRaidTime2: -2.5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 8.8
-  detailStartCostExponent2: 4
+  detailStartCostExponent2: 3
   detailCostIncreaseMantissa2: 4.5
   detailCostIncreaseExponent2: 2
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
