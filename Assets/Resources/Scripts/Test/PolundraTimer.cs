@@ -41,7 +41,7 @@ public class PolundraTimer : MonoBehaviour
         if (island.Level >= minLevel)
         {
             pack.SetActive(true);
-            StartCoroutine(Timer(90));
+            StartCoroutine(Timer(120));
             EventManager.Unsubscribe("LevelUp", CheckPolundra);
         }
     }

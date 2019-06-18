@@ -88,15 +88,12 @@ public class LifebuoyManager : MonoBehaviour
         // FLAG AND SPIN BUTTON
         if (cur > 0)
         {
-            if (!spinButton.GetComponent<Button>().interactable)
-            {
-                spinButton.GetComponent<Button>().interactable = true;
-            }
-
+            /*
             if (wheelButton.GetComponent<Image>().color != new Color(1f, 1f, 1f))
             {
                 wheelButton.GetComponent<Image>().color = new Color(1f, 1f, 1f);
             }
+            */
 
             if (!flag.activeInHierarchy)
             {
@@ -105,15 +102,12 @@ public class LifebuoyManager : MonoBehaviour
         }
         else
         {
-            if (spinButton.GetComponent<Button>().interactable)
-            {
-                spinButton.GetComponent<Button>().interactable = false;
-            }
-
+            /*
             if (wheelButton.GetComponent<Image>().color == new Color(1f, 1f, 1f))
             {
                 wheelButton.GetComponent<Image>().color = new Color(1f, 1f, 1f);
             }
+            */
 
             if (flag.activeInHierarchy)
             {
@@ -135,10 +129,16 @@ public class LifebuoyManager : MonoBehaviour
         flag.GetComponentInChildren<Text>().text = cur.ToString();
     }
 
+    public int GetLifebuoy()
+    {
+        return cur;
+    }
+
     public void AddLifebuoy()
     {
         island.SetParameter(modifierName + "_current", ++cur);
         UpdateInfo();
+        EventManager.SendEvent("AddLifebuoy");
     }
 
     public bool SubtractLifebuoy()

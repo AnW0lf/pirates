@@ -71,7 +71,7 @@ public class WindowController : MonoBehaviour
             a = pier.detailChangeRaidTime2;
             b = pier.detailChangeReward2;
         }
-        else if (pier.detailCurrentLvl3 < pier.detailMaxLvl3)
+        else if (pier.detailCurrentLvl3 <= pier.detailMaxLvl3)
         {
             a = pier.detailChangeRaidTime3;
             b = pier.detailChangeReward3;

@@ -45,6 +45,17 @@ public class RouletteRotation : MonoBehaviour
     private void OnEnable()
     {
         InitInfo();
+        EventManager.Subscribe("AddLifebuoy", UpdateSpinButton);
+    }
+
+    private void UpdateSpinButton(object[] arg0)
+    {
+        UpdateSpinButton();
+    }
+
+    private void UpdateSpinButton()
+    {
+        spinButton.interactable = lm.GetLifebuoy() > 0 && (!IsRolling || !speedUp);
     }
 
     private void InitInfo()
@@ -82,7 +93,7 @@ public class RouletteRotation : MonoBehaviour
     {
         island.InitParameter(rouletteName + "_num", 0);
         num = island.GetParameter(rouletteName + "_num", 0);
-        spinButton.interactable = !IsRolling || speedUp;
+        spinButton.interactable = !IsRolling || !speedUp;
 
         if (num == 0) lm.MaximizeLifebuoys();
         anglePerItem = 360f / sectors.Length;
@@ -123,7 +134,7 @@ public class RouletteRotation : MonoBehaviour
     private IEnumerator Rolling(float time, float maxAngle)
     {
         IsRolling = true;
-        spinButton.interactable = !IsRolling || speedUp;
+        spinButton.interactable = !IsRolling || !speedUp;
         float timer = 0.0f;
         float startAngle = transform.eulerAngles.z;
         maxAngle = maxAngle - startAngle;
@@ -140,7 +151,7 @@ public class RouletteRotation : MonoBehaviour
         IsRolling = false;
         speedUp = false;
         Reward();
-        spinButton.interactable = !IsRolling || speedUp;
+        UpdateSpinButton();
     }
 
     private void Reward()

@@ -134,6 +134,7 @@ public class IslandController : MonoBehaviour
         _flyingText.GetComponent<FlyingText>().rewardText.GetComponent<Text>().text = reward.ToString();
 
         island.ChangeMoney(reward);
+        if(clicked) EventManager.SendEvent("AddMoneyPulse");
         yield return new WaitForSeconds(time / 2);
         clickEffect.SetActive(false);
         clicked = false;
