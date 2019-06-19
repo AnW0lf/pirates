@@ -124,6 +124,7 @@ public class LifebuoyManager : MonoBehaviour
         lvl = island.GetParameter(modifierName + "_level", 0);
         max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
         cur = island.GetParameter(modifierName + "_current", 0);
+        EventManager.SendEvent("AddLifebuoy");
         bar.fillAmount = (float)cur / max;
         tm.text = cur + "/" + max;
         flag.GetComponentInChildren<Text>().text = cur.ToString();

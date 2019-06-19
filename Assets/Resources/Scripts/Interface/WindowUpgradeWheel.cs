@@ -9,6 +9,7 @@ public class WindowUpgradeWheel : WindowBase
     [SerializeField] private Text text = null;
     [SerializeField] private Button btn = null;
     [SerializeField] private List<RouletteRotation> wheels = null;
+    [SerializeField] protected ScrollManager sm;
 
     private WheelButton wb = null;
     private Island island;
@@ -58,5 +59,26 @@ public class WindowUpgradeWheel : WindowBase
     {
         base.Close();
         transform.parent.GetComponent<InterfaceIerarchy>().Next();
+    }
+
+    public void OpenWheel()
+    {
+        foreach (RouletteRotation w in wheels)
+        {
+            if (w.levels.Contains(island.Level))
+            {
+                w.wb.WheelSwitch();
+                StartCoroutine(Center());
+                return;
+            }
+        }
+    }
+
+    private IEnumerator Center()
+    {
+        bool Opened() { return transform.parent.GetComponent<InterfaceIerarchy>().Done; }
+        yield return new WaitWhile(Opened);
+        yield return new WaitForSeconds(0.5f);
+        sm.Center();
     }
 }

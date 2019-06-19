@@ -46,6 +46,7 @@ public class RouletteRotation : MonoBehaviour
     {
         InitInfo();
         EventManager.Subscribe("AddLifebuoy", UpdateSpinButton);
+        EventManager.Subscribe("LevelUp", UpdateSpinButton);
     }
 
     private void UpdateSpinButton(object[] arg0)
