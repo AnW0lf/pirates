@@ -6115,7 +6115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: c3e346e845dd0134fb32e36a5e3c37aa, type: 3}
-  minLvl: 28
+  minLvl: 26
   shipDescription: Little boy with a great power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -12859,7 +12859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: df185ea4ac53de849be43b5bc454e7fe, type: 3}
-  minLvl: 67
+  minLvl: 64
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -15724,7 +15724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 0ff830e64086e4d49b3d145afe78a754, type: 3}
-  minLvl: 54
+  minLvl: 51
   shipDescription: Perfect for parties and expeditions.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -17724,8 +17724,9 @@ MonoBehaviour:
   - {fileID: 1762622934}
   - {fileID: 512118582}
   - {fileID: 2144215061}
-  levels: 1a0000001e00000022000000260000002b000000
+  levels: 1b0000001e00000022000000260000002a0000002e000000
   modifiers:
+  - 2
   - 2
   - 2
   - 2
@@ -17801,7 +17802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 044883e5f80e96a41a95a8d3d4845b64, type: 3}
-  minLvl: 67
+  minLvl: 68
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -27488,7 +27489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 45e0206524a619340b364e33f7694e41, type: 3}
-  minLvl: 41
+  minLvl: 31
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -38534,7 +38535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 92e6315010c5e2d40bfc336f425fbe89, type: 3}
-  minLvl: 62
+  minLvl: 54
   shipDescription: Don't buy it if you don't love speed.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -43108,7 +43109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 79109f759defde94bb9e620a312c8e4e, type: 3}
-  minLvl: 67
+  minLvl: 61
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -44164,7 +44165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 841f7d054b88c7f4cb1328a00f000c02, type: 3}
-  minLvl: 67
+  minLvl: 56
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -54645,7 +54646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 8d3414b5b6e1fcf4184c47f11cb8bca5, type: 3}
-  minLvl: 32
+  minLvl: 27
   shipDescription: Professional wave tamer.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -67252,23 +67253,23 @@ MonoBehaviour:
   questText: {fileID: 1230724947}
   rankText: {fileID: 5908471}
   opened: 0
-  levels: 0200000005000000090000000e000000140000001b0000001f00000023000000280000002d000000370000003c00000041000000460000004b000000
+  levels: 04000000080000000d00000011000000150000001c0000002000000025000000290000002c00000035000000390000003e0000004200000046000000
   texts:
-  - Reach level 2
-  - Reach level 5
-  - Reach level 9
-  - Reach level 14
-  - Reach level 20
-  - Reach level 27
-  - Reach level 31
-  - Reach level 35
-  - Reach level 40
-  - Reach level 45
-  - Reach level 55
-  - Reach level 60
-  - Reach level 65
+  - Reach level 4
+  - Reach level 8
+  - Reach level 13
+  - Reach level 17
+  - Reach level 21
+  - Reach level 28
+  - Reach level 32
+  - Reach level 37
+  - Reach level 41
+  - Reach level 44
+  - Reach level 53
+  - Reach level 57
+  - Reach level 62
+  - Reach level 66
   - Reach level 70
-  - Reach level 75
 --- !u!1 &1348054914
 GameObject:
   m_ObjectHideFlags: 0
@@ -79918,8 +79919,10 @@ MonoBehaviour:
   - {fileID: 1491927942}
   - {fileID: 1818074819}
   - {fileID: 542310806}
-  levels: 34000000380000003c00000041000000
+  levels: 35000000390000003c000000410000004500000049000000
   modifiers:
+  - 2
+  - 2
   - 2
   - 2
   - 2
@@ -81604,7 +81607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 0d6dea2aad1e8aa4da8c60d9a7231a63, type: 3}
-  minLvl: 36
+  minLvl: 29
   shipDescription: Synergy of beauty and power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -83177,7 +83180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 7e492c2852cf54047a35939cda48fa7e, type: 3}
-  minLvl: 41
+  minLvl: 33
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -93250,7 +93253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: d49b3dfb49ae30b4c825de20e8d3f43d, type: 3}
-  minLvl: 67
+  minLvl: 58
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -93731,7 +93734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: ff80b7983a33ac244a61e0f9c43b9cb8, type: 3}
-  minLvl: 41
+  minLvl: 36
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -101178,7 +101181,7 @@ MonoBehaviour:
   - {fileID: 987091779}
   - {fileID: 457200529}
   - {fileID: 1903746060}
-  levels: 05000000080000000c0000001000000012000000
+  levels: 060000000a0000000e0000001200000016000000
   modifiers:
   - 2
   - 2
@@ -101332,7 +101335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: c10a66181dc5a854d877302c474391bc, type: 3}
-  minLvl: 41
+  minLvl: 39
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -103803,7 +103806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 6cd193aa6d397714fb57b18b606e0c79, type: 3}
-  minLvl: 41
+  minLvl: 43
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -104952,7 +104955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 5380f42704496804da13ceef4b9aec7a, type: 3}
-  minLvl: 58
+  minLvl: 52
   shipDescription: Only for the rich and famous!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
