@@ -22,7 +22,7 @@ public class PierManager : MonoBehaviour
     public double startPriceMantissa;
     public long startPriceExponent;
     public float startRaidTime;
-    public int startReward;
+    public long startReward;
     [Header("Скорость движения")]
     public float speedAngle, speedLinear, speedRaidModifier;
     [Header("Первый параметр")]

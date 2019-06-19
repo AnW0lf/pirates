@@ -6127,14 +6127,14 @@ MonoBehaviour:
   startPriceMantissa: 1.35
   startPriceExponent: 7
   startRaidTime: 8
-  startReward: 54000
+  startReward: 36000
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
-  detailMaxLvl1: 3
+  detailMaxLvl1: 2
   detailCurrentLvl1: 0
-  detailChangeReward1: 5400
+  detailChangeReward1: 4500
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 1.485
@@ -6144,7 +6144,7 @@ MonoBehaviour:
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
-  detailMaxLvl2: 3
+  detailMaxLvl2: 2
   detailCurrentLvl2: 0
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
@@ -6156,9 +6156,9 @@ MonoBehaviour:
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
-  detailMaxLvl3: 3
+  detailMaxLvl3: 2
   detailCurrentLvl3: 0
-  detailChangeReward3: 8100
+  detailChangeReward3: 6300
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 6.75
@@ -12871,14 +12871,14 @@ MonoBehaviour:
   startPriceMantissa: 1.458
   startPriceExponent: 14
   startRaidTime: 30
-  startReward: 1485000000
+  startReward: 4950000000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 49500000
+  detailChangeReward1: 267300000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 1.5552
@@ -12891,7 +12891,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -4
+  detailChangeRaidTime2: -3.5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 2.349
   detailStartCostExponent2: 14
@@ -12902,7 +12902,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 74250000
+  detailChangeReward3: 396000000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 3.888
@@ -15736,14 +15736,14 @@ MonoBehaviour:
   startPriceMantissa: 4.05
   startPriceExponent: 11
   startRaidTime: 8
-  startReward: 59400000
+  startReward: 39600000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
-  detailMaxLvl1: 3
+  detailMaxLvl1: 2
   detailCurrentLvl1: 0
-  detailChangeReward1: 5940000
+  detailChangeReward1: 4950000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 4.455
@@ -15753,7 +15753,7 @@ MonoBehaviour:
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
-  detailMaxLvl2: 3
+  detailMaxLvl2: 2
   detailCurrentLvl2: 0
   detailChangeReward2: 0
   detailChangeRaidTime2: -1.5
@@ -15765,9 +15765,9 @@ MonoBehaviour:
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
-  detailMaxLvl3: 3
+  detailMaxLvl3: 2
   detailCurrentLvl3: 0
-  detailChangeReward3: 8910000
+  detailChangeReward3: 6930000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 2.025
@@ -17814,14 +17814,14 @@ MonoBehaviour:
   startPriceMantissa: 1.458
   startPriceExponent: 14
   startRaidTime: 38
-  startReward: 1485000000
+  startReward: 9900000000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 49500000
+  detailChangeReward1: 544500000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 1.5552
@@ -17845,7 +17845,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 74250000
+  detailChangeReward3: 792000000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 3.888
@@ -27501,14 +27501,14 @@ MonoBehaviour:
   startPriceMantissa: 4.86
   startPriceExponent: 9
   startRaidTime: 17
-  startReward: 1350000
+  startReward: 486000
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 45000
+  detailChangeReward1: 27000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 5.184
@@ -27521,7 +27521,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -4
+  detailChangeRaidTime2: -2
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 7.83
   detailStartCostExponent2: 9
@@ -27532,7 +27532,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 67500
+  detailChangeReward3: 40500
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 1.296
@@ -32943,14 +32943,14 @@ MonoBehaviour:
   startPriceMantissa: 0
   startPriceExponent: 0
   startRaidTime: 60
-  startReward: 495000000
+  startReward: 1980000000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 4
   detailCurrentLvl1: 0
-  detailChangeReward1: 148500000
+  detailChangeReward1: 1485000000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 0
@@ -32974,7 +32974,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 4
   detailCurrentLvl3: 0
-  detailChangeReward3: 346500000
+  detailChangeReward3: 2147483647
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 0
@@ -38547,14 +38547,14 @@ MonoBehaviour:
   startPriceMantissa: 2.835
   startPriceExponent: 13
   startRaidTime: 14
-  startReward: 594000000
+  startReward: 237600000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 24750000
+  detailChangeReward1: 15840000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 2.997
@@ -38567,7 +38567,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -3
+  detailChangeRaidTime2: -1.5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 4.86
   detailStartCostExponent2: 13
@@ -38578,7 +38578,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 34650000
+  detailChangeReward3: 23760000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 7.695
@@ -39530,14 +39530,14 @@ MonoBehaviour:
   startPriceMantissa: 0
   startPriceExponent: 0
   startRaidTime: 60
-  startReward: 450000
+  startReward: 1800000
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 4
   detailCurrentLvl1: 0
-  detailChangeReward1: 135000
+  detailChangeReward1: 1350000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 0
@@ -39561,7 +39561,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 4
   detailCurrentLvl3: 0
-  detailChangeReward3: 315000
+  detailChangeReward3: 2700000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 0
@@ -43121,14 +43121,14 @@ MonoBehaviour:
   startPriceMantissa: 1.458
   startPriceExponent: 14
   startRaidTime: 25
-  startReward: 1485000000
+  startReward: 2376000000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 49500000
+  detailChangeReward1: 128700000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 1.5552
@@ -43141,7 +43141,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -4
+  detailChangeRaidTime2: -3
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 2.349
   detailStartCostExponent2: 14
@@ -43152,7 +43152,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 74250000
+  detailChangeReward3: 198000000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 3.888
@@ -44177,14 +44177,14 @@ MonoBehaviour:
   startPriceMantissa: 1.458
   startPriceExponent: 14
   startRaidTime: 17
-  startReward: 1485000000
+  startReward: 534600000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 49500000
+  detailChangeReward1: 29700000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 1.5552
@@ -44197,7 +44197,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -4
+  detailChangeRaidTime2: -2
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 2.349
   detailStartCostExponent2: 14
@@ -44208,7 +44208,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 74250000
+  detailChangeReward3: 44550000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 3.888
@@ -54658,14 +54658,14 @@ MonoBehaviour:
   startPriceMantissa: 1.485
   startPriceExponent: 8
   startRaidTime: 10
-  startReward: 189000
+  startReward: 90000
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 10800
+  detailChangeReward1: 7200
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 1.593
@@ -54678,7 +54678,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -2
+  detailChangeRaidTime2: -1.5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 2.781
   detailStartCostExponent2: 8
@@ -54687,9 +54687,9 @@ MonoBehaviour:
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
-  detailMaxLvl3: 3
+  detailMaxLvl3: 2
   detailCurrentLvl3: 0
-  detailChangeReward3: 16200
+  detailChangeReward3: 10800
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 5.265
@@ -55354,12 +55354,12 @@ MonoBehaviour:
   startPriceMantissa: 6.75
   startPriceExponent: 5
   startRaidTime: 4
-  startReward: 10800
+  startReward: 12600
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
-  detailMaxLvl1: 3
+  detailMaxLvl1: 1
   detailCurrentLvl1: 0
   detailChangeReward1: 2700
   detailChangeRaidTime1: 0
@@ -55371,7 +55371,7 @@ MonoBehaviour:
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
-  detailMaxLvl2: 3
+  detailMaxLvl2: 1
   detailCurrentLvl2: 0
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
@@ -55383,7 +55383,7 @@ MonoBehaviour:
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
-  detailMaxLvl3: 3
+  detailMaxLvl3: 2
   detailCurrentLvl3: 0
   detailChangeReward3: 3600
   detailChangeRaidTime3: 0
@@ -57859,12 +57859,12 @@ MonoBehaviour:
   startPriceMantissa: 2.025
   startPriceExponent: 10
   startRaidTime: 4
-  startReward: 11880000
+  startReward: 13860000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
-  detailMaxLvl1: 3
+  detailMaxLvl1: 1
   detailCurrentLvl1: 0
   detailChangeReward1: 2970000
   detailChangeRaidTime1: 0
@@ -57876,7 +57876,7 @@ MonoBehaviour:
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
-  detailMaxLvl2: 3
+  detailMaxLvl2: 1
   detailCurrentLvl2: 0
   detailChangeReward2: 0
   detailChangeRaidTime2: -1
@@ -57888,7 +57888,7 @@ MonoBehaviour:
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
-  detailMaxLvl3: 3
+  detailMaxLvl3: 2
   detailCurrentLvl3: 0
   detailChangeReward3: 3960000
   detailChangeRaidTime3: 0
@@ -81619,14 +81619,14 @@ MonoBehaviour:
   startPriceMantissa: 9.45
   startPriceExponent: 8
   startRaidTime: 14
-  startReward: 540000
+  startReward: 216000
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 22500
+  detailChangeReward1: 14400
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 9.99
@@ -81639,7 +81639,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -3
+  detailChangeRaidTime2: -1.5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 1.62
   detailStartCostExponent2: 9
@@ -81650,7 +81650,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 31500
+  detailChangeReward3: 21600
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 2.565
@@ -83192,14 +83192,14 @@ MonoBehaviour:
   startPriceMantissa: 4.86
   startPriceExponent: 9
   startRaidTime: 20
-  startReward: 1350000
+  startReward: 990000
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 45000
+  detailChangeReward1: 59000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 5.184
@@ -83212,7 +83212,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -4
+  detailChangeRaidTime2: -2.5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 7.83
   detailStartCostExponent2: 9
@@ -83223,7 +83223,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 67500
+  detailChangeReward3: 90000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 1.296
@@ -93265,14 +93265,14 @@ MonoBehaviour:
   startPriceMantissa: 1.458
   startPriceExponent: 14
   startRaidTime: 20
-  startReward: 1485000000
+  startReward: 1089000000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 49500000
+  detailChangeReward1: 64350000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 1.5552
@@ -93285,7 +93285,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -4
+  detailChangeRaidTime2: -2.5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 2.349
   detailStartCostExponent2: 14
@@ -93296,7 +93296,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 74250000
+  detailChangeReward3: 99000000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 3.888
@@ -93746,14 +93746,14 @@ MonoBehaviour:
   startPriceMantissa: 4.86
   startPriceExponent: 9
   startRaidTime: 25
-  startReward: 1350000
+  startReward: 2160000
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 45000
+  detailChangeReward1: 117000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 5.184
@@ -93766,7 +93766,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -4
+  detailChangeRaidTime2: -3
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 7.83
   detailStartCostExponent2: 9
@@ -93777,7 +93777,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 67500
+  detailChangeReward3: 180000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 1.296
@@ -101347,14 +101347,14 @@ MonoBehaviour:
   startPriceMantissa: 4.86
   startPriceExponent: 9
   startRaidTime: 30
-  startReward: 1350000
+  startReward: 4500000
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 45000
+  detailChangeReward1: 243000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 5.184
@@ -101367,7 +101367,7 @@ MonoBehaviour:
   detailMaxLvl2: 3
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -4
+  detailChangeRaidTime2: -3.5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 7.83
   detailStartCostExponent2: 9
@@ -101378,7 +101378,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 67500
+  detailChangeReward3: 360000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 1.296
@@ -103818,14 +103818,14 @@ MonoBehaviour:
   startPriceMantissa: 4.86
   startPriceExponent: 9
   startRaidTime: 38
-  startReward: 1350000
+  startReward: 9000000
   speedAngle: 32
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 45000
+  detailChangeReward1: 495000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 5.184
@@ -103849,7 +103849,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 67500
+  detailChangeReward3: 720000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 1.296
@@ -104967,14 +104967,14 @@ MonoBehaviour:
   startPriceMantissa: 4.455
   startPriceExponent: 12
   startRaidTime: 10
-  startReward: 207900000
+  startReward: 99000000
   speedAngle: 35
   speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
   detailCurrentLvl1: 0
-  detailChangeReward1: 11880000
+  detailChangeReward1: 7920000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 4.779
@@ -104984,10 +104984,10 @@ MonoBehaviour:
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
-  detailMaxLvl2: 3
+  detailMaxLvl2: 2
   detailCurrentLvl2: 0
   detailChangeReward2: 0
-  detailChangeRaidTime2: -2
+  detailChangeRaidTime2: -1.5
   detailSizeModifier2: 0.02
   detailStartCostMantissa2: 8.343
   detailStartCostExponent2: 12
@@ -104998,7 +104998,7 @@ MonoBehaviour:
   detailName3: Gun
   detailMaxLvl3: 3
   detailCurrentLvl3: 0
-  detailChangeReward3: 17820000
+  detailChangeReward3: 11880000
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
   detailStartCostMantissa3: 1.5795
