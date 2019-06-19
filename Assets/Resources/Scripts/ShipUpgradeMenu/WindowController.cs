@@ -60,7 +60,7 @@ public class WindowController : MonoBehaviour
     public void BonusPulse()
     {
         float a = 0f;
-        int b = 0;
+        long b = 0;
         if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
         {
             a = pier.detailChangeRaidTime1;
@@ -220,7 +220,7 @@ public class WindowController : MonoBehaviour
             icon.sprite = pier.spriteForMenu;
 
         float a = 0f;
-        int b = 0;
+        long b = 0;
         if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
         {
             SetState(detailLevelTM, pier.detailCurrentLvl1.ToString() + "/" + pier.detailMaxLvl1, "HULL ");

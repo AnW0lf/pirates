@@ -28,7 +28,8 @@ public class PierManager : MonoBehaviour
     [Header("Первый параметр")]
     [Header("|Прокачка|")]
     public string detailName1;
-    public int detailMaxLvl1, detailCurrentLvl1, detailChangeReward1;
+    public int detailMaxLvl1, detailCurrentLvl1; 
+    public long detailChangeReward1;
     public float detailChangeRaidTime1, detailSizeModifier1;
     public double detailStartCostMantissa1;
     public long detailStartCostExponent1;
@@ -40,7 +41,8 @@ public class PierManager : MonoBehaviour
 
     [Header("Второй параметр")]
     public string detailName2;
-    public int detailMaxLvl2, detailCurrentLvl2, detailChangeReward2;
+    public int detailMaxLvl2, detailCurrentLvl2;
+    public long detailChangeReward2;
     public float detailChangeRaidTime2, detailSizeModifier2;
     public double detailStartCostMantissa2;
     public long detailStartCostExponent2;
@@ -52,7 +54,8 @@ public class PierManager : MonoBehaviour
 
     [Header("Третий параметр")]
     public string detailName3;
-    public int detailMaxLvl3, detailCurrentLvl3, detailChangeReward3;
+    public int detailMaxLvl3, detailCurrentLvl3;
+    public long detailChangeReward3;
     public float detailChangeRaidTime3, detailSizeModifier3;
     public double detailStartCostMantissa3;
     public long detailStartCostExponent3;
