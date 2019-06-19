@@ -4171,7 +4171,7 @@ MonoBehaviour:
   - {fileID: 393756848}
   - {fileID: 1599426458}
   - {fileID: 2021181328}
-  sm: {fileID: 1233723228}
+  sm: {fileID: 0}
 --- !u!1 &75261509
 GameObject:
   m_ObjectHideFlags: 0
@@ -6114,19 +6114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: 553d5c1e02d51a24699f5be39c59bb93, type: 3}
+  shipIcon: {fileID: 21300000, guid: c3e346e845dd0134fb32e36a5e3c37aa, type: 3}
   minLvl: 28
   shipDescription: Little boy with a great power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 157
+  size: 146
   rise: 510
-  angle: 60
+  angle: 35
   shipName: Lil Beep
   startPriceMantissa: 1.35
   startPriceExponent: 7
-  startRaidTime: 10
+  startRaidTime: 8
   startReward: 54000
   speedAngle: 32
   speedLinear: 350
@@ -6172,7 +6172,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 553d5c1e02d51a24699f5be39c59bb93, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: c3e346e845dd0134fb32e36a5e3c37aa, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &132635981
@@ -12858,15 +12858,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  shipIcon: {fileID: 21300000, guid: df185ea4ac53de849be43b5bc454e7fe, type: 3}
   minLvl: 67
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 212
   rise: 450
-  angle: 240
+  angle: 245
   shipName: 3_8
   startPriceMantissa: 1.458
   startPriceExponent: 14
@@ -12916,7 +12916,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: df185ea4ac53de849be43b5bc454e7fe, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &298347827
@@ -15723,19 +15723,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 0cce8830ff5003f4a8852cce56b80318, type: 3}
+  shipIcon: {fileID: 21300000, guid: 0ff830e64086e4d49b3d145afe78a754, type: 3}
   minLvl: 54
   shipDescription: Perfect for parties and expeditions.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 157
+  size: 146
   rise: 510
-  angle: 60
+  angle: 35
   shipName: Lil Miracle
   startPriceMantissa: 4.05
   startPriceExponent: 11
-  startRaidTime: 10
+  startRaidTime: 8
   startReward: 59400000
   speedAngle: 35
   speedLinear: 350
@@ -15781,7 +15781,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 0cce8830ff5003f4a8852cce56b80318, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 0ff830e64086e4d49b3d145afe78a754, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &359000855
@@ -17800,19 +17800,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  shipIcon: {fileID: 21300000, guid: 044883e5f80e96a41a95a8d3d4845b64, type: 3}
   minLvl: 67
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 223
   rise: 450
-  angle: 240
+  angle: 280
   shipName: 3_9
   startPriceMantissa: 1.458
   startPriceExponent: 14
-  startRaidTime: 30
+  startRaidTime: 38
   startReward: 1485000000
   speedAngle: 35
   speedLinear: 350
@@ -17858,7 +17858,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 044883e5f80e96a41a95a8d3d4845b64, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &394633332
@@ -27487,19 +27487,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  shipIcon: {fileID: 21300000, guid: 45e0206524a619340b364e33f7694e41, type: 3}
   minLvl: 41
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 179
   rise: 450
-  angle: 240
+  angle: 140
   shipName: Gigantic
   startPriceMantissa: 4.86
   startPriceExponent: 9
-  startRaidTime: 30
+  startRaidTime: 17
   startReward: 1350000
   speedAngle: 32
   speedLinear: 350
@@ -27545,7 +27545,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 45e0206524a619340b364e33f7694e41, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &572901810
@@ -32929,7 +32929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 94d4322c1e08bfc46b4558caa06ac35d, type: 3}
+  shipIcon: {fileID: 21300000, guid: fe9e9d96d2ef1d747aabfaea4ee9f03b, type: 3}
   minLvl: 0
   shipDescription: Space ship of the world of ships.
   black: 1
@@ -32937,7 +32937,7 @@ MonoBehaviour:
     type: 3}
   size: 220
   rise: 510
-  angle: 300
+  angle: 320
   shipName: Supernova
   startPriceMantissa: 0
   startPriceExponent: 0
@@ -32987,7 +32987,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 1, g: 1, b: 1, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 94d4322c1e08bfc46b4558caa06ac35d, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: fe9e9d96d2ef1d747aabfaea4ee9f03b, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &677157629
@@ -38533,19 +38533,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 3debab17341b29b4f823a5fa1c242485, type: 3}
+  shipIcon: {fileID: 21300000, guid: 92e6315010c5e2d40bfc336f425fbe89, type: 3}
   minLvl: 62
   shipDescription: Don't buy it if you don't love speed.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 207
+  size: 168
   rise: 510
-  angle: 180
+  angle: 105
   shipName: Waveburner
   startPriceMantissa: 2.835
   startPriceExponent: 13
-  startRaidTime: 22
+  startRaidTime: 14
   startReward: 594000000
   speedAngle: 35
   speedLinear: 350
@@ -38591,7 +38591,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 3debab17341b29b4f823a5fa1c242485, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 92e6315010c5e2d40bfc336f425fbe89, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &793327575
@@ -39516,7 +39516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: 090db8b25ad2f264da41806b63e7aaf3, type: 3}
+  shipIcon: {fileID: 21300000, guid: 37240ec5aac2762488182d7f59229938, type: 3}
   minLvl: 0
   shipDescription: Top secret warship of World War I.
   black: 1
@@ -39524,7 +39524,7 @@ MonoBehaviour:
     type: 3}
   size: 250
   rise: 510
-  angle: 300
+  angle: 320
   shipName: Sea Lord
   startPriceMantissa: 0
   startPriceExponent: 0
@@ -39574,7 +39574,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 1, g: 1, b: 1, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 090db8b25ad2f264da41806b63e7aaf3, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 37240ec5aac2762488182d7f59229938, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!224 &810971561
@@ -43107,19 +43107,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  shipIcon: {fileID: 21300000, guid: 79109f759defde94bb9e620a312c8e4e, type: 3}
   minLvl: 67
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 201
   rise: 450
-  angle: 240
+  angle: 210
   shipName: 3_7
   startPriceMantissa: 1.458
   startPriceExponent: 14
-  startRaidTime: 30
+  startRaidTime: 25
   startReward: 1485000000
   speedAngle: 35
   speedLinear: 350
@@ -43165,7 +43165,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 79109f759defde94bb9e620a312c8e4e, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &868716812
@@ -44163,19 +44163,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  shipIcon: {fileID: 21300000, guid: 841f7d054b88c7f4cb1328a00f000c02, type: 3}
   minLvl: 67
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 179
   rise: 450
-  angle: 240
+  angle: 140
   shipName: Party King
   startPriceMantissa: 1.458
   startPriceExponent: 14
-  startRaidTime: 30
+  startRaidTime: 17
   startReward: 1485000000
   speedAngle: 35
   speedLinear: 350
@@ -44221,7 +44221,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 841f7d054b88c7f4cb1328a00f000c02, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &881419878
@@ -54644,19 +54644,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: e309b5101279c1e4d92c5e7fbcde1ec9, type: 3}
+  shipIcon: {fileID: 21300000, guid: 8d3414b5b6e1fcf4184c47f11cb8bca5, type: 3}
   minLvl: 32
   shipDescription: Professional wave tamer.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 185
+  size: 157
   rise: 450
-  angle: 120
+  angle: 70
   shipName: Needle
   startPriceMantissa: 1.485
   startPriceExponent: 8
-  startRaidTime: 15
+  startRaidTime: 10
   startReward: 189000
   speedAngle: 32
   speedLinear: 350
@@ -54702,7 +54702,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: e309b5101279c1e4d92c5e7fbcde1ec9, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 8d3414b5b6e1fcf4184c47f11cb8bca5, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &1088094026
@@ -55340,7 +55340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: dd9a5b62cdd70924797d51eef09c34ca, type: 3}
+  shipIcon: {fileID: 21300000, guid: b01fd5100a7aee84099bd7673e77bd34, type: 3}
   minLvl: 25
   shipDescription: Elegant boat with a steam engine.
   black: 0
@@ -55352,7 +55352,7 @@ MonoBehaviour:
   shipName: Devil's Boot
   startPriceMantissa: 6.75
   startPriceExponent: 5
-  startRaidTime: 5
+  startRaidTime: 4
   startReward: 10800
   speedAngle: 32
   speedLinear: 350
@@ -55398,7 +55398,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: dd9a5b62cdd70924797d51eef09c34ca, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: b01fd5100a7aee84099bd7673e77bd34, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!224 &1099386693
@@ -57845,7 +57845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 3880b0215df006d4090c56f023601e3d, type: 3}
+  shipIcon: {fileID: 21300000, guid: 8b0b651e3f9e4954184652425b06a7ad, type: 3}
   minLvl: 50
   shipDescription: You'll love it. Definitely!
   black: 0
@@ -57857,7 +57857,7 @@ MonoBehaviour:
   shipName: Golden Toy
   startPriceMantissa: 2.025
   startPriceExponent: 10
-  startRaidTime: 5
+  startRaidTime: 4
   startReward: 11880000
   speedAngle: 35
   speedLinear: 350
@@ -57903,7 +57903,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 3880b0215df006d4090c56f023601e3d, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 8b0b651e3f9e4954184652425b06a7ad, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &1167156850
@@ -81603,19 +81603,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: 23ec1e1e7c6de7d4f966bff979f756ee, type: 3}
+  shipIcon: {fileID: 21300000, guid: 0d6dea2aad1e8aa4da8c60d9a7231a63, type: 3}
   minLvl: 36
   shipDescription: Synergy of beauty and power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 207
+  size: 168
   rise: 510
-  angle: 180
+  angle: 105
   shipName: Triumpher
   startPriceMantissa: 9.45
   startPriceExponent: 8
-  startRaidTime: 22
+  startRaidTime: 14
   startReward: 540000
   speedAngle: 32
   speedLinear: 350
@@ -81661,7 +81661,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 23ec1e1e7c6de7d4f966bff979f756ee, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 0d6dea2aad1e8aa4da8c60d9a7231a63, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &1637883430
@@ -83176,19 +83176,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  shipIcon: {fileID: 21300000, guid: 7e492c2852cf54047a35939cda48fa7e, type: 3}
   minLvl: 41
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 190
   rise: 450
-  angle: 240
+  angle: 175
   shipName: 2_6
   startPriceMantissa: 4.86
   startPriceExponent: 9
-  startRaidTime: 30
+  startRaidTime: 20
   startReward: 1350000
   speedAngle: 32
   speedLinear: 350
@@ -83234,7 +83234,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 7e492c2852cf54047a35939cda48fa7e, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &1668986568
@@ -93249,19 +93249,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  shipIcon: {fileID: 21300000, guid: d49b3dfb49ae30b4c825de20e8d3f43d, type: 3}
   minLvl: 67
   shipDescription: Beauty. Happiness. Luxury.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 190
   rise: 450
-  angle: 240
+  angle: 175
   shipName: 3_6
   startPriceMantissa: 1.458
   startPriceExponent: 14
-  startRaidTime: 30
+  startRaidTime: 20
   startReward: 1485000000
   speedAngle: 35
   speedLinear: 350
@@ -93307,7 +93307,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: d49b3dfb49ae30b4c825de20e8d3f43d, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &1905133839
@@ -93730,19 +93730,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  shipIcon: {fileID: 21300000, guid: ff80b7983a33ac244a61e0f9c43b9cb8, type: 3}
   minLvl: 41
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 201
   rise: 450
-  angle: 240
+  angle: 210
   shipName: 2_7
   startPriceMantissa: 4.86
   startPriceExponent: 9
-  startRaidTime: 30
+  startRaidTime: 25
   startReward: 1350000
   speedAngle: 32
   speedLinear: 350
@@ -93788,7 +93788,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: ff80b7983a33ac244a61e0f9c43b9cb8, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &1912642761
@@ -101331,15 +101331,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  shipIcon: {fileID: 21300000, guid: c10a66181dc5a854d877302c474391bc, type: 3}
   minLvl: 41
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 222
   rise: 450
-  angle: 240
+  angle: 245
   shipName: 2_8
   startPriceMantissa: 4.86
   startPriceExponent: 9
@@ -101389,7 +101389,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: c10a66181dc5a854d877302c474391bc, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &2066463725
@@ -103802,19 +103802,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  shipIcon: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  shipIcon: {fileID: 21300000, guid: 6cd193aa6d397714fb57b18b606e0c79, type: 3}
   minLvl: 41
   shipDescription: True pearl of the steam age!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 240
+  size: 234
   rise: 450
-  angle: 240
+  angle: 280
   shipName: 2_9
   startPriceMantissa: 4.86
   startPriceExponent: 9
-  startRaidTime: 30
+  startRaidTime: 38
   startReward: 1350000
   speedAngle: 32
   speedLinear: 350
@@ -103860,7 +103860,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 6c92ba99fccf2254f82ba4d6f049a3d7, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 6cd193aa6d397714fb57b18b606e0c79, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 999593072}
 --- !u!1 &2109626299
@@ -104951,19 +104951,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  shipIcon: {fileID: 21300000, guid: 865b6c35521dbf14ba0b4eae50209839, type: 3}
+  shipIcon: {fileID: 21300000, guid: 5380f42704496804da13ceef4b9aec7a, type: 3}
   minLvl: 58
   shipDescription: Only for the rich and famous!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
-  size: 185
+  size: 157
   rise: 450
-  angle: 120
+  angle: 70
   shipName: Felicity
   startPriceMantissa: 4.455
   startPriceExponent: 12
-  startRaidTime: 15
+  startRaidTime: 10
   startReward: 207900000
   speedAngle: 35
   speedLinear: 350
@@ -105009,7 +105009,7 @@ MonoBehaviour:
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
   color: {r: 0.03137254, g: 0.7176471, b: 0.2284012, a: 1}
-  spriteForMenu: {fileID: 21300000, guid: 865b6c35521dbf14ba0b4eae50209839, type: 3}
+  spriteForMenu: {fileID: 21300000, guid: 5380f42704496804da13ceef4b9aec7a, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
 --- !u!224 &2130707102
