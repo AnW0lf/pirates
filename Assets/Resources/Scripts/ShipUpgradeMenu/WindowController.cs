@@ -10,8 +10,9 @@ public class WindowController : MonoBehaviour
     public Image icon, miniIcon, profitIcon;
     public GameObject windowFade, iconFade, titleFade, cost, rewardEffectPref, characteristics;
     public Vector3 effectScale = new Vector3(120f, 120f, 1f);
-    public Button exitBtn, upgradeBtn;
+    public Button exitBtn, upgradeBtn, adBtn;
     public Text costTxt;
+    public AdManager adManager;
 
     public Sprite body, sail, gun, coin, sandclock;
 
@@ -103,8 +104,10 @@ public class WindowController : MonoBehaviour
                 Locked();
             else if (pier.maxLvl)
                 MaxLevel();
-            else
+            else if (pier.GetBlackMark() > 0)
                 Bought();
+            else
+                AdUpgrade();
         }
         else if (pier.minLvl > island.Level)
             Locked();
@@ -119,6 +122,76 @@ public class WindowController : MonoBehaviour
             upgradeBtn.interactable = true;
         else
             upgradeBtn.interactable = false;
+    }
+
+    private void AdUpgrade()
+    {
+        SetState(titleTM, pier.shipName);
+        int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
+        int curLvl = pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3 + 1;
+        SetState(upLevelTM, curLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
+        SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
+        SetState(rewardTM, pier.GetReward().ToString());
+
+        if (!miniIcon.gameObject.activeInHierarchy)
+            miniIcon.gameObject.SetActive(false);
+        if (!icon.sprite.Equals(pier.spriteForMenu))
+            icon.sprite = pier.spriteForMenu;
+
+        float a = 0f;
+        long b = 0;
+        if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
+        {
+            SetState(detailLevelTM, pier.detailCurrentLvl1.ToString() + "/" + pier.detailMaxLvl1, "HULL ");
+            a = pier.detailChangeRaidTime1;
+            b = pier.detailChangeReward1;
+            miniIcon.sprite = pier.detailMiniature1;
+        }
+        else if (pier.detailCurrentLvl2 < pier.detailMaxLvl2)
+        {
+            SetState(detailLevelTM, pier.detailCurrentLvl2.ToString() + "/" + pier.detailMaxLvl2, "SAIL ");
+            a = pier.detailChangeRaidTime2;
+            b = pier.detailChangeReward2;
+            miniIcon.sprite = pier.detailMiniature2;
+        }
+        else if (pier.detailCurrentLvl3 < pier.detailMaxLvl3)
+        {
+            SetState(detailLevelTM, pier.detailCurrentLvl3.ToString() + "/" + pier.detailMaxLvl3, "GUNS ");
+            a = pier.detailChangeRaidTime3;
+            b = pier.detailChangeReward3;
+            miniIcon.sprite = pier.detailMiniature3;
+        }
+
+        string bonus = (a == 0f ? "" : (a < 0f ? "" : "+") + a.ToString())
+                + (b == 0 ? "" : (b < 0f ? "" : " +") + b.ToString());
+        SetState(bonusTM, bonus);
+        profitIcon.gameObject.SetActive(true);
+        profitIcon.sprite = a != 0 ? sandclock : coin;
+
+        descriptionTM.gameObject.SetActive(false);
+        characteristics.gameObject.SetActive(true);
+
+        adBtn.gameObject.SetActive(true);
+        adBtn.onClick.RemoveAllListeners();
+        adBtn.onClick.AddListener(adManager.ShowRewardedAdBlackShip);
+        adBtn.onClick.AddListener(UpgradeBlackShip);
+        adBtn.onClick.AddListener(UpdateInfo);
+        adBtn.onClick.AddListener(BonusPulse);
+
+        if (iconFade.activeInHierarchy)
+            iconFade.SetActive(false);
+        if (windowFade.activeInHierarchy)
+            windowFade.SetActive(false);
+        if (titleFade.activeInHierarchy)
+            titleFade.SetActive(false);
+
+        icon.color = Color.white;
+    }
+
+    private void UpgradeBlackShip()
+    {
+        pier.ChangeBlackMark(1);
+        pier.Upgrade();
     }
 
     private void Locked()
@@ -154,6 +227,7 @@ public class WindowController : MonoBehaviour
         icon.color = Color.black;
         cost.SetActive(false);
         characteristics.gameObject.SetActive(false);
+        adBtn.gameObject.SetActive(false);
     }
 
     private void NotBought()
@@ -203,6 +277,7 @@ public class WindowController : MonoBehaviour
             icon.color = Color.black;
         else
             icon.color = Color.white;
+        adBtn.gameObject.SetActive(false);
     }
 
     private void Bought()
@@ -277,6 +352,7 @@ public class WindowController : MonoBehaviour
             titleFade.SetActive(false);
 
         icon.color = Color.white;
+        adBtn.gameObject.SetActive(false);
     }
 
     private void MaxLevel()
@@ -311,6 +387,7 @@ public class WindowController : MonoBehaviour
 
         descriptionTM.gameObject.SetActive(false);
         characteristics.gameObject.SetActive(true);
+        adBtn.gameObject.SetActive(false);
     }
 
     private void SetState(TextManager tm, string text, string prefix = "", string postfix = "")
