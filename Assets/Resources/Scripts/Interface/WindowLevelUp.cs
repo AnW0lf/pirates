@@ -31,9 +31,12 @@ public class WindowLevelUp : WindowBase
         transform.parent.GetComponent<InterfaceIerarchy>().Next();
     }
 
-    public void AddLevelReward()
+    public void AddLevelReward(float modifier)
     {
-        island.ChangeMoney(money);
+        if (modifier > 0)
+            island.ChangeMoney(money * modifier);
+        else if (modifier < 0)
+            island.ChangeMoney(money * -modifier);
     }
 
     private void Reward()

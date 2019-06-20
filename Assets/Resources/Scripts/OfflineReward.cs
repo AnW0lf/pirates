@@ -105,8 +105,11 @@ public class OfflineReward : MonoBehaviour
         else StartCoroutine(Reward());
     }
 
-    public void AddOfflineReward()
+    public void AddOfflineReward(float modifier)
     {
-        island.ChangeMoney(money);
+        if (modifier > 0)
+            island.ChangeMoney(money * modifier);
+        else if (modifier < 0)
+            island.ChangeMoney(money * -modifier);
     }
 }
