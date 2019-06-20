@@ -13728,7 +13728,7 @@ MonoBehaviour:
   startPriceMantissa: 9.45
   startPriceExponent: 6
   modifier: 1
-  increase: 1.7
+  increase: 1.9
   startReward: 3
   maxReward: 10
   cost: {fileID: 553544677}
@@ -41165,7 +41165,7 @@ MonoBehaviour:
   startPriceMantissa: 2.5515
   startPriceExponent: 10
   modifier: 1
-  increase: 1.7
+  increase: 1.9
   startReward: 3
   maxReward: 10
   cost: {fileID: 1242942909}
@@ -78351,7 +78351,7 @@ MonoBehaviour:
   startPriceMantissa: 3.5
   startPriceExponent: 3
   modifier: 1
-  increase: 1.7
+  increase: 1.9
   startReward: 3
   maxReward: 10
   cost: {fileID: 1090398810}
@@ -85323,7 +85323,7 @@ MonoBehaviour:
   startPriceMantissa: 2.5515
   startPriceExponent: 10
   modifier: 1
-  increase: 1.7
+  increase: 1.9
   startReward: 3
   maxReward: 10
   cost: {fileID: 867496711}
