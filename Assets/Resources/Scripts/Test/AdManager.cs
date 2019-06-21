@@ -8,7 +8,7 @@ public class AdManager : MonoBehaviour
 {
     public static AdManager instance;
 
-    private string appID = "";
+    private string appID = "ca-app-pub-3225802372041416~6427479925";
 
     private BannerView bannerView;
     private string bannerID = "";
@@ -25,6 +25,8 @@ public class AdManager : MonoBehaviour
 
     private void Awake()
     {
+        MobileAds.Initialize(appID);
+
         if (instance = null)
         {
             instance = this;
