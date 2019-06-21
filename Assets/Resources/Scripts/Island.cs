@@ -40,56 +40,56 @@ public class Island
         new BigDigit(1.656f, 5), // 22
         new BigDigit(1.728f, 5), // 23
         new BigDigit(2f, 5), // 24
-        new BigDigit(2f, 5), // 25
-        new BigDigit(5f, 5), // 26
-        new BigDigit(6.5f, 5), // 27
+        new BigDigit(45f, 5), // 25
+        new BigDigit(7.5f, 5), // 26
+        new BigDigit(1.1f, 6), // 27
         new BigDigit(2.9f, 6), // 28
         new BigDigit(4.5f, 6), // 29
-        new BigDigit(6.9f, 6), // 30
-        new BigDigit(9.2f, 6), // 31
-        new BigDigit(1.8f, 7), // 32
-        new BigDigit(2.3f, 7), // 33
-        new BigDigit(2.7f, 7), // 34
-        new BigDigit(4.25f, 7), // 35
+        new BigDigit(6.8f, 6), // 30
+        new BigDigit(9f, 6), // 31
+        new BigDigit(1.9f, 7), // 32
+        new BigDigit(2.2f, 7), // 33
+        new BigDigit(2.4f, 7), // 34
+        new BigDigit(4.35f, 7), // 35
         new BigDigit(5.1f, 7), // 36
-        new BigDigit(5.9f, 7), // 37
-        new BigDigit(7.7f, 7), // 38
-        new BigDigit(9.8f, 7), // 39
-        new BigDigit(1.17f, 8), // 40
-        new BigDigit(1.3f, 8), // 41
-        new BigDigit(1.5f, 8), // 42
-        new BigDigit(1.7f, 8), // 43
-        new BigDigit(1.95f, 8), // 44
+        new BigDigit(5.8f, 7), // 37
+        new BigDigit(7.8f, 7), // 38
+        new BigDigit(9.7f, 7), // 39
+        new BigDigit(1.07f, 8), // 40
+        new BigDigit(1.15f, 8), // 41
+        new BigDigit(1.9f, 8), // 42
+        new BigDigit(2f, 8), // 43
+        new BigDigit(2f, 8), // 44
         new BigDigit(2.1f, 8), // 45
-        new BigDigit(2.25f, 8), // 46
-        new BigDigit(2.35f, 8), // 47
-        new BigDigit(2.7f, 8), // 48
-        new BigDigit(2.9f, 8), // 49
-        new BigDigit(3.1f, 8), // 50
-        new BigDigit(9f, 8), // 51
-        new BigDigit(1.5f, 9), // 52
-        new BigDigit(6.3f, 9), // 53
-        new BigDigit(9.9f, 9), // 54
+        new BigDigit(2.2f, 8), // 46
+        new BigDigit(2.3f, 8), // 47
+        new BigDigit(2.4f, 8), // 48
+        new BigDigit(3f, 8), // 49
+        new BigDigit(5f, 8), // 50
+        new BigDigit(1.2f, 9), // 51
+        new BigDigit(2.8f, 9), // 52
+        new BigDigit(6f, 9), // 53
+        new BigDigit(9.8f, 9), // 54
         new BigDigit(1.5f, 10), // 55
         new BigDigit(2f, 10), // 56
-        new BigDigit(4.5f, 10), // 57
-        new BigDigit(4.7f, 10), // 58
+        new BigDigit(4.1f, 10), // 57
+        new BigDigit(4.8f, 10), // 58
         new BigDigit(5.3f, 10), // 59
         new BigDigit(9.4f, 10), // 60
-        new BigDigit(1.11f, 11), // 61
-        new BigDigit(1.29f, 11), // 62
-        new BigDigit(1.7f, 11), // 63
-        new BigDigit(2.1f, 11), // 64
-        new BigDigit(2.6f, 11), // 65
-        new BigDigit(3f, 11), // 66
-        new BigDigit(3.3f, 11), // 67
-        new BigDigit(4f, 11), // 68
-        new BigDigit(4.5f, 11), // 69
-        new BigDigit(4.7f, 11), // 70
-        new BigDigit(4.9f, 11), // 71
-        new BigDigit(5.15f, 11), // 72
-        new BigDigit(5.3f, 11), // 73
-        new BigDigit(5.5f, 11), // 74
+        new BigDigit(1.1f, 11), // 61
+        new BigDigit(1.27f, 11), // 62
+        new BigDigit(1.72f, 11), // 63
+        new BigDigit(2.12f, 11), // 64
+        new BigDigit(2.35f, 11), // 65
+        new BigDigit(2.53f, 11), // 66
+        new BigDigit(4.2f, 11), // 67
+        new BigDigit(4.4f, 11), // 68
+        new BigDigit(4.4f, 11), // 69
+        new BigDigit(4.6f, 11), // 70
+        new BigDigit(4.8f, 11), // 71
+        new BigDigit(5.1f, 11), // 72
+        new BigDigit(5.4f, 11), // 73
+        new BigDigit(5.7f, 11), // 74
         new BigDigit(7f, 11), // 75
     };
     //_______________________________________________________________________________
