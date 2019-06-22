@@ -9518,16 +9518,16 @@ MonoBehaviour:
   increase: 1.9
   startReward: 3
   maxReward: 10
-  cost: {fileID: 0}
-  descriptionText: {fileID: 0}
-  rewardText: {fileID: 0}
-  stateText: {fileID: 0}
-  costText: {fileID: 0}
-  buttonIcon: {fileID: 0}
+  cost: {fileID: 1669860052}
+  descriptionText: {fileID: 1267426242}
+  rewardText: {fileID: 62781951}
+  stateText: {fileID: 1719980051}
+  costText: {fileID: 463261652}
+  buttonIcon: {fileID: 51759006}
   buttonColors:
   - {r: 0, g: 1, b: 0.20033622, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
-  lifebuoys: {fileID: 0}
+  lifebuoys: {fileID: 1702024806}
 --- !u!114 &212863365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25450,16 +25450,16 @@ MonoBehaviour:
   increase: 1.5
   startReward: 1
   maxReward: 2
-  cost: {fileID: 0}
-  descriptionText: {fileID: 0}
-  rewardText: {fileID: 0}
-  stateText: {fileID: 0}
-  costText: {fileID: 0}
-  buttonIcon: {fileID: 0}
+  cost: {fileID: 1738573232}
+  descriptionText: {fileID: 541594286}
+  rewardText: {fileID: 928111680}
+  stateText: {fileID: 1824163919}
+  costText: {fileID: 17931906}
+  buttonIcon: {fileID: 1175386945}
   buttonColors:
   - {r: 0, g: 1, b: 0.20033622, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
-  lifebuoys: {fileID: 0}
+  lifebuoys: {fileID: 1702024806}
 --- !u!114 &531344722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28399,7 +28399,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 11d91beb7552de54692a7caa14882738, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 207e46ca1a3247b46a91593726d5939a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -54633,7 +54633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1064142253
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56649,7 +56649,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 11d91beb7552de54692a7caa14882738, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 207e46ca1a3247b46a91593726d5939a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -57829,8 +57829,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 0.1}
   m_AnchorMax: {x: 0.95, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130640268
 MonoBehaviour:
@@ -69227,7 +69227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1352818134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70537,16 +70537,16 @@ MonoBehaviour:
   increase: 1.55
   startReward: 1
   maxReward: 1.6
-  cost: {fileID: 0}
-  descriptionText: {fileID: 0}
-  rewardText: {fileID: 0}
-  stateText: {fileID: 0}
-  costText: {fileID: 0}
-  buttonIcon: {fileID: 0}
+  cost: {fileID: 1505953074}
+  descriptionText: {fileID: 1178601516}
+  rewardText: {fileID: 1558369804}
+  stateText: {fileID: 52127594}
+  costText: {fileID: 1739042572}
+  buttonIcon: {fileID: 797574017}
   buttonColors:
   - {r: 0, g: 1, b: 0.20033622, a: 1}
   - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
-  lifebuoys: {fileID: 0}
+  lifebuoys: {fileID: 1702024806}
 --- !u!114 &1368514381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76766,7 +76766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1504942858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -85151,8 +85151,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 0.1}
   m_AnchorMax: {x: 0.95, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666119551
 MonoBehaviour:
@@ -91960,7 +91960,7 @@ MonoBehaviour:
   bg: {fileID: 950925118}
   flyingReward: {fileID: 7455523717367949559, guid: 1baedb412cbdf524ab8f96e6aee21372,
     type: 3}
-  arrow: {fileID: 0}
+  arrow: {fileID: 100129267}
   rewardEffect: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   blackShip: {fileID: 810971560}
@@ -91985,7 +91985,7 @@ MonoBehaviour:
   - 2
   - 2
   nums: 0400000001000000000000000500000001000000020000000100000003000000040000000600000002000000050000000200000007000000000000000100000003000000040000000600000002000000000000000700000001000000000000000300000005000000000000000400000003000000020000000000000001000000070000000300000008000000
-  spinButton: {fileID: 0}
+  spinButton: {fileID: 1993860179}
 --- !u!114 &1822583767
 MonoBehaviour:
   m_ObjectHideFlags: 0
