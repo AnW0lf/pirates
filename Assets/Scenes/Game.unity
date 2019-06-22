@@ -13102,14 +13102,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: df185ea4ac53de849be43b5bc454e7fe, type: 3}
   minLvl: 64
-  shipDescription: Beauty. Happiness. Luxury.
+  shipDescription: A very, very dangerous toy.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 212
   rise: 450
   angle: 245
-  shipName: 3_8
+  shipName: Mr. Dynamite
   startPriceMantissa: 3.645
   startPriceExponent: 13
   startRaidTime: 30
@@ -17382,14 +17382,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 044883e5f80e96a41a95a8d3d4845b64, type: 3}
   minLvl: 68
-  shipDescription: Beauty. Happiness. Luxury.
+  shipDescription: 'Look at it: the future is near!'
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 223
   rise: 450
   angle: 280
-  shipName: 3_9
+  shipName: New Sunrise
   startPriceMantissa: 1.0125
   startPriceExponent: 14
   startRaidTime: 38
@@ -27579,14 +27579,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 45e0206524a619340b364e33f7694e41, type: 3}
   minLvl: 31
-  shipDescription: True pearl of the steam age!
+  shipDescription: Synergy of beauty and power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 179
   rise: 450
   angle: 140
-  shipName: Gigantic
+  shipName: Steam Bird
   startPriceMantissa: 8.1
   startPriceExponent: 7
   startRaidTime: 17
@@ -40241,7 +40241,7 @@ MonoBehaviour:
   size: 250
   rise: 510
   angle: 320
-  shipName: Sea Lord
+  shipName: Leviathan
   startPriceMantissa: 0
   startPriceExponent: 0
   startRaidTime: 60
@@ -43886,14 +43886,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: 79109f759defde94bb9e620a312c8e4e, type: 3}
   minLvl: 61
-  shipDescription: Beauty. Happiness. Luxury.
+  shipDescription: Its turbines sound like a music.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 201
   rise: 450
   angle: 210
-  shipName: 3_7
+  shipName: Red Hawk
   startPriceMantissa: 1.3365
   startPriceExponent: 13
   startRaidTime: 25
@@ -53103,14 +53103,14 @@ MonoBehaviour:
   islandNumber: 1
   shipIcon: {fileID: 21300000, guid: baac486b51e0c634681a6e7fa1661b1a, type: 3}
   minLvl: 12
-  shipDescription: Feel like a new Magellan!
+  shipDescription: Named after Poseidon's daughter
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 201
   rise: 450
   angle: 210
-  shipName: 1_7
+  shipName: Princess Tuna
   startPriceMantissa: 1.65
   startPriceExponent: 4
   startRaidTime: 25
@@ -65414,14 +65414,14 @@ MonoBehaviour:
   islandNumber: 1
   shipIcon: {fileID: 21300000, guid: faf3c1474ce35fd418fceb425e9f34e5, type: 3}
   minLvl: 7
-  shipDescription: Feel like a new Magellan!
+  shipDescription: Choice of the true corsair
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 179
   rise: 450
   angle: 140
-  shipName: Santa Maria
+  shipName: Red Octopus
   startPriceMantissa: 3
   startPriceExponent: 3
   startRaidTime: 17
@@ -65652,14 +65652,14 @@ MonoBehaviour:
   islandNumber: 1
   shipIcon: {fileID: 21300000, guid: 9a8dbaef0c4f8a8459d5c5b22e6be9dc, type: 3}
   minLvl: 15
-  shipDescription: Feel like a new Magellan!
+  shipDescription: Gift of the King of the Seven Seas.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 222
   rise: 450
   angle: 245
-  shipName: 1_8
+  shipName: Child of Sea
   startPriceMantissa: 4.5
   startPriceExponent: 4
   startRaidTime: 30
@@ -69863,14 +69863,14 @@ MonoBehaviour:
   islandNumber: 1
   shipIcon: {fileID: 21300000, guid: 380bb3299e5813d49ad6cdc6c27bec7f, type: 3}
   minLvl: 9
-  shipDescription: Feel like a new Magellan!
+  shipDescription: Deluxe version of a pirate ship.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 190
   rise: 450
   angle: 175
-  shipName: 1_6
+  shipName: Santa Maria
   startPriceMantissa: 7
   startPriceExponent: 3
   startRaidTime: 20
@@ -82406,7 +82406,7 @@ MonoBehaviour:
   size: 234
   rise: 450
   angle: 280
-  shipName: 1_9
+  shipName: Conqueror
   startPriceMantissa: 1.25
   startPriceExponent: 5
   startRaidTime: 38
@@ -83615,7 +83615,7 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 0d6dea2aad1e8aa4da8c60d9a7231a63, type: 3}
   minLvl: 29
-  shipDescription: Synergy of beauty and power.
+  shipDescription: Emblem of the new world.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
@@ -85262,14 +85262,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 7e492c2852cf54047a35939cda48fa7e, type: 3}
   minLvl: 33
-  shipDescription: True pearl of the steam age!
+  shipDescription: A monster with the steel heart.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 190
   rise: 450
   angle: 175
-  shipName: 2_6
+  shipName: Thunderbolt
   startPriceMantissa: 1.89
   startPriceExponent: 8
   startRaidTime: 20
@@ -95536,14 +95536,14 @@ MonoBehaviour:
   islandNumber: 3
   shipIcon: {fileID: 21300000, guid: d49b3dfb49ae30b4c825de20e8d3f43d, type: 3}
   minLvl: 58
-  shipDescription: Beauty. Happiness. Luxury.
+  shipDescription: Let everyone envy you!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 190
   rise: 450
   angle: 175
-  shipName: 3_6
+  shipName: Superstar
   startPriceMantissa: 5.67
   startPriceExponent: 12
   startRaidTime: 20
@@ -95922,14 +95922,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: ff80b7983a33ac244a61e0f9c43b9cb8, type: 3}
   minLvl: 36
-  shipDescription: True pearl of the steam age!
+  shipDescription: Made for victory!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 201
   rise: 450
   angle: 210
-  shipName: 2_7
+  shipName: Blue Patriot
   startPriceMantissa: 4.455
   startPriceExponent: 8
   startRaidTime: 25
@@ -103348,14 +103348,14 @@ MonoBehaviour:
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: c10a66181dc5a854d877302c474391bc, type: 3}
   minLvl: 39
-  shipDescription: True pearl of the steam age!
+  shipDescription: Feel like a supreme ruler!
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 222
   rise: 450
   angle: 245
-  shipName: 2_8
+  shipName: Great Leader
   startPriceMantissa: 1.215
   startPriceExponent: 9
   startRaidTime: 30
@@ -105612,7 +105612,7 @@ MonoBehaviour:
   size: 234
   rise: 450
   angle: 280
-  shipName: 2_9
+  shipName: Gigantic
   startPriceMantissa: 3.375
   startPriceExponent: 9
   startRaidTime: 38
