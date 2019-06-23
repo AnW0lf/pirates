@@ -111,10 +111,10 @@ public class Island
     private void Load()
     {
         InitParameter("GlobalResetting", 0);
-        if (GetParameter("GlobalResetting", 0) < 1)
+        if (GetParameter("GlobalResetting", 0) < 2)
         {
             PlayerPrefs.DeleteAll();
-            SetParameter("GlobalResetting", 1);
+            SetParameter("GlobalResetting", 2);
         }
 
         InitParameter("MoneyMantissa", 0f);
@@ -125,49 +125,13 @@ public class Island
             PlayerPrefs.SetInt("Level", 1);
         Level = PlayerPrefs.GetInt("Level");
 
-        //Проверка на старый формат Exp
-        if (!PlayerPrefs.HasKey("OldExpDeleted"))
-            PlayerPrefs.SetInt("OldExpDeleted", 0);
-        if(PlayerPrefs.GetInt("OldExpDeleted") == 0)
-        {
-            PlayerPrefs.DeleteKey("Exp");
-            PlayerPrefs.SetInt("OldExpDeleted", 1);
-        }
-        if (PlayerPrefs.GetInt("OldExpDeleted") == 1)
-        {
-            //float exp = long.Parse(PlayerPrefs.GetString("Exp"));
-            //InitParameter("ExpMantissa", exp);
-            PlayerPrefs.DeleteKey("Exp");
-            PlayerPrefs.SetInt("OldExpDeleted", 2);
-        }
-
         InitParameter("ExpMantissa", 0f);
         InitParameter("ExpExponent", 0);
         Exp = new BigDigit(GetParameter("ExpMantissa", 0f), GetParameter("ExpExponent", 0));
 
-        //Проверка на старый формат StartExp
-        if (!PlayerPrefs.HasKey("OldStartExpDeleted"))
-            PlayerPrefs.SetInt("OldStartExpDeleted", 0);
-        if (PlayerPrefs.GetInt("OldStartExpDeleted") == 0)
-        {
-            PlayerPrefs.DeleteKey("StartExp");
-            PlayerPrefs.SetInt("OldStartExpDeleted", 1);
-        }
-        if (PlayerPrefs.GetInt("OldStartExpDeleted") == 1)
-        {
-            //float startExp = long.Parse(PlayerPrefs.GetString("StartExp"));
-            //InitParameter("StartExpMantissa", startExp);
-            PlayerPrefs.DeleteKey("StartExp");
-            PlayerPrefs.SetInt("OldStartExpDeleted", 2);
-        }
-
         InitParameter("StartExpMantissa", 0f);
         InitParameter("StartExpExponent", 0);
         StartExp = new BigDigit(GetParameter("StartExpMantissa", 0f), GetParameter("StartExpExponent", 0));
-
-        //Проверка на наличие старой переменной ExpModifier
-        if (PlayerPrefs.HasKey("ExpModifier"))
-            PlayerPrefs.DeleteKey("ExpModifier");
     }
 
     public void Save()
