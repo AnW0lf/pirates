@@ -48,6 +48,7 @@ public class WindowUpgradeWheel : WindowBase
             btn.onClick.RemoveAllListeners();
             if (wb != null)
                 btn.onClick.AddListener(wb.WheelSwitch);
+            btn.onClick.AddListener(OpenWheel);
             btn.onClick.AddListener(Close);
             //text.text = "All rewards increased by " + mod.ToString();
             text.text = "Rewards Upgraded!";
