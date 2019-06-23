@@ -13,11 +13,13 @@ public class CoinCatcher : MonoBehaviour
     private Island island;
     private GameObject _flyingText;
     private Image image;
+    private IslandController islandController;
 
     private void Awake()
     {
         island = Island.Instance();
         image = GetComponent<Image>();
+        islandController = transform.parent.parent.parent.parent.parent.GetChild(1).GetComponent<IslandController>();
     }
 
     private void Start()
@@ -54,23 +56,16 @@ public class CoinCatcher : MonoBehaviour
 
     public void CatchCoin()
     {
-        island.ExpUp(money);
-
         //Taptic.Medium();
 
         //Write Time for Offline Reward
-        PlayerPrefs.SetString("QuitTime", DateTime.Now.ToString());
+        island.SetParameter("QuitTime", DateTime.Now.ToString());
 
         // Set modifiers to 1
         GetComponentInParent<ShipClick>().ship.rewardModifier = 1;
         GetComponentInParent<ShipClick>().ship.raidTimeModifier = 0;
 
-        _flyingText = Instantiate(flyingText, transform.parent.parent.parent.parent.parent.GetChild(1));
-        _flyingText.transform.localPosition = new Vector3(-300f, 0f, 0f);
-        _flyingText.transform.eulerAngles = new Vector3(0f, 0f, 0f);
-        FlyingText ft = _flyingText.GetComponent<FlyingText>();
-        ft.exp = true;
-        ft.expText.GetComponent<Text>().text = "+" + money.ToString();
+        islandController.GenerateBonusExp(money);
 
         GetComponentInParent<CapsuleCollider2D>().enabled = true;
         gameObject.SetActive(false);
