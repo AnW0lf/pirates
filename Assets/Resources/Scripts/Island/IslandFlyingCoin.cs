@@ -21,9 +21,13 @@ public class IslandFlyingCoin : MonoBehaviour
     {
         if (!hasText) return;
         count.text = value.ToString();
-        if (value > 99)
+        if (value > 999)
         {
             transform.localPosition = new Vector3(0f, transform.localPosition.y, transform.localPosition.z);
+        }
+        else if (value > 99)
+        {
+            transform.localPosition = new Vector3(-25f, transform.localPosition.y, transform.localPosition.z);
         }
         else if (value > 9)
         {
