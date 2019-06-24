@@ -21,6 +21,18 @@ public class IslandFlyingCoin : MonoBehaviour
     {
         if (!hasText) return;
         count.text = "+" + value.ToString();
+        if (value > 99)
+        {
+            transform.localPosition = new Vector3(0f, transform.localPosition.y, transform.localPosition.z);
+        }
+        else if (value > 9)
+        {
+            transform.localPosition = new Vector3(-50f, transform.localPosition.y, transform.localPosition.z);
+        }
+        else
+        {
+            transform.localPosition = new Vector3(-70f, transform.localPosition.y, transform.localPosition.z);
+        }
         anim.SetTrigger("Fly");
     }
 }
