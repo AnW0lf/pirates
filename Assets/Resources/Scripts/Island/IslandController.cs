@@ -8,13 +8,14 @@ public class IslandController : MonoBehaviour
     public int minLevel;
     public float delay, tapDelay, modifierMantissa;
     public long modifierExponent;
-    public Transform moneySet, clickEffectSet, experienceSet;
+    public GameObject flyingText, clickEffect;
 
     public static BigDigit islandReward;
 
     private Island island;
     private bool clicked = false, active = false;
     private Animation anim;
+    private GameObject _flyingText, _clickEffect;
     private float time;
 
     private void Awake()
@@ -59,25 +60,28 @@ public class IslandController : MonoBehaviour
         return digit;
     }
 
-    public void GenerateBonusExp(BigDigit reward)
-    {
-        if (experienceSet != null && experienceSet.childCount > 0)
-        {
-            Transform child = experienceSet.GetChild(0);
-            child.SetAsLastSibling();
-            child.GetComponent<IslandFlyingExperience>().Fly(reward);
-        }
-        island.ExpUp(reward);
-    }
-
     public void GenerateBonusMoney(BigDigit reward)
     {
-        if (moneySet != null && moneySet.childCount > 0)
+        _flyingText = Instantiate(flyingText, transform);
+
+        BigDigit firstOffset = new BigDigit(9.9f, 1);
+        BigDigit secondOffset = new BigDigit(9.99f, 2);
+        if (reward.LessThen(firstOffset))
         {
-            Transform child = moneySet.GetChild(0);
-            child.SetAsLastSibling();
-            child.GetComponent<IslandFlyingCoin>().Fly(reward);
+            _flyingText.transform.localPosition = new Vector3(-110f, 50f, 0f);
         }
+        else if (reward.LessThen(secondOffset))
+        {
+            _flyingText.transform.localPosition = new Vector3(-60f, 50f, 0f);
+        }
+        else
+        {
+            _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);
+        }
+
+        _flyingText.GetComponent<FlyingText>().reward = true;
+        _flyingText.GetComponent<FlyingText>().rewardText.GetComponent<Text>().text = reward.ToString();
+
         island.ChangeMoney(reward);
     }
 
@@ -87,13 +91,12 @@ public class IslandController : MonoBehaviour
         if (clicked)
         {
             time = tapDelay;
-            if (clickEffectSet != null && clickEffectSet.childCount > 0)
-            {
-                Transform child = clickEffectSet.GetChild(0);
-                child.SetAsLastSibling();
-                child.gameObject.SetActive(false);
-                child.gameObject.SetActive(true);
-            }
+            _clickEffect = Instantiate(clickEffect, transform);
+            _clickEffect.GetComponent<RectTransform>().anchorMin = Vector2.zero;
+            _clickEffect.GetComponent<RectTransform>().anchorMax = Vector2.one;
+            _clickEffect.GetComponent<RectTransform>().offsetMin = Vector2.up * 100f;
+            _clickEffect.GetComponent<RectTransform>().offsetMax = Vector2.up * 100f;
+            _clickEffect.SetActive(true);
         }
         //else if ((delay - (island.GetParameter("Level", 0) - 1) / 10) > tapDelay)
         //{
@@ -108,10 +111,32 @@ public class IslandController : MonoBehaviour
 
         BigDigit reward = GetReward();
 
-        GenerateBonusMoney(reward);
+        _flyingText = Instantiate(flyingText, transform);
 
+        //-110 -60
+        BigDigit firstOffset = new BigDigit(9.9f, 1);
+        BigDigit secondOffset = new BigDigit(9.99f, 2);
+        if (reward.LessThen(firstOffset))
+        {
+            _flyingText.transform.localPosition = new Vector3(-110f, 50f, 0f);
+        }
+        else if (reward.LessThen(secondOffset))
+        {
+            _flyingText.transform.localPosition = new Vector3(-60f, 50f, 0f);
+        }
+        else
+        {
+            _flyingText.transform.localPosition = new Vector3(0f, 50f, 0f);
+        }
+
+
+        _flyingText.GetComponent<FlyingText>().reward = true;
+        _flyingText.GetComponent<FlyingText>().rewardText.GetComponent<Text>().text = reward.ToString();
+
+        island.ChangeMoney(reward);
         if(clicked) EventManager.SendEvent("AddMoneyPulse");
         yield return new WaitForSeconds(time / 2);
+        clickEffect.SetActive(false);
         clicked = false;
         yield return new WaitForSeconds(time / 2);
         StartCoroutine(GenerateMoney());
