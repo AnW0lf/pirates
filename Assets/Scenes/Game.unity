@@ -3937,7 +3937,7 @@ MonoBehaviour:
   delay: 1
   tapDelay: 0.4
   modifierMantissa: 1
-  modifierExponent: 5
+  modifierExponent: 0
   moneySet: {fileID: 39287204}
   clickEffectSet: {fileID: 960599465}
   experienceSet: {fileID: 598660582}
@@ -9048,7 +9048,7 @@ PrefabInstance:
     - target: {fileID: 6998420354137403835, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 6998420354137403835, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
@@ -13740,7 +13740,7 @@ MonoBehaviour:
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 212
-  rise: 450
+  rise: 510
   angle: 245
   shipName: Mr. Dynamite
   startPriceMantissa: 3.645
@@ -25284,7 +25284,7 @@ MonoBehaviour:
   startPriceMantissa: 2
   startPriceExponent: 1
   startRaidTime: 4
-  startReward: 14000
+  startReward: 14
   speedAngle: 30
   speedLinear: 350
   speedRaidModifier: 3.5
@@ -29809,7 +29809,7 @@ PrefabInstance:
     - target: {fileID: 6998420354137403835, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 6998420354137403835, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
@@ -29854,12 +29854,22 @@ PrefabInstance:
     - target: {fileID: 6998420355266686124, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 6998420355266686124, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998420355266686124, guid: e350ea31457595f46b984e35227bdc81,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998420355266686124, guid: e350ea31457595f46b984e35227bdc81,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6178550841045072555, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
@@ -30224,6 +30234,21 @@ PrefabInstance:
     - target: {fileID: 6998420353948105198, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
       propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998420353948105198, guid: e350ea31457595f46b984e35227bdc81,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998420353948105199, guid: e350ea31457595f46b984e35227bdc81,
+        type: 3}
+      propertyPath: m_EffectColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998420355793055382, guid: e350ea31457595f46b984e35227bdc81,
+        type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -62946,7 +62971,7 @@ PrefabInstance:
     - target: {fileID: 6998420354137403835, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 6998420354137403835, guid: e350ea31457595f46b984e35227bdc81,
         type: 3}
@@ -68061,7 +68086,7 @@ MonoBehaviour:
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 222
-  rise: 450
+  rise: 510
   angle: 245
   shipName: Child of Sea
   startPriceMantissa: 4.5
@@ -72272,7 +72297,7 @@ MonoBehaviour:
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 190
-  rise: 450
+  rise: 510
   angle: 175
   shipName: Santa Maria
   startPriceMantissa: 7
@@ -87673,7 +87698,7 @@ MonoBehaviour:
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 190
-  rise: 450
+  rise: 510
   angle: 175
   shipName: Thunderbolt
   startPriceMantissa: 1.89
@@ -97947,7 +97972,7 @@ MonoBehaviour:
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 190
-  rise: 450
+  rise: 510
   angle: 175
   shipName: Superstar
   startPriceMantissa: 5.67
@@ -105886,7 +105911,7 @@ MonoBehaviour:
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
     type: 3}
   size: 222
-  rise: 450
+  rise: 510
   angle: 245
   shipName: Great Leader
   startPriceMantissa: 1.215
@@ -109970,41 +109995,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 320
-      objectReference: {fileID: 0}
-    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7838046303383097665, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7838046304022573932, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7838046302306071660, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
         type: 3}
       propertyPath: m_FontData.m_BestFit
@@ -110089,6 +110079,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838046302639003158, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838046303383097665, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838046304022573932, guid: 8e06cd1e3a7c45d4fbe83170788198ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e06cd1e3a7c45d4fbe83170788198ae, type: 3}
