@@ -37,7 +37,6 @@ public class OfflineReward : MonoBehaviour
 
     private IEnumerator Reward()
     {
-
         if (rewardGained) yield break;
         yield return new WaitForFixedUpdate();
         island.InitParameter("QuitTime", (DateTime.Now).ToString());
@@ -48,7 +47,6 @@ public class OfflineReward : MonoBehaviour
         if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 10f)
         {
             rewardGained = true;
-            window.GetComponent<RectTransform>().localPosition = new Vector3(0f, 0f, 0f);
             window.SetActive(false);
             yield break;
         }
@@ -90,7 +88,6 @@ public class OfflineReward : MonoBehaviour
         island.SetParameter("QuitTime", DateTime.Now.ToString());
 
         rewardGained = true;
-        window.GetComponent<RectTransform>().localPosition = new Vector3(0f, 0f, 0f);
         window.SetActive(!money.EqualsZero);
     }
 
