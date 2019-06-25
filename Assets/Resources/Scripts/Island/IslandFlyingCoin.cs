@@ -21,9 +21,13 @@ public class IslandFlyingCoin : MonoBehaviour
     {
         if (!hasText) return;
         count.text = value.ToString();
-        if (value > 999)
+        if (value > 9999)
         {
-            transform.localPosition = new Vector3(0f, transform.localPosition.y, transform.localPosition.z);
+            transform.localPosition = new Vector3(30f, transform.localPosition.y, transform.localPosition.z);
+        }
+        else if (value > 999)
+        {
+            transform.localPosition = new Vector3(-10f, transform.localPosition.y, transform.localPosition.z);
         }
         else if (value > 99)
         {
@@ -31,11 +35,11 @@ public class IslandFlyingCoin : MonoBehaviour
         }
         else if (value > 9)
         {
-            transform.localPosition = new Vector3(-50f, transform.localPosition.y, transform.localPosition.z);
+            transform.localPosition = new Vector3(-40f, transform.localPosition.y, transform.localPosition.z);
         }
         else
         {
-            transform.localPosition = new Vector3(-70f, transform.localPosition.y, transform.localPosition.z);
+            transform.localPosition = new Vector3(-75f, transform.localPosition.y, transform.localPosition.z);
         }
         anim.SetTrigger("Fly");
     }
