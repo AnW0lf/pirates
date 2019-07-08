@@ -12,6 +12,7 @@ public class Notifications : MonoBehaviour
 #if UNITY_ANDROID
     private string dailyNotificationChannelID = "daily", dailyNotificationChannelName = "Daily Notifications";
     private string levelUpNotificationChannelID = "levelup", levelUpNotificationChannelName = "Level Up Notifications";
+    private string smallIcon = "icon_0", largeIcon = "icon_1";
     private enum Delay { Day, Hour, Minutes, Seconds};
 #endif
 
@@ -113,6 +114,8 @@ public class Notifications : MonoBehaviour
             default:
                 break;
         }
+        notification.SmallIcon = smallIcon;
+        notification.LargeIcon = largeIcon;
 
         AndroidNotificationCenter.SendNotification(notification, channelID);
     }
