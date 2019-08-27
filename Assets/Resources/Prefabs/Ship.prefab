@@ -176,7 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb812c2b031ea24ab1107c60d1fccd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 5
   raidTime: 1
   rewardModifier: 0
   raidTimeModifier: 0
@@ -263,6 +262,7 @@ MonoBehaviour:
   clock: {fileID: 3819941415611035949}
   color: {r: 0.90588236, g: 0.68235296, b: 0.003921569, a: 0}
   trail: {fileID: 869659716458610375}
+  islandController: {fileID: 0}
 --- !u!222 &31590444289762888
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -533,7 +533,6 @@ GameObject:
   - component: {fileID: 1053213945246750296}
   - component: {fileID: 8223840565191884415}
   - component: {fileID: 869659716458610375}
-  - component: {fileID: 1728971532345359199}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -701,19 +700,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.05
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &1728971532345359199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3619499558454021494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9e762d3823acc4ab59e35e0f4aff1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ship: {fileID: 1561015050841590753}
 --- !u!1 &4797947767306085401
 GameObject:
   m_ObjectHideFlags: 0
