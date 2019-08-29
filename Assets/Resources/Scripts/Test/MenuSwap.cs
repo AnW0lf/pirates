@@ -15,13 +15,13 @@ public class MenuSwap : MonoBehaviour
     private void Start()
     {
         rect = GetComponent<RectTransform>();
-        startPosY = rect.position.y;
+        startPosY = rect.anchoredPosition.y;
     }
 
     public void Swap()
     {
         if (swaping) return;
-        StartCoroutine(Swaping(startPosY + (opened ? 0f : rect.sizeDelta.y), duration));
+        StartCoroutine(Swaping((opened ? startPosY : rect.sizeDelta.y), duration));
         opened = !opened;
     }
 
@@ -29,12 +29,12 @@ public class MenuSwap : MonoBehaviour
     {
         swaping = true;
 
-        float t = 0f, oldPosY = rect.position.y;
+        float t = 0f, oldPosY = rect.anchoredPosition.y;
 
         while (t < 1f)
         {
             t += Time.deltaTime / duration;
-            rect.position = new Vector3(transform.position.x, Mathf.Lerp(oldPosY, newPosY, t), transform.position.z);
+            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, Mathf.Lerp(oldPosY, newPosY, t));
             yield return null;
         }
 

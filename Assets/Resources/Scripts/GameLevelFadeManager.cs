@@ -32,11 +32,11 @@ public class GameLevelFadeManager : MonoBehaviour
             text.text = level.ToString();
             text.prefix = "Level ";
         }
-        wheel.SetActive(false);
-        bonuses.SetActive(false);
-        screenUI.SetActive(false);
-        progress.SetActive(false);
-        btn.interactable = false;
+        if (wheel != null) wheel.SetActive(false);
+        if (bonuses != null) bonuses.SetActive(false);
+        if (screenUI != null) screenUI.SetActive(false);
+        if (progress != null) progress.SetActive(false);
+        if (btn != null) btn.interactable = false;
         if (island.Level >= level)
             Unlock();
         EventManager.Subscribe("LevelUp", SetUnlockButton);
@@ -57,10 +57,10 @@ public class GameLevelFadeManager : MonoBehaviour
     public void Unlock()
     {
         if (island.Level < level) return;
-        wheel.SetActive(true);
-        bonuses.SetActive(true);
-        screenUI.SetActive(true);
-        progress.SetActive(true);
+        if (wheel != null) wheel.SetActive(true);
+        if (bonuses != null) bonuses.SetActive(true);
+        if (screenUI != null) screenUI.SetActive(true);
+        if (progress != null) progress.SetActive(true);
         Destroy(gameObject);
     }
 }
