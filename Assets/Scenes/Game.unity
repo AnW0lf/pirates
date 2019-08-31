@@ -25697,7 +25697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &550978290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40711,6 +40711,20 @@ MonoBehaviour:
   ships: {fileID: 453755325}
   buyShip: {fileID: 780953981}
   shop: {fileID: 1832771104}
+  buyShipPrice: {fileID: 1754917289}
+  priceMantissa: 1
+  priceExponent: 2
+  shipsIcons:
+  - {fileID: 21300000, guid: 15fc3d0fbe7c9bd4bb57e94e57dd9ae7, type: 3}
+  - {fileID: 21300000, guid: 2244f7ec1cbfd854b804735a1007ee4e, type: 3}
+  - {fileID: 21300000, guid: 51957dccc136474449984c3ecc1ecc1f, type: 3}
+  - {fileID: 21300000, guid: e0c1dcac6dbe24a48a5d460b2182ba90, type: 3}
+  - {fileID: 21300000, guid: faf3c1474ce35fd418fceb425e9f34e5, type: 3}
+  - {fileID: 21300000, guid: 380bb3299e5813d49ad6cdc6c27bec7f, type: 3}
+  - {fileID: 21300000, guid: baac486b51e0c634681a6e7fa1661b1a, type: 3}
+  - {fileID: 21300000, guid: 9a8dbaef0c4f8a8459d5c5b22e6be9dc, type: 3}
+  - {fileID: 21300000, guid: 78f4bed60a5a6e840824f81bf2f88908, type: 3}
+  - {fileID: 21300000, guid: fdefb56dca794414e8c46f9eb1130365, type: 3}
 --- !u!1 &823542253
 GameObject:
   m_ObjectHideFlags: 0
