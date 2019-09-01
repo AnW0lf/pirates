@@ -3,10 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class BigDigit
 {
-    public double Mantissa { get; private set; }
-    public long Exponent { get; private set; }
+    public double mantissa = 1f;
+    public long exponent = 0;
+
+    public double Mantissa { get { return mantissa; } private set { mantissa = value; } }
+    public long Exponent { get { return exponent; } private set { exponent = value; } }
     public static readonly BigDigit zero = new BigDigit(0d, 0);
 
     private readonly string[] postfix = { "K", "M", "B", "T", "q", "Q", "s", "S" };
