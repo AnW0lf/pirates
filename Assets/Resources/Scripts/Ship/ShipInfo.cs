@@ -5,7 +5,7 @@ public class ShipInfo : ScriptableObject
 {
     [Header("Основное")]
     new public string name = "NewShip";
-    public int level = 1;
+    public int unlockLevel = 1, gradeLevel = 1;
     public Sprite icon = null;
     [Header("Стоимость")]
     public BigDigit startPrice = new BigDigit(0d, 0);

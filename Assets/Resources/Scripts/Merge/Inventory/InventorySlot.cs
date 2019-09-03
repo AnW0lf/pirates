@@ -3,34 +3,70 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
+    public Image shipIcon, star, lockIcon;
+    public Text levelText;
     public Inventory inventory;
-    public Image icon;
-    public Button removeButton;
 
-    Item item;
+    public bool Locked { get; private set; }
 
-    public void AddItem(Item newItem)
+    private ShipInfo item;
+
+    private void Awake()
+    {
+        Locked = true;
+        if (inventory == null) inventory = GetComponentInParent<Inventory>();
+    }
+
+    private void Start()
+    {
+        UpdateInfo();
+    }
+
+    public void AddItem(ShipInfo newItem)
     {
         item = newItem;
-
-        icon.sprite = item.icon;
-        icon.enabled = true;
-
-        removeButton.interactable = true;
+        UpdateInfo();
     }
 
     public void ClearSlot()
     {
         item = null;
-
-        icon.sprite = null;
-        icon.enabled = false;
-
-        removeButton.interactable = false;
+        UpdateInfo();
     }
 
-    public void OnRemoveButton()
+    public void SetLocked(bool locked)
     {
-        inventory.Remove(item);
+        Locked = locked;
+        UpdateInfo();
+    }
+
+    private void UpdateInfo()
+    {
+        if(Locked)
+        {
+            shipIcon.enabled = false;
+            lockIcon.enabled = true;
+            star.enabled = false;
+
+            levelText.enabled = false;
+        }
+        else if (item != null)
+        {
+            shipIcon.enabled = true;
+            shipIcon.sprite = item.icon;
+            lockIcon.enabled = false;
+            star.enabled = true;
+
+            levelText.enabled = true;
+            levelText.text = item.gradeLevel.ToString();
+        }
+        else
+        {
+            shipIcon.enabled = false;
+            lockIcon.enabled = false;
+            star.enabled = false;
+
+            levelText.enabled = false;
+        }
     }
 }

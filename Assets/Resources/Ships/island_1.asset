@@ -15,3 +15,12 @@ MonoBehaviour:
   islandNumber: 1
   ships:
   - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
