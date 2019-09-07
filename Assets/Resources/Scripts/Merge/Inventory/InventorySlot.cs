@@ -3,17 +3,19 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    public Image shipIcon, star, lockIcon;
+    public Transform icon;
+    public GameObject star, locked;
     public Text levelText;
     public Inventory inventory;
+    [Header("Префаб корабля")]
+    public GameObject shipPref;
 
-    public bool Locked { get; private set; }
+    public SlotState State { get; set; }
 
-    private ShipInfo item;
+    public ShipInfo Item { get; private set; }
 
     private void Awake()
     {
-        Locked = true;
         if (inventory == null) inventory = GetComponentInParent<Inventory>();
     }
 
@@ -24,49 +26,42 @@ public class InventorySlot : MonoBehaviour
 
     public void AddItem(ShipInfo newItem)
     {
-        item = newItem;
+        Item = newItem;
         UpdateInfo();
     }
 
     public void ClearSlot()
     {
-        item = null;
+        Item = null;
         UpdateInfo();
     }
 
-    public void SetLocked(bool locked)
+    public void SetLocked(SlotState state)
     {
-        Locked = locked;
+        State = state;
         UpdateInfo();
     }
 
     private void UpdateInfo()
     {
-        if(Locked)
+        if (Item && icon.childCount == 0)
         {
-            shipIcon.enabled = false;
-            lockIcon.enabled = true;
-            star.enabled = false;
-
-            levelText.enabled = false;
+            GameObject o = Instantiate(shipPref, icon);
+            o.GetComponent<Image>().sprite = Item.icon;
+            o.GetComponent<DragHandler>().itemInfo = Item;
+            icon.GetComponent<Slot>().itemInfo = Item;
+            levelText.text = Item.gradeLevel.ToString();
         }
-        else if (item != null)
-        {
-            shipIcon.enabled = true;
-            shipIcon.sprite = item.icon;
-            lockIcon.enabled = false;
-            star.enabled = true;
+        else if (!Item && icon.childCount != 0)
+            Destroy(icon.GetChild(0).gameObject);
 
-            levelText.enabled = true;
-            levelText.text = item.gradeLevel.ToString();
-        }
-        else
-        {
-            shipIcon.enabled = false;
-            lockIcon.enabled = false;
-            star.enabled = false;
+        if (icon.childCount != 0)
+            State = SlotState.FILLED;
+        else Item = null;
 
-            levelText.enabled = false;
-        }
+        locked.SetActive(State == SlotState.LOCKED);
+        star.SetActive(State == SlotState.FILLED);
     }
 }
+
+public enum SlotState { LOCKED, UNLOCKED, FILLED }

@@ -20,9 +20,9 @@ public class Inventory : MonoBehaviour
     {
         island = Island.Instance();
 
-        for(int i = 0; i < infoList.ships.Count; i++)
+        for (int i = 0; i < infoList.ships.Count; i++)
         {
-            for(int j = 0; j < GetShipCount(i); j++)
+            for (int j = 0; j < GetShipCount(i); j++)
             {
                 items.Add(infoList.ships[i]);
             }
@@ -37,6 +37,17 @@ public class Inventory : MonoBehaviour
     public BigDigit ActualPrice(int id)
     {
         return infoList.ships[id].startPrice * (GetShipCount(id) + 1);
+    }
+
+    public List<ShipInfo> GetShipsList()
+    {
+        List<ShipInfo> list = new List<ShipInfo>();
+        for (int i = 0; i < items.Count; i++)
+        {
+            for (int j = 0; j < GetShipCount(i); j++)
+                list.Add(items[i]);
+        }
+        return list;
     }
 
     private int GetShipCount(int id)

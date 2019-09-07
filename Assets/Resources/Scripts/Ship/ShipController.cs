@@ -38,7 +38,7 @@ public class ShipController : MonoBehaviour
     private void Reward()
     {
         MoneyIconOff();
-        //island.ChangeMoney(new BigDigit(moneyMantissa, moneyExponent) * moneyModifier);
+        island.ExpUp(new BigDigit(moneyMantissa, moneyExponent) * moneyModifier);
     }
 
     private void MoneyIconOn()

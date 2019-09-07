@@ -44,7 +44,7 @@ public class ShipRewardController : MonoBehaviour
 
     public void DisableIcon()
     {
-        //island.SetParameter("QuitTime", DateTime.Now.ToString());
+        island.SetParameter("QuitTime", DateTime.Now.ToString());
         if (icon_object.activeInHierarchy) icon_object.SetActive(false);
     }
 }
