@@ -43,6 +43,7 @@ public class Inventory : MonoBehaviour
         BigDigit price = list.ships[0].startPrice * (GetShipCount(list.islandNumber, 0) + 1);
         bool interactable = price < island.Money && !IsFull && shipsCount < unlockedSlotsCount;
         buyBtn.interactable = interactable;
+        UpdateBuyButtonInfo();
     }
 
     public bool IsFull
@@ -72,12 +73,45 @@ public class Inventory : MonoBehaviour
                 if (items[i].name == ShipInfo.defaultName)
                 {
                     items[i] = item;
+                    int islandNum = list.islandNumber, shipNum = list.ships.IndexOf(item);
                     shipsCount++;
-                    DisplayItems();
                     manager.GenerateShips(list.ships.IndexOf(item), 1);
+                    DisplayItems();
                     break;
                 }
             }
+        }
+    }
+
+    public void Remove(ShipInfo item)
+    {
+        if (shipsCount > 0)
+        {
+            for (int i = 0; i < cellContainer.childCount; i++)
+            {
+                if (items[i].name == item.name)
+                {
+                    items[i] = new ShipInfo();
+                    int islandNum = list.islandNumber, shipNum = list.ships.IndexOf(item);
+                    SetShipCount(islandNum, shipNum, Mathf.Clamp(GetShipCount(islandNum, shipNum) - 1, 0, cellContainer.childCount));
+                    shipsCount--;
+                    manager.DestroyShips(list.ships.IndexOf(item), 1);
+                    DisplayItems();
+                    break;
+                }
+            }
+        }
+    }
+
+    public void Sell()
+    {
+        ShipInfo item;
+        if (DragHandler.itemBeingDragged
+            && (item = DragHandler.itemBeingDragged.transform.parent.GetComponent<CurrentItem>().item))
+        {
+            DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
+            Remove(item);
+            island.ChangeMoney(item.startPrice);
         }
     }
 
@@ -102,9 +136,9 @@ public class Inventory : MonoBehaviour
             Transform cell = cellContainer.GetChild(i);
             Image icon = cell.GetChild(0).GetComponent<Image>();
             GameObject star = icon.transform.GetChild(0).gameObject;
+            cell.GetComponent<CurrentItem>().item = items[i];
             if (i < unlocked)
             {
-
                 if (items[i].name != ShipInfo.defaultName)
                 {
                     Text level = star.transform.GetComponentInChildren<Text>();
@@ -158,8 +192,8 @@ public class Inventory : MonoBehaviour
         int shipCount = GetShipCount(list.islandNumber, n);
         if (island.ChangeMoney(-list.ships[n].startPrice * (shipCount + 1)))
         {
-            SetShipCount(list.islandNumber, n, shipCount + 1);
             Add(list.ships[n]);
+            SetShipCount(list.islandNumber, n, Mathf.Clamp(shipCount + 1, 0, cellContainer.childCount));
         }
         if (n == 0) UpdateBuyButtonInfo();
     }

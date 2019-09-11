@@ -46,7 +46,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        EndDrag();
+        if(itemBeingDragged) EndDrag();
     }
 
     public void EndDrag()

@@ -67,11 +67,11 @@ public class ShipsManager : MonoBehaviour
         int c = count;
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
-            if (transform.GetChild(i).GetComponent<ShipController>().shipLevel == level)
+            if (transform.GetChild(i).GetComponent<ShipController>().shipLevel == level && c > 0)
             {
-                if (c <= 0)
-                    Destroy(transform.GetChild(i).gameObject);
+                Destroy(transform.GetChild(i).gameObject);
                 c--;
+                if (c == 0) return;
             }
         }
     }
