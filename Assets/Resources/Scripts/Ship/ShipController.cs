@@ -23,7 +23,7 @@ public class ShipController : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         Motor = GetComponent<ShipMotor>();
         rewardController = GetComponent<ShipRewardController>();
         Motor.duration = duration * durationModifier;

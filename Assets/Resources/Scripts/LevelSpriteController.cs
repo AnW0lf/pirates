@@ -14,7 +14,7 @@ public class LevelSpriteController : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         image = GetComponent<Image>();
     }
 

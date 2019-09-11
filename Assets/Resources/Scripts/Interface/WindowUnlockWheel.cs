@@ -11,7 +11,7 @@ public class WindowUnlockWheel : WindowBase
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     public override void Open(object[] args)

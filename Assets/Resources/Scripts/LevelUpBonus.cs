@@ -11,7 +11,7 @@ public class LevelUpBonus : MonoBehaviour
 
     public void GenerateBonuses(int count)
     {
-        if (island == null) island = Island.Instance();
+        if (island == null) island = Island.Instance;
         //if (island.Level >= minLevel && island.Level <= maxLevel) bg.RandomBonus(count);
     }
 }

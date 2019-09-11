@@ -26,7 +26,7 @@ public class FlyingText : MonoBehaviour
         {
             if (sprites.Length >= 3)
             {
-                island = Island.Instance();
+                island = Island.Instance;
                 if (island.Level < 25)
                 {
                     expImage.sprite = sprites[0];

@@ -5,11 +5,14 @@ using System.Collections;
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static GameObject itemBeingDragged;
+    public Transform dragParent;
     public ShipInfo itemInfo;
+
 
     private Vector2 startPos, cursorStartPos;
     private static float k = 0f;
     private CanvasGroup canvasGroup;
+    private Transform startParent;
 
     private void Awake()
     {
@@ -23,6 +26,8 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         startPos = transform.position;
         cursorStartPos = eventData.position;
         canvasGroup.blocksRaycasts = false;
+        startParent = transform.parent;
+        transform.SetParent(dragParent);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -31,6 +36,12 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
 
     public void OnEndDrag(PointerEventData eventData)
+    {
+        if (transform.parent == dragParent) transform.SetParent(startParent);
+        DefaultPsition();
+    }
+
+    public void DefaultPsition()
     {
         itemBeingDragged = null;
         canvasGroup.blocksRaycasts = true;

@@ -11,7 +11,7 @@ public class Tut1 : MonoBehaviour
 
     private void OnEnable()
     {
-        island = Island.Instance();
+        island = Island.Instance;
 
         if (Screen.safeArea.yMax != Screen.safeArea.height)
         {

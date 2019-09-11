@@ -22,7 +22,7 @@ public class IslandSpriteController : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         image = GetComponent<Image>();
         anim = GetComponent<Animation>();
         rect = GetComponent<RectTransform>();

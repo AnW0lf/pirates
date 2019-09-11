@@ -15,7 +15,7 @@ public class ScrollManager : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         rect = GetComponent<RectTransform>();
     }
 

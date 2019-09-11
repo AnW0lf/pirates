@@ -14,7 +14,7 @@ public class BonusGenerator : MonoBehaviour
 
     void OnEnable()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         curDelay = bonusDelay;
         StartCoroutine(BonusSpawner());
     }

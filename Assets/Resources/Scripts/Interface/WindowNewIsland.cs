@@ -16,7 +16,7 @@ public class WindowNewIsland : WindowBase
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     public override void Open(object[] args)

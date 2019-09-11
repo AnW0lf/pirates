@@ -7,7 +7,7 @@ public class Saver : MonoBehaviour
 {
     private Island island;
 
-    private void Awake() { island = Island.Instance(); }
+    private void Awake() { island = Island.Instance; }
 
     private void OnApplicationFocus(bool focus) { Save(); }
 

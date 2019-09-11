@@ -13,7 +13,7 @@ public class WheelUnlock : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         btn = GetComponent<Button>();
     }
 
@@ -31,7 +31,7 @@ public class WheelUnlock : MonoBehaviour
 
     public void Open()
     {
-        if (island == null) island = Island.Instance();
+        if (island == null) island = Island.Instance;
         if (viewport == null) viewport = transform.GetChild(0).gameObject;
     }
 

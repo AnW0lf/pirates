@@ -19,7 +19,7 @@ public class IslandController : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         anim = GetComponent<Animation>();
     }
 
@@ -101,7 +101,7 @@ public class IslandController : MonoBehaviour
         //}
         else
         {
-            time = island.Level > 10 ? 0.6f : 1f - ((island.Level - 1) * 0.04f) ;
+            time = island.Level > 10 ? 0.6f : 1f - ((island.Level - 1) * 0.04f);
         }
 
         anim.Play("OnePulse");
@@ -110,7 +110,7 @@ public class IslandController : MonoBehaviour
 
         GenerateBonusMoney(reward);
 
-        if(clicked) EventManager.SendEvent("AddMoneyPulse");
+        if (clicked) EventManager.SendEvent("AddMoneyPulse");
         yield return new WaitForSeconds(time / 2);
         clicked = false;
         yield return new WaitForSeconds(time / 2);

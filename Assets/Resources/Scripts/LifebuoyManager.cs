@@ -27,7 +27,7 @@ public class LifebuoyManager : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     private void OnEnable()
@@ -118,7 +118,7 @@ public class LifebuoyManager : MonoBehaviour
 
     public void UpdateInfo()
     {
-        if (island == null) island = Island.Instance();
+        if (island == null) island = Island.Instance;
         modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
         island.InitParameter(modifierName + "_level", 0);
         lvl = island.GetParameter(modifierName + "_level", 0);

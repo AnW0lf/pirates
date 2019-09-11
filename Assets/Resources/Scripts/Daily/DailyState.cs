@@ -21,7 +21,7 @@ public class DailyState : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         image = GetComponent<Image>();
         button = GetComponent<Button>();
     }

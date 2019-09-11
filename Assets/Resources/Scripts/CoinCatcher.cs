@@ -17,7 +17,7 @@ public class CoinCatcher : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         image = GetComponent<Image>();
         islandController = transform.parent.parent.parent.parent.parent.GetChild(1).GetComponent<IslandController>();
     }
@@ -38,7 +38,7 @@ public class CoinCatcher : MonoBehaviour
     {
         if (sprites.Length >= 3)
         {
-            island = Island.Instance();
+            island = Island.Instance;
             if (island.Level < 25)
             {
                 image.sprite = sprites[0];

@@ -89,7 +89,7 @@ public class PierManager : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         if (spriteForMenu == null) spriteForMenu = shipIcon;
     }
 

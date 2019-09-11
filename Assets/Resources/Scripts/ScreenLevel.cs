@@ -17,7 +17,7 @@ public class ScreenLevel : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     private void Start()
@@ -30,7 +30,7 @@ public class ScreenLevel : MonoBehaviour
 
     private void OnEnable()
     {
-        if (island == null) island = Island.Instance();
+        if (island == null) island = Island.Instance;
 
         EventManager.Subscribe("AddExp", ShowFill);
         oldExp = island.Exp;

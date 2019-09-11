@@ -16,7 +16,7 @@ public class WindowUpgradeWheel : WindowBase
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     private void Start()

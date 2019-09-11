@@ -16,7 +16,7 @@ public class GameLevelFadeManager : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         btn = GetComponentInChildren<Button>();
     }
 

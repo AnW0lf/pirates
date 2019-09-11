@@ -12,7 +12,7 @@ public class Tut6 : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         childUpgrade = transform.GetChild(0).gameObject;
     }
 

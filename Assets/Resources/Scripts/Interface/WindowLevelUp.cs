@@ -15,7 +15,7 @@ public class WindowLevelUp : WindowBase
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         Opened = false;
     }
 

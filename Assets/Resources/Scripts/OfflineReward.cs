@@ -24,7 +24,7 @@ public class OfflineReward : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         text = GetComponent<Text>();
         rewardGained = false;
         money = BigDigit.zero;

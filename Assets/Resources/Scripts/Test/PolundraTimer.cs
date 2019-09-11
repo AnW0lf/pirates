@@ -18,7 +18,7 @@ public class PolundraTimer : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     private void Start()

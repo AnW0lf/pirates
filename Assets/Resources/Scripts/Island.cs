@@ -3,16 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Island
+public class Island : MonoBehaviour
 {
-    private static Island island;
+    public static Island Instance { get; private set; }
     //_______________________________________________________________________________
     public BigDigit Money { get; private set; }
     public int Level { get; private set; }
     public BigDigit Exp { get; private set; }
     public BigDigit StartExp { get; private set; }
-
-    private List<string> parameters;
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
  new BigDigit(4f, 1), // 0
@@ -93,19 +91,10 @@ public class Island
         new BigDigit(7f, 11), // 75
     };
     //_______________________________________________________________________________
-    private Island()
+    private void Awake()
     {
-        parameters = new List<string>();
+        Instance = this;
         Load();
-    }
-
-    public static Island Instance()
-    {
-        if (island == null)
-        {
-            island = new Island();
-        }
-        return island;
     }
 
     private void Load()
@@ -208,46 +197,34 @@ public class Island
 
     public void InitParameter(string parameter, int initVal)
     {
-        if (!parameters.Contains(parameter))
-            parameters.Add(parameter);
         if (!PlayerPrefs.HasKey(parameter))
             PlayerPrefs.SetInt(parameter, initVal);
     }
 
     public void InitParameter(string parameter, float initVal)
     {
-        if (!parameters.Contains(parameter))
-            parameters.Add(parameter);
         if (!PlayerPrefs.HasKey(parameter))
             PlayerPrefs.SetFloat(parameter, initVal);
     }
 
     public void InitParameter(string parameter, string initVal)
     {
-        if (!parameters.Contains(parameter))
-            parameters.Add(parameter);
         if (!PlayerPrefs.HasKey(parameter))
             PlayerPrefs.SetString(parameter, initVal);
     }
 
     public void SetParameter(string parameter, int value)
     {
-        if (!parameters.Contains(parameter))
-            parameters.Add(parameter);
         PlayerPrefs.SetInt(parameter, value);
     }
 
     public void SetParameter(string parameter, float value)
     {
-        if (!parameters.Contains(parameter))
-            parameters.Add(parameter);
         PlayerPrefs.SetFloat(parameter, value);
     }
 
     public void SetParameter(string parameter, string value)
     {
-        if (!parameters.Contains(parameter))
-            parameters.Add(parameter);
         PlayerPrefs.SetString(parameter, value);
     }
 

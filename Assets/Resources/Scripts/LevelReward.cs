@@ -18,7 +18,7 @@ public class LevelReward : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     void OnEnable()

@@ -24,7 +24,7 @@ public class ShipClick : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         cam = Camera.main;
     }
 

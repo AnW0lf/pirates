@@ -17,7 +17,7 @@ public class ShipRewardController : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         icon_transform = icon.transform;
         icon_object = icon.gameObject;
     }

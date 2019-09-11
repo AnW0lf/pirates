@@ -15,7 +15,7 @@ public class ShipsManager : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         ships = new int[shipCount];
         for (int i = 0; i < ships.Length; i++)
         {

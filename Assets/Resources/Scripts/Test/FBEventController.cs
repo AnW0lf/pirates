@@ -10,7 +10,7 @@ public class FBEventController : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
 
         // FACEBOOK SDK
         FB.Init();

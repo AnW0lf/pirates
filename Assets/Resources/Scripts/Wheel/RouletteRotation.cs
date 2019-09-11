@@ -39,7 +39,7 @@ public class RouletteRotation : MonoBehaviour
     {
         rect = GetComponent<RectTransform>();
         IsRolling = false;
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     private void OnEnable()
@@ -77,7 +77,7 @@ public class RouletteRotation : MonoBehaviour
 
     public void UpdateInfo()
     {
-        if (island == null) island = Island.Instance();
+        if (island == null) island = Island.Instance;
 
         if (levels.Contains(island.Level))
         {

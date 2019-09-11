@@ -13,7 +13,7 @@ public class CoinManager : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     private void Start()
