@@ -22,7 +22,6 @@ public class IslandSpriteController : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance;
         image = GetComponent<Image>();
         anim = GetComponent<Animation>();
         rect = GetComponent<RectTransform>();
@@ -30,6 +29,7 @@ public class IslandSpriteController : MonoBehaviour
 
     private void Start()
     {
+        island = Island.Instance;
         startSizeDelta = rect.sizeDelta;
         island.InitParameter("IslandSpriteLevel_" + islandNumber, 0);
         IslandSpriteLevel = island.GetParameter("IslandSpriteLevel_" + islandNumber, 0);

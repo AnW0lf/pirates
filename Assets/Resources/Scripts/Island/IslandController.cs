@@ -19,8 +19,12 @@ public class IslandController : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance;
         anim = GetComponent<Animation>();
+    }
+
+    private void Start()
+    {
+        island = Island.Instance;
     }
 
     private void Update()

@@ -389,8 +389,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 916844374618889162}
+  - component: {fileID: 1219996340214733965}
+  - component: {fileID: 1056475505902141921}
+  - component: {fileID: 201032687350362567}
   m_Layer: 5
-  m_Name: DragParent
+  m_Name: DragIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,8 +416,58 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1219996340214733965
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852890764191117152}
+  m_CullTransparentMesh: 0
+--- !u!114 &1056475505902141921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852890764191117152}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!225 &201032687350362567
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852890764191117152}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1055637729555070189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,11 +1585,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1982c614430e5249b15cf65d18d240e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipsManager: {fileID: 0}
-  infoList: {fileID: 0}
-  space: 10
-  islandNumber: 1
-  items: []
+  list: {fileID: 0}
+  cellContainer: {fileID: 1820283619526088749}
+  manager: {fileID: 0}
+  lockSprite: {fileID: 21300000, guid: 24101349c4944794197876a3f6b9b851, type: 3}
+  buyBtn: {fileID: 1820283620466170506}
+  buyBtnTxt: {fileID: 1820283618554964426}
 --- !u!1 &1820283619526088748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,8 +2404,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1820283619459301919}
-        m_MethodName: AddFirst
-        m_Mode: 1
+        m_MethodName: BuyShip
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4953,6 +5007,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &7065972531590874052 stripped
@@ -5108,6 +5167,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &7363608295749626838 stripped
@@ -5263,6 +5327,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &8053059073350980001 stripped
@@ -5418,6 +5487,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &4821499501924375909 stripped
@@ -5573,6 +5647,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &6286179629395054979 stripped
@@ -5728,6 +5807,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &3114551271496463864 stripped
@@ -5883,6 +5967,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &4273342660181247790 stripped
@@ -6038,6 +6127,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &4437634111034670762 stripped
@@ -6193,6 +6287,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &720745222743171912 stripped
@@ -6348,6 +6447,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5516747264909713961, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
+        type: 3}
+      propertyPath: dragObj
+      value: 
+      objectReference: {fileID: 852890764191117152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd19f24a16a2d34eb1dda4beead6dc8, type: 3}
 --- !u!224 &2045167900579548315 stripped

@@ -1,50 +1,59 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static GameObject itemBeingDragged;
-    public Transform dragParent;
-    public ShipInfo itemInfo;
+    public GameObject dragObj;
+    public bool canDrag = false;
 
 
     private Vector2 startPos, cursorStartPos;
     private static float k = 0f;
-    private CanvasGroup canvasGroup;
-    private Transform startParent;
+    private Transform dragTransform;
+    private Image dragImg, img;
+    private CanvasGroup dragCanvasGroup;
 
     private void Awake()
     {
         if (k == 0f) k = Camera.main.pixelHeight / Camera.main.orthographicSize / 2f;
-        canvasGroup = GetComponent<CanvasGroup>();
+        dragTransform = dragObj.transform;
+        img = transform.GetComponent<Image>();
+        dragImg = dragObj.GetComponent<Image>();
+        dragCanvasGroup = dragObj.GetComponent<CanvasGroup>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!canDrag) return;
         itemBeingDragged = gameObject;
         startPos = transform.position;
         cursorStartPos = eventData.position;
-        canvasGroup.blocksRaycasts = false;
-        startParent = transform.parent;
-        transform.SetParent(dragParent);
+        dragCanvasGroup.blocksRaycasts = false;
+        dragTransform.position = transform.position;
+        dragImg.enabled = true;
+        img.enabled = false;
+        dragImg.sprite = GetComponent<Image>().sprite;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = startPos + (eventData.position - cursorStartPos) / k;
+        if (!canDrag) return;
+        dragTransform.position = startPos + (eventData.position - cursorStartPos) / k;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (transform.parent == dragParent) transform.SetParent(startParent);
-        DefaultPsition();
+        EndDrag();
     }
 
-    public void DefaultPsition()
+    public void EndDrag()
     {
         itemBeingDragged = null;
-        canvasGroup.blocksRaycasts = true;
-        transform.localPosition = Vector3.zero;
+        dragCanvasGroup.blocksRaycasts = true;
+        dragImg.enabled = false;
+        img.enabled = true;
     }
 }

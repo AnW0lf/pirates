@@ -26,7 +26,7 @@ public class ShipsManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateInfo();
+        //UpdateInfo();
     }
 
     public void UpdateInfo()
@@ -48,7 +48,7 @@ public class ShipsManager : MonoBehaviour
         }
     }
 
-    private void GenerateShips(int level, int count)
+    public void GenerateShips(int level, int count)
     {
         for (int i = 0; i < count; i++)
         {
@@ -62,7 +62,7 @@ public class ShipsManager : MonoBehaviour
         }
     }
 
-    private void DestroyShips(int level, int count)
+    public void DestroyShips(int level, int count)
     {
         int c = count;
         for (int i = transform.childCount - 1; i >= 0; i--)
