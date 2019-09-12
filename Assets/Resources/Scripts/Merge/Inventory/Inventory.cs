@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
         items = new ShipInfo[cellContainer.childCount];
         for (int i = 0; i < items.Length; i++)
         {
-            items[i] = new ShipInfo();
+            items[i] = null;
             island.InitParameter("ShipCount_" + list.islandNumber.ToString() + "_" + i.ToString(), 0);
         }
 
@@ -52,7 +52,7 @@ public class Inventory : MonoBehaviour
         {
             for (int i = 0; i < items.Length; i++)
             {
-                if (items[i].name == ShipInfo.defaultName)
+                if (items[i] == null)
                     return false;
             }
             return true;
@@ -64,13 +64,39 @@ public class Inventory : MonoBehaviour
 
     }
 
+    public void Merge(CurrentItem a, CurrentItem b)
+    {
+        if (list.ships.IndexOf(a.item) < list.ships.Count)
+        {
+            int id = a.id;
+            ShipInfo item = a.item;
+            Remove(a.id);
+            Remove(b.id);
+            items[id] = list.ships[Mathf.Clamp(list.ships.IndexOf(item), 0, list.ships.Count - 1)];
+
+            DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
+            DisplayItems();
+        }
+        else Switch(a, b);
+    }
+
+    public void Switch(CurrentItem a, CurrentItem b)
+    {
+        ShipInfo item = items[a.id];
+        items[a.id] = items[b.id];
+        items[b.id] = item;
+
+        DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
+        DisplayItems();
+    }
+
     public void Add(ShipInfo item)
     {
         if (unlockedSlotsCount > shipsCount)
         {
             for (int i = 0; i < cellContainer.childCount; i++)
             {
-                if (items[i].name == ShipInfo.defaultName)
+                if (items[i] == null)
                 {
                     items[i] = item;
                     int islandNum = list.islandNumber, shipNum = list.ships.IndexOf(item);
@@ -83,35 +109,30 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Remove(ShipInfo item)
+    public void Remove(int id)
     {
         if (shipsCount > 0)
         {
-            for (int i = 0; i < cellContainer.childCount; i++)
-            {
-                if (items[i].name == item.name)
-                {
-                    items[i] = new ShipInfo();
-                    int islandNum = list.islandNumber, shipNum = list.ships.IndexOf(item);
-                    SetShipCount(islandNum, shipNum, Mathf.Clamp(GetShipCount(islandNum, shipNum) - 1, 0, cellContainer.childCount));
-                    shipsCount--;
-                    manager.DestroyShips(list.ships.IndexOf(item), 1);
-                    DisplayItems();
-                    break;
-                }
-            }
+            ShipInfo item = items[id];
+            items[id] = null;
+            int islandNum = list.islandNumber, shipNum = list.ships.IndexOf(item);
+            SetShipCount(islandNum, shipNum, Mathf.Clamp(GetShipCount(islandNum, shipNum) - 1, 0, cellContainer.childCount));
+            shipsCount--;
+            manager.DestroyShips(list.ships.IndexOf(item), 1);
+            DisplayItems();
+            UpdateBuyButtonInteractable(new object[0]);
         }
     }
 
     public void Sell()
     {
-        ShipInfo item;
+        CurrentItem item;
         if (DragHandler.itemBeingDragged
-            && (item = DragHandler.itemBeingDragged.transform.parent.GetComponent<CurrentItem>().item))
+            && (item = DragHandler.itemBeingDragged.transform.parent.GetComponent<CurrentItem>()) && item.item)
         {
             DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
-            Remove(item);
-            island.ChangeMoney(item.startPrice);
+            island.ChangeMoney(item.item.startPrice);
+            Remove(item.id);
         }
     }
 
@@ -139,7 +160,7 @@ public class Inventory : MonoBehaviour
             cell.GetComponent<CurrentItem>().item = items[i];
             if (i < unlocked)
             {
-                if (items[i].name != ShipInfo.defaultName)
+                if (items[i] != null)
                 {
                     Text level = star.transform.GetComponentInChildren<Text>();
                     icon.enabled = true;

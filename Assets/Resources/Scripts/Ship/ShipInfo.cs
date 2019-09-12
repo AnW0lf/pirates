@@ -4,7 +4,7 @@
 public class ShipInfo : ScriptableObject
 {
     [Header("Основное")]
-    new public string name = defaultName;
+    new public string name = "NewShip";
     public int unlockLevel = 1, gradeLevel = 1;
     public Sprite icon = null;
     [Header("Стоимость")]
@@ -14,6 +14,4 @@ public class ShipInfo : ScriptableObject
     [Header("Характеристики корабля")]
     public float speed = 200f;
     public float distance = 400f;
-
-    public static readonly string defaultName = "NewShip";
 }

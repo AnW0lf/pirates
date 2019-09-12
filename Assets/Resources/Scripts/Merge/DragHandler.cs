@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine.UI;
 
-public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
     public static GameObject itemBeingDragged;
     public GameObject dragObj;
@@ -47,6 +47,17 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnEndDrag(PointerEventData eventData)
     {
         if(itemBeingDragged) EndDrag();
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        CurrentItem item = GetComponentInParent<CurrentItem>();
+        CurrentItem other = itemBeingDragged.GetComponentInParent<CurrentItem>();
+        if (item && other && item.item && other.item && item.item == other.item)
+        {
+            item.inventory.Merge(item, other);
+        }
+        else item.inventory.Switch(item, other);
     }
 
     public void EndDrag()
