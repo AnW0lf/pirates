@@ -6,5 +6,6 @@ using System.Collections.Generic;
 public class ShipInfoList : ScriptableObject
 {
     public int islandNumber = 1;
+    public string islandName = "NewIsland";
     public List<ShipInfo> ships = null;
 }

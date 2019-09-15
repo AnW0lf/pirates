@@ -7,30 +7,18 @@ public class WindowNewShip : WindowBase
 {
     [SerializeField] protected Text shipName;
     [SerializeField] protected Image shipIcon;
-    [SerializeField] protected Transform[] piersArray;
 
-    private Island island;
-
-    private void Awake()
+    private void Start()
     {
-        island = Island.Instance;
+        EventManager.Subscribe("NewShip", Open);
     }
 
     public override void Open(object[] args)
     {
-        foreach (Transform piers in piersArray)
-        {
-            foreach (PierManager pier in piers.GetComponentsInChildren<PierManager>())
-            {
-                if (pier.minLvl == island.Level)
-                {
-                    base.Open(args);
-                    shipName.text = pier.shipName;
-                    shipIcon.sprite = pier.shipIcon;
-                    break;
-                }
-            }
-        }
+        base.Open(args);
+        ShipInfo item = (ShipInfo)args[0];
+        shipName.text = item.name;
+        shipIcon.sprite = item.icon;
         if (!Opened) Close();
     }
 

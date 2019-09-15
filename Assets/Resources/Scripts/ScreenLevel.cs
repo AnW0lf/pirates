@@ -15,13 +15,9 @@ public class ScreenLevel : MonoBehaviour
     private BigDigit oldExp;
     private bool filled = false;
 
-    private void Awake()
-    {
-        island = Island.Instance;
-    }
-
     private void Start()
     {
+        island = Island.Instance;
         if (minLevel <= island.Level && maxLevel >= island.Level && island.Exp >= island.GetMaxExp())
         {
             button.SetActive(true);

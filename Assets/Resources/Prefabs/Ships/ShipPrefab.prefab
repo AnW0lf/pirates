@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b752bdc232acb47949d3e6b9e01194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 821593842469200795}
   shipLevel: 1
   moneyMantissa: 1.5
   moneyExponent: 2

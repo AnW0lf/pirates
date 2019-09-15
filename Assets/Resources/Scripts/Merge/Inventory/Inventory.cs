@@ -29,6 +29,7 @@ public class Inventory : MonoBehaviour
         {
             items[i] = null;
             island.InitParameter("ShipCount_" + list.islandNumber.ToString() + "_" + i.ToString(), 0);
+            island.InitParameter("ShipAlltimeCount_" + list.islandNumber.ToString() + "_" + i.ToString(), 0);
         }
 
         Load();
@@ -40,7 +41,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInteractable(object[] args)
     {
-        BigDigit price = list.ships[0].startPrice * (GetShipCount(list.islandNumber, 0) + 1);
+        BigDigit price = list.ships[0].startPrice * (GetShipAlltimeCount(list.islandNumber, 0) + 1);
         bool interactable = price < island.Money && !IsFull && shipsCount < unlockedSlotsCount;
         buyBtn.interactable = interactable;
         UpdateBuyButtonInfo();
@@ -66,13 +67,19 @@ public class Inventory : MonoBehaviour
 
     public void Merge(CurrentItem a, CurrentItem b)
     {
-        if (list.ships.IndexOf(a.item) < list.ships.Count)
+        if (list.ships.IndexOf(a.item) < (list.ships.Count - 1))
         {
-            int id = a.id;
             ShipInfo item = a.item;
+            int id = a.id, newIndex = Mathf.Clamp(list.ships.IndexOf(item) + 1, 0, list.ships.Count - 1);
             Remove(a.id);
             Remove(b.id);
-            items[id] = list.ships[Mathf.Clamp(list.ships.IndexOf(item), 0, list.ships.Count - 1)];
+            items[id] = list.ships[newIndex];
+            shipsCount++;
+            manager.GenerateShips(newIndex, 1);
+
+            SetShipCount(list.islandNumber, newIndex, GetShipCount(list.islandNumber, newIndex) + 1);
+            if (GetShipAlltimeCount(list.islandNumber, newIndex) == 0) EventManager.SendEvent("NewShip", list.ships[newIndex]);
+            AddShipAlltimeCount(list.islandNumber, newIndex);
 
             DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
             DisplayItems();
@@ -146,7 +153,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInfo()
     {
-        buyBtnTxt.text = (list.ships[0].startPrice * (GetShipCount(list.islandNumber, 0) + 1)).ToString() + "[C]";
+        buyBtnTxt.text = (list.ships[0].startPrice * (GetShipAlltimeCount(list.islandNumber, 0) + 1)).ToString() + "[C]";
     }
 
     private void DisplayItems()
@@ -202,9 +209,19 @@ public class Inventory : MonoBehaviour
         island.SetParameter("ShipCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), value);
     }
 
-    private int GetShipCount(int islandNumber, int shipNumber)
+    public int GetShipCount(int islandNumber, int shipNumber)
     {
         return island.GetParameter("ShipCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0);
+    }
+
+    public int GetShipAlltimeCount(int islandNumber, int shipNumber)
+    {
+        return island.GetParameter("ShipAlltimeCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0);
+    }
+
+    private void AddShipAlltimeCount(int islandNumber, int shipNumber)
+    {
+        island.SetParameter("ShipAlltimeCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), GetShipAlltimeCount(islandNumber, shipNumber) + 1);
     }
 
     public void BuyShip(int number)
@@ -215,6 +232,8 @@ public class Inventory : MonoBehaviour
         {
             Add(list.ships[n]);
             SetShipCount(list.islandNumber, n, Mathf.Clamp(shipCount + 1, 0, cellContainer.childCount));
+            if (GetShipAlltimeCount(list.islandNumber, n) == 0) EventManager.SendEvent("NewShip", list.ships[n]);
+            AddShipAlltimeCount(list.islandNumber, n);
         }
         if (n == 0) UpdateBuyButtonInfo();
     }

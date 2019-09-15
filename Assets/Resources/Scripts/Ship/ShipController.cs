@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(ShipMotor))]
 [RequireComponent(typeof(EventTrigger))]
 [RequireComponent(typeof(ShipRewardController))]
 public class ShipController : MonoBehaviour
 {
+    public Image img;
+
     public int shipLevel = 1;
     public float moneyMantissa;
     public int moneyExponent;
@@ -15,11 +18,10 @@ public class ShipController : MonoBehaviour
 
     public GameObject moneyIcon;
 
-    private ShipMotor motor;
     private ShipRewardController rewardController;
     private Island island;
 
-    public ShipMotor Motor { get => motor; private set => motor = value; }
+    public ShipMotor Motor { get ; private set ; }
 
     private void Awake()
     {

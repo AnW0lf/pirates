@@ -6,56 +6,22 @@ using UnityEngine;
 public class ShipsManager : MonoBehaviour
 {
     public int islandNumber;
-    public float distanceFromTarget = 400f;
-    public GameObject[] shipsPrefabs;
+    public ShipInfoList list;
+    public GameObject shipPrefab;
     public int[] ships;
-
-    private Island island;
-    private int shipCount = 10;
-
-    private void Awake()
-    {
-        island = Island.Instance;
-        ships = new int[shipCount];
-        for (int i = 0; i < ships.Length; i++)
-        {
-            island.InitParameter("ShipCount_" + islandNumber + "_" + i, 0);
-            ships[i] = island.GetParameter("ShipCount_" + islandNumber + "_" + i, 0);
-        }
-    }
-
-    private void Start()
-    {
-        //UpdateInfo();
-    }
-
-    public void UpdateInfo()
-    {
-        for (int i = 0; i < ships.Length; i++)
-        {
-            ships[i] = island.GetParameter("ShipCount_" + islandNumber + "_" + i, 0);
-            int count = 0;
-            foreach (ShipController s in transform.GetComponentsInChildren<ShipController>())
-                if (s.shipLevel == i) count++;
-            if (count < ships[i])
-            {
-                GenerateShips(i, ships[i] - count);
-            }
-            else if (count > ships[i])
-            {
-                DestroyShips(i, count - ships[i]);
-            }
-        }
-    }
 
     public void GenerateShips(int level, int count)
     {
         for (int i = 0; i < count; i++)
         {
-            ShipController ship = Instantiate(shipsPrefabs[level], transform).GetComponent<ShipController>();
+            ShipInfo item = list.ships[Mathf.Clamp(level, 0, list.ships.Count - 1)];
+            ShipController ship = Instantiate(shipPrefab, transform).GetComponent<ShipController>();
             ship.shipLevel = level;
             ship.Motor.target = transform;
-            float dst = distanceFromTarget + UnityEngine.Random.Range(-80f, 80f);
+            ship.Motor.speed = item.speed;
+            ship.Motor.duration = item.raidTime;
+            ship.img.sprite = item.icon;
+            float dst = item.distance + UnityEngine.Random.Range(-80f, 80f);
             float angle = UnityEngine.Random.Range(0f, 360f);
             ship.GetComponent<RectTransform>().anchoredPosition = new Vector2(Mathf.Cos(angle / 180 * Mathf.PI), Mathf.Sin(angle / 180 * Mathf.PI)) * dst;
             ship.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0f, 0f, angle);
