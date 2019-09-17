@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipMotor : MonoBehaviour
 {
     public Transform target;
-    public float speed = 200f, range = 2000f, duration = 5f, raidSpeedBonus = 10f;
+    public float speed = 200f, range = 2000f, duration = 5f, durationModifier = 0f, raidSpeedBonus = 10f;
     public RectTransform icon;
 
     public delegate void EmptyAction();
@@ -82,7 +82,7 @@ public class ShipMotor : MonoBehaviour
         isRaid = true;
         isBack = false;
         distance += range;
-        delay = duration;
+        delay = duration / Mathf.Pow(2f, durationModifier);
     }
 
     public void AddRaidEndAction(EmptyAction action)

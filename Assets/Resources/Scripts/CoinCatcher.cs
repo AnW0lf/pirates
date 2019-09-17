@@ -63,7 +63,7 @@ public class CoinCatcher : MonoBehaviour
 
         // Set modifiers to 1
         GetComponentInParent<ShipClick>().ship.rewardModifier = 1;
-        GetComponentInParent<ShipClick>().ship.raidTimeModifier = 0;
+        GetComponentInParent<ShipClick>().ship.durationModifier = 0;
 
         islandController.GenerateBonusExp(money);
 

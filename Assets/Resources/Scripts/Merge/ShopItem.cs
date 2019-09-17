@@ -55,19 +55,21 @@ public class ShopItem : MonoBehaviour
             priceTxt.text = (item.startPrice * (inventory.GetShipAlltimeCount(islandNumber, Mathf.Clamp(id, 0, inventory.list.ships.Count - 1)) + 1)).ToString();
             raidTimeTxt.text = item.raidTime.ToString() + "s";
             incomeTxt.text = item.reward.ToString();
-            icon.sprite = item.icon;
             icon.color = Color.white;
             OnChangeBtnInteractable(new object[0]);
+            priceTxt.color = btn.interactable ? Color.yellow : new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
         else
         {
-            btn.interactable = false;
             priceTxt.text = "LOCKED";
             raidTimeTxt.text = "---s";
             incomeTxt.text = "---";
-            icon.sprite = item.icon;
             icon.color = Color.black;
+            priceTxt.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            btn.interactable = false;
         }
+        titleTxt.text = item.name;
+        icon.sprite = item.icon;
     }
 
     private void OnLevelUp(object[] args)
@@ -78,7 +80,7 @@ public class ShopItem : MonoBehaviour
 
     public void BuyShip()
     {
-        if(inventory) inventory.BuyShip(id);
+        if (inventory) inventory.BuyShip(id);
         OnChangeInfo();
     }
 }

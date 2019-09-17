@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class ShipClick : MonoBehaviour
 {
-    public Ship ship;
+    public ShipController ship;
     public LifebuoyManager lifebuoys;
     public GameObject flyingText;
     public Transform pointer, arrow;
     public Image clock;
     public Color color;
-    public TrailRenderer trail;
     public IslandController islandController = null;
+    public TrailRenderer trail;
 
     private GameObject _flyingText;
     private Island island;
@@ -22,10 +22,13 @@ public class ShipClick : MonoBehaviour
     private bool isTimerActive;
     private string borderName;
 
+    private CapsuleCollider2D cldr;
+
     private void Awake()
     {
         island = Island.Instance;
         cam = Camera.main;
+        cldr = GetComponent<CapsuleCollider2D>();
     }
 
     // Собираем бонус
@@ -41,15 +44,17 @@ public class ShipClick : MonoBehaviour
             _flyingText.transform.localPosition = new Vector3(0f, 0f, 0f);
             FlyingText ft = _flyingText.GetComponent<FlyingText>();
 
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusMaterial)
+            BonusBehavior bonus = other.gameObject.GetComponent<BonusBehavior>();
+
+            if (bonus.bonusMaterial)
             {
                 ship.rewardModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
                 ft.exp = true;
-                ft.expText.GetComponent<Text>().text = "+" + ship.reward.ToString();
+                ft.expText.GetComponent<Text>().text = "+" + ship.item.reward.ToString();
 
-                EventManager.SendEvent("BonusCollected", ship.ShipName, "Material");
+                EventManager.SendEvent("BonusCollected", ship.item.name, "Material");
             }
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusMoney)
+            if (bonus.bonusMoney)
             {
                 if (islandController != null)
                 {
@@ -57,25 +62,25 @@ public class ShipClick : MonoBehaviour
                     ft.money = true;
                     ft.moneyText.GetComponent<Text>().text = "+" + reward.ToString();
                     islandController.GenerateBonusMoney(reward);
-                    EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
+                    EventManager.SendEvent("BonusCollected", ship.item.name, "Money");
                 }
             }
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusSpeed)
+            if (bonus.bonusSpeed)
             {
-                ship.raidTimeModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
+                ship.DurationBonus(other.gameObject.GetComponent<BonusBehavior>().modifier);
                 ft.speed = true;
-                ft.speedText.GetComponent<Text>().text = "-" + (int)(ship.raidTime / Mathf.Pow(2f, ship.raidTimeModifier)) + "s";
+                ft.speedText.GetComponent<Text>().text = "-" + (int)(ship.duration / Mathf.Pow(2f, ship.durationModifier)) + "s";
 
-                EventManager.SendEvent("BonusCollected", ship.ShipName, "Speed");
+                EventManager.SendEvent("BonusCollected", ship.item.name, "Speed");
             }
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusWheel)
+            if (bonus.bonusWheel)
             {
                 if (island.Level >= 2)
                 {
                     lifebuoys.AddLifebuoy();
                     _flyingText.GetComponent<FlyingText>().wheel = true;
 
-                    EventManager.SendEvent("BonusCollected", ship.ShipName, "WheelSpin");
+                    EventManager.SendEvent("BonusCollected", ship.item.name, "WheelSpin");
                 }
             }
 
@@ -84,7 +89,7 @@ public class ShipClick : MonoBehaviour
         else if (other.CompareTag("Border") && !isTimerActive)
         {
             borderName = other.gameObject.name;
-            Invoke("SwitchEmmiting", 0.15f);
+            Invoke("SwitchEmitting", 0.15f);
             if (other.gameObject.name.Equals("RightBorder") || other.gameObject.name.Equals("LeftBorder"))
                 StartCoroutine(Timer(ship.GetRaidTime() + 1.5f, true));
             else
@@ -93,9 +98,9 @@ public class ShipClick : MonoBehaviour
         else if (other.CompareTag("Border") && isTimerActive && borderName == other.gameObject.name)
         {
             borderName = "";
-            Invoke("SwitchEmmiting", 0.4f);
+            Invoke("SwitchEmitting", 0.4f);
             isTimerActive = false;
-            GetComponent<CapsuleCollider2D>().enabled = false;
+            cldr.enabled = false;
         }
     }
 
@@ -106,19 +111,26 @@ public class ShipClick : MonoBehaviour
         pointer.gameObject.SetActive(true);
         float height = 2f * cam.orthographicSize, width = height * cam.aspect, xPos = transform.position.x, yPos = transform.position.y;
         Vector3 pointerPos = new Vector3(isSide ? (xPos > 0f ? width / 2f : -width / 2f) : xPos,
-            isSide ? yPos : (yPos > 0f ? height / 2f - 0.75f : -height / 2f + 1.7f), transform.position.z);
+            isSide ? yPos : (yPos > 0f ? height / 2f - 0.7f : -height / 2f + 2f), transform.position.z);
         pointer.position = pointerPos;
-        pointer.eulerAngles = transform.eulerAngles;
+        pointer.eulerAngles = transform.eulerAngles + Vector3.up * (isSide && ship.img.transform.localScale.y > 0f ? 0f : 180f);
+        pointer.SetParent(transform.parent);
         for (float i = 0f; i < time; i += Time.deltaTime)
         {
             clock.fillAmount = i / time;
             yield return null;
         }
         pointer.gameObject.SetActive(false);
+        pointer.SetParent(transform);
     }
 
-    private void SwitchEmmiting()
+    public void CldrOn()
     {
-        trail.emitting = !trail.emitting;
+        cldr.enabled = true;
+    }
+
+    private void SwitchEmitting()
+    {
+        if (trail) trail.emitting = !trail.emitting;
     }
 }

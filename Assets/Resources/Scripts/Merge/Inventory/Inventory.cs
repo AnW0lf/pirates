@@ -34,9 +34,10 @@ public class Inventory : MonoBehaviour
 
         Load();
         UpdateBuyButtonInfo();
-        DisplayItems();
+        DisplayItems(new object[0]);
 
         EventManager.Subscribe("ChangeMoney", UpdateBuyButtonInteractable);
+        EventManager.Subscribe("LevelUp", DisplayItems);
     }
 
     private void UpdateBuyButtonInteractable(object[] args)
@@ -51,9 +52,10 @@ public class Inventory : MonoBehaviour
     {
         get
         {
+            int unlocked = unlockedSlotsCount;
             for (int i = 0; i < items.Length; i++)
             {
-                if (items[i] == null)
+                if (i < unlocked && items[i] == null)
                     return false;
             }
             return true;
@@ -82,7 +84,7 @@ public class Inventory : MonoBehaviour
             AddShipAlltimeCount(list.islandNumber, newIndex);
 
             DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
-            DisplayItems();
+            DisplayItems(new object[0]);
         }
         else Switch(a, b);
     }
@@ -94,7 +96,7 @@ public class Inventory : MonoBehaviour
         items[b.id] = item;
 
         DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
-        DisplayItems();
+        DisplayItems(new object[0]);
     }
 
     public void Add(ShipInfo item)
@@ -109,7 +111,7 @@ public class Inventory : MonoBehaviour
                     int islandNum = list.islandNumber, shipNum = list.ships.IndexOf(item);
                     shipsCount++;
                     manager.GenerateShips(list.ships.IndexOf(item), 1);
-                    DisplayItems();
+                    DisplayItems(new object[0]);
                     break;
                 }
             }
@@ -126,7 +128,7 @@ public class Inventory : MonoBehaviour
             SetShipCount(islandNum, shipNum, Mathf.Clamp(GetShipCount(islandNum, shipNum) - 1, 0, cellContainer.childCount));
             shipsCount--;
             manager.DestroyShips(list.ships.IndexOf(item), 1);
-            DisplayItems();
+            DisplayItems(new object[0]);
             UpdateBuyButtonInteractable(new object[0]);
         }
     }
@@ -156,7 +158,7 @@ public class Inventory : MonoBehaviour
         buyBtnTxt.text = (list.ships[0].startPrice * (GetShipAlltimeCount(list.islandNumber, 0) + 1)).ToString() + "[C]";
     }
 
-    private void DisplayItems()
+    private void DisplayItems(object[] args)
     {
         int unlocked = unlockedSlotsCount;
         for (int i = 0; i < items.Length; i++)

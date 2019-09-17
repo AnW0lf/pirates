@@ -7,54 +7,71 @@ using UnityEngine.UI;
 [RequireComponent(typeof(ShipMotor))]
 [RequireComponent(typeof(EventTrigger))]
 [RequireComponent(typeof(ShipRewardController))]
+[RequireComponent(typeof(ShipClick))]
 public class ShipController : MonoBehaviour
 {
     public Image img;
 
     public int shipLevel = 1;
-    public float moneyMantissa;
-    public int moneyExponent;
-    public float moneyModifier, duration, durationModifier;
+    public ShipInfo item { get; private set; }
+    public float duration;
 
     public GameObject moneyIcon;
 
+    public float rewardModifier { get; set; }
+    public float durationModifier { get; set; }
+
+    private ShipClick shipClick;
     private ShipRewardController rewardController;
     private Island island;
 
-    public ShipMotor Motor { get ; private set ; }
+    public ShipMotor Motor { get; private set; }
 
-    private void Awake()
+    public void SetShip(ShipInfo item)
     {
-        island = Island.Instance;
         Motor = GetComponent<ShipMotor>();
         rewardController = GetComponent<ShipRewardController>();
-        Motor.duration = duration * durationModifier;
-    }
+        shipClick = GetComponent<ShipClick>();
 
-    private void Start()
-    {
+        this.item = item;
+        Motor.speed = item.speed;
+        Motor.duration = item.raidTime;
+        img.sprite = item.icon;
+
+        rewardModifier = 1f;
+        durationModifier = 0f;
+
+        Motor.duration = duration * durationModifier;
+
+        island = Island.Instance;
         Motor.AddRaidEndAction(new ShipMotor.EmptyAction(Reward));
-        Motor.AddRaidMiddleAction(new ShipMotor.EmptyAction(MoneyIconOn));
+        Motor.AddRaidEndAction(new ShipMotor.EmptyAction(shipClick.CldrOn));
+        Motor.AddRaidMiddleAction(new ShipMotor.EmptyAction(rewardController.EnableIcon));
     }
 
     private void Reward()
     {
-        MoneyIconOff();
-        island.ExpUp(new BigDigit(moneyMantissa, moneyExponent) * moneyModifier);
-    }
-
-    private void MoneyIconOn()
-    {
-        rewardController.EnableIcon();
-    }
-
-    private void MoneyIconOff()
-    {
+        if (!island) island = Island.Instance;
         rewardController.DisableIcon();
+        island.ExpUp(item.reward * rewardModifier);
+        rewardModifier = 1f;
+        durationModifier = 0f;
+        Motor.durationModifier = durationModifier;
     }
 
     public void Click()
     {
         Motor.BeginRaid();
+    }
+
+    public float GetRaidTime()
+    {
+        return duration / Mathf.Pow(2f, durationModifier);
+    }
+
+    public void DurationBonus(int bonus)
+    {
+        durationModifier += bonus;
+        Motor.durationModifier = durationModifier;
     }
 }

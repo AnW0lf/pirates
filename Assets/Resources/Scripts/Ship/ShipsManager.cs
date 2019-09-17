@@ -16,11 +16,9 @@ public class ShipsManager : MonoBehaviour
         {
             ShipInfo item = list.ships[Mathf.Clamp(level, 0, list.ships.Count - 1)];
             ShipController ship = Instantiate(shipPrefab, transform).GetComponent<ShipController>();
+            ship.SetShip(item);
             ship.shipLevel = level;
             ship.Motor.target = transform;
-            ship.Motor.speed = item.speed;
-            ship.Motor.duration = item.raidTime;
-            ship.img.sprite = item.icon;
             float dst = item.distance + UnityEngine.Random.Range(-80f, 80f);
             float angle = UnityEngine.Random.Range(0f, 360f);
             ship.GetComponent<RectTransform>().anchoredPosition = new Vector2(Mathf.Cos(angle / 180 * Mathf.PI), Mathf.Sin(angle / 180 * Mathf.PI)) * dst;
