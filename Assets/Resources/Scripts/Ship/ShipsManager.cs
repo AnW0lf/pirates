@@ -8,7 +8,7 @@ public class ShipsManager : MonoBehaviour
     public int islandNumber;
     public ShipInfoList list;
     public GameObject shipPrefab;
-    public int[] ships;
+    public IslandController islandController;
 
     public void GenerateShips(int level, int count)
     {
@@ -16,7 +16,7 @@ public class ShipsManager : MonoBehaviour
         {
             ShipInfo item = list.ships[Mathf.Clamp(level, 0, list.ships.Count - 1)];
             ShipController ship = Instantiate(shipPrefab, transform).GetComponent<ShipController>();
-            ship.SetShip(item);
+            ship.SetShip(item, islandController);
             ship.shipLevel = level;
             ship.Motor.target = transform;
             float dst = item.distance + UnityEngine.Random.Range(-80f, 80f);

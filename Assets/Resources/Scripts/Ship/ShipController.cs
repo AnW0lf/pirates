@@ -27,11 +27,13 @@ public class ShipController : MonoBehaviour
 
     public ShipMotor Motor { get; private set; }
 
-    public void SetShip(ShipInfo item)
+    public void SetShip(ShipInfo item, IslandController islandController)
     {
         Motor = GetComponent<ShipMotor>();
         rewardController = GetComponent<ShipRewardController>();
         shipClick = GetComponent<ShipClick>();
+
+        shipClick.islandController = islandController;
 
         this.item = item;
         Motor.speed = item.speed;

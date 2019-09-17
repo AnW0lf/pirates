@@ -58,7 +58,7 @@ public class ShipClick : MonoBehaviour
             {
                 if (islandController != null)
                 {
-                    BigDigit reward = islandController.GetReward() * 5 * island.Level;
+                    BigDigit reward = ship.item.startPrice * (island.GetParameter("ShipAlltimeCount_" + GetComponentInParent<ShipsManager>().islandNumber + "_0" ,0) + 1) / 2f;
                     ft.money = true;
                     ft.moneyText.GetComponent<Text>().text = "+" + reward.ToString();
                     islandController.GenerateBonusMoney(reward);
@@ -109,18 +109,24 @@ public class ShipClick : MonoBehaviour
         isTimerActive = true;
         arrow.GetComponent<Image>().color = color;
         pointer.gameObject.SetActive(true);
+
         float height = 2f * cam.orthographicSize, width = height * cam.aspect, xPos = transform.position.x, yPos = transform.position.y;
+
         Vector3 pointerPos = new Vector3(isSide ? (xPos > 0f ? width / 2f : -width / 2f) : xPos,
             isSide ? yPos : (yPos > 0f ? height / 2f - 0.7f : -height / 2f + 2f), transform.position.z);
+
         pointer.position = pointerPos;
-        pointer.eulerAngles = transform.eulerAngles + Vector3.up * (isSide && ship.img.transform.localScale.y > 0f ? 0f : 180f);
+        pointer.eulerAngles = transform.eulerAngles;
         pointer.SetParent(transform.parent);
+
         for (float i = 0f; i < time; i += Time.deltaTime)
         {
             clock.fillAmount = i / time;
             yield return null;
         }
+
         pointer.gameObject.SetActive(false);
+        pointer.localScale = ship.img.transform.localScale;
         pointer.SetParent(transform);
     }
 
