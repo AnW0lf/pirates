@@ -162,6 +162,7 @@ public class Inventory : MonoBehaviour
     private void DisplayItems(object[] args)
     {
         int unlocked = unlockedSlotsCount;
+        Vector2 cellSize = cellContainer.GetComponent<GridLayoutGroup>().cellSize;
         for (int i = 0; i < items.Length; i++)
         {
             Transform cell = cellContainer.GetChild(i);
@@ -175,6 +176,9 @@ public class Inventory : MonoBehaviour
                     Text level = star.transform.GetComponentInChildren<Text>();
                     icon.enabled = true;
                     icon.sprite = items[i].icon;
+                    float iconY = cellSize.x * 0.85f, iconX = iconY * ((float)icon.sprite.texture.width / (float)icon.sprite.texture.height);
+                    print("Y : " + iconY + " X : " + iconX);
+                    icon.rectTransform.sizeDelta = new Vector2(iconX, iconY);
                     icon.GetComponent<DragHandler>().canDrag = true;
                     star.SetActive(true);
                     level.text = items[i].gradeLevel.ToString();
@@ -189,6 +193,7 @@ public class Inventory : MonoBehaviour
             else
             {
                 icon.enabled = true;
+                icon.rectTransform.sizeDelta = cellSize * 0.85f;
                 icon.sprite = lockSprite;
                 icon.GetComponent<DragHandler>().canDrag = false;
                 star.SetActive(false);

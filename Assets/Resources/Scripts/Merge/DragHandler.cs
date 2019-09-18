@@ -39,6 +39,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         img.enabled = false;
         starObj.SetActive(false);
         dragImg.sprite = GetComponent<Image>().sprite;
+        dragImg.rectTransform.sizeDelta = new Vector2(dragImg.rectTransform.sizeDelta.x, dragImg.rectTransform.sizeDelta.x * dragImg.sprite.texture.height / dragImg.sprite.texture.width);
     }
 
     public void OnDrag(PointerEventData eventData)
