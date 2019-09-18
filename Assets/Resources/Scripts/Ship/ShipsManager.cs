@@ -17,7 +17,6 @@ public class ShipsManager : MonoBehaviour
             ShipInfo item = list.ships[Mathf.Clamp(level, 0, list.ships.Count - 1)];
             ShipController ship = Instantiate(shipPrefab, transform).GetComponent<ShipController>();
             ship.SetShip(item, islandController);
-            ship.shipLevel = level;
             ship.Motor.target = transform;
             float dst = item.distance + UnityEngine.Random.Range(-80f, 80f);
             float angle = UnityEngine.Random.Range(0f, 360f);
@@ -28,14 +27,16 @@ public class ShipsManager : MonoBehaviour
 
     public void DestroyShips(int level, int count)
     {
-        int c = count;
+        int c = 0;
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
-            if (transform.GetChild(i).GetComponent<ShipController>().shipLevel == level && c > 0)
+            ShipController sc = transform.GetChild(i).GetComponent<ShipController>();
+            if (sc && sc.item.gradeLevel == level && !sc.Destroyed && c < count)
             {
-                Destroy(transform.GetChild(i).gameObject);
-                c--;
-                if (c == 0) return;
+                sc.Destroyed = true;
+                Destroy(sc.gameObject);
+                c++;
+                if (c == count) return;
             }
         }
     }

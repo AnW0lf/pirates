@@ -11,8 +11,6 @@ using UnityEngine.UI;
 public class ShipController : MonoBehaviour
 {
     public Image img;
-
-    public int shipLevel = 1;
     public ShipInfo item { get; private set; }
     public float duration;
 
@@ -20,6 +18,8 @@ public class ShipController : MonoBehaviour
 
     public float rewardModifier { get; set; }
     public float durationModifier { get; set; }
+
+    public bool Destroyed { get; set; }
 
     private ShipClick shipClick;
     private ShipRewardController rewardController;
@@ -54,6 +54,8 @@ public class ShipController : MonoBehaviour
 
         rotationDelay = item.distance * 2f * Mathf.PI / item.speed;
         delay = rotationDelay;
+
+        Destroyed = false;
     }
 
     private void Update()

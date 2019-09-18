@@ -128,7 +128,7 @@ public class Inventory : MonoBehaviour
             int islandNum = list.islandNumber, shipNum = list.ships.IndexOf(item);
             SetShipCount(islandNum, shipNum, Mathf.Clamp(GetShipCount(islandNum, shipNum) - 1, 0, cellContainer.childCount));
             shipsCount--;
-            manager.DestroyShips(list.ships.IndexOf(item), 1);
+            manager.DestroyShips(item.gradeLevel, 1);
             DisplayItems(new object[0]);
             UpdateBuyButtonInteractable(new object[0]);
         }
