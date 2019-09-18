@@ -15,6 +15,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private Transform dragTransform;
     private Image dragImg, img;
     private CanvasGroup dragCanvasGroup;
+    private GameObject starObj;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         img = transform.GetComponent<Image>();
         dragImg = dragObj.GetComponent<Image>();
         dragCanvasGroup = dragObj.GetComponent<CanvasGroup>();
+        starObj = transform.GetChild(0).gameObject;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -35,6 +37,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         dragTransform.position = transform.position;
         dragImg.enabled = true;
         img.enabled = false;
+        starObj.SetActive(false);
         dragImg.sprite = GetComponent<Image>().sprite;
     }
 
@@ -66,5 +69,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         dragCanvasGroup.blocksRaycasts = true;
         dragImg.enabled = false;
         img.enabled = true;
+        starObj.SetActive(true);
     }
 }
