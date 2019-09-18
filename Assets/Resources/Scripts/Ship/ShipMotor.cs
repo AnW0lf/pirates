@@ -10,7 +10,9 @@ public class ShipMotor : MonoBehaviour
 
     public delegate void EmptyAction();
 
-    private bool isRaid = false, isBack = false, direction = true;
+    public bool isRaid { get; private set; }
+
+    private bool isBack = false, direction = true;
     private float distance, delay;
     private List<EmptyAction> raidEndActions, raidMiddleActions, raidBeginActions;
 

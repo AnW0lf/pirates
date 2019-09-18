@@ -25,6 +25,8 @@ public class ShipController : MonoBehaviour
     private ShipRewardController rewardController;
     private Island island;
 
+    private float rotationDelay, delay;
+
     public ShipMotor Motor { get; private set; }
 
     public void SetShip(ShipInfo item, IslandController islandController)
@@ -49,6 +51,15 @@ public class ShipController : MonoBehaviour
         Motor.AddRaidEndAction(new ShipMotor.EmptyAction(Reward));
         Motor.AddRaidEndAction(new ShipMotor.EmptyAction(shipClick.CldrOn));
         Motor.AddRaidMiddleAction(new ShipMotor.EmptyAction(rewardController.EnableIcon));
+
+        rotationDelay = item.distance * 2f * Mathf.PI / item.speed;
+        delay = rotationDelay;
+    }
+
+    private void Update()
+    {
+        if (!Motor.isRaid) delay -= Time.deltaTime;
+        if (delay < 0f) Click();
     }
 
     private void Reward()
@@ -63,6 +74,7 @@ public class ShipController : MonoBehaviour
 
     public void Click()
     {
+        delay = rotationDelay;
         Motor.BeginRaid();
     }
 
