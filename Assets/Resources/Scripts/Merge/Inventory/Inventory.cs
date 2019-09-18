@@ -69,6 +69,7 @@ public class Inventory : MonoBehaviour
 
     public void Merge(CurrentItem a, CurrentItem b)
     {
+        if (a.id == b.id) return;
         if (list.ships.IndexOf(a.item) < (list.ships.Count - 1))
         {
             ShipInfo item = a.item;
