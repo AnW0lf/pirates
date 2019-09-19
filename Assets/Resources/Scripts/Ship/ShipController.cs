@@ -39,6 +39,8 @@ public class ShipController : MonoBehaviour
 
         this.item = item;
         Motor.speed = item.speed;
+        Motor.goToRaidSpeed = item.goToRaidSpeed;
+        Motor.backFromRaidSpeed = item.backFromRaidSpeed;
         Motor.duration = item.raidTime;
         img.sprite = item.icon;
 

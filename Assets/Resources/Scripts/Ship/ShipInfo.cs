@@ -15,5 +15,7 @@ public class ShipInfo : ScriptableObject
     public BigDigit reward = new BigDigit(0d, 0);
     [Header("Характеристики корабля")]
     public float speed = 200f;
+    public float goToRaidSpeed = 1000f;
+    public float backFromRaidSpeed = 500f;
     public float distance = 400f;
 }

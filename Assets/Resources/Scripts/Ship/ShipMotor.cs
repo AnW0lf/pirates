@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipMotor : MonoBehaviour
 {
     public Transform target;
-    public float speed = 200f, range = 2000f, duration = 5f, durationModifier = 0f, raidSpeedBonus = 10f;
+    public float speed = 200f, goToRaidSpeed = 1000f, backFromRaidSpeed = 500f, range = 2000f, duration = 5f, durationModifier = 0f;
     public RectTransform icon;
 
     public delegate void EmptyAction();
@@ -42,7 +42,7 @@ public class ShipMotor : MonoBehaviour
         if (!isRaid) return;
         if (!isBack)
         {
-            float step = Mathf.Abs(raidSpeedBonus * speed * Time.deltaTime);
+            float step = Mathf.Abs(goToRaidSpeed * Time.deltaTime);
             distance -= step;
             if (distance < 0f)
             {
@@ -64,7 +64,7 @@ public class ShipMotor : MonoBehaviour
         }
         else
         {
-            float step = Mathf.Abs(speed * Time.deltaTime);
+            float step = Mathf.Abs(backFromRaidSpeed * Time.deltaTime);
             distance -= step;
             if (distance < 0f)
             {
