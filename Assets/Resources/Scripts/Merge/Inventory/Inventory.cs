@@ -16,6 +16,9 @@ public class Inventory : MonoBehaviour
     public Button buyBtn;
     public Text buyBtnTxt;
 
+    [Header("Unlock cells levels")]
+    public int[] levels;
+
     ShipInfo[] items;
     Island island;
     int shipsCount = 0;
@@ -150,7 +153,9 @@ public class Inventory : MonoBehaviour
     {
         get
         {
-            return Mathf.Clamp(island.Level - ((list.islandNumber - 1) * 25), 2, cellContainer.childCount);
+            int count = 0;
+            for (int i = 0; island.Level >= levels[i] && i < cellContainer.childCount; i++, count++) ;
+            return Mathf.Clamp(count, 2, cellContainer.childCount);
         }
     }
 
