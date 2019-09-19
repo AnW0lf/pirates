@@ -58,7 +58,7 @@ public class ShipClick : MonoBehaviour
             {
                 if (islandController != null)
                 {
-                    BigDigit reward = ship.item.startPrice * (island.GetParameter("ShipAlltimeCount_" + GetComponentInParent<ShipsManager>().islandNumber + "_0" ,0) + 1) / 2f;
+                    BigDigit reward = ship.item.price * (island.GetParameter("ShipAlltimeCount_" + GetComponentInParent<ShipsManager>().islandNumber + "_0" ,0) + 1) / 2f;
                     ft.money = true;
                     ft.moneyText.GetComponent<Text>().text = "+" + reward.ToString();
                     islandController.GenerateBonusMoney(reward);

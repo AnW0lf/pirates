@@ -16,12 +16,14 @@ MonoBehaviour:
   unlockLevel: 11
   gradeLevel: 5
   icon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
-  startPrice:
-    mantissa: 1.5
+  price:
+    mantissa: 3
     exponent: 2
   raidTime: 12
   reward:
     mantissa: 5
     exponent: 1
   speed: 250
+  goToRaidSpeed: 1000
+  backFromRaidSpeed: 500
   distance: 400

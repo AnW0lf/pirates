@@ -9,6 +9,10 @@ public class Inventory : MonoBehaviour
     public Transform cellContainer;
     public ShipsManager manager;
 
+    [Header("Flags")]
+    public GameObject mainFlag;
+    public GameObject additionFlag;
+
     [Header("Sprites")]
     public Sprite lockSprite;
 
@@ -40,12 +44,13 @@ public class Inventory : MonoBehaviour
         DisplayItems(new object[0]);
 
         EventManager.Subscribe("ChangeMoney", UpdateBuyButtonInteractable);
+        EventManager.Subscribe("ChangeMoney", UpdateFlagsState);
         EventManager.Subscribe("LevelUp", DisplayItems);
     }
 
     private void UpdateBuyButtonInteractable(object[] args)
     {
-        BigDigit price = list.ships[0].startPrice * (GetShipAlltimeCount(list.islandNumber, 0) + 1);
+        BigDigit price = list.ships[0].price * (GetShipAlltimeCount(list.islandNumber, 0) + 1);
         bool interactable = price < island.Money && !IsFull && shipsCount < unlockedSlotsCount;
         buyBtn.interactable = interactable;
         UpdateBuyButtonInfo();
@@ -68,6 +73,27 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
 
+    }
+
+    private void UpdateFlagsState(object[] args)
+    {
+        if(island.Money >= GetShipAlltimeCount(list.islandNumber, 0) * list.ships[0].price && !IsFull)
+        {
+            if (!mainFlag.activeSelf) mainFlag.SetActive(true);
+            for(int i = 1; i < list.ships.Count; i++)
+            {
+                if(island.Money >= GetShipAlltimeCount(list.islandNumber, i) * list.ships[i].price)
+                {
+                    if (!additionFlag.activeSelf) additionFlag.SetActive(true);
+                    return;
+                }
+            }
+        }
+        else
+        {
+            if (mainFlag.activeSelf) mainFlag.SetActive(false);
+            if (additionFlag.activeSelf) additionFlag.SetActive(false);
+        }
     }
 
     public void Merge(CurrentItem a, CurrentItem b)
@@ -144,7 +170,7 @@ public class Inventory : MonoBehaviour
             && (item = DragHandler.itemBeingDragged.transform.parent.GetComponent<CurrentItem>()) && item.item)
         {
             DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
-            island.ChangeMoney(item.item.startPrice);
+            island.ChangeMoney(item.item.price);
             Remove(item.id);
         }
     }
@@ -161,7 +187,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInfo()
     {
-        buyBtnTxt.text = (list.ships[0].startPrice * (GetShipAlltimeCount(list.islandNumber, 0) + 1)).ToString() + "[C]";
+        buyBtnTxt.text = (list.ships[0].price * (GetShipAlltimeCount(list.islandNumber, 0) + 1)).ToString() + "[C]";
     }
 
     private void DisplayItems(object[] args)
@@ -182,7 +208,6 @@ public class Inventory : MonoBehaviour
                     icon.enabled = true;
                     icon.sprite = items[i].icon;
                     float iconY = cellSize.x * 0.85f, iconX = iconY * ((float)icon.sprite.texture.width / (float)icon.sprite.texture.height);
-                    print("Y : " + iconY + " X : " + iconX);
                     icon.rectTransform.sizeDelta = new Vector2(iconX, iconY);
                     icon.GetComponent<DragHandler>().canDrag = true;
                     star.SetActive(true);
@@ -241,7 +266,7 @@ public class Inventory : MonoBehaviour
     {
         int n = Mathf.Clamp(number, 0, list.ships.Count - 1);
         int shipCount = GetShipCount(list.islandNumber, n);
-        if (island.ChangeMoney(-list.ships[n].startPrice * (shipCount + 1)))
+        if (island.ChangeMoney(-list.ships[n].price * (shipCount + 1)))
         {
             Add(list.ships[n]);
             SetShipCount(list.islandNumber, n, Mathf.Clamp(shipCount + 1, 0, cellContainer.childCount));
@@ -250,4 +275,6 @@ public class Inventory : MonoBehaviour
         }
         if (n == 0) UpdateBuyButtonInfo();
     }
+
+
 }

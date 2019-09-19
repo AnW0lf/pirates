@@ -8,7 +8,7 @@ public class ShipInfo : ScriptableObject
     public int unlockLevel = 1, gradeLevel = 1;
     public Sprite icon = null;
     [Header("Стоимость")]
-    public BigDigit startPrice = new BigDigit(0d, 0);
+    public BigDigit price = new BigDigit(0d, 0);
     [Header("Время рейда")]
     public float raidTime = 1f;
     [Header("Награда")]
