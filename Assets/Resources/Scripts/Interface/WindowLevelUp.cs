@@ -26,7 +26,8 @@ public class WindowLevelUp : WindowBase
     public override void Close()
     {
         base.Close();
-        transform.parent.GetComponent<InterfaceIerarchy>().Next();
+        InterfaceIerarchy ierarchy;
+        if ((ierarchy = transform.GetComponentInParent<InterfaceIerarchy>())) ierarchy.Next();
     }
 
     public void AddLevelReward(float modifier)

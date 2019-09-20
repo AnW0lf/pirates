@@ -826,7 +826,7 @@ PrefabInstance:
         type: 3}
       propertyPath: newSlotWindow
       value: 
-      objectReference: {fileID: 1624311769}
+      objectReference: {fileID: 135271606}
     - target: {fileID: 1820283620401211893, guid: 4853a2b265ba9894dada00043be14ee0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4651,8 +4651,9 @@ GameObject:
   m_Component:
   - component: {fileID: 135271604}
   - component: {fileID: 135271605}
+  - component: {fileID: 135271606}
   m_Layer: 5
-  m_Name: UnlockCellWindow
+  m_Name: NewCellWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4686,6 +4687,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135271603}
   m_CullTransparentMesh: 0
+--- !u!114 &135271606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135271603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5550c5e49c59c304b968f9b3c29bfa75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  back: {fileID: 1624311769}
+  rays: {fileID: 312973288}
 --- !u!1 &136179245
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,6 +8023,7 @@ MonoBehaviour:
   windows:
   - {fileID: 241109346}
   - {fileID: 1935392924}
+  - {fileID: 135271606}
 --- !u!114 &326544255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14618,9 +14634,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1624311769}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 135271606}
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27789,7 +27805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1624311770
 RectTransform:
   m_ObjectHideFlags: 0

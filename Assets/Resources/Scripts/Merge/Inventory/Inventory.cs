@@ -19,13 +19,15 @@ public class Inventory : MonoBehaviour
     [Header("Buttons")]
     public Button buyBtn;
     public Text buyBtnTxt;
+    public Button shopBtn;
+    public int shopBtnMinLvl = 3;
 
     [Header("Cells levels")]
     public int[] levels;
     public Sprite sprtStar, sprtLockLevel;
 
     [Header("Windows")]
-    public GameObject newSlotWindow;
+    public WindowNewSlot newSlotWindow;
 
     ShipInfo[] items;
     Island island;
@@ -46,11 +48,12 @@ public class Inventory : MonoBehaviour
         Load();
         UpdateBuyButtonInfo();
         DisplayItems(new object[0]);
+        LevelUpChanges();
 
         EventManager.Subscribe("ChangeMoney", UpdateBuyButtonInteractable);
         EventManager.Subscribe("ChangeMoney", UpdateFlagsState);
         EventManager.Subscribe("LevelUp", DisplayItems);
-        EventManager.Subscribe("LevelUp", NewSlot);
+        EventManager.Subscribe("LevelUp", CheckNewSlot);
     }
 
     private void UpdateBuyButtonInteractable(object[] args)
@@ -80,18 +83,31 @@ public class Inventory : MonoBehaviour
 
     }
 
-    private void NewSlot(object[] args)
+    private void LevelUpChanges()
     {
-        for(int i = 0; i < levels.Length; i++)
+        if (island.Level >= shopBtnMinLvl)
+        {
+            if (!shopBtn.gameObject.activeSelf)
+                shopBtn.gameObject.SetActive(true);
+        }
+        else if (!shopBtn.gameObject.activeSelf)
+            shopBtn.gameObject.SetActive(false);
+    }
+
+    private void CheckNewSlot(object[] args)
+    {
+        for (int i = 0; i < levels.Length; i++)
         {
             if (levels[i] == island.Level)
             {
-                newSlotWindow.SetActive(true);
+                newSlotWindow.Activate = true;
                 return;
             }
             if (levels[i] > island.Level) return;
         }
+        LevelUpChanges();
     }
+
 
     private void UpdateFlagsState(object[] args)
     {

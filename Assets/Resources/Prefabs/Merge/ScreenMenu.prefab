@@ -2067,9 +2067,12 @@ MonoBehaviour:
   lockSprite: {fileID: 21300000, guid: 24101349c4944794197876a3f6b9b851, type: 3}
   buyBtn: {fileID: 1820283620466170506}
   buyBtnTxt: {fileID: 1820283618554964426}
+  shopBtn: {fileID: 1820283619833028036}
+  shopBtnMinLvl: 3
   levels: 
   sprtStar: {fileID: 21300000, guid: b9860d505f092d741b306852a9ad3b76, type: 3}
   sprtLockLevel: {fileID: 21300000, guid: 25b51f26c66508f4d8dd616b6809d74c, type: 3}
+  newSlotWindow: {fileID: 0}
 --- !u!1 &1820283619526088748
 GameObject:
   m_ObjectHideFlags: 0
