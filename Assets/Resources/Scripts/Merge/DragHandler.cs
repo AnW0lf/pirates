@@ -50,11 +50,12 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(itemBeingDragged) EndDrag();
+        if (itemBeingDragged) EndDrag();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (!canDrag || !itemBeingDragged) return;
         CurrentItem item = GetComponentInParent<CurrentItem>();
         CurrentItem other = itemBeingDragged.GetComponentInParent<CurrentItem>();
         if (item && other && item.item && other.item && item.item == other.item)

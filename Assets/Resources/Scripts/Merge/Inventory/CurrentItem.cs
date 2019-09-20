@@ -8,15 +8,18 @@ public class CurrentItem : MonoBehaviour, IDropHandler
     public ShipInfo item;
     public int id;
 
-    
+
     public void OnDrop(PointerEventData eventData)
     {
-        CurrentItem other = DragHandler.itemBeingDragged.GetComponentInParent<CurrentItem>();
-        if (item && other && other.item && item == other.item)
+        if (DragHandler.itemBeingDragged)
         {
-            inventory.Merge(this, other);
+            CurrentItem other = DragHandler.itemBeingDragged.GetComponentInParent<CurrentItem>();
+            if (item && other && other.item && item == other.item)
+            {
+                inventory.Merge(this, other);
+            }
+            else inventory.Switch(this, other);
         }
-        else inventory.Switch(this, other);
     }
-    
+
 }

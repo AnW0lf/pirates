@@ -20,8 +20,9 @@ public class Inventory : MonoBehaviour
     public Button buyBtn;
     public Text buyBtnTxt;
 
-    [Header("Unlock cells levels")]
+    [Header("Cells levels")]
     public int[] levels;
+    public Sprite sprtStar, sprtLockLevel;
 
     ShipInfo[] items;
     Island island;
@@ -77,12 +78,12 @@ public class Inventory : MonoBehaviour
 
     private void UpdateFlagsState(object[] args)
     {
-        if(island.Money >= GetShipAlltimeCount(list.islandNumber, 0) * list.ships[0].price && !IsFull)
+        if (island.Money >= GetShipAlltimeCount(list.islandNumber, 0) * list.ships[0].price && !IsFull)
         {
             if (!mainFlag.activeSelf) mainFlag.SetActive(true);
-            for(int i = 1; i < list.ships.Count; i++)
+            for (int i = 1; i < list.ships.Count; i++)
             {
-                if(island.Money >= GetShipAlltimeCount(list.islandNumber, i) * list.ships[i].price)
+                if (island.Money >= GetShipAlltimeCount(list.islandNumber, i) * list.ships[i].price)
                 {
                     if (!additionFlag.activeSelf) additionFlag.SetActive(true);
                     return;
@@ -199,14 +200,16 @@ public class Inventory : MonoBehaviour
             Transform cell = cellContainer.GetChild(i);
             Image icon = cell.GetChild(0).GetComponent<Image>();
             GameObject star = icon.transform.GetChild(0).gameObject;
+            Image starImg = star.GetComponent<Image>();
+            Text level = star.transform.GetComponentInChildren<Text>();
             cell.GetComponent<CurrentItem>().item = items[i];
             if (i < unlocked)
             {
                 if (items[i] != null)
                 {
-                    Text level = star.transform.GetComponentInChildren<Text>();
                     icon.enabled = true;
                     icon.sprite = items[i].icon;
+                    starImg.sprite = sprtStar;
                     float iconY = cellSize.x * 0.85f, iconX = iconY * ((float)icon.sprite.texture.width / (float)icon.sprite.texture.height);
                     icon.rectTransform.sizeDelta = new Vector2(iconX, iconY);
                     icon.GetComponent<DragHandler>().canDrag = true;
@@ -226,7 +229,14 @@ public class Inventory : MonoBehaviour
                 icon.rectTransform.sizeDelta = cellSize * 0.85f;
                 icon.sprite = lockSprite;
                 icon.GetComponent<DragHandler>().canDrag = false;
-                star.SetActive(false);
+                if (i == unlocked)
+                {
+                    star.SetActive(true);
+                    starImg.sprite = sprtLockLevel;
+                    level.text = levels[i].ToString();
+                }
+                else
+                    star.SetActive(false);
             }
         }
     }

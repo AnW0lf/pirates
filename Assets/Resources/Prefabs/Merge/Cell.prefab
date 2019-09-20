@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4208777075748682506}
   - component: {fileID: 6251744935626409821}
   m_Layer: 5
-  m_Name: Level
+  m_Name: TextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,8 +128,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 0, y: -10}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2159914106112582574
 CanvasRenderer:
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 7069116340689846543}
   - component: {fileID: 7754303089966876552}
   m_Layer: 5
-  m_Name: Star
+  m_Name: IconLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 8282266573922550999}
   - component: {fileID: 5516747264909713961}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: IconContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
