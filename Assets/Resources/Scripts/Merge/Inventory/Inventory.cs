@@ -24,6 +24,9 @@ public class Inventory : MonoBehaviour
     public int[] levels;
     public Sprite sprtStar, sprtLockLevel;
 
+    [Header("Windows")]
+    public GameObject newSlotWindow;
+
     ShipInfo[] items;
     Island island;
     int shipsCount = 0;
@@ -47,6 +50,7 @@ public class Inventory : MonoBehaviour
         EventManager.Subscribe("ChangeMoney", UpdateBuyButtonInteractable);
         EventManager.Subscribe("ChangeMoney", UpdateFlagsState);
         EventManager.Subscribe("LevelUp", DisplayItems);
+        EventManager.Subscribe("LevelUp", NewSlot);
     }
 
     private void UpdateBuyButtonInteractable(object[] args)
@@ -74,6 +78,19 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
 
+    }
+
+    private void NewSlot(object[] args)
+    {
+        for(int i = 0; i < levels.Length; i++)
+        {
+            if (levels[i] == island.Level)
+            {
+                newSlotWindow.SetActive(true);
+                return;
+            }
+            if (levels[i] > island.Level) return;
+        }
     }
 
     private void UpdateFlagsState(object[] args)
