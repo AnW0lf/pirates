@@ -2069,6 +2069,7 @@ MonoBehaviour:
   buyBtnTxt: {fileID: 1820283618554964426}
   shopBtn: {fileID: 1820283619833028036}
   shopBtnMinLvl: 3
+  sellBtn: {fileID: 1820283620096001508}
   levels: 
   sprtStar: {fileID: 21300000, guid: b9860d505f092d741b306852a9ad3b76, type: 3}
   sprtLockLevel: {fileID: 21300000, guid: 25b51f26c66508f4d8dd616b6809d74c, type: 3}

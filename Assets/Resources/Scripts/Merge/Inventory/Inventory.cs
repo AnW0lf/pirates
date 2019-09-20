@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
     public Text buyBtnTxt;
     public Button shopBtn;
     public int shopBtnMinLvl = 3;
+    public GameObject sellBtn;
 
     [Header("Cells levels")]
     public int[] levels;
