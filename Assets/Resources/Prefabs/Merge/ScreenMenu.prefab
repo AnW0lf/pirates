@@ -2070,7 +2070,7 @@ MonoBehaviour:
   shopBtn: {fileID: 1820283619833028036}
   shopBtnMinLvl: 3
   sellBtn: {fileID: 1820283620096001508}
-  levels: 
+  levels: 0100000001000000030000000500000007000000090000000b0000000d0000000f00000011000000
   sprtStar: {fileID: 21300000, guid: b9860d505f092d741b306852a9ad3b76, type: 3}
   sprtLockLevel: {fileID: 21300000, guid: 25b51f26c66508f4d8dd616b6809d74c, type: 3}
   newSlotWindow: {fileID: 0}

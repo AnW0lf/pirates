@@ -15,7 +15,7 @@ public class ShopItem : MonoBehaviour
     public Inventory inventory { get; set; }
     private int islandNumber;
     private Island island;
-    private bool unlocked;
+    private bool unlocked, available;
 
     private void Start()
     {
@@ -26,6 +26,7 @@ public class ShopItem : MonoBehaviour
     public void Open(Inventory inv)
     {
         unlocked = false;
+        available = false;
         if (!island) island = Island.Instance;
         inventory = inv;
         islandNumber = inventory.list.islandNumber;
@@ -44,7 +45,7 @@ public class ShopItem : MonoBehaviour
 
     private void OnChangeBtnInteractable(object[] args)
     {
-        btn.interactable = unlocked && !inventory.IsFull
+        btn.interactable = unlocked && available && !inventory.IsFull
             && island.Money >= item.price * (inventory.GetShipAlltimeCount(islandNumber, Mathf.Clamp(id, 0, inventory.list.ships.Count - 1)) + 1);
     }
 
@@ -52,12 +53,24 @@ public class ShopItem : MonoBehaviour
     {
         if (unlocked)
         {
-            priceTxt.text = (item.price * (inventory.GetShipAlltimeCount(islandNumber, Mathf.Clamp(id, 0, inventory.list.ships.Count - 1)) + 1)).ToString();
-            raidTimeTxt.text = item.raidTime.ToString() + "s";
-            incomeTxt.text = item.reward.ToString();
-            icon.color = Color.white;
-            OnChangeBtnInteractable(new object[0]);
-            priceTxt.color = btn.interactable ? Color.yellow : new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            if (available)
+            {
+                priceTxt.text = (item.price * (inventory.GetShipAlltimeCount(islandNumber, Mathf.Clamp(id, 0, inventory.list.ships.Count - 1)) + 1)).ToString();
+                raidTimeTxt.text = item.raidTime.ToString() + "s";
+                incomeTxt.text = item.reward.ToString();
+                icon.color = Color.white;
+                OnChangeBtnInteractable(new object[0]);
+                priceTxt.color = btn.interactable ? Color.yellow : new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            }
+            else
+            {
+                priceTxt.text = "Build\n" + inventory.list.ships[Mathf.Clamp(id + 2, 0, inventory.list.ships.Count - 1)].name;
+                raidTimeTxt.text = item.raidTime.ToString() + "s";
+                incomeTxt.text = item.reward.ToString();
+                icon.color = Color.white;
+                OnChangeBtnInteractable(new object[0]);
+                priceTxt.color = new Color(0.7f, 0.7f, 0.7f, 0.9f);
+            }
         }
         else
         {
@@ -74,7 +87,8 @@ public class ShopItem : MonoBehaviour
 
     private void OnLevelUp(object[] args)
     {
-        unlocked = island.Level >= item.unlockLevel;
+        unlocked = inventory.CheckShipUnlocked(inventory.list.islandNumber, id);
+        available = inventory.CheckShipUnlocked(inventory.list.islandNumber, Mathf.Clamp(id + 2, 0, inventory.list.ships.Count - 1));
         OnChangeInfo();
     }
 

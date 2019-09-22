@@ -48,8 +48,8 @@ public class ShipController : MonoBehaviour
         Sprite sprite = item.icon;
         float ratio = ((float)sprite.texture.width / (float)sprite.texture.height);
         float height = GetComponentInParent<RectTransform>().sizeDelta.x * ((float)sprite.texture.height / averageLength);
-        print("Name: " + sprite.name + " W: " + sprite.texture.width + " H: " + sprite.texture.height);
         float width = height * ratio;
+
         img.sprite = sprite;
         img.rectTransform.sizeDelta = new Vector2(width, height);
 

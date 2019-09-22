@@ -44,6 +44,7 @@ public class Inventory : MonoBehaviour
             items[i] = null;
             island.InitParameter("ShipCount_" + list.islandNumber.ToString() + "_" + i.ToString(), 0);
             island.InitParameter("ShipAlltimeCount_" + list.islandNumber.ToString() + "_" + i.ToString(), 0);
+            island.InitParameter("ShipUnlocked_" + list.islandNumber.ToString() + "_" + i.ToString(), 0);
         }
 
         Load();
@@ -90,9 +91,16 @@ public class Inventory : MonoBehaviour
         {
             if (!shopBtn.gameObject.activeSelf)
                 shopBtn.gameObject.SetActive(true);
+            if (!sellBtn.activeSelf)
+                sellBtn.SetActive(true);
         }
-        else if (!shopBtn.gameObject.activeSelf)
-            shopBtn.gameObject.SetActive(false);
+        else
+        {
+            if (shopBtn.gameObject.activeSelf)
+                shopBtn.gameObject.SetActive(false);
+            if (sellBtn.activeSelf)
+                sellBtn.SetActive(false);
+        }
     }
 
     private void CheckNewSlot(object[] args)
@@ -112,17 +120,21 @@ public class Inventory : MonoBehaviour
 
     private void UpdateFlagsState(object[] args)
     {
-        if (island.Money >= GetShipAlltimeCount(list.islandNumber, 0) * list.ships[0].price && !IsFull)
+        if (!IsFull && island.Money >= (GetShipAlltimeCount(list.islandNumber, 0) + 1) * list.ships[0].price)
         {
             if (!mainFlag.activeSelf) mainFlag.SetActive(true);
+            int max = list.ships.Count - 1;
             for (int i = 1; i < list.ships.Count; i++)
             {
-                if (island.Money >= GetShipAlltimeCount(list.islandNumber, i) * list.ships[i].price)
+                if (CheckShipUnlocked(list.islandNumber, Mathf.Clamp(i, 0, max))
+                    && CheckShipUnlocked(list.islandNumber, Mathf.Clamp(i + 2, 0, max))
+                    && island.Money >= (GetShipAlltimeCount(list.islandNumber, i) + 1) * list.ships[i].price)
                 {
                     if (!additionFlag.activeSelf) additionFlag.SetActive(true);
                     return;
                 }
             }
+            if (additionFlag.activeSelf) additionFlag.SetActive(false);
         }
         else
         {
@@ -147,6 +159,8 @@ public class Inventory : MonoBehaviour
             SetShipCount(list.islandNumber, newIndex, GetShipCount(list.islandNumber, newIndex) + 1);
             if (GetShipAlltimeCount(list.islandNumber, newIndex) == 0) EventManager.SendEvent("NewShip", list.ships[newIndex]);
             AddShipAlltimeCount(list.islandNumber, newIndex);
+            AddShipUnlocked(list.islandNumber, newIndex);
+
 
             DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
             DisplayItems(new object[0]);
@@ -306,6 +320,16 @@ public class Inventory : MonoBehaviour
         island.SetParameter("ShipAlltimeCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), GetShipAlltimeCount(islandNumber, shipNumber) + 1);
     }
 
+    public bool CheckShipUnlocked(int islandNumber, int shipNumber)
+    {
+        return island.GetParameter("ShipUnlocked_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0) != 0;
+    }
+
+    private void AddShipUnlocked(int islandNumber, int shipNumber)
+    {
+        island.SetParameter("ShipUnlocked_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 1);
+    }
+
     public void BuyShip(int number)
     {
         int n = Mathf.Clamp(number, 0, list.ships.Count - 1);
@@ -316,6 +340,7 @@ public class Inventory : MonoBehaviour
             SetShipCount(list.islandNumber, n, Mathf.Clamp(shipCount + 1, 0, cellContainer.childCount));
             if (GetShipAlltimeCount(list.islandNumber, n) == 0) EventManager.SendEvent("NewShip", list.ships[n]);
             AddShipAlltimeCount(list.islandNumber, n);
+            AddShipUnlocked(list.islandNumber, n);
         }
         if (n == 0) UpdateBuyButtonInfo();
     }
