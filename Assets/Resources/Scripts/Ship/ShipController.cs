@@ -25,7 +25,7 @@ public class ShipController : MonoBehaviour
     private ShipRewardController rewardController;
     private Island island;
 
-    private float rotationDelay, delay;
+    private float rotationDelay, delay, averageLength = 500f;
 
     public ShipMotor Motor { get; private set; }
 
@@ -35,14 +35,25 @@ public class ShipController : MonoBehaviour
         rewardController = GetComponent<ShipRewardController>();
         shipClick = GetComponent<ShipClick>();
 
-        shipClick.islandController = islandController;
-
         this.item = item;
+
+        shipClick.islandController = islandController;
+        shipClick.color = item.pointerColor;
+
         Motor.speed = item.speed;
         Motor.goToRaidSpeed = item.goToRaidSpeed;
         Motor.backFromRaidSpeed = item.backFromRaidSpeed;
         Motor.duration = item.raidTime;
-        img.sprite = item.icon;
+
+        Sprite sprite = item.icon;
+        float ratio = ((float)sprite.texture.width / (float)sprite.texture.height);
+        float height = GetComponentInParent<RectTransform>().sizeDelta.x * ((float)sprite.texture.height / averageLength);
+        print("Name: " + sprite.name + " W: " + sprite.texture.width + " H: " + sprite.texture.height);
+        float width = height * ratio;
+        img.sprite = sprite;
+        img.rectTransform.sizeDelta = new Vector2(width, height);
+
+        GetComponent<CapsuleCollider2D>().size = new Vector2(width, height * 1.2f);
 
         rewardModifier = 1f;
         durationModifier = 0f;

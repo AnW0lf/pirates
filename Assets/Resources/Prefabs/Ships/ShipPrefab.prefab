@@ -57,10 +57,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 200
+  goToRaidSpeed: 1000
+  backFromRaidSpeed: 500
   range: 2000
   duration: 5
   durationModifier: 1
-  raidSpeedBonus: 10
   icon: {fileID: 821593842469200794}
 --- !u!114 &821593841800323338
 MonoBehaviour:
@@ -75,7 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 821593842469200795}
-  shipLevel: 1
   duration: 2
   moneyIcon: {fileID: 821593842858525996}
 --- !u!114 &821593841800323336
@@ -158,8 +158,8 @@ MonoBehaviour:
   flyingText: {fileID: 7659205956303974338, guid: d19555bcfea35f4429970f010dfe1d47,
     type: 3}
   pointer: {fileID: 5602636790207626948}
-  arrow: {fileID: 7205522463047236572}
   clock: {fileID: 915440148527932618}
+  arrow: {fileID: 4989105580965801173}
   color: {r: 0.23939444, g: 0.5943396, b: 0, a: 1}
   islandController: {fileID: 0}
   trail: {fileID: 821593843770476266}
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.06643863, g: 0.6226415, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

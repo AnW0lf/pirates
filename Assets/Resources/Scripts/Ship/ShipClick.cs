@@ -9,8 +9,8 @@ public class ShipClick : MonoBehaviour
     public ShipController ship;
     public LifebuoyManager lifebuoys;
     public GameObject flyingText;
-    public Transform pointer, arrow;
-    public Image clock;
+    public Transform pointer;
+    public Image clock, arrow;
     public Color color;
     public IslandController islandController = null;
     public TrailRenderer trail;

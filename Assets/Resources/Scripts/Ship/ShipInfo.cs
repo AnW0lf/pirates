@@ -18,4 +18,6 @@ public class ShipInfo : ScriptableObject
     public float goToRaidSpeed = 1000f;
     public float backFromRaidSpeed = 500f;
     public float distance = 400f;
+    public float sizeModifier = 1f;
+    public Color pointerColor = Color.green;
 }
