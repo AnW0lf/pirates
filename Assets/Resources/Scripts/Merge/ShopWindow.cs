@@ -9,7 +9,7 @@ public class ShopWindow : MonoBehaviour
 
     public void Open(Inventory inv)
     {
-        titleTxt.text = inv.list.islandName;
+        titleTxt.text = inv.selectedPanel.list.islandName;
         foreach(ShopItem item in itemContainer.GetComponentsInChildren<ShopItem>())
         {
             item.Open(inv);

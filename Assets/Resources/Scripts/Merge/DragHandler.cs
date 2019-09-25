@@ -10,8 +10,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public bool canDrag = false;
 
 
-    private Vector2 startPos, cursorStartPos;
-    private static float k = 0f;
+    //private static float k = 0f;
     private Transform dragTransform;
     private Image dragImg, img;
     private CanvasGroup dragCanvasGroup;
@@ -19,7 +18,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     private void Awake()
     {
-        if (k == 0f) k = Camera.main.pixelHeight / Camera.main.orthographicSize / 2f;
+        //if (k == 0f) k = Camera.main.pixelHeight / Camera.main.orthographicSize / 2f;
         dragTransform = dragObj.transform;
         img = transform.GetComponent<Image>();
         dragImg = dragObj.GetComponent<Image>();
@@ -31,8 +30,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (!canDrag) return;
         itemBeingDragged = gameObject;
-        startPos = transform.position;
-        cursorStartPos = eventData.position;
         dragCanvasGroup.blocksRaycasts = false;
         dragTransform.position = transform.position;
         dragImg.enabled = true;
@@ -45,7 +42,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnDrag(PointerEventData eventData)
     {
         if (!canDrag) return;
-        dragTransform.position = startPos + (eventData.position - cursorStartPos) / k;
+        dragTransform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)

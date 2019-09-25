@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98890f043b02e3e46a80783e33c1bf3a, type: 3}
+  m_Name: island_2
+  m_EditorClassIdentifier: 
+  islandNumber: 2
+  islandName: Steam Island
+  ships:
+  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
+  - {fileID: 11400000, guid: 0d216a68bb89d7a48a295894d975c9fd, type: 2}
+  - {fileID: 11400000, guid: a971e627013bafd478ef6ef2124836e9, type: 2}
+  - {fileID: 11400000, guid: cf49082afcf19af4a81d321e1ee04ca3, type: 2}
+  - {fileID: 11400000, guid: 368d4718133b787449966500f9ebae0e, type: 2}
+  - {fileID: 11400000, guid: f387c3db062c6294ba707cd9c9c89632, type: 2}
+  - {fileID: 11400000, guid: 09d5a3f89d532ef4d8cdc6f73faef5f6, type: 2}
+  - {fileID: 11400000, guid: 48c8ac04c30ebf644a7eb23d61e1e27a, type: 2}
+  - {fileID: 11400000, guid: a638b4022de83ab459f5c39cdfbc3af6, type: 2}
+  - {fileID: 11400000, guid: 0e859b28601437e4e956af7b17e0cff3, type: 2}
