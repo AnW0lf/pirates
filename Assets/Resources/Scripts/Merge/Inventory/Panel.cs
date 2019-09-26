@@ -13,7 +13,7 @@ public class Panel : MonoBehaviour
 
     [Header("Cells levels")]
     public int[] levels;
-    public Sprite sprtStar, sprtLockLevel;
+    public Sprite sprtStar;
 
     public int shipsCount { get; set; }
     public ShipInfo[] items { get; private set; }

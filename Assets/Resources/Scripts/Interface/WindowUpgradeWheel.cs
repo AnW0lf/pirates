@@ -8,7 +8,7 @@ public class WindowUpgradeWheel : WindowBase
 {
     [SerializeField] private Text text = null;
     [SerializeField] private Button btn = null;
-    [SerializeField] private List<RouletteRotation> wheels = null;
+    [SerializeField] private List<LuckyWheel> wheels = null;
     [SerializeField] protected ScrollManager sm;
 
     private WheelButton wb = null;
@@ -34,7 +34,7 @@ public class WindowUpgradeWheel : WindowBase
     {
         bool requaredLevel()
         {
-            foreach (RouletteRotation w in wheels)
+            foreach (LuckyWheel w in wheels)
             {
                 if (w.levels.Contains(island.Level))
                     return true;
@@ -64,11 +64,11 @@ public class WindowUpgradeWheel : WindowBase
 
     public void OpenWheel()
     {
-        foreach (RouletteRotation w in wheels)
+        foreach (LuckyWheel w in wheels)
         {
             if (w.levels.Contains(island.Level))
             {
-                w.wb.WheelSwitch();
+                //w.wb.WheelSwitch();
                 StartCoroutine(Center());
                 return;
             }

@@ -96,11 +96,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void OpenShop()
-    {
-
-    }
-
     private void LevelUpChanges()
     {
         if (island.Level >= shopBtnMinLvl)
@@ -276,6 +271,7 @@ public class Inventory : MonoBehaviour
             {
                 Transform cell = p.transform.GetChild(i);
                 Image icon = cell.GetChild(0).GetComponent<Image>();
+                Text unlockLvlTxt = cell.GetChild(1).GetComponent<Text>();
                 GameObject star = icon.transform.GetChild(0).gameObject;
                 Image starImg = star.GetComponent<Image>();
                 Text level = star.transform.GetComponentInChildren<Text>();
@@ -289,31 +285,42 @@ public class Inventory : MonoBehaviour
                         starImg.sprite = p.sprtStar;
                         float iconY = cellSize.x * 0.85f, iconX = iconY * ((float)icon.sprite.texture.width / (float)icon.sprite.texture.height);
                         icon.rectTransform.sizeDelta = new Vector2(iconX, iconY);
+                        icon.rectTransform.anchoredPosition = Vector2.zero;
                         icon.GetComponent<DragHandler>().canDrag = true;
                         star.SetActive(true);
                         level.text = p.items[i].gradeLevel.ToString();
+                        unlockLvlTxt.enabled = false;
                     }
                     else
                     {
+                        icon.rectTransform.anchoredPosition = Vector2.zero;
                         icon.enabled = false;
                         icon.GetComponent<DragHandler>().canDrag = false;
                         star.SetActive(false);
+                        unlockLvlTxt.enabled = false;
                     }
                 }
                 else
                 {
                     icon.enabled = true;
-                    icon.rectTransform.sizeDelta = cellSize * 0.85f;
+
                     icon.sprite = p.lockSprite;
                     icon.GetComponent<DragHandler>().canDrag = false;
+                    star.SetActive(false);
+
                     if (i == unlocked)
                     {
-                        star.SetActive(true);
-                        starImg.sprite = p.sprtLockLevel;
-                        level.text = p.levels[i].ToString();
+                        icon.rectTransform.sizeDelta = cellSize * 0.6f;
+                        unlockLvlTxt.enabled = true;
+                        unlockLvlTxt.text = "Level " + p.levels[i].ToString();
+                        icon.rectTransform.anchoredPosition = Vector2.up * 13f;
                     }
                     else
-                        star.SetActive(false);
+                    {
+                        unlockLvlTxt.enabled = false;
+                        icon.rectTransform.sizeDelta = cellSize * 0.85f;
+                        icon.rectTransform.anchoredPosition = Vector2.zero;
+                    }
                 }
             }
         }
@@ -369,7 +376,7 @@ public class Inventory : MonoBehaviour
         int shipCount = GetShipCount(selectedPanel.list.islandNumber, n);
         if (island.ChangeMoney(-selectedPanel.list.ships[n].price * (shipCount + 1)))
         {
-            Add(selectedPanel.list.islandNumber - 1 , selectedPanel.list.ships[n]);
+            Add(selectedPanel.list.islandNumber - 1, selectedPanel.list.ships[n]);
             SetShipCount(selectedPanel.list.islandNumber, n, Mathf.Clamp(shipCount + 1, 0, selectedPanel.transform.childCount));
             if (GetShipAlltimeCount(selectedPanel.list.islandNumber, n) == 0) EventManager.SendEvent("NewShip", selectedPanel.list.ships[n]);
             AddShipAlltimeCount(selectedPanel.list.islandNumber, n);

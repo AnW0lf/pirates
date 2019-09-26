@@ -11,6 +11,9 @@ public class Island : MonoBehaviour
     public int Level { get; private set; }
     public BigDigit Exp { get; private set; }
     public BigDigit StartExp { get; private set; }
+    public int Lifebuoy { get; private set; }
+    public int LifebuoyMax { get; private set; }
+    public BigDigit Premium { get; private set; }
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
  new BigDigit(4f, 1), // 0
@@ -121,17 +124,36 @@ public class Island : MonoBehaviour
         InitParameter("StartExpMantissa", 0f);
         InitParameter("StartExpExponent", 0);
         StartExp = new BigDigit(GetParameter("StartExpMantissa", 0f), GetParameter("StartExpExponent", 0));
+
+        InitParameter("Lifebuoy", 0);
+        Lifebuoy = GetParameter("Lifebuoy", 0);
+
+        InitParameter("LifebuoyMax", 3);
+        LifebuoyMax = GetParameter("LifebuoyMax", 0);
+
+        InitParameter("PremiumMantissa", 0f);
+        InitParameter("PremiumExponent", 0);
+        Premium = new BigDigit(GetParameter("PremiumMantissa", 0f), GetParameter("PremiumExponent", 0));
     }
 
     public void Save()
     {
         SetParameter("MoneyMantissa", (float)Money.Mantissa);
         SetParameter("MoneyExponent", (int)Money.Exponent);
-        PlayerPrefs.SetInt("Level", Level);
+
+        SetParameter("Level", Level);
+
         SetParameter("ExpMantissa", (float)Exp.Mantissa);
         SetParameter("ExpExponent", (int)Exp.Exponent);
+
         SetParameter("StartExpMantissa", (float)StartExp.Mantissa);
         SetParameter("StartExpExponent", (int)StartExp.Exponent);
+
+        SetParameter("Lifebuoy", Lifebuoy);
+        SetParameter("LifebuoyMax", LifebuoyMax);
+
+        SetParameter("PremiumMantissa", (float)Premium.Mantissa);
+        SetParameter("PremiumExponent", (int)Premium.Exponent);
     }
 
     public void Resetting()
@@ -147,6 +169,42 @@ public class Island : MonoBehaviour
         {
             Money.Sum(other);
             EventManager.SendEvent("ChangeMoney");
+            return true;
+        }
+        return false;
+    }
+
+    public bool ChangePremium(BigDigit other)
+    {
+
+        if ((Premium + other) >= BigDigit.zero)
+        {
+            Premium.Sum(other);
+            EventManager.SendEvent("ChangePremium");
+            return true;
+        }
+        return false;
+    }
+
+    public bool ChangeLifebuoy(int value)
+    {
+        int v = Lifebuoy + value;
+        if (v > 0)
+        {
+            Lifebuoy = v;
+            EventManager.SendEvent("ChangeLifebuoy");
+            return true;
+        }
+        return false;
+    }
+
+    public bool ChangeLifebuoyMax(int value)
+    {
+        int v = LifebuoyMax + value;
+        if (v > 0)
+        {
+            LifebuoyMax = v;
+            EventManager.SendEvent("ChangeLifebuoyMax");
             return true;
         }
         return false;
@@ -191,6 +249,9 @@ public class Island : MonoBehaviour
     public void LevelUp()
     {
         Level++; Exp = BigDigit.zero;
+
+        if (Lifebuoy < LifebuoyMax) Lifebuoy = LifebuoyMax;
+
         EventManager.SendEvent("LevelUp");
         Save();
     }

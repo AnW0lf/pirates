@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class ShipClick : MonoBehaviour
 {
     public ShipController ship;
-    public LifebuoyManager lifebuoys;
     public GameObject flyingText;
     public Transform pointer;
     public Image clock, arrow;
@@ -77,7 +76,7 @@ public class ShipClick : MonoBehaviour
             {
                 if (island.Level >= 2)
                 {
-                    lifebuoys.AddLifebuoy();
+                    island.ChangeLifebuoy(1);
                     _flyingText.GetComponent<FlyingText>().wheel = true;
 
                     EventManager.SendEvent("BonusCollected", ship.item.name, "WheelSpin");

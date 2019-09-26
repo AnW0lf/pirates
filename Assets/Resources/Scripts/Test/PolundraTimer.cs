@@ -16,8 +16,11 @@ public class PolundraTimer : MonoBehaviour
     private Island island;
     private TimeSpan ts;
 
+    public static PolundraTimer Instance;
+
     private void Awake()
     {
+        if (!Instance) Instance = this;
         island = Island.Instance;
     }
 
@@ -44,6 +47,13 @@ public class PolundraTimer : MonoBehaviour
             StartCoroutine(Timer(120));
             EventManager.Unsubscribe("LevelUp", CheckPolundra);
         }
+    }
+
+    public void BeginPolundra()
+    {
+        StopAllCoroutines();
+        timer.text = "POLUNDRA";
+        StartCoroutine(Polundra());
     }
 
     private IEnumerator Timer(int time)

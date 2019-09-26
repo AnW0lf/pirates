@@ -14,7 +14,6 @@ public class BonusGenerator : MonoBehaviour
 
     void OnEnable()
     {
-        island = Island.Instance;
         curDelay = bonusDelay;
         StartCoroutine(BonusSpawner());
     }
@@ -22,6 +21,11 @@ public class BonusGenerator : MonoBehaviour
     private void OnDisable()
     {
         StopAllCoroutines();
+    }
+
+    private void Start()
+    {
+        island = Island.Instance;
     }
 
     IEnumerator BonusSpawner()
