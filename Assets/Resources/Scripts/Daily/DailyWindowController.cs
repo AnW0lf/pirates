@@ -90,16 +90,7 @@ public class DailyWindowController : MonoBehaviour
         rewardText.GetComponent<FlyingText>().wheel = true;
         rewardText.GetComponent<FlyingText>().wheelText.GetComponent<Text>().text = "+" + dailyRewardState.reward.ToString();
 
-        foreach (LifebuoyManager l in lifebuoys)
-        {
-            if (l.gameObject.activeInHierarchy)
-            {
-                for (int i = 0; i < dailyRewardState.reward; i++)
-                {
-                    l.AddLifebuoy();
-                }
-            }
-        }
+        island.ChangeLifebuoy(dailyRewardState.reward);
     }
 
     private int ToSeconds(int hours, int minutes, int seconds)

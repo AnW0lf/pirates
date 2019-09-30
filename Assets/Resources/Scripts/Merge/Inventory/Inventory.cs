@@ -98,6 +98,7 @@ public class Inventory : MonoBehaviour
 
     private void LevelUpChanges()
     {
+        print(island.Level >= shopBtnMinLvl);
         if (island.Level >= shopBtnMinLvl)
         {
             if (!shopBtn.gameObject.activeSelf)
@@ -116,8 +117,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInteractable(object[] args)
     {
-        BigDigit price = selectedPanel.list.ships[0].price * (GetShipAlltimeCount(selectedPanel.list.islandNumber, 0) + 1);
-        bool interactable = price < island.Money && !selectedPanel.IsFull && selectedPanel.shipsCount < unlockedSlotsCount;
+        bool interactable = GetShipPrice(selectedPanel.list, 0) < island.Money && !selectedPanel.IsFull && selectedPanel.shipsCount < unlockedSlotsCount;
         buyBtn.interactable = interactable;
         UpdateBuyButtonInfo();
     }
@@ -142,16 +142,18 @@ public class Inventory : MonoBehaviour
 
     private void UpdateFlagsState(object[] args)
     {
-        if (!selectedPanel.IsFull && island.Money >= (GetShipAlltimeCount(selectedPanel.list.islandNumber, 0) + 1) * selectedPanel.list.ships[0].price)
+        if (!selectedPanel.IsFull)
         {
-            if (!mainFlag.activeSelf) mainFlag.SetActive(true);
+            if (island.Money >= GetShipPrice(selectedPanel.list, 0) && !mainFlag.activeSelf)
+                mainFlag.SetActive(true);
             int max = selectedPanel.list.ships.Count - 1;
             for (int i = 1; i < selectedPanel.list.ships.Count; i++)
             {
                 if (CheckShipUnlocked(selectedPanel.list.islandNumber, Mathf.Clamp(i, 0, max))
                     && CheckShipUnlocked(selectedPanel.list.islandNumber, Mathf.Clamp(i + 2, 0, max))
-                    && island.Money >= (GetShipAlltimeCount(selectedPanel.list.islandNumber, i) + 1) * selectedPanel.list.ships[i].price)
+                    && island.Money >= GetShipPrice(selectedPanel.list, i))
                 {
+                    if (!mainFlag.activeSelf) mainFlag.SetActive(true);
                     if (!additionFlag.activeSelf) additionFlag.SetActive(true);
                     return;
                 }
@@ -258,7 +260,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInfo()
     {
-        buyBtnTxt.text = (selectedPanel.list.ships[0].price * (GetShipAlltimeCount(selectedPanel.list.islandNumber, 0) + 1)).ToString() + "[C]";
+        buyBtnTxt.text = GetShipPrice(selectedPanel.list, 0).ToString() + "[C]";
     }
 
     private void DisplayItems(object[] args)
@@ -373,8 +375,8 @@ public class Inventory : MonoBehaviour
     public void BuyShip(int number)
     {
         int n = Mathf.Clamp(number, 0, selectedPanel.list.ships.Count - 1);
-        int shipCount = GetShipCount(selectedPanel.list.islandNumber, n);
-        if (island.ChangeMoney(-selectedPanel.list.ships[n].price * (shipCount + 1)))
+        int shipCount = GetShipAlltimeCount(selectedPanel.list.islandNumber, n);
+        if (island.ChangeMoney(-GetShipPrice(selectedPanel.list, n))) //selectedPanel.list.ships[n].price * (shipCount + 1)))
         {
             Add(selectedPanel.list.islandNumber - 1, selectedPanel.list.ships[n]);
             SetShipCount(selectedPanel.list.islandNumber, n, Mathf.Clamp(shipCount + 1, 0, selectedPanel.transform.childCount));
@@ -385,5 +387,8 @@ public class Inventory : MonoBehaviour
         if (n == 0) UpdateBuyButtonInfo();
     }
 
-
+    private BigDigit GetShipPrice(ShipInfoList list, int id)
+    {
+        return list.ships[id].price * Mathf.Pow(list.ships[id].priceModifier, GetShipAlltimeCount(list.islandNumber, id));
+    }
 }

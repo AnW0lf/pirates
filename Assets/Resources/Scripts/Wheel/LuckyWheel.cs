@@ -14,10 +14,11 @@ public class LuckyWheel : MonoBehaviour
     public bool IsRolling { get; private set; }
 
     [Header("Элементы интерфейса")]
-    public Text counterTxt;
-    public Button spinBtn;
-    public Image fillImg;
-    public Image arrowImg;
+    public Text txtCounter;
+    public Button btnSpin;
+    public Image imgFill;
+    //public Image imgArrow;
+    public GameObject gobjFlag;
     public RectTransform wheelRect;
     public RectTransform window;
 
@@ -81,11 +82,13 @@ public class LuckyWheel : MonoBehaviour
         }
     }
 
-    private void UpdateSpinButton(object[] arg0)
+    private void UpdateSpinButton(object[] args)
     {
-        spinBtn.interactable = island.Lifebuoy > 0 && (!IsRolling || !speedUp);
-        counterTxt.text = island.Lifebuoy + "/" + island.LifebuoyMax;
-        fillImg.fillAmount = ((float)island.Lifebuoy / (float)island.LifebuoyMax) * 0.62f + 0.19f;
+        if (island.Lifebuoy > 0 && !gobjFlag.activeSelf) gobjFlag.SetActive(true);
+        else if (island.Lifebuoy <= 0 && gobjFlag.activeSelf) gobjFlag.SetActive(false);
+        btnSpin.interactable = island.Lifebuoy > 0 && (!IsRolling || !speedUp);
+        txtCounter.text = island.Lifebuoy + "/" + island.LifebuoyMax;
+        imgFill.fillAmount = ((float)island.Lifebuoy / (float)island.LifebuoyMax) * 0.62f + 0.19f;
     }
 
     public void Roll()
@@ -102,7 +105,7 @@ public class LuckyWheel : MonoBehaviour
                 curSector = UnityEngine.Random.Range(0, wheelRect.childCount);
             }
             float maxAngle = 360f + 360f * time + ((curSector + 6) * anglePerItem) + (anglePerItem / 2f);
-            StartCoroutine(Rolling(5 * time, maxAngle));
+            StartCoroutine(Rolling(3f * time, maxAngle));
         }
         else if (IsRolling && !speedUp)
         {
@@ -116,20 +119,20 @@ public class LuckyWheel : MonoBehaviour
     private IEnumerator Rolling(float time, float maxAngle)
     {
         IsRolling = true;
-        spinBtn.interactable = !IsRolling || !speedUp;
+        btnSpin.interactable = !IsRolling || !speedUp;
         float timer = 0.0f;
-        float startAngle = transform.eulerAngles.z;
+        float startAngle = wheelRect.eulerAngles.z;
         maxAngle = maxAngle - startAngle;
 
         while (timer < time)
         {
             float angle = maxAngle * animationCurve.Evaluate(timer / time);
-            transform.eulerAngles = new Vector3(0.0f, 0.0f, angle + startAngle);
+            wheelRect.eulerAngles = new Vector3(0.0f, 0.0f, angle + startAngle);
             timer += Time.deltaTime;
-            yield return 0;
+            yield return null;
         }
 
-        transform.eulerAngles = new Vector3(0.0f, 0.0f, maxAngle + startAngle);
+        wheelRect.eulerAngles = new Vector3(0.0f, 0.0f, maxAngle + startAngle);
         IsRolling = false;
         speedUp = false;
         Reward();
@@ -142,12 +145,12 @@ public class LuckyWheel : MonoBehaviour
 
         sectors[curSector].Reward();
 
-        _flyingReward = Instantiate(flyingReward, transform.parent.transform);
+        _flyingReward = Instantiate(flyingReward, window);
         _flyingReward.GetComponent<FlyingWheelReward>().text.text = sectors[curSector].GetComponentInChildren<Text>().text;
         _flyingReward.GetComponent<FlyingWheelReward>().image.sprite = sectors[curSector].GetComponentInChildren<Image>().sprite;
         _flyingReward.GetComponent<FlyingWheelReward>().image.color = sectors[curSector].GetComponentInChildren<Image>().color;
 
-        _rewardEffect = Instantiate(rewardEffect, wheelRect, true);
+        _rewardEffect = Instantiate(rewardEffect, window);
 
         Taptic.Light();
     }

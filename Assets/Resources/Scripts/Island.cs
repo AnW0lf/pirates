@@ -189,7 +189,7 @@ public class Island : MonoBehaviour
     public bool ChangeLifebuoy(int value)
     {
         int v = Lifebuoy + value;
-        if (v > 0)
+        if (v >= 0)
         {
             Lifebuoy = v;
             EventManager.SendEvent("ChangeLifebuoy");
@@ -201,7 +201,7 @@ public class Island : MonoBehaviour
     public bool ChangeLifebuoyMax(int value)
     {
         int v = LifebuoyMax + value;
-        if (v > 0)
+        if (v >= 0)
         {
             LifebuoyMax = v;
             EventManager.SendEvent("ChangeLifebuoyMax");

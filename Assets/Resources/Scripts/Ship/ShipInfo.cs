@@ -9,6 +9,7 @@ public class ShipInfo : ScriptableObject
     public Sprite icon = null;
     [Header("Стоимость")]
     public BigDigit price = new BigDigit(0d, 0);
+    public float priceModifier = 1.07f;
     [Header("Время рейда")]
     public float raidTime = 1f;
     [Header("Награда")]

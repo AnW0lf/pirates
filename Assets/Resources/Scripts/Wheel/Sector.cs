@@ -7,46 +7,51 @@ using UnityEngine.UI;
 public class Sector : MonoBehaviour
 {
     public int index = -1;
-    public Text title;
     public LuckyWheelRewardType type;
     public BigDigit startReward;
+
+    private Text txt;
 
     private void Awake()
     {
         if (index < 0) index = transform.GetSiblingIndex();
+
+        txt = transform.GetComponentInChildren<Text>();
     }
 
     private void Start()
     {
         EventManager.Subscribe("LevelUp", UpdateInfo);
+
+        UpdateInfo(new object[0]);
     }
 
     private void UpdateInfo(object[] arg0)
     {
-        if (title)
+        if (txt)
         {
             switch (type)
             {
                 case LuckyWheelRewardType.Money:
                     {
                         if (LuckyWheel.Instance && Island.Instance)
-                            title.text = (startReward * LuckyWheel.Instance.modifiers[Island.Instance.Level]).ToString();
+                            txt.text = (startReward * LuckyWheel.Instance.modifiers[Island.Instance.Level]).ToString();
                         break;
                     }
                 case LuckyWheelRewardType.Bonus:
                     {
-                        title.text = "X3";
+                        txt.text = "X3";
                         break;
                     }
                 case LuckyWheelRewardType.Polundra:
                     {
-                        title.text = "Polundra";
+                        txt.text = "Polundra";
                         break;
                     }
                 case LuckyWheelRewardType.Premium:
                     {
                         if (LuckyWheel.Instance && Island.Instance)
-                            title.text = (startReward * LuckyWheel.Instance.modifiers[Island.Instance.Level]).ToString();
+                            txt.text = (startReward * LuckyWheel.Instance.modifiers[Island.Instance.Level]).ToString();
                         break;
                     }
                 default:
