@@ -51,12 +51,13 @@ public class Inventory : MonoBehaviour
 
         UpdateBuyButtonInfo();
         DisplayItems(new object[0]);
-        LevelUpChanges();
+        LevelUpChanges(new object[0]);
 
         EventManager.Subscribe("ChangeMoney", UpdateBuyButtonInteractable);
         EventManager.Subscribe("ChangeMoney", UpdateFlagsState);
         EventManager.Subscribe("LevelUp", DisplayItems);
         EventManager.Subscribe("LevelUp", CheckNewSlot);
+        EventManager.Subscribe("LevelUp", LevelUpChanges);
     }
 
     private void Update()
@@ -96,9 +97,8 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void LevelUpChanges()
+    private void LevelUpChanges(object[] args)
     {
-        print(island.Level >= shopBtnMinLvl);
         if (island.Level >= shopBtnMinLvl)
         {
             if (!shopBtn.gameObject.activeSelf)
@@ -117,7 +117,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInteractable(object[] args)
     {
-        bool interactable = GetShipPrice(selectedPanel.list, 0) < island.Money && !selectedPanel.IsFull && selectedPanel.shipsCount < unlockedSlotsCount;
+        bool interactable = GetShipPrice(selectedPanel.list, 0) < island.Money && !selectedPanel.IsFull && selectedPanel.shipsCount < selectedPanel.unlockedSlotsCount;
         buyBtn.interactable = interactable;
         UpdateBuyButtonInfo();
     }
@@ -136,7 +136,6 @@ public class Inventory : MonoBehaviour
                 if (panels[p].levels[i] > island.Level) return;
             }
         }
-        LevelUpChanges();
     }
 
 
@@ -204,7 +203,7 @@ public class Inventory : MonoBehaviour
 
     public void Add(int panelNumber, ShipInfo item)
     {
-        if (unlockedSlotsCount > panels[panelNumber].shipsCount)
+        if (panels[panelNumber].unlockedSlotsCount > panels[panelNumber].shipsCount)
         {
             for (int i = 0; i < panels[panelNumber].transform.childCount; i++)
             {
@@ -248,16 +247,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public int unlockedSlotsCount
-    {
-        get
-        {
-            int count = 0;
-            for (int i = 0; island.Level >= selectedPanel.levels[i] && i < selectedPanel.transform.childCount; i++, count++) ;
-            return Mathf.Clamp(count, 2, selectedPanel.transform.childCount);
-        }
-    }
-
     private void UpdateBuyButtonInfo()
     {
         buyBtnTxt.text = GetShipPrice(selectedPanel.list, 0).ToString() + "[C]";
@@ -267,64 +256,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (Panel p in panels)
         {
-            int unlocked = p.unlockedSlotsCount;
-            Vector2 cellSize = p.transform.GetComponent<GridLayoutGroup>().cellSize;
-            for (int i = 0; i < p.items.Length; i++)
-            {
-                Transform cell = p.transform.GetChild(i);
-                Image icon = cell.GetChild(0).GetComponent<Image>();
-                Text unlockLvlTxt = cell.GetChild(1).GetComponent<Text>();
-                GameObject star = icon.transform.GetChild(0).gameObject;
-                Image starImg = star.GetComponent<Image>();
-                Text level = star.transform.GetComponentInChildren<Text>();
-                cell.GetComponent<CurrentItem>().item = p.items[i];
-                if (i < unlocked)
-                {
-                    if (p.items[i] != null)
-                    {
-                        icon.enabled = true;
-                        icon.sprite = p.items[i].icon;
-                        starImg.sprite = p.sprtStar;
-                        float iconY = cellSize.x * 0.85f, iconX = iconY * ((float)icon.sprite.texture.width / (float)icon.sprite.texture.height);
-                        icon.rectTransform.sizeDelta = new Vector2(iconX, iconY);
-                        icon.rectTransform.anchoredPosition = Vector2.zero;
-                        icon.GetComponent<DragHandler>().canDrag = true;
-                        star.SetActive(true);
-                        level.text = p.items[i].gradeLevel.ToString();
-                        unlockLvlTxt.enabled = false;
-                    }
-                    else
-                    {
-                        icon.rectTransform.anchoredPosition = Vector2.zero;
-                        icon.enabled = false;
-                        icon.GetComponent<DragHandler>().canDrag = false;
-                        star.SetActive(false);
-                        unlockLvlTxt.enabled = false;
-                    }
-                }
-                else
-                {
-                    icon.enabled = true;
-
-                    icon.sprite = p.lockSprite;
-                    icon.GetComponent<DragHandler>().canDrag = false;
-                    star.SetActive(false);
-
-                    if (i == unlocked)
-                    {
-                        icon.rectTransform.sizeDelta = cellSize * 0.6f;
-                        unlockLvlTxt.enabled = true;
-                        unlockLvlTxt.text = "Level " + p.levels[i].ToString();
-                        icon.rectTransform.anchoredPosition = Vector2.up * 13f;
-                    }
-                    else
-                    {
-                        unlockLvlTxt.enabled = false;
-                        icon.rectTransform.sizeDelta = cellSize * 0.85f;
-                        icon.rectTransform.anchoredPosition = Vector2.zero;
-                    }
-                }
-            }
+            p.DisplayItems();
         }
     }
 

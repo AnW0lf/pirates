@@ -12,8 +12,11 @@ public class Island : MonoBehaviour
     public BigDigit Exp { get; private set; }
     public BigDigit StartExp { get; private set; }
     public int Lifebuoy { get; private set; }
-    public int LifebuoyMax { get; private set; }
+    public int LifebuoyMax { get { return SpinLevel + 3; } }
     public BigDigit Premium { get; private set; }
+    public int SpeedLevel { get; private set; }
+    public int MoneyLevel { get; private set; }
+    public int SpinLevel { get; private set; }
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
  new BigDigit(4f, 1), // 0
@@ -128,8 +131,14 @@ public class Island : MonoBehaviour
         InitParameter("Lifebuoy", 0);
         Lifebuoy = GetParameter("Lifebuoy", 0);
 
-        InitParameter("LifebuoyMax", 3);
-        LifebuoyMax = GetParameter("LifebuoyMax", 0);
+        InitParameter("SpinLevel", 0);
+        SpinLevel = GetParameter("SpinLevel", 0);
+
+        InitParameter("SpeedLevel", 0);
+        SpeedLevel = GetParameter("SpeedLevel", 0);
+
+        InitParameter("MoneyLevel", 0);
+        MoneyLevel = GetParameter("MoneyLevel", 0);
 
         InitParameter("PremiumMantissa", 0f);
         InitParameter("PremiumExponent", 0);
@@ -150,7 +159,9 @@ public class Island : MonoBehaviour
         SetParameter("StartExpExponent", (int)StartExp.Exponent);
 
         SetParameter("Lifebuoy", Lifebuoy);
-        SetParameter("LifebuoyMax", LifebuoyMax);
+        SetParameter("SpinLevel", SpinLevel);
+        SetParameter("SpeedLevel", SpeedLevel);
+        SetParameter("MoneyLevel", MoneyLevel);
 
         SetParameter("PremiumMantissa", (float)Premium.Mantissa);
         SetParameter("PremiumExponent", (int)Premium.Exponent);
@@ -161,6 +172,9 @@ public class Island : MonoBehaviour
         PlayerPrefs.DeleteAll();
         Load();
     }
+
+    public float moneyBonus { get { return MoneyLevel * 0.05f + 1f; } }
+    public float speedBonus { get { return SpeedLevel * 0.05f + 1f; } }
 
     public bool ChangeMoney(BigDigit other)
     {
@@ -198,16 +212,35 @@ public class Island : MonoBehaviour
         return false;
     }
 
-    public bool ChangeLifebuoyMax(int value)
+    public bool AddSpinLevel(BigDigit price)
     {
-        int v = LifebuoyMax + value;
-        if (v >= 0)
+        bool b;
+        if ((b = ChangeMoney(price)))
         {
-            LifebuoyMax = v;
+            SpinLevel++;
             EventManager.SendEvent("ChangeLifebuoyMax");
-            return true;
         }
-        return false;
+        return b;
+    }
+
+    public bool AddSpeedLevel(BigDigit price)
+    {
+        bool b;
+        if((b = ChangeMoney(price)))
+        {
+            SpeedLevel++;
+        }
+        return b;
+    }
+
+    public bool AddMoneyLevel(BigDigit price)
+    {
+        bool b;
+        if ((b = ChangeMoney(price)))
+        {
+            MoneyLevel++;
+        }
+        return b;
     }
 
     public BigDigit GetMaxExp()

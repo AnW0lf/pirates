@@ -49,7 +49,7 @@ public class ShipClick : MonoBehaviour
             {
                 ship.rewardModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
                 ft.exp = true;
-                ft.expText.GetComponent<Text>().text = "+" + ship.item.reward.ToString();
+                ft.expText.text = "+" + ship.item.reward.ToString();
 
                 EventManager.SendEvent("BonusCollected", ship.item.name, "Material");
             }
@@ -59,7 +59,7 @@ public class ShipClick : MonoBehaviour
                 {
                     BigDigit reward = ship.item.price * (island.GetParameter("ShipAlltimeCount_" + GetComponentInParent<ShipsManager>().islandNumber + "_0" ,0) + 1) / 2f;
                     ft.money = true;
-                    ft.moneyText.GetComponent<Text>().text = "+" + reward.ToString();
+                    ft.moneyText.text = "+" + reward.ToString();
                     islandController.GenerateBonusMoney(reward);
                     EventManager.SendEvent("BonusCollected", ship.item.name, "Money");
                 }
@@ -68,7 +68,7 @@ public class ShipClick : MonoBehaviour
             {
                 ship.DurationBonus(other.gameObject.GetComponent<BonusBehavior>().modifier);
                 ft.speed = true;
-                ft.speedText.GetComponent<Text>().text = "-" + (int)(ship.duration / Mathf.Pow(2f, ship.durationModifier)) + "s";
+                ft.speedText.text = "-" + (int)(ship.duration / Mathf.Pow(2f, ship.durationModifier)) + "s";
 
                 EventManager.SendEvent("BonusCollected", ship.item.name, "Speed");
             }
@@ -77,7 +77,8 @@ public class ShipClick : MonoBehaviour
                 if (island.Level >= 2)
                 {
                     island.ChangeLifebuoy(1);
-                    _flyingText.GetComponent<FlyingText>().wheel = true;
+                    ft.wheel = true;
+                    ft.wheelText.text = "+1";
 
                     EventManager.SendEvent("BonusCollected", ship.item.name, "WheelSpin");
                 }

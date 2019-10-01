@@ -16,11 +16,18 @@ public class ShipMotor : MonoBehaviour
     private float distance, delay;
     private List<EmptyAction> raidEndActions, raidMiddleActions, raidBeginActions;
 
+    private Island island;
+
     private void Awake()
     {
         raidEndActions = new List<EmptyAction>();
         raidMiddleActions = new List<EmptyAction>();
         raidBeginActions = new List<EmptyAction>();
+    }
+
+    private void Start()
+    {
+        island = Island.Instance;
     }
 
     private void Update()
@@ -34,7 +41,7 @@ public class ShipMotor : MonoBehaviour
     private void RotateAroundTarget()
     {
         if (target == null) return;
-        transform.RotateAround(target.position, Vector3.forward * (direction ? -1f : 1f), speed / Vector3.Distance(target.position, transform.position) / Mathf.PI * Time.deltaTime);
+        transform.RotateAround(target.position, Vector3.forward * (direction ? -1f : 1f), speed * island.speedBonus / Vector3.Distance(target.position, transform.position) / Mathf.PI * Time.deltaTime);
     }
 
     private void Raid()
@@ -42,7 +49,7 @@ public class ShipMotor : MonoBehaviour
         if (!isRaid) return;
         if (!isBack)
         {
-            float step = Mathf.Abs(goToRaidSpeed * Time.deltaTime);
+            float step = Mathf.Abs(goToRaidSpeed * island.speedBonus * Time.deltaTime);
             distance -= step;
             if (distance < 0f)
             {
@@ -64,7 +71,7 @@ public class ShipMotor : MonoBehaviour
         }
         else
         {
-            float step = Mathf.Abs(backFromRaidSpeed * Time.deltaTime);
+            float step = Mathf.Abs(backFromRaidSpeed * island.speedBonus * Time.deltaTime);
             distance -= step;
             if (distance < 0f)
             {

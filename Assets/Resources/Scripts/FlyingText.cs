@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FlyingText : MonoBehaviour
 {
     public bool money, speed, wheel, reward, exp;
-    public GameObject moneyText, speedText, wheelText, rewardText, expText;
+    public Text moneyText, speedText, wheelText, rewardText, expText;
     public Sprite[] sprites;
     public Image expImage;
 
@@ -15,13 +15,13 @@ public class FlyingText : MonoBehaviour
     void Start()
     {
         if (money)
-            moneyText.SetActive(true);
+            moneyText.gameObject.SetActive(true);
         if (speed)
-            speedText.SetActive(true);
+            speedText.gameObject.SetActive(true);
         if (wheel)
-            wheelText.SetActive(true);
+            wheelText.gameObject.SetActive(true);
         if (reward)
-            rewardText.SetActive(true);
+            rewardText.gameObject.SetActive(true);
         if (exp)
         {
             if (sprites.Length >= 3)
@@ -40,18 +40,18 @@ public class FlyingText : MonoBehaviour
                     expImage.sprite = sprites[2];
                 }
             }
-            expText.SetActive(true);
+            expText.gameObject.SetActive(true);
         }
     }
 
     public void SetReward(int value)
     {
-        rewardText.GetComponent<Text>().text = "+" + CheckRange(value);
+        rewardText.text = "+" + CheckRange(value);
     }
 
     public void SetExp(int value)
     {
-        expText.GetComponent<Text>().text = "+" + CheckRange(value);
+        expText.text = "+" + CheckRange(value);
     }
 
     private string CheckRange(int value)
