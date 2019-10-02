@@ -319,7 +319,7 @@ public class Inventory : MonoBehaviour
         if (n == 0) UpdateBuyButtonInfo();
     }
 
-    private BigDigit GetShipPrice(ShipInfoList list, int id)
+    public BigDigit GetShipPrice(ShipInfoList list, int id)
     {
         return list.ships[id].price * Mathf.Pow(list.ships[id].priceModifier, GetShipAlltimeCount(list.islandNumber, id));
     }
