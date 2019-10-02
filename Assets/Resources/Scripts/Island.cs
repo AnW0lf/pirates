@@ -19,17 +19,17 @@ public class Island : MonoBehaviour
     public int SpinLevel { get; private set; }
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
- new BigDigit(4f, 1), // 0
-        new BigDigit(7f, 1), // 1
-        new BigDigit(3.5f, 2), // 2
-        new BigDigit(4.7f, 2), // 3
-        new BigDigit(2.1f, 3), // 4
-        new BigDigit(3.3f, 3), // 5
-        new BigDigit(5f, 3), // 6
-        new BigDigit(6.7f, 3), // 7
-        new BigDigit(1.51f, 4), // 8
-        new BigDigit(1.58f, 4), // 9
-        new BigDigit(1.8f, 4), // 10
+ new BigDigit(1f, 2), // 0
+        new BigDigit(1f, 2), // 1
+        new BigDigit(1.5f, 2), // 2
+        new BigDigit(2.25f, 2), // 3
+        new BigDigit(3.38f, 2), // 4
+        new BigDigit(5.7f, 2), // 5
+        new BigDigit(7.61f, 2), // 6
+        new BigDigit(1.142f, 3), // 7
+        new BigDigit(1.713f, 3), // 8
+        new BigDigit(3.855f, 3), // 9
+        new BigDigit(5.783f, 3), // 10
         new BigDigit(3.168f, 4), // 11
         new BigDigit(3.744f, 4), // 12
         new BigDigit(4.32f, 4), // 13

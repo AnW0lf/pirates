@@ -20,13 +20,13 @@ MonoBehaviour:
     mantissa: 4.8
     exponent: 5
   priceModifier: 1.175
-  raidTime: 12
+  raidTime: 21
   reward:
-    mantissa: 5
-    exponent: 1
-  speed: 250
-  goToRaidSpeed: 1000
-  backFromRaidSpeed: 500
+    mantissa: 1.9
+    exponent: 3
+  speed: 175
+  goToRaidSpeed: 550
+  backFromRaidSpeed: 350
   distance: 400
   sizeModifier: 1
   pointerColor: {r: 0.24070549, g: 0, b: 1, a: 1}
