@@ -1807,11 +1807,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018511926555228865, guid: 4853a2b265ba9894dada00043be14ee0,
         type: 3}
-      propertyPath: m_Spacing
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018511926555228865, guid: 4853a2b265ba9894dada00043be14ee0,
-        type: 3}
       propertyPath: m_Padding.m_Top
       value: 15
       objectReference: {fileID: 0}
@@ -2033,16 +2028,6 @@ PrefabInstance:
         type: 3}
       propertyPath: levels.Array.data[9]
       value: 66
-      objectReference: {fileID: 0}
-    - target: {fileID: 1820283620175563545, guid: 4853a2b265ba9894dada00043be14ee0,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1820283620175563545, guid: 4853a2b265ba9894dada00043be14ee0,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 1820283619169982970, guid: 4853a2b265ba9894dada00043be14ee0,
         type: 3}
