@@ -5,16 +5,23 @@ using UnityEngine.UI;
 
 public class GlobalUpgradeButton : MonoBehaviour
 {
-    public Button btnSpeed, btnMoney, btnSpin;
-    public Text txtSpeed, txtMoney, txtSpin;
-    public float offsetY = 200f, offsetX = 200f;
-    public BigDigit priceSpeed, priceMoney, priceSpin;
+    [Header("Speed")]
+    public Button btnSpeed;
+    public Text txtSpeedBonus, txtSpeedPrice;
+    public BigDigit priceSpeed;
+    [Header("Money")]
+    public Button btnMoney;
+    public Text txtMoneyBonus, txtMoneyPrice;
+    public BigDigit priceMoney;
+    [Header("Spin")]
+    public Button btnSpin;
+    public Text txtSpinBonus, txtSpinPrice;
+    public BigDigit priceSpin;
+    [Header("Flag")]
     public GameObject flag;
 
     private bool opened = false;
     private int lvlSpeed, lvlMoney, lvlSpin;
-    private RectTransform rectBtnSpeed, rectBtnMoney, rectBtnSpin;
-    private RectTransform rectTxtSpeed, rectTxtMoney, rectTxtSpin;
 
     private void Start()
     {
@@ -22,50 +29,25 @@ public class GlobalUpgradeButton : MonoBehaviour
         lvlMoney = Island.Instance.MoneyLevel;
         lvlSpin = Island.Instance.SpinLevel;
 
-        rectBtnSpeed = btnSpeed.GetComponent<RectTransform>();
-        rectBtnMoney = btnMoney.GetComponent<RectTransform>();
-        rectBtnSpin = btnSpin.GetComponent<RectTransform>();
-
-        rectTxtSpeed = txtSpeed.GetComponent<RectTransform>();
-        rectTxtMoney = txtMoney.GetComponent<RectTransform>();
-        rectTxtSpin = txtSpin.GetComponent<RectTransform>();
-
         EventManager.Subscribe("ChangeMoney", CheckActives);
 
-        txtSpeed.text = GetPrice(priceSpeed, lvlSpeed).ToString();
-        txtMoney.text = GetPrice(priceMoney, lvlMoney).ToString();
-        txtSpin.text = GetPrice(priceSpin, lvlSpin).ToString();
-    }
+        string str = Island.Instance.speedBonus.ToString();
+        if (str.Length > 4) str = str.Substring(0, 4);
 
-    public void Switch()
-    {
-        opened = !opened;
-    }
+        txtSpeedPrice.text = GetPrice(priceSpeed, lvlSpeed).ToString();
+        txtSpeedBonus.text = "X" + str;
 
-    private void Update()
-    {
-        Move(rectBtnSpeed, rectTxtSpeed);
-        Move(rectBtnMoney, rectTxtMoney);
-        Move(rectBtnSpin, rectTxtSpin);
-    }
+        str = Island.Instance.moneyBonus.ToString();
+        if (str.Length > 4) str = str.Substring(0, 4);
 
-    private void Move(RectTransform rect, RectTransform rectTxt)
-    {
-        if (opened)
-        {
-            Vector2 v_Y, v_X;
-            if (rect.anchoredPosition.y != (v_Y = Vector2.down * offsetY * (rect.GetSiblingIndex() + 1)).y)
-                rect.anchoredPosition = Vector2.MoveTowards(rect.anchoredPosition, v_Y, Time.deltaTime * 1000f * (rect.GetSiblingIndex() + 1));
-            if (rectTxt.anchoredPosition.x != (v_X = Vector2.left * offsetX).x)
-                rectTxt.anchoredPosition = Vector2.MoveTowards(rectTxt.anchoredPosition, v_X, Time.deltaTime * 1000f);
-        }
-        else
-        {
-            if (rect.anchoredPosition.y != 0)
-                rect.anchoredPosition = Vector2.MoveTowards(rect.anchoredPosition, Vector2.zero, Time.deltaTime * 1000f * (rect.GetSiblingIndex() + 1));
-            if (rectTxt.anchoredPosition.x != 0)
-                rectTxt.anchoredPosition = Vector2.MoveTowards(rectTxt.anchoredPosition, Vector2.zero, Time.deltaTime * 1000f);
-        }
+        txtMoneyPrice.text = GetPrice(priceMoney, lvlMoney).ToString();
+        txtMoneyBonus.text = "X" + str;
+
+        str = Island.Instance.LifebuoyMax.ToString();
+        if (str.Length > 4) str = str.Substring(0, 4);
+
+        txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
+        txtSpinBonus.text = str + "/10";
     }
 
     private BigDigit GetPrice(BigDigit startPrice, int level)
@@ -129,21 +111,24 @@ public class GlobalUpgradeButton : MonoBehaviour
                 {
                     Island.Instance.AddSpeedLevel(-GetPrice(priceSpeed, lvlSpeed));
                     lvlSpeed = Island.Instance.SpeedLevel;
-                    txtSpeed.text = GetPrice(priceSpeed, lvlSpeed).ToString();
+                    txtSpeedPrice.text = GetPrice(priceSpeed, lvlSpeed).ToString();
+                    txtSpeedBonus.text = "X" + Island.Instance.speedBonus.ToString().Substring(0, 4);
                     break;
                 }
             case GlobalUpgradeType.MONEY:
                 {
                     Island.Instance.AddMoneyLevel(-GetPrice(priceMoney, lvlMoney));
                     lvlMoney = Island.Instance.MoneyLevel;
-                    txtMoney.text = GetPrice(priceMoney, lvlMoney).ToString();
+                    txtMoneyPrice.text = GetPrice(priceMoney, lvlMoney).ToString();
+                    txtMoneyBonus.text = "X" + Island.Instance.moneyBonus.ToString().Substring(0, 4);
                     break;
                 }
             case GlobalUpgradeType.SPIN:
                 {
                     Island.Instance.AddSpinLevel(-GetPrice(priceSpin, lvlSpin));
                     lvlSpin = Island.Instance.SpinLevel;
-                    txtSpin.text = GetPrice(priceSpin, lvlSpin).ToString();
+                    txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
+                    txtSpinBonus.text = Island.Instance.LifebuoyMax + "/10";
                     break;
                 }
         }
