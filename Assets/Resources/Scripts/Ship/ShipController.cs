@@ -61,11 +61,11 @@ public class ShipController : MonoBehaviour
         Motor.duration = duration * durationModifier;
 
         island = Island.Instance;
-        Motor.AddRaidEndAction(new ShipMotor.EmptyAction(Reward));
-        Motor.AddRaidEndAction(new ShipMotor.EmptyAction(shipClick.CldrOn));
-        Motor.AddRaidMiddleAction(new ShipMotor.EmptyAction(rewardController.EnableIcon));
+        Motor.raidEndActions += new ShipMotor.EmptyAction(Reward);
+        Motor.raidEndActions += new ShipMotor.EmptyAction(shipClick.CldrOn);
+        Motor.raidMiddleActions += new ShipMotor.EmptyAction(rewardController.EnableIcon);
 
-        rotationDelay = item.distance * 2f * Mathf.PI / item.speed;
+        rotationDelay = item.distance * Mathf.PI / item.speed;
         delay = rotationDelay;
 
         Destroyed = false;

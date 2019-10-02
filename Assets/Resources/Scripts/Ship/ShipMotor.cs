@@ -14,16 +14,9 @@ public class ShipMotor : MonoBehaviour
 
     private bool isBack = false, direction = true;
     private float distance, delay;
-    private List<EmptyAction> raidEndActions, raidMiddleActions, raidBeginActions;
+    public EmptyAction raidEndActions, raidMiddleActions, raidBeginActions;
 
     private Island island;
-
-    private void Awake()
-    {
-        raidEndActions = new List<EmptyAction>();
-        raidMiddleActions = new List<EmptyAction>();
-        raidBeginActions = new List<EmptyAction>();
-    }
 
     private void Start()
     {
@@ -62,7 +55,7 @@ public class ShipMotor : MonoBehaviour
                 direction = !direction;
                 icon.localScale = new Vector3(icon.localScale.x, (direction ? 1f : -1f), icon.localScale.z);
                 distance = range;
-                foreach (EmptyAction ea in raidMiddleActions) ea();
+                raidMiddleActions();
             }
         }
         else if (delay > 0f)
@@ -80,50 +73,18 @@ public class ShipMotor : MonoBehaviour
                 isRaid = false;
             }
             transform.localPosition += transform.up * (direction ? -1f : 1f) * step;
-            if (!isRaid) foreach (EmptyAction ea in raidEndActions) ea();
+            if (!isRaid) raidEndActions();
         }
     }
 
     public void BeginRaid()
     {
         if (isRaid && !isBack) return;
-        foreach (EmptyAction ea in (isRaid ? raidEndActions : raidBeginActions)) ea();
+        if (isRaid) raidEndActions();
+        else raidBeginActions();
         isRaid = true;
         isBack = false;
         distance += range;
         delay = duration / Mathf.Pow(2f, durationModifier);
-    }
-
-    public void AddRaidEndAction(EmptyAction action)
-    {
-        if (!raidEndActions.Contains(action))
-            raidEndActions.Add(action);
-    }
-
-    public void AddRaidMiddleAction(EmptyAction action)
-    {
-        if (!raidMiddleActions.Contains(action))
-            raidMiddleActions.Add(action);
-    }
-
-    public void AddRaidBeginAction(EmptyAction action)
-    {
-        if (!raidBeginActions.Contains(action))
-            raidBeginActions.Add(action);
-    }
-
-    public void ClearRaidEndActions()
-    {
-        raidEndActions.Clear();
-    }
-
-    public void ClearRaidMiddleActions()
-    {
-        raidMiddleActions.Clear();
-    }
-
-    public void ClearRaidBeginActions()
-    {
-        raidBeginActions.Clear();
     }
 }
