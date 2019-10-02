@@ -55,7 +55,7 @@ public class ShipMotor : MonoBehaviour
                 direction = !direction;
                 icon.localScale = new Vector3(icon.localScale.x, (direction ? 1f : -1f), icon.localScale.z);
                 distance = range;
-                raidMiddleActions();
+                raidMiddleActions?.Invoke();
             }
         }
         else if (delay > 0f)
@@ -73,18 +73,25 @@ public class ShipMotor : MonoBehaviour
                 isRaid = false;
             }
             transform.localPosition += transform.up * (direction ? -1f : 1f) * step;
-            if (!isRaid) raidEndActions();
+            if (!isRaid) raidEndActions?.Invoke();
         }
     }
 
     public void BeginRaid()
     {
         if (isRaid && !isBack) return;
-        if (isRaid) raidEndActions();
-        else raidBeginActions();
+        if (isRaid) raidEndActions?.Invoke();
+        else raidBeginActions?.Invoke();
         isRaid = true;
         isBack = false;
         distance += range;
         delay = duration / Mathf.Pow(2f, durationModifier);
+    }
+
+    private void OnDestroy()
+    {
+        raidBeginActions = null;
+        raidEndActions = null;
+        raidMiddleActions = null;
     }
 }
