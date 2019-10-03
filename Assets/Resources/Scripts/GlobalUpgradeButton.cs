@@ -105,6 +105,7 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     public void Upgrade(GlobalUpgradeType type)
     {
+        string str;
         switch (type)
         {
             case GlobalUpgradeType.SPEED:
@@ -112,7 +113,11 @@ public class GlobalUpgradeButton : MonoBehaviour
                     Island.Instance.AddSpeedLevel(-GetPrice(priceSpeed, lvlSpeed));
                     lvlSpeed = Island.Instance.SpeedLevel;
                     txtSpeedPrice.text = GetPrice(priceSpeed, lvlSpeed).ToString();
-                    txtSpeedBonus.text = "X" + Island.Instance.speedBonus.ToString().Substring(0, 4);
+
+                    str = Island.Instance.speedBonus.ToString();
+                    if (str.Length > 4) str = str.Substring(0, 4);
+
+                    txtSpeedBonus.text = "X" + str;
                     break;
                 }
             case GlobalUpgradeType.MONEY:
@@ -120,7 +125,11 @@ public class GlobalUpgradeButton : MonoBehaviour
                     Island.Instance.AddMoneyLevel(-GetPrice(priceMoney, lvlMoney));
                     lvlMoney = Island.Instance.MoneyLevel;
                     txtMoneyPrice.text = GetPrice(priceMoney, lvlMoney).ToString();
-                    txtMoneyBonus.text = "X" + Island.Instance.moneyBonus.ToString().Substring(0, 4);
+
+                    str = Island.Instance.moneyBonus.ToString();
+                    if (str.Length > 4) str = str.Substring(0, 4);
+
+                    txtMoneyBonus.text = "X" + str;
                     break;
                 }
             case GlobalUpgradeType.SPIN:
@@ -128,7 +137,11 @@ public class GlobalUpgradeButton : MonoBehaviour
                     Island.Instance.AddSpinLevel(-GetPrice(priceSpin, lvlSpin));
                     lvlSpin = Island.Instance.SpinLevel;
                     txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
-                    txtSpinBonus.text = Island.Instance.LifebuoyMax + "/10";
+
+                    str = Island.Instance.LifebuoyMax.ToString();
+                    if (str.Length > 4) str = str.Substring(0, 4);
+
+                    txtSpinBonus.text = str + "/10";
                     break;
                 }
         }

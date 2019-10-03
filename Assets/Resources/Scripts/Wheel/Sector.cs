@@ -30,12 +30,22 @@ public class Sector : MonoBehaviour
     {
         if (txt)
         {
+            int index;
             switch (type)
             {
                 case LuckyWheelRewardType.Money:
                     {
                         if (LuckyWheel.Instance && Island.Instance)
-                            txt.text = (startReward * LuckyWheel.Instance.modifiers[Island.Instance.Level]).ToString();
+                        {
+                            index = 0;
+
+                            for (; index < LuckyWheel.Instance.levels.Count
+                                && index < LuckyWheel.Instance.modifiers.Count
+                                && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) print(index);
+                            index--;
+
+                            txt.text = (startReward * LuckyWheel.Instance.modifiers[index]).ToString();
+                        }
                         break;
                     }
                 case LuckyWheelRewardType.Bonus:
@@ -51,7 +61,16 @@ public class Sector : MonoBehaviour
                 case LuckyWheelRewardType.Premium:
                     {
                         if (LuckyWheel.Instance && Island.Instance)
-                            txt.text = (startReward * LuckyWheel.Instance.modifiers[Island.Instance.Level]).ToString();
+                        {
+                            index = 0;
+
+                            for (; index < LuckyWheel.Instance.levels.Count
+                                && index < LuckyWheel.Instance.modifiers.Count
+                                && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) ;
+                            index--;
+
+                            txt.text = (startReward * LuckyWheel.Instance.modifiers[index]).ToString();
+                        }
                         break;
                     }
                 default:
@@ -63,30 +82,53 @@ public class Sector : MonoBehaviour
 
     public void Reward()
     {
+        int index;
         switch (type)
         {
             case LuckyWheelRewardType.Money:
                 {
                     if (LuckyWheel.Instance && Island.Instance)
-                        Island.Instance.ChangeMoney(startReward * LuckyWheel.Instance.modifiers[Island.Instance.Level]);
+                    {
+                        index = 0;
+
+                        for (; index < LuckyWheel.Instance.levels.Count
+                            && index < LuckyWheel.Instance.modifiers.Count
+                            && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) print(index);
+                        index--;
+
+                        Island.Instance.ChangeMoney(startReward * LuckyWheel.Instance.modifiers[index]);
+                    }
                     break;
                 }
             case LuckyWheelRewardType.Bonus:
                 {
                     if (LuckyWheel.Instance && Island.Instance)
+                    {
                         LuckyWheel.Instance.bgs[Mathf.Clamp(Island.Instance.Level / 25, 0, LuckyWheel.Instance.bgs.Length - 1)].Bonus((int)startReward.exponent, 3);
+                    }
                     break;
                 }
             case LuckyWheelRewardType.Polundra:
                 {
                     if (PolundraTimer.Instance)
+                    {
                         PolundraTimer.Instance.BeginPolundra();
+                    }
                     break;
                 }
             case LuckyWheelRewardType.Premium:
                 {
                     if (LuckyWheel.Instance && Island.Instance)
-                        Island.Instance.ChangePremium(startReward * LuckyWheel.Instance.modifiers[Island.Instance.Level]);
+                    {
+                        index = 0;
+
+                        for (; index < LuckyWheel.Instance.levels.Count
+                            && index < LuckyWheel.Instance.modifiers.Count
+                            && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) print(index);
+                        index--;
+
+                        Island.Instance.ChangePremium(startReward * LuckyWheel.Instance.modifiers[index]);
+                    }
                     break;
                 }
             default:

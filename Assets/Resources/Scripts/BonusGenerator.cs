@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BonusGenerator : MonoBehaviour
 {
+    public Vector2Int levelRange;
     public int bonusDelay;
     public GameObject[] bonuses;
     public int[] chances;
@@ -70,7 +71,7 @@ public class BonusGenerator : MonoBehaviour
                 break;
             chance -= chances[i];
         }
-        if (island.Level < 2 && i == chances.Length - 1 && i != 0)
+        if ((island.Level < levelRange.x || island.Level > levelRange.y) && i == chances.Length - 1 && i != 0)
             i--;
         return i;
     }

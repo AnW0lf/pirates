@@ -40,7 +40,7 @@ public class Panel : MonoBehaviour
         get
         {
             int count = 0;
-            for (int i = 0; island.Level >= levels[i] && i < levels.Length; i++, count++) ;
+            for (; count < levels.Length && island.Level >= levels[count]; count++) ;
             return Mathf.Clamp(count, 0, transform.childCount);
         }
     }
