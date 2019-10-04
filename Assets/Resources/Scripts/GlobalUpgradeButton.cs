@@ -21,6 +21,7 @@ public class GlobalUpgradeButton : MonoBehaviour
     public GameObject flag;
 
     private int lvlSpeed, lvlMoney, lvlSpin;
+    private float symbolLength = 35f;
 
     private void Start()
     {
@@ -34,18 +35,21 @@ public class GlobalUpgradeButton : MonoBehaviour
         if (str.Length > 4) str = str.Substring(0, 4);
 
         txtSpeedPrice.text = GetPrice(priceSpeed, lvlSpeed).ToString();
+        txtSpeedPrice.rectTransform.sizeDelta = new Vector2(txtSpeedPrice.text.Length * symbolLength, txtSpeedPrice.rectTransform.sizeDelta.y);
         txtSpeedBonus.text = "X" + str;
 
         str = Island.Instance.moneyBonus.ToString();
         if (str.Length > 4) str = str.Substring(0, 4);
 
         txtMoneyPrice.text = GetPrice(priceMoney, lvlMoney).ToString();
+        txtMoneyPrice.rectTransform.sizeDelta = new Vector2(txtMoneyPrice.text.Length * symbolLength, txtMoneyPrice.rectTransform.sizeDelta.y);
         txtMoneyBonus.text = "X" + str;
 
         str = Island.Instance.LifebuoyMax.ToString();
         if (str.Length > 4) str = str.Substring(0, 4);
 
         txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
+        txtSpinPrice.rectTransform.sizeDelta = new Vector2(txtSpinPrice.text.Length * symbolLength, txtSpinPrice.rectTransform.sizeDelta.y);
         txtSpinBonus.text = str + "/10";
     }
 
@@ -89,6 +93,7 @@ public class GlobalUpgradeButton : MonoBehaviour
                     Island.Instance.AddSpeedLevel(-GetPrice(priceSpeed, lvlSpeed));
                     lvlSpeed = Island.Instance.SpeedLevel;
                     txtSpeedPrice.text = GetPrice(priceSpeed, lvlSpeed).ToString();
+                    txtSpeedPrice.rectTransform.sizeDelta = new Vector2(txtSpeedPrice.text.Length * symbolLength, txtSpeedPrice.rectTransform.sizeDelta.y);
 
                     str = Island.Instance.speedBonus.ToString();
                     if (str.Length > 4) str = str.Substring(0, 4);
@@ -101,6 +106,7 @@ public class GlobalUpgradeButton : MonoBehaviour
                     Island.Instance.AddMoneyLevel(-GetPrice(priceMoney, lvlMoney));
                     lvlMoney = Island.Instance.MoneyLevel;
                     txtMoneyPrice.text = GetPrice(priceMoney, lvlMoney).ToString();
+                    txtMoneyPrice.rectTransform.sizeDelta = new Vector2(txtMoneyPrice.text.Length * symbolLength, txtMoneyPrice.rectTransform.sizeDelta.y);
 
                     str = Island.Instance.moneyBonus.ToString();
                     if (str.Length > 4) str = str.Substring(0, 4);
@@ -113,6 +119,7 @@ public class GlobalUpgradeButton : MonoBehaviour
                     Island.Instance.AddSpinLevel(-GetPrice(priceSpin, lvlSpin));
                     lvlSpin = Island.Instance.SpinLevel;
                     txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
+                    txtSpinPrice.rectTransform.sizeDelta = new Vector2(txtSpinPrice.text.Length * symbolLength, txtSpinPrice.rectTransform.sizeDelta.y);
 
                     str = Island.Instance.LifebuoyMax.ToString();
                     if (str.Length > 4) str = str.Substring(0, 4);
