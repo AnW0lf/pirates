@@ -40,6 +40,9 @@ public class Inventory : MonoBehaviour
 
         for (int i = 0; i < panels.Length && i < lists.Length; i++)
             panels[i].list = lists[i];
+        if (panels.Length > 0)
+            selectedPanel = panels[0];
+        else Debug.LogWarning("The array of panels is empty, but this should not be");
     }
 
     private void Start()
@@ -168,7 +171,7 @@ public class Inventory : MonoBehaviour
 
     public void Merge(CurrentItem a, CurrentItem b)
     {
-        if (a.id == b.id) return;
+        if (!a || !b || !a.item || !b.item || !selectedPanel.list.ships.Contains(a.item) || !selectedPanel.list.ships.Contains(b.item) || a.id == b.id) return;
         if (selectedPanel.list.ships.IndexOf(a.item) < (selectedPanel.list.ships.Count - 1))
         {
             ShipInfo item = a.item;
@@ -249,7 +252,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInfo()
     {
-        buyBtnTxt.text = GetShipPrice(selectedPanel.list, 0).ToString() + "[C]";
+        buyBtnTxt.text = GetShipPrice(selectedPanel.list, 0).ToString();
     }
 
     private void DisplayItems(object[] args)
@@ -307,7 +310,7 @@ public class Inventory : MonoBehaviour
     public void BuyShip(int number)
     {
         int n = Mathf.Clamp(number, 0, selectedPanel.list.ships.Count - 1);
-        int shipCount = GetShipAlltimeCount(selectedPanel.list.islandNumber, n);
+        int shipCount = GetShipCount(selectedPanel.list.islandNumber, n);
         if (island.ChangeMoney(-GetShipPrice(selectedPanel.list, n))) //selectedPanel.list.ships[n].price * (shipCount + 1)))
         {
             Add(selectedPanel.list.islandNumber - 1, selectedPanel.list.ships[n]);

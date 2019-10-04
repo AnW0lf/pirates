@@ -41,7 +41,7 @@ public class Sector : MonoBehaviour
 
                             for (; index < LuckyWheel.Instance.levels.Count
                                 && index < LuckyWheel.Instance.modifiers.Count
-                                && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) print(index);
+                                && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) ;
                             index--;
 
                             txt.text = (startReward * LuckyWheel.Instance.modifiers[index]).ToString();
@@ -93,7 +93,7 @@ public class Sector : MonoBehaviour
 
                         for (; index < LuckyWheel.Instance.levels.Count
                             && index < LuckyWheel.Instance.modifiers.Count
-                            && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) print(index);
+                            && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) ;
                         index--;
 
                         Island.Instance.ChangeMoney(startReward * LuckyWheel.Instance.modifiers[index]);

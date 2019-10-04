@@ -46,7 +46,7 @@ public class ShopItem : MonoBehaviour
     private void OnChangeBtnInteractable(object[] args)
     {
         btn.interactable = unlocked && available && !inventory.selectedPanel.IsFull
-            && island.Money >= item.price * (inventory.GetShipAlltimeCount(islandNumber, Mathf.Clamp(id, 0, inventory.selectedPanel.list.ships.Count - 1)) + 1);
+            && island.Money >= inventory.GetShipPrice(inventory.selectedPanel.list, id);
     }
 
     public void OnChangeInfo()
@@ -55,7 +55,7 @@ public class ShopItem : MonoBehaviour
         {
             if (available)
             {
-                priceTxt.text = (item.price * (inventory.GetShipAlltimeCount(islandNumber, Mathf.Clamp(id, 0, inventory.selectedPanel.list.ships.Count - 1)) + 1)).ToString();
+                priceTxt.text = inventory.GetShipPrice(inventory.selectedPanel.list, id).ToString();
                 raidTimeTxt.text = item.raidTime.ToString() + "s";
                 incomeTxt.text = item.reward.ToString();
                 icon.color = Color.white;

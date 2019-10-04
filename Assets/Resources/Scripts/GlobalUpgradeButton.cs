@@ -20,7 +20,6 @@ public class GlobalUpgradeButton : MonoBehaviour
     [Header("Flag")]
     public GameObject flag;
 
-    private bool opened = false;
     private int lvlSpeed, lvlMoney, lvlSpin;
 
     private void Start()
@@ -57,37 +56,14 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private void CheckActives(object[] args)
     {
-        BigDigit money = Island.Instance.Money;
+        BigDigit money = Island.Instance.Premium;
         BigDigit prSpeed = GetPrice(priceSpeed, lvlSpeed);
         BigDigit prMoney = GetPrice(priceMoney, lvlMoney);
         BigDigit prSpin = GetPrice(priceSpin, lvlSpin);
 
-        if (money >= prSpeed)
-        {
-            btnSpeed.interactable = true;
-        }
-        else
-        {
-            btnSpeed.interactable = false;
-        }
-
-        if (money >= prMoney)
-        {
-            btnMoney.interactable = true;
-        }
-        else
-        {
-            btnMoney.interactable = false;
-        }
-
-        if (money >= prSpin)
-        {
-            btnSpin.interactable = true;
-        }
-        else
-        {
-            btnSpin.interactable = false;
-        }
+        btnSpeed.interactable = money >= prSpeed;
+        btnMoney.interactable = money >= prMoney;
+        btnSpin.interactable = money >= prSpin;
 
         if (money >= prSpeed || money >= prMoney || money >= prSpin)
         {

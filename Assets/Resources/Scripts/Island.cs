@@ -215,7 +215,7 @@ public class Island : MonoBehaviour
     public bool AddSpinLevel(BigDigit price)
     {
         bool b;
-        if ((b = ChangeMoney(price)))
+        if ((b = ChangePremium(price)))
         {
             SpinLevel++;
             EventManager.SendEvent("ChangeLifebuoyMax");
@@ -226,7 +226,7 @@ public class Island : MonoBehaviour
     public bool AddSpeedLevel(BigDigit price)
     {
         bool b;
-        if((b = ChangeMoney(price)))
+        if((b = ChangePremium(price)))
         {
             SpeedLevel++;
         }
@@ -236,7 +236,7 @@ public class Island : MonoBehaviour
     public bool AddMoneyLevel(BigDigit price)
     {
         bool b;
-        if ((b = ChangeMoney(price)))
+        if ((b = ChangePremium(price)))
         {
             MoneyLevel++;
         }

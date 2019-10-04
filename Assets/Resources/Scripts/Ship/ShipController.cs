@@ -65,7 +65,7 @@ public class ShipController : MonoBehaviour
         Motor.raidEndActions += new ShipMotor.EmptyAction(shipClick.CldrOn);
         Motor.raidMiddleActions += new ShipMotor.EmptyAction(rewardController.EnableIcon);
 
-        rotationDelay = item.distance * Mathf.PI / item.speed;
+        rotationDelay = item.distance * Mathf.PI / (item.speed * island.speedBonus);
         delay = rotationDelay;
 
         Destroyed = false;
@@ -89,6 +89,7 @@ public class ShipController : MonoBehaviour
 
     public void Click()
     {
+        rotationDelay = item.distance * Mathf.PI / (item.speed * island.speedBonus);
         delay = rotationDelay;
         Motor.BeginRaid();
     }
