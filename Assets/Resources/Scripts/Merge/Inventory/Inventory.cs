@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
 
     [Header("Buttons")]
     public Button buyBtn;
-    public Text buyBtnTxt;
+    public Text buyBtnTxt, buyBtnTitleTxt;
     public Button shopBtn;
     public int shopBtnMinLvl = 3;
     public GameObject sellBtn;
@@ -31,6 +31,8 @@ public class Inventory : MonoBehaviour
     private bool switching = false;
     private Vector2 panelRectNewPos;
     private float switchSpeed = 3000f;
+
+    private readonly string[] romans = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" , "X" };
 
     public static Inventory Instance;
 
@@ -96,7 +98,11 @@ public class Inventory : MonoBehaviour
         if (switching)
         {
             panelRect.anchoredPosition = Vector2.MoveTowards(panelRect.anchoredPosition, panelRectNewPos, Time.deltaTime * switchSpeed);
-            if (panelRect.anchoredPosition.x == panelRectNewPos.x) switching = false;
+            if (panelRect.anchoredPosition.x == panelRectNewPos.x)
+            {
+                switching = false;
+                UpdateBuyButtonInfo();
+            }
         }
     }
 
@@ -252,7 +258,21 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInfo()
     {
-        buyBtnTxt.text = GetShipPrice(selectedPanel.list, 0).ToString();
+        int n = 0, islandNumber = selectedPanel.list.islandNumber;
+        BigDigit price = GetShipPrice(selectedPanel.list, n);
+
+        for (int i = 0; i < selectedPanel.list.ships.Count; i++)
+        {
+            BigDigit curPrice = GetShipPrice(selectedPanel.list, i);
+            if (CheckShipUnlocked(islandNumber, i) && curPrice < 1.5f * price)
+            {
+                price = curPrice;
+                n = i;
+            }
+        }
+
+        buyBtnTxt.text = price.ToString();
+        buyBtnTitleTxt.text = "Buy Ship " + romans[n];
     }
 
     private void DisplayItems(object[] args)

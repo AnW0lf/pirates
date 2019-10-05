@@ -8,15 +8,21 @@ public class GlobalUpgradeButton : MonoBehaviour
     [Header("Speed")]
     public Button btnSpeed;
     public Text txtSpeedBonus, txtSpeedPrice;
+    public Image imgSpeedPriceIcon;
     public BigDigit priceSpeed;
+    public int speedMaxLevel = 10;
     [Header("Money")]
     public Button btnMoney;
     public Text txtMoneyBonus, txtMoneyPrice;
+    public Image imgMoneyPriceIcon;
     public BigDigit priceMoney;
+    public int moneyMaxLevel = 10;
     [Header("Spin")]
     public Button btnSpin;
     public Text txtSpinBonus, txtSpinPrice;
+    public Image imgSpinPriceIcon;
     public BigDigit priceSpin;
+    public int spinMaxLevel = 10;
     [Header("Flag")]
     public GameObject flag;
 
@@ -65,11 +71,13 @@ public class GlobalUpgradeButton : MonoBehaviour
         BigDigit prMoney = GetPrice(priceMoney, lvlMoney);
         BigDigit prSpin = GetPrice(priceSpin, lvlSpin);
 
-        btnSpeed.interactable = money >= prSpeed;
-        btnMoney.interactable = money >= prMoney;
-        btnSpin.interactable = money >= prSpin;
+        btnSpeed.interactable = money >= prSpeed && speedMaxLevel > lvlSpeed;
+        btnMoney.interactable = money >= prMoney && moneyMaxLevel > lvlMoney;
+        btnSpin.interactable = money >= prSpin && spinMaxLevel > lvlSpin;
 
-        if (money >= prSpeed || money >= prMoney || money >= prSpin)
+        if (money >= prSpeed && speedMaxLevel > lvlSpeed
+            || money >= prMoney && moneyMaxLevel > lvlMoney
+            || money >= prSpin && spinMaxLevel > lvlSpin)
         {
             if (!flag.activeSelf) flag.SetActive(true);
         }
@@ -92,7 +100,15 @@ public class GlobalUpgradeButton : MonoBehaviour
                 {
                     Island.Instance.AddSpeedLevel(-GetPrice(priceSpeed, lvlSpeed));
                     lvlSpeed = Island.Instance.SpeedLevel;
-                    txtSpeedPrice.text = GetPrice(priceSpeed, lvlSpeed).ToString();
+                    if (speedMaxLevel > lvlSpeed)
+                    {
+                        txtSpeedPrice.text = GetPrice(priceSpeed, lvlSpeed).ToString();
+                    }
+                    else
+                    {
+                        txtSpeedPrice.text = "Max Grade";
+                        imgSpeedPriceIcon.gameObject.SetActive(false);
+                    }
                     txtSpeedPrice.rectTransform.sizeDelta = new Vector2(txtSpeedPrice.text.Length * symbolLength, txtSpeedPrice.rectTransform.sizeDelta.y);
 
                     str = Island.Instance.speedBonus.ToString();
@@ -105,7 +121,16 @@ public class GlobalUpgradeButton : MonoBehaviour
                 {
                     Island.Instance.AddMoneyLevel(-GetPrice(priceMoney, lvlMoney));
                     lvlMoney = Island.Instance.MoneyLevel;
-                    txtMoneyPrice.text = GetPrice(priceMoney, lvlMoney).ToString();
+
+                    if (moneyMaxLevel > lvlMoney)
+                    {
+                        txtMoneyPrice.text = GetPrice(priceMoney, lvlMoney).ToString();
+                    }
+                    else
+                    {
+                        txtMoneyPrice.text = "Max Grade";
+                        imgMoneyPriceIcon.gameObject.SetActive(false);
+                    }
                     txtMoneyPrice.rectTransform.sizeDelta = new Vector2(txtMoneyPrice.text.Length * symbolLength, txtMoneyPrice.rectTransform.sizeDelta.y);
 
                     str = Island.Instance.moneyBonus.ToString();
@@ -118,7 +143,16 @@ public class GlobalUpgradeButton : MonoBehaviour
                 {
                     Island.Instance.AddSpinLevel(-GetPrice(priceSpin, lvlSpin));
                     lvlSpin = Island.Instance.SpinLevel;
-                    txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
+
+                    if (spinMaxLevel > lvlSpin)
+                    {
+                        txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
+                    }
+                    else
+                    {
+                        txtSpinPrice.text = "Max Grade";
+                        imgSpinPriceIcon.gameObject.SetActive(false);
+                    }
                     txtSpinPrice.rectTransform.sizeDelta = new Vector2(txtSpinPrice.text.Length * symbolLength, txtSpinPrice.rectTransform.sizeDelta.y);
 
                     str = Island.Instance.LifebuoyMax.ToString();
