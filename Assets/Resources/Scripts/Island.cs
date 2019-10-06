@@ -112,8 +112,8 @@ public class Island : MonoBehaviour
             SetParameter("GlobalResetting", 2);
         }
 
-        InitParameter("MoneyMantissa", 0f);
-        InitParameter("MoneyExponent", 0);
+        InitParameter("MoneyMantissa", 5.5f);
+        InitParameter("MoneyExponent", 1);
         Money = new BigDigit(GetParameter("MoneyMantissa", 0f), GetParameter("MoneyExponent", 0));
 
         if (!PlayerPrefs.HasKey("Level"))

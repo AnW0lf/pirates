@@ -1,40 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Tutorial : MonoBehaviour
+public class Tutorial : MonoBehaviour, ITutorial
 {
-    public PierManager pier;
-    public GameObject[] tutorials;
+    public Tutorial link;
 
-    private int stage = 0;
-    private Island island;
-    private string stageParameter = "tutorial_stage";
+    protected bool isBegin = false;
 
-    private void Awake()
+    public virtual void Begin()
     {
-        island = Island.Instance;
+        isBegin = true;
     }
 
-    private void Start()
+    public virtual bool ConditionOut()
     {
-        island.InitParameter(stageParameter, 0);
-        stage = island.GetParameter(stageParameter, 0);
+        if (isBegin)
+            return true;
+        return false;
     }
 
-    private void Update()
+    public virtual void Next()
     {
-        if (tutorials.Length > stage)
-        {
-            if (!tutorials[stage].activeInHierarchy)
-                tutorials[stage].SetActive(true);
-        }
-        else gameObject.SetActive(false);
-    }
-
-    public void NextStage()
-    {
-        tutorials[stage++].SetActive(false);
-        island.SetParameter(stageParameter, stage);
+        if(link) link.Begin();
+        Destroy(gameObject);
     }
 }
