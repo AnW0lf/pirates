@@ -335,6 +335,16 @@ public class Inventory : MonoBehaviour
         island.SetParameter("ShipAlltimeCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), GetShipAlltimeCount(islandNumber, shipNumber) + 1);
     }
 
+    public int GetShipBoughtCount(int islandNumber, int shipNumber)
+    {
+        return island.GetParameter("ShipBoughtCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0);
+    }
+
+    public void AddShipBoughtCount(int islandNumber, int shipNumber)
+    {
+        island.SetParameter("ShipBoughtCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), GetShipBoughtCount(islandNumber, shipNumber) + 1);
+    }
+
     public bool CheckShipUnlocked(int islandNumber, int shipNumber)
     {
         return island.GetParameter("ShipUnlocked_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0) != 0;
@@ -355,6 +365,7 @@ public class Inventory : MonoBehaviour
             SetShipCount(selectedPanel.list.islandNumber, n, Mathf.Clamp(shipCount + 1, 0, selectedPanel.transform.childCount));
             if (GetShipAlltimeCount(selectedPanel.list.islandNumber, n) == 0) EventManager.SendEvent("NewShip", selectedPanel.list.ships[n]);
             AddShipAlltimeCount(selectedPanel.list.islandNumber, n);
+            AddShipBoughtCount(selectedPanel.list.islandNumber, n);
             AddShipUnlocked(selectedPanel.list.islandNumber, n);
         }
         if (n == currentShips[panels.IndexOf(selectedPanel)]) UpdateBuyButtonInfo();
@@ -367,6 +378,6 @@ public class Inventory : MonoBehaviour
 
     public BigDigit GetShipPrice(ShipInfoList list, int id)
     {
-        return list.ships[id].price * Mathf.Pow(list.ships[id].priceModifier, GetShipAlltimeCount(list.islandNumber, id));
+        return list.ships[id].price * Mathf.Pow(list.ships[id].priceModifier, GetShipBoughtCount(list.islandNumber, id));
     }
 }
