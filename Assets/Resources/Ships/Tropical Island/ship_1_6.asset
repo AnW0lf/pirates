@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28803eb44530496479bfe8dfaa6f52f1, type: 3}
   m_Name: ship_1_6
   m_EditorClassIdentifier: 
-  name: 6
+  name: Santa Maria
   unlockLevel: 13
   gradeLevel: 6
   icon: {fileID: 21300000, guid: 380bb3299e5813d49ad6cdc6c27bec7f, type: 3}
   price:
-    mantissa: 6.5
+    mantissa: 6.55
     exponent: 4
   priceModifier: 1.175
   raidTime: 15

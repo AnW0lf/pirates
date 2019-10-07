@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: island_3
   m_EditorClassIdentifier: 
   islandNumber: 3
-  islandName: Modern Island
+  islandName: Megapolis
   ships:
-  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
-  - {fileID: 11400000, guid: 0d216a68bb89d7a48a295894d975c9fd, type: 2}
-  - {fileID: 11400000, guid: a971e627013bafd478ef6ef2124836e9, type: 2}
-  - {fileID: 11400000, guid: cf49082afcf19af4a81d321e1ee04ca3, type: 2}
-  - {fileID: 11400000, guid: 368d4718133b787449966500f9ebae0e, type: 2}
-  - {fileID: 11400000, guid: f387c3db062c6294ba707cd9c9c89632, type: 2}
-  - {fileID: 11400000, guid: 09d5a3f89d532ef4d8cdc6f73faef5f6, type: 2}
-  - {fileID: 11400000, guid: 48c8ac04c30ebf644a7eb23d61e1e27a, type: 2}
-  - {fileID: 11400000, guid: a638b4022de83ab459f5c39cdfbc3af6, type: 2}
-  - {fileID: 11400000, guid: 0e859b28601437e4e956af7b17e0cff3, type: 2}
+  - {fileID: 11400000, guid: 99062c134cd965340a93abd1c54b8e48, type: 2}
+  - {fileID: 11400000, guid: 0537bf5591723fe489b7d8c38937777b, type: 2}
+  - {fileID: 11400000, guid: b9a36cca1d6cac044bb714e4abaff0ad, type: 2}
+  - {fileID: 11400000, guid: 6e3dd73e1cca6bc44b7f2e77f4c10be0, type: 2}
+  - {fileID: 11400000, guid: 45a48b8cfeb2e3d48a2b9648825f2daf, type: 2}
+  - {fileID: 11400000, guid: 4622b4b59aa08ec4a8fa4f452a9221c5, type: 2}
+  - {fileID: 11400000, guid: 039121cfb4fd93e498096c04a3086a32, type: 2}
+  - {fileID: 11400000, guid: dd60571a3db31354a80e8d223096c03e, type: 2}
+  - {fileID: 11400000, guid: de38c023585b5c540aae4de3e9f93fb4, type: 2}
+  - {fileID: 11400000, guid: e3e5bb5050606c6459632260fbf677f5, type: 2}

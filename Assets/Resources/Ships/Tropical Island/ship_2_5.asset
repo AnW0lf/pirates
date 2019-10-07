@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28803eb44530496479bfe8dfaa6f52f1, type: 3}
-  m_Name: ship_1_1
-  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript1
-  name: Rum Barrel
-  unlockLevel: 1
-  gradeLevel: 1
-  icon: {fileID: 21300000, guid: 15fc3d0fbe7c9bd4bb57e94e57dd9ae7, type: 3}
+  m_Name: ship_2_5
+  m_EditorClassIdentifier: 
+  name: Steam Bird
+  unlockLevel: 11
+  gradeLevel: 5
+  icon: {fileID: 21300000, guid: 45e0206524a619340b364e33f7694e41, type: 3}
   price:
     mantissa: 2.5
-    exponent: 1
-  priceModifier: 1.15
-  raidTime: 3
+    exponent: 4
+  priceModifier: 1.175
+  raidTime: 12
   reward:
-    mantissa: 1
-    exponent: 1
+    mantissa: 2
+    exponent: 2
   speed: 175
   goToRaidSpeed: 550
   backFromRaidSpeed: 350
   distance: 400
   sizeModifier: 1
-  pointerColor: {r: 0, g: 1, b: 0, a: 1}
+  pointerColor: {r: 1, g: 0.16531092, b: 0, a: 1}

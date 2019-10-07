@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28803eb44530496479bfe8dfaa6f52f1, type: 3}
   m_Name: ship_1_7
   m_EditorClassIdentifier: 
-  name: 7
+  name: Princess Tuna
   unlockLevel: 15
   gradeLevel: 7
   icon: {fileID: 21300000, guid: baac486b51e0c634681a6e7fa1661b1a, type: 3}

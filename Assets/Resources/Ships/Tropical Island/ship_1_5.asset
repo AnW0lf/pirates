@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28803eb44530496479bfe8dfaa6f52f1, type: 3}
   m_Name: ship_1_5
   m_EditorClassIdentifier: 
-  name: 5
+  name: Red Octopus
   unlockLevel: 11
   gradeLevel: 5
   icon: {fileID: 21300000, guid: ca5af5961d64af64a8155dcd6de6dbeb, type: 3}
   price:
-    mantissa: 2.4
+    mantissa: 2.5
     exponent: 4
   priceModifier: 1.175
   raidTime: 12

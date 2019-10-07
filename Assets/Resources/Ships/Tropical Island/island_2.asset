@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: island_2
   m_EditorClassIdentifier: 
   islandNumber: 2
-  islandName: Steam Island
+  islandName: Steam Age
   ships:
-  - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
-  - {fileID: 11400000, guid: 0d216a68bb89d7a48a295894d975c9fd, type: 2}
-  - {fileID: 11400000, guid: a971e627013bafd478ef6ef2124836e9, type: 2}
-  - {fileID: 11400000, guid: cf49082afcf19af4a81d321e1ee04ca3, type: 2}
-  - {fileID: 11400000, guid: 368d4718133b787449966500f9ebae0e, type: 2}
-  - {fileID: 11400000, guid: f387c3db062c6294ba707cd9c9c89632, type: 2}
-  - {fileID: 11400000, guid: 09d5a3f89d532ef4d8cdc6f73faef5f6, type: 2}
-  - {fileID: 11400000, guid: 48c8ac04c30ebf644a7eb23d61e1e27a, type: 2}
-  - {fileID: 11400000, guid: a638b4022de83ab459f5c39cdfbc3af6, type: 2}
-  - {fileID: 11400000, guid: 0e859b28601437e4e956af7b17e0cff3, type: 2}
+  - {fileID: 11400000, guid: 7ab17677a5f45e3448cb99e0d7ff9877, type: 2}
+  - {fileID: 11400000, guid: 70fb19bf556096248a99807a4dbdfb8e, type: 2}
+  - {fileID: 11400000, guid: 2da19bf2310db2e478bac6742118fdfc, type: 2}
+  - {fileID: 11400000, guid: 0e65018ea98256c40bfcf58199ab5a84, type: 2}
+  - {fileID: 11400000, guid: 698b181ebb94d254e92be8b94bd5c8b9, type: 2}
+  - {fileID: 11400000, guid: c948ddc542d955341acab678c94b600c, type: 2}
+  - {fileID: 11400000, guid: 4303fbfbaab3dd84a90a7d00c101f2a8, type: 2}
+  - {fileID: 11400000, guid: 89c019ab0f8110e44aa359614b04b70e, type: 2}
+  - {fileID: 11400000, guid: 60c7f90178bb5cf44a80471c4ad4c4ba, type: 2}
+  - {fileID: 11400000, guid: 3610d4b771326274c8a20e7d0afaadae, type: 2}

@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28803eb44530496479bfe8dfaa6f52f1, type: 3}
-  m_Name: ship_1_1
-  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript1
-  name: Rum Barrel
-  unlockLevel: 1
-  gradeLevel: 1
-  icon: {fileID: 21300000, guid: 15fc3d0fbe7c9bd4bb57e94e57dd9ae7, type: 3}
+  m_Name: ship_3_2
+  m_EditorClassIdentifier: 
+  name: Lil Miracle
+  unlockLevel: 3
+  gradeLevel: 2
+  icon: {fileID: 21300000, guid: 0cce8830ff5003f4a8852cce56b80318, type: 3}
   price:
-    mantissa: 2.5
-    exponent: 1
-  priceModifier: 1.15
-  raidTime: 3
+    mantissa: 7.75
+    exponent: 2
+  priceModifier: 1.175
+  raidTime: 5
   reward:
-    mantissa: 1
+    mantissa: 2.2
     exponent: 1
   speed: 175
   goToRaidSpeed: 550
   backFromRaidSpeed: 350
   distance: 400
   sizeModifier: 1
-  pointerColor: {r: 0, g: 1, b: 0, a: 1}
+  pointerColor: {r: 0.7706003, g: 1, b: 0, a: 1}

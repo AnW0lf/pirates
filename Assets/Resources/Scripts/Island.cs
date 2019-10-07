@@ -22,13 +22,13 @@ public class Island : MonoBehaviour
  new BigDigit(1f, 2), // 0
         new BigDigit(1f, 2), // 1
         new BigDigit(1.5f, 2), // 2
-        new BigDigit(2.25f, 2), // 3
-        new BigDigit(3.38f, 2), // 4
-        new BigDigit(5.7f, 2), // 5
-        new BigDigit(7.61f, 2), // 6
-        new BigDigit(1.142f, 3), // 7
-        new BigDigit(1.713f, 3), // 8
-        new BigDigit(3.855f, 3), // 9
+        new BigDigit(5.5f, 2), // 3
+        new BigDigit(8f, 2), // 4
+        new BigDigit(1.3f, 3), // 5
+        new BigDigit(1.8f, 3), // 6
+        new BigDigit(2.4f, 3), // 7
+        new BigDigit(3.2f, 3), // 8
+        new BigDigit(4.4f, 3), // 9
         new BigDigit(5.783f, 3), // 10
         new BigDigit(3.168f, 4), // 11
         new BigDigit(3.744f, 4), // 12
