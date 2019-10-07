@@ -1778,14 +1778,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Polundra
+  m_Text: Money
 --- !u!222 &43243651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26780,7 +26780,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -29148,7 +29148,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -30125,7 +30125,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -34599,14 +34599,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Polundra
+  m_Text: Material
 --- !u!222 &1400157920
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34795,7 +34795,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -35040,14 +35040,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Polundra
+  m_Text: Speed
 --- !u!222 &1427926450
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42772,7 +42772,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -48476,7 +48476,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -48771,7 +48771,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1

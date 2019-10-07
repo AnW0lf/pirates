@@ -51,7 +51,7 @@ public class Sector : MonoBehaviour
                     }
                 case LuckyWheelRewardType.Bonus:
                     {
-                        txt.text = "X3";
+                        //txt.text = "X1";
                         break;
                     }
                 case LuckyWheelRewardType.Polundra:
@@ -107,7 +107,7 @@ public class Sector : MonoBehaviour
                 {
                     if (LuckyWheel.Instance && Island.Instance)
                     {
-                        LuckyWheel.Instance.bgs[Mathf.Clamp(Island.Instance.Level / 25, 0, LuckyWheel.Instance.bgs.Length - 1)].Bonus((int)startReward.exponent, 3);
+                        LuckyWheel.Instance.bgs[Mathf.Clamp(Island.Instance.Level / 25, 0, LuckyWheel.Instance.bgs.Length - 1)].Bonus((int)startReward.exponent, 1);
                     }
                     break;
                 }
