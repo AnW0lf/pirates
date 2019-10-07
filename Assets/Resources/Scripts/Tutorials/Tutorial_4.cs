@@ -3,38 +3,39 @@ using System.Collections;
 
 public class Tutorial_4 : Tutorial
 {
-    public GameObject title;
-    public float delay = 5f;
-    private float timer;
+    public GameObject handler, title;
+
+    private Panel panel;
+    private Inventory inventory;
 
     private void Awake()
     {
+        handler.SetActive(false);
         title.SetActive(false);
     }
 
     public override void Begin()
     {
         base.Begin();
-        timer = delay;
+        handler.SetActive(true);
         title.SetActive(true);
+        inventory = Inventory.Instance;
+        if (inventory.panels.Length > 0)
+            panel = inventory.panels[0];
+        else Next();
     }
 
     public override bool ConditionOut()
     {
         if (isBegin)
-            return timer <= 0f;
+            return inventory.GetShipAlltimeCount(panel.list.islandNumber, 0) >= 3;
         else
             return base.ConditionOut();
     }
 
     void Update()
     {
-        if (isBegin)
-        {
-            timer -= Time.deltaTime;
-            if (ConditionOut())
-                Next();
-        }
-
+        if (isBegin && ConditionOut())
+            Next();
     }
 }
