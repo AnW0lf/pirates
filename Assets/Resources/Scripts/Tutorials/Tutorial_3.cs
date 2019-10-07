@@ -20,7 +20,7 @@ public class Tutorial_3 : Tutorial
         handler.SetActive(true);
         title.SetActive(true);
         inventory = Inventory.Instance;
-        if (inventory.panels.Length > 0 && inventory.buyBtn)
+        if (inventory.panels.Count > 0 && inventory.buyBtn)
             panel = inventory.panels[0];
         else Next();
     }

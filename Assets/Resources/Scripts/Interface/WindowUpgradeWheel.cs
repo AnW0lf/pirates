@@ -17,7 +17,7 @@ public class WindowUpgradeWheel : WindowBase
 
     public override void Open(object[] args)
     {
-        if (LuckyWheel.Instance.levels.Contains(Island.Instance.Level))
+        if (Island.Instance.Level > LuckyWheel.Instance.unlockLevel && LuckyWheel.Instance.levels.Contains(Island.Instance.Level))
         {
             //float mod = (float)arg0[0];
             base.Open(args);

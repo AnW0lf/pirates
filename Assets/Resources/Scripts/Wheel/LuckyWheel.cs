@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class LuckyWheel : MonoBehaviour
 {
+    [Header("Уровень разблокировки")]
+    public int unlockLevel = 3;
+    public WindowUnlockWheel windowUnlock;
     [Header("Вращение")]
     public float time; // Минимальное время вращения
     public AnimationCurve animationCurve; // Кривая скорости вращения
@@ -15,7 +18,7 @@ public class LuckyWheel : MonoBehaviour
 
     [Header("Элементы интерфейса")]
     public Text txtCounter;
-    public Button btnSpin;
+    public Button btnSpin, btnOpen;
     public Image imgFill;
     //public Image imgArrow;
     public GameObject gobjFlag;
@@ -31,7 +34,7 @@ public class LuckyWheel : MonoBehaviour
 
     private Sector[] sectors;
     private int curSector, num;
-    private bool speedUp = false, opened = false;
+    private bool speedUp = false, opened = false, unlocked = false;
     private float anglePerItem;
     private Island island;
     private GameObject _flyingReward, _rewardEffect;
@@ -47,6 +50,8 @@ public class LuckyWheel : MonoBehaviour
         float b = ((float)Screen.width / (float)Screen.height) / (1125f / 2436f);
         startPos = new Vector2(window.anchoredPosition.x * b, window.anchoredPosition.y);
         window.anchoredPosition = startPos;
+
+        btnOpen.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -61,9 +66,13 @@ public class LuckyWheel : MonoBehaviour
             sectors[i] = wheelRect.GetChild(i).GetComponent<Sector>();
         }
 
+        unlocked = island.GetParameter("LuckyWheel_Unlocked", 0) != 0;
+        btnOpen.gameObject.SetActive(unlocked);
+
         EventManager.Subscribe("ChangeLifebuoy", UpdateSpinButton);
         EventManager.Subscribe("ChangeLifebuoyMax", UpdateSpinButton);
         EventManager.Subscribe("LevelUp", UpdateSpinButton);
+        EventManager.Subscribe("LevelUp", CheckWheelUnlock);
 
         UpdateSpinButton(new object[0]);
 
@@ -79,6 +88,17 @@ public class LuckyWheel : MonoBehaviour
         else if (!opened && window.anchoredPosition.x != startPos.x)
         {
             window.anchoredPosition = Vector2.MoveTowards(window.anchoredPosition, startPos, Time.deltaTime * 5000f);
+        }
+    }
+
+    private void CheckWheelUnlock(object[] args)
+    {
+        if(!unlocked && island.Level >= unlockLevel)
+        {
+            unlocked = true;
+            island.SetParameter("LuckyWheel_Unlocked", 1);
+            btnOpen.gameObject.SetActive(true);
+            if (windowUnlock) windowUnlock.Activate = true;
         }
     }
 

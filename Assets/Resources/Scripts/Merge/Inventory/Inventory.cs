@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
     public RectTransform gameFieldScrollRect, panelRect;
     public ShipInfoList[] lists;
-    public Panel[] panels;
+    public List<Panel> panels;
     public ShipsManager[] managers;
 
     [Header("Flags")]
@@ -31,8 +31,9 @@ public class Inventory : MonoBehaviour
     private bool switching = false;
     private Vector2 panelRectNewPos;
     private float switchSpeed = 3000f;
+    private List<int> currentShips = new List<int>();
 
-    private readonly string[] romans = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" , "X" };
+    private readonly string[] romans = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
 
     public static Inventory Instance;
 
@@ -40,9 +41,9 @@ public class Inventory : MonoBehaviour
     {
         if (!Instance) Instance = this;
 
-        for (int i = 0; i < panels.Length && i < lists.Length; i++)
+        for (int i = 0; i < panels.Count && i < lists.Length; i++)
             panels[i].list = lists[i];
-        if (panels.Length > 0)
+        if (panels.Count > 0)
             selectedPanel = panels[0];
         else Debug.LogWarning("The array of panels is empty, but this should not be");
     }
@@ -50,6 +51,11 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         island = Island.Instance;
+
+        for (int i = 0; i < panels.Count; i++)
+        {
+            currentShips.Add(island.GetParameter("CurrentShipNumber_" + panels[i].list.islandName, 0));
+        }
 
         CheckSelectedPanel();
         Load();
@@ -63,6 +69,7 @@ public class Inventory : MonoBehaviour
         EventManager.Subscribe("LevelUp", DisplayItems);
         EventManager.Subscribe("LevelUp", CheckNewSlot);
         EventManager.Subscribe("LevelUp", LevelUpChanges);
+        EventManager.Subscribe("LevelUp", UpdateBuyButtonInfoOnLevelUp);
     }
 
     private void Update()
@@ -79,7 +86,7 @@ public class Inventory : MonoBehaviour
         if (n != selectedGameFieldNumber)
         {
             selectedGameFieldNumber = n;
-            selectedPanel = panels[Mathf.Clamp(n, 0, panels.Length - 1)];
+            selectedPanel = panels[Mathf.Clamp(n, 0, panels.Count - 1)];
 
             BeginSwitchPanel(selectedGameFieldNumber);
             DisplayItems(new object[0]);
@@ -89,7 +96,7 @@ public class Inventory : MonoBehaviour
     private void BeginSwitchPanel(int number)
     {
         switching = true;
-        float newX = -(panelRect.sizeDelta.x / panels.Length * number);
+        float newX = -(panelRect.sizeDelta.x / panels.Count * number);
         panelRectNewPos = new Vector2(newX, panelRect.anchoredPosition.y);
     }
 
@@ -126,14 +133,15 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInteractable(object[] args)
     {
-        bool interactable = GetShipPrice(selectedPanel.list, 0) < island.Money && !selectedPanel.IsFull && selectedPanel.shipsCount < selectedPanel.unlockedSlotsCount;
+        bool interactable = GetShipPrice(selectedPanel.list, currentShips[panels.IndexOf(selectedPanel)]) < island.Money && !selectedPanel.IsFull
+            && selectedPanel.shipsCount < selectedPanel.unlockedSlotsCount;
         buyBtn.interactable = interactable;
         UpdateBuyButtonInfo();
     }
 
     private void CheckNewSlot(object[] args)
     {
-        for (int p = 0; p < panels.Length; p++)
+        for (int p = 0; p < panels.Count; p++)
         {
             for (int i = 0; i < panels[p].levels.Length; i++)
             {
@@ -258,21 +266,31 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInfo()
     {
-        int n = 0, islandNumber = selectedPanel.list.islandNumber;
-        BigDigit price = GetShipPrice(selectedPanel.list, n);
+        int n = currentShips[panels.IndexOf(selectedPanel)];
+        buyBtnTxt.text = GetShipPrice(selectedPanel.list, n).ToString();
+        buyBtnTitleTxt.text = "Buy Ship " + romans[n];
+    }
 
-        for (int i = 0; i < selectedPanel.list.ships.Count; i++)
+    private void UpdateBuyButtonInfoOnLevelUp(object[] args)
+    {
+        for (int i = 0; i < panels.Count; i++)
         {
-            BigDigit curPrice = GetShipPrice(selectedPanel.list, i);
-            if (CheckShipUnlocked(islandNumber, i) && curPrice < 1.5f * price)
+            int n = currentShips[i], next = Mathf.Clamp(n + 1, n, panels[i].list.ships.Count - 1), islandNumber = panels[i].list.islandNumber;
+
+            if (CheckShipUnlocked(islandNumber, next))
             {
-                price = curPrice;
-                n = i;
+                BigDigit price = GetShipPrice(panels[i].list, n)
+                    , nextPrice = GetShipPrice(panels[i].list, next);
+
+                if (price * 1.5f > nextPrice)
+                {
+                    currentShips[i] = n + 1;
+                    island.SetParameter("CurrentShipNumber_" + panels[i].list.islandName, currentShips[i]);
+                }
             }
         }
 
-        buyBtnTxt.text = price.ToString();
-        buyBtnTitleTxt.text = "Buy Ship " + romans[n];
+        UpdateBuyButtonInfo();
     }
 
     private void DisplayItems(object[] args)
@@ -285,7 +303,7 @@ public class Inventory : MonoBehaviour
 
     private void Load()
     {
-        for (int p = 0; p < panels.Length; p++)
+        for (int p = 0; p < panels.Count; p++)
         {
             for (int i = 0; i < panels[p].items.Length; i++)
             {
@@ -339,7 +357,12 @@ public class Inventory : MonoBehaviour
             AddShipAlltimeCount(selectedPanel.list.islandNumber, n);
             AddShipUnlocked(selectedPanel.list.islandNumber, n);
         }
-        if (n == 0) UpdateBuyButtonInfo();
+        if (n == currentShips[panels.IndexOf(selectedPanel)]) UpdateBuyButtonInfo();
+    }
+
+    public void BuyCurrentNumberShip()
+    {
+        BuyShip(currentShips[panels.IndexOf(selectedPanel)]);
     }
 
     public BigDigit GetShipPrice(ShipInfoList list, int id)

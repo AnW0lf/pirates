@@ -4936,6 +4936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9439401c1bea6e74cbd53cb0ce964929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockLevel: 4
+  btnOpen: {fileID: 1842017777}
   btnSpeed: {fileID: 909763513}
   txtSpeedBonus: {fileID: 165636022}
   txtSpeedPrice: {fileID: 2017105494}
@@ -8863,6 +8865,7 @@ MonoBehaviour:
   - {fileID: 241109346}
   - {fileID: 1935392924}
   - {fileID: 135271606}
+  - {fileID: 715657800}
   - {fileID: 1260730699}
 --- !u!114 &326544255
 MonoBehaviour:
@@ -13934,7 +13937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &542921810
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39936,31 +39939,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UnlockWheel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: WheelSwitch
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 715657799}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1789003981}
+        m_MethodName: Switch
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -45198,6 +45190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464d703e5dbf5fa41be3c062ac126c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockLevel: 3
+  windowUnlock: {fileID: 715657800}
   time: 1
   animationCurve:
     serializedVersion: 2
@@ -45233,6 +45227,7 @@ MonoBehaviour:
     type: 3}
   txtCounter: {fileID: 1566928271}
   btnSpin: {fileID: 375295906}
+  btnOpen: {fileID: 542921811}
   imgFill: {fileID: 67420608}
   gobjFlag: {fileID: 2136604703}
   wheelRect: {fileID: 1568428964}
@@ -46754,7 +46749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1842017776
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56919,8 +56914,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1820283619484159485}
-        m_MethodName: BuyShip
-        m_Mode: 3
+        m_MethodName: BuyCurrentNumberShip
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

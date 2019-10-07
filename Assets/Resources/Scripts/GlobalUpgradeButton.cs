@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GlobalUpgradeButton : MonoBehaviour
 {
+    [Header("Unlock Level")]
+    public int unlockLevel = 4;
+    public Button btnOpen;
     [Header("Speed")]
     public Button btnSpeed;
     public Text txtSpeedBonus, txtSpeedPrice;
@@ -29,6 +32,11 @@ public class GlobalUpgradeButton : MonoBehaviour
     private int lvlSpeed, lvlMoney, lvlSpin;
     private float symbolLength = 35f;
 
+    private void Awake()
+    {
+        btnOpen.gameObject.SetActive(false);
+    }
+
     private void Start()
     {
         lvlSpeed = Island.Instance.SpeedLevel;
@@ -36,6 +44,7 @@ public class GlobalUpgradeButton : MonoBehaviour
         lvlSpin = Island.Instance.SpinLevel;
 
         EventManager.Subscribe("ChangeMoney", CheckActives);
+        EventManager.Subscribe("LevelUp", CheckUpgradeUnlock);
 
         string str = Island.Instance.speedBonus.ToString();
         if (str.Length > 4) str = str.Substring(0, 4);
@@ -57,6 +66,8 @@ public class GlobalUpgradeButton : MonoBehaviour
         txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
         txtSpinPrice.rectTransform.sizeDelta = new Vector2(txtSpinPrice.text.Length * symbolLength, txtSpinPrice.rectTransform.sizeDelta.y);
         txtSpinBonus.text = str + "/10";
+
+        CheckUpgradeUnlock(new object[0]);
     }
 
     private BigDigit GetPrice(BigDigit startPrice, int level)
@@ -82,6 +93,14 @@ public class GlobalUpgradeButton : MonoBehaviour
             if (!flag.activeSelf) flag.SetActive(true);
         }
         else if (flag.activeSelf) flag.SetActive(false);
+    }
+
+    private void CheckUpgradeUnlock(object[] args)
+    {
+        if(Island.Instance.Level >= unlockLevel)
+        {
+            btnOpen.gameObject.SetActive(true);
+        }
     }
 
     public void Upgrade(int n)
