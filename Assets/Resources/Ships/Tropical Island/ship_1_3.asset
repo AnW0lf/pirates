@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28803eb44530496479bfe8dfaa6f52f1, type: 3}
   m_Name: ship_1_3
   m_EditorClassIdentifier: 
-  name: 3
+  name: Saber
   unlockLevel: 7
   gradeLevel: 3
   icon: {fileID: 21300000, guid: 51957dccc136474449984c3ecc1ecc1f, type: 3}
   price:
-    mantissa: 2.4
+    mantissa: 3.5
     exponent: 3
   priceModifier: 1.175
   raidTime: 7

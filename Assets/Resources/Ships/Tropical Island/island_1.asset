@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: island_1
   m_EditorClassIdentifier: 
   islandNumber: 1
-  islandName: Tropical Island
+  islandName: Tortuga
   ships:
   - {fileID: 11400000, guid: b224cb2bf21797844a859ee1fb3033a0, type: 2}
   - {fileID: 11400000, guid: 0d216a68bb89d7a48a295894d975c9fd, type: 2}
