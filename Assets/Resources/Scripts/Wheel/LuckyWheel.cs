@@ -83,11 +83,11 @@ public class LuckyWheel : MonoBehaviour
     {
         if(opened && window.anchoredPosition.x != 0)
         {
-            window.anchoredPosition = Vector2.MoveTowards(window.anchoredPosition, Vector2.zero, Time.deltaTime * 5000f);
+            window.anchoredPosition = Vector2.MoveTowards(window.anchoredPosition, Vector2.zero, Time.deltaTime * 15000f);
         }
         else if (!opened && window.anchoredPosition.x != startPos.x)
         {
-            window.anchoredPosition = Vector2.MoveTowards(window.anchoredPosition, startPos, Time.deltaTime * 5000f);
+            window.anchoredPosition = Vector2.MoveTowards(window.anchoredPosition, startPos, Time.deltaTime * 15000f);
         }
     }
 
