@@ -43,10 +43,14 @@ public class ShipController : MonoBehaviour
         shipClick.islandController = islandController;
         shipClick.color = item.pointerColor;
 
+        rewardModifier = 1f;
+        durationModifier = 0f;
+
         Motor.speed = item.speed;
         Motor.goToRaidSpeed = item.goToRaidSpeed;
         Motor.backFromRaidSpeed = item.backFromRaidSpeed;
         Motor.duration = item.raidTime;
+        Motor.durationModifier = durationModifier;
 
         Sprite sprite = item.icon;
         float ratio = ((float)sprite.texture.width / (float)sprite.texture.height);
@@ -57,11 +61,6 @@ public class ShipController : MonoBehaviour
         img.rectTransform.sizeDelta = new Vector2(width, height);
 
         GetComponent<CapsuleCollider2D>().size = new Vector2(width, height * 1.2f);
-
-        rewardModifier = 1f;
-        durationModifier = 0f;
-
-        Motor.duration = duration * durationModifier;
 
         island = Island.Instance;
         Motor.raidEndActions += new ShipMotor.EmptyAction(Reward);
@@ -103,9 +102,9 @@ public class ShipController : MonoBehaviour
         return duration / Mathf.Pow(2f, durationModifier);
     }
 
-    public void DurationBonus(int bonus)
+    public void DurationBonus()
     {
-        durationModifier += bonus;
+        durationModifier += 1f;
         Motor.durationModifier = durationModifier;
     }
 }

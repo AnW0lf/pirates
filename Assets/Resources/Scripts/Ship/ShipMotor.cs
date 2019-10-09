@@ -11,8 +11,9 @@ public class ShipMotor : MonoBehaviour
     public delegate void EmptyAction();
 
     public bool isRaid { get; private set; }
+    public bool isBack { get; private set; }
 
-    private bool isBack = false, direction = true, outOfVisible = false;
+    private bool direction = true, outOfVisible = false;
     private float distance, delay;
     public EmptyAction raidEndActions, raidMiddleActions, raidBeginActions;
 
@@ -23,6 +24,7 @@ public class ShipMotor : MonoBehaviour
     {
         island = Island.Instance;
         ship = GetComponent<ShipController>();
+        isBack = false;
     }
 
     private void Update()
@@ -35,12 +37,10 @@ public class ShipMotor : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        print("Trigger Exit");
         BorderController border;
-        if (other.CompareTag("Border") && (border = other.GetComponent<BorderController>()) && border.islandNumber == ship.islandNumber)
+        if (isRaid && other.CompareTag("Border") && (border = other.GetComponent<BorderController>()) && border.islandNumber == ship.islandNumber)
         {
             outOfVisible = true;
-            print("Out of visible");
         }
     }
 
@@ -59,7 +59,7 @@ public class ShipMotor : MonoBehaviour
             distance -= step;
             if (distance < 0f || outOfVisible)
             {
-                step += distance;
+                if (distance < 0f) step += distance;
                 isBack = true;
             }
             transform.localPosition += transform.up * (direction ? -1f : 1f) * step;
@@ -89,7 +89,6 @@ public class ShipMotor : MonoBehaviour
             if (!isRaid)
             {
                 raidEndActions?.Invoke();
-                outOfVisible = false;
             }
         }
     }
@@ -101,6 +100,7 @@ public class ShipMotor : MonoBehaviour
         else raidBeginActions?.Invoke();
         isRaid = true;
         isBack = false;
+        outOfVisible = false;
         distance += range;
         delay = duration / Mathf.Pow(2f, durationModifier);
     }

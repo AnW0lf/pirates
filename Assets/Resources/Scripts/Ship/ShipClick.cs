@@ -28,13 +28,13 @@ public class ShipClick : MonoBehaviour
         island = Island.Instance;
         cam = Camera.main;
         cldr = GetComponent<CapsuleCollider2D>();
-
     }
 
     // Собираем бонус
     public void OnTriggerEnter2D(Collider2D other)
     {
-        print("Trigger Enter");
+        BorderController border;
+
         if (other.gameObject.CompareTag("Bonus") && !isTimerActive)
         {
             other.gameObject.GetComponentInParent<BonusPoint>().active = false;
@@ -81,7 +81,7 @@ public class ShipClick : MonoBehaviour
             }
             if (bonus.bonusSpeed)
             {
-                ship.DurationBonus(other.gameObject.GetComponent<BonusBehavior>().modifier);
+                ship.DurationBonus();
                 ft.speed = true;
                 ft.speedText.text = "-" + (int)(ship.duration / Mathf.Pow(2f, ship.durationModifier)) + "s";
 
@@ -101,9 +101,9 @@ public class ShipClick : MonoBehaviour
 
             Destroy(other.gameObject);
         }
-        else if (other.CompareTag("Border") && isTimerActive)
+        else if (ship.Motor.isBack && isTimerActive && other.CompareTag("Border") && other.CompareTag("Border") && (border = other.GetComponent<BorderController>()) && border.islandNumber == ship.islandNumber)
         {
-            Invoke("SwitchEmitting", 0.4f);
+            Invoke("SwitchEmitting", 0.15f);
             isTimerActive = false;
             cldr.enabled = false;
         }
@@ -112,10 +112,10 @@ public class ShipClick : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         BorderController border;
-        if (other.CompareTag("Border") && (border = other.GetComponent<BorderController>()) && border.islandNumber == ship.islandNumber && !isTimerActive)
+        if (!ship.Motor.isBack && other.CompareTag("Border") && (border = other.GetComponent<BorderController>()) && border.islandNumber == ship.islandNumber && !isTimerActive)
         {
             Invoke("SwitchEmitting", 0.15f);
-            StartCoroutine(Timer(ship.GetRaidTime() + 0.5f));
+            StartCoroutine(Timer(ship.GetRaidTime()));
         }
     }
 
@@ -126,8 +126,8 @@ public class ShipClick : MonoBehaviour
         pointer.gameObject.SetActive(true);
 
         RectTransform rect = GetComponent<RectTransform>();
-        float k = 1f;
-        Vector3 pointerPos = rect.position - rect.forward * k;
+        float k = 0.5f;
+        Vector3 pointerPos = rect.position + rect.up * k * Mathf.Sign(ship.img.transform.localScale.y);
 
         pointer.position = pointerPos;
         pointer.eulerAngles = transform.eulerAngles;

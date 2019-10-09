@@ -25816,6 +25816,7 @@ GameObject:
   - component: {fileID: 1309275558}
   - component: {fileID: 1309275559}
   - component: {fileID: 1309275560}
+  - component: {fileID: 1309275561}
   m_Layer: 0
   m_Name: Borders
   m_TagString: Border
@@ -25881,6 +25882,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
+--- !u!50 &1309275561
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309275557}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1322663375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33368,6 +33390,7 @@ GameObject:
   - component: {fileID: 1690161917}
   - component: {fileID: 1690161918}
   - component: {fileID: 1690161919}
+  - component: {fileID: 1690161920}
   m_Layer: 0
   m_Name: Borders
   m_TagString: Border
@@ -33433,6 +33456,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 1
+--- !u!50 &1690161920
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690161916}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1694610714
 GameObject:
   m_ObjectHideFlags: 0
@@ -37745,6 +37789,7 @@ GameObject:
   - component: {fileID: 1859279963}
   - component: {fileID: 1859279964}
   - component: {fileID: 1859279965}
+  - component: {fileID: 1859279966}
   m_Layer: 0
   m_Name: Borders
   m_TagString: Border
@@ -37810,6 +37855,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
+--- !u!50 &1859279966
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859279962}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1862868822
 GameObject:
   m_ObjectHideFlags: 0

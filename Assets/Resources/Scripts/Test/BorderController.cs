@@ -18,7 +18,6 @@ public class BorderController : MonoBehaviour
 
     private void SetSize()
     {
-        //print(parent.name + " ( " + parent.sizeDelta.x + " : " + parent.sizeDelta.y + " )");
         collider.size = new Vector2(parent.sizeDelta.x, parent.sizeDelta.y);
     }
 }
