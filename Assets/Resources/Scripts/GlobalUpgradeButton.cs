@@ -28,6 +28,8 @@ public class GlobalUpgradeButton : MonoBehaviour
     public int spinMaxLevel = 10;
     [Header("Flag")]
     public GameObject flag;
+    [Header("Flag")]
+    public Text counter;
 
     private int lvlSpeed, lvlMoney, lvlSpin;
     private float symbolLength = 35f;
@@ -44,6 +46,7 @@ public class GlobalUpgradeButton : MonoBehaviour
         lvlSpin = Island.Instance.SpinLevel;
 
         EventManager.Subscribe("ChangeMoney", CheckActives);
+        EventManager.Subscribe("ChangePremium", UpdateCounter);
         EventManager.Subscribe("LevelUp", CheckUpgradeUnlock);
 
         string str = Island.Instance.speedBonus.ToString();
@@ -73,6 +76,14 @@ public class GlobalUpgradeButton : MonoBehaviour
     private BigDigit GetPrice(BigDigit startPrice, int level)
     {
         return startPrice * (level + 1);
+    }
+
+    private void UpdateCounter(object[] args)
+    {
+        counter.text = Island.Instance.Premium.ToString();
+        float width = counter.text.Length * 40f;
+        if (counter.text.Contains(".")) width -= 25f;
+        counter.rectTransform.sizeDelta = new Vector2(width, counter.rectTransform.sizeDelta.y);
     }
 
     private void CheckActives(object[] args)
