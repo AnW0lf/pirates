@@ -25,13 +25,13 @@ public class Inventory : MonoBehaviour
     public WindowNewSlot newSlotWindow;
 
     public Panel selectedPanel { get; private set; }
+    public List<int> currentShips { get; private set; }
 
     private Island island;
     private int selectedGameFieldNumber = -1;
     private bool switching = false;
     private Vector2 panelRectNewPos;
     private float switchSpeed = 3000f;
-    private List<int> currentShips = new List<int>();
 
     private readonly string[] romans = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
 
@@ -40,6 +40,8 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         if (!Instance) Instance = this;
+
+        currentShips = new List<int>();
 
         for (int i = 0; i < panels.Count && i < lists.Length; i++)
             panels[i].list = lists[i];

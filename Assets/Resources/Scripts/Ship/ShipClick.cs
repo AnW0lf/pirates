@@ -61,17 +61,7 @@ public class ShipClick : MonoBehaviour
                 {
                     ShipInfoList list = GetComponentInParent<ShipsManager>().list;
                     Inventory inventory = Inventory.Instance;
-                    BigDigit reward = inventory.GetShipPrice(list, 0);
-
-                    for (int i = 0; i < list.ships.Count; i++)
-                    {
-                        BigDigit digit = inventory.GetShipPrice(list, i);
-                        if (inventory.CheckShipUnlocked(list.islandNumber, i) && digit < reward)
-                            reward = digit;
-                        else if (!inventory.CheckShipUnlocked(list.islandNumber, i))
-                            break;
-
-                    }
+                    BigDigit reward = inventory.GetShipPrice(inventory.selectedPanel.list, inventory.currentShips[inventory.panels.IndexOf(inventory.selectedPanel)]);
 
                     ft.money = true;
                     ft.moneyText.text = "+" + reward.ToString();
