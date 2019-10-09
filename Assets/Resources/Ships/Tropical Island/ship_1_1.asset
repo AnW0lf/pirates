@@ -19,7 +19,7 @@ MonoBehaviour:
   price:
     mantissa: 2.5
     exponent: 1
-  priceModifier: 1.15
+  priceModifier: 1.1
   raidTime: 3
   reward:
     mantissa: 1

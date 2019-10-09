@@ -56,7 +56,7 @@ public class ShopItem : MonoBehaviour
             if (available)
             {
                 priceTxt.text = inventory.GetShipPrice(inventory.selectedPanel.list, id).ToString();
-                raidTimeTxt.text = item.raidTime.ToString() + "s";
+                raidTimeTxt.text = item.raidTime.ToString() + "<size=40>s</size>";
                 incomeTxt.text = item.reward.ToString();
                 icon.color = Color.white;
                 OnChangeBtnInteractable(new object[0]);
@@ -65,7 +65,7 @@ public class ShopItem : MonoBehaviour
             else
             {
                 priceTxt.text = "Build\n" + inventory.selectedPanel.list.ships[Mathf.Clamp(id + 2, 0, inventory.selectedPanel.list.ships.Count - 1)].name;
-                raidTimeTxt.text = item.raidTime.ToString() + "s";
+                raidTimeTxt.text = item.raidTime.ToString() + "<size=40>s</size>";
                 incomeTxt.text = item.reward.ToString();
                 icon.color = Color.white;
                 OnChangeBtnInteractable(new object[0]);
@@ -75,8 +75,8 @@ public class ShopItem : MonoBehaviour
         else
         {
             priceTxt.text = "LOCKED";
-            raidTimeTxt.text = "---s";
-            incomeTxt.text = "---";
+            raidTimeTxt.text = "?";
+            incomeTxt.text = "?";
             icon.color = Color.black;
             priceTxt.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
             btn.interactable = false;
