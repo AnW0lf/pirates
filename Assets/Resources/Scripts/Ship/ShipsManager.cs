@@ -16,7 +16,7 @@ public class ShipsManager : MonoBehaviour
         {
             ShipInfo item = list.ships[Mathf.Clamp(level, 0, list.ships.Count - 1)];
             ShipController ship = Instantiate(shipPrefab, transform).GetComponent<ShipController>();
-            ship.SetShip(item, islandController);
+            ship.SetShip(item, islandController, list.islandNumber);
             ship.Motor.target = transform;
             float dst = item.distance + UnityEngine.Random.Range(-80f, 80f);
             float angle = UnityEngine.Random.Range(0f, 360f);

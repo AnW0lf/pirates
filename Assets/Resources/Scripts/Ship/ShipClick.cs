@@ -19,7 +19,7 @@ public class ShipClick : MonoBehaviour
     private Camera cam;
     private Vector3 startPos;
     private bool isTimerActive;
-    private string borderName;
+    private int islandNumber;
 
     private CapsuleCollider2D cldr;
 
@@ -28,11 +28,13 @@ public class ShipClick : MonoBehaviour
         island = Island.Instance;
         cam = Camera.main;
         cldr = GetComponent<CapsuleCollider2D>();
+
     }
 
     // Собираем бонус
     public void OnTriggerEnter2D(Collider2D other)
     {
+        print("Trigger Enter");
         if (other.gameObject.CompareTag("Bonus") && !isTimerActive)
         {
             other.gameObject.GetComponentInParent<BonusPoint>().active = false;
@@ -99,34 +101,33 @@ public class ShipClick : MonoBehaviour
 
             Destroy(other.gameObject);
         }
-        else if (other.CompareTag("Border") && !isTimerActive)
+        else if (other.CompareTag("Border") && isTimerActive)
         {
-            borderName = other.gameObject.name;
-            Invoke("SwitchEmitting", 0.15f);
-            if (other.gameObject.name.Equals("RightBorder") || other.gameObject.name.Equals("LeftBorder"))
-                StartCoroutine(Timer(ship.GetRaidTime() + 1.5f, true));
-            else
-                StartCoroutine(Timer(ship.GetRaidTime(), false));
-        }
-        else if (other.CompareTag("Border") && isTimerActive && borderName == other.gameObject.name)
-        {
-            borderName = "";
             Invoke("SwitchEmitting", 0.4f);
             isTimerActive = false;
             cldr.enabled = false;
         }
     }
 
-    private IEnumerator Timer(float time, bool isSide)
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        BorderController border;
+        if (other.CompareTag("Border") && (border = other.GetComponent<BorderController>()) && border.islandNumber == ship.islandNumber && !isTimerActive)
+        {
+            Invoke("SwitchEmitting", 0.15f);
+            StartCoroutine(Timer(ship.GetRaidTime() + 0.5f));
+        }
+    }
+
+    private IEnumerator Timer(float time)
     {
         isTimerActive = true;
         arrow.GetComponent<Image>().color = color;
         pointer.gameObject.SetActive(true);
 
-        float height = 2f * cam.orthographicSize, width = height * cam.aspect, xPos = transform.position.x, yPos = transform.position.y;
-
-        Vector3 pointerPos = new Vector3(isSide ? (xPos > 0f ? width / 2f : -width / 2f) : xPos,
-            isSide ? yPos : (yPos > 0f ? height / 2f - 0.7f : -height / 2f + 2f), transform.position.z);
+        RectTransform rect = GetComponent<RectTransform>();
+        float k = 1f;
+        Vector3 pointerPos = rect.position - rect.forward * k;
 
         pointer.position = pointerPos;
         pointer.eulerAngles = transform.eulerAngles;
@@ -141,6 +142,7 @@ public class ShipClick : MonoBehaviour
         pointer.gameObject.SetActive(false);
         pointer.localScale = ship.img.transform.localScale;
         pointer.SetParent(transform);
+        pointer.localPosition = rect.localPosition;
     }
 
     public void CldrOn()

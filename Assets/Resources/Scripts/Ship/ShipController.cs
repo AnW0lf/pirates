@@ -28,9 +28,12 @@ public class ShipController : MonoBehaviour
     private float rotationDelay, delay, averageLength = 500f;
 
     public ShipMotor Motor { get; private set; }
+    public int islandNumber { get; private set; }
 
-    public void SetShip(ShipInfo item, IslandController islandController)
+    public void SetShip(ShipInfo item, IslandController islandController, int islandNumber)
     {
+        this.islandNumber = islandNumber;
+
         Motor = GetComponent<ShipMotor>();
         rewardController = GetComponent<ShipRewardController>();
         shipClick = GetComponent<ShipClick>();

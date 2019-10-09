@@ -12,15 +12,17 @@ public class ShipMotor : MonoBehaviour
 
     public bool isRaid { get; private set; }
 
-    private bool isBack = false, direction = true;
+    private bool isBack = false, direction = true, outOfVisible = false;
     private float distance, delay;
     public EmptyAction raidEndActions, raidMiddleActions, raidBeginActions;
 
     private Island island;
+    private ShipController ship;
 
     private void Start()
     {
         island = Island.Instance;
+        ship = GetComponent<ShipController>();
     }
 
     private void Update()
@@ -29,6 +31,17 @@ public class ShipMotor : MonoBehaviour
             Raid();
         else
             RotateAroundTarget();
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        print("Trigger Exit");
+        BorderController border;
+        if (other.CompareTag("Border") && (border = other.GetComponent<BorderController>()) && border.islandNumber == ship.islandNumber)
+        {
+            outOfVisible = true;
+            print("Out of visible");
+        }
     }
 
     private void RotateAroundTarget()
@@ -44,7 +57,7 @@ public class ShipMotor : MonoBehaviour
         {
             float step = Mathf.Abs(goToRaidSpeed * island.speedBonus * Time.deltaTime);
             distance -= step;
-            if (distance < 0f)
+            if (distance < 0f || outOfVisible)
             {
                 step += distance;
                 isBack = true;
@@ -54,7 +67,7 @@ public class ShipMotor : MonoBehaviour
             {
                 direction = !direction;
                 icon.localScale = new Vector3(icon.localScale.x, (direction ? 1f : -1f), icon.localScale.z);
-                distance = range;
+                distance = range - distance;
                 raidMiddleActions?.Invoke();
             }
         }
@@ -73,7 +86,11 @@ public class ShipMotor : MonoBehaviour
                 isRaid = false;
             }
             transform.localPosition += transform.up * (direction ? -1f : 1f) * step;
-            if (!isRaid) raidEndActions?.Invoke();
+            if (!isRaid)
+            {
+                raidEndActions?.Invoke();
+                outOfVisible = false;
+            }
         }
     }
 
