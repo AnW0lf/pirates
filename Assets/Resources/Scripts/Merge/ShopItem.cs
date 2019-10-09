@@ -7,7 +7,7 @@ public class ShopItem : MonoBehaviour
 {
     public int id = -1;
 
-    public Image icon;
+    public Image icon, iconCoin;
     public Text titleTxt, priceTxt, raidTimeTxt, incomeTxt;
     public Button btn;
 
@@ -16,15 +16,15 @@ public class ShopItem : MonoBehaviour
     private int islandNumber;
     private Island island;
     private bool unlocked, available;
-
-    private void Start()
-    {
-        if (id < 0) id = transform.GetSiblingIndex() + 1;
-        island = Island.Instance;
-    }
+    private float symWidth = 40f, maxWidth = 400f;
 
     public void Open(Inventory inv)
     {
+        if (id < 0) id = transform.GetSiblingIndex();
+        island = Island.Instance;
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(BuyShip);
+
         unlocked = false;
         available = false;
         if (!island) island = Island.Instance;
@@ -47,6 +47,7 @@ public class ShopItem : MonoBehaviour
     {
         btn.interactable = unlocked && available && !inventory.selectedPanel.IsFull
             && island.Money >= inventory.GetShipPrice(inventory.selectedPanel.list, id);
+        OnChangeInfo();
     }
 
     public void OnChangeInfo()
@@ -56,31 +57,40 @@ public class ShopItem : MonoBehaviour
             if (available)
             {
                 priceTxt.text = inventory.GetShipPrice(inventory.selectedPanel.list, id).ToString();
+                icon.color = Color.white;
+
+                iconCoin.gameObject.SetActive(true);
                 raidTimeTxt.text = item.raidTime.ToString() + "<size=40>s</size>";
                 incomeTxt.text = item.reward.ToString();
-                icon.color = Color.white;
-                OnChangeBtnInteractable(new object[0]);
                 priceTxt.color = btn.interactable ? Color.yellow : new Color(0.5f, 0.5f, 0.5f, 0.5f);
             }
             else
             {
                 priceTxt.text = "Build\n" + inventory.selectedPanel.list.ships[Mathf.Clamp(id + 2, 0, inventory.selectedPanel.list.ships.Count - 1)].name;
+                priceTxt.color = new Color(0.7f, 0.7f, 0.7f, 0.9f);
+
+                iconCoin.gameObject.SetActive(false);
                 raidTimeTxt.text = item.raidTime.ToString() + "<size=40>s</size>";
                 incomeTxt.text = item.reward.ToString();
                 icon.color = Color.white;
-                OnChangeBtnInteractable(new object[0]);
-                priceTxt.color = new Color(0.7f, 0.7f, 0.7f, 0.9f);
             }
         }
         else
         {
             priceTxt.text = "LOCKED";
+            priceTxt.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+
+            iconCoin.gameObject.SetActive(false);
             raidTimeTxt.text = "?";
             incomeTxt.text = "?";
             icon.color = Color.black;
-            priceTxt.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
             btn.interactable = false;
         }
+
+        float newWidth = Mathf.Clamp(priceTxt.text.Length * symWidth, 0f, maxWidth);
+        if (priceTxt.text.Contains(".")) newWidth -= symWidth / 2;
+        priceTxt.rectTransform.sizeDelta = new Vector2(newWidth, priceTxt.rectTransform.sizeDelta.y);
+
         titleTxt.text = item.name;
         icon.sprite = item.icon;
     }
