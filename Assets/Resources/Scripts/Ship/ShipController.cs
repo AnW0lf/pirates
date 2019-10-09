@@ -80,8 +80,9 @@ public class ShipController : MonoBehaviour
     private void Reward()
     {
         if (!island) island = Island.Instance;
-        rewardController.DisableIcon();
-        island.ExpUp(item.reward * rewardModifier);
+        BigDigit reward = item.reward * rewardModifier;
+        rewardController.DisableIcon(reward);
+        island.ExpUp(reward);
         rewardModifier = 1f;
         durationModifier = 0f;
         Motor.durationModifier = durationModifier;

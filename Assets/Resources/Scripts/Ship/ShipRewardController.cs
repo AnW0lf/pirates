@@ -14,12 +14,15 @@ public class ShipRewardController : MonoBehaviour
     private Transform icon_transform;
     private GameObject icon_object;
     private Island island;
+    private ShipRewardManager manager;
 
     private void Awake()
     {
         island = Island.Instance;
         icon_transform = icon.transform;
         icon_object = icon.gameObject;
+        manager = transform.GetComponentInParent<ShipRewardManager>();
+        if (!manager) Debug.LogWarning("ShipRewardManager is not found!..");
     }
 
     public void EnableIcon()
@@ -42,9 +45,10 @@ public class ShipRewardController : MonoBehaviour
         }
     }
 
-    public void DisableIcon()
+    public void DisableIcon(BigDigit reward)
     {
         island.SetParameter("QuitTime", DateTime.Now.ToString());
         if (icon_object.activeInHierarchy) icon_object.SetActive(false);
+        if (manager) manager.AddExp(reward);
     }
 }
