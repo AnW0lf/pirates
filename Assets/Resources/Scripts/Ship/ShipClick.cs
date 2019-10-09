@@ -152,4 +152,9 @@ public class ShipClick : MonoBehaviour
     {
         if (trail) trail.emitting = !trail.emitting;
     }
+
+    private void OnDestroy()
+    {
+        Destroy(pointer.gameObject);
+    }
 }
