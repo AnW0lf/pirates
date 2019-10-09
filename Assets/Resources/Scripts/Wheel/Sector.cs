@@ -113,9 +113,9 @@ public class Sector : MonoBehaviour
                 }
             case LuckyWheelRewardType.Polundra:
                 {
-                    if (PolundraTimer.Instance)
+                    if (Polundra.Instance)
                     {
-                        PolundraTimer.Instance.BeginPolundra();
+                        Polundra.Instance.BeginPolundra();
                     }
                     break;
                 }
