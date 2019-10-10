@@ -15,7 +15,7 @@ public class OfflineReward : MonoBehaviour
 
     public static TimeSpan ts;
 
-    private int timeModifier;
+    private int timeModifier, freeShipCount;
     private Island island;
     private Text text;
     private bool rewardGained;
@@ -42,7 +42,7 @@ public class OfflineReward : MonoBehaviour
         island.InitParameter("QuitTime", (DateTime.Now).ToString());
         ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
 
-        if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 0f)//15f)
+        if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 15f)
         {
             rewardGained = true;
             window.SetActive(false);
@@ -78,14 +78,7 @@ public class OfflineReward : MonoBehaviour
 
         exp /= expDivisor;
 
-        island.ChangeMoney(reward);
-        island.ExpUp(exp);
-
-        int count = Mathf.Clamp((int)(timeModifier / fsController.delay / freeShipDivisor), 0, 10);
-        for (int i = 0; i < count; i++)
-        {
-            fsController.AddShip();
-        }
+        freeShipCount = Mathf.Clamp((int)(timeModifier / fsController.delay / freeShipDivisor), 0, 10);
 
         text.text = reward.ToString();
 
@@ -126,5 +119,10 @@ public class OfflineReward : MonoBehaviour
     public void AddOfflineReward(float modifier)
     {
         island.ChangeMoney(reward * Mathf.Abs(modifier));
+        island.ExpUp(exp * Mathf.Abs(modifier));
+        for (int i = 0; i < freeShipCount; i++)
+        {
+            fsController.AddShip();
+        }
     }
 }
