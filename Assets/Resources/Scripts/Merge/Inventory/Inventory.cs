@@ -229,6 +229,7 @@ public class Inventory : MonoBehaviour
                 if (panels[panelNumber].items[i] == null)
                 {
                     panels[panelNumber].items[i] = item;
+                    panels[panelNumber].addedSlotIndex = i;
                     int islandNum = panels[panelNumber].list.islandNumber, shipNum = panels[panelNumber].list.ships.IndexOf(item);
                     panels[panelNumber].shipsCount++;
                     managers[panelNumber].GenerateShips(panels[panelNumber].list.ships.IndexOf(item), 1);

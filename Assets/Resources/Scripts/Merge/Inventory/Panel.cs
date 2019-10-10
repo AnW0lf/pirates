@@ -17,11 +17,14 @@ public class Panel : MonoBehaviour
 
     public int shipsCount { get; set; }
     public ShipInfo[] items { get; private set; }
+    public int addedSlotIndex { get; set; }
     private Inventory inventory;
     private Island island;
 
     private void Awake()
     {
+        addedSlotIndex = -1;
+
         items = new ShipInfo[transform.childCount];
         for(int i = 0; i < items.Length; i++)
         {
@@ -76,6 +79,11 @@ public class Panel : MonoBehaviour
             {
                 if (items[i] != null)
                 {
+                    if (i == addedSlotIndex)
+                    {
+                        addedSlotIndex = -1;
+                        cell.GetComponent<Animator>().SetTrigger("Instantiate");
+                    }
                     icon.enabled = true;
                     icon.sprite = items[i].icon;
                     starImg.sprite = sprtStar;
