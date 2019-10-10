@@ -5693,6 +5693,159 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71567ee3c73c5ab428e77aee42ca3361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxExps:
+  - mantissa: 1
+    exponent: 10
+  - mantissa: 1
+    exponent: 10
+  - mantissa: 1.5
+    exponent: 2
+  - mantissa: 5.5
+    exponent: 2
+  - mantissa: 8
+    exponent: 2
+  - mantissa: 1.2999999523162842
+    exponent: 3
+  - mantissa: 1.7999999523162842
+    exponent: 3
+  - mantissa: 2.4000000953674316
+    exponent: 3
+  - mantissa: 3.200000047683716
+    exponent: 3
+  - mantissa: 4.400000095367432
+    exponent: 3
+  - mantissa: 5.7829999923706055
+    exponent: 3
+  - mantissa: 3.1679999828338623
+    exponent: 4
+  - mantissa: 3.74399995803833
+    exponent: 4
+  - mantissa: 4.320000171661377
+    exponent: 4
+  - mantissa: 5.760000228881836
+    exponent: 4
+  - mantissa: 7.199999809265137
+    exponent: 4
+  - mantissa: 8.640000343322754
+    exponent: 4
+  - mantissa: 1.2960000038146973
+    exponent: 5
+  - mantissa: 1.3680000305175781
+    exponent: 5
+  - mantissa: 1.440000057220459
+    exponent: 5
+  - mantissa: 1.5119999647140503
+    exponent: 5
+  - mantissa: 1.5839999914169312
+    exponent: 5
+  - mantissa: 1.656000018119812
+    exponent: 5
+  - mantissa: 1.7280000448226929
+    exponent: 5
+  - mantissa: 2
+    exponent: 5
+  - mantissa: 2
+    exponent: 5
+  - mantissa: 5
+    exponent: 5
+  - mantissa: 6.5
+    exponent: 5
+  - mantissa: 2.9000000953674316
+    exponent: 6
+  - mantissa: 4.5
+    exponent: 6
+  - mantissa: 6.900000095367432
+    exponent: 6
+  - mantissa: 9.199999809265137
+    exponent: 6
+  - mantissa: 1.7999999523162842
+    exponent: 7
+  - mantissa: 2.299999952316284
+    exponent: 7
+  - mantissa: 2.700000047683716
+    exponent: 7
+  - mantissa: 4.25
+    exponent: 7
+  - mantissa: 5.099999904632568
+    exponent: 7
+  - mantissa: 5.900000095367432
+    exponent: 7
+  - mantissa: 7.699999809265137
+    exponent: 7
+  - mantissa: 9.800000190734863
+    exponent: 7
+  - mantissa: 1.1699999570846558
+    exponent: 8
+  - mantissa: 1.2999999523162842
+    exponent: 8
+  - mantissa: 1.5
+    exponent: 8
+  - mantissa: 1.7000000476837158
+    exponent: 8
+  - mantissa: 1.9500000476837158
+    exponent: 8
+  - mantissa: 2.0999999046325684
+    exponent: 8
+  - mantissa: 2.25
+    exponent: 8
+  - mantissa: 2.3499999046325684
+    exponent: 8
+  - mantissa: 2.700000047683716
+    exponent: 8
+  - mantissa: 2.9000000953674316
+    exponent: 8
+  - mantissa: 3.0999999046325684
+    exponent: 8
+  - mantissa: 9
+    exponent: 8
+  - mantissa: 1.5
+    exponent: 9
+  - mantissa: 6.300000190734863
+    exponent: 9
+  - mantissa: 9.899999618530273
+    exponent: 9
+  - mantissa: 1.5
+    exponent: 10
+  - mantissa: 2
+    exponent: 10
+  - mantissa: 4.5
+    exponent: 10
+  - mantissa: 4.699999809265137
+    exponent: 10
+  - mantissa: 5.300000190734863
+    exponent: 10
+  - mantissa: 9.399999618530273
+    exponent: 10
+  - mantissa: 1.1100000143051147
+    exponent: 11
+  - mantissa: 1.2899999618530273
+    exponent: 11
+  - mantissa: 1.7000000476837158
+    exponent: 11
+  - mantissa: 2.0999999046325684
+    exponent: 11
+  - mantissa: 2.5999999046325684
+    exponent: 11
+  - mantissa: 3
+    exponent: 11
+  - mantissa: 3.299999952316284
+    exponent: 11
+  - mantissa: 4
+    exponent: 11
+  - mantissa: 4.5
+    exponent: 11
+  - mantissa: 4.699999809265137
+    exponent: 11
+  - mantissa: 4.900000095367432
+    exponent: 11
+  - mantissa: 5.150000095367432
+    exponent: 11
+  - mantissa: 5.300000190734863
+    exponent: 11
+  - mantissa: 5.5
+    exponent: 11
+  - mantissa: 7
+    exponent: 11
 --- !u!4 &257793744
 Transform:
   m_ObjectHideFlags: 0
@@ -30714,7 +30867,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e4849b9d859f853489402a1f59502820, type: 3}
-    m_FontSize: 120
+    m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -30725,7 +30878,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Buy the first ship!
+  m_Text: Buy the first ships!
 --- !u!222 &1508791774
 CanvasRenderer:
   m_ObjectHideFlags: 0
