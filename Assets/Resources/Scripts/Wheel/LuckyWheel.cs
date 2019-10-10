@@ -39,6 +39,7 @@ public class LuckyWheel : MonoBehaviour
     private Island island;
     private GameObject _flyingReward, _rewardEffect;
     private Vector2 startPos;
+    private Animator animBtnOpen;
 
     public static LuckyWheel Instance;
 
@@ -46,6 +47,8 @@ public class LuckyWheel : MonoBehaviour
     {
         if (!Instance) Instance = this;
         IsRolling = false;
+
+        animBtnOpen = btnOpen.GetComponent<Animator>();
 
         float b = ((float)Screen.width / (float)Screen.height) / (1125f / 2436f);
         startPos = new Vector2(window.anchoredPosition.x * b, window.anchoredPosition.y);
@@ -61,7 +64,7 @@ public class LuckyWheel : MonoBehaviour
         num = island.GetParameter("LuckyWheelNum", 0);
 
         sectors = new Sector[wheelRect.childCount];
-        for(int i = 0; i < wheelRect.childCount; i++)
+        for (int i = 0; i < wheelRect.childCount; i++)
         {
             sectors[i] = wheelRect.GetChild(i).GetComponent<Sector>();
         }
@@ -81,7 +84,7 @@ public class LuckyWheel : MonoBehaviour
 
     private void Update()
     {
-        if(opened && window.anchoredPosition.x != 0)
+        if (opened && window.anchoredPosition.x != 0)
         {
             window.anchoredPosition = Vector2.MoveTowards(window.anchoredPosition, Vector2.zero, Time.deltaTime * 15000f);
         }
@@ -93,7 +96,7 @@ public class LuckyWheel : MonoBehaviour
 
     private void CheckWheelUnlock(object[] args)
     {
-        if(!unlocked && island.Level >= unlockLevel)
+        if (!unlocked && island.Level >= unlockLevel)
         {
             unlocked = true;
             island.SetParameter("LuckyWheel_Unlocked", 1);
@@ -104,8 +107,16 @@ public class LuckyWheel : MonoBehaviour
 
     private void UpdateSpinButton(object[] args)
     {
-        if (island.Lifebuoy > 0 && !gobjFlag.activeSelf) gobjFlag.SetActive(true);
-        else if (island.Lifebuoy <= 0 && gobjFlag.activeSelf) gobjFlag.SetActive(false);
+        if (island.Lifebuoy > 0)
+        {
+            if (!gobjFlag.activeSelf) gobjFlag.SetActive(true);
+            if (!animBtnOpen.GetBool("Pulse")) animBtnOpen.SetBool("Pulse", true);
+        }
+        else
+        {
+            if (gobjFlag.activeSelf) gobjFlag.SetActive(false);
+            if (animBtnOpen.GetBool("Pulse")) animBtnOpen.SetBool("Pulse", false);
+        }
         btnSpin.interactable = island.Lifebuoy > 0 && (!IsRolling || !speedUp);
         txtCounter.text = island.Lifebuoy + "/" + island.LifebuoyMax;
         imgFill.fillAmount = ((float)island.Lifebuoy / (float)island.LifebuoyMax) * 0.62f + 0.19f;

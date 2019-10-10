@@ -33,10 +33,12 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private int lvlSpeed, lvlMoney, lvlSpin;
     private float symbolLength = 35f;
+    private Animator animBtnOpen;
 
     private void Awake()
     {
         btnOpen.gameObject.SetActive(false);
+        animBtnOpen = btnOpen.GetComponent<Animator>();
     }
 
     private void Start()
@@ -102,8 +104,13 @@ public class GlobalUpgradeButton : MonoBehaviour
             || money >= prSpin && spinMaxLevel > lvlSpin)
         {
             if (!flag.activeSelf) flag.SetActive(true);
+            if (!animBtnOpen.GetBool("Pulse")) animBtnOpen.SetBool("Pulse", true);
         }
-        else if (flag.activeSelf) flag.SetActive(false);
+        else
+        {
+            if (flag.activeSelf) flag.SetActive(false);
+            if (animBtnOpen.GetBool("Pulse")) animBtnOpen.SetBool("Pulse", false);
+        }
     }
 
     private void CheckUpgradeUnlock(object[] args)
