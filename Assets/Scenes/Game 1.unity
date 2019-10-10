@@ -5694,28 +5694,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxExps:
-  - mantissa: 1
-    exponent: 10
-  - mantissa: 1
-    exponent: 10
-  - mantissa: 1.5
+  - mantissa: 0
+    exponent: 0
+  - mantissa: 2
     exponent: 2
-  - mantissa: 5.5
+  - mantissa: 5
     exponent: 2
-  - mantissa: 8
-    exponent: 2
-  - mantissa: 1.2999999523162842
+  - mantissa: 1.1
     exponent: 3
-  - mantissa: 1.7999999523162842
+  - mantissa: 1.6
     exponent: 3
-  - mantissa: 2.4000000953674316
+  - mantissa: 2.6
     exponent: 3
-  - mantissa: 3.200000047683716
+  - mantissa: 3.6
     exponent: 3
-  - mantissa: 4.400000095367432
+  - mantissa: 4.8
     exponent: 3
-  - mantissa: 5.7829999923706055
+  - mantissa: 6.4
     exponent: 3
+  - mantissa: 8.8
+    exponent: 3
+  - mantissa: 1.15
+    exponent: 4
   - mantissa: 3.1679999828338623
     exponent: 4
   - mantissa: 3.74399995803833
