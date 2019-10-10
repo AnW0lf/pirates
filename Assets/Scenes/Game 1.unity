@@ -5698,53 +5698,53 @@ MonoBehaviour:
     exponent: 0
   - mantissa: 2
     exponent: 2
-  - mantissa: 5
+  - mantissa: 4.5
     exponent: 2
-  - mantissa: 1.1
+  - mantissa: 8.5
+    exponent: 2
+  - mantissa: 1.4
     exponent: 3
-  - mantissa: 1.6
-    exponent: 3
-  - mantissa: 2.6
-    exponent: 3
-  - mantissa: 3.6
-    exponent: 3
-  - mantissa: 4.8
-    exponent: 3
-  - mantissa: 6.4
-    exponent: 3
-  - mantissa: 8.8
-    exponent: 3
-  - mantissa: 1.15
-    exponent: 4
-  - mantissa: 3.1679999828338623
-    exponent: 4
-  - mantissa: 3.74399995803833
-    exponent: 4
-  - mantissa: 4.320000171661377
-    exponent: 4
-  - mantissa: 5.760000228881836
-    exponent: 4
-  - mantissa: 7.199999809265137
-    exponent: 4
-  - mantissa: 8.640000343322754
-    exponent: 4
-  - mantissa: 1.2960000038146973
-    exponent: 5
-  - mantissa: 1.3680000305175781
-    exponent: 5
-  - mantissa: 1.440000057220459
-    exponent: 5
-  - mantissa: 1.5119999647140503
-    exponent: 5
-  - mantissa: 1.5839999914169312
-    exponent: 5
-  - mantissa: 1.656000018119812
-    exponent: 5
-  - mantissa: 1.7280000448226929
-    exponent: 5
   - mantissa: 2
+    exponent: 3
+  - mantissa: 3
+    exponent: 3
+  - mantissa: 4.1
+    exponent: 3
+  - mantissa: 5.7
+    exponent: 3
+  - mantissa: 7.7
+    exponent: 3
+  - mantissa: 1
+    exponent: 4
+  - mantissa: 1.4
+    exponent: 4
+  - mantissa: 1.85
+    exponent: 4
+  - mantissa: 2.4
+    exponent: 4
+  - mantissa: 3.2
+    exponent: 4
+  - mantissa: 4.25
+    exponent: 4
+  - mantissa: 5.6
+    exponent: 4
+  - mantissa: 7.3
+    exponent: 4
+  - mantissa: 9.6
+    exponent: 4
+  - mantissa: 1.26
     exponent: 5
-  - mantissa: 2
+  - mantissa: 1.66
+    exponent: 5
+  - mantissa: 2.18
+    exponent: 5
+  - mantissa: 2.86
+    exponent: 5
+  - mantissa: 3.74
+    exponent: 5
+  - mantissa: 4.91
+    exponent: 5
+  - mantissa: 6.43
     exponent: 5
   - mantissa: 5
     exponent: 5
