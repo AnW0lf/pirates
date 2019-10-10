@@ -19727,23 +19727,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f289dd0129b89b43b8c16d238f6bc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTime: 100000
+  rewardDivisor:
+    mantissa: 6
+    exponent: 1
+  expDivisor:
+    mantissa: 6
+    exponent: 1
+  freeShipDivisor: 0
   window: {fileID: 1393646227}
-  shipsList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  fsController: {fileID: 0}
   islands:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  modifier: 12
-  expModifier: 12
-  maxTime: 10800
-  bonusModifier: 480
-  bgs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 188406606}
+  - {fileID: 1534946822}
+  - {fileID: 1065448131}
 --- !u!114 &990252556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19777,7 +19774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 99.99K
 --- !u!222 &990252557
 CanvasRenderer:
   m_ObjectHideFlags: 0

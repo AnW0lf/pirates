@@ -65,7 +65,7 @@ public class FreeShipController : MonoBehaviour
         }
     }
 
-    private void AddShip()
+    public void AddShip()
     {
         int panelNumber = Mathf.Clamp(island.Level / 25, 0, inventory.panels.Count - 1);
         int r = UnityEngine.Random.Range(0, 5);
