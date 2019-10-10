@@ -1585,7 +1585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X3
+  m_Text: X1
 --- !u!222 &43243651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28464,7 +28464,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X3
+  m_Text: X1
 --- !u!222 &1400157920
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28905,7 +28905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X3
+  m_Text: X1
 --- !u!222 &1427926450
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36916,7 +36916,7 @@ MonoBehaviour:
   - 30
   - 30
   - 30
-  nums: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+  nums: 02000000000000000400000007000000020000000100000006000000030000000400000009000000
 --- !u!224 &1798161169 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7027973378001166641, guid: fdd19f24a16a2d34eb1dda4beead6dc8,
