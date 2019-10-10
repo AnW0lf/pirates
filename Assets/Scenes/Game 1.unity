@@ -1497,8 +1497,8 @@ MonoBehaviour:
   index: -1
   type: 0
   startReward:
-    mantissa: 6
-    exponent: 1
+    mantissa: 1.5
+    exponent: 3
 --- !u!1 &43243647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,7 +1585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Money
+  m_Text: X3
 --- !u!222 &43243651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9873,7 +9873,7 @@ MonoBehaviour:
   index: -1
   type: 2
   startReward:
-    mantissa: 9
+    mantissa: 6
     exponent: 1
 --- !u!1 &485928866
 GameObject:
@@ -9984,8 +9984,8 @@ MonoBehaviour:
   index: -1
   type: 0
   startReward:
-    mantissa: 8
-    exponent: 1
+    mantissa: 6
+    exponent: 2
 --- !u!1 &489477698
 GameObject:
   m_ObjectHideFlags: 0
@@ -13811,8 +13811,8 @@ MonoBehaviour:
   index: -1
   type: 2
   startReward:
-    mantissa: 5
-    exponent: 1
+    mantissa: 1.5
+    exponent: 2
 --- !u!1 &699745405
 GameObject:
   m_ObjectHideFlags: 0
@@ -15596,7 +15596,7 @@ MonoBehaviour:
   index: -1
   type: 2
   startReward:
-    mantissa: 1
+    mantissa: 3
     exponent: 1
 --- !u!1 &792729097
 GameObject:
@@ -24325,7 +24325,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Polundra
+  m_Text: Bonus Rain
 --- !u!222 &1170684490
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28311,7 +28311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Material
+  m_Text: X3
 --- !u!222 &1400157920
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28752,7 +28752,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Speed
+  m_Text: X3
 --- !u!222 &1427926450
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32711,8 +32711,8 @@ MonoBehaviour:
   index: -1
   type: 0
   startReward:
-    mantissa: 2
-    exponent: 1
+    mantissa: 3
+    exponent: 2
 --- !u!1 &1624311769
 GameObject:
   m_ObjectHideFlags: 0
@@ -36745,7 +36745,7 @@ MonoBehaviour:
   gobjFlag: {fileID: 2136604703}
   wheelRect: {fileID: 1568428964}
   window: {fileID: 2042572860}
-  levels: 01000000050000000a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b000000
+  levels: 0100000005000000080000000c00000011000000170000001e00000021000000250000002a00000030000000370000003a0000003e0000004300000049000000
   modifiers:
   - 1
   - 2

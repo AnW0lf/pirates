@@ -56,7 +56,7 @@ public class Sector : MonoBehaviour
                     }
                 case LuckyWheelRewardType.Polundra:
                     {
-                        txt.text = "Polundra";
+                        txt.text = "Bonus Rain";
                         break;
                     }
                 case LuckyWheelRewardType.Premium:
