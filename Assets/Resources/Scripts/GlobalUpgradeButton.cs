@@ -78,7 +78,7 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private BigDigit GetPrice(BigDigit startPrice, int level)
     {
-        return startPrice * (level + 1);
+        return startPrice * Mathf.Pow(2, level);
     }
 
     private void UpdateCounter(object[] args)
