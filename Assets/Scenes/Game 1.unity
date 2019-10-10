@@ -7488,6 +7488,7 @@ MonoBehaviour:
   - {fileID: 1716091830}
   - {fileID: 1260730698}
   - {fileID: 811933506}
+  - {fileID: 1393646227}
 --- !u!114 &326544256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19734,9 +19735,9 @@ MonoBehaviour:
   expDivisor:
     mantissa: 6
     exponent: 1
-  freeShipDivisor: 0
+  freeShipDivisor: 1
   window: {fileID: 1393646227}
-  fsController: {fileID: 0}
+  fsController: {fileID: 1829101582}
   islands:
   - {fileID: 188406606}
   - {fileID: 1534946822}
