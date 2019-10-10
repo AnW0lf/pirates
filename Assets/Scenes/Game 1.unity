@@ -4026,21 +4026,21 @@ MonoBehaviour:
   priceSpeed:
     mantissa: 2.5
     exponent: 2
-  speedMaxLevel: 10
+  speedMaxLevel: 25
   btnMoney: {fileID: 1541660648}
   txtMoneyBonus: {fileID: 19577634}
   txtMoneyPrice: {fileID: 978575622}
   imgMoneyPriceIcon: {fileID: 1432111880}
   priceMoney:
-    mantissa: 2.5
+    mantissa: 1.2
     exponent: 2
-  moneyMaxLevel: 10
+  moneyMaxLevel: 15
   btnSpin: {fileID: 89762479}
   txtSpinBonus: {fileID: 322196728}
   txtSpinPrice: {fileID: 377280147}
   imgSpinPriceIcon: {fileID: 1264712570}
   priceSpin:
-    mantissa: 2.5
+    mantissa: 3.5
     exponent: 2
   spinMaxLevel: 10
   flag: {fileID: 1344154015}
