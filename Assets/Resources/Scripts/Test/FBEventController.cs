@@ -10,8 +10,6 @@ public class FBEventController : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance;
-
         // FACEBOOK SDK
         FB.Init();
         if (FB.IsInitialized)
@@ -26,6 +24,8 @@ public class FBEventController : MonoBehaviour
 
     void Start()
     {
+        island = Island.Instance;
+
         EventManager.Subscribe("ShipBought", ShipBought);
 
         EventManager.Subscribe("ShipUpgraded", ShipUpgraded);
