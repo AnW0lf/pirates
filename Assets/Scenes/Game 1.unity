@@ -29450,6 +29450,8 @@ MonoBehaviour:
   list: {fileID: 11400000, guid: c7ffc6d11151b4c44921dcf11827c539, type: 2}
   shipPrefab: {fileID: 821593841800323343, guid: 1533ae0be229e04438fde5c7d2a3755f,
     type: 3}
+  flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
+    type: 3}
   islandController: {fileID: 1065448131}
 --- !u!114 &1457268110
 MonoBehaviour:
@@ -33045,6 +33047,8 @@ MonoBehaviour:
   list: {fileID: 11400000, guid: c7ffc6d11151b4c44921dcf11827c539, type: 2}
   shipPrefab: {fileID: 821593841800323343, guid: 1533ae0be229e04438fde5c7d2a3755f,
     type: 3}
+  flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
+    type: 3}
   islandController: {fileID: 1534946822}
 --- !u!114 &1640643455
 MonoBehaviour:
@@ -35614,6 +35618,8 @@ MonoBehaviour:
   islandNumber: 1
   list: {fileID: 11400000, guid: c7ffc6d11151b4c44921dcf11827c539, type: 2}
   shipPrefab: {fileID: 821593841800323343, guid: 1533ae0be229e04438fde5c7d2a3755f,
+    type: 3}
+  flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
     type: 3}
   islandController: {fileID: 188406606}
 --- !u!224 &1745392091

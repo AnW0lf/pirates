@@ -196,7 +196,7 @@ public class Inventory : MonoBehaviour
             Remove(b.id);
             selectedPanel.items[id] = selectedPanel.list.ships[newIndex];
             selectedPanel.shipsCount++;
-            managers[selectedGameFieldNumber].GenerateShips(newIndex, 1);
+            managers[selectedGameFieldNumber].GenerateShips(newIndex, 1, false);
 
             SetShipCount(selectedPanel.list.islandNumber, newIndex, GetShipCount(selectedPanel.list.islandNumber, newIndex) + 1);
             if (GetShipAlltimeCount(selectedPanel.list.islandNumber, newIndex) == 0) EventManager.SendEvent("NewShip", selectedPanel.list.ships[newIndex]);
@@ -220,7 +220,7 @@ public class Inventory : MonoBehaviour
         DisplayItems(new object[0]);
     }
 
-    public void Add(int panelNumber, ShipInfo item)
+    public void Add(int panelNumber, ShipInfo item, bool free)
     {
         if (panels[panelNumber].unlockedSlotsCount > panels[panelNumber].shipsCount)
         {
@@ -232,7 +232,16 @@ public class Inventory : MonoBehaviour
                     panels[panelNumber].addedSlotIndex = i;
                     int islandNum = panels[panelNumber].list.islandNumber, shipNum = panels[panelNumber].list.ships.IndexOf(item);
                     panels[panelNumber].shipsCount++;
-                    managers[panelNumber].GenerateShips(panels[panelNumber].list.ships.IndexOf(item), 1);
+                    managers[panelNumber].GenerateShips(panels[panelNumber].list.ships.IndexOf(item), 1, free);
+
+                    if (free)
+                    {
+                        SetShipCount(islandNum, shipNum, Mathf.Clamp(GetShipCount(islandNum, shipNum) + 1, 0, panels[panelNumber].transform.childCount));
+                        if (GetShipAlltimeCount(islandNum, shipNum) == 0) EventManager.SendEvent("NewShip", item);
+                        AddShipAlltimeCount(islandNum, shipNum);
+                        AddShipUnlocked(islandNum, shipNum);
+                    }
+
                     DisplayItems(new object[0]);
                     break;
                 }
@@ -312,7 +321,7 @@ public class Inventory : MonoBehaviour
             {
                 for (int j = 0; j < GetShipCount(panels[p].list.islandNumber, i); j++)
                 {
-                    Add(panels[p].list.islandNumber - 1, panels[p].list.ships[i]);
+                    Add(panels[p].list.islandNumber - 1, panels[p].list.ships[i], false);
                 }
             }
         }
@@ -364,7 +373,7 @@ public class Inventory : MonoBehaviour
         int shipCount = GetShipCount(selectedPanel.list.islandNumber, n);
         if (island.ChangeMoney(-GetShipPrice(selectedPanel.list, n))) //selectedPanel.list.ships[n].price * (shipCount + 1)))
         {
-            Add(selectedPanel.list.islandNumber - 1, selectedPanel.list.ships[n]);
+            Add(selectedPanel.list.islandNumber - 1, selectedPanel.list.ships[n], false);
             SetShipCount(selectedPanel.list.islandNumber, n, Mathf.Clamp(shipCount + 1, 0, selectedPanel.transform.childCount));
             if (GetShipAlltimeCount(selectedPanel.list.islandNumber, n) == 0) EventManager.SendEvent("NewShip", selectedPanel.list.ships[n]);
             AddShipAlltimeCount(selectedPanel.list.islandNumber, n);
