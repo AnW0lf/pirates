@@ -62,12 +62,12 @@ public class ShopItem : MonoBehaviour
                 iconCoin.gameObject.SetActive(true);
                 raidTimeTxt.text = item.raidTime.ToString() + "<size=40>s</size>";
                 incomeTxt.text = item.reward.ToString();
-                priceTxt.color = btn.interactable ? Color.yellow : new Color(0.5f, 0.5f, 0.5f, 0.5f);
+                priceTxt.color = btn.interactable ? Color.yellow : new Color(0.9f, 0.9f, 0.9f);
             }
             else
             {
                 priceTxt.text = "Build\n" + inventory.selectedPanel.list.ships[Mathf.Clamp(id + 2, 0, inventory.selectedPanel.list.ships.Count - 1)].name;
-                priceTxt.color = new Color(0.7f, 0.7f, 0.7f, 0.9f);
+                priceTxt.color = Color.white;
 
                 iconCoin.gameObject.SetActive(false);
                 raidTimeTxt.text = item.raidTime.ToString() + "<size=40>s</size>";
@@ -78,7 +78,7 @@ public class ShopItem : MonoBehaviour
         else
         {
             priceTxt.text = "LOCKED";
-            priceTxt.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            priceTxt.color = new Color(0.9f, 0.9f, 0.9f);
 
             iconCoin.gameObject.SetActive(false);
             raidTimeTxt.text = "?";
