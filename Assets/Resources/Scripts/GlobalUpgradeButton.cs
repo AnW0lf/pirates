@@ -73,6 +73,7 @@ public class GlobalUpgradeButton : MonoBehaviour
         txtSpinBonus.text = str + "/10";
 
         CheckUpgradeUnlock(new object[0]);
+        UpdateCounter(new object[0]);
     }
 
     private BigDigit GetPrice(BigDigit startPrice, int level)
