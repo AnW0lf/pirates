@@ -46622,7 +46622,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+    m_DisabledColor: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -48271,7 +48271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   list: {fileID: 0}
   lockSprite: {fileID: 21300000, guid: 24101349c4944794197876a3f6b9b851, type: 3}
-  levels: 0100000001000000020000000300000005000000080000000b0000000e0000001200000016000000
+  levels: 01000000010000000200000003000000040000000500000007000000090000000c0000000f000000
   sprtStar: {fileID: 21300000, guid: b9860d505f092d741b306852a9ad3b76, type: 3}
 --- !u!114 &5073836885363668896
 MonoBehaviour:
