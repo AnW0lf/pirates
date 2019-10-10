@@ -47344,6 +47344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cc41726e7426540a2231125355f819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 326544259}
 --- !u!1001 &3727656795312335276
 PrefabInstance:
   m_ObjectHideFlags: 0
