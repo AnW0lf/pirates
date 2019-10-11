@@ -196,7 +196,7 @@ public class Inventory : MonoBehaviour
             Remove(b.id);
             selectedPanel.items[id] = selectedPanel.list.ships[newIndex];
             selectedPanel.shipsCount++;
-            managers[selectedGameFieldNumber].GenerateShips(newIndex, 1, false);
+            managers[selectedGameFieldNumber].GenerateShips(newIndex, 1);
 
             SetShipCount(selectedPanel.list.islandNumber, newIndex, GetShipCount(selectedPanel.list.islandNumber, newIndex) + 1);
             if (GetShipAlltimeCount(selectedPanel.list.islandNumber, newIndex) == 0) EventManager.SendEvent("NewShip", selectedPanel.list.ships[newIndex]);
@@ -232,7 +232,7 @@ public class Inventory : MonoBehaviour
                     panels[panelNumber].addedSlotIndex = i;
                     int islandNum = panels[panelNumber].list.islandNumber, shipNum = panels[panelNumber].list.ships.IndexOf(item);
                     panels[panelNumber].shipsCount++;
-                    managers[panelNumber].GenerateShips(panels[panelNumber].list.ships.IndexOf(item), 1, free);
+                    managers[panelNumber].GenerateShips(panels[panelNumber].list.ships.IndexOf(item), 1);
 
                     if (free)
                     {
@@ -242,7 +242,7 @@ public class Inventory : MonoBehaviour
                         AddShipUnlocked(islandNum, shipNum);
                     }
 
-                    DisplayItems(new object[0]);
+                    panels[panelNumber].DisplayItems(free);
                     break;
                 }
             }
@@ -259,7 +259,7 @@ public class Inventory : MonoBehaviour
             SetShipCount(islandNum, shipNum, Mathf.Clamp(GetShipCount(islandNum, shipNum) - 1, 0, selectedPanel.transform.childCount));
             selectedPanel.shipsCount--;
             managers[selectedGameFieldNumber].DestroyShips(item.gradeLevel, 1);
-            DisplayItems(new object[0]);
+            selectedPanel.DisplayItems(false);
             UpdateBuyButtonInteractable(new object[0]);
         }
     }
@@ -309,7 +309,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (Panel p in panels)
         {
-            p.DisplayItems();
+            p.DisplayItems(false);
         }
     }
 

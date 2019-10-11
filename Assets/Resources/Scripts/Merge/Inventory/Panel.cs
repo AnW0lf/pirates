@@ -8,6 +8,8 @@ public class Panel : MonoBehaviour
     [HideInInspector]
     public ShipInfoList list;
 
+    public GameObject flyTxtFreePrefab;
+
     [Header("Sprites")]
     public Sprite lockSprite;
 
@@ -18,12 +20,14 @@ public class Panel : MonoBehaviour
     public int shipsCount { get; set; }
     public ShipInfo[] items { get; private set; }
     public int addedSlotIndex { get; set; }
+    public bool free { get; set; }
     private Inventory inventory;
     private Island island;
 
     private void Awake()
     {
         addedSlotIndex = -1;
+        free = false;
 
         items = new ShipInfo[transform.childCount];
         for(int i = 0; i < items.Length; i++)
@@ -62,7 +66,7 @@ public class Panel : MonoBehaviour
         }
     }
 
-    public void DisplayItems()
+    public void DisplayItems(bool free)
     {
         int unlocked = unlockedSlotsCount;
         Vector2 cellSize = transform.GetComponent<GridLayoutGroup>().cellSize;
@@ -83,6 +87,14 @@ public class Panel : MonoBehaviour
                     {
                         addedSlotIndex = -1;
                         cell.GetComponent<Animator>().SetTrigger("Instantiate");
+
+                        if (free)
+                        {
+                            GameObject txtFree = Instantiate(flyTxtFreePrefab, cell.transform);
+                            txtFree.GetComponent<Animator>().SetTrigger("Instantiate");
+                            txtFree.transform.position = cell.transform.position;
+                            Destroy(txtFree, 2f);
+                        }
                     }
                     icon.enabled = true;
                     icon.sprite = items[i].icon;

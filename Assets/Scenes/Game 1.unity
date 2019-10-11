@@ -29557,8 +29557,6 @@ MonoBehaviour:
   list: {fileID: 11400000, guid: c7ffc6d11151b4c44921dcf11827c539, type: 2}
   shipPrefab: {fileID: 821593841800323343, guid: 1533ae0be229e04438fde5c7d2a3755f,
     type: 3}
-  flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
-    type: 3}
   islandController: {fileID: 1065448131}
 --- !u!114 &1457268110
 MonoBehaviour:
@@ -33197,8 +33195,6 @@ MonoBehaviour:
   list: {fileID: 11400000, guid: c7ffc6d11151b4c44921dcf11827c539, type: 2}
   shipPrefab: {fileID: 821593841800323343, guid: 1533ae0be229e04438fde5c7d2a3755f,
     type: 3}
-  flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
-    type: 3}
   islandController: {fileID: 1534946822}
 --- !u!114 &1640643455
 MonoBehaviour:
@@ -35768,8 +35764,6 @@ MonoBehaviour:
   islandNumber: 1
   list: {fileID: 11400000, guid: c7ffc6d11151b4c44921dcf11827c539, type: 2}
   shipPrefab: {fileID: 821593841800323343, guid: 1533ae0be229e04438fde5c7d2a3755f,
-    type: 3}
-  flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
     type: 3}
   islandController: {fileID: 188406606}
 --- !u!224 &1745392091
@@ -44915,6 +44909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   list: {fileID: 0}
+  flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
+    type: 3}
   lockSprite: {fileID: 21300000, guid: 24101349c4944794197876a3f6b9b851, type: 3}
   levels: 32000000320000003400000036000000380000003a0000003c0000003e0000004000000042000000
   sprtStar: {fileID: 21300000, guid: b9860d505f092d741b306852a9ad3b76, type: 3}
@@ -48726,6 +48722,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   list: {fileID: 0}
+  flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
+    type: 3}
   lockSprite: {fileID: 21300000, guid: 24101349c4944794197876a3f6b9b851, type: 3}
   levels: 01000000010000000200000003000000040000000500000007000000090000000c0000000f000000
   sprtStar: {fileID: 21300000, guid: b9860d505f092d741b306852a9ad3b76, type: 3}
@@ -48742,6 +48740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   list: {fileID: 0}
+  flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
+    type: 3}
   lockSprite: {fileID: 21300000, guid: 24101349c4944794197876a3f6b9b851, type: 3}
   levels: 19000000190000001b0000001d0000001f0000002100000023000000250000002700000029000000
   sprtStar: {fileID: 21300000, guid: b9860d505f092d741b306852a9ad3b76, type: 3}
