@@ -29887,7 +29887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 3
-  list: {fileID: 11400000, guid: c7ffc6d11151b4c44921dcf11827c539, type: 2}
+  list: {fileID: 11400000, guid: 7b92a58124afaae41ad289c3adc4a0f4, type: 2}
   shipPrefab: {fileID: 821593841800323343, guid: 1533ae0be229e04438fde5c7d2a3755f,
     type: 3}
   islandController: {fileID: 1065448131}
@@ -33537,7 +33537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandNumber: 2
-  list: {fileID: 11400000, guid: c7ffc6d11151b4c44921dcf11827c539, type: 2}
+  list: {fileID: 11400000, guid: c4eeca325ab304d4384f878ae109cef0, type: 2}
   shipPrefab: {fileID: 821593841800323343, guid: 1533ae0be229e04438fde5c7d2a3755f,
     type: 3}
   islandController: {fileID: 1534946822}
@@ -37335,6 +37335,7 @@ MonoBehaviour:
   - 30
   - 30
   - 30
+  modifiersPremium: []
   nums: 02000000000000000400000007000000020000000100000006000000030000000400000009000000
 --- !u!224 &1798161169 stripped
 RectTransform:
