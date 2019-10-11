@@ -66,6 +66,11 @@ public class Panel : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        print(transform.GetChild(0).GetChild(0).localScale.ToString());
+    }
+
     public void DisplayItems(bool free)
     {
         int unlocked = unlockedSlotsCount;
@@ -83,6 +88,17 @@ public class Panel : MonoBehaviour
             {
                 if (items[i] != null)
                 {
+                    icon.enabled = true;
+                    icon.sprite = items[i].icon;
+                    starImg.sprite = sprtStar;
+                    float iconY = cellSize.x * 0.85f, iconX = iconY * ((float)icon.sprite.texture.width / (float)icon.sprite.texture.height);
+                    icon.rectTransform.sizeDelta = new Vector2(iconX, iconY);
+                    icon.rectTransform.anchoredPosition = Vector2.zero;
+                    icon.GetComponent<DragHandler>().canDrag = true;
+                    star.SetActive(true);
+                    level.text = items[i].gradeLevel.ToString();
+                    unlockLvlTxt.enabled = false;
+
                     if (i == addedSlotIndex)
                     {
                         addedSlotIndex = -1;
@@ -96,16 +112,6 @@ public class Panel : MonoBehaviour
                             Destroy(txtFree, 2f);
                         }
                     }
-                    icon.enabled = true;
-                    icon.sprite = items[i].icon;
-                    starImg.sprite = sprtStar;
-                    float iconY = cellSize.x * 0.85f, iconX = iconY * ((float)icon.sprite.texture.width / (float)icon.sprite.texture.height);
-                    icon.rectTransform.sizeDelta = new Vector2(iconX, iconY);
-                    icon.rectTransform.anchoredPosition = Vector2.zero;
-                    icon.GetComponent<DragHandler>().canDrag = true;
-                    star.SetActive(true);
-                    level.text = items[i].gradeLevel.ToString();
-                    unlockLvlTxt.enabled = false;
                 }
                 else
                 {
