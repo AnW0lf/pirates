@@ -28,6 +28,7 @@ public class LuckyWheel : MonoBehaviour
     [Header("Уровни")]
     public List<int> levels;
     public List<float> modifiers;
+    public List<float> modifiersPremium;
 
     [Header("Псевдорандом")]
     public int[] nums;

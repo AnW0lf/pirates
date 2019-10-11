@@ -66,12 +66,12 @@ public class Sector : MonoBehaviour
                             index = 0;
 
                             for (; index < LuckyWheel.Instance.levels.Count
-                                && index < LuckyWheel.Instance.modifiers.Count
+                                && index < LuckyWheel.Instance.modifiersPremium.Count
                                 && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) ;
                             index--;
-                            index = Mathf.Clamp(index, 0, LuckyWheel.Instance.modifiers.Count - 1);
+                            index = Mathf.Clamp(index, 0, LuckyWheel.Instance.modifiersPremium.Count - 1);
 
-                            txt.text = (startReward * LuckyWheel.Instance.modifiers[index]).ToString();
+                            txt.text = (startReward * LuckyWheel.Instance.modifiersPremium[index]).ToString();
                         }
                         break;
                     }
@@ -126,12 +126,12 @@ public class Sector : MonoBehaviour
                         index = 0;
 
                         for (; index < LuckyWheel.Instance.levels.Count
-                            && index < LuckyWheel.Instance.modifiers.Count
+                            && index < LuckyWheel.Instance.modifiersPremium.Count
                             && LuckyWheel.Instance.levels[index] <= Island.Instance.Level; index++) ;
                         index--;
-                        index = Mathf.Clamp(index, 0, LuckyWheel.Instance.modifiers.Count - 1);
+                        index = Mathf.Clamp(index, 0, LuckyWheel.Instance.modifiersPremium.Count - 1);
 
-                        Island.Instance.ChangePremium(startReward * LuckyWheel.Instance.modifiers[index]);
+                        Island.Instance.ChangePremium(startReward * LuckyWheel.Instance.modifiersPremium[index]);
                     }
                     break;
                 }
