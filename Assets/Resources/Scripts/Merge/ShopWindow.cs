@@ -4,21 +4,23 @@ using UnityEngine.UI;
 
 public class ShopWindow : MonoBehaviour
 {
-    public Transform itemContainer;
-    public Text titleTxt;
+    public ShopItem[] items;
+    public Text titleTxt, txtNextLevel;
 
     public void Open(Inventory inv)
     {
         titleTxt.text = inv.selectedPanel.list.islandName.ToUpper();
-        foreach(ShopItem item in itemContainer.GetComponentsInChildren<ShopItem>())
+        txtNextLevel.text = ((inv.panels.IndexOf(inv.selectedPanel) + 1) * 25).ToString();
+        foreach (ShopItem item in items)
         {
-            item.Open(inv);
+            if (item)
+                item.Open(inv);
         }
     }
 
     public void Close()
     {
-        foreach (ShopItem item in itemContainer.GetComponentsInChildren<ShopItem>())
+        foreach (ShopItem item in items)
         {
             item.Close();
         }
