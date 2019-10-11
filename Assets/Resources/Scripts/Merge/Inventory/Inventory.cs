@@ -98,6 +98,10 @@ public class Inventory : MonoBehaviour
     private void BeginSwitchPanel(int number)
     {
         switching = true;
+
+        bool btnActivate = (panels.IndexOf(selectedPanel) * 25 + shopBtnMinLvl) <= island.Level;
+        shopBtn.gameObject.SetActive(btnActivate);
+
         float newX = -(panelRect.sizeDelta.x / panels.Count * number);
         panelRectNewPos = new Vector2(newX, panelRect.anchoredPosition.y);
     }

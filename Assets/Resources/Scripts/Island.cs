@@ -24,6 +24,8 @@ public class Island : MonoBehaviour
     {
         Instance = this;
         Load();
+
+        Application.targetFrameRate = 60;
     }
 
     private void Load()
