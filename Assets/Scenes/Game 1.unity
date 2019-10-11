@@ -20066,14 +20066,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f289dd0129b89b43b8c16d238f6bc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 100000
+  maxTime: 10800
   rewardDivisor:
     mantissa: 6
     exponent: 1
   expDivisor:
     mantissa: 6
     exponent: 1
-  freeShipDivisor: 1
+  freeShipDivisor: 60
   window: {fileID: 1393646227}
   fsController: {fileID: 1829101582}
   islands:
