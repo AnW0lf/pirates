@@ -17,13 +17,13 @@ MonoBehaviour:
   gradeLevel: 2
   icon: {fileID: 21300000, guid: 553d5c1e02d51a24699f5be39c59bb93, type: 3}
   price:
-    mantissa: 7.75
-    exponent: 2
+    mantissa: 7.44
+    exponent: 7
   priceModifier: 1.175
   raidTime: 5
   reward:
-    mantissa: 2.2
-    exponent: 1
+    mantissa: 6.2
+    exponent: 4
   speed: 140
   goToRaidSpeed: 420
   backFromRaidSpeed: 320
