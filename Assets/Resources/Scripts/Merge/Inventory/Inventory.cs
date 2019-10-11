@@ -298,7 +298,7 @@ public class Inventory : MonoBehaviour
                 BigDigit price = GetShipPrice(panels[i].list, n)
                     , nextPrice = GetShipPrice(panels[i].list, next);
 
-                if (price * 1.5f > nextPrice)
+                if (price * 1.3f > nextPrice)
                 {
                     currentShips[i] = n + 1;
                     island.SetParameter("CurrentShipNumber_" + panels[i].list.islandName, currentShips[i]);

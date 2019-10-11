@@ -4105,7 +4105,7 @@ MonoBehaviour:
   txtSpeedPrice: {fileID: 2017105494}
   imgSpeedPriceIcon: {fileID: 1424002746}
   priceSpeed:
-    mantissa: 2.5
+    mantissa: 2
     exponent: 2
   speedMaxLevel: 25
   btnMoney: {fileID: 1541660648}
@@ -4113,7 +4113,7 @@ MonoBehaviour:
   txtMoneyPrice: {fileID: 978575622}
   imgMoneyPriceIcon: {fileID: 1432111880}
   priceMoney:
-    mantissa: 1.2
+    mantissa: 3.5
     exponent: 2
   moneyMaxLevel: 15
   btnSpin: {fileID: 89762479}
@@ -4121,7 +4121,7 @@ MonoBehaviour:
   txtSpinPrice: {fileID: 377280147}
   imgSpinPriceIcon: {fileID: 1264712570}
   priceSpin:
-    mantissa: 3.5
+    mantissa: 6.5
     exponent: 2
   spinMaxLevel: 10
   flag: {fileID: 1344154015}
@@ -5814,106 +5814,106 @@ MonoBehaviour:
   maxExps:
   - mantissa: 0
     exponent: 0
-  - mantissa: 2
-    exponent: 2
-  - mantissa: 4.5
+  - mantissa: 4
     exponent: 2
   - mantissa: 8.5
     exponent: 2
   - mantissa: 1.4
     exponent: 3
-  - mantissa: 2
+  - mantissa: 2.1
     exponent: 3
-  - mantissa: 3
+  - mantissa: 3.1
     exponent: 3
-  - mantissa: 4.1
-    exponent: 3
-  - mantissa: 5.7
-    exponent: 3
-  - mantissa: 7.7
-    exponent: 3
-  - mantissa: 1
-    exponent: 4
-  - mantissa: 1.4
-    exponent: 4
-  - mantissa: 1.85
-    exponent: 4
-  - mantissa: 2.4
-    exponent: 4
-  - mantissa: 3.2
-    exponent: 4
-  - mantissa: 4.25
-    exponent: 4
-  - mantissa: 5.6
-    exponent: 4
-  - mantissa: 7.3
-    exponent: 4
-  - mantissa: 9.6
-    exponent: 4
-  - mantissa: 1.26
-    exponent: 5
-  - mantissa: 1.66
-    exponent: 5
-  - mantissa: 2.18
-    exponent: 5
-  - mantissa: 2.86
-    exponent: 5
-  - mantissa: 3.74
-    exponent: 5
-  - mantissa: 4.91
-    exponent: 5
-  - mantissa: 6.43
-    exponent: 5
-  - mantissa: 2.32
-    exponent: 6
-  - mantissa: 3.48
-    exponent: 6
-  - mantissa: 5.104
-    exponent: 6
-  - mantissa: 7.37
-    exponent: 6
-  - mantissa: 1.05
-    exponent: 7
-  - mantissa: 1.5
-    exponent: 7
-  - mantissa: 2.12
-    exponent: 7
-  - mantissa: 3
-    exponent: 7
-  - mantissa: 4.2
-    exponent: 7
-  - mantissa: 5.9
-    exponent: 7
-  - mantissa: 8.33
-    exponent: 7
-  - mantissa: 1.16
-    exponent: 8
-  - mantissa: 1.6
-    exponent: 8
-  - mantissa: 2.3
-    exponent: 8
-  - mantissa: 3.2
-    exponent: 8
   - mantissa: 4.5
-    exponent: 8
+    exponent: 3
   - mantissa: 6.3
-    exponent: 8
+    exponent: 3
   - mantissa: 8.8
+    exponent: 3
+  - mantissa: 1.2
+    exponent: 4
+  - mantissa: 1.66
+    exponent: 4
+  - mantissa: 2.27
+    exponent: 4
+  - mantissa: 3
+    exponent: 4
+  - mantissa: 4.2
+    exponent: 4
+  - mantissa: 5.7
+    exponent: 4
+  - mantissa: 7.7
+    exponent: 4
+  - mantissa: 1
+    exponent: 5
+  - mantissa: 1.4
+    exponent: 5
+  - mantissa: 1.9
+    exponent: 5
+  - mantissa: 2.6
+    exponent: 5
+  - mantissa: 3.5
+    exponent: 5
+  - mantissa: 4.7
+    exponent: 5
+  - mantissa: 6.3
+    exponent: 5
+  - mantissa: 8.6
+    exponent: 5
+  - mantissa: 1.16
+    exponent: 6
+  - mantissa: 1.56
+    exponent: 6
+  - mantissa: 5.8
+    exponent: 6
+  - mantissa: 8.7
+    exponent: 6
+  - mantissa: 1.27
+    exponent: 7
+  - mantissa: 1.84
+    exponent: 7
+  - mantissa: 2.64
+    exponent: 7
+  - mantissa: 3.75
+    exponent: 7
+  - mantissa: 5.3
+    exponent: 7
+  - mantissa: 7.5
+    exponent: 7
+  - mantissa: 1.05
     exponent: 8
-  - mantissa: 1.23
+  - mantissa: 1.48
+    exponent: 8
+  - mantissa: 2
+    exponent: 8
+  - mantissa: 2.92
+    exponent: 8
+  - mantissa: 4
+    exponent: 8
+  - mantissa: 5.7
+    exponent: 8
+  - mantissa: 8
+    exponent: 8
+  - mantissa: 1.1
     exponent: 9
-  - mantissa: 1.7
+  - mantissa: 1.57
     exponent: 9
-  - mantissa: 2.4
+  - mantissa: 2.2
     exponent: 9
-  - mantissa: 3.4
+  - mantissa: 3.09
     exponent: 9
-  - mantissa: 4.75
+  - mantissa: 4.33
     exponent: 9
-  - mantissa: 6.66
+  - mantissa: 6
     exponent: 9
-  - mantissa: 9.32
+  - mantissa: 8.5
     exponent: 9
+  - mantissa: 1.19
+    exponent: 10
+  - mantissa: 1.66
+    exponent: 10
+  - mantissa: 2.3
+    exponent: 10
   - mantissa: 9
     exponent: 8
   - mantissa: 1.5
@@ -49551,7 +49551,7 @@ MonoBehaviour:
   flyTxtFreePrefab: {fileID: 6183991649096982373, guid: a1c14c9e11dfeab43adafdecfa570063,
     type: 3}
   lockSprite: {fileID: 21300000, guid: 24101349c4944794197876a3f6b9b851, type: 3}
-  levels: 01000000010000000200000003000000040000000500000007000000090000000c0000000f000000
+  levels: 01000000010000000100000002000000030000000500000007000000090000000c0000000f000000
   sprtStar: {fileID: 21300000, guid: b9860d505f092d741b306852a9ad3b76, type: 3}
 --- !u!114 &5073836885363668896
 MonoBehaviour:

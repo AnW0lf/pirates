@@ -24,8 +24,8 @@ MonoBehaviour:
   reward:
     mantissa: 8.85
     exponent: 2
-  speed: 140
-  goToRaidSpeed: 420
+  speed: 120
+  goToRaidSpeed: 640
   backFromRaidSpeed: 320
   distance: 450
   sizeModifier: 1.3
