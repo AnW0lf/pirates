@@ -66,11 +66,6 @@ public class Panel : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        print(transform.GetChild(0).GetChild(0).localScale.ToString());
-    }
-
     public void DisplayItems(bool free)
     {
         int unlocked = unlockedSlotsCount;
