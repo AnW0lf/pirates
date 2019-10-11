@@ -102,8 +102,10 @@ public class ShipMotor : MonoBehaviour
         isBack = false;
         outOfVisible = false;
         distance += range;
-        delay = duration / Mathf.Pow(2f, durationModifier);
+        delay = RaidTime;
     }
+
+    public float RaidTime { get { return duration / Mathf.Pow(2f, durationModifier); } }
 
     private void OnDestroy()
     {

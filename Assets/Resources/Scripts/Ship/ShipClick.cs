@@ -73,7 +73,10 @@ public class ShipClick : MonoBehaviour
             {
                 ship.DurationBonus();
                 ft.speed = true;
-                ft.speedText.text = "-" + (ship.Motor.duration / Mathf.Pow(2f, ship.Motor.durationModifier)).ToString() + "s";
+
+                int value = Mathf.FloorToInt(ship.Motor.duration / Mathf.Pow(2f, ship.Motor.durationModifier));
+                if (value < 1) value = 1;
+                ft.speedText.text = "-" + value.ToString() + "s";
 
                 EventManager.SendEvent("BonusCollected", ship.item.name, "Speed");
             }
@@ -105,7 +108,7 @@ public class ShipClick : MonoBehaviour
         if (!ship.Motor.isBack && other.CompareTag("Border") && (border = other.GetComponent<BorderController>()) && border.islandNumber == ship.islandNumber && !isTimerActive)
         {
             Invoke("SwitchEmitting", 0.15f);
-            StartCoroutine(Timer(ship.GetRaidTime()));
+            StartCoroutine(Timer(ship.Motor.RaidTime));
         }
     }
 

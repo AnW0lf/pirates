@@ -97,11 +97,6 @@ public class ShipController : MonoBehaviour
         Motor.BeginRaid();
     }
 
-    public float GetRaidTime()
-    {
-        return duration / Mathf.Pow(2f, durationModifier);
-    }
-
     public void DurationBonus()
     {
         durationModifier += 1f;
