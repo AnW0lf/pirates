@@ -73,7 +73,7 @@ public class ShipClick : MonoBehaviour
             {
                 ship.DurationBonus();
                 ft.speed = true;
-                ft.speedText.text = "-" + (int)(ship.duration / Mathf.Pow(2f, ship.durationModifier)) + "s";
+                ft.speedText.text = "-" + (ship.Motor.duration / Mathf.Pow(2f, ship.Motor.durationModifier)).ToString() + "s";
 
                 EventManager.SendEvent("BonusCollected", ship.item.name, "Speed");
             }
