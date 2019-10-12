@@ -10813,7 +10813,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e4849b9d859f853489402a1f59502820, type: 3}
-    m_FontSize: 110
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -10824,9 +10824,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Tap the Island
+  m_Text: 'TAP REPEATEDLY
 
-    to get more money!'
+    to gain more coins!'
 --- !u!222 &505959423
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17740,7 +17740,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e4849b9d859f853489402a1f59502820, type: 3}
-    m_FontSize: 110
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -17750,10 +17750,10 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 'Tap ships to
+    m_LineSpacing: 0.8
+  m_Text: '<size=120><color=#aaff00>TAP SHIPS</color></size>
 
-    start expeditions'
+    to start expeditions!'
 --- !u!222 &867458610
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31272,7 +31272,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e4849b9d859f853489402a1f59502820, type: 3}
-    m_FontSize: 110
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -31283,7 +31283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Buy the first ships!
+  m_Text: BUY the first SHIPS!
 --- !u!222 &1508791774
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36629,7 +36629,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e4849b9d859f853489402a1f59502820, type: 3}
-    m_FontSize: 120
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -36640,7 +36640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Buy one more ship!
+  m_Text: BUY one more SHIP!
 --- !u!222 &1767788217
 CanvasRenderer:
   m_ObjectHideFlags: 0
