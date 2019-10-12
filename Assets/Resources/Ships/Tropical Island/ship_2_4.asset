@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Triumpher
   unlockLevel: 9
   gradeLevel: 4
-  icon: {fileID: 21300000, guid: 23ec1e1e7c6de7d4f966bff979f756ee, type: 3}
+  icon: {fileID: 21300000, guid: 0d6dea2aad1e8aa4da8c60d9a7231a63, type: 3}
   price:
     mantissa: 8.928
     exponent: 8
@@ -28,5 +28,5 @@ MonoBehaviour:
   goToRaidSpeed: 640
   backFromRaidSpeed: 320
   distance: 450
-  sizeModifier: 0.75
+  sizeModifier: 1.1
   pointerColor: {r: 1, g: 0.6067698, b: 0, a: 1}

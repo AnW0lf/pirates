@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Devil's Boot
   unlockLevel: 1
   gradeLevel: 1
-  icon: {fileID: 21300000, guid: dd9a5b62cdd70924797d51eef09c34ca, type: 3}
+  icon: {fileID: 21300000, guid: b01fd5100a7aee84099bd7673e77bd34, type: 3}
   price:
     mantissa: 4.8
     exponent: 6
@@ -28,5 +28,5 @@ MonoBehaviour:
   goToRaidSpeed: 640
   backFromRaidSpeed: 320
   distance: 450
-  sizeModifier: 0.75
+  sizeModifier: 1
   pointerColor: {r: 0, g: 1, b: 0, a: 1}

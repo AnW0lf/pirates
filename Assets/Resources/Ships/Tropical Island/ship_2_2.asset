@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Lil Beep
   unlockLevel: 3
   gradeLevel: 2
-  icon: {fileID: 21300000, guid: 553d5c1e02d51a24699f5be39c59bb93, type: 3}
+  icon: {fileID: 21300000, guid: c3e346e845dd0134fb32e36a5e3c37aa, type: 3}
   price:
     mantissa: 7.44
     exponent: 7
@@ -28,5 +28,5 @@ MonoBehaviour:
   goToRaidSpeed: 640
   backFromRaidSpeed: 320
   distance: 450
-  sizeModifier: 0.75
+  sizeModifier: 1.03
   pointerColor: {r: 0.7706003, g: 1, b: 0, a: 1}
