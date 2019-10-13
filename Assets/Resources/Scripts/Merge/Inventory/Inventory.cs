@@ -11,7 +11,6 @@ public class Inventory : MonoBehaviour
     public ShipsManager[] managers;
 
     [Header("Flags")]
-    public GameObject mainFlag;
     public GameObject additionFlag;
 
     [Header("Buttons")]
@@ -32,6 +31,7 @@ public class Inventory : MonoBehaviour
     private bool switching = false;
     private Vector2 panelRectNewPos;
     private float switchSpeed = 3000f;
+    private Animator buyBtnAnim;
 
     private readonly string[] romans = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
 
@@ -48,6 +48,8 @@ public class Inventory : MonoBehaviour
         if (panels.Count > 0)
             selectedPanel = panels[0];
         else Debug.LogWarning("The array of panels is empty, but this should not be");
+
+        buyBtnAnim = buyBtn.GetComponent<Animator>();
     }
 
     private void Start()
@@ -166,8 +168,18 @@ public class Inventory : MonoBehaviour
     {
         if (!selectedPanel.IsFull)
         {
-            if (island.Money >= GetShipPrice(selectedPanel.list, 0) && !mainFlag.activeSelf)
-                mainFlag.SetActive(true);
+            if (island.Level < 6)
+            {
+                if (island.Money >= GetShipPrice(selectedPanel.list, currentShips[panels.IndexOf(selectedPanel)]))
+                {
+                    if (!buyBtnAnim.GetBool("Pulse")) buyBtnAnim.SetBool("Pulse", true);
+                }
+                else
+                {
+                    if (buyBtnAnim.GetBool("Pulse")) buyBtnAnim.SetBool("Pulse", false);
+                }
+            }
+
             int max = selectedPanel.list.ships.Count - 1;
             for (int i = 1; i < selectedPanel.list.ships.Count; i++)
             {
@@ -175,7 +187,6 @@ public class Inventory : MonoBehaviour
                     && CheckShipUnlocked(selectedPanel.list.islandNumber, Mathf.Clamp(i + 2, 0, max))
                     && island.Money >= GetShipPrice(selectedPanel.list, i))
                 {
-                    if (!mainFlag.activeSelf) mainFlag.SetActive(true);
                     if (!additionFlag.activeSelf) additionFlag.SetActive(true);
                     return;
                 }
@@ -184,8 +195,8 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            if (mainFlag.activeSelf) mainFlag.SetActive(false);
             if (additionFlag.activeSelf) additionFlag.SetActive(false);
+            if (buyBtnAnim.GetBool("Pulse")) buyBtnAnim.SetBool("Pulse", false);
         }
     }
 

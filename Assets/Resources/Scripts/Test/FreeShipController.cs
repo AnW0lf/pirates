@@ -12,6 +12,8 @@ public class FreeShipController : MonoBehaviour
     public int delay;
     public GameObject pack;
 
+    public List<int> chances;
+
     private Island island;
     private Inventory inventory;
     private TimeSpan ts;
@@ -47,7 +49,7 @@ public class FreeShipController : MonoBehaviour
             timer.text = SecondsToTimerString((int)_delay);
             fill.fillAmount = 1f - _delay / delay;
 
-            if(_delay <= 0f)
+            if (_delay <= 0f)
             {
                 AddShip();
                 _delay = delay;
@@ -65,11 +67,23 @@ public class FreeShipController : MonoBehaviour
         }
     }
 
+    private int random
+    {
+        get
+        {
+            int value = 0;
+            foreach (int i in chances) value += i;
+            value = UnityEngine.Random.Range(0, value);
+            for (int i = chances.Count - 1; i >= 0; i--)
+                if (value < chances[i]) return i;
+            return 0;
+        }
+    }
+
     public void AddShip()
     {
         int panelNumber = Mathf.Clamp(island.Level / 25, 0, inventory.panels.Count - 1);
-        int r = UnityEngine.Random.Range(0, 5);
-        int shipNumber = Mathf.Clamp(inventory.currentShips[panelNumber] - (r == 0 ? 0 : 1), 0, inventory.panels[panelNumber].list.ships.Count - 1);
+        int shipNumber = Mathf.Clamp(inventory.currentShips[panelNumber] - random, 0, inventory.panels[panelNumber].list.ships.Count - 1);
         ShipInfo item = inventory.panels[panelNumber].list.ships[shipNumber];
         inventory.Add(panelNumber, item, true);
     }

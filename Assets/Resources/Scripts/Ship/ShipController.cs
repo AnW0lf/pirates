@@ -24,6 +24,7 @@ public class ShipController : MonoBehaviour
     private ShipClick shipClick;
     private ShipRewardController rewardController;
     private Island island;
+    private Animator anim;
 
     private float rotationDelay, delay, averageLength = 500f;
 
@@ -71,6 +72,8 @@ public class ShipController : MonoBehaviour
         delay = rotationDelay;
 
         Destroyed = false;
+
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -94,6 +97,9 @@ public class ShipController : MonoBehaviour
     {
         rotationDelay = item.distance * Mathf.PI / (item.speed * island.speedBonus);
         delay = rotationDelay;
+
+        anim.SetTrigger("Raid");
+
         Motor.BeginRaid();
     }
 
