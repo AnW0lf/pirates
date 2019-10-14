@@ -5041,7 +5041,7 @@ RectTransform:
   - {fileID: 988386055}
   - {fileID: 1767788218}
   m_Father: {fileID: 1820283618744326725}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21502,7 +21502,7 @@ RectTransform:
   - {fileID: 485928867}
   - {fileID: 1508791771}
   m_Father: {fileID: 1820283618744326725}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -46558,9 +46558,9 @@ RectTransform:
   m_Children:
   - {fileID: 1820283619841233441}
   - {fileID: 1820283620491548011}
+  - {fileID: 1820283620121479687}
   - {fileID: 1032487264}
   - {fileID: 231849652}
-  - {fileID: 1820283620121479687}
   m_Father: {fileID: 1820283618981789852}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47421,7 +47421,7 @@ RectTransform:
   m_Children:
   - {fileID: 327795974}
   m_Father: {fileID: 1820283618744326725}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -47773,7 +47773,7 @@ Animator:
   m_GameObject: {fileID: 1820283620491548010}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bc702f4e79df4a742b9edbf110a29df3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 31347db7d1aeb0c408d04fb480bcb69f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
