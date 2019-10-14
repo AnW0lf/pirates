@@ -77,7 +77,8 @@ public class MergeHelper : MonoBehaviour
 
     private void Destroy()
     {
-        Destroy(gameObject);
+        RemoveHelper();
+        enabled = false;
     }
 
     private void GetHelper()

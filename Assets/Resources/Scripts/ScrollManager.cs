@@ -17,10 +17,7 @@ public class ScrollManager : MonoBehaviour
     {
         island = Island.Instance;
         rect = GetComponent<RectTransform>();
-    }
 
-    private void Start()
-    {
         childCount = transform.childCount;
         float sizeY = childCount * unit;
         Vector2 pos = new Vector3(rect.localPosition.x, sizeY - (unit * (1 + island.Level / level)), rect.localPosition.z);

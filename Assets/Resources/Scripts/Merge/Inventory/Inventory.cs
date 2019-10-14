@@ -61,10 +61,9 @@ public class Inventory : MonoBehaviour
             currentShips.Add(island.GetParameter("CurrentShipNumber_" + panels[i].list.islandName, 0));
         }
 
-        CheckSelectedPanel();
         Load();
 
-        UpdateBuyButtonInfo();
+        //UpdateBuyButtonInfo();
         DisplayItems(new object[0]);
         LevelUpChanges(new object[0]);
 
@@ -78,8 +77,12 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        CheckSelectedPanel();
         SwitchPanel();
+    }
+
+    private void LateUpdate()
+    {
+        CheckSelectedPanel();
     }
 
     private void CheckSelectedPanel()
