@@ -46937,6 +46937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1820283619484159486}
   - component: {fileID: 1820283619484159485}
+  - component: {fileID: 1820283619484159482}
   m_Layer: 0
   m_Name: ScreenMenu
   m_TagString: Untagged
@@ -46944,6 +46945,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1820283619484159482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820283619484159481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ca04afb1ff0cd488a0ffb09983e7c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLevel: 7
+  delay: 4
+  helperPref: {fileID: 5205959545413710253, guid: 5a33a26ef4650c1499a309d9fc56692d,
+    type: 3}
 --- !u!114 &1820283619484159485
 MonoBehaviour:
   m_ObjectHideFlags: 0
