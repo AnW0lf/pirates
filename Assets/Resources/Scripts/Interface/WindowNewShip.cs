@@ -8,9 +8,17 @@ public class WindowNewShip : WindowBase
     [SerializeField] protected Text shipName;
     [SerializeField] protected Image shipIcon;
 
+    private bool solo = false;
+
     private void Start()
     {
-        EventManager.Subscribe("NewShip", Open);
+        EventManager.Subscribe("NewShip", SoloOpen);
+    }
+
+    public void SoloOpen(object[] args)
+    {
+        solo = true;
+        Open(args);
     }
 
     public override void Open(object[] args)
@@ -25,6 +33,8 @@ public class WindowNewShip : WindowBase
     public override void Close()
     {
         base.Close();
-        transform.parent.GetComponent<InterfaceIerarchy>().Next();
+        if (!solo)
+            transform.parent.GetComponent<InterfaceIerarchy>().Next();
+        else solo = false;
     }
 }
