@@ -53,20 +53,29 @@ public class WindowLevelUp : WindowBase
                 mod = 16f;
                 break;
             case 1:
-                mod = 180f;
+                mod = 16f;
                 break;
             case 2:
-                mod = 3000f;
+                mod = 16f;
                 break;
             default:
-                mod = 9000f;
+                mod = 16f;
                 break;
         }
 
         foreach (IslandController islandCont in islandsList)
         {
-            if (islandCont.minLevel <= island.Level)
-                money += (islandCont.GetReward() * (island.Level % 25) * mod);
+            if (island.Level != 25)
+            {
+                if (islandCont.minLevel <= island.Level)
+                    money += (islandCont.GetReward() * (island.Level % 25) * mod);
+            }
+            else
+            {
+                if (islandCont.minLevel <= island.Level)
+                    money += (islandCont.GetReward() * (island.Level % 25 + 2) * mod);
+            }
+
         }
 
         textField.text = money.ToString();
