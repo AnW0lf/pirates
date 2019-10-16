@@ -100,6 +100,8 @@ public class Sector : MonoBehaviour
                         index = Mathf.Clamp(index, 0, LuckyWheel.Instance.modifiers.Count - 1);
 
                         Island.Instance.ChangeMoney(startReward * LuckyWheel.Instance.modifiers[index]);
+
+                        EventManager.SendEvent("WheelSpinned", "Money");
                     }
                     break;
                 }
@@ -108,6 +110,8 @@ public class Sector : MonoBehaviour
                     if (LuckyWheel.Instance && Island.Instance)
                     {
                         LuckyWheel.Instance.bgs[Mathf.Clamp(Island.Instance.Level / 25, 0, LuckyWheel.Instance.bgs.Length - 1)].Bonus((int)startReward.exponent, 1);
+
+                        EventManager.SendEvent("WheelSpinned", "Bonus");
                     }
                     break;
                 }
@@ -116,6 +120,8 @@ public class Sector : MonoBehaviour
                     if (Polundra.Instance)
                     {
                         Polundra.Instance.BeginPolundra();
+
+                        EventManager.SendEvent("WheelSpinned", "Polundra");
                     }
                     break;
                 }
@@ -132,11 +138,17 @@ public class Sector : MonoBehaviour
                         index = Mathf.Clamp(index, 0, LuckyWheel.Instance.modifiersPremium.Count - 1);
 
                         Island.Instance.ChangePremium(startReward * LuckyWheel.Instance.modifiersPremium[index]);
+
+                        EventManager.SendEvent("WheelSpinned", "Premium");
                     }
                     break;
                 }
             default:
-                Debug.LogWarning("Unknown LuckyWheelRewardType value " + type.ToString());
+                {
+                    Debug.LogWarning("Unknown LuckyWheelRewardType value " + type.ToString());
+
+                    EventManager.SendEvent("WheelSpinned", "Unknown");
+                }
                 break;
         }
     }

@@ -116,7 +116,7 @@ public class GlobalUpgradeButton : MonoBehaviour
 
     private void CheckUpgradeUnlock(object[] args)
     {
-        if(Island.Instance.Level >= unlockLevel)
+        if (Island.Instance.Level >= unlockLevel)
         {
             btnOpen.gameObject.SetActive(true);
         }
@@ -136,69 +136,79 @@ public class GlobalUpgradeButton : MonoBehaviour
         {
             case GlobalUpgradeType.SPEED:
                 {
-                    Island.Instance.AddSpeedLevel(-GetPrice(priceSpeed, lvlSpeed));
-                    lvlSpeed = Island.Instance.SpeedLevel;
-                    if (speedMaxLevel > lvlSpeed)
+                    if (Island.Instance.AddSpeedLevel(-GetPrice(priceSpeed, lvlSpeed)))
                     {
-                        txtSpeedPrice.text = GetPrice(priceSpeed, lvlSpeed).ToString();
-                    }
-                    else
-                    {
-                        txtSpeedPrice.text = "Max Grade";
-                        imgSpeedPriceIcon.gameObject.SetActive(false);
-                    }
-                    txtSpeedPrice.rectTransform.sizeDelta = new Vector2(txtSpeedPrice.text.Length * symbolLength, txtSpeedPrice.rectTransform.sizeDelta.y);
+                        lvlSpeed = Island.Instance.SpeedLevel;
+                        EventManager.SendEvent("UpgradeBought", "Speed", lvlSpeed);
 
-                    str = Island.Instance.speedBonus.ToString();
-                    if (str.Length > 4) str = str.Substring(0, 4);
+                        if (speedMaxLevel > lvlSpeed)
+                        {
+                            txtSpeedPrice.text = GetPrice(priceSpeed, lvlSpeed).ToString();
+                        }
+                        else
+                        {
+                            txtSpeedPrice.text = "Max Grade";
+                            imgSpeedPriceIcon.gameObject.SetActive(false);
+                        }
+                        txtSpeedPrice.rectTransform.sizeDelta = new Vector2(txtSpeedPrice.text.Length * symbolLength, txtSpeedPrice.rectTransform.sizeDelta.y);
 
-                    txtSpeedBonus.text = "X" + str;
-                    break;
+                        str = Island.Instance.speedBonus.ToString();
+                        if (str.Length > 4) str = str.Substring(0, 4);
+
+                        txtSpeedBonus.text = "X" + str;
+                    }
                 }
+                break;
             case GlobalUpgradeType.MONEY:
                 {
-                    Island.Instance.AddMoneyLevel(-GetPrice(priceMoney, lvlMoney));
-                    lvlMoney = Island.Instance.MoneyLevel;
-
-                    if (moneyMaxLevel > lvlMoney)
+                    if (Island.Instance.AddMoneyLevel(-GetPrice(priceMoney, lvlMoney)))
                     {
-                        txtMoneyPrice.text = GetPrice(priceMoney, lvlMoney).ToString();
-                    }
-                    else
-                    {
-                        txtMoneyPrice.text = "Max Grade";
-                        imgMoneyPriceIcon.gameObject.SetActive(false);
-                    }
-                    txtMoneyPrice.rectTransform.sizeDelta = new Vector2(txtMoneyPrice.text.Length * symbolLength, txtMoneyPrice.rectTransform.sizeDelta.y);
+                        lvlMoney = Island.Instance.MoneyLevel;
+                        EventManager.SendEvent("UpgradeBought", "Money", lvlMoney);
 
-                    str = Island.Instance.moneyBonus.ToString();
-                    if (str.Length > 4) str = str.Substring(0, 4);
+                        if (moneyMaxLevel > lvlMoney)
+                        {
+                            txtMoneyPrice.text = GetPrice(priceMoney, lvlMoney).ToString();
+                        }
+                        else
+                        {
+                            txtMoneyPrice.text = "Max Grade";
+                            imgMoneyPriceIcon.gameObject.SetActive(false);
+                        }
+                        txtMoneyPrice.rectTransform.sizeDelta = new Vector2(txtMoneyPrice.text.Length * symbolLength, txtMoneyPrice.rectTransform.sizeDelta.y);
 
-                    txtMoneyBonus.text = "X" + str;
-                    break;
+                        str = Island.Instance.moneyBonus.ToString();
+                        if (str.Length > 4) str = str.Substring(0, 4);
+
+                        txtMoneyBonus.text = "X" + str;
+                    }
                 }
+                break;
             case GlobalUpgradeType.SPIN:
                 {
-                    Island.Instance.AddSpinLevel(-GetPrice(priceSpin, lvlSpin));
-                    lvlSpin = Island.Instance.SpinLevel;
-
-                    if (spinMaxLevel > lvlSpin)
+                    if (Island.Instance.AddSpinLevel(-GetPrice(priceSpin, lvlSpin)))
                     {
-                        txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
-                    }
-                    else
-                    {
-                        txtSpinPrice.text = "Max Grade";
-                        imgSpinPriceIcon.gameObject.SetActive(false);
-                    }
-                    txtSpinPrice.rectTransform.sizeDelta = new Vector2(txtSpinPrice.text.Length * symbolLength, txtSpinPrice.rectTransform.sizeDelta.y);
+                        lvlSpin = Island.Instance.SpinLevel;
+                        EventManager.SendEvent("UpgradeBought", "Spin", lvlSpin);
 
-                    str = Island.Instance.LifebuoyMax.ToString();
-                    if (str.Length > 4) str = str.Substring(0, 4);
+                        if (spinMaxLevel > lvlSpin)
+                        {
+                            txtSpinPrice.text = GetPrice(priceSpin, lvlSpin).ToString();
+                        }
+                        else
+                        {
+                            txtSpinPrice.text = "Max Grade";
+                            imgSpinPriceIcon.gameObject.SetActive(false);
+                        }
+                        txtSpinPrice.rectTransform.sizeDelta = new Vector2(txtSpinPrice.text.Length * symbolLength, txtSpinPrice.rectTransform.sizeDelta.y);
 
-                    txtSpinBonus.text = str + "/10";
-                    break;
+                        str = Island.Instance.LifebuoyMax.ToString();
+                        if (str.Length > 4) str = str.Substring(0, 4);
+
+                        txtSpinBonus.text = str + "/10";
+                    }
                 }
+                break;
         }
         CheckActives(new object[0]);
     }

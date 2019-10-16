@@ -79,7 +79,7 @@ public class ShipController : MonoBehaviour
     private void Update()
     {
         if (!Motor.isRaid) delay -= Time.deltaTime;
-        if (delay < 0f) Click();
+        if (delay <= 0f) Click();
     }
 
     private void Reward()
@@ -95,6 +95,10 @@ public class ShipController : MonoBehaviour
 
     public void Click()
     {
+        if (Motor.isRaid && !Motor.isBack) return;
+
+        EventManager.SendEvent("ShipGoToRaid", item.name, delay <= 0f);
+
         rotationDelay = item.distance * Mathf.PI / (item.speed * island.speedBonus);
         delay = rotationDelay;
 

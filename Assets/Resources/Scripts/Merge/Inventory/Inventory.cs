@@ -216,6 +216,8 @@ public class Inventory : MonoBehaviour
             selectedPanel.shipsCount++;
             managers[selectedGameFieldNumber].GenerateShips(newIndex, 1);
 
+            EventManager.SendEvent("ShipMerged", selectedPanel.list.ships[newIndex].name);
+
             SetShipCount(selectedPanel.list.islandNumber, newIndex, GetShipCount(selectedPanel.list.islandNumber, newIndex) + 1);
             if (GetShipAlltimeCount(selectedPanel.list.islandNumber, newIndex) == 0) EventManager.SendEvent("NewShip", selectedPanel.list.ships[newIndex]);
             AddShipAlltimeCount(selectedPanel.list.islandNumber, newIndex);
@@ -290,6 +292,9 @@ public class Inventory : MonoBehaviour
         {
             DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
             island.ChangeMoney(item.item.price);
+
+            EventManager.SendEvent("ShipSold", item.item.name);
+
             Remove(item.id);
         }
     }
@@ -403,7 +408,9 @@ public class Inventory : MonoBehaviour
 
     public void BuyCurrentNumberShip()
     {
-        BuyShip(currentShips[panels.IndexOf(selectedPanel)]);
+        int curShipNum = currentShips[panels.IndexOf(selectedPanel)];
+        BuyShip(curShipNum);
+        EventManager.SendEvent("ShipBought", selectedPanel.list.ships[curShipNum].name, "Button");
     }
 
     public BigDigit GetShipPrice(ShipInfoList list, int id)

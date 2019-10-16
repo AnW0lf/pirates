@@ -32,6 +32,12 @@ public class FBEventController : MonoBehaviour
 
         EventManager.Subscribe("ShipGoToRaid", ShipGoToRaid);
 
+        EventManager.Subscribe("ShipMerged", ShipMerged);
+
+        EventManager.Subscribe("FreeShip", FreeShip);
+
+        EventManager.Subscribe("ShipSold", ShipSold);
+
         EventManager.Subscribe("LevelUp", LevelUp);
 
         EventManager.Subscribe("DailyBonusCollected", DailyBonusCollected);
@@ -41,6 +47,32 @@ public class FBEventController : MonoBehaviour
         EventManager.Subscribe("UpgradeBought", UpgradeBought);
 
         EventManager.Subscribe("BonusCollected", BonusCollected);
+
+        EventManager.Subscribe("IslandUnlocked", IslandUnlocked);
+    }
+
+    private void IslandUnlocked(object[] arg0)
+    {
+        string islandName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        LogIslandUnlockedEvent(islandName, 0f);
+    }
+
+    private void ShipSold(object[] arg0)
+    {
+        string shipName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        LogShipSoldEvent(shipName, island.Level, 1f);
+    }
+
+    private void FreeShip(object[] arg0)
+    {
+        string shipName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        LogFreeShipEvent(shipName, island.Level, 1f);
+    }
+
+    private void ShipMerged(object[] arg0)
+    {
+        string shipName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        LogShipMergedEvent(shipName, island.Level, 1f);
     }
 
     private void BonusCollected(object[] arg0)
@@ -54,19 +86,17 @@ public class FBEventController : MonoBehaviour
 
     private void UpgradeBought(object[] arg0)
     {
-        string modifierName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
-        int modifierLevel = arg0.Length > 1 ? (int)arg0[1] : 0;
-        int islandNumber = arg0.Length > 2 ? (int)arg0[2] : 0;
-        LogUpgradeBoughtEvent(island.Level, modifierName, modifierLevel, islandNumber, 0f);
+        string upgradeName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        int upgradeLevel = arg0.Length > 1 ? (int)arg0[1] : 0;
+        LogUpgradeBoughtEvent(island.Level, upgradeName, upgradeLevel, 0f);
 
         //Debug.Log("UpgradeBoughtEvent : " + island.Level + " : " + modifierName + " : " + modifierLevel + " : " + islandNumber + " : " + 0f);
     }
 
     private void WheelSpinned(object[] arg0)
     {
-        string wheelName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
-        int sectorNumber = arg0.Length > 1 ? (int)arg0[1] : 0;
-        LogWheelSpinnedEvent(island.Level, wheelName, sectorNumber, 1f);
+        string reward = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
+        LogWheelSpinnedEvent(reward, island.Level, 1f);
 
         //Debug.Log("WheelSpinnedEvent : " + island.Level + " : " + wheelName + " : " + sectorNumber + " : " + 1f);
     }
@@ -100,7 +130,8 @@ public class FBEventController : MonoBehaviour
     private void ShipBought(object[] arg0)
     {
         string shipName = arg0.Length > 0 ? (string)arg0[0] : "Unknown";
-        LogShipBoughtEvent(shipName, island.Level, 0f);
+        string where = arg0.Length > 1 ? (string)arg0[1] : "Unknown";
+        LogShipBoughtEvent(shipName, island.Level, where, 0f);
 
         //Debug.Log("ShipBoughtEvent : " + shipName + " : " + island.Level + " : " + 0f);
     }
@@ -110,6 +141,61 @@ public class FBEventController : MonoBehaviour
         LogLevelUpEvent(island.Level, island.Money, 1f);
 
         //Debug.Log("LevelUpEvent : " + island.Level + " : " + island.Money + " : " + 1f);
+    }
+
+    public void LogShipMergedEvent(string shipName, int level, float valToSum)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            ["Level"] = level,
+            ["ShipName"] = shipName
+        };
+        FB.LogAppEvent(
+            "ShipMerged",
+            valToSum,
+            parameters
+        );
+    }
+
+    public void LogIslandUnlockedEvent(string islandName, float valToSum)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            ["IslandName"] = islandName
+        };
+        FB.LogAppEvent(
+            "IslandUnlocked",
+            valToSum,
+            parameters
+        );
+    }
+
+    public void LogFreeShipEvent(string shipName, int level, float valToSum)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            ["Level"] = level,
+            ["ShipName"] = shipName
+        };
+        FB.LogAppEvent(
+            "FreeShip",
+            valToSum,
+            parameters
+        );
+    }
+
+    public void LogShipSoldEvent(string shipName, int level, float valToSum)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            ["Level"] = level,
+            ["ShipName"] = shipName
+        };
+        FB.LogAppEvent(
+            "ShipSold",
+            valToSum,
+            parameters
+        );
     }
 
     /// <summary>
@@ -158,12 +244,13 @@ public class FBEventController : MonoBehaviour
     /// <param name="shipName"></param> имя корабля
     /// <param name="level"></param> уровень игрока
     /// <param name="valToSum"></param> значение для суммирования
-    public void LogShipBoughtEvent(string shipName, int level, float valToSum)
+    public void LogShipBoughtEvent(string shipName, int level, string where, float valToSum)
     {
         var parameters = new Dictionary<string, object>
         {
             ["ShipName"] = shipName,
-            ["Level"] = level
+            ["Level"] = level,
+            ["Where"] = where
         };
         FB.LogAppEvent(
             "ShipBought",
@@ -221,12 +308,11 @@ public class FBEventController : MonoBehaviour
     /// <param name="wheelName"></param> имя рулетки
     /// <param name="sectorNumber"></param> номер сектора
     /// <param name="valToSum"></param> значение для суммирования
-    public void LogWheelSpinnedEvent(int level, string wheelName, int sectorNumber, float valToSum)
+    public void LogWheelSpinnedEvent(string reward, int level, float valToSum)
     {
         var parameters = new Dictionary<string, object>
         {
-            ["WheelName"] = wheelName,
-            ["Sector"] = sectorNumber,
+            ["Reward"] = reward,
             ["Level"] = level
         };
         FB.LogAppEvent(
@@ -240,17 +326,16 @@ public class FBEventController : MonoBehaviour
     /// Этот метод отправляет событие о покупке глобального улучшения
     /// </summary>
     /// <param name="level"></param> уровень игрока
-    /// <param name="modifierName"></param> имя улучшения
-    /// <param name="modifierLevel"></param> уровень улучшения
+    /// <param name="upgradeName"></param> имя улучшения
+    /// <param name="upgradeLevel"></param> уровень улучшения
     /// <param name="islandNumber"></param> номер острова
     /// <param name="valToSum"></param> значение для суммирования
-    public void LogUpgradeBoughtEvent(int level, string modifierName, int modifierLevel, int islandNumber, float valToSum)
+    public void LogUpgradeBoughtEvent(int level, string upgradeName, int upgradeLevel, float valToSum)
     {
         var parameters = new Dictionary<string, object>
         {
-            ["UpgradeName"] = modifierName,
-            ["UpgradeLevel"] = modifierLevel,
-            ["IslandNumber"] = islandNumber,
+            ["UpgradeName"] = upgradeName,
+            ["UpgradeLevel"] = upgradeLevel,
             ["Level"] = level
         };
         FB.LogAppEvent(

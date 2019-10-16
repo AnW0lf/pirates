@@ -88,6 +88,8 @@ public class FreeShipController : MonoBehaviour
             int shipNumber = Mathf.Clamp(inventory.currentShips[panelNumber] - random, 0, inventory.panels[panelNumber].list.ships.Count - 1);
             ShipInfo item = inventory.panels[panelNumber].list.ships[shipNumber];
             inventory.Add(panelNumber, item, true);
+
+            EventManager.SendEvent("FreeShip", item.name);
         }
     }
 

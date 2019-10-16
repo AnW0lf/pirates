@@ -39,6 +39,11 @@ public class GameLevelFadeManager : MonoBehaviour
 
     private void SetUnlockButton(object[] arg0)
     {
+        if (Island.Instance.Level == level)
+        {
+            string islandName = Inventory.Instance.lists[level / 25].islandName;
+            EventManager.SendEvent("IslandUnlocked", islandName);
+        }
         Unlock();
     }
 
@@ -46,6 +51,7 @@ public class GameLevelFadeManager : MonoBehaviour
     {
         if (Island.Instance.Level < level) return;
         foreach (GameObject obj in unlocking) obj.SetActive(true);
+
         Destroy(gameObject);
     }
 }

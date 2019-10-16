@@ -105,6 +105,7 @@ public class ShopItem : MonoBehaviour
     public void BuyShip()
     {
         if (inventory) inventory.BuyShip(id);
+        EventManager.SendEvent("ShipBought", inventory.selectedPanel.list.ships[id].name, "Shop");
         OnChangeInfo();
     }
 }
