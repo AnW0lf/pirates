@@ -5814,17 +5814,17 @@ MonoBehaviour:
     exponent: 5
   - mantissa: 2.6
     exponent: 5
-  - mantissa: 3.5
+  - mantissa: 3.7
     exponent: 5
-  - mantissa: 4.7
+  - mantissa: 5
     exponent: 5
-  - mantissa: 6.3
+  - mantissa: 6.7
     exponent: 5
-  - mantissa: 8.6
+  - mantissa: 9.6
     exponent: 5
-  - mantissa: 1.16
+  - mantissa: 1.3
     exponent: 6
-  - mantissa: 1.56
+  - mantissa: 1.7
     exponent: 6
   - mantissa: 5.8
     exponent: 6
