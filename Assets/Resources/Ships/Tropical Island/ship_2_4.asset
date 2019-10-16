@@ -28,5 +28,5 @@ MonoBehaviour:
   goToRaidSpeed: 640
   backFromRaidSpeed: 320
   distance: 450
-  sizeModifier: 1.1
+  sizeModifier: 1.14
   pointerColor: {r: 1, g: 0.6067698, b: 0, a: 1}
