@@ -4103,7 +4103,7 @@ MonoBehaviour:
   txtSpeedPrice: {fileID: 2017105494}
   imgSpeedPriceIcon: {fileID: 1424002746}
   priceSpeed:
-    mantissa: 2
+    mantissa: 4
     exponent: 2
   speedMaxLevel: 25
   btnMoney: {fileID: 1541660648}
@@ -4111,7 +4111,7 @@ MonoBehaviour:
   txtMoneyPrice: {fileID: 978575622}
   imgMoneyPriceIcon: {fileID: 1432111880}
   priceMoney:
-    mantissa: 3.5
+    mantissa: 7
     exponent: 2
   moneyMaxLevel: 15
   btnSpin: {fileID: 89762479}
@@ -4119,8 +4119,8 @@ MonoBehaviour:
   txtSpinPrice: {fileID: 377280147}
   imgSpinPriceIcon: {fileID: 1264712570}
   priceSpin:
-    mantissa: 6.5
-    exponent: 2
+    mantissa: 1.3
+    exponent: 3
   spinMaxLevel: 10
   flag: {fileID: 1344154015}
   counter: {fileID: 1145709058}
