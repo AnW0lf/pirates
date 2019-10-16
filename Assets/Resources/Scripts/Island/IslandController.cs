@@ -64,7 +64,7 @@ public class IslandController : MonoBehaviour
             digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(Island.Instance.Level - 24, 1.8f)) * Island.Instance.moneyBonus;
 
         else
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(Island.Instance.Level, 2.15f) * (Island.Instance.Level - 24) * (Island.Instance.Level - 49) / 1.5f + 1) * Island.Instance.moneyBonus;
+            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(Island.Instance.Level - 49, 1.8f)) * Island.Instance.moneyBonus;
         return digit;
     }
 

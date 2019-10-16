@@ -24741,8 +24741,8 @@ MonoBehaviour:
   minLevel: 50
   delay: 1
   tapDelay: 0.4
-  modifierMantissa: 0
-  modifierExponent: 0
+  modifierMantissa: 2.7
+  modifierExponent: 8
   moneySet: {fileID: 1053323184}
   clickEffectSet: {fileID: 893489258}
   experienceSet: {fileID: 1020917119}
