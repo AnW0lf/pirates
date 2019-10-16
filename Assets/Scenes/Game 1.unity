@@ -5112,6 +5112,8 @@ MonoBehaviour:
   textField: {fileID: 764573961}
   islandsList:
   - {fileID: 188406606}
+  - {fileID: 1534946822}
+  - {fileID: 1065448131}
 --- !u!224 &241109347
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7503,7 +7505,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ISLAND UP!
+  m_Text: NEW SHIP!
 --- !u!222 &324126421
 CanvasRenderer:
   m_ObjectHideFlags: 0
