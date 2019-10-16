@@ -28,6 +28,12 @@ public class Tutorial_1 : Tutorial
         if (inventory.panels.Count > 0)
             panel = inventory.panels[0];
         else Next();
+
+        if (Island.Instance.Level <= 1)
+        {
+            string islandName = Inventory.Instance.lists[0].islandName;
+            EventManager.SendEvent("IslandUnlocked", islandName);
+        }
     }
 
     public override bool ConditionOut()
