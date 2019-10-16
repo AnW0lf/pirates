@@ -17,8 +17,8 @@ MonoBehaviour:
   gradeLevel: 8
   icon: {fileID: 21300000, guid: df185ea4ac53de849be43b5bc454e7fe, type: 3}
   price:
-    mantissa: 4.8
-    exponent: 5
+    mantissa: 2.304
+    exponent: 14
   priceModifier: 1.175
   raidTime: 21
   reward:
