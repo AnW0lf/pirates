@@ -240,7 +240,7 @@ public class Inventory : MonoBehaviour
 
     public void Add(int panelNumber, ShipInfo item, bool free)
     {
-        if (panels[panelNumber].unlockedSlotsCount > panels[panelNumber].shipsCount)
+        if (!panels[panelNumber].IsFull && panels[panelNumber].unlockedSlotsCount > panels[panelNumber].shipsCount)
         {
             for (int i = 0; i < panels[panelNumber].transform.childCount; i++)
             {

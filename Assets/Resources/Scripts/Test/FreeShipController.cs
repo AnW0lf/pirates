@@ -83,9 +83,12 @@ public class FreeShipController : MonoBehaviour
     public void AddShip()
     {
         int panelNumber = Mathf.Clamp(island.Level / 25, 0, inventory.panels.Count - 1);
-        int shipNumber = Mathf.Clamp(inventory.currentShips[panelNumber] - random, 0, inventory.panels[panelNumber].list.ships.Count - 1);
-        ShipInfo item = inventory.panels[panelNumber].list.ships[shipNumber];
-        inventory.Add(panelNumber, item, true);
+        if (!inventory.panels[panelNumber].IsFull)
+        {
+            int shipNumber = Mathf.Clamp(inventory.currentShips[panelNumber] - random, 0, inventory.panels[panelNumber].list.ships.Count - 1);
+            ShipInfo item = inventory.panels[panelNumber].list.ships[shipNumber];
+            inventory.Add(panelNumber, item, true);
+        }
     }
 
     private string SecondsToTimerString(int seconds)
