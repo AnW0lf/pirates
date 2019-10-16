@@ -67,7 +67,7 @@ public class BonusGenerator : MonoBehaviour
         int chance = Random.Range(0, maxChance);
         for (i = 0; i < chances.Length; i++)
         {
-            if (chance - chances[i] <= 0)
+            if (chance - chances[i] < 0)
                 break;
             chance -= chances[i];
         }
