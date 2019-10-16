@@ -23,7 +23,7 @@ MonoBehaviour:
   raidTime: 30
   reward:
     mantissa: 8.5
-    exponent: 3
+    exponent: 11
   speed: 120
   goToRaidSpeed: 640
   backFromRaidSpeed: 320

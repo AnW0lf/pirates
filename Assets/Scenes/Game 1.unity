@@ -6173,56 +6173,56 @@ MonoBehaviour:
     exponent: 10
   - mantissa: 2.3
     exponent: 10
-  - mantissa: 9
-    exponent: 8
-  - mantissa: 1.5
-    exponent: 9
-  - mantissa: 6.300000190734863
-    exponent: 9
-  - mantissa: 9.899999618530273
-    exponent: 9
-  - mantissa: 1.5
-    exponent: 10
-  - mantissa: 2
-    exponent: 10
-  - mantissa: 4.5
-    exponent: 10
-  - mantissa: 4.699999809265137
-    exponent: 10
-  - mantissa: 5.300000190734863
-    exponent: 10
-  - mantissa: 9.399999618530273
-    exponent: 10
-  - mantissa: 1.1100000143051147
+  - mantissa: 2.3
     exponent: 11
-  - mantissa: 1.2899999618530273
+  - mantissa: 3.5
     exponent: 11
-  - mantissa: 1.7000000476837158
+  - mantissa: 5.2
     exponent: 11
-  - mantissa: 2.0999999046325684
+  - mantissa: 7.6
     exponent: 11
-  - mantissa: 2.5999999046325684
-    exponent: 11
-  - mantissa: 3
-    exponent: 11
-  - mantissa: 3.299999952316284
-    exponent: 11
-  - mantissa: 4
-    exponent: 11
-  - mantissa: 4.5
-    exponent: 11
-  - mantissa: 4.699999809265137
-    exponent: 11
-  - mantissa: 4.900000095367432
-    exponent: 11
-  - mantissa: 5.150000095367432
-    exponent: 11
-  - mantissa: 5.300000190734863
-    exponent: 11
-  - mantissa: 5.5
-    exponent: 11
+  - mantissa: 1.1
+    exponent: 12
+  - mantissa: 1.6
+    exponent: 12
+  - mantissa: 2.3
+    exponent: 12
+  - mantissa: 3.4
+    exponent: 12
+  - mantissa: 4.9
+    exponent: 12
   - mantissa: 7
-    exponent: 11
+    exponent: 12
+  - mantissa: 1
+    exponent: 13
+  - mantissa: 1.5
+    exponent: 13
+  - mantissa: 2.1
+    exponent: 13
+  - mantissa: 3
+    exponent: 13
+  - mantissa: 4.35
+    exponent: 13
+  - mantissa: 6.3
+    exponent: 13
+  - mantissa: 9
+    exponent: 13
+  - mantissa: 1.3
+    exponent: 14
+  - mantissa: 1.9
+    exponent: 14
+  - mantissa: 2.7
+    exponent: 14
+  - mantissa: 3.9
+    exponent: 14
+  - mantissa: 5.6
+    exponent: 14
+  - mantissa: 8
+    exponent: 14
+  - mantissa: 1.5
+    exponent: 15
+  - mantissa: 3
+    exponent: 15
 --- !u!4 &257793744
 Transform:
   m_ObjectHideFlags: 0

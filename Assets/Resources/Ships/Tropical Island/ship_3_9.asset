@@ -22,8 +22,8 @@ MonoBehaviour:
   priceModifier: 1.175
   raidTime: 25
   reward:
-    mantissa: 4
-    exponent: 3
+    mantissa: 4.1
+    exponent: 11
   speed: 120
   goToRaidSpeed: 640
   backFromRaidSpeed: 320
