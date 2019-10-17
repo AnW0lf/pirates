@@ -78,9 +78,11 @@ public class Panel : MonoBehaviour
             GameObject star = icon.transform.GetChild(0).gameObject;
             Image starImg = star.GetComponent<Image>();
             Text level = star.transform.GetComponentInChildren<Text>();
-            cell.GetComponent<CurrentItem>().item = items[i];
+            CurrentItem curItem = cell.GetComponent<CurrentItem>();
+            curItem.item = items[i];
             if (i < unlocked)
             {
+                curItem.canDrop = true;
                 if (items[i] != null)
                 {
                     icon.enabled = true;
@@ -119,6 +121,8 @@ public class Panel : MonoBehaviour
             }
             else
             {
+                curItem.canDrop = false;
+
                 icon.enabled = true;
 
                 icon.sprite = lockSprite;
