@@ -20645,7 +20645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5990aaf46dedf2847ac381455b77380a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelRange: {x: 0, y: 24}
+  levelRange: {x: 3, y: 24}
   bonusDelay: 18
   bonuses:
   - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
