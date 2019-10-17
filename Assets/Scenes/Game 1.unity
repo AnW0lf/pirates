@@ -23069,12 +23069,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTime: 10800
   rewardDivisor:
-    mantissa: 6
-    exponent: 1
+    mantissa: 5
+    exponent: 0
   expDivisor:
     mantissa: 6
     exponent: 1
-  freeShipDivisor: 60
+  freeShipDivisor: 10
   window: {fileID: 1393646227}
   fsController: {fileID: 1829101582}
   islands:
@@ -49747,7 +49747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.85882354, g: 0.85882354, b: 0.85882354, a: 0.3372549}
+  m_Color: {r: 0.85882354, g: 0.85882354, b: 0.85882354, a: 0.37254903}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
