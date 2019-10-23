@@ -89,7 +89,7 @@ public class PierManager : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         if (spriteForMenu == null) spriteForMenu = shipIcon;
     }
 
@@ -150,7 +150,7 @@ public class PierManager : MonoBehaviour
         if (ship != null) return;
         ship = Instantiate(shipPref, ships);
         ship.transform.SetAsFirstSibling();
-        ship.GetComponent<Ship>()._icon.GetComponent<ShipClick>().lifebuoys = lifebuoys;
+        //ship.GetComponent<Ship>()._icon.GetComponent<ShipClick>().lifebuoys = lifebuoys;
         ship.GetComponent<Ship>()
             .CreateShip(rise, angle, size, shipIcon, speedAngle, speedLinear, speedRaidModifier, GetRaidTime(), GetReward(), islandNumber, shipName, islandController);
         ship.GetComponentInChildren<ShipClick>().color = color;

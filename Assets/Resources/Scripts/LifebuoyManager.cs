@@ -27,17 +27,17 @@ public class LifebuoyManager : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     private void OnEnable()
     {
-        modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
+        //modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
         island.InitParameter(modifierName + "_level", 1);
         island.InitParameter(modifierName + "_current", 3);
         island.InitParameter(modifierName + "_timer", 0);
         lvl = island.GetParameter(modifierName + "_level", 0);
-        max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
+        //max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
         cur = island.GetParameter(modifierName + "_current", 0);
         s = island.GetParameter(modifierName + "_timer", 0);
 
@@ -118,11 +118,11 @@ public class LifebuoyManager : MonoBehaviour
 
     public void UpdateInfo()
     {
-        if (island == null) island = Island.Instance();
-        modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
+        if (island == null) island = Island.Instance;
+        //modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
         island.InitParameter(modifierName + "_level", 0);
         lvl = island.GetParameter(modifierName + "_level", 0);
-        max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
+        //max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
         cur = island.GetParameter(modifierName + "_current", 0);
         EventManager.SendEvent("AddLifebuoy");
         bar.fillAmount = (float)cur / max;

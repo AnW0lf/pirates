@@ -12,7 +12,7 @@ public class DaileActivate : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     private void OnEnable()

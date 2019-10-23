@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BonusGenerator : MonoBehaviour
 {
+    public Vector2Int levelRange;
     public int bonusDelay;
     public GameObject[] bonuses;
     public int[] chances;
@@ -14,7 +15,6 @@ public class BonusGenerator : MonoBehaviour
 
     void OnEnable()
     {
-        island = Island.Instance();
         curDelay = bonusDelay;
         StartCoroutine(BonusSpawner());
     }
@@ -22,6 +22,11 @@ public class BonusGenerator : MonoBehaviour
     private void OnDisable()
     {
         StopAllCoroutines();
+    }
+
+    private void Start()
+    {
+        island = Island.Instance;
     }
 
     IEnumerator BonusSpawner()
@@ -62,11 +67,11 @@ public class BonusGenerator : MonoBehaviour
         int chance = Random.Range(0, maxChance);
         for (i = 0; i < chances.Length; i++)
         {
-            if (chance - chances[i] <= 0)
+            if (chance - chances[i] < 0)
                 break;
             chance -= chances[i];
         }
-        if (island.Level < 2 && i == chances.Length - 1 && i != 0)
+        if ((island.Level < levelRange.x || island.Level > levelRange.y) && i == chances.Length - 1 && i != 0)
             i--;
         return i;
     }

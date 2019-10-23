@@ -5,25 +5,27 @@ using UnityEngine.UI;
 
 public class WindowUnlockWheel : WindowBase
 {
-    protected int minLevel = 2;
+    public bool Activate { get; set; }
 
-    private Island island;
-
-    private void Awake()
+    private void Start()
     {
-        island = Island.Instance();
+        Opened = false;
+        Activate = false;
     }
 
     public override void Open(object[] args)
     {
-        if (island.Level == minLevel)
+        if (Activate)
+        {
             base.Open(args);
-        else Close();
+            Activate = false;
+        }
     }
 
     public override void Close()
     {
         base.Close();
-        transform.parent.GetComponent<InterfaceIerarchy>().Next();
+        InterfaceIerarchy ierarchy;
+        if ((ierarchy = transform.GetComponentInParent<InterfaceIerarchy>())) ierarchy.Next();
     }
 }

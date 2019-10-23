@@ -188,7 +188,7 @@ public class Ship : MonoBehaviour
     public void CreateShip(float rise, float angle, float size, Sprite sprite, float speedAngle, float speedLinear
         , float speedRaidModifier, float raidTime, BigDigit reward, int islandNumber, string shipName, IslandController islandController)
     {
-        island = Island.Instance();
+        island = Island.Instance;
         SetLocation(rise, angle);
         SetShip(size, sprite);
         SetSpeed(speedAngle, speedLinear, speedRaidModifier);

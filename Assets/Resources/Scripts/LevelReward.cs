@@ -18,7 +18,7 @@ public class LevelReward : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     void OnEnable()
@@ -31,7 +31,7 @@ public class LevelReward : MonoBehaviour
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * island.Level * 13f);
+                    money += (islandCont.GetReward() * island.Level * (13f + island.Level));
             }
         }
         else if (island.Level > 25 && island.Level <= 50)
@@ -39,7 +39,7 @@ public class LevelReward : MonoBehaviour
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * (island.Level - 25) * 180f);
+                    money += (islandCont.GetReward() * (island.Level - 25) * 30f);
             }
         }
         else
@@ -47,7 +47,7 @@ public class LevelReward : MonoBehaviour
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * (island.Level - 50) * 3000f);
+                    money += (islandCont.GetReward() * (island.Level - 50) * 20f);
             }
         }
 

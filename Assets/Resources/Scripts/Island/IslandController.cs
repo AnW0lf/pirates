@@ -12,22 +12,25 @@ public class IslandController : MonoBehaviour
 
     public static BigDigit islandReward;
 
-    private Island island;
     private bool clicked = false, active = false;
     private Animation anim;
     private float time;
 
     private void Awake()
     {
-        island = Island.Instance();
         anim = GetComponent<Animation>();
     }
 
-    private void Update()
+    private void Start()
     {
-        //islandReward = new BigDigit(Mathf.Pow(island.Level, 2.15f) * modifier);
+        EventManager.Subscribe("LevelUp", OnLevelUp);
 
-        if (!active && island.Level >= minLevel)
+        OnLevelUp(new object[0]);
+    }
+
+    private void OnLevelUp(object[] args)
+    {
+        if (!active && Island.Instance.Level >= minLevel)
         {
             clicked = true;
             active = true;
@@ -50,12 +53,18 @@ public class IslandController : MonoBehaviour
     public BigDigit GetReward()
     {
         BigDigit digit;
-        if (island.Level <= 25)
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) / 1.6f + 1);
-        else if (island.Level > 25 && island.Level <= 50)
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) / 1.5f + 1);
+        if (Island.Instance.Level < 13)
+            digit = new BigDigit(modifierMantissa, modifierExponent) * Mathf.FloorToInt(Mathf.Pow(Island.Instance.Level, 1.8f)) * Island.Instance.moneyBonus;
+        else if (Island.Instance.Level >= 13 && Island.Instance.Level < 21)
+            digit = new BigDigit(modifierMantissa, modifierExponent) * Mathf.FloorToInt(Mathf.Pow(Island.Instance.Level, 1.85f)) * Island.Instance.moneyBonus;
+        else if (Island.Instance.Level >= 21 && Island.Instance.Level < 25)
+            digit = new BigDigit(modifierMantissa, modifierExponent) * Mathf.FloorToInt(Mathf.Pow(Island.Instance.Level, 1.94f)) * Island.Instance.moneyBonus;
+
+        else if (Island.Instance.Level >= 25 && Island.Instance.Level < 50)
+            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(Island.Instance.Level - 24, 1.8f)) * Island.Instance.moneyBonus;
+
         else
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) * (island.Level - 50) / 1.5f + 1);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(Island.Instance.Level - 49, 1.8f)) * Island.Instance.moneyBonus;
         return digit;
     }
 
@@ -67,7 +76,7 @@ public class IslandController : MonoBehaviour
             child.SetAsLastSibling();
             child.GetComponent<IslandFlyingExperience>().Fly(reward);
         }
-        island.ExpUp(reward);
+        Island.Instance.ExpUp(reward);
     }
 
     public void GenerateBonusMoney(BigDigit reward)
@@ -78,7 +87,7 @@ public class IslandController : MonoBehaviour
             child.SetAsLastSibling();
             child.GetComponent<IslandFlyingCoin>().Fly(reward);
         }
-        island.ChangeMoney(reward);
+        Island.Instance.ChangeMoney(reward);
     }
 
 
@@ -101,7 +110,7 @@ public class IslandController : MonoBehaviour
         //}
         else
         {
-            time = island.Level > 10 ? 0.6f : 1f - ((island.Level - 1) * 0.04f) ;
+            time = Island.Instance.Level > 10 ? 0.6f : 1f - ((Island.Instance.Level - 1) * 0.04f);
         }
 
         anim.Play("OnePulse");
@@ -110,7 +119,7 @@ public class IslandController : MonoBehaviour
 
         GenerateBonusMoney(reward);
 
-        if(clicked) EventManager.SendEvent("AddMoneyPulse");
+        if (clicked) EventManager.SendEvent("AddMoneyPulse");
         yield return new WaitForSeconds(time / 2);
         clicked = false;
         yield return new WaitForSeconds(time / 2);

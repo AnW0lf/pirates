@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28803eb44530496479bfe8dfaa6f52f1, type: 3}
+  m_Name: ship_2_5
+  m_EditorClassIdentifier: 
+  name: Steam Bird
+  unlockLevel: 11
+  gradeLevel: 5
+  icon: {fileID: 21300000, guid: 45e0206524a619340b364e33f7694e41, type: 3}
+  price:
+    mantissa: 2.75
+    exponent: 9
+  priceModifier: 1.175
+  raidTime: 12
+  reward:
+    mantissa: 5.7
+    exponent: 5
+  speed: 120
+  goToRaidSpeed: 640
+  backFromRaidSpeed: 320
+  distance: 450
+  sizeModifier: 1.17
+  pointerColor: {r: 1, g: 0.16531092, b: 0, a: 1}

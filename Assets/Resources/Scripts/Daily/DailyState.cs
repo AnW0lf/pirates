@@ -16,14 +16,16 @@ public class DailyState : MonoBehaviour
     private Image image;
     private Button button;
     private DateTime now;
+    private Animator animBtnOpen;
 
     private int year, month, day;
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         image = GetComponent<Image>();
         button = GetComponent<Button>();
+        animBtnOpen = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -45,7 +47,7 @@ public class DailyState : MonoBehaviour
             title.text = SecondsToTime(ToSeconds(24, 0, 0) - ToSeconds(now.Hour, now.Minute, now.Second));
             if (image.color != disable) image.color = disable;
             if (flag.activeInHierarchy) flag.SetActive(false);
-            if (GetComponent<Animation>().enabled) GetComponent<Animation>().enabled = false;
+            if (animBtnOpen.GetBool("Pulse")) animBtnOpen.SetBool("Pulse", false);
         }
         else
         {
@@ -53,7 +55,7 @@ public class DailyState : MonoBehaviour
             if (image.color != enable) image.color = enable;
             if (title.text != enableText) title.text = enableText;
             if (!flag.activeInHierarchy) flag.SetActive(true);
-            if (!GetComponent<Animation>().enabled) GetComponent<Animation>().enabled = true;
+            if (!animBtnOpen.GetBool("Pulse")) animBtnOpen.SetBool("Pulse", true);
         }
     }
 

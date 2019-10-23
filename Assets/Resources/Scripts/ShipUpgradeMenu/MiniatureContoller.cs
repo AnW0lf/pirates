@@ -16,7 +16,7 @@ public class MiniatureContoller : MonoBehaviour
 
     private void Awake()
     {
-        island = Island.Instance();
+        island = Island.Instance;
         parent = transform.parent;
     }
 

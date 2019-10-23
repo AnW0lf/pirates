@@ -7,36 +7,34 @@ public class WindowNewShip : WindowBase
 {
     [SerializeField] protected Text shipName;
     [SerializeField] protected Image shipIcon;
-    [SerializeField] protected Transform[] piersArray;
 
-    private Island island;
+    private bool solo = false;
 
-    private void Awake()
+    private void Start()
     {
-        island = Island.Instance();
+        EventManager.Subscribe("NewShip", SoloOpen);
+    }
+
+    public void SoloOpen(object[] args)
+    {
+        solo = true;
+        Open(args);
     }
 
     public override void Open(object[] args)
     {
-        foreach (Transform piers in piersArray)
-        {
-            foreach (PierManager pier in piers.GetComponentsInChildren<PierManager>())
-            {
-                if (pier.minLvl == island.Level)
-                {
-                    base.Open(args);
-                    shipName.text = pier.shipName;
-                    shipIcon.sprite = pier.shipIcon;
-                    break;
-                }
-            }
-        }
+        base.Open(args);
+        ShipInfo item = (ShipInfo)args[0];
+        shipName.text = item.name;
+        shipIcon.sprite = item.icon;
         if (!Opened) Close();
     }
 
     public override void Close()
     {
         base.Close();
-        transform.parent.GetComponent<InterfaceIerarchy>().Next();
+        if (!solo)
+            transform.parent.GetComponent<InterfaceIerarchy>().Next();
+        else solo = false;
     }
 }

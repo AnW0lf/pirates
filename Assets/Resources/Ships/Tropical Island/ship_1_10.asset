@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28803eb44530496479bfe8dfaa6f52f1, type: 3}
+  m_Name: ship_1_10
+  m_EditorClassIdentifier: 
+  name: Black Terror
+  unlockLevel: 21
+  gradeLevel: 10
+  icon: {fileID: 21300000, guid: fdefb56dca794414e8c46f9eb1130365, type: 3}
+  price:
+    mantissa: 9
+    exponent: 6
+  priceModifier: 1.175
+  raidTime: 30
+  reward:
+    mantissa: 8.5
+    exponent: 3
+  speed: 120
+  goToRaidSpeed: 640
+  backFromRaidSpeed: 320
+  distance: 450
+  sizeModifier: 1.45
+  pointerColor: {r: 0, g: 1, b: 0.7511432, a: 1}

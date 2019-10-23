@@ -8,48 +8,19 @@ public class WindowUpgradeWheel : WindowBase
 {
     [SerializeField] private Text text = null;
     [SerializeField] private Button btn = null;
-    [SerializeField] private List<RouletteRotation> wheels = null;
-    [SerializeField] protected ScrollManager sm;
-
-    private WheelButton wb = null;
-    private Island island;
-
-    private void Awake()
-    {
-        island = Island.Instance();
-    }
 
     private void Start()
     {
-        EventManager.Subscribe("UpgradeWheel", UpdateInfo);
-    }
-
-    private void UpdateInfo(object[] args)
-    {
-        if (args.Length == 2)
-            wb = (WheelButton)args[1];
+        btn.onClick.AddListener(LuckyWheel.Instance.Switch);
+        btn.onClick.AddListener(Close);
     }
 
     public override void Open(object[] args)
     {
-        bool requaredLevel()
-        {
-            foreach (RouletteRotation w in wheels)
-            {
-                if (w.levels.Contains(island.Level))
-                    return true;
-            }
-            return false;
-        }
-        if (requaredLevel())
+        if (Island.Instance.Level > LuckyWheel.Instance.unlockLevel && LuckyWheel.Instance.levels.Contains(Island.Instance.Level))
         {
             //float mod = (float)arg0[0];
             base.Open(args);
-            btn.onClick.RemoveAllListeners();
-            if (wb != null)
-                btn.onClick.AddListener(wb.WheelSwitch);
-            btn.onClick.AddListener(OpenWheel);
-            btn.onClick.AddListener(Close);
             //text.text = "All rewards increased by " + mod.ToString();
             text.text = "Rewards Upgraded!";
         }
@@ -60,26 +31,5 @@ public class WindowUpgradeWheel : WindowBase
     {
         base.Close();
         transform.parent.GetComponent<InterfaceIerarchy>().Next();
-    }
-
-    public void OpenWheel()
-    {
-        foreach (RouletteRotation w in wheels)
-        {
-            if (w.levels.Contains(island.Level))
-            {
-                w.wb.WheelSwitch();
-                StartCoroutine(Center());
-                return;
-            }
-        }
-    }
-
-    private IEnumerator Center()
-    {
-        bool Opened() { return transform.parent.GetComponent<InterfaceIerarchy>().Done; }
-        yield return new WaitWhile(Opened);
-        yield return new WaitForSeconds(0.5f);
-        sm.Center();
     }
 }

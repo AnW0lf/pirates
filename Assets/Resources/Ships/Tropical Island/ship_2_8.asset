@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28803eb44530496479bfe8dfaa6f52f1, type: 3}
+  m_Name: ship_2_8
+  m_EditorClassIdentifier: 
+  name: Great Leader
+  unlockLevel: 17
+  gradeLevel: 8
+  icon: {fileID: 21300000, guid: c10a66181dc5a854d877302c474391bc, type: 3}
+  price:
+    mantissa: 7.2
+    exponent: 10
+  priceModifier: 1.175
+  raidTime: 21
+  reward:
+    mantissa: 5.3
+    exponent: 6
+  speed: 120
+  goToRaidSpeed: 640
+  backFromRaidSpeed: 320
+  distance: 450
+  sizeModifier: 1.26
+  pointerColor: {r: 0.24070549, g: 0, b: 1, a: 1}

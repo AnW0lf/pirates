@@ -16,7 +16,7 @@ public class UpgradeMenuManager : MonoBehaviour
     {
         wm = windows.GetComponent<WindowsManager>();
         mm = miniatures.GetComponent<MiniaturesManager>();
-        island = Island.Instance();
+        island = Island.Instance;
     }
 
     private void OnEnable()
