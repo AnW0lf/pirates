@@ -68,6 +68,7 @@ public class ShipMotor : MonoBehaviour
                 direction = !direction;
                 icon.localScale = new Vector3(icon.localScale.x, (direction ? 1f : -1f), icon.localScale.z);
                 distance = range - distance;
+                delay = RaidTime;
                 raidMiddleActions?.Invoke();
             }
         }
@@ -102,7 +103,6 @@ public class ShipMotor : MonoBehaviour
         isBack = false;
         outOfVisible = false;
         distance += range;
-        delay = RaidTime;
     }
 
     public float RaidTime { get { return duration / Mathf.Pow(2f, durationModifier); } }
