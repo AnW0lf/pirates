@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Lil Miracle
   unlockLevel: 3
   gradeLevel: 2
-  icon: {fileID: 21300000, guid: 0cce8830ff5003f4a8852cce56b80318, type: 3}
+  icon: {fileID: 21300000, guid: 0ff830e64086e4d49b3d145afe78a754, type: 3}
   price:
     mantissa: 3.72
     exponent: 11
