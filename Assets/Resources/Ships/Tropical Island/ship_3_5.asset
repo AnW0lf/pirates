@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Party King
   unlockLevel: 11
   gradeLevel: 5
-  icon: {fileID: 21300000, guid: 234b3c0393cd9d948bb85ccb0d0e245d, type: 3}
+  icon: {fileID: 21300000, guid: 841f7d054b88c7f4cb1328a00f000c02, type: 3}
   price:
     mantissa: 1.2
     exponent: 13
