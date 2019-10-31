@@ -9,25 +9,24 @@ public class OfflineReward : MonoBehaviour
     public int maxTime;
     public BigDigit rewardDivisor, expDivisor;
     public float freeShipDivisor;
-    public GameObject window;
+    public Text rewardText;
+    public GameObject back, rays;
     public FreeShipController fsController;
     public IslandController[] islands;
 
     public static TimeSpan ts;
 
     private int timeModifier, freeShipCount;
-    private Island island;
-    private Text text;
     private bool rewardGained;
     private BigDigit reward, exp;
     private Inventory inventory;
+    private Image bg;
 
     private void Awake()
     {
-        island = Island.Instance;
-        text = GetComponent<Text>();
         rewardGained = false;
         reward = BigDigit.zero;
+        bg = GetComponent<Image>();
     }
 
     private void Start()
@@ -39,17 +38,24 @@ public class OfflineReward : MonoBehaviour
     {
         if (rewardGained) yield break;
         yield return new WaitForFixedUpdate();
-        island.InitParameter("QuitTime", (DateTime.Now).ToString());
-        ts = DateTime.Now - DateTime.Parse(island.GetParameter("QuitTime", ""));
+
+        Island.Instance.InitParameter("QuitTime", (DateTime.Now).ToString());
+        ts = DateTime.Now - DateTime.Parse(Island.Instance.GetParameter("QuitTime", ""));
 
         if (ts.Days == 0 && ts.Hours == 0 && ts.Minutes < 15f)
         {
             rewardGained = true;
-            window.SetActive(false);
+            bg.enabled = false;
+            back.SetActive(false);
+            rays.SetActive(false);
             yield break;
         }
         else
         {
+            yield return new WaitForSeconds(0.5f);
+            bg.enabled = true;
+            back.SetActive(true);
+            rays.SetActive(true);
             timeModifier = Mathf.Clamp(ts.Seconds + ts.Minutes * 60 + ts.Hours * 60 * 60 + ts.Days * 60 * 60 * 24, 0, maxTime);
         }
 
@@ -58,7 +64,7 @@ public class OfflineReward : MonoBehaviour
 
         foreach (IslandController land in islands)
         {
-            if (land.minLevel <= island.Level)
+            if (land.minLevel <= Island.Instance.Level)
                 reward += land.GetReward() * (timeModifier) + new BigDigit(100d);
         }
 
@@ -80,11 +86,11 @@ public class OfflineReward : MonoBehaviour
 
         freeShipCount = Mathf.Clamp((int)(timeModifier / fsController.delay / freeShipDivisor), 0, 10);
 
-        text.text = reward.ToString();
+        rewardText.text = reward.ToString();
 
-        island.SetParameter("QuitTime", DateTime.Now.ToString());
+        Island.Instance.SetParameter("QuitTime", DateTime.Now.ToString());
         rewardGained = true;
-        window.SetActive(!reward.EqualsZero);
+        back.SetActive(!reward.EqualsZero);
     }
 
     private void OnApplicationFocus(bool focus)
@@ -103,7 +109,7 @@ public class OfflineReward : MonoBehaviour
     {
         if (pause)
         {
-            island.SetParameter("QuitTime", DateTime.Now.ToString());
+            Island.Instance.SetParameter("QuitTime", DateTime.Now.ToString());
         }
         else
         {
@@ -113,16 +119,19 @@ public class OfflineReward : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        island.SetParameter("QuitTime", DateTime.Now.ToString());
+        Island.Instance.SetParameter("QuitTime", DateTime.Now.ToString());
     }
 
     public void AddOfflineReward(float modifier)
     {
-        island.ChangeMoney(reward * Mathf.Abs(modifier));
-        island.ExpUp(exp * Mathf.Abs(modifier));
+        Island.Instance.ChangeMoney(reward * Mathf.Abs(modifier));
+        Island.Instance.ExpUp(exp * Mathf.Abs(modifier));
         for (int i = 0; i < freeShipCount; i++)
         {
             fsController.AddShip();
         }
+        bg.enabled = false;
+        back.SetActive(false);
+        rays.SetActive(false);
     }
 }

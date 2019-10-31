@@ -26,7 +26,6 @@ public class Inventory : MonoBehaviour
     public Panel selectedPanel { get; private set; }
     public List<int> currentShips { get; private set; }
 
-    private Island island;
     private int selectedGameFieldNumber = -1;
     private bool switching = false;
     private Vector2 panelRectNewPos;
@@ -54,11 +53,9 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        island = Island.Instance;
-
         for (int i = 0; i < panels.Count; i++)
         {
-            currentShips.Add(island.GetParameter("CurrentShipNumber_" + panels[i].list.islandName, 0));
+            currentShips.Add(Island.Instance.GetParameter("CurrentShipNumber_" + panels[i].list.islandName, 0));
         }
 
         Load();
@@ -104,7 +101,7 @@ public class Inventory : MonoBehaviour
     {
         switching = true;
 
-        bool btnActivate = (panels.IndexOf(selectedPanel) * 25 + shopBtnMinLvl) <= island.Level;
+        bool btnActivate = (panels.IndexOf(selectedPanel) * 25 + shopBtnMinLvl) <= Island.Instance.Level;
         shopBtn.gameObject.SetActive(btnActivate);
 
         float newX = -(panelRect.sizeDelta.x / panels.Count * number);
@@ -126,7 +123,7 @@ public class Inventory : MonoBehaviour
 
     private void LevelUpChanges(object[] args)
     {
-        if (island.Level >= shopBtnMinLvl)
+        if (Island.Instance.Level >= shopBtnMinLvl)
         {
             if (!shopBtn.gameObject.activeSelf)
                 shopBtn.gameObject.SetActive(true);
@@ -144,7 +141,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateBuyButtonInteractable(object[] args)
     {
-        bool interactable = GetShipPrice(selectedPanel.list, currentShips[panels.IndexOf(selectedPanel)]) < island.Money && !selectedPanel.IsFull
+        bool interactable = GetShipPrice(selectedPanel.list, currentShips[panels.IndexOf(selectedPanel)]) < Island.Instance.Money && !selectedPanel.IsFull
             && selectedPanel.shipsCount < selectedPanel.unlockedSlotsCount;
         buyBtn.interactable = interactable;
         UpdateBuyButtonInfo();
@@ -156,12 +153,12 @@ public class Inventory : MonoBehaviour
         {
             for (int i = 0; i < panels[p].levels.Length; i++)
             {
-                if (panels[p].levels[i] == island.Level)
+                if (panels[p].levels[i] == Island.Instance.Level)
                 {
                     newSlotWindow.Activate = true;
                     return;
                 }
-                if (panels[p].levels[i] > island.Level) return;
+                if (panels[p].levels[i] > Island.Instance.Level) return;
             }
         }
     }
@@ -171,9 +168,9 @@ public class Inventory : MonoBehaviour
     {
         if (!selectedPanel.IsFull)
         {
-            if (island.Level < 6)
+            if (Island.Instance.Level < 6)
             {
-                if (island.Money >= GetShipPrice(selectedPanel.list, currentShips[panels.IndexOf(selectedPanel)]))
+                if (Island.Instance.Money >= GetShipPrice(selectedPanel.list, currentShips[panels.IndexOf(selectedPanel)]))
                 {
                     if (!buyBtnAnim.GetBool("Pulse")) buyBtnAnim.SetBool("Pulse", true);
                 }
@@ -188,7 +185,7 @@ public class Inventory : MonoBehaviour
             {
                 if (CheckShipUnlocked(selectedPanel.list.islandNumber, Mathf.Clamp(i, 0, max))
                     && CheckShipUnlocked(selectedPanel.list.islandNumber, Mathf.Clamp(i + 2, 0, max))
-                    && island.Money >= GetShipPrice(selectedPanel.list, i))
+                    && Island.Instance.Money >= GetShipPrice(selectedPanel.list, i))
                 {
                     if (!additionFlag.activeSelf) additionFlag.SetActive(true);
                     return;
@@ -291,7 +288,7 @@ public class Inventory : MonoBehaviour
             && (item = DragHandler.itemBeingDragged.transform.parent.GetComponent<CurrentItem>()) && item.item)
         {
             DragHandler.itemBeingDragged.GetComponent<DragHandler>().EndDrag();
-            island.ChangeMoney(item.item.price);
+            Island.Instance.ChangeMoney(item.item.price);
 
             EventManager.SendEvent("ShipSold", item.item.name);
 
@@ -320,7 +317,7 @@ public class Inventory : MonoBehaviour
                 if (price * 1.3f > nextPrice)
                 {
                     currentShips[i] = n + 1;
-                    island.SetParameter("CurrentShipNumber_" + panels[i].list.islandName, currentShips[i]);
+                    Island.Instance.SetParameter("CurrentShipNumber_" + panels[i].list.islandName, currentShips[i]);
                 }
             }
         }
@@ -352,49 +349,49 @@ public class Inventory : MonoBehaviour
 
     public void SetShipCount(int islandNumber, int shipNumber, int value)
     {
-        island.SetParameter("ShipCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), value);
+        Island.Instance.SetParameter("ShipCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), value);
     }
 
     public int GetShipCount(int islandNumber, int shipNumber)
     {
-        return island.GetParameter("ShipCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0);
+        return Island.Instance.GetParameter("ShipCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0);
     }
 
     public int GetShipAlltimeCount(int islandNumber, int shipNumber)
     {
-        return island.GetParameter("ShipAlltimeCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0);
+        return Island.Instance.GetParameter("ShipAlltimeCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0);
     }
 
     public void AddShipAlltimeCount(int islandNumber, int shipNumber)
     {
-        island.SetParameter("ShipAlltimeCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), GetShipAlltimeCount(islandNumber, shipNumber) + 1);
+        Island.Instance.SetParameter("ShipAlltimeCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), GetShipAlltimeCount(islandNumber, shipNumber) + 1);
     }
 
     public int GetShipBoughtCount(int islandNumber, int shipNumber)
     {
-        return island.GetParameter("ShipBoughtCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0);
+        return Island.Instance.GetParameter("ShipBoughtCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0);
     }
 
     public void AddShipBoughtCount(int islandNumber, int shipNumber)
     {
-        island.SetParameter("ShipBoughtCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), GetShipBoughtCount(islandNumber, shipNumber) + 1);
+        Island.Instance.SetParameter("ShipBoughtCount_" + islandNumber.ToString() + "_" + shipNumber.ToString(), GetShipBoughtCount(islandNumber, shipNumber) + 1);
     }
 
     public bool CheckShipUnlocked(int islandNumber, int shipNumber)
     {
-        return island.GetParameter("ShipUnlocked_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0) != 0;
+        return Island.Instance.GetParameter("ShipUnlocked_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 0) != 0;
     }
 
     public void AddShipUnlocked(int islandNumber, int shipNumber)
     {
-        island.SetParameter("ShipUnlocked_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 1);
+        Island.Instance.SetParameter("ShipUnlocked_" + islandNumber.ToString() + "_" + shipNumber.ToString(), 1);
     }
 
     public void BuyShip(int number)
     {
         int n = Mathf.Clamp(number, 0, selectedPanel.list.ships.Count - 1);
         int shipCount = GetShipCount(selectedPanel.list.islandNumber, n);
-        if (island.ChangeMoney(-GetShipPrice(selectedPanel.list, n))) //selectedPanel.list.ships[n].price * (shipCount + 1)))
+        if (Island.Instance.ChangeMoney(-GetShipPrice(selectedPanel.list, n))) //selectedPanel.list.ships[n].price * (shipCount + 1)))
         {
             Add(selectedPanel.list.islandNumber - 1, selectedPanel.list.ships[n], false);
             SetShipCount(selectedPanel.list.islandNumber, n, Mathf.Clamp(shipCount + 1, 0, selectedPanel.transform.childCount));
