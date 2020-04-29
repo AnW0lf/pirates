@@ -33,12 +33,4 @@ MonoBehaviour:
     - UnityNotificationAndroidRescheduleOnDeviceRestart
     values:
     - False
-  TrackedResourceAssets:
-  - Id: small_0
-    Type: 0
-    Asset: {fileID: 0}
-    AssetXXHDPI: {fileID: 0}
-    AssetXHDPI: {fileID: 0}
-    AssetMDPI: {fileID: 0}
-    AssetHDPI: {fileID: 0}
-    AssetLDPI: {fileID: 0}
+  TrackedResourceAssets: []
