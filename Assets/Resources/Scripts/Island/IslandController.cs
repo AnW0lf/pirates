@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,45 +7,101 @@ using UnityEngine.UI;
 public class IslandController : MonoBehaviour
 {
     public int minLevel;
-    public float delay, tapDelay, modifierMantissa;
+    public float maxClickCount, clickCountDecrease, forcingMoneyDuration, modifierMantissa;
     public long modifierExponent;
     public Transform moneySet, clickEffectSet, experienceSet;
+    public ProgressBar progressbar;
 
     public static BigDigit islandReward;
 
     private Island island;
-    private bool clicked = false, active = false;
-    private Animation anim;
-    private float time;
+    private bool active = false, forced = false;
+    private RectTransform rect;
+    private float clickCounter;
+    private Vector2 original;
+    private IslandSpriteController islandSpriteController;
 
     private void Awake()
     {
         island = Island.Instance();
-        anim = GetComponent<Animation>();
+        rect = GetComponent<RectTransform>();
+        islandSpriteController = GetComponent<IslandSpriteController>();
+    }
+
+    private void Start()
+    {
+        original = rect.sizeDelta;
     }
 
     private void Update()
     {
-        //islandReward = new BigDigit(Mathf.Pow(island.Level, 2.15f) * modifier);
-
         if (!active && island.Level >= minLevel)
         {
-            clicked = true;
             active = true;
-            StopAllCoroutines();
-            StartCoroutine(GenerateMoney());
+        }
+
+        if (active)
+        {
+            if (!forced)
+            {
+                if(clickCounter > 0f)
+                {
+                    clickCounter = Mathf.Max(0f, clickCounter - clickCountDecrease * Time.deltaTime);
+                }
+
+                if (clickCounter >= 2f)
+                {
+                    if (!progressbar.Visible) progressbar.Visible = true;
+                    progressbar.Progress = clickCounter / maxClickCount;
+                    progressbar.Label = (GetReward() * 20).ToString();
+                }
+            }
+            else
+            {
+                if (clickCounter > 0f)
+                {
+                    clickCounter = Mathf.Max(0f, clickCounter - maxClickCount / forcingMoneyDuration * Time.deltaTime);
+                    progressbar.Progress = clickCounter / maxClickCount;
+                    string duration = (clickCounter / maxClickCount * forcingMoneyDuration).ToString();
+                    if (duration.Length > 4) duration = duration.Substring(0, 4);
+                    progressbar.Label = duration;
+                }
+                else
+                {
+                    forced = false;
+                    progressbar.Visible = false;
+                }
+            }
+        }
+    }
+
+    private void ForceClickReward()
+    {
+        forced = true;
+        GenerateBonusMoney(GetReward() * 20);
+        StartCoroutine(ForceMoney());
+    }
+
+    private IEnumerator ForceMoney()
+    {
+        WaitForSeconds delay = new WaitForSeconds(0.2f);
+        while(clickCounter > 0f)
+        {
+            yield return delay;
+            GenerateBonusMoney(GetReward());
         }
     }
 
     public void Click()
     {
-        if (!clicked)
-        {
-            //Taptic.Light();
-            clicked = true;
-            StopAllCoroutines();
-            StartCoroutine(GenerateMoney());
-        }
+        if (forced) return;
+        GenerateMoney();
+        Pulse();
+        GenerateEffect();
+        clickCounter += 1f;
+
+        if (clickCounter >= maxClickCount)
+            ForceClickReward();
     }
 
     public BigDigit GetReward()
@@ -78,42 +135,30 @@ public class IslandController : MonoBehaviour
             child.SetAsLastSibling();
             child.GetComponent<IslandFlyingCoin>().Fly(reward);
         }
-        island.ChangeMoney(reward);
+    }
+
+    public void GenerateEffect()
+    {
+        if (clickEffectSet != null && clickEffectSet.childCount > 0)
+        {
+            Transform child = clickEffectSet.GetChild(0);
+            child.SetAsLastSibling();
+            child.gameObject.SetActive(false);
+            child.gameObject.SetActive(true);
+        }
+    }
+
+    private void Pulse()
+    {
+        rect.LeanSize((islandSpriteController != null ? islandSpriteController.Original : original) * 1.1f, 0.06f);
+        LeanTween.delayedCall(0.07f, () => rect.LeanSize(islandSpriteController != null ? islandSpriteController.Original : original, 0.06f));
     }
 
 
-    private IEnumerator GenerateMoney()
+    private void GenerateMoney()
     {
-        if (clicked)
-        {
-            time = tapDelay;
-            if (clickEffectSet != null && clickEffectSet.childCount > 0)
-            {
-                Transform child = clickEffectSet.GetChild(0);
-                child.SetAsLastSibling();
-                child.gameObject.SetActive(false);
-                child.gameObject.SetActive(true);
-            }
-        }
-        //else if ((delay - (island.GetParameter("Level", 0) - 1) / 10) > tapDelay)
-        //{
-        //    time = delay - (island.GetParameter("Level", 0) - 1) / 50;
-        //}
-        else
-        {
-            time = island.Level > 10 ? 0.6f : 1f - ((island.Level - 1) * 0.04f) ;
-        }
-
-        anim.Play("OnePulse");
-
         BigDigit reward = GetReward();
-
         GenerateBonusMoney(reward);
-
-        if(clicked) EventManager.SendEvent("AddMoneyPulse");
-        yield return new WaitForSeconds(time / 2);
-        clicked = false;
-        yield return new WaitForSeconds(time / 2);
-        StartCoroutine(GenerateMoney());
+        island.ChangeMoney(reward);
     }
 }

@@ -15,25 +15,24 @@ public class IslandSpriteController : MonoBehaviour
     private Image image;
     private Island island;
     private GameObject changeSpriteEffect, changeSpriteText;
-    private Animation anim;
     private RectTransform rect;
-    private Vector2 startSizeDelta;
+    private Vector2 original;
     public int IslandSpriteLevel { get; private set; }
+    public Vector2 Original { get => original; }
 
     private void Awake()
     {
         island = Island.Instance();
         image = GetComponent<Image>();
-        anim = GetComponent<Animation>();
         rect = GetComponent<RectTransform>();
     }
 
     private void Start()
     {
-        startSizeDelta = rect.sizeDelta;
+        original = rect.sizeDelta;
         island.InitParameter("IslandSpriteLevel_" + islandNumber, 0);
         IslandSpriteLevel = island.GetParameter("IslandSpriteLevel_" + islandNumber, 0);
-        rect.sizeDelta = Vector2.one * startSizeDelta * Mathf.Pow((1f + sizeIncrease), IslandSpriteLevel);
+        rect.sizeDelta = original * Mathf.Pow((1f + sizeIncrease), IslandSpriteLevel);
         InitInfo();
         changeSpriteEffect = Instantiate(changeSpriteEffectPref, transform);
         changeSpriteEffect.transform.localScale = effectScale;
@@ -77,14 +76,20 @@ public class IslandSpriteController : MonoBehaviour
         else if (sprites.Count > 0) image.sprite = sprites[sprites.Count - 1];
         island.SetParameter("IslandSpriteLevel_" + islandNumber, IslandSpriteLevel);
         changeSpriteEffect.SetActive(true);
-        anim.Play("UpgradeBonusPulse");
+        Pulse();
         if (changeSpriteText == null)
         {
             changeSpriteText = Instantiate(changeSpriteTextPref, transform);
         }
-        rect.sizeDelta = Vector2.one * startSizeDelta * Mathf.Pow((1f + sizeIncrease), IslandSpriteLevel);
+        rect.sizeDelta = Vector2.one * original * Mathf.Pow((1f + sizeIncrease), IslandSpriteLevel);
         yield return wait;
         //changeSpriteEffect.SetActive(false);
+    }
+
+    private void Pulse()
+    {
+        rect.LeanSize(original * 1.2f, 0.08f);
+        LeanTween.delayedCall(0.1f, () => rect.LeanSize(original, 0.08f));
     }
 
     private void Update()
