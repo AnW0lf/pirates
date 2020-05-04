@@ -98,7 +98,9 @@ public class IslandController : MonoBehaviour
     private void ForceClickReward()
     {
         forced = true;
-        GenerateBonusMoney(GetReward() * 20);
+        var reward = GetReward() * 20;
+        GenerateBonusMoney(reward);
+        island.ChangeMoney(reward);
         StartCoroutine(ForceMoney());
     }
 
@@ -108,7 +110,7 @@ public class IslandController : MonoBehaviour
         while(clickCounter > 0f)
         {
             yield return delay;
-            GenerateBonusMoney(GetReward());
+            GenerateMoney();
         }
     }
 
