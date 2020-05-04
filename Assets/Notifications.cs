@@ -10,10 +10,12 @@ public class Notifications : MonoBehaviour
 {
     public string[] levelUpTitle, levelUpDescription;
     public string dailyTitle, dailyDescription;
+    public string sevenDaysTitle, sevenDaysDescription;
 
 #if UNITY_ANDROID
-    private string dailyNotificationChannelID = "daily", dailyNotificationChannelName = "Daily Notifications";
     private string levelUpNotificationChannelID = "levelup", levelUpNotificationChannelName = "Level Up Notifications";
+    private string dailyNotificationChannelID = "daily", dailyNotificationChannelName = "Daily Notifications";
+    private string sevenDaysNotificationChannelID = "sevendays", sevenDaysNotificationChannelName = "Seven Days Notifications";
     private string smallIcon = "icon_0", largeIcon = "icon_1";
     private enum Delay { Day, Hour, Minutes, Seconds};
 #endif
@@ -25,6 +27,7 @@ public class Notifications : MonoBehaviour
 #elif UNITY_ANDROID
         CreateNotificationChannel(dailyNotificationChannelID, dailyNotificationChannelName, Importance.High, "Channel for daily notifications");
         CreateNotificationChannel(levelUpNotificationChannelID, levelUpNotificationChannelName, Importance.High, "Channel for level up notifications");
+        CreateNotificationChannel(sevenDaysNotificationChannelID, sevenDaysNotificationChannelName, Importance.High, "Channel for seven days notifications");
 #endif
     }
 
@@ -39,6 +42,7 @@ public class Notifications : MonoBehaviour
                 {
                     DateTime levelUpDateToNotify = DateTime.Now.AddHours(3);
                     DateTime dailyDateToNotify = DateTime.Now.AddDays(1);
+                    DateTime sevenDaysDateToNotify = DateTime.Now.AddDays(7);
             
                     // LEVEL UP
 
@@ -65,6 +69,17 @@ public class Notifications : MonoBehaviour
                     dailyNotif.repeatInterval = UnityEngine.iOS.CalendarUnit.Day;
 
                     UnityEngine.iOS.NotificationServices.ScheduleLocalNotification(dailyNotif);
+
+                    // SEVEN DAYS
+
+                    UnityEngine.iOS.LocalNotification sevenDaysNotif = new UnityEngine.iOS.LocalNotification();
+                    sevenDaysNotif.fireDate = sevenDaysDateToNotify;
+                    sevenDaysNotif.alertTitle = sevenDaysTitle;
+                    sevenDaysNotif.alertBody = sevenDaysDescription;
+
+                    sevenDaysNotif.repeatInterval = UnityEngine.iOS.CalendarUnit.Day;
+
+                    UnityEngine.iOS.NotificationServices.ScheduleLocalNotification(sevenDaysNotif);
                 }
 
 #elif UNITY_ANDROID
@@ -76,6 +91,7 @@ public class Notifications : MonoBehaviour
 
             SendNotification(dailyTitle, dailyDescription, Delay.Day, 1, dailyNotificationChannelID);                       // Level Up Notification
             SendNotification(levelUpTitle[rnd], levelUpDescription[rnd], Delay.Hour, 3, levelUpNotificationChannelID);      // Daily Notification
+            SendNotification(sevenDaysTitle, sevenDaysDescription, Delay.Day, 7, sevenDaysNotificationChannelID);           // Seven Days Notification
         }
 #endif
     }
