@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class IslandController : MonoBehaviour
 {
     public int minLevel;
-    public float maxClickCount, clickCountDecrease, forcingMoneyDuration, modifierMantissa;
+    public float maxClickCount, clickCountDecrease, forcingMoneyDuration, autoclickDelay, modifierMantissa;
     public long modifierExponent;
     public Transform moneySet, clickEffectSet, experienceSet;
     public ProgressBar progressbar;
@@ -17,7 +17,7 @@ public class IslandController : MonoBehaviour
     private Island island;
     private bool active = false, forced = false;
     private RectTransform rect;
-    private float clickCounter;
+    private float clickCounter, autoclickTimer, clickDelay = 0.2f, clickDelayTimer;
     private Vector2 original;
     private IslandSpriteController islandSpriteController;
 
@@ -31,6 +31,8 @@ public class IslandController : MonoBehaviour
     private void Start()
     {
         original = rect.sizeDelta;
+        autoclickTimer = autoclickDelay;
+        clickDelayTimer = 0f;
     }
 
     private void Update()
@@ -42,6 +44,18 @@ public class IslandController : MonoBehaviour
 
         if (active)
         {
+            if(autoclickTimer > 0f)
+            {
+                autoclickTimer -= Time.deltaTime;
+            }
+            else
+            {
+                autoclickTimer = autoclickDelay;
+                Autoclick();
+            }
+
+            if(clickDelayTimer > 0f) clickDelayTimer -= Time.deltaTime;
+
             if (!forced)
             {
                 if(clickCounter > 0f)
@@ -75,6 +89,12 @@ public class IslandController : MonoBehaviour
         }
     }
 
+    private void Autoclick()
+    {
+        if (forced || clickDelayTimer > 0f) return;
+        GenerateMoney();
+    }
+
     private void ForceClickReward()
     {
         forced = true;
@@ -94,7 +114,8 @@ public class IslandController : MonoBehaviour
 
     public void Click()
     {
-        if (forced) return;
+        if (forced || clickDelayTimer > 0f) return;
+        clickDelayTimer = clickDelay;
         GenerateMoney();
         Pulse();
         GenerateEffect();
@@ -150,8 +171,8 @@ public class IslandController : MonoBehaviour
 
     private void Pulse()
     {
-        rect.LeanSize((islandSpriteController != null ? islandSpriteController.Original : original) * 1.1f, 0.06f);
-        LeanTween.delayedCall(0.07f, () => rect.LeanSize(islandSpriteController != null ? islandSpriteController.Original : original, 0.06f));
+        rect.LeanSize((islandSpriteController != null ? islandSpriteController.Original : original) * 1.025f, 0.09f);
+        LeanTween.delayedCall(0.11f, () => rect.LeanSize(islandSpriteController != null ? islandSpriteController.Original : original, 0.09f));
     }
 
 

@@ -3854,6 +3854,7 @@ MonoBehaviour:
   maxClickCount: 100
   clickCountDecrease: 1
   forcingMoneyDuration: 30
+  autoclickDelay: 0.6
   modifierMantissa: 1
   modifierExponent: 0
   moneySet: {fileID: 39287204}
@@ -5087,6 +5088,8 @@ MonoBehaviour:
   - Tap here to see a beautiful bonus storm!
   dailyTitle: Daily Luck!
   dailyDescription: Tap to get free Lucky Wheel Spins and more!
+  sevenDaysTitle: We Miss you Captain
+  sevenDaysDescription: Tap and return to your fleet!
 --- !u!4 &93384484
 Transform:
   m_ObjectHideFlags: 0
@@ -34037,6 +34040,7 @@ MonoBehaviour:
   maxClickCount: 100
   clickCountDecrease: 1
   forcingMoneyDuration: 30
+  autoclickDelay: 0.6
   modifierMantissa: 3
   modifierExponent: 1
   moneySet: {fileID: 507111229}
@@ -77187,6 +77191,7 @@ MonoBehaviour:
   maxClickCount: 100
   clickCountDecrease: 1
   forcingMoneyDuration: 30
+  autoclickDelay: 0.6
   modifierMantissa: 6
   modifierExponent: 2
   moneySet: {fileID: 923779284}
@@ -104612,6 +104617,7 @@ MonoBehaviour:
   maxClickCount: 100
   clickCountDecrease: 1
   forcingMoneyDuration: 30
+  autoclickDelay: 0.6
   modifierMantissa: 0.65
   modifierExponent: 2
   moneySet: {fileID: 109926203}
