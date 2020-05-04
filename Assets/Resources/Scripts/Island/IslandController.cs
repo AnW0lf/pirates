@@ -11,6 +11,7 @@ public class IslandController : MonoBehaviour
     public long modifierExponent;
     public Transform moneySet, clickEffectSet, experienceSet;
     public ProgressBar progressbar;
+    public GameObject fontain;
 
     public static BigDigit islandReward;
 
@@ -84,6 +85,7 @@ public class IslandController : MonoBehaviour
                 {
                     forced = false;
                     progressbar.Visible = false;
+                    fontain.SetActive(false);
                 }
             }
         }
@@ -98,6 +100,7 @@ public class IslandController : MonoBehaviour
     private void ForceClickReward()
     {
         forced = true;
+        fontain.SetActive(true);
         var reward = GetReward() * 20;
         GenerateBonusMoney(reward);
         island.ChangeMoney(reward);
