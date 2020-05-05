@@ -15,7 +15,8 @@ public class Island
     private List<string> parameters;
 
     private long accumulation;
-    private readonly string leaderboard_id = "CgkI96T4suUVEAIQAQ";
+    private readonly string android_leaderboard_id = "CgkI96T4suUVEAIQAQ";
+    private readonly string iphone_leaderboard_id = "IslandTycoon.Rich_Man";
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
  new BigDigit(4f, 1), // 0
@@ -165,14 +166,29 @@ public class Island
         {
             Money.Sum(other);
 
-            if(other > 0)
+            if (other > 0)
             {
                 long l = (long)(other.ToDouble());
 
                 accumulation += l;
                 if (accumulation < 0) accumulation = long.MaxValue;
 
-                Social.ReportScore(12345, leaderboard_id, (bool success) => { });
+                if (Social.localUser.authenticated)
+                {
+#if UNITY_IOS
+                    Social.ReportScore(accumulation, iphone_leaderboard_id, (bool success) => {
+                        if (success)
+                            Debug.Log("Report score success");
+                        else Debug.Log("Report score failure");
+                    });
+#elif UNITY_ANDROID
+                    Social.ReportScore(accumulation, android_leaderboard_id, (bool success) => {
+                        if (success)
+                            Debug.Log("Report score success");
+                        else Debug.Log("Report score failure");
+                    });
+#endif
+                }
             }
 
             EventManager.SendEvent("ChangeMoney");

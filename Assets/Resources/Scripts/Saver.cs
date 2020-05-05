@@ -5,6 +5,7 @@ using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 public class Saver : MonoBehaviour
 {
@@ -16,11 +17,14 @@ public class Saver : MonoBehaviour
 
     private void Start()
     {
-#if UNITY_IOS
-#elif UNITY_ANDROID
+#if UNITY_ANDROID
         PlayGamesPlatform.Activate();
-        Social.localUser.Authenticate((bool success) => { AuthSuccess = success; });
 #endif
+        Social.localUser.Authenticate((bool success) =>
+        {
+            AuthSuccess = success;
+            Debug.Log("onProcessAuthentication: " + success);
+        });
     }
 
     private void OnApplicationFocus(bool focus) { Save(); }
