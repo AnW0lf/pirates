@@ -110,7 +110,7 @@ public class IslandController : MonoBehaviour
 
     private IEnumerator ForceMoney()
     {
-        WaitForSeconds delay = new WaitForSeconds(0.2f);
+        WaitForSeconds delay = new WaitForSeconds(0.4f);
         while(clickCounter > 0f)
         {
             yield return delay;
