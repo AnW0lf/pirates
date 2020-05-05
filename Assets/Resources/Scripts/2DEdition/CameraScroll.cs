@@ -5,26 +5,24 @@ using UnityEngine;
 public class CameraScroll : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 1f, maxYPosIslands = 63f;//, maxYPosMap = 40f;
+    private float speed = 1f, maxYPosIslands = 63f, maxYPosMap = 40f;
     [SerializeField]
     [Range(0f, 1f)]
     private float inertia = 0.1f;
     [SerializeField]
-    private Transform cameraTransform, mask;
+    private Transform cameraTransform = null, mask = null;
     [SerializeField]
-    private Vector2 islandsPos;
-    //private Vector2 islandsPos, mapPos;
+    private Vector2 islandsPos = Vector2.zero, mapPos = Vector2.zero;
 
     private float velocity = 0f;
     private bool dragged = false, swapped = false;
-    //private Place place = Place.ISLANDS;
-    private Vector3 islandsPosition;
-    //private Vector3 islandsPosition, mapPosition;
+    private Place place = Place.ISLANDS;
+    private Vector3 islandsPosition = Vector3.zero, mapPosition = Vector3.zero;
 
     private void Awake()
     {
         islandsPosition = new Vector3(islandsPos.x, islandsPos.y, cameraTransform.position.z);
-        //mapPosition = new Vector3(mapPos.x, mapPos.y, cameraTransform.position.z);
+        mapPosition = new Vector3(mapPos.x, mapPos.y, cameraTransform.position.z);
     }
 
     private void OnMouseDown()
@@ -40,10 +38,10 @@ public class CameraScroll : MonoBehaviour
 
         pos.y = Mathf.Clamp(pos.y, 0, maxYPosIslands);
 
-        //if (place == Place.ISLANDS)
-        //    pos.y = Mathf.Clamp(pos.y, 0, maxYPosIslands);
-        //else
-        //    pos.y = Mathf.Clamp(pos.y, 0, maxYPosMap);
+        if (place == Place.ISLANDS)
+            pos.y = Mathf.Clamp(pos.y, 0, maxYPosIslands);
+        else
+            pos.y = Mathf.Clamp(pos.y, 0, maxYPosMap);
 
         cameraTransform.position = pos;
 
@@ -63,41 +61,41 @@ public class CameraScroll : MonoBehaviour
 
         pos.y = Mathf.Clamp(pos.y, 0, maxYPosIslands);
 
-        //if (place == Place.ISLANDS)
-        //    pos.y = Mathf.Clamp(pos.y, 0, maxYPosIslands);
-        //else
-        //    pos.y = Mathf.Clamp(pos.y, 0, maxYPosMap);
+        if (place == Place.ISLANDS)
+            pos.y = Mathf.Clamp(pos.y, 0, maxYPosIslands);
+        else
+            pos.y = Mathf.Clamp(pos.y, 0, maxYPosMap);
 
         cameraTransform.position = pos;
 
         velocity *= inertia;
     }
 
-    //public void IslandsMapSwap()
-    //{
-    //    if (swapped) return;
+    public void IslandsMapSwap()
+    {
+        if (swapped) return;
 
-    //    swapped = true;
+        swapped = true;
 
-    //    if (place == Place.ISLANDS)
-    //    {
-    //        place = Place.MAP;
-    //        islandsPosition = cameraTransform.position;
-    //        mask.LeanScale(Vector3.zero, 0.5f);
-    //        LeanTween.delayedCall(0.6f, () => cameraTransform.position = mapPosition);
-    //        LeanTween.delayedCall(0.6f, () => mask.LeanScale(Vector3.one * 15f, 0.5f));
-    //        LeanTween.delayedCall(1.2f, () => swapped = false);
-    //    }
-    //    else
-    //    {
-    //        place = Place.ISLANDS;
-    //        mapPosition = cameraTransform.position;
-    //        mask.LeanScale(Vector3.zero, 0.5f);
-    //        LeanTween.delayedCall(0.6f, () => cameraTransform.position = islandsPosition);
-    //        LeanTween.delayedCall(0.6f, () => mask.LeanScale(Vector3.one * 15f, 0.5f));
-    //        LeanTween.delayedCall(1.2f, () => swapped = false);
-    //    }
-    //}
+        if (place == Place.ISLANDS)
+        {
+            place = Place.MAP;
+            islandsPosition = cameraTransform.position;
+            mask.LeanScale(Vector3.zero, 0.5f);
+            LeanTween.delayedCall(0.6f, () => cameraTransform.position = mapPosition);
+            LeanTween.delayedCall(0.6f, () => mask.LeanScale(Vector3.one * 15f, 0.5f));
+            LeanTween.delayedCall(1.2f, () => swapped = false);
+        }
+        else
+        {
+            place = Place.ISLANDS;
+            mapPosition = cameraTransform.position;
+            mask.LeanScale(Vector3.zero, 0.5f);
+            LeanTween.delayedCall(0.6f, () => cameraTransform.position = islandsPosition);
+            LeanTween.delayedCall(0.6f, () => mask.LeanScale(Vector3.one * 15f, 0.5f));
+            LeanTween.delayedCall(1.2f, () => swapped = false);
+        }
+    }
 
-    //enum Place { ISLANDS, MAP }
+    enum Place { ISLANDS, MAP }
 }

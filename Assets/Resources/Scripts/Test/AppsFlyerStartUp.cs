@@ -5,7 +5,9 @@ using UnityEngine;
 public class AppsFlyerStartUp : MonoBehaviour
 {
     [SerializeField]
+#pragma warning disable IDE0051 // Используется в UNITY_IOS
     private string appsFlyerDevKey = "YOUR_APPSFLYER_DEV_KEY", IosAppId = "YOUR_APP_ID_HERE", AndroidPackageName = "YOUR_ANDROID_PACKAGE_NAME_HERE";
+#pragma warning restore IDE0051 // Используется в UNITY_IOS
 
     void Start()
     {

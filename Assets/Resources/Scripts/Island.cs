@@ -13,6 +13,9 @@ public class Island
     public BigDigit StartExp { get; private set; }
 
     private List<string> parameters;
+
+    private long accumulation;
+    private readonly string leaderboard_id = "CgkI96T4suUVEAIQAQ";
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
  new BigDigit(4f, 1), // 0
@@ -132,6 +135,9 @@ public class Island
         InitParameter("StartExpMantissa", 0f);
         InitParameter("StartExpExponent", 0);
         StartExp = new BigDigit(GetParameter("StartExpMantissa", 0f), GetParameter("StartExpExponent", 0));
+
+        InitParameter("Accumulation", "0");
+        accumulation = long.Parse(GetParameter("Accumulation", ""));
     }
 
     public void Save()
@@ -143,6 +149,7 @@ public class Island
         SetParameter("ExpExponent", (int)Exp.Exponent);
         SetParameter("StartExpMantissa", (float)StartExp.Mantissa);
         SetParameter("StartExpExponent", (int)StartExp.Exponent);
+        SetParameter("Accumulation", accumulation.ToString());
     }
 
     public void Resetting()
@@ -157,6 +164,17 @@ public class Island
         if ((Money + other) >= BigDigit.zero)
         {
             Money.Sum(other);
+
+            if(other > 0)
+            {
+                long l = (long)(other.ToDouble());
+
+                accumulation += l;
+                if (accumulation < 0) accumulation = long.MaxValue;
+
+                Social.ReportScore(12345, leaderboard_id, (bool success) => { });
+            }
+
             EventManager.SendEvent("ChangeMoney");
             return true;
         }

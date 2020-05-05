@@ -70,6 +70,7 @@ public class IslandController : MonoBehaviour
                     progressbar.Progress = clickCounter / maxClickCount;
                     progressbar.Label = (GetReward() * 20).ToString();
                 }
+                else if (progressbar.Visible) progressbar.Visible = false;
             }
             else
             {

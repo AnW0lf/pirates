@@ -13,13 +13,13 @@ public class ProgressBar : MonoBehaviour
     }
 
     [SerializeField]
-    private bool _visible;
+    private bool _visible = true;
     [SerializeField]
-    private GameObject progressBar;
+    private GameObject progressBar = null;
     [SerializeField]
-    private Image progress;
+    private Image progress = null;
     [SerializeField]
-    private Text label;
+    private Text label = null;
 
     public float Progress { get => progress.fillAmount; set => progress.fillAmount = value; }
 
