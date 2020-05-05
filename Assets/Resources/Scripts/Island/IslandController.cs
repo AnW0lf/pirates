@@ -18,7 +18,7 @@ public class IslandController : MonoBehaviour
     private Island island;
     private bool active = false, forced = false;
     private RectTransform rect;
-    private float clickCounter, autoclickTimer, clickDelay = 0.2f, clickDelayTimer;
+    private float clickCounter, autoclickTimer, clickDelay = 0.25f, clickDelayTimer;
     private Vector2 original;
     private IslandSpriteController islandSpriteController;
 

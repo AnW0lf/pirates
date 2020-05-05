@@ -3859,10 +3859,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minLevel: 0
-  maxClickCount: 10
+  maxClickCount: 40
   clickCountDecrease: 1
   forcingMoneyDuration: 60
-  autoclickDelay: 0.6
+  autoclickDelay: 1.5
   modifierMantissa: 1
   modifierExponent: 0
   moneySet: {fileID: 39287204}
@@ -43375,7 +43375,7 @@ MonoBehaviour:
   maxClickCount: 40
   clickCountDecrease: 1
   forcingMoneyDuration: 60
-  autoclickDelay: 0.6
+  autoclickDelay: 1.5
   modifierMantissa: 3
   modifierExponent: 1
   moneySet: {fileID: 507111229}
@@ -87046,7 +87046,7 @@ MonoBehaviour:
   maxClickCount: 40
   clickCountDecrease: 1
   forcingMoneyDuration: 60
-  autoclickDelay: 0.6
+  autoclickDelay: 1.5
   modifierMantissa: 6
   modifierExponent: 2
   moneySet: {fileID: 923779284}
