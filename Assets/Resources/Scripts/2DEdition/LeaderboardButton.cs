@@ -23,7 +23,14 @@ public class LeaderboardButton : MonoBehaviour
 
 #if UNITY_ANDROID
         btn.interactable = saver.AuthSuccess;
-        if(btn.interactable) btn.onClick.AddListener(() => Social.ShowLeaderboardUI());
+        if (btn.interactable)
+        {
+            (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI("LEADERBOARD_ID");
+        }
+#endif
+
+#if UNITY_ANDROID || UNITY_IPHONE
+        btn.onClick.AddListener(() => Social.ShowLeaderboardUI());
 #endif
     }
 }
