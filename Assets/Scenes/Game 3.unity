@@ -169,7 +169,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 558609233}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -5864,7 +5864,7 @@ MonoBehaviour:
   startReward: 50
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 1177161846}
   startRewardMantissa: 5
   startRewardExponent: 5
@@ -14724,6 +14724,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4403758989736155333, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 148766895
+      objectReference: {fileID: 0}
     - target: {fileID: 4417748160967047935, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
       propertyPath: m_Layer
@@ -15080,6 +15085,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 6571472258475793152, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: minLevel
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6643181895060655173, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
       propertyPath: m_Layer
@@ -15199,6 +15209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: -22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290181386420734089, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: rouletteName
+      value: Wheel4
       objectReference: {fileID: 0}
     - target: {fileID: 7394814355667068353, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
@@ -17354,7 +17369,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 359548518}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -21686,7 +21701,7 @@ MonoBehaviour:
   startReward: 1500
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 311860376}
   startRewardMantissa: 1.5
   startRewardExponent: 7
@@ -28868,7 +28883,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 72202635}
   startRewardMantissa: 1
   startRewardExponent: 10
@@ -29857,7 +29872,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 748695288}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -30235,7 +30250,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 1885212038}
   startRewardMantissa: 1
   startRewardExponent: 12
@@ -34003,7 +34018,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 1380704443}
   startRewardMantissa: 1
   startRewardExponent: 12
@@ -35352,6 +35367,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4403758989736155333, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 148766895
+      objectReference: {fileID: 0}
     - target: {fileID: 4424028614646194723, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
       propertyPath: m_Layer
@@ -36007,7 +36027,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 1993730297}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -39275,7 +39295,7 @@ MonoBehaviour:
   startReward: 50
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 1793542860}
   startRewardMantissa: 5
   startRewardExponent: 1
@@ -40118,6 +40138,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4403758989736155333, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 148766895
+      objectReference: {fileID: 0}
     - target: {fileID: 4417748160967047935, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
       propertyPath: m_Layer
@@ -40463,6 +40488,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6571472258475793152, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: minLevel
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6643181895060655173, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
       propertyPath: m_Layer
@@ -40577,6 +40607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290181386420734089, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: rouletteName
+      value: Wheel2
       objectReference: {fileID: 0}
     - target: {fileID: 7394814355667068353, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
@@ -43114,7 +43149,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 3
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 406481275}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -47649,7 +47684,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 678044550}
   startRewardMantissa: 5
   startRewardExponent: 9
@@ -49368,7 +49403,7 @@ MonoBehaviour:
   startReward: 10000
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 400672317}
   startRewardMantissa: 1
   startRewardExponent: 8
@@ -51268,7 +51303,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 783991084}
   startRewardMantissa: 1.5
   startRewardExponent: 11
@@ -52884,7 +52919,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 3
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 1095927232}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -53746,7 +53781,7 @@ MonoBehaviour:
   startReward: 300
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 2125790467}
   startRewardMantissa: 3
   startRewardExponent: 6
@@ -57442,7 +57477,7 @@ MonoBehaviour:
   startReward: 100
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 111075595}
   startRewardMantissa: 1
   startRewardExponent: 6
@@ -57552,7 +57587,7 @@ MonoBehaviour:
   startReward: 1500
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 958304516}
   startRewardMantissa: 1.5
   startRewardExponent: 3
@@ -69547,7 +69582,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 706495126}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -71382,7 +71417,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 512999212}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -71914,7 +71949,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 269042135}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -74226,7 +74261,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 1863532499}
   startRewardMantissa: 2.5
   startRewardExponent: 9
@@ -76047,7 +76082,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 1026779339}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -77204,6 +77239,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4403758989736155333, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 148766895
+      objectReference: {fileID: 0}
     - target: {fileID: 4417748160967047935, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
       propertyPath: m_Layer
@@ -77554,6 +77594,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 6571472258475793152, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: minLevel
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6643181895060655173, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
       propertyPath: m_Layer
@@ -77673,6 +77718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290181386420734089, guid: 3fbabaddae43000498ccecd3b2b2f29b,
+        type: 3}
+      propertyPath: rouletteName
+      value: Wheel3
       objectReference: {fileID: 0}
     - target: {fileID: 7394814355667068353, guid: 3fbabaddae43000498ccecd3b2b2f29b,
         type: 3}
@@ -80153,7 +80203,7 @@ MonoBehaviour:
   startReward: 100
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 1657377170}
   startRewardMantissa: 1
   startRewardExponent: 2
@@ -80869,7 +80919,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 1957626789}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -86134,7 +86184,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 1219131030}
   startRewardMantissa: 1.5
   startRewardExponent: 11
@@ -86244,7 +86294,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 1521077902}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -87692,7 +87742,7 @@ MonoBehaviour:
   startReward: 25
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 2091032502}
   startRewardMantissa: 2.5
   startRewardExponent: 1
@@ -91302,7 +91352,6 @@ MonoBehaviour:
   arrow: {fileID: 2095832396}
   rewardEffect: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
-  blackShip: {fileID: 677157628}
   sectorCount: 10
   sectors:
   - {fileID: 1358164978}
@@ -91872,7 +91921,7 @@ MonoBehaviour:
   startReward: 300
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 743810023}
   startRewardMantissa: 3
   startRewardExponent: 2
@@ -92316,7 +92365,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 3
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 604168373}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -95017,7 +95066,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 1954782235}
   startRewardMantissa: 3
   startRewardExponent: 10
@@ -99356,7 +99405,7 @@ MonoBehaviour:
   startReward: 25
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 1182327989}
   startRewardMantissa: 2.5
   startRewardExponent: 5
@@ -104794,7 +104843,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 1487634496}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -105159,7 +105208,6 @@ MonoBehaviour:
   arrow: {fileID: 100129267}
   rewardEffect: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
-  blackShip: {fileID: 810971560}
   sectorCount: 10
   sectors:
   - {fileID: 1796032777}
@@ -107957,7 +108005,7 @@ MonoBehaviour:
   startReward: 10000
   bonusId: 0
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 245972558}
   startRewardMantissa: 1
   startRewardExponent: 4
@@ -108225,7 +108273,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 0
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 780701090}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -108870,7 +108918,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 988277010}
   startRewardMantissa: 2.5
   startRewardExponent: 9
@@ -110654,7 +110702,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 1597482544}
   startRewardMantissa: 3
   startRewardExponent: 10
@@ -113224,7 +113272,6 @@ MonoBehaviour:
   arrow: {fileID: 834585450}
   rewardEffect: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
-  blackShip: {fileID: 1524385403}
   sectorCount: 10
   sectors:
   - {fileID: 1924844832}
@@ -114708,7 +114755,6 @@ MonoBehaviour:
   arrow: {fileID: 366139332}
   rewardEffect: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
-  blackShip: {fileID: 141904529}
   sectorCount: 10
   sectors:
   - {fileID: 1517361861}
@@ -115004,7 +115050,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 991487883}
-  blackShip: {fileID: 1524385403}
+  blackShip: {fileID: 0}
   title: {fileID: 623495098}
   startRewardMantissa: 1
   startRewardExponent: 10
@@ -115065,7 +115111,7 @@ MonoBehaviour:
   startReward: 1
   bonusId: 3
   bg: {fileID: 945456226}
-  blackShip: {fileID: 141904529}
+  blackShip: {fileID: 0}
   title: {fileID: 609981629}
   startRewardMantissa: 0
   startRewardExponent: 0
@@ -115126,7 +115172,7 @@ MonoBehaviour:
   startReward: 2147483647
   bonusId: 0
   bg: {fileID: 1983624739}
-  blackShip: {fileID: 677157628}
+  blackShip: {fileID: 0}
   title: {fileID: 40072784}
   startRewardMantissa: 5
   startRewardExponent: 9
