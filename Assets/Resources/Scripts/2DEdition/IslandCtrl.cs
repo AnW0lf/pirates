@@ -16,7 +16,7 @@ public class IslandCtrl : MonoBehaviour
     [SerializeField] private float clickDelay = 0.2f, clickMaxProgress = 100f, clickIncrease = 1f, clickDecrease = 1f, forcingDuration = 60f;
     [SerializeField] private GameObject fade = null;
     [SerializeField] private ShipCtrl[] ships;
-    private float time = 1f, timer = 0f, clickProgress = 0f, hideClickProgressTimer = 0f;
+    private float time = 1f, timer = 0f, clickProgress = 0f;
     private bool clicked = false, clickForced = false;
 
     public int Level { get => currentLevel; set => currentLevel = value; }
@@ -89,7 +89,7 @@ public class IslandCtrl : MonoBehaviour
         {
             forceCoin.Progress = clickProgress / clickMaxProgress;
 
-            if (clickProgress / clickMaxProgress > 0.02f && hideClickProgressTimer > 0f && !forceCoin.Visible)
+            if (clickProgress / clickMaxProgress > 0.02f && !forceCoin.Visible)
             {
                 forceCoin.Label = (Reward * 20f).ToString();
                 forceCoin.Visible = true;
@@ -108,11 +108,6 @@ public class IslandCtrl : MonoBehaviour
             if (clickProgress > 0f)
                 clickProgress -= clickDecrease * Time.deltaTime;
             else if (clickProgress < 0f) clickProgress = 0f;
-
-            if (hideClickProgressTimer > 0f) hideClickProgressTimer -= Time.deltaTime;
-            else if (hideClickProgressTimer < 0f) hideClickProgressTimer = 0f;
-
-            if (hideClickProgressTimer == 0f && forceCoin.Visible) forceCoin.Visible = false;
         }
 
         timer -= Time.deltaTime;
@@ -170,7 +165,6 @@ public class IslandCtrl : MonoBehaviour
 
         Island.Instance().ChangeMoney(Reward);
         timer = clickDelay;
-        hideClickProgressTimer = 3f;
     }
 
     private void Effect(EffectSettings effect, string text)
