@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameActivator : MonoBehaviour
 {
-    public IslandCtrl[] islands;
+    public GameObject[] children;
 
     private void Start()
     {
-        foreach (IslandCtrl island in islands)
-            island.Level = Island.Instance().Level;
+        foreach (GameObject child in children)
+            child.SetActive(true);
     }
 }

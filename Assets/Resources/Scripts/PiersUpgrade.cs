@@ -6,20 +6,34 @@ using UnityEngine;
 public class PiersUpgrade : MonoBehaviour
 {
     public GameObject flag;
-    public List<ShipCtrl> ships;
+    public List<PierManager> piers;
 
-    private void Start()
+    private Island island;
+
+    private void Awake()
+    {
+        island = Island.Instance();
+    }
+
+    private void OnEnable()
     {
         EventManager.Subscribe("ChangeMoney", UpdateInfo);
         EventManager.Subscribe("AddExp", UpdateInfo);
         EventManager.Subscribe("LevelUp", UpdateInfo);
     }
 
+    private void OnDisable()
+    {
+        EventManager.Unsubscribe("ChangeMoney", UpdateInfo);
+        EventManager.Unsubscribe("AddExp", UpdateInfo);
+        EventManager.Unsubscribe("LevelUp", UpdateInfo);
+    }
+
     private void UpdateInfo(object[] arg0)
     {
-        foreach (ShipCtrl ship in ships)
+        foreach (PierManager pier in piers)
         {
-            if (ship.Unlocked && ship.Cost <= Island.Instance().Money && !ship.MaxGraded)
+            if ((pier.black ? pier.GetBlackMark() > 0 : pier.minLvl <= island.Level && pier.GetUpgradeCost() <= island.Money) && !pier.maxLvl)
             {
                 if (!flag.activeInHierarchy)
                     flag.SetActive(true);
@@ -35,11 +49,6 @@ public class PiersUpgrade : MonoBehaviour
 
     public void OpenShipUpgradeMenu()
     {
-        EventManager.SendEvent("OpenShipUpgradeMenu", ships);
-    }
-
-    private void OnMouseUpAsButton()
-    {
-        EventManager.SendEvent("OpenShipUpgradeMenu", ships);
+        EventManager.SendEvent("OpenShipUpgradeMenu", piers);
     }
 }

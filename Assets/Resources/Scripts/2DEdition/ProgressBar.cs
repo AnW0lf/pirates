@@ -16,14 +16,12 @@ public class ProgressBar : MonoBehaviour
                     progress.gameObject.LeanAlpha(1f, showDuration);
                     label.gameObject.LeanAlpha(1f, showDuration);
                     icon.gameObject.LeanAlpha(1f, showDuration);
-                    background.gameObject.LeanAlpha(1f, showDuration);
                 }
                 else
                 {
                     progress.gameObject.LeanAlpha(0f, hideDuration);
                     label.gameObject.LeanAlpha(0f, hideDuration);
                     icon.gameObject.LeanAlpha(0f, hideDuration);
-                    background.gameObject.LeanAlpha(0f, hideDuration);
                 }
             }
 
@@ -33,7 +31,7 @@ public class ProgressBar : MonoBehaviour
     [SerializeField]
     private bool _visible = true;
     [SerializeField]
-    private SpriteRenderer icon = null, background = null;
+    private SpriteRenderer icon = null;
     [SerializeField]
     private Transform progress = null;
     [SerializeField]
@@ -52,14 +50,12 @@ public class ProgressBar : MonoBehaviour
             progress.gameObject.LeanAlpha(1f, 0f);
             label.gameObject.LeanAlpha(1f, 0f);
             icon.gameObject.LeanAlpha(1f, 0f);
-            background.gameObject.LeanAlpha(1f, 0f);
         }
         else
         {
             progress.gameObject.LeanAlpha(0f, 0f);
             label.gameObject.LeanAlpha(0f, 0f);
             icon.gameObject.LeanAlpha(0f, 0f);
-            background.gameObject.LeanAlpha(0f, 0f);
         }
     }
 }

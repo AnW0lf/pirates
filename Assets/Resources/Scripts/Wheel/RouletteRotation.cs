@@ -14,7 +14,7 @@ public class RouletteRotation : MonoBehaviour
     public LifebuoyManager lm;
     public BonusGenerator bg;
     public GameObject flyingReward, arrow, rewardEffect;
-    //public ShipCtrl blackShip;
+    public PierManager blackShip;
 
     [Header("Количество секторов")]
     public int sectorCount;
@@ -40,6 +40,13 @@ public class RouletteRotation : MonoBehaviour
         rect = GetComponent<RectTransform>();
         IsRolling = false;
         island = Island.Instance();
+    }
+
+    private void OnEnable()
+    {
+        InitInfo();
+        EventManager.Subscribe("AddLifebuoy", UpdateSpinButton);
+        EventManager.Subscribe("LevelUp", UpdateSpinButton);
     }
 
     private void UpdateSpinButton(object[] arg0)
@@ -91,10 +98,6 @@ public class RouletteRotation : MonoBehaviour
 
         if (num == 0) lm.MaximizeLifebuoys();
         anglePerItem = 360f / sectors.Length;
-
-        InitInfo();
-        EventManager.Subscribe("AddLifebuoy", UpdateSpinButton);
-        EventManager.Subscribe("LevelUp", UpdateSpinButton);
     }
 
     public void Roll()

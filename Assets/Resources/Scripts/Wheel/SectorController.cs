@@ -9,7 +9,7 @@ public class SectorController : MonoBehaviour
     public RouletteRotation.RewardType type;
     public int minLevel, maxLevel, levelDifference, startReward, bonusId;
     public BonusGenerator bg;
-    public ShipCtrl blackShip;
+    public PierManager blackShip;
     public Text title;
 
     public float startRewardMantissa;
@@ -76,7 +76,7 @@ public class SectorController : MonoBehaviour
                 bg.Bonus(bonusId, reward);
                 break;
             case RouletteRotation.RewardType.BlackMark:
-                blackShip.AddBlackMark(1);
+                blackShip.ChangeBlackMark(1);
                 break;
         }
     }

@@ -7,7 +7,6 @@ TagManager:
   - Bonus
   - Border
   - GameScrollView
-  - TrailTrigger
   layers:
   - Default
   - TransparentFX
@@ -17,14 +16,14 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - Island_1
-  - Island_2
-  - Island_3
-  - Island_4
-  - 
   - ScreenUI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -47,7 +46,4 @@ TagManager:
     locked: 0
   - name: ScreenUI
     uniqueID: 3924875689
-    locked: 0
-  - name: Wheel
-    uniqueID: 148766895
     locked: 0

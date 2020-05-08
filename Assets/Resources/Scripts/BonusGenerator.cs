@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class BonusGenerator : MonoBehaviour
 {
-    public bool drawGizmos = false;
-    public int bonusSpawnDelay;
-    public float xRange, yRange;
+    public int bonusDelay;
     public GameObject[] bonuses;
     public int[] chances;
-    public Transform[] points;
+
+    private int randomPoint, curDelay;
+    private GameObject _bonus;
+    private Island island;
 
     void OnEnable()
     {
+        island = Island.Instance();
+        curDelay = bonusDelay;
         StartCoroutine(BonusSpawner());
     }
 
@@ -22,37 +24,30 @@ public class BonusGenerator : MonoBehaviour
         StopAllCoroutines();
     }
 
-    private List<Transform> EmptyPoints
-    {
-        get
-        {
-            List<Transform> emptyPoints = new List<Transform>();
-
-            foreach (Transform point in points)
-            {
-                if (point.childCount == 0)
-                    emptyPoints.Add(point);
-            }
-
-            return emptyPoints;
-        }
-    }
-
     IEnumerator BonusSpawner()
     {
         while (true)
         {
-            WaitForSeconds wait = new WaitForSeconds(bonusSpawnDelay);
+            //Debug.Log(curDelay);
+            WaitForSeconds wait = new WaitForSeconds(curDelay);
             yield return wait;
 
-            List<Transform> emptyPoints = EmptyPoints;
+            List<Transform> children = new List<Transform>();
 
-            while (emptyPoints.Count > 0)
+            foreach (BonusPoint child in GetComponentsInChildren<BonusPoint>())
+            {
+                if (!child.GetComponent<BonusPoint>().active)
+                {
+                    children.Add(child.transform);
+                }
+            }
+
+            while (children.Count > 0)
             {
                 yield return wait;
-                Transform child = emptyPoints[Random.Range(0, emptyPoints.Count)];
+                Transform child = children[Random.Range(0, children.Count)];
                 SetBonus(child, GetRandomBonusNumber());
-                emptyPoints.Remove(child);
+                children.Remove(child);
             }
         }
     }
@@ -60,56 +55,69 @@ public class BonusGenerator : MonoBehaviour
     private int GetRandomBonusNumber()
     {
         if (chances.Length != bonuses.Length) return 0;
-        int maxChance = chances.Sum();
+        int i = 0;
+        int maxChance = 0;
+        foreach (int item in chances)
+            maxChance += item;
         int chance = Random.Range(0, maxChance);
-        int i;
         for (i = 0; i < chances.Length; i++)
         {
             if (chance - chances[i] <= 0)
                 break;
             chance -= chances[i];
         }
-        if (Island.Instance().Level < 2 && i == chances.Length - 1 && i != 0)
+        if (island.Level < 2 && i == chances.Length - 1 && i != 0)
             i--;
         return i;
     }
 
-    private void SetBonus(Transform container, int bonus)
+    private void SetBonus(Transform child, int bonus)
     {
-        GameObject _bonus = Instantiate(bonuses[bonus], container);
-        _bonus.transform.localPosition = new Vector3(Random.Range(-xRange, xRange), Random.Range(-yRange, yRange), _bonus.transform.localPosition.z);
-        _bonus.gameObject.layer = gameObject.layer;
+        _bonus = Instantiate(bonuses[bonus], child);
+        _bonus.transform.localPosition = new Vector3(Random.Range(-_bonus.GetComponent<RectTransform>().sizeDelta.x / 2f,
+            _bonus.GetComponent<RectTransform>().sizeDelta.x / 2f), Random.Range(-_bonus.GetComponent<RectTransform>().sizeDelta.y / 2f,
+            _bonus.GetComponent<RectTransform>().sizeDelta.y / 2f), _bonus.transform.localPosition.z);
+        child.GetComponent<BonusPoint>().active = true;
     }
 
     public void Bonus(int bonus, int count)
     {
         if (bonuses.Length <= bonus) return;
-        List<Transform> emptyPoints = EmptyPoints;
+        List<Transform> children = new List<Transform>();
 
-        for (int i = 0; emptyPoints.Count > 0 && i < count; i++)
+        foreach (BonusPoint child in GetComponentsInChildren<BonusPoint>())
         {
-            Transform child = emptyPoints[Random.Range(0, emptyPoints.Count)];
+            if (!child.GetComponent<BonusPoint>().active)
+            {
+                children.Add(child.transform);
+            }
+        }
+
+        for (int i = 0; children.Count > 0 && i < count; i++)
+        {
+            Transform child = children[Random.Range(0, children.Count)];
             SetBonus(child, bonus);
-            emptyPoints.Remove(child);
+            children.Remove(child);
         }
     }
 
     public void RandomBonus(int count)
     {
-        List<Transform> emptyPoints = EmptyPoints;
+        List<Transform> children = new List<Transform>();
 
-        for (int i = 0; emptyPoints.Count > 0 && i < count; i++)
+        foreach (BonusPoint child in GetComponentsInChildren<BonusPoint>())
         {
-            Transform child = emptyPoints[Random.Range(0, emptyPoints.Count)];
-            SetBonus(child, GetRandomBonusNumber());
-            emptyPoints.Remove(child);
+            if (!child.GetComponent<BonusPoint>().active)
+            {
+                children.Add(child.transform);
+            }
         }
-    }
 
-    private void OnDrawGizmos()
-    {
-        if (!drawGizmos) return;
-        Vector3 cubeSize = new Vector3(Mathf.Abs(xRange * 2f), Mathf.Abs(yRange * 2f), 0.1f);
-        foreach (Transform point in points) Gizmos.DrawCube(point.position, cubeSize);
+        for (int i = 0; children.Count > 0 && i < count; i++)
+        {
+            Transform child = children[Random.Range(0, children.Count)];
+            SetBonus(child, GetRandomBonusNumber());
+            children.Remove(child);
+        }
     }
 }

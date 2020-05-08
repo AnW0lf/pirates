@@ -377,7 +377,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visible: 0
   icon: {fileID: 8774242276503046503}
-  background: {fileID: 718603172045481484}
   progress: {fileID: 8986785066856848038}
   label: {fileID: 4781811799529451881}
   showDuration: 0.5

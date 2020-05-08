@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4262329099305709037}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.091, y: 0.198, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 87251657132487204}
@@ -80,7 +80,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1de66e5f4e86e2e4cb564890916f7a9c, type: 2}
+  - {fileID: 2100000, guid: 9c36c09a0f6dd93458248f001ebce5ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,7 +100,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Time: 1
+  m_Time: 0.5
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -109,21 +109,21 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.19853592
-        inSlope: -0.2199201
-        outSlope: -0.2199201
+        value: 1
+        inSlope: -0.0326681
+        outSlope: -0.0326681
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.16720258
+        outWeight: 0.22508039
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: -0.29104277
-        outSlope: -0.29104277
+        inSlope: -2.3956575
+        outSlope: -2.3956575
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.17684889
+        inWeight: 0.067524135
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -163,9 +163,9 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.05
   m_Autodestruct: 0
-  m_Emitting: 0
+  m_Emitting: 1
 --- !u!1 &6027245679383862226
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,8 +177,6 @@ GameObject:
   - component: {fileID: 87251657132487204}
   - component: {fileID: 435789838322960340}
   - component: {fileID: 2752785646472820806}
-  - component: {fileID: 6223765204330127075}
-  - component: {fileID: 8921369494128843897}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -366,130 +364,3 @@ PolygonCollider2D:
       - {x: 0.12158203, y: 0.045898438}
       - {x: 0.12060547, y: 0.044921875}
       - {x: 0.122558594, y: 0.043945312}
---- !u!50 &6223765204330127075
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027245679383862226}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &8921369494128843897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027245679383862226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe15b6979f12d304eafed1525fc70dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shipName: Santa Maria
-  description: 
-  spriteForMenu: {fileID: 21300000, guid: 15fc3d0fbe7c9bd4bb57e94e57dd9ae7, type: 3}
-  unlockLevel: 0
-  islandCtrl: {fileID: 0}
-  parent: {fileID: 7533610351655155121}
-  body: {fileID: 435789838322960340}
-  trail: {fileID: 6797659007564168952}
-  angularSpeed: 30
-  toRaidDuration: 1
-  fromRaidDuration: 3
-  OutOfScreenDestination: 8
-  level: 0
-  levels:
-  - size: {x: 1, y: 1}
-    timeInRaid: 10
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
-  - size: {x: 1.02, y: 1.02}
-    timeInRaid: 9
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
-  - size: {x: 1.04, y: 1.04}
-    timeInRaid: 8
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
-  - size: {x: 1.06, y: 1.06}
-    timeInRaid: 7
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
-  - size: {x: 1.08, y: 1.08}
-    timeInRaid: 6
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
-  - size: {x: 1.1, y: 1.1}
-    timeInRaid: 5
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
-  - size: {x: 1.12, y: 1.12}
-    timeInRaid: 4
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
-  - size: {x: 1.14, y: 1.14}
-    timeInRaid: 3
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
-  - size: {x: 1.16, y: 1.16}
-    timeInRaid: 2
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
-  - size: {x: 1.18, y: 1.18}
-    timeInRaid: 1
-    reward:
-      Mantissa: 0
-      Exponent: 0
-    cost:
-      Mantissa: 0
-      Exponent: 0
