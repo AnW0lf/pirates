@@ -25,10 +25,10 @@ public class MiniaturesManager : MonoBehaviour
         }
     }
 
-    public void SetMiniatures(List<PierManager> piers)
+    public void SetMiniatures(List<ShipCtrl> ships)
     {
-        for (int i = 0; i < piers.Count && i < mcs.Length; i++)
-            mcs[i].SetInfo(piers[i]);
+        for (int i = 0; i < ships.Count && i < mcs.Length; i++)
+            mcs[i].SetInfo(ships[i]);
     }
 
     public void FocusMiniature(int id)

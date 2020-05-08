@@ -31,9 +31,9 @@ public class FlyingObject : MonoBehaviour
     [SerializeField]
     private float showDuration = 0.5f, hideDuration = 0.5f;
     [SerializeField]
-    private TextMesh text;
+    private TextMesh text = null;
     [SerializeField]
-    private SpriteRenderer icon;
+    private SpriteRenderer icon = null;
     [SerializeField]
     private LeanTweenType ease = LeanTweenType.linear;
 
@@ -51,16 +51,18 @@ public class FlyingObject : MonoBehaviour
         }
     }
 
-    public void Fly(Vector3 startPos, Vector3 endPos, float duration)
+    public void Fly(Vector3 startPos, Vector3 endPos, float duration, string text)
     {
+        this.text.text = text;
         transform.position = startPos;
         Visible = true;
         gameObject.LeanMove(endPos, Mathf.Max(0f, duration)).setEase(ease);
         LeanTween.delayedCall(Mathf.Max(0f, duration - hideDuration), () => Visible = false);
     }
 
-    public void Fly(Vector3 startPos, Vector3 endPos, float duration, LeanTweenType ease)
+    public void Fly(Vector3 startPos, Vector3 endPos, float duration, string text, LeanTweenType ease)
     {
+        this.text.text = text;
         transform.position = startPos;
         Visible = true;
         gameObject.LeanMove(endPos, Mathf.Max(0f, duration)).setEase(ease);

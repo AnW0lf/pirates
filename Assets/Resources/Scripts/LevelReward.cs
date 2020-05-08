@@ -56,15 +56,10 @@ public class LevelReward : MonoBehaviour
         levelsToShip = 999;
         foreach (PiersUpgrade piers in piersList)
         {
-            foreach (PierManager pier in piers.piers)
+            foreach (ShipCtrl ship in piers.ships)
             {
-                if (island.Level + 1 < pier.minLvl)
-                {
-                    if ((pier.minLvl - (island.Level + 1)) < levelsToShip)
-                    {
-                        levelsToShip = pier.minLvl - (island.Level + 1);
-                    }
-                }
+                if (ship.LevelsToUnlock < levelsToShip)
+                    levelsToShip = ship.LevelsToUnlock;
             }
         }
 

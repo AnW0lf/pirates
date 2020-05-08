@@ -12,7 +12,7 @@ public class MiniatureContoller : MonoBehaviour
 
     private Island island;
     private Transform parent;
-    private PierManager pier;
+    private ShipCtrl ship;
 
     private void Awake()
     {
@@ -46,41 +46,41 @@ public class MiniatureContoller : MonoBehaviour
         backLight.SetActive(true);
     }
 
-    public void SetInfo(PierManager pier)
+    public void SetInfo(ShipCtrl ship)
     {
-        this.pier = pier;
+        this.ship = ship;
         UpdateInfo(new object[0]);
     }
 
     private void UpdateInfo(object[] arg0)
     {
-        if (pier == null) return;
-        icon.sprite = pier.spriteForMenu;
+        if (ship == null) return;
+        icon.sprite = ship.SpriteForMenu;
 
-        if (pier.minLvl > island.Level)
+        if (!ship.Unlocked)
         {
             icon.color = Color.black;
-            level.text = "Level " + pier.minLvl;
+            level.text = "Level " + ship.UnlockLevel;
         }
-        else if (!pier.shipExist)
+        else if (!ship.Exists)
         {
-            if (pier.black)
-                icon.color = Color.black;
-            else
+            //if (ship.black)
+            //    icon.color = Color.black;
+            //else
                 icon.color = Color.white;
-            level.text = "0/" + (1 + pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3).ToString();
+            level.text = "0/" + (ship.levels.Length).ToString();
         }
-        else if (!pier.maxLvl)
+        else if (!ship.MaxGraded)
         {
             icon.color = Color.white;
-            level.text = (1 + pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3).ToString()
-                + "/" + (1 + pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3).ToString();
+            level.text = (ship.Level).ToString()
+                + "/" + (ship.levels.Length).ToString();
         }
         else
         {
             icon.color = Color.white;
             level.text = "Max";
         }
-        Light.SetActive(pier.black ? pier.GetBlackMark() > 0 && !pier.maxLvl: pier.minLvl <= island.Level && pier.GetUpgradeCost() <= island.Money && !pier.maxLvl);
+        Light.SetActive(/*ship.black ? ship.GetBlackMark() > 0 && !ship.maxLvl: */ship.Unlocked && ship.Cost <= island.Money && !ship.MaxGraded);
     }
 }

@@ -35,19 +35,18 @@ public class UpgradeMenuManager : MonoBehaviour
         {
             windows.SetActive(true);
             miniatures.SetActive(true);
-            List<PierManager> piers = (List<PierManager>)arg0[0];
-            wm.SetWindows(piers);
-            mm.SetMiniatures(piers);
+            List<ShipCtrl> ships = (List<ShipCtrl>)arg0[0];
+            wm.SetWindows(ships);
+            mm.SetMiniatures(ships);
 
             int cur = 0;
             bool canUp = false;
-            for(int i = 0; i < piers.Count; i++)
+            for(int i = 0; i < ships.Count; i++)
             {
-                if (piers[i].minLvl <= island.Level)
+                if (ships[i].Unlocked)
                 {
-                    if(!piers[i].maxLvl
-                        && ((!piers[i].black && piers[i].GetUpgradeCost() <= island.Money)
-                        || (piers[i].black && piers[i].GetBlackMark() > 0)))
+                    if(!ships[i].MaxGraded
+                        && ((/*!ships[i].black &&*/ ships[i].Cost <= island.Money) /*|| (ships[i].black && ships[i].GetBlackMark() > 0)*/))
                     {
                         canUp = true;
                         cur = i;

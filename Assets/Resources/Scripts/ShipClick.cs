@@ -41,43 +41,43 @@ public class ShipClick : MonoBehaviour
             _flyingText.transform.localPosition = new Vector3(0f, 0f, 0f);
             FlyingText ft = _flyingText.GetComponent<FlyingText>();
 
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusMaterial)
-            {
-                ship.rewardModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
-                ft.exp = true;
-                ft.expText.GetComponent<Text>().text = "+" + ship.reward.ToString();
+            //if (other.gameObject.GetComponent<BonusBehavior>().bonusMaterial)
+            //{
+            //    ship.rewardModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
+            //    ft.exp = true;
+            //    ft.expText.GetComponent<Text>().text = "+" + ship.reward.ToString();
 
-                EventManager.SendEvent("BonusCollected", ship.ShipName, "Material");
-            }
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusMoney)
-            {
-                if (islandController != null)
-                {
-                    BigDigit reward = islandController.GetReward() * 5 * island.Level;
-                    ft.money = true;
-                    ft.moneyText.GetComponent<Text>().text = "+" + reward.ToString();
-                    islandController.GenerateBonusMoney(reward);
-                    EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
-                }
-            }
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusSpeed)
-            {
-                ship.raidTimeModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
-                ft.speed = true;
-                ft.speedText.GetComponent<Text>().text = "-" + (int)(ship.raidTime / Mathf.Pow(2f, ship.raidTimeModifier)) + "s";
+            //    EventManager.SendEvent("BonusCollected", ship.ShipName, "Material");
+            //}
+            //if (other.gameObject.GetComponent<BonusBehavior>().bonusMoney)
+            //{
+            //    if (islandController != null)
+            //    {
+            //        BigDigit reward = islandController.GetReward() * 5 * island.Level;
+            //        ft.money = true;
+            //        ft.moneyText.GetComponent<Text>().text = "+" + reward.ToString();
+            //        islandController.GenerateBonusMoney(reward);
+            //        EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
+            //    }
+            //}
+            //if (other.gameObject.GetComponent<BonusBehavior>().bonusSpeed)
+            //{
+            //    ship.raidTimeModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
+            //    ft.speed = true;
+            //    ft.speedText.GetComponent<Text>().text = "-" + (int)(ship.raidTime / Mathf.Pow(2f, ship.raidTimeModifier)) + "s";
 
-                EventManager.SendEvent("BonusCollected", ship.ShipName, "Speed");
-            }
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusWheel)
-            {
-                if (island.Level >= 2)
-                {
-                    lifebuoys.AddLifebuoy();
-                    _flyingText.GetComponent<FlyingText>().wheel = true;
+            //    EventManager.SendEvent("BonusCollected", ship.ShipName, "Speed");
+            //}
+            //if (other.gameObject.GetComponent<BonusBehavior>().bonusWheel)
+            //{
+            //    if (island.Level >= 2)
+            //    {
+            //        lifebuoys.AddLifebuoy();
+            //        _flyingText.GetComponent<FlyingText>().wheel = true;
 
-                    EventManager.SendEvent("BonusCollected", ship.ShipName, "WheelSpin");
-                }
-            }
+            //        EventManager.SendEvent("BonusCollected", ship.ShipName, "WheelSpin");
+            //    }
+            //}
 
             Destroy(other.gameObject);
         }

@@ -17,7 +17,7 @@ public class WindowController : MonoBehaviour
 
     public Animation timeAnim, coinAnim;
 
-    private PierManager pier;
+    private ShipCtrl ship;
     private Island island;
     private GameObject rewardEffect;
 
@@ -43,16 +43,17 @@ public class WindowController : MonoBehaviour
 
     private void UpdateInfo(object[] arg0)
     {
-        UpdateInfo();
+        if (ship != null)
+            UpdateInfo();
     }
 
-    public void GenerateMenu(PierManager pier)
+    public void GenerateMenu(ShipCtrl ship)
     {
-        this.pier = pier;
-
+        this.ship = ship;
+        print(ship.ShipName);
         UpdateInfo();
         upgradeBtn.onClick.RemoveAllListeners();
-        upgradeBtn.onClick.AddListener(pier.Upgrade);
+        upgradeBtn.onClick.AddListener(ship.LevelUp);
         upgradeBtn.onClick.AddListener(UpdateInfo);
         upgradeBtn.onClick.AddListener(BonusPulse);
     }
@@ -61,22 +62,22 @@ public class WindowController : MonoBehaviour
     {
         float a = 0f;
         long b = 0;
-        if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
-        {
-            a = pier.detailChangeRaidTime1;
-            b = pier.detailChangeReward1;
-        }
-        else if (pier.detailCurrentLvl2 < pier.detailMaxLvl2)
-        {
-            a = pier.detailChangeRaidTime2;
-            b = pier.detailChangeReward2;
-        }
-        else if (pier.detailCurrentLvl3 <= pier.detailMaxLvl3)
-        {
-            a = pier.detailChangeRaidTime3;
-            b = pier.detailChangeReward3;
-        }
-        if(a != 0f && b == 0f)
+        //if (ship.detailCurrentLvl1 < ship.detailMaxLvl1)
+        //{
+        //    a = ship.detailChangeRaidTime1;
+        //    b = ship.detailChangeReward1;
+        //}
+        //else if (ship.detailCurrentLvl2 < ship.detailMaxLvl2)
+        //{
+        //    a = ship.detailChangeRaidTime2;
+        //    b = ship.detailChangeReward2;
+        //}
+        //else if (ship.detailCurrentLvl3 <= ship.detailMaxLvl3)
+        //{
+        //    a = ship.detailChangeRaidTime3;
+        //    b = ship.detailChangeReward3;
+        //}
+        if (a != 0f && b == 0f)
         {
             timeAnim.Play();
             if (rewardEffect != null) Destroy(rewardEffect);
@@ -95,27 +96,28 @@ public class WindowController : MonoBehaviour
     private void UpdateInfo()
     {
 
-        if (pier.black)
+        if (ship.Black)
         {
-            if (pier.GetBlackMark() > 0 && !pier.shipExist)
+            if (ship.BlackMark > 0 && !ship.Exists)
                 NotBought();
-            else if (!pier.shipExist)
+            else if (!ship.Exists)
                 Locked();
-            else if (pier.maxLvl)
+            else if (ship.MaxGraded)
                 MaxLevel();
             else
                 Bought();
         }
-        else if (pier.minLvl > island.Level)
+        else
+        if (!ship.Unlocked)
             Locked();
-        else if (!pier.shipExist)
+        else if (!ship.Exists)
             NotBought();
-        else if (pier.maxLvl)
+        else if (ship.MaxGraded)
             MaxLevel();
         else
             Bought();
 
-        if (pier.minLvl <= island.Level && !pier.maxLvl && (!pier.black && pier.GetUpgradeCost() <= island.Money || pier.black && pier.GetBlackMark() > 0))
+        if (ship.Unlocked && !ship.MaxGraded && (!ship.Black && ship.Cost <= island.Money || ship.Black && ship.BlackMark > 0))
             upgradeBtn.interactable = true;
         else
             upgradeBtn.interactable = false;
@@ -123,22 +125,22 @@ public class WindowController : MonoBehaviour
 
     private void Locked()
     {
-        SetState(titleTM, pier.shipName);
-        int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
+        SetState(titleTM, ship.ShipName);
+        int maxLvl = ship.levels.Length;
         SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
-        SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetState(raidTimeTM, ship.TimeInRaid.ToString(), "", "s");
+        SetState(rewardTM, ship.Reward.ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
-        SetState(descriptionTM, pier.shipDescription);
-        if (pier.black)
+        SetState(descriptionTM, ship.Description);
+        if (ship.Black)
             SetState(upBtnTM, "Catch unlock in Lucky Wheel");
         else
-            SetState(upBtnTM, pier.minLvl.ToString(), "LEVEl ");
+            SetState(upBtnTM, ship.UnlockLevel.ToString(), "LEVEl ");
 
-        if (!icon.sprite.Equals(pier.spriteForMenu))
-            icon.sprite = pier.spriteForMenu;
+        if (!icon.sprite.Equals(ship.SpriteForMenu))
+            icon.sprite = ship.SpriteForMenu;
         if (miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
 
@@ -158,23 +160,23 @@ public class WindowController : MonoBehaviour
 
     private void NotBought()
     {
-        SetState(titleTM, pier.shipName);
-        int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
+        SetState(titleTM, ship.ShipName);
+        int maxLvl = ship.levels.Length;
         SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
-        SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetState(raidTimeTM, ship.TimeInRaid.ToString(), "", "s");
+        SetState(rewardTM, ship.Reward.ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
-        SetState(descriptionTM, pier.shipDescription);
+        SetState(descriptionTM, ship.Description);
 
-        if (!pier.black)
+        if (!ship.Black)
         {
             SetState(upBtnTM, "Unlock\n");
             cost.SetActive(true);
-            costTxt.text = pier.GetUpgradeCost().ToString();
+            costTxt.text = ship.Cost.ToString();
         }
-        else if (pier.GetBlackMark() > 0)
+        else if (ship.BlackMark > 0)
         {
             SetState(upBtnTM, "Unlock");
             cost.SetActive(false);
@@ -185,11 +187,11 @@ public class WindowController : MonoBehaviour
             cost.SetActive(false);
         }
 
-        SetState(fadeLevelTM, pier.minLvl.ToString(), "LEVEL ");
+        SetState(fadeLevelTM, ship.UnlockLevel.ToString(), "LEVEL ");
         characteristics.gameObject.SetActive(false);
 
-        if (!icon.sprite.Equals(pier.spriteForMenu))
-            icon.sprite = pier.spriteForMenu;
+        if (!icon.sprite.Equals(ship.SpriteForMenu))
+            icon.sprite = ship.SpriteForMenu;
         if (miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
 
@@ -199,7 +201,7 @@ public class WindowController : MonoBehaviour
             windowFade.SetActive(false);
         if (titleFade.activeInHierarchy)
             titleFade.SetActive(false);
-        if (pier.black)
+        if (ship.Black)
             icon.color = Color.black;
         else
             icon.color = Color.white;
@@ -207,41 +209,41 @@ public class WindowController : MonoBehaviour
 
     private void Bought()
     {
-        SetState(titleTM, pier.shipName);
-        int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
-        int curLvl = pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3 + 1;
+        SetState(titleTM, ship.ShipName);
+        int maxLvl = ship.levels.Length;
+        int curLvl = ship.Level;
         SetState(upLevelTM, curLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
-        SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetState(raidTimeTM, ship.TimeInRaid.ToString(), "", "s");
+        SetState(rewardTM, ship.Reward.ToString());
 
         if (!miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
-        if (!icon.sprite.Equals(pier.spriteForMenu))
-            icon.sprite = pier.spriteForMenu;
+        if (!icon.sprite.Equals(ship.SpriteForMenu))
+            icon.sprite = ship.SpriteForMenu;
 
         float a = 0f;
         long b = 0;
-        if (pier.detailCurrentLvl1 < pier.detailMaxLvl1)
+        /*if (ship.detailCurrentLvl1 < ship.detailMaxLvl1)
         {
-            SetState(detailLevelTM, pier.detailCurrentLvl1.ToString() + "/" + pier.detailMaxLvl1, "HULL ");
-            a = pier.detailChangeRaidTime1;
-            b = pier.detailChangeReward1;
-            miniIcon.sprite = pier.detailMiniature1;
+            SetState(detailLevelTM, ship.detailCurrentLvl1.ToString() + "/" + ship.detailMaxLvl1, "HULL ");
+            a = ship.detailChangeRaidTime1;
+            b = ship.detailChangeReward1;
+            miniIcon.sprite = ship.detailMiniature1;
         }
-        else if (pier.detailCurrentLvl2 < pier.detailMaxLvl2)
+        else if (ship.detailCurrentLvl2 < ship.detailMaxLvl2)
         {
-            SetState(detailLevelTM, pier.detailCurrentLvl2.ToString() + "/" + pier.detailMaxLvl2, "SAIL ");
-            a = pier.detailChangeRaidTime2;
-            b = pier.detailChangeReward2;
-            miniIcon.sprite = pier.detailMiniature2;
+            SetState(detailLevelTM, ship.detailCurrentLvl2.ToString() + "/" + ship.detailMaxLvl2, "SAIL ");
+            a = ship.detailChangeRaidTime2;
+            b = ship.detailChangeReward2;
+            miniIcon.sprite = ship.detailMiniature2;
         }
-        else if (pier.detailCurrentLvl3 < pier.detailMaxLvl3)
+        else if (ship.detailCurrentLvl3 < ship.detailMaxLvl3)
         {
-            SetState(detailLevelTM, pier.detailCurrentLvl3.ToString() + "/" + pier.detailMaxLvl3, "GUNS ");
-            a = pier.detailChangeRaidTime3;
-            b = pier.detailChangeReward3;
-            miniIcon.sprite = pier.detailMiniature3;
-        }
+            SetState(detailLevelTM, ship.detailCurrentLvl3.ToString() + "/" + ship.detailMaxLvl3, "GUNS ");
+            a = ship.detailChangeRaidTime3;
+            b = ship.detailChangeReward3;
+            miniIcon.sprite = ship.detailMiniature3;
+        }*/
 
         string bonus = (a == 0f ? "" : (a < 0f ? "" : "+") + a.ToString())
                 + (b == 0 ? "" : (b < 0f ? "" : " +") + b.ToString());
@@ -252,13 +254,13 @@ public class WindowController : MonoBehaviour
         descriptionTM.gameObject.SetActive(false);
         characteristics.gameObject.SetActive(true);
 
-        if (!pier.black)
+        if (!ship.Black)
         {
             SetState(upBtnTM, "Upgrade\n");
-            cost.SetActive(true);
-            costTxt.text = pier.GetUpgradeCost().ToString();
+        cost.SetActive(true);
+        costTxt.text = ship.Cost.ToString();
         }
-        else if (pier.GetBlackMark() > 0)
+        else if (ship.BlackMark > 0)
         {
             SetState(upBtnTM, "Upgrade");
             cost.SetActive(false);
@@ -281,19 +283,19 @@ public class WindowController : MonoBehaviour
 
     private void MaxLevel()
     {
-        SetState(titleTM, pier.shipName);
-        int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
+        SetState(titleTM, ship.ShipName);
+        int maxLvl = ship.levels.Length;
         SetState(upLevelTM, maxLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
-        SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetState(raidTimeTM, ship.TimeInRaid.ToString(), "", "s");
+        SetState(rewardTM, ship.Reward.ToString());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
         SetState(descriptionTM, "Choice of the true corsair");
         SetState(upBtnTM, "MAX LEVEL");
 
-        if (!icon.sprite.Equals(pier.spriteForMenu))
-            icon.sprite = pier.spriteForMenu;
+        if (!icon.sprite.Equals(ship.SpriteForMenu))
+            icon.sprite = ship.SpriteForMenu;
         if (miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
 

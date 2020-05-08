@@ -13,7 +13,7 @@ public class WindowsManager : MonoBehaviour
         ss = mcs[0].transform.GetComponentInParent<SnapScrolling>();
     }
 
-    public void SetWindows(List<PierManager> piers)
+    public void SetWindows(List<ShipCtrl> piers)
     {
         for (int i = 0; i < piers.Count && i < mcs.Length; i++)
             mcs[i].GenerateMenu(piers[i]);

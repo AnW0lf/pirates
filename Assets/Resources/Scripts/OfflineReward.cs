@@ -8,7 +8,7 @@ public class OfflineReward : MonoBehaviour
 {
     public GameObject window;
     public List<GameObject> shipsList;
-    public IslandController[] islands;
+    public IslandCtrl[] islands;
     public int modifier, expModifier;
     public int maxTime;
     public int bonusModifier = 1;
@@ -59,10 +59,10 @@ public class OfflineReward : MonoBehaviour
         money = BigDigit.zero;
         expToAdd = BigDigit.zero;
 
-        foreach (IslandController land in islands)
+        foreach (IslandCtrl land in islands)
         {
             if (land.minLevel <= island.Level)
-                money += land.GetReward() * (timeModifier / modifier) + new BigDigit(100d);
+                money += land.Reward * (timeModifier / modifier) + new BigDigit(100d);
         }
 
         foreach (GameObject ships in shipsList)
