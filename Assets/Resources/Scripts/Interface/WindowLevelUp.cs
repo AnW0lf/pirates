@@ -13,6 +13,7 @@ public class WindowLevelUp : WindowBase
     [SerializeField] protected Image islandBackground = null, islandFill = null;
     [SerializeField] protected Text islandProgressText = null;
     [SerializeField] protected float islandProgressDuration = 1f;
+    [SerializeField] protected Transform rewardText, rewardButton;
 
     protected int levelsToShip;
     protected Island island;
@@ -33,14 +34,17 @@ public class WindowLevelUp : WindowBase
 
     private void IslandProgress()
     {
+        rewardText.localScale = Vector3.forward;
+        rewardButton.localScale = Vector3.forward;
+
         int lessLevel = quest.Levels[quest.Levels.Count - 2],
             greaterLevel = quest.Levels[quest.Levels.Count - 1],
             curLevel = Island.Instance().Level,
             spriteId = 0;
 
-        for(int i = 0; i< quest.Levels.Count; i++)
+        for (int i = 0; i < quest.Levels.Count; i++)
         {
-            if(curLevel <= quest.Levels[i])
+            if (curLevel <= quest.Levels[i])
             {
                 greaterLevel = quest.Levels[i];
                 if (i == 0) lessLevel = 0;
@@ -54,7 +58,7 @@ public class WindowLevelUp : WindowBase
         float oldProgress = (float)(curLevel - lessLevel - 1) / (greaterLevel - lessLevel);
         Sprite sprite = null;
         int counter = 0;
-        foreach(IslandController ic in islandsList)
+        foreach (IslandController ic in islandsList)
         {
             IslandSpriteController isc = ic.GetComponent<IslandSpriteController>();
             if (counter + isc.sprites.Count > spriteId)
@@ -77,12 +81,18 @@ public class WindowLevelUp : WindowBase
                 transform.parent.GetComponent<InterfaceIerarchy>().onDone +=
                     () => ic.GetComponent<IslandSpriteController>().ChangeSprite();
         }
+
+        LeanTween.delayedCall(islandProgressDuration, () =>
+        {
+            rewardText.LeanScale(Vector3.one, 0.5f);
+            rewardButton.LeanScale(Vector3.one, 0.5f);
+        });
     }
 
     private IEnumerator ProgressIsland(float oldProgress, float progress, float duration)
     {
         float time = 0f;
-        while(time < duration)
+        while (time < duration)
         {
             time += Time.deltaTime;
             islandFill.fillAmount = Mathf.Lerp(oldProgress, progress, time / duration);

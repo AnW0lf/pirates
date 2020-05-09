@@ -48530,6 +48530,9 @@ MonoBehaviour:
   islandBackground: {fileID: 1320423731}
   islandFill: {fileID: 1361159371}
   islandProgressText: {fileID: 1038675360}
+  islandProgressDuration: 0.5
+  rewardText: {fileID: 1085413300}
+  rewardButton: {fileID: 1100936248}
 --- !u!1 &871031311
 GameObject:
   m_ObjectHideFlags: 0
@@ -102172,7 +102175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1843799980
 RectTransform:
   m_ObjectHideFlags: 0
