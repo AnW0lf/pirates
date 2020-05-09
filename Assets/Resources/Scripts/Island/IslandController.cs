@@ -85,9 +85,8 @@ public class IslandController : MonoBehaviour
                 {
                     clickCounter = Mathf.Max(0f, clickCounter - maxClickCount / forcingMoneyDuration * Time.deltaTime);
                     progressbar.Progress = clickCounter / maxClickCount;
-                    string duration = (clickCounter / maxClickCount * forcingMoneyDuration).ToString();
-                    if (duration.Length > 4) duration = duration.Substring(0, 4);
-                    progressbar.Label = duration;
+                    float duration = clickCounter / maxClickCount * forcingMoneyDuration;
+                    progressbar.Timer = Mathf.RoundToInt(duration);
                 }
                 else
                 {

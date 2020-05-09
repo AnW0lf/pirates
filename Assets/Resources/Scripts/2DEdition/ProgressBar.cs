@@ -12,7 +12,7 @@ public class ProgressBar : MonoBehaviour
         {
             _visible = value;
             if (coroutine != null) StopCoroutine(coroutine);
-            if(_visible) coroutine = StartCoroutine(SetAlpha(1f, showDuration));
+            if (_visible) coroutine = StartCoroutine(SetAlpha(1f, showDuration));
             else coroutine = StartCoroutine(SetAlpha(0f, hideDuration));
         }
     }
@@ -47,7 +47,7 @@ public class ProgressBar : MonoBehaviour
     [SerializeField]
     private Image progress = null;
     [SerializeField]
-    private Text label = null;
+    private Text label = null, timer = null;
     [SerializeField]
     private ImageAlpha[] images;
     [SerializeField]
@@ -74,6 +74,15 @@ public class ProgressBar : MonoBehaviour
 
     public float Progress { get => progress.fillAmount; set => progress.fillAmount = value; }
     public string Label { get => label.text; set => label.text = value; }
+    public int Timer
+    {
+        set
+        {
+            string min = (value / 60).ToString(), sec = (value % 60).ToString();
+            if (sec.Length == 1) sec = "0" + sec;
+            timer.text = string.Format("{0}:{1}", min, sec);
+        }
+    }
 
     private IEnumerator SetAlpha(float alpha, float duration)
     {
@@ -106,6 +115,7 @@ class ImageAlpha
 {
     public Image image;
     public Vector2 alphaVector;
+    [System.NonSerialized]
     public bool forced = false;
     public bool enabledOnNotForsed = true, enabledOnForsed = true;
 
@@ -138,6 +148,7 @@ class TextAlpha
 {
     public Text text;
     public Vector2 alphaVector;
+    [System.NonSerialized]
     public bool forced = false;
     public bool enabledOnNotForsed = true, enabledOnForsed = true;
 
