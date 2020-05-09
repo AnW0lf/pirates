@@ -12,6 +12,7 @@ public class WindowLevelUp : WindowBase
     [SerializeField] protected PanelQuests quest = null;
     [SerializeField] protected Image islandBackground = null, islandFill = null;
     [SerializeField] protected Text islandProgressText = null;
+    [SerializeField] protected float islandProgressDuration = 1f;
 
     protected int levelsToShip;
     protected Island island;
@@ -32,7 +33,6 @@ public class WindowLevelUp : WindowBase
 
     private void IslandProgress()
     {
-        float progress = 0f;
         int lessLevel = quest.Levels[quest.Levels.Count - 2],
             greaterLevel = quest.Levels[quest.Levels.Count - 1],
             curLevel = Island.Instance().Level,
@@ -50,7 +50,8 @@ public class WindowLevelUp : WindowBase
             }
         }
 
-        progress = (float)(curLevel - lessLevel) / (greaterLevel - lessLevel);
+        float progress = (float)(curLevel - lessLevel) / (greaterLevel - lessLevel);
+        float oldProgress = (float)(curLevel - lessLevel - 1) / (greaterLevel - lessLevel);
         Sprite sprite = null;
         int counter = 0;
         foreach(IslandController ic in islandsList)
@@ -66,8 +67,20 @@ public class WindowLevelUp : WindowBase
 
         islandBackground.sprite = sprite;
         islandFill.sprite = sprite;
-        islandFill.fillAmount = progress;
+        islandFill.fillAmount = oldProgress;
+        StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
         islandProgressText.text = string.Format("Island up: {0}%", Mathf.RoundToInt(progress * 100f));
+    }
+
+    private IEnumerator ProgressIsland(float oldProgress, float progress, float duration)
+    {
+        float time = 0f;
+        while(time < duration)
+        {
+            time += Time.deltaTime;
+            islandFill.fillAmount = Mathf.Lerp(oldProgress, progress, time / duration);
+            yield return null;
+        }
     }
 
     public override void Close()
