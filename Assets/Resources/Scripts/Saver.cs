@@ -13,8 +13,6 @@ public class Saver : MonoBehaviour
 
     public bool AuthSuccess { get; private set; } = false;
 
-    private void Awake() { island = Island.Instance(); }
-
     private void Start()
     {
 #if UNITY_ANDROID
@@ -35,6 +33,6 @@ public class Saver : MonoBehaviour
 
     private void Save()
     {
-        island.Save();
+        Island.Instance().Save();
     }
 }

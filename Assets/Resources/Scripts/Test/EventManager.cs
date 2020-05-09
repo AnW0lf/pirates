@@ -14,6 +14,7 @@ public class EventManager : MonoBehaviour
 
     void Awake()
     {
+        Island.Instance();
         if (_instance != null)
             return;
         _instance = GetComponent<EventManager>();

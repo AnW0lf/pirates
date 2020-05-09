@@ -21,25 +21,18 @@ public class LifebuoyManager : MonoBehaviour
     private int max, cur, lvl, s, lifebuoysOffline;
     private bool isTimer = false;
 
-
-    private Island island;
     private string modifierName;
-
-    private void Awake()
-    {
-        island = Island.Instance();
-    }
 
     private void OnEnable()
     {
         modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
-        island.InitParameter(modifierName + "_level", 1);
-        island.InitParameter(modifierName + "_current", 3);
-        island.InitParameter(modifierName + "_timer", 0);
-        lvl = island.GetParameter(modifierName + "_level", 0);
+        Island.Instance().InitParameter(modifierName + "_level", 1);
+        Island.Instance().InitParameter(modifierName + "_current", 3);
+        Island.Instance().InitParameter(modifierName + "_timer", 0);
+        lvl = Island.Instance().GetParameter(modifierName + "_level", 0);
         max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
-        cur = island.GetParameter(modifierName + "_current", 0);
-        s = island.GetParameter(modifierName + "_timer", 0);
+        cur = Island.Instance().GetParameter(modifierName + "_current", 0);
+        s = Island.Instance().GetParameter(modifierName + "_timer", 0);
 
         LifebuoysOffline();
 
@@ -118,12 +111,11 @@ public class LifebuoyManager : MonoBehaviour
 
     public void UpdateInfo()
     {
-        if (island == null) island = Island.Instance();
         modifierName = upgrade.modifierName + upgrade.islandNumber.ToString();
-        island.InitParameter(modifierName + "_level", 0);
-        lvl = island.GetParameter(modifierName + "_level", 0);
+        Island.Instance().InitParameter(modifierName + "_level", 0);
+        lvl = Island.Instance().GetParameter(modifierName + "_level", 0);
         max = (int)upgrade.startReward + (lvl - 1) * (int)upgrade.modifier;
-        cur = island.GetParameter(modifierName + "_current", 0);
+        cur = Island.Instance().GetParameter(modifierName + "_current", 0);
         EventManager.SendEvent("AddLifebuoy");
         bar.fillAmount = (float)cur / max;
         tm.text = cur + "/" + max;
@@ -137,7 +129,7 @@ public class LifebuoyManager : MonoBehaviour
 
     public void AddLifebuoy()
     {
-        island.SetParameter(modifierName + "_current", ++cur);
+        Island.Instance().SetParameter(modifierName + "_current", ++cur);
         UpdateInfo();
         EventManager.SendEvent("AddLifebuoy");
     }
@@ -146,7 +138,7 @@ public class LifebuoyManager : MonoBehaviour
     {
         if(cur > 0)
         {
-            island.SetParameter(modifierName + "_current", --cur);
+            Island.Instance().SetParameter(modifierName + "_current", --cur);
             UpdateInfo();
             return true;
         }
@@ -157,7 +149,7 @@ public class LifebuoyManager : MonoBehaviour
     {
         if (cur < max)
         {
-            island.SetParameter(modifierName + "_current", max);
+            Island.Instance().SetParameter(modifierName + "_current", max);
         }
         UpdateInfo();
     }
@@ -172,7 +164,7 @@ public class LifebuoyManager : MonoBehaviour
             timer.prefix = "+1 in " + (s / 60).ToString();
             if (s % 60 < 10)
             {
-                island.SetParameter(modifierName + "_timer", s);
+                Island.Instance().SetParameter(modifierName + "_timer", s);
                 timer.postfix = "0" + (s % 60).ToString();
             }
             else
@@ -216,16 +208,16 @@ public class LifebuoyManager : MonoBehaviour
 
     private void OnApplicationPause(bool pause)
     {
-        island.SetParameter(modifierName + "_timer", s);
+        Island.Instance().SetParameter(modifierName + "_timer", s);
     }
 
     private void OnApplicationFocus(bool focus)
     {
-        island.SetParameter(modifierName + "_timer", s);
+        Island.Instance().SetParameter(modifierName + "_timer", s);
     }
 
     private void OnApplicationQuit()
     {
-        island.SetParameter(modifierName + "_timer", s);
+        Island.Instance().SetParameter(modifierName + "_timer", s);
     }
 }

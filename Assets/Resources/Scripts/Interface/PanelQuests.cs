@@ -16,57 +16,59 @@ public class PanelQuests : MonoBehaviour
     private Island island;
     private int questLevel = 0;
 
-    private void Awake()
-    {
-        island = Island.Instance();
-    }
+    public List<int> Levels { get => levels; }
 
-    private void Start()
-    {
-        island.InitParameter("QuestLevel", 0);
-        questLevel = island.GetParameter("QuestLevel", 0);
-        UpdateInfo();
+    //private void Awake()
+    //{
+    //    island = Island.Instance();
+    //}
 
-        island.InitParameter("QuestOpened", 0);
-        opened = island.GetParameter("QuestOpened", 0) != 0;
-        if (opened)
-            transform.localPosition += Vector3.down * 200f;
-        else
-            StartCoroutine(Open());
-    }
+    //private void Start()
+    //{
+    //    island.InitParameter("QuestLevel", 0);
+    //    questLevel = island.GetParameter("QuestLevel", 0);
+    //    UpdateInfo();
 
-    public void UpdateInfo()
-    {
-        if (questLevel >= texts.Count || questLevel >= levels.Count) return;
-        progressBar.fillAmount = (float)island.Level / levels[questLevel];
-        lvlText.text = island.Level + "/" + levels[questLevel];
-        questText.text = texts[questLevel];
-        rankText.text = (questLevel + 1).ToString();
-        if (island.Level >= levels[questLevel])
-        {
-            button.SetActive(true);
-        }
-    }
+    //    island.InitParameter("QuestOpened", 0);
+    //    opened = island.GetParameter("QuestOpened", 0) != 0;
+    //    if (opened)
+    //        transform.localPosition += Vector3.down * 200f;
+    //    else
+    //        StartCoroutine(Open());
+    //}
 
-    public void QuestDone()
-    {
-        questLevel++;
-        island.SetParameter("QuestLevel", questLevel);
-        button.SetActive(false);
-        UpdateInfo();
-    }
+    //public void UpdateInfo()
+    //{
+    //    if (questLevel >= texts.Count || questLevel >= levels.Count) return;
+    //    progressBar.fillAmount = (float)island.Level / levels[questLevel];
+    //    lvlText.text = island.Level + "/" + levels[questLevel];
+    //    questText.text = texts[questLevel];
+    //    rankText.text = (questLevel + 1).ToString();
+    //    if (island.Level >= levels[questLevel])
+    //    {
+    //        button.SetActive(true);
+    //    }
+    //}
 
-    private IEnumerator Open()
-    {
-        bool Opened() { return opened; }
-        yield return new WaitUntil(Opened);
-        RectTransform rect = GetComponent<RectTransform>();
-        WaitForSeconds wait = new WaitForSeconds(0.025f);
-        for (int i = 0; i < 20; i++)
-        {
-            rect.localPosition += Vector3.down * 10f;
-            yield return wait;
-        }
-        island.SetParameter("QuestOpened", 1);
-    }
+    //public void QuestDone()
+    //{
+    //    questLevel++;
+    //    island.SetParameter("QuestLevel", questLevel);
+    //    button.SetActive(false);
+    //    UpdateInfo();
+    //}
+
+    //private IEnumerator Open()
+    //{
+    //    bool Opened() { return opened; }
+    //    yield return new WaitUntil(Opened);
+    //    RectTransform rect = GetComponent<RectTransform>();
+    //    WaitForSeconds wait = new WaitForSeconds(0.025f);
+    //    for (int i = 0; i < 20; i++)
+    //    {
+    //        rect.localPosition += Vector3.down * 10f;
+    //        yield return wait;
+    //    }
+    //    island.SetParameter("QuestOpened", 1);
+    //}
 }
