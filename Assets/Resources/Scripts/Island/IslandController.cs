@@ -76,7 +76,6 @@ public class IslandController : MonoBehaviour
                 {
                     if (hideClickProgressTime <= 0f) progressbar.Visible = false;
                     hideClickProgressTime -= Time.deltaTime;
-                    print(hideClickProgressTime);
                 }
             }
             else
