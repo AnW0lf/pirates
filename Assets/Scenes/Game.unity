@@ -20012,7 +20012,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelOpened: 0
-  quests: {fileID: 1347653237}
 --- !u!223 &396537689
 Canvas:
   m_ObjectHideFlags: 0
@@ -39255,7 +39254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelOpened: 0
-  quests: {fileID: 1347653237}
 --- !u!114 &677434896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61634,7 +61632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.10645701, b: 0.3019608, a: 0.46666667}
+  m_Color: {r: 0, g: 0.10645701, b: 0.3019608, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -70289,7 +70287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1347653238
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70734,7 +70732,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelOpened: 0
-  quests: {fileID: 1347653237}
 --- !u!114 &1352818136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71147,7 +71144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelOpened: 0
-  quests: {fileID: 1347653237}
 --- !u!114 &1364629212
 MonoBehaviour:
   m_ObjectHideFlags: 0
