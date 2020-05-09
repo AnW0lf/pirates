@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class WorldButton : MonoBehaviour
 {
+    [SerializeField] private int unlockLevel = 3;
     [SerializeField] private Button btn;
     [SerializeField] private Transform opened = null, closed = null;
     [SerializeField] private VerticalLayoutGroup group = null;
@@ -18,6 +20,26 @@ public class WorldButton : MonoBehaviour
     private Coroutine coroutine = null;
     private int curId = -1, id = 0;
     private bool scrolling = false;
+
+    private void Start()
+    {
+        CheckLevel();
+        if (!btn.gameObject.activeSelf)
+            EventManager.Subscribe("LevelUp", CheckLevel);
+    }
+
+    private void CheckLevel(object[] arg0)
+    {
+        CheckLevel();
+    }
+
+    private void CheckLevel()
+    {
+        if (Island.Instance().Level < unlockLevel) return;
+        btn.gameObject.SetActive(true);
+        group.gameObject.SetActive(true);
+        EventManager.Unsubscribe("LevelUp", CheckLevel);
+    }
 
     public void Close()
     {
@@ -83,7 +105,7 @@ public class WorldButton : MonoBehaviour
     {
         if (scrolling) return;
         id = Mathf.RoundToInt((content.anchoredPosition.y / content.sizeDelta.y) * 4f);
-        if(curId != id)
+        if (curId != id)
         {
             curId = id;
             SetColor(id);
