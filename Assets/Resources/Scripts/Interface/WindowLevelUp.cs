@@ -70,6 +70,13 @@ public class WindowLevelUp : WindowBase
         islandFill.fillAmount = oldProgress;
         StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
         islandProgressText.text = string.Format("Island up: {0}%", Mathf.RoundToInt(progress * 100f));
+
+        if (progress == 1f)
+        {
+            foreach (IslandController ic in islandsList)
+                transform.parent.GetComponent<InterfaceIerarchy>().onDone +=
+                    () => ic.GetComponent<IslandSpriteController>().ChangeSprite();
+        }
     }
 
     private IEnumerator ProgressIsland(float oldProgress, float progress, float duration)

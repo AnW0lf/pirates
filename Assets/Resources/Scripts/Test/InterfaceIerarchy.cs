@@ -6,6 +6,7 @@ using UnityEngine;
 public class InterfaceIerarchy : MonoBehaviour
 {
     public bool Done { get; protected set; }
+    public Action onDone = null;
 
     protected int counter = 0;
     [SerializeField] protected List<WindowBase> windows;
@@ -30,6 +31,14 @@ public class InterfaceIerarchy : MonoBehaviour
     {
         if (windows.Count > ++counter)
             windows[counter].Open(new object[0]);
-        else Done = true;
+        else
+        {
+            Done = true;
+            LeanTween.delayedCall(0.5f, () =>
+            {
+                onDone?.Invoke();
+                onDone = null;
+            });
+        }
     }
 }
