@@ -18,7 +18,7 @@ public class IslandController : MonoBehaviour
     private Island island;
     private bool active = false, forced = false;
     private RectTransform rect;
-    private float clickCounter, autoclickTimer, clickDelay = 0.25f, clickDelayTimer;
+    private float clickCounter, autoclickTimer, clickDelay = 0.25f, clickDelayTimer, hideClickProgressTime = 2f;
     private Vector2 original;
     private IslandSpriteController islandSpriteController;
 
@@ -66,11 +66,18 @@ public class IslandController : MonoBehaviour
 
                 if (clickCounter >= 2f)
                 {
-                    if (!progressbar.Visible) progressbar.Visible = true;
+                    if (!progressbar.Visible && hideClickProgressTime > 0f) progressbar.Visible = true;
                     progressbar.Progress = clickCounter / maxClickCount;
                     progressbar.Label = (GetReward() * 20).ToString();
                 }
                 else if (progressbar.Visible) progressbar.Visible = false;
+
+                if (progressbar.Visible)
+                {
+                    if (hideClickProgressTime <= 0f) progressbar.Visible = false;
+                    hideClickProgressTime -= Time.deltaTime;
+                    print(hideClickProgressTime);
+                }
             }
             else
             {
@@ -85,6 +92,7 @@ public class IslandController : MonoBehaviour
                 else
                 {
                     forced = false;
+                    progressbar.Force = forced;
                     progressbar.Visible = false;
                     fontain.SetActive(false);
                 }
@@ -101,6 +109,7 @@ public class IslandController : MonoBehaviour
     private void ForceClickReward()
     {
         forced = true;
+        progressbar.Force = forced;
         fontain.SetActive(true);
         var reward = GetReward() * 20;
         GenerateBonusMoney(reward);
@@ -126,6 +135,7 @@ public class IslandController : MonoBehaviour
         Pulse();
         GenerateEffect();
         clickCounter += 1f;
+        hideClickProgressTime = 3f;
 
         if (clickCounter >= maxClickCount)
             ForceClickReward();
