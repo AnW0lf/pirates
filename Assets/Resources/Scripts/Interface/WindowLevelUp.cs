@@ -96,7 +96,7 @@ public class WindowLevelUp : WindowBase
                  {
                      rewardText.gameObject.SetActive(true);
                      rewardText.Play();
-                     LeanTween.delayedCall(0.5f,
+                     LeanTween.delayedCall(0.75f,
                          () =>
                          {
                              rewardButton.gameObject.SetActive(true);
