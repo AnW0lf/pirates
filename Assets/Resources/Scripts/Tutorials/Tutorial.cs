@@ -6,6 +6,7 @@ public class Tutorial : MonoBehaviour
 {
     public PierManager pier;
     public GameObject[] tutorials;
+    public GameObject[] activateList;
 
     private int stage = 0;
     private Island island;
@@ -20,6 +21,11 @@ public class Tutorial : MonoBehaviour
     {
         island.InitParameter(stageParameter, 0);
         stage = island.GetParameter(stageParameter, 0);
+        if (tutorials.Length <= stage)
+        {
+            foreach (GameObject activate in activateList) activate.SetActive(true);
+            gameObject.SetActive(false);
+        }
     }
 
     private void Update()
@@ -29,7 +35,11 @@ public class Tutorial : MonoBehaviour
             if (!tutorials[stage].activeInHierarchy)
                 tutorials[stage].SetActive(true);
         }
-        else gameObject.SetActive(false);
+        else
+        {
+            foreach (GameObject activate in activateList) activate.SetActive(true);
+            gameObject.SetActive(false);
+        }
     }
 
     public void NextStage()
