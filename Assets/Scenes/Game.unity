@@ -5050,6 +5050,7 @@ MonoBehaviour:
   showDuration: 0.3
   hideDuration: 0.3
   progress: {fileID: 572069053}
+  anim: {fileID: 0}
   label: {fileID: 69261176}
   timer: {fileID: 0}
   images: []
@@ -53486,6 +53487,7 @@ MonoBehaviour:
   showDuration: 0.3
   hideDuration: 0.3
   progress: {fileID: 210587846}
+  anim: {fileID: 0}
   label: {fileID: 1676559}
   timer: {fileID: 0}
   images: []
@@ -55035,7 +55037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -69869,6 +69871,7 @@ MonoBehaviour:
   showDuration: 0.3
   hideDuration: 0.3
   progress: {fileID: 394104073}
+  anim: {fileID: 0}
   label: {fileID: 1774345144}
   timer: {fileID: 0}
   images: []
@@ -74543,7 +74546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -75831,7 +75834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165, y: -6.8}
+  m_AnchoredPosition: {x: 0, y: -6.8}
   m_SizeDelta: {x: 160, y: 85.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1472548968
@@ -75848,7 +75851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -76055,6 +76058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1476986691}
   - component: {fileID: 1476986692}
+  - component: {fileID: 1476986693}
   m_Layer: 0
   m_Name: ClickProgress
   m_TagString: Untagged
@@ -76103,6 +76107,7 @@ MonoBehaviour:
   showDuration: 0.3
   hideDuration: 0.3
   progress: {fileID: 182369501}
+  anim: {fileID: 1476986693}
   label: {fileID: 1087854196}
   timer: {fileID: 1472548968}
   images:
@@ -76134,11 +76139,27 @@ MonoBehaviour:
   - text: {fileID: 1832399980}
     alphaVector: {x: 1, y: 1}
     enabledOnNotForsed: 1
-    enabledOnForsed: 1
+    enabledOnForsed: 0
   - text: {fileID: 1472548968}
     alphaVector: {x: 1, y: 1}
     enabledOnNotForsed: 0
     enabledOnForsed: 1
+--- !u!111 &1476986693
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476986690}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: f061af6ba99706343bdfcf3256b14c0e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: f061af6ba99706343bdfcf3256b14c0e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1480879824
 GameObject:
   m_ObjectHideFlags: 0
@@ -100655,7 +100676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -101615,7 +101636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

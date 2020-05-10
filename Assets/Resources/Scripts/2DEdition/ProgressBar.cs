@@ -23,6 +23,10 @@ public class ProgressBar : MonoBehaviour
         set
         {
             _force = value;
+
+            if (_force) anim.Stop();
+            else anim.Play();
+
             foreach (ImageAlpha image in images)
             {
                 float alpha = image.Alpha;
@@ -47,6 +51,8 @@ public class ProgressBar : MonoBehaviour
     [SerializeField]
     private Image progress = null;
     [SerializeField]
+    private Animation anim = null;
+    [SerializeField]
     private Text label = null, timer = null;
     [SerializeField]
     private ImageAlpha[] images;
@@ -70,6 +76,8 @@ public class ProgressBar : MonoBehaviour
             text.forced = false;
             text.text.gameObject.SetActive(text.enabledOnNotForsed);
         }
+
+        if (!Force) anim.Play();
     }
 
     public float Progress { get => progress.fillAmount; set => progress.fillAmount = value; }
