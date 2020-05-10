@@ -87,9 +87,9 @@ public class ShipClick : MonoBehaviour
             borderName = other.gameObject.name;
             Invoke("SwitchEmmiting", 0.15f);
             if (other.gameObject.name.Equals("RightBorder") || other.gameObject.name.Equals("LeftBorder"))
-                StartCoroutine(Timer(ship.GetRaidTime() + 1.5f, true));
+                StartCoroutine(Timer(ship.GetRaidTime(), ship.GetRaidTime() + 1.5f, true));
             else
-                StartCoroutine(Timer(ship.GetRaidTime(), false));
+                StartCoroutine(Timer(ship.GetRaidTime(), ship.GetRaidTime() + 0.5f, false));
         }
         else if (other.CompareTag("Border") && isTimerActive && borderName == other.gameObject.name)
         {
@@ -100,13 +100,13 @@ public class ShipClick : MonoBehaviour
         }
     }
 
-    private IEnumerator Timer(float time, bool isSide)
+    private IEnumerator Timer(float time, float realTime, bool isSide)
     {
         isTimerActive = true;
 
         pointer.gameObject.SetActive(true);
 
-        StartCoroutine(Show(1f));
+        StartCoroutine(Show(0.33f));
 
         float height = 2f * cam.orthographicSize, width = height * cam.aspect, xPos = transform.position.x, yPos = transform.position.y;
         Vector3 pointerPos = new Vector3(isSide ? (xPos > 0f ? width / 2f : -width / 2f) : xPos,
@@ -114,15 +114,17 @@ public class ShipClick : MonoBehaviour
         pointer.position = pointerPos;
         pointer.eulerAngles = transform.eulerAngles;
 
-        while (time > 0f)
+        float timer = realTime;
+
+        while (timer > 0f)
         {
-            time -= Time.deltaTime;
-            clock.text = Mathf.RoundToInt(time).ToString();
+            timer -= Time.deltaTime;
+            clock.text = Mathf.RoundToInt(Mathf.Max(time * timer / realTime + 0.45f, 1f)).ToString();
             clock.transform.eulerAngles = Vector3.zero;
             yield return null;
         }
 
-        StartCoroutine(Hide(1f));
+        StartCoroutine(Hide(0.33f));
 
         LeanTween.delayedCall(1f, () => pointer.gameObject.SetActive(false));
     }
