@@ -79,8 +79,6 @@ public class WindowLevelUp : WindowBase
         LeanTween.delayedCall(0.75f, () =>
         {
             StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
-            islandProgressText.gameObject.LeanScale(Vector3.one * 1.2f, 0.4f)
-            .setOnComplete(() => islandProgressText.gameObject.LeanScale(Vector3.one, 0.2f));
 
             if (progress == 1f)
             {
@@ -91,15 +89,21 @@ public class WindowLevelUp : WindowBase
 
             LeanTween.delayedCall(islandProgressDuration * 1.1f, () =>
             {
-                rewardText.gameObject.SetActive(true);
-                rewardText.Play();
-                LeanTween.delayedCall(0.5f,
-                    () =>
-                    {
-                        rewardButton.gameObject.SetActive(true);
-                        rewardButton.Play("NewLevelButtonShow");
-                        LeanTween.delayedCall(0.75f, () => rewardButton.Play("BonusPulse"));
-                    });
+                islandProgressText.gameObject.LeanScale(Vector3.one * 1.2f, 0.4f)
+                .setOnComplete(() => islandProgressText.gameObject.LeanScale(Vector3.one, 0.2f));
+
+                LeanTween.delayedCall(1.2f, () =>
+                 {
+                     rewardText.gameObject.SetActive(true);
+                     rewardText.Play();
+                     LeanTween.delayedCall(0.5f,
+                         () =>
+                         {
+                             rewardButton.gameObject.SetActive(true);
+                             rewardButton.Play("NewLevelButtonShow");
+                             LeanTween.delayedCall(0.75f, () => rewardButton.Play("BonusPulse"));
+                         });
+                 });
             });
         });
     }
