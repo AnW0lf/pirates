@@ -71,13 +71,14 @@ public class WindowLevelUp : WindowBase
         islandFill.sprite = sprite;
         islandFill.fillAmount = oldProgress;
 
+        if (lessLevel / 25 < greaterLevel / 25)
+            islandProgressText.text = string.Format("NEW ISLAND: {0}%", Mathf.RoundToInt(progress * 100f));
+        else
+            islandProgressText.text = string.Format("Island Up: {0}%", Mathf.RoundToInt(progress * 100f));
+
         LeanTween.delayedCall(0.75f, () =>
         {
             StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
-            if (lessLevel / 25 < greaterLevel / 25)
-                islandProgressText.text = string.Format("NEW ISLAND: {0}%", Mathf.RoundToInt(progress * 100f));
-            else
-                islandProgressText.text = string.Format("Island Up: {0}%", Mathf.RoundToInt(progress * 100f));
 
             if (progress == 1f)
             {
