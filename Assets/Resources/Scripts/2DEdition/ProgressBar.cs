@@ -11,6 +11,7 @@ public class ProgressBar : MonoBehaviour
         set
         {
             _visible = value;
+            if (!gameObject.activeSelf) return;
             if (coroutine != null) StopCoroutine(coroutine);
             if (_visible) coroutine = StartCoroutine(SetAlpha(1f, showDuration));
             else coroutine = StartCoroutine(SetAlpha(0f, hideDuration));
@@ -78,6 +79,11 @@ public class ProgressBar : MonoBehaviour
         }
 
         if (!Force) anim.Play();
+    }
+
+    private void OnEnable()
+    {
+        Visible = _visible;
     }
 
     public float Progress { get => progress.fillAmount; set => progress.fillAmount = value; }
