@@ -120,6 +120,9 @@ public class ProgressBar : MonoBehaviour
             time += Time.deltaTime;
         }
 
+        foreach (ImageAlpha image in images) image.Alpha = alpha;
+        foreach (TextAlpha text in texts) text.Alpha = alpha;
+
         coroutine = null;
     }
 }
