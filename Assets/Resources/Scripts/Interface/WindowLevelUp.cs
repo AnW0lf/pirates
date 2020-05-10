@@ -13,7 +13,7 @@ public class WindowLevelUp : WindowBase
     [SerializeField] protected Image islandBackground = null, islandFill = null;
     [SerializeField] protected Text islandProgressText = null;
     [SerializeField] protected float islandProgressDuration = 1f;
-    [SerializeField] protected Animation rewardText, rewardButton, islandAnimation;
+    [SerializeField] protected Animation rewardText, rewardButton;
 
     protected int levelsToShip;
     protected Island island;
@@ -34,7 +34,7 @@ public class WindowLevelUp : WindowBase
 
     private void IslandProgress()
     {
-        islandAnimation.Play();
+        islandProgressText.transform.localScale = Vector3.zero;
         int lessLevel = quest.Levels[quest.Levels.Count - 2],
             greaterLevel = quest.Levels[quest.Levels.Count - 1],
             curLevel = Island.Instance().Level,
@@ -79,6 +79,7 @@ public class WindowLevelUp : WindowBase
         LeanTween.delayedCall(0.75f, () =>
         {
             StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
+            islandProgressText.gameObject.LeanScale(Vector3.one, 0.5f).setEase(LeanTweenType.easeInOutBounce);
 
             if (progress == 1f)
             {
