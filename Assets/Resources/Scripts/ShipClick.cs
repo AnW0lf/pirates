@@ -106,7 +106,7 @@ public class ShipClick : MonoBehaviour
 
         pointer.gameObject.SetActive(true);
 
-        StartCoroutine(Show(0.33f));
+        StartCoroutine(Show(0.1f));
 
         float height = 2f * cam.orthographicSize, width = height * cam.aspect, xPos = transform.position.x, yPos = transform.position.y;
         Vector3 pointerPos = new Vector3(isSide ? (xPos > 0f ? width / 2f : -width / 2f) : xPos,
@@ -124,7 +124,7 @@ public class ShipClick : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(Hide(0.33f));
+        StartCoroutine(Hide(0.1f));
 
         LeanTween.delayedCall(1f, () => pointer.gameObject.SetActive(false));
     }
