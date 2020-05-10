@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class WindowLevelUp : WindowBase
 {
+    [SerializeField] protected GameObject rewardObject, levelRewardObject;
     [SerializeField] protected Text textField;
     [SerializeField] protected List<IslandController> islandsList;
     [SerializeField] protected List<PiersUpgrade> piersList;
@@ -34,7 +35,8 @@ public class WindowLevelUp : WindowBase
 
     private void IslandProgress()
     {
-        islandProgressText.transform.localScale = Vector3.zero;
+        islandProgressText.transform.localScale = new Vector3 (0.5f, 0.5f, 0.5f);
+        islandProgressText.color = new Color(1f, 1f, 1f, 0f);
         int lessLevel = quest.Levels[quest.Levels.Count - 2],
             greaterLevel = quest.Levels[quest.Levels.Count - 1],
             curLevel = Island.Instance().Level,
@@ -89,8 +91,9 @@ public class WindowLevelUp : WindowBase
 
             LeanTween.delayedCall(islandProgressDuration * 1.1f, () =>
             {
-                islandProgressText.gameObject.LeanScale(Vector3.one * 1.2f, 0.4f)
-                .setOnComplete(() => islandProgressText.gameObject.LeanScale(Vector3.one, 0.2f));
+                islandProgressText.color = new Color(1f, 1f, 1f, 1f);
+                islandProgressText.gameObject.LeanScale(Vector3.one * 1.2f, 0.1f)
+                .setOnComplete(() => islandProgressText.gameObject.LeanScale(Vector3.one, 0.05f));
 
                 LeanTween.delayedCall(1.2f, () =>
                  {
@@ -182,5 +185,21 @@ public class WindowLevelUp : WindowBase
         }
 
         textField.text = string.Format("+{0}", money);
+
+        if (money < 100f)
+        {
+            rewardObject.transform.localPosition = new Vector3(-180f, rewardObject.transform.localPosition.y, rewardObject.transform.localPosition.z);
+            levelRewardObject.transform.localPosition = new Vector3(180f, levelRewardObject.transform.localPosition.y, levelRewardObject.transform.localPosition.z);
+        }
+        else if (money < 1000f)
+        {
+            rewardObject.transform.localPosition = new Vector3(-150f, rewardObject.transform.localPosition.y, rewardObject.transform.localPosition.z);
+            levelRewardObject.transform.localPosition = new Vector3(150f, levelRewardObject.transform.localPosition.y, levelRewardObject.transform.localPosition.z);
+        }
+        else
+        {
+            rewardObject.transform.localPosition = new Vector3(-90f, rewardObject.transform.localPosition.y, rewardObject.transform.localPosition.z);
+            levelRewardObject.transform.localPosition = new Vector3(90f, levelRewardObject.transform.localPosition.y, levelRewardObject.transform.localPosition.z);
+        }
     }
 }

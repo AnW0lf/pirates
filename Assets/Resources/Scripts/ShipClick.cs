@@ -138,7 +138,7 @@ public class ShipClick : MonoBehaviour
         //transparentClock.a = 0f;
 
         arrow.color = transparentArrow;
-        arrow.transform.localScale = Vector3.one * 0.5f;
+        arrow.transform.localScale = Vector3.one * 0.2f;
         //clock.color = transparentClock;
 
         float time = 0f;
@@ -151,7 +151,7 @@ public class ShipClick : MonoBehaviour
             //transparentClock.a = Mathf.Lerp(0f, 1f, time / duration);
 
             arrow.color = transparentArrow;
-            arrow.transform.localScale = Vector3.one * Mathf.Lerp(0.5f, 1f, time / duration);
+            arrow.transform.localScale = Vector3.one * Mathf.Lerp(0.2f, 1f, time / duration);
             //clock.color = transparentClock;
 
             yield return null;
@@ -189,7 +189,7 @@ public class ShipClick : MonoBehaviour
             //transparentClock.a = Mathf.Lerp(1f, 0f, time / duration);
 
             arrow.color = transparentArrow;
-            arrow.transform.localScale = Vector3.one * Mathf.Lerp(1f, 0.5f, time / duration);
+            arrow.transform.localScale = Vector3.one * Mathf.Lerp(1f, 0.2f, time / duration);
             //clock.color = transparentClock;
 
             yield return null;
@@ -199,7 +199,7 @@ public class ShipClick : MonoBehaviour
         //transparentClock.a = 0f;
 
         arrow.color = transparentArrow;
-        arrow.transform.localScale = Vector3.one * 0.5f;
+        arrow.transform.localScale = Vector3.one * 0.2f;
         //clock.color = transparentClock;
     }
 
