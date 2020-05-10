@@ -31196,7 +31196,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
-  color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
+  color: {r: 0.8867924, g: 0.556626, b: 0.012548926, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 15fc3d0fbe7c9bd4bb57e94e57dd9ae7, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
@@ -46637,7 +46637,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
-  color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
+  color: {r: 0.8396226, g: 0.8357887, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: e0c1dcac6dbe24a48a5d460b2182ba90, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
@@ -61039,7 +61039,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
-  color: {r: 0.28773582, g: 1, b: 0.47301212, a: 1}
+  color: {r: 0, g: 0.8679245, b: 0.22890316, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 51957dccc136474449984c3ecc1ecc1f, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
