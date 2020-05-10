@@ -48531,9 +48531,9 @@ MonoBehaviour:
   islandBackground: {fileID: 1320423731}
   islandFill: {fileID: 1361159371}
   islandProgressText: {fileID: 1038675360}
-  islandProgressDuration: 0.5
-  rewardText: {fileID: 1085413300}
-  rewardButton: {fileID: 1100936248}
+  islandProgressDuration: 1
+  rewardText: {fileID: 1085413303}
+  rewardButton: {fileID: 1100936252}
 --- !u!1 &871031311
 GameObject:
   m_ObjectHideFlags: 0
@@ -58295,13 +58295,14 @@ GameObject:
   - component: {fileID: 1085413300}
   - component: {fileID: 1085413302}
   - component: {fileID: 1085413301}
+  - component: {fileID: 1085413303}
   m_Layer: 5
   m_Name: Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1085413300
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58319,7 +58320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: -728}
+  m_AnchoredPosition: {x: -90, y: -788}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1085413301
@@ -58362,6 +58363,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085413299}
   m_CullTransparentMesh: 0
+--- !u!111 &1085413303
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085413299}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 89629fc286aa85e4094c4488ecccbfc6, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 89629fc286aa85e4094c4488ecccbfc6, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1087854194
 GameObject:
   m_ObjectHideFlags: 0
@@ -59528,7 +59545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1100936248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -59724,6 +59741,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 154ac82b5bc4c3c44828d406ba7895f3, type: 2}
+  - {fileID: 7400000, guid: 832f54cb392cac24a8e3f0a86af6c473, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

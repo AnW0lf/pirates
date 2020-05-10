@@ -13,7 +13,7 @@ public class WindowLevelUp : WindowBase
     [SerializeField] protected Image islandBackground = null, islandFill = null;
     [SerializeField] protected Text islandProgressText = null;
     [SerializeField] protected float islandProgressDuration = 1f;
-    [SerializeField] protected Transform rewardText, rewardButton;
+    [SerializeField] protected Animation rewardText, rewardButton;
 
     protected int levelsToShip;
     protected Island island;
@@ -34,8 +34,11 @@ public class WindowLevelUp : WindowBase
 
     private void IslandProgress()
     {
-        rewardText.localScale = Vector3.forward;
-        rewardButton.localScale = Vector3.forward;
+        islandBackground.transform.localScale = Vector3.zero;
+        islandFill.transform.localScale = Vector3.zero;
+
+        islandBackground.gameObject.LeanScale(Vector3.one, 0.5f);
+        islandFill.gameObject.LeanScale(Vector3.one, 0.5f);
 
         int lessLevel = quest.Levels[quest.Levels.Count - 2],
             greaterLevel = quest.Levels[quest.Levels.Count - 1],
@@ -72,23 +75,34 @@ public class WindowLevelUp : WindowBase
         islandBackground.sprite = sprite;
         islandFill.sprite = sprite;
         islandFill.fillAmount = oldProgress;
-        StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
-        if (lessLevel / 25 < greaterLevel / 25)
-            islandProgressText.text = string.Format("NEW ISLAND: {0}%", Mathf.RoundToInt(progress * 100f));
-        else
-            islandProgressText.text = string.Format("Island up: {0}%", Mathf.RoundToInt(progress * 100f));
 
-        if (progress == 1f)
+        LeanTween.delayedCall(0.75f, () =>
         {
-            foreach (IslandController ic in islandsList)
-                transform.parent.GetComponent<InterfaceIerarchy>().onDone +=
-                    () => ic.GetComponent<IslandSpriteController>().ChangeSprite();
-        }
+            StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
+            if (lessLevel / 25 < greaterLevel / 25)
+                islandProgressText.text = string.Format("NEW ISLAND: {0}%", Mathf.RoundToInt(progress * 100f));
+            else
+                islandProgressText.text = string.Format("Island up: {0}%", Mathf.RoundToInt(progress * 100f));
 
-        LeanTween.delayedCall(islandProgressDuration, () =>
-        {
-            rewardText.LeanScale(Vector3.one, 0.5f);
-            rewardButton.LeanScale(Vector3.one, 0.5f);
+            if (progress == 1f)
+            {
+                foreach (IslandController ic in islandsList)
+                    transform.parent.GetComponent<InterfaceIerarchy>().onDone +=
+                        () => ic.GetComponent<IslandSpriteController>().ChangeSprite();
+            }
+
+            LeanTween.delayedCall(islandProgressDuration * 1.1f, () =>
+            {
+                rewardText.gameObject.SetActive(true);
+                rewardText.Play();
+                LeanTween.delayedCall(0.5f,
+                    () =>
+                    {
+                        rewardButton.gameObject.SetActive(true);
+                        rewardButton.Play("NewLevelButtonShow");
+                        LeanTween.delayedCall(0.75f, () => rewardButton.Play("BonusPulse"));
+                    });
+            });
         });
     }
 
@@ -106,6 +120,8 @@ public class WindowLevelUp : WindowBase
     public override void Close()
     {
         base.Close();
+        rewardText.gameObject.SetActive(false);
+        rewardButton.gameObject.SetActive(false);
         transform.parent.GetComponent<InterfaceIerarchy>().Next();
     }
 
