@@ -82,7 +82,7 @@ public class WindowLevelUp : WindowBase
             if (lessLevel / 25 < greaterLevel / 25)
                 islandProgressText.text = string.Format("NEW ISLAND: {0}%", Mathf.RoundToInt(progress * 100f));
             else
-                islandProgressText.text = string.Format("Island up: {0}%", Mathf.RoundToInt(progress * 100f));
+                islandProgressText.text = string.Format("Island Up: {0}%", Mathf.RoundToInt(progress * 100f));
 
             if (progress == 1f)
             {
@@ -179,6 +179,6 @@ public class WindowLevelUp : WindowBase
             }
         }
 
-        textField.text = money.ToString();
+        textField.text = string.Format("+{0}", money);
     }
 }
