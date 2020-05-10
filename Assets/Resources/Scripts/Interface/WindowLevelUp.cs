@@ -73,7 +73,10 @@ public class WindowLevelUp : WindowBase
         islandFill.sprite = sprite;
         islandFill.fillAmount = oldProgress;
         StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
-        islandProgressText.text = string.Format("Island up: {0}%", Mathf.RoundToInt(progress * 100f));
+        if (lessLevel / 25 < greaterLevel / 25)
+            islandProgressText.text = string.Format("NEW ISLAND: {0}%", Mathf.RoundToInt(progress * 100f));
+        else
+            islandProgressText.text = string.Format("Island up: {0}%", Mathf.RoundToInt(progress * 100f));
 
         if (progress == 1f)
         {
