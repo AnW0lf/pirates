@@ -48402,6 +48402,7 @@ MonoBehaviour:
   islandProgressDuration: 1
   rewardText: {fileID: 1085413303}
   rewardButton: {fileID: 1100936252}
+  islandAnimation: {fileID: 1320423733}
 --- !u!1 &871031311
 GameObject:
   m_ObjectHideFlags: 0
@@ -69068,6 +69069,7 @@ GameObject:
   - component: {fileID: 1320423730}
   - component: {fileID: 1320423732}
   - component: {fileID: 1320423731}
+  - component: {fileID: 1320423733}
   m_Layer: 5
   m_Name: IslandBackground
   m_TagString: Untagged
@@ -69130,6 +69132,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320423729}
   m_CullTransparentMesh: 0
+--- !u!111 &1320423733
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320423729}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d1878bef7ae56524aabe9159123d3fce, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d1878bef7ae56524aabe9159123d3fce, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1324254424
 GameObject:
   m_ObjectHideFlags: 0

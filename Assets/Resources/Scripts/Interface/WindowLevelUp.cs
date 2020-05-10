@@ -13,7 +13,7 @@ public class WindowLevelUp : WindowBase
     [SerializeField] protected Image islandBackground = null, islandFill = null;
     [SerializeField] protected Text islandProgressText = null;
     [SerializeField] protected float islandProgressDuration = 1f;
-    [SerializeField] protected Animation rewardText, rewardButton;
+    [SerializeField] protected Animation rewardText, rewardButton, islandAnimation;
 
     protected int levelsToShip;
     protected Island island;
@@ -34,12 +34,7 @@ public class WindowLevelUp : WindowBase
 
     private void IslandProgress()
     {
-        islandBackground.transform.localScale = Vector3.zero;
-        islandFill.transform.localScale = Vector3.zero;
-
-        islandBackground.gameObject.LeanScale(Vector3.one, 0.5f);
-        islandFill.gameObject.LeanScale(Vector3.one, 0.5f);
-
+        islandAnimation.Play();
         int lessLevel = quest.Levels[quest.Levels.Count - 2],
             greaterLevel = quest.Levels[quest.Levels.Count - 1],
             curLevel = Island.Instance().Level,
