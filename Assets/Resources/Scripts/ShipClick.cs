@@ -9,8 +9,9 @@ public class ShipClick : MonoBehaviour
     public Ship ship;
     public LifebuoyManager lifebuoys;
     public GameObject flyingText;
-    public Transform pointer, arrow;
-    public Image clock;
+    public Transform pointer;
+    public Image arrow;
+    public Text clock;
     public Color color;
     public TrailRenderer trail;
     public IslandController islandController = null;
@@ -102,19 +103,96 @@ public class ShipClick : MonoBehaviour
     private IEnumerator Timer(float time, bool isSide)
     {
         isTimerActive = true;
-        arrow.GetComponent<Image>().color = color;
+
         pointer.gameObject.SetActive(true);
+
+        StartCoroutine(Show(1f));
+
         float height = 2f * cam.orthographicSize, width = height * cam.aspect, xPos = transform.position.x, yPos = transform.position.y;
         Vector3 pointerPos = new Vector3(isSide ? (xPos > 0f ? width / 2f : -width / 2f) : xPos,
             isSide ? yPos : (yPos > 0f ? height / 2f - 0.75f : -height / 2f + 1.7f), transform.position.z);
         pointer.position = pointerPos;
         pointer.eulerAngles = transform.eulerAngles;
-        for (float i = 0f; i < time; i += Time.deltaTime)
+
+
+
+        while (time > 0f)
         {
-            clock.fillAmount = i / time;
+            time -= Time.deltaTime;
+            clock.text = Mathf.RoundToInt(time).ToString();
+            clock.transform.eulerAngles = Vector3.zero;
             yield return null;
         }
-        pointer.gameObject.SetActive(false);
+
+        StartCoroutine(Hide(1f));
+
+        LeanTween.delayedCall(1f, () => pointer.gameObject.SetActive(false));
+    }
+
+    private IEnumerator Show(float duration)
+    {
+        Color transparentArrow = color;
+        Color transparentClock = clock.color;
+
+        transparentArrow.a = 0f;
+        transparentClock.a = 0f;
+
+        arrow.color = transparentArrow;
+        clock.color = transparentClock;
+
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+
+            transparentArrow.a = Mathf.Lerp(0f, 1f, time / duration);
+            transparentClock.a = Mathf.Lerp(0f, 1f, time / duration);
+
+            arrow.color = transparentArrow;
+            clock.color = transparentClock;
+
+            yield return null;
+        }
+
+        transparentArrow.a = 1f;
+        transparentClock.a = 1f;
+
+        arrow.color = transparentArrow;
+        clock.color = transparentClock;
+    }
+
+    private IEnumerator Hide(float duration)
+    {
+        Color transparentArrow = color;
+        Color transparentClock = clock.color;
+
+        transparentArrow.a = 1f;
+        transparentClock.a = 1f;
+
+        arrow.color = transparentArrow;
+        clock.color = transparentClock;
+
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+
+            transparentArrow.a = Mathf.Lerp(1f, 0f, time / duration);
+            transparentClock.a = Mathf.Lerp(1f, 0f, time / duration);
+
+            arrow.color = transparentArrow;
+            clock.color = transparentClock;
+
+            yield return null;
+        }
+
+        transparentArrow.a = 0f;
+        transparentClock.a = 0f;
+
+        arrow.color = transparentArrow;
+        clock.color = transparentClock;
     }
 
     private void SwitchEmmiting()
