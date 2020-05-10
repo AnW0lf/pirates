@@ -18,7 +18,7 @@ public class WorldButton : MonoBehaviour
 
     private bool isOpened = false;
     private Coroutine coroutine = null;
-    private int curId = -1, id = 0;
+    private int curId = -1, id = 0, click = 0;
     private bool scrolling = false;
 
     private void Start()
@@ -75,12 +75,14 @@ public class WorldButton : MonoBehaviour
 
     public void Switch()
     {
+        click++;
         if (isOpened) Close();
         else Open();
     }
 
     public void SelectIsland(int id)
     {
+        click++;
         SetColor(id);
         StartCoroutine(ScrollTo(id, scrollDuration));
     }
@@ -103,6 +105,16 @@ public class WorldButton : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonUp(0))
+        {
+            click--;
+            if (click < 0)
+            {
+                click = 0;
+                if (isOpened)
+                    Close();
+            }
+        }
         if (scrolling) return;
         id = Mathf.RoundToInt((content.anchoredPosition.y / content.sizeDelta.y) * 4f);
         if (curId != id)
