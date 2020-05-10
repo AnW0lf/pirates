@@ -114,8 +114,6 @@ public class ShipClick : MonoBehaviour
         pointer.position = pointerPos;
         pointer.eulerAngles = transform.eulerAngles;
 
-
-
         while (time > 0f)
         {
             time -= Time.deltaTime;
@@ -132,13 +130,14 @@ public class ShipClick : MonoBehaviour
     private IEnumerator Show(float duration)
     {
         Color transparentArrow = color;
-        Color transparentClock = clock.color;
+        //Color transparentClock = clock.color;
 
         transparentArrow.a = 0f;
-        transparentClock.a = 0f;
+        //transparentClock.a = 0f;
 
         arrow.color = transparentArrow;
-        clock.color = transparentClock;
+        arrow.transform.localScale = Vector3.one * 0.5f;
+        //clock.color = transparentClock;
 
         float time = 0f;
 
@@ -147,31 +146,36 @@ public class ShipClick : MonoBehaviour
             time += Time.deltaTime;
 
             transparentArrow.a = Mathf.Lerp(0f, 1f, time / duration);
-            transparentClock.a = Mathf.Lerp(0f, 1f, time / duration);
+            //transparentClock.a = Mathf.Lerp(0f, 1f, time / duration);
 
             arrow.color = transparentArrow;
-            clock.color = transparentClock;
+            arrow.transform.localScale = Vector3.one * Mathf.Lerp(0.5f, 1f, time / duration);
+            //clock.color = transparentClock;
 
             yield return null;
         }
 
         transparentArrow.a = 1f;
-        transparentClock.a = 1f;
+        //transparentClock.a = 1f;
 
+        arrow.transform.localScale = Vector3.one;
         arrow.color = transparentArrow;
-        clock.color = transparentClock;
+        //clock.color = transparentClock;
+        clock.gameObject.SetActive(true);
     }
 
     private IEnumerator Hide(float duration)
     {
+        clock.gameObject.SetActive(false);
         Color transparentArrow = color;
-        Color transparentClock = clock.color;
+        //Color transparentClock = clock.color;
 
         transparentArrow.a = 1f;
-        transparentClock.a = 1f;
+        //transparentClock.a = 1f;
 
         arrow.color = transparentArrow;
-        clock.color = transparentClock;
+        arrow.transform.localScale = Vector3.one;
+        //clock.color = transparentClock;
 
         float time = 0f;
 
@@ -180,19 +184,21 @@ public class ShipClick : MonoBehaviour
             time += Time.deltaTime;
 
             transparentArrow.a = Mathf.Lerp(1f, 0f, time / duration);
-            transparentClock.a = Mathf.Lerp(1f, 0f, time / duration);
+            //transparentClock.a = Mathf.Lerp(1f, 0f, time / duration);
 
             arrow.color = transparentArrow;
-            clock.color = transparentClock;
+            arrow.transform.localScale = Vector3.one * Mathf.Lerp(1f, 0.5f, time / duration);
+            //clock.color = transparentClock;
 
             yield return null;
         }
 
         transparentArrow.a = 0f;
-        transparentClock.a = 0f;
+        //transparentClock.a = 0f;
 
         arrow.color = transparentArrow;
-        clock.color = transparentClock;
+        arrow.transform.localScale = Vector3.one * 0.5f;
+        //clock.color = transparentClock;
     }
 
     private void SwitchEmmiting()
