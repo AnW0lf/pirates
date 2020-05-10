@@ -79,7 +79,8 @@ public class WindowLevelUp : WindowBase
         LeanTween.delayedCall(0.75f, () =>
         {
             StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
-            islandProgressText.gameObject.LeanScale(Vector3.one, 0.5f).setEase(LeanTweenType.easeInOutBounce);
+            islandProgressText.gameObject.LeanScale(Vector3.one * 1.2f, 0.4f)
+            .setOnComplete(() => islandProgressText.gameObject.LeanScale(Vector3.one, 0.2f));
 
             if (progress == 1f)
             {
