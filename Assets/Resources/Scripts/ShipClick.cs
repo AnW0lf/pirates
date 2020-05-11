@@ -110,7 +110,7 @@ public class ShipClick : MonoBehaviour
 
         float height = 2f * cam.orthographicSize, width = height * cam.aspect, xPos = transform.position.x, yPos = transform.position.y;
         Vector3 pointerPos = new Vector3(isSide ? (xPos > 0f ? width / 2f : -width / 2f) : xPos,
-            isSide ? yPos : (yPos > 0f ? height / 2f - 0.75f : -height / 2f + 1.7f), transform.position.z);
+            isSide ? yPos : (yPos > 0f ? height / 2f - 0.5f : -height / 2f + 1.7f), transform.position.z);
         pointer.position = pointerPos;
         pointer.eulerAngles = transform.eulerAngles;
 
