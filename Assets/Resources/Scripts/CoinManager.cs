@@ -28,9 +28,9 @@ public class CoinManager : MonoBehaviour
 
     private void Start()
     {
-        money = BigDigit.zero;
+        money = new BigDigit(island.Money);
         oldMoney = money;
-        expectedMoney = new BigDigit(island.Money);
+        expectedMoney = money;
         tm = GetComponent<TextManager>();
         tm.postfix = "";
         Money = money;
@@ -55,12 +55,15 @@ public class CoinManager : MonoBehaviour
     private IEnumerator ForceMoney(float duration)
     {
         float time = 0f;
-        oldMoney = Money;
+        oldMoney = new BigDigit(Money);
 
         while (time < duration)
         {
             time += Time.deltaTime;
-            Money = oldMoney + (time / duration) * (expectedMoney - oldMoney);
+            if (expectedMoney > oldMoney)
+                Money = oldMoney + (time / duration) * (expectedMoney - oldMoney);
+            else
+                Money = oldMoney - (time / duration) * (oldMoney - expectedMoney);
             yield return null;
         }
 
