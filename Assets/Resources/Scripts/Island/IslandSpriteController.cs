@@ -47,6 +47,7 @@ public class IslandSpriteController : MonoBehaviour
             changeSpriteEffect.transform.localScale = effectScale;
         }
         changeSpriteEffect.SetActive(true);
+        Pulse();
     }
 
     public void ChangeSprite()
