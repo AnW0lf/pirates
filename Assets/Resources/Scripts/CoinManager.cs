@@ -6,10 +6,20 @@ public class CoinManager : MonoBehaviour
 {
     public string prefix = "";
 
-    [SerializeField]
-    private BigDigit money;
+    private BigDigit expectedMoney, money, oldMoney;
     private TextManager tm;
     private Island island;
+    private Coroutine coroutine = null;
+
+    private BigDigit Money
+    {
+        get => money;
+        set
+        {
+            money = value;
+            SetMoneyText();
+        }
+    }
 
     private void Awake()
     {
@@ -19,23 +29,44 @@ public class CoinManager : MonoBehaviour
     private void Start()
     {
         money = BigDigit.zero;
+        oldMoney = money;
+        expectedMoney = new BigDigit(island.Money);
         tm = GetComponent<TextManager>();
         tm.postfix = "";
-        UpdateMoney();
+        Money = money;
     }
 
-    private void UpdateMoney()
+    private void SetMoneyText()
     {
         tm.prefix = prefix;
-        tm.text = money.ToString();
+        tm.text = Money.ToString();
     }
 
     private void Update()
     {
-        if (money != island.Money)
+        if (expectedMoney != island.Money)
         {
-            money = new BigDigit(island.Money);
-            UpdateMoney();
+            expectedMoney = new BigDigit(island.Money);
+            if (coroutine != null) StopCoroutine(coroutine);
+            coroutine = StartCoroutine(ForceMoney(0.5f));
         }
+    }
+
+    private IEnumerator ForceMoney(float duration)
+    {
+        float time = 0f;
+        oldMoney = Money;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            Money = oldMoney + (time / duration) * (expectedMoney - oldMoney);
+            yield return null;
+        }
+
+        Money = expectedMoney;
+        SetMoneyText();
+
+        coroutine = null;
     }
 }
