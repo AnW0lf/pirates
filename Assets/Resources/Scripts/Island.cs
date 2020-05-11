@@ -19,30 +19,33 @@ public class Island
     private readonly string iphone_leaderboard_id = "IslandTycoon.Rich_Man";
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
- new BigDigit(4f, 1), // 0
-        new BigDigit(7f, 1), // 1
-        new BigDigit(3.5f, 2), // 2
-        new BigDigit(4.7f, 2), // 3
-        new BigDigit(2.1f, 3), // 4
-        new BigDigit(3.3f, 3), // 5
-        new BigDigit(5f, 3), // 6
-        new BigDigit(6.7f, 3), // 7
-        new BigDigit(1.51f, 4), // 8
-        new BigDigit(1.58f, 4), // 9
-        new BigDigit(1.8f, 4), // 10
-        new BigDigit(3.168f, 4), // 11
-        new BigDigit(3.744f, 4), // 12
-        new BigDigit(4.32f, 4), // 13
-        new BigDigit(5.76f, 4), // 14
-        new BigDigit(7.2f, 4), // 15
-        new BigDigit(8.64f, 4), // 16
-        new BigDigit(1.296f, 5), // 17
-        new BigDigit(1.368f, 5), // 18
-        new BigDigit(1.44f, 5), // 19
-        new BigDigit(1.512f, 5), // 20
-        new BigDigit(1.584f, 5), // 21
-        new BigDigit(1.656f, 5), // 22
-        new BigDigit(1.728f, 5), // 23
+        new BigDigit(1.2f, 2), // 0
+        new BigDigit(1.2f, 2), // 0 (1)
+        new BigDigit(3.67f, 2), // 1
+        new BigDigit(8.37f, 2), // 2
+        new BigDigit(1.32f, 3), // 3
+        new BigDigit(2.037f, 3), // 4
+        new BigDigit(3.031f, 3), // 5
+        new BigDigit(6.184f, 3), // 6
+        new BigDigit(8.454f, 3), // 7
+        new BigDigit(1.1344f, 4), // 8
+        new BigDigit(1.5273f, 4), // 9
+
+        new BigDigit(2.021f, 4), // 10
+        new BigDigit(3.7496f, 4), // 11
+        new BigDigit(4.7293f, 4), // 12
+        new BigDigit(5.9689f, 4), // 13
+        new BigDigit(7.4567f, 4), // 14
+        new BigDigit(9.3195f, 4), // 15
+        new BigDigit(1.1644f, 5), // 16
+        new BigDigit(1.81723f, 5), // 17
+        new BigDigit(2.19476f, 5), // 18
+        new BigDigit(2.42315f, 5), // 19
+        new BigDigit(2.90676f, 5), // 20
+        new BigDigit(3.21004f, 5), // 21
+        new BigDigit(3.82737f, 5), // 22
+        new BigDigit(4.09015f, 5), // 23
+
         new BigDigit(2f, 5), // 24
         new BigDigit(2f, 5), // 25
         new BigDigit(5f, 5), // 26
