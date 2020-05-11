@@ -122,6 +122,7 @@ public class IslandController : MonoBehaviour
         {
             yield return delay;
             GenerateMoney();
+            GenerateEffect();
         }
     }
 
