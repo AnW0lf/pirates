@@ -39,6 +39,16 @@ public class IslandSpriteController : MonoBehaviour
         changeSpriteEffect.SetActive(false);
     }
 
+    public void PlayEffect()
+    {
+        if (changeSpriteEffect == null)
+        {
+            changeSpriteEffect = Instantiate(changeSpriteEffectPref, transform);
+            changeSpriteEffect.transform.localScale = effectScale;
+        }
+        changeSpriteEffect.SetActive(true);
+    }
+
     public void ChangeSprite()
     {
         if (minLevel <= island.Level && maxLevel >= island.Level && IslandSpriteLevel < sprites.Count)

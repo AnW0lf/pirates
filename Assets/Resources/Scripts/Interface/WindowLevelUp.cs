@@ -82,11 +82,18 @@ public class WindowLevelUp : WindowBase
         {
             StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
 
-            if (progress == 1f)
+            foreach (IslandController ic in islandsList)
             {
-                foreach (IslandController ic in islandsList)
+                if (progress == 1f)
+                {
                     transform.parent.GetComponent<InterfaceIerarchy>().onDone +=
                         () => ic.GetComponent<IslandSpriteController>().ChangeSprite();
+                }
+                else
+                {
+                    transform.parent.GetComponent<InterfaceIerarchy>().onDone +=
+                        () => ic.GetComponent<IslandSpriteController>().PlayEffect();
+                }
             }
 
             LeanTween.delayedCall(islandProgressDuration * 1.1f, () =>
