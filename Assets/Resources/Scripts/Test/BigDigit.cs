@@ -332,7 +332,7 @@ public class BigDigit
 
     public static bool operator ==(BigDigit first, BigDigit second)
     {
-        return first.Equals(second);
+        return (first is null && second is null) || first.Equals(second);
     }
 
     public static bool operator ==(BigDigit other, int val)
@@ -634,7 +634,10 @@ public class BigDigit
 
     public override bool Equals(object obj)
     {
-        if (obj.GetType().Equals(this.GetType()))
+        if (this is null && obj is null) return true;
+        else if (this is null) return false;
+        else if (obj is null) return false;
+        else if (obj.GetType().Equals(this.GetType()))
         {
             BigDigit other = (BigDigit)obj;
             if (other.Mantissa.Equals(Mantissa) && other.Exponent.Equals(Exponent))

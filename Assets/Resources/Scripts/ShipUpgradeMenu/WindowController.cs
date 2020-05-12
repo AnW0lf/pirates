@@ -20,6 +20,8 @@ public class WindowController : MonoBehaviour
     private PierManager pier;
     private Island island;
     private GameObject rewardEffect;
+    private Coroutine coroutine = null;
+    private BigDigit oldReward = null, currentReward = null;
 
     private void Awake()
     {
@@ -76,7 +78,7 @@ public class WindowController : MonoBehaviour
             a = pier.detailChangeRaidTime3;
             b = pier.detailChangeReward3;
         }
-        if(a != 0f && b == 0f)
+        if (a != 0f && b == 0f)
         {
             timeAnim.Play();
             if (rewardEffect != null) Destroy(rewardEffect);
@@ -127,7 +129,7 @@ public class WindowController : MonoBehaviour
         int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
         SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetRewardTM(pier.GetReward());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
@@ -162,7 +164,7 @@ public class WindowController : MonoBehaviour
         int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
         SetState(upLevelTM, "0/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetRewardTM(pier.GetReward());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
@@ -212,7 +214,7 @@ public class WindowController : MonoBehaviour
         int curLvl = pier.detailCurrentLvl1 + pier.detailCurrentLvl2 + pier.detailCurrentLvl3 + 1;
         SetState(upLevelTM, curLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetRewardTM(pier.GetReward());
 
         if (!miniIcon.gameObject.activeInHierarchy)
             miniIcon.gameObject.SetActive(false);
@@ -285,7 +287,7 @@ public class WindowController : MonoBehaviour
         int maxLvl = pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3 + 1;
         SetState(upLevelTM, maxLvl.ToString() + "/" + maxLvl.ToString(), "Level ");
         SetState(raidTimeTM, pier.GetRaidTime().ToString(), "", "s");
-        SetState(rewardTM, pier.GetReward().ToString());
+        SetRewardTM(pier.GetReward());
         detailLevelTM.gameObject.SetActive(false);
         bonusTM.gameObject.SetActive(false);
         profitIcon.gameObject.SetActive(false);
@@ -352,5 +354,35 @@ public class WindowController : MonoBehaviour
                 default: return str + "?";
             }
         }
+    }
+
+    private void SetRewardTM(BigDigit expected)
+    {
+        if (pier == null) return;
+
+        if (currentReward == null)
+            currentReward = new BigDigit(pier.GetReward());
+
+        oldReward = new BigDigit(currentReward);
+
+        if (coroutine != null) StopCoroutine(coroutine);
+        coroutine = StartCoroutine(ForceRewardTM(expected, 0.5f));
+    }
+
+    private IEnumerator ForceRewardTM(BigDigit expected, float duration)
+    {
+        float time = 0f;
+
+        while(time < duration)
+        {
+            time += Time.deltaTime;
+            currentReward = oldReward + time / duration * (expected - oldReward);
+            SetState(rewardTM, currentReward.ToString());
+            yield return null;
+        }
+
+        currentReward = expected;
+        SetState(rewardTM, currentReward.ToString());
+        coroutine = null;
     }
 }
