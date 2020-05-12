@@ -3355,7 +3355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLevel: 0
   maxClickCount: 30
-  clickCountDecrease: 1
+  clickCountDecrease: 3
   forcingMoneyDuration: 59
   autoclickDelay: 1.5
   modifierMantissa: 1
@@ -38277,7 +38277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLevel: 25
   maxClickCount: 30
-  clickCountDecrease: 1
+  clickCountDecrease: 3
   forcingMoneyDuration: 59
   autoclickDelay: 1.5
   modifierMantissa: 3
@@ -76260,7 +76260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLevel: 50
   maxClickCount: 30
-  clickCountDecrease: 1
+  clickCountDecrease: 3
   forcingMoneyDuration: 59
   autoclickDelay: 1.5
   modifierMantissa: 6
@@ -110418,7 +110418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLevel: 10001
   maxClickCount: 30
-  clickCountDecrease: 1
+  clickCountDecrease: 3
   forcingMoneyDuration: 30
   autoclickDelay: 0.6
   modifierMantissa: 0.65

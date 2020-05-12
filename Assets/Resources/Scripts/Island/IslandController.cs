@@ -18,7 +18,7 @@ public class IslandController : MonoBehaviour
     private Island island;
     private bool active = false, forced = false;
     private RectTransform rect;
-    private float clickCounter, autoclickTimer, clickDelay = 0.25f, clickDelayTimer, hideClickProgressTime = 2f;
+    private float clickCounter, autoclickTimer, clickDelay = 0.25f, clickTimer, clickDelayTimer, hideClickProgressTime = 2f;
     private Vector2 original;
     private IslandSpriteController islandSpriteController;
 
@@ -34,6 +34,7 @@ public class IslandController : MonoBehaviour
         original = rect.sizeDelta;
         autoclickTimer = autoclickDelay;
         clickDelayTimer = 0f;
+        clickTimer = 0f;
     }
 
     private void Update()
@@ -56,10 +57,12 @@ public class IslandController : MonoBehaviour
             }
 
             if(clickDelayTimer > 0f) clickDelayTimer -= Time.deltaTime;
+            if (clickTimer > 0f) clickTimer -= Time.deltaTime;
+            else if (clickTimer < 0f) clickTimer = 0f;
 
             if (!forced)
             {
-                if(clickCounter > 0f)
+                if(clickCounter > 0f && clickTimer == 0f)
                 {
                     clickCounter = Mathf.Max(0f, clickCounter - clickCountDecrease * Time.deltaTime);
                 }
@@ -135,6 +138,7 @@ public class IslandController : MonoBehaviour
         GenerateEffect();
         clickCounter += 1f;
         hideClickProgressTime = 3f;
+        clickTimer = 0.5f;
 
         if (clickCounter >= maxClickCount)
             ForceClickReward();
