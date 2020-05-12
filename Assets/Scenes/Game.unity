@@ -51443,11 +51443,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusDelay: 18
   bonuses:
-  - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
-  - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
-  - {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef, type: 3}
-  - {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6, type: 3}
-  chances: 03000000030000000200000001000000
+  - name: Materials
+    prefab: {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02,
+      type: 3}
+    chance: 4
+    unlockLevel: 0
+  - name: Speed
+    prefab: {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78,
+      type: 3}
+    chance: 4
+    unlockLevel: 0
+  - name: Money
+    prefab: {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef,
+      type: 3}
+    chance: 3
+    unlockLevel: 4
+  - name: Lifebuoy
+    prefab: {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6,
+      type: 3}
+    chance: 2
+    unlockLevel: 3
 --- !u!114 &945456227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51835,11 +51850,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusDelay: 18
   bonuses:
-  - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
-  - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
-  - {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef, type: 3}
-  - {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6, type: 3}
-  chances: 03000000030000000200000001000000
+  - name: Materials
+    prefab: {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02,
+      type: 3}
+    chance: 4
+    unlockLevel: 0
+  - name: Speed
+    prefab: {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78,
+      type: 3}
+    chance: 4
+    unlockLevel: 0
+  - name: Money
+    prefab: {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef,
+      type: 3}
+    chance: 3
+    unlockLevel: 4
+  - name: Lifebuoy
+    prefab: {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6,
+      type: 3}
+    chance: 2
+    unlockLevel: 3
 --- !u!224 &950925119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54236,11 +54266,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusDelay: 18
   bonuses:
-  - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
-  - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
-  - {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef, type: 3}
-  - {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6, type: 3}
-  chances: 03000000030000000200000001000000
+  - name: Materials
+    prefab: {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02,
+      type: 3}
+    chance: 4
+    unlockLevel: 0
+  - name: Speed
+    prefab: {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78,
+      type: 3}
+    chance: 4
+    unlockLevel: 0
+  - name: Money
+    prefab: {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef,
+      type: 3}
+    chance: 3
+    unlockLevel: 4
+  - name: Lifebuoy
+    prefab: {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6,
+      type: 3}
+    chance: 2
+    unlockLevel: 3
 --- !u!224 &991487884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -68618,7 +68663,7 @@ MonoBehaviour:
   maxLevel: 25
   levelDifference: 5
   startReward: 1
-  bonusId: 0
+  bonusId: 1
   bg: {fileID: 945456226}
   blackShip: {fileID: 141904529}
   title: {fileID: 269042135}
@@ -106999,11 +107044,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusDelay: 18
   bonuses:
-  - {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02, type: 3}
-  - {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78, type: 3}
-  - {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef, type: 3}
-  - {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6, type: 3}
-  chances: 03000000030000000200000001000000
+  - name: Materials
+    prefab: {fileID: 8520050891739744424, guid: 7a3439769ed89c247a787ac8b943ec02,
+      type: 3}
+    chance: 4
+    unlockLevel: 0
+  - name: Speed
+    prefab: {fileID: 8520050891739744424, guid: 7d1e533dcf9e65f4ba2c53b99073ec78,
+      type: 3}
+    chance: 4
+    unlockLevel: 0
+  - name: Money
+    prefab: {fileID: 4251425439836562024, guid: f46399385f8b6b748ac7c31ca8d6d3ef,
+      type: 3}
+    chance: 3
+    unlockLevel: 4
+  - name: Lifebuoy
+    prefab: {fileID: 8520050891739744424, guid: 4bfb9f98c29d8dc4ab4752676ad108b6,
+      type: 3}
+    chance: 2
+    unlockLevel: 3
 --- !u!224 &1983624740
 RectTransform:
   m_ObjectHideFlags: 0

@@ -76,7 +76,7 @@ public class OfflineReward : MonoBehaviour
 
         //Добавлям бонусы
         for (int i = 0; i <= Mathf.Clamp(island.Level / 25, 0, bgs.Length - 1); i++)
-            bgs[i].RandomBonus(timeModifier / bonusModifier);
+            bgs[i].InstantiateRandomBonus(timeModifier / bonusModifier);
 
         //Выдаем ЛЕВЕЛ-АП
         island.ExpUp(expToAdd);

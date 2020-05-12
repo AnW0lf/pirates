@@ -72,7 +72,7 @@ public class PolundraTimer : MonoBehaviour
         {
             for(int j = 0; j <= island.Level / 25 && j < bgs.Count; j++)
             {
-                bgs[j].RandomBonus(1);
+                bgs[j].InstantiateRandomBonus(1);
             }
             yield return sec;
         }

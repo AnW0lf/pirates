@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BonusGenerator : MonoBehaviour
 {
     public int bonusDelay;
-    public GameObject[] bonuses;
-    public int[] chances;
+    public Bonus[] bonuses;
 
     private int randomPoint, curDelay;
     private GameObject _bonus;
@@ -46,34 +46,39 @@ public class BonusGenerator : MonoBehaviour
             {
                 yield return wait;
                 Transform child = children[Random.Range(0, children.Count)];
-                SetBonus(child, GetRandomBonusNumber());
+                SetBonus(child, RandomBonus.prefab);
                 children.Remove(child);
             }
         }
     }
 
-    private int GetRandomBonusNumber()
+    private Bonus RandomBonus
     {
-        if (chances.Length != bonuses.Length) return 0;
-        int i = 0;
-        int maxChance = 0;
-        foreach (int item in chances)
-            maxChance += item;
-        int chance = Random.Range(0, maxChance);
-        for (i = 0; i < chances.Length; i++)
+        get
         {
-            if (chance - chances[i] <= 0)
-                break;
-            chance -= chances[i];
+            if (bonuses.Length == 0) return null;
+
+            List<Bonus> unlocked = new List<Bonus>();
+            foreach (Bonus bonus in bonuses)
+                if (island.Level >= bonus.unlockLevel) unlocked.Add(bonus);
+
+            if (unlocked.Count == 0) return null;
+
+            int max = unlocked.Sum(b => b.chance);
+            int rnd = Random.Range(0, max);
+
+            for (int i = 0; i < unlocked.Count; i++)
+            {
+                if (rnd < unlocked[i].chance) return unlocked[i];
+                else rnd -= unlocked[i].chance;
+            }
+            return unlocked.Last();
         }
-        if (island.Level < 2 && i == chances.Length - 1 && i != 0)
-            i--;
-        return i;
     }
 
-    private void SetBonus(Transform child, int bonus)
+    private void SetBonus(Transform child, GameObject prefab)
     {
-        _bonus = Instantiate(bonuses[bonus], child);
+        _bonus = Instantiate(prefab, child);
         _bonus.transform.localPosition = new Vector3(Random.Range(-_bonus.GetComponent<RectTransform>().sizeDelta.x / 2f,
             _bonus.GetComponent<RectTransform>().sizeDelta.x / 2f), Random.Range(-_bonus.GetComponent<RectTransform>().sizeDelta.y / 2f,
             _bonus.GetComponent<RectTransform>().sizeDelta.y / 2f), _bonus.transform.localPosition.z);
@@ -96,12 +101,12 @@ public class BonusGenerator : MonoBehaviour
         for (int i = 0; children.Count > 0 && i < count; i++)
         {
             Transform child = children[Random.Range(0, children.Count)];
-            SetBonus(child, bonus);
+            SetBonus(child, bonuses[bonus].prefab);
             children.Remove(child);
         }
     }
 
-    public void RandomBonus(int count)
+    public void InstantiateRandomBonus(int count)
     {
         List<Transform> children = new List<Transform>();
 
@@ -116,8 +121,25 @@ public class BonusGenerator : MonoBehaviour
         for (int i = 0; children.Count > 0 && i < count; i++)
         {
             Transform child = children[Random.Range(0, children.Count)];
-            SetBonus(child, GetRandomBonusNumber());
+            SetBonus(child, RandomBonus.prefab);
             children.Remove(child);
         }
+    }
+}
+
+[System.Serializable]
+public class Bonus
+{
+    public string name;
+    public GameObject prefab;
+    public int chance;
+    public int unlockLevel;
+
+    public Bonus(string name, GameObject prefab, int chance, int unlockLevel)
+    {
+        this.name = name;
+        this.prefab = prefab;
+        this.chance = chance;
+        this.unlockLevel = unlockLevel;
     }
 }
