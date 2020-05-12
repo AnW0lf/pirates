@@ -203,10 +203,15 @@ public class WindowLevelUp : WindowBase
             rewardObject.transform.localPosition = new Vector3(-150f, rewardObject.transform.localPosition.y, rewardObject.transform.localPosition.z);
             levelRewardObject.transform.localPosition = new Vector3(150f, levelRewardObject.transform.localPosition.y, levelRewardObject.transform.localPosition.z);
         }
-        else
+        else if (money < 10000f)
         {
             rewardObject.transform.localPosition = new Vector3(-90f, rewardObject.transform.localPosition.y, rewardObject.transform.localPosition.z);
             levelRewardObject.transform.localPosition = new Vector3(90f, levelRewardObject.transform.localPosition.y, levelRewardObject.transform.localPosition.z);
+        }
+        else
+        {
+            rewardObject.transform.localPosition = new Vector3(0f, rewardObject.transform.localPosition.y, rewardObject.transform.localPosition.z);
+            levelRewardObject.transform.localPosition = new Vector3(0f, levelRewardObject.transform.localPosition.y, levelRewardObject.transform.localPosition.z);
         }
     }
 }
