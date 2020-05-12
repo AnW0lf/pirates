@@ -41,16 +41,16 @@ public class ShipClick : MonoBehaviour
             _flyingText = Instantiate(flyingText, other.transform.parent);
             _flyingText.transform.localPosition = new Vector3(0f, 0f, 0f);
             FlyingText ft = _flyingText.GetComponent<FlyingText>();
-
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusMaterial)
+            BonusBehavior bonus = other.gameObject.GetComponent<BonusBehavior>();
+            if (bonus.bonusMaterial)
             {
-                ship.rewardModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
+                ship.rewardModifier += bonus.modifier;
                 ft.exp = true;
                 ft.expText.GetComponent<Text>().text = "+" + ship.reward.ToString();
 
                 EventManager.SendEvent("BonusCollected", ship.ShipName, "Material");
             }
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusMoney)
+            else if (bonus.bonusMoney)
             {
                 if (islandController != null)
                 {
@@ -58,18 +58,19 @@ public class ShipClick : MonoBehaviour
                     ft.money = true;
                     ft.moneyText.GetComponent<Text>().text = "+" + reward.ToString();
                     islandController.GenerateBonusMoney(reward);
+                    island.ChangeMoney(reward);
                     EventManager.SendEvent("BonusCollected", ship.ShipName, "Money");
                 }
             }
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusSpeed)
+            else if (bonus.bonusSpeed)
             {
-                ship.raidTimeModifier += other.gameObject.GetComponent<BonusBehavior>().modifier;
+                ship.raidTimeModifier += bonus.modifier;
                 ft.speed = true;
                 ft.speedText.GetComponent<Text>().text = "-" + (int)(ship.raidTime / Mathf.Pow(2f, ship.raidTimeModifier)) + "s";
 
                 EventManager.SendEvent("BonusCollected", ship.ShipName, "Speed");
             }
-            if (other.gameObject.GetComponent<BonusBehavior>().bonusWheel)
+            else if (bonus.bonusWheel)
             {
                 if (island.Level >= 2)
                 {
