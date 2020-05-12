@@ -3356,7 +3356,7 @@ MonoBehaviour:
   minLevel: 0
   maxClickCount: 30
   clickCountDecrease: 1
-  forcingMoneyDuration: 60
+  forcingMoneyDuration: 59
   autoclickDelay: 1.5
   modifierMantissa: 1
   modifierExponent: 0
@@ -3378,7 +3378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 5fde54a6d2985834e983a2777aede88c, type: 3}
   - {fileID: 21300000, guid: 37ace5bc0be284d46b1812046da7bd9c, type: 3}
   - {fileID: 21300000, guid: 639411b6c751c914a95cf0e0c3e09fbb, type: 3}
   - {fileID: 21300000, guid: 2de7c395b92ff1a428cb463fc8b5d4ab, type: 3}
@@ -38250,7 +38249,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 618b96cbb5091b74cae4a9215e7cb84f, type: 3}
   - {fileID: 21300000, guid: 172d53eef27a64743912ef61018bf31f, type: 3}
   - {fileID: 21300000, guid: 04696d5a912ecc143aad653dfb58cfb6, type: 3}
   - {fileID: 21300000, guid: a9937f875dc20dc4d83e8aa480d5818d, type: 3}
@@ -38280,7 +38278,7 @@ MonoBehaviour:
   minLevel: 25
   maxClickCount: 30
   clickCountDecrease: 1
-  forcingMoneyDuration: 60
+  forcingMoneyDuration: 59
   autoclickDelay: 1.5
   modifierMantissa: 3
   modifierExponent: 1
@@ -42741,7 +42739,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -70272,22 +70270,19 @@ MonoBehaviour:
   questText: {fileID: 1230724947}
   rankText: {fileID: 5908471}
   opened: 0
-  levels: 04000000080000000d00000011000000150000001c0000002000000025000000290000002c00000035000000390000003e0000004200000046000000
+  levels: 050000000a0000000f000000140000001e00000023000000280000002d000000370000003c0000004100000046000000
   texts:
-  - Reach level 4
-  - Reach level 8
-  - Reach level 13
-  - Reach level 17
-  - Reach level 21
-  - Reach level 28
-  - Reach level 32
-  - Reach level 37
-  - Reach level 41
-  - Reach level 44
-  - Reach level 53
-  - Reach level 57
-  - Reach level 62
-  - Reach level 66
+  - Reach level 5
+  - Reach level 10
+  - Reach level 15
+  - Reach level 20
+  - Reach level 30
+  - Reach level 35
+  - Reach level 40
+  - Reach level 45
+  - Reach level 55
+  - Reach level 60
+  - Reach level 65
   - Reach level 70
 --- !u!1 &1348054914
 GameObject:
@@ -76197,7 +76192,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 01ce047614d665e4ab17e025a59bab01, type: 3}
   - {fileID: 21300000, guid: 01ce047614d665e4ab17e025a59bab01, type: 3}
   - {fileID: 21300000, guid: 01ce047614d665e4ab17e025a59bab01, type: 3}
-  - {fileID: 21300000, guid: 01ce047614d665e4ab17e025a59bab01, type: 3}
   changeSpriteEffectPref: {fileID: 9168326474720936237, guid: 7edd67450f43b534ab2849b79c837e36,
     type: 3}
   changeSpriteTextPref: {fileID: 2278700032299362563, guid: 9b4a6b03c02536b4db6c23c83c09f7d0,
@@ -76222,7 +76216,7 @@ MonoBehaviour:
   minLevel: 50
   maxClickCount: 30
   clickCountDecrease: 1
-  forcingMoneyDuration: 60
+  forcingMoneyDuration: 59
   autoclickDelay: 1.5
   modifierMantissa: 6
   modifierExponent: 2
@@ -76950,7 +76944,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -86397,7 +86391,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -100704,7 +100698,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -106527,8 +106521,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -106593,7 +106587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saver: {fileID: 1717422758}
-  minLevel: 4
+  minLevel: 5
 --- !u!1 &1966094705
 GameObject:
   m_ObjectHideFlags: 0
@@ -108933,7 +108927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f362b325cf1524fa7bf2570d422e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockLevel: 3
+  unlockLevel: 4
   child: {fileID: 756345819}
 --- !u!1 &2012753944
 GameObject:
