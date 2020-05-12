@@ -79,6 +79,11 @@ public class Ship : MonoBehaviour
         return inRaid;
     }
 
+    public void SendStatistic()
+    {
+        EventManager.SendEvent("ShipClicked", ShipName);
+    }
+
     public void BeginRaid()
     {
         if (!inRaid)

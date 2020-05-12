@@ -71,6 +71,8 @@ public class WorldButton : MonoBehaviour
 
         if (coroutine != null) StopCoroutine(coroutine);
         coroutine = StartCoroutine(SwitchGroup(spacingVector.x, switchDuration));
+
+        EventManager.SendEvent("WorldOpened");
     }
 
     public void Switch()

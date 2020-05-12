@@ -116,6 +116,8 @@ public class IslandController : MonoBehaviour
         GenerateBonusMoney(reward);
         island.ChangeMoney(reward);
         StartCoroutine(ForceMoney());
+
+        EventManager.SendEvent("CoinRush", minLevel);
     }
 
     private IEnumerator ForceMoney()

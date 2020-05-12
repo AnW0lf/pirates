@@ -41,6 +41,42 @@ public class FBEventController : MonoBehaviour
         EventManager.Subscribe("UpgradeBought", UpgradeBought);
 
         EventManager.Subscribe("BonusCollected", BonusCollected);
+
+        EventManager.Subscribe("CoinRush", CoinRush);
+
+        EventManager.Subscribe("WorldOpened", WorldOpened);
+        
+        EventManager.Subscribe("RankingsOpened", RankingsOpened);
+
+        EventManager.Subscribe("ShipClicked", ShipClicked);
+    }
+
+    private void ShipClicked(object[] arg0)
+    {
+        if (arg0.Length < 1) return;
+        string shipName = (string)arg0[0];
+        LogShipClickedEvent(shipName, 1f);
+    }
+
+    private void RankingsOpened(object[] arg0)
+    {
+        LogRankingsOpenedEvent(island.Level, 1f);
+    }
+    
+    private void WorldOpened(object[] arg0)
+    {
+        LogWorldOpenedEvent(island.Level, 1f);
+    }
+    
+    private void CoinRush(object[] arg0)
+    {
+        if (arg0.Length < 1) return;
+        int islandNumber = (int)arg0[1];
+        if (islandNumber < 10) islandNumber = 1;
+        else if (islandNumber < 35) islandNumber = 2;
+        else if (islandNumber < 60) islandNumber = 3;
+        else islandNumber = 4;
+        LogCoinRushEvent(island.Level, islandNumber, 1f);
     }
 
     private void BonusCollected(object[] arg0)
@@ -277,6 +313,59 @@ public class FBEventController : MonoBehaviour
         };
         FB.LogAppEvent(
             "BonusCollected",
+            valToSum,
+            parameters
+        );
+    }
+
+    public void LogCoinRushEvent(int level, int islandNumber, float valToSum)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            ["islandNumber"] = islandNumber,
+            ["Level"] = level
+        };
+        FB.LogAppEvent(
+            "CoinRush",
+            valToSum,
+            parameters
+        );
+    }
+
+    public void LogWorldOpenedEvent(int level, float valToSum)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            ["Level"] = level
+        };
+        FB.LogAppEvent(
+            "WorldOpened",
+            valToSum,
+            parameters
+        );
+    }
+    
+    public void LogRankingsOpenedEvent(int level, float valToSum)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            ["Level"] = level
+        };
+        FB.LogAppEvent(
+            "RankingsOpened",
+            valToSum,
+            parameters
+        );
+    }
+    
+    public void LogShipClickedEvent(string shipName, float valToSum)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            ["ShipName"] = shipName
+        };
+        FB.LogAppEvent(
+            "ShipClicked",
             valToSum,
             parameters
         );

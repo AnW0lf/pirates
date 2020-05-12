@@ -34,6 +34,7 @@ public class LeaderboardButton : MonoBehaviour
 
 #if UNITY_ANDROID || UNITY_IPHONE
         btn.onClick.AddListener(() => Social.ShowLeaderboardUI());
+        btn.onClick.AddListener(() => EventManager.SendEvent("RankingsOpened"));
 #endif
     }
 
