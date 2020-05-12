@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GooglePlayGames;
 using UnityEngine.SocialPlatforms;
+using System;
 
 [RequireComponent(typeof(Button))]
 public class LeaderboardButton : MonoBehaviour
@@ -19,7 +20,9 @@ public class LeaderboardButton : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(Island.Instance().Level >= minLevel);
+        CheckLevel();
+
+        if (!gameObject.activeSelf) EventManager.Subscribe("LevelUp", CheckLevel);
 
 #if UNITY_ANDROID
         btn.interactable = saver.AuthSuccess;
@@ -32,5 +35,16 @@ public class LeaderboardButton : MonoBehaviour
 #if UNITY_ANDROID || UNITY_IPHONE
         btn.onClick.AddListener(() => Social.ShowLeaderboardUI());
 #endif
+    }
+
+    private void CheckLevel(object[] arg0)
+    {
+        CheckLevel();
+        if (gameObject.activeSelf) EventManager.Unsubscribe("LevelUp", CheckLevel);
+    }
+
+    private void CheckLevel()
+    {
+        gameObject.SetActive(Island.Instance().Level >= minLevel);
     }
 }
