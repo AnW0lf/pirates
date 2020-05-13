@@ -24,17 +24,18 @@ public class LeaderboardButton : MonoBehaviour
 
         if (!gameObject.activeSelf) EventManager.Subscribe("LevelUp", CheckLevel);
 
-#if UNITY_ANDROID
         btn.interactable = saver.AuthSuccess;
         if (btn.interactable)
         {
-            (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI("LEADERBOARD_ID");
-        }
+#if UNITY_ANDROID
+            (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI(Island.Instance().android_leaderboard_id);
+#elif UNITY_IPHONE
+            (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI(Island.Instance().iphone_leaderboard_id);
 #endif
+        }
 
 #if UNITY_ANDROID || UNITY_IPHONE
-        btn.onClick.AddListener(() => Social.ShowLeaderboardUI());
-        btn.onClick.AddListener(() => EventManager.SendEvent("RankingsOpened"));
+        btn.onClick.AddListener(Click);
 #endif
     }
 
@@ -47,5 +48,12 @@ public class LeaderboardButton : MonoBehaviour
     private void CheckLevel()
     {
         gameObject.SetActive(Island.Instance().Level >= minLevel);
+    }
+
+    private void Click()
+    {
+        if (!saver.AuthSuccess) saver.TryAuthenticate();
+        Social.ShowLeaderboardUI();
+        EventManager.SendEvent("RankingsOpened");
     }
 }

@@ -25,6 +25,15 @@ public class Saver : MonoBehaviour
         });
     }
 
+    public void TryAuthenticate()
+    {
+        Social.localUser.Authenticate((bool success) =>
+        {
+            AuthSuccess = success;
+            Debug.Log("onProcessAuthentication: " + success);
+        });
+    }
+
     private void OnApplicationFocus(bool focus) { Save(); }
 
     private void OnApplicationPause(bool pause) { Save(); }

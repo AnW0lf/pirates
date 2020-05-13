@@ -15,8 +15,8 @@ public class Island
     private List<string> parameters;
 
     private long accumulation;
-    private readonly string android_leaderboard_id = "CgkI96T4suUVEAIQAQ";
-    private readonly string iphone_leaderboard_id = "IslandTycoon.Rich_Man";
+    public readonly string android_leaderboard_id = "CgkI96T4suUVEAIQAQ";
+    public readonly string iphone_leaderboard_id = "IslandTycoon.Rich_Man";
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
         new BigDigit(1.2f, 2), // 0
