@@ -42,9 +42,9 @@ public class Island
         new BigDigit(2.19476f, 5), // 18
         new BigDigit(2.42315f, 5), // 19
         new BigDigit(2.90676f, 5), // 20
-        new BigDigit(3.21004f, 5), // 21
-        new BigDigit(3.82737f, 5), // 22
-        new BigDigit(4.09015f, 5), // 23
+        new BigDigit(3.852f, 5), // 21
+        new BigDigit(5.5f, 5), // 22
+        new BigDigit(6.9f, 5), // 23
 
         new BigDigit(2f, 5), // 24
         new BigDigit(2f, 5), // 25

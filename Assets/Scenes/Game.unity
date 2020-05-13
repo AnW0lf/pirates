@@ -4269,7 +4269,7 @@ MonoBehaviour:
   startRaidTime: 15
   startReward: 60000000
   speedAngle: 25
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -5387,7 +5387,7 @@ MonoBehaviour:
   startRaidTime: 8
   startReward: 36000
   speedAngle: 32
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 2
@@ -5961,14 +5961,14 @@ MonoBehaviour:
   startPriceMantissa: 0
   startPriceExponent: 0
   startRaidTime: 60
-  startReward: 2000
+  startReward: 1000
   speedAngle: 30
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 4
   detailCurrentLvl1: 0
-  detailChangeReward1: 1500
+  detailChangeReward1: 1000
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
   detailStartCostMantissa1: 0
@@ -6005,7 +6005,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 453755324}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: fdefb56dca794414e8c46f9eb1130365, type: 3}
   islandController: {fileID: 71592728}
   lifebuoys: {fileID: 502075262}
@@ -6362,7 +6362,7 @@ MonoBehaviour:
   startRaidTime: 10
   startReward: 35000000
   speedAngle: 25
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -6783,7 +6783,7 @@ MonoBehaviour:
   startRaidTime: 5
   startReward: 12000000
   speedAngle: 25
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -17967,7 +17967,7 @@ MonoBehaviour:
   startRaidTime: 8
   startReward: 39600000
   speedAngle: 35
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 2
@@ -27015,7 +27015,7 @@ MonoBehaviour:
   startRaidTime: 22
   startReward: 110000000
   speedAngle: 25
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -27661,7 +27661,7 @@ MonoBehaviour:
   startRaidTime: 30
   startReward: 210000000
   speedAngle: 25
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -30529,7 +30529,7 @@ MonoBehaviour:
   startRaidTime: 4
   startReward: 9
   speedAngle: 30
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -31496,7 +31496,7 @@ MonoBehaviour:
   descriptionName: Earnings
   startPriceMantissa: 8.1
   startPriceExponent: 5
-  modifier: 0.05
+  modifier: 0.03
   increase: 1.5
   startReward: 1
   maxReward: 2
@@ -33174,7 +33174,7 @@ MonoBehaviour:
   startRaidTime: 17
   startReward: 486000
   speedAngle: 32
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -38571,7 +38571,7 @@ MonoBehaviour:
   startRaidTime: 60
   startReward: 1980000000
   speedAngle: 35
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 4
@@ -38613,7 +38613,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 573140490}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: fe9e9d96d2ef1d747aabfaea4ee9f03b, type: 3}
   islandController: {fileID: 1481291095}
   lifebuoys: {fileID: 718200915}
@@ -44169,7 +44169,7 @@ MonoBehaviour:
   startRaidTime: 14
   startReward: 237600000
   speedAngle: 35
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -45023,7 +45023,7 @@ MonoBehaviour:
   startRaidTime: 60
   startReward: 1800000
   speedAngle: 32
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 4
@@ -45065,7 +45065,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 88929339}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 37240ec5aac2762488182d7f59229938, type: 3}
   islandController: {fileID: 673416820}
   lifebuoys: {fileID: 0}
@@ -45678,12 +45678,12 @@ MonoBehaviour:
   rise: 510
   angle: 105
   shipName: King Georg
-  startPriceMantissa: 1.2
+  startPriceMantissa: 1
   startPriceExponent: 5
   startRaidTime: 22
   startReward: 600
   speedAngle: 30
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -45691,7 +45691,7 @@ MonoBehaviour:
   detailChangeReward1: 45
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.3
+  detailStartCostMantissa1: 1.1
   detailStartCostExponent1: 5
   detailCostIncreaseMantissa1: 1
   detailCostIncreaseExponent1: 4
@@ -45703,9 +45703,9 @@ MonoBehaviour:
   detailChangeReward2: 60
   detailChangeRaidTime2: 0
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 1.75
+  detailStartCostMantissa2: 1.54
   detailStartCostExponent2: 5
-  detailCostIncreaseMantissa2: 2.5
+  detailCostIncreaseMantissa2: 2.3
   detailCostIncreaseExponent2: 4
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
@@ -45715,7 +45715,7 @@ MonoBehaviour:
   detailChangeReward3: 95
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 2.7
+  detailStartCostMantissa3: 2.4
   detailStartCostExponent3: 5
   detailCostIncreaseMantissa3: 4.5
   detailCostIncreaseExponent3: 4
@@ -47170,7 +47170,7 @@ MonoBehaviour:
   islandNumber: 1
   modifierName: GlobalSpeed
   descriptionName: Speed
-  startPriceMantissa: 5.8
+  startPriceMantissa: 8.7
   startPriceExponent: 2
   modifier: 0.03
   increase: 1.55
@@ -47377,9 +47377,9 @@ MonoBehaviour:
   islandNumber: 1
   modifierName: GlobalEarnings
   descriptionName: Earnings
-  startPriceMantissa: 3
+  startPriceMantissa: 5.5
   startPriceExponent: 2
-  modifier: 0.05
+  modifier: 0.03
   increase: 1.5
   startReward: 1
   maxReward: 2
@@ -48699,7 +48699,7 @@ MonoBehaviour:
   startRaidTime: 17
   startReward: 534600000
   speedAngle: 35
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -52759,7 +52759,7 @@ MonoBehaviour:
   timer: {fileID: 1998380571}
   fill: {fileID: 642997934}
   minLevel: 2
-  seconds: 210
+  seconds: 240
   pack: {fileID: 1934351444}
   message: {fileID: 960686066}
   bgs:
@@ -56508,7 +56508,7 @@ MonoBehaviour:
   descriptionName: Earnings
   startPriceMantissa: 2.187
   startPriceExponent: 9
-  modifier: 0.05
+  modifier: 0.03
   increase: 1.5
   startReward: 1
   maxReward: 2
@@ -58413,7 +58413,7 @@ MonoBehaviour:
   startRaidTime: 10
   startReward: 90000
   speedAngle: 32
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -59262,7 +59262,7 @@ MonoBehaviour:
   startRaidTime: 4
   startReward: 12600
   speedAngle: 32
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 1
@@ -59864,7 +59864,7 @@ MonoBehaviour:
   startRaidTime: 15
   startReward: 200
   speedAngle: 30
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -59872,9 +59872,9 @@ MonoBehaviour:
   detailChangeReward1: 15
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.4
+  detailStartCostMantissa1: 1.25
   detailStartCostExponent1: 4
-  detailCostIncreaseMantissa1: 3
+  detailCostIncreaseMantissa1: 2.5
   detailCostIncreaseExponent1: 3
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
@@ -59884,9 +59884,9 @@ MonoBehaviour:
   detailChangeReward2: 25
   detailChangeRaidTime2: 0
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 2.5
+  detailStartCostMantissa2: 2
   detailStartCostExponent2: 4
-  detailCostIncreaseMantissa2: 5
+  detailCostIncreaseMantissa2: 4
   detailCostIncreaseExponent2: 3
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
@@ -59896,10 +59896,10 @@ MonoBehaviour:
   detailChangeReward3: 40
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 4.5
+  detailStartCostMantissa3: 3.3
   detailStartCostExponent3: 4
-  detailCostIncreaseMantissa3: 1
-  detailCostIncreaseExponent3: 4
+  detailCostIncreaseMantissa3: 7
+  detailCostIncreaseExponent3: 3
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -61142,7 +61142,7 @@ MonoBehaviour:
   startRaidTime: 4
   startReward: 13860000
   speedAngle: 35
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 1
@@ -67535,7 +67535,7 @@ MonoBehaviour:
   startRaidTime: 30
   startReward: 1500
   speedAngle: 30
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -70315,7 +70315,7 @@ MonoBehaviour:
   questText: {fileID: 1230724947}
   rankText: {fileID: 5908471}
   opened: 0
-  levels: 050000000a0000000f000000140000001e00000023000000280000002d000000370000003c0000004100000046000000
+  levels: 050000000a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b000000
   texts:
   - Reach level 5
   - Reach level 10
@@ -70615,7 +70615,7 @@ MonoBehaviour:
   startRaidTime: 10
   startReward: 60
   speedAngle: 30
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -70647,9 +70647,9 @@ MonoBehaviour:
   detailChangeReward3: 13
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 4.1
+  detailStartCostMantissa3: 4.25
   detailStartCostExponent3: 3
-  detailCostIncreaseMantissa3: 1.1
+  detailCostIncreaseMantissa3: 1.25
   detailCostIncreaseExponent3: 3
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
@@ -84072,7 +84072,7 @@ MonoBehaviour:
   startRaidTime: 60
   startReward: 300000000
   speedAngle: 25
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -84114,7 +84114,7 @@ MonoBehaviour:
   maxLvl: 0
   upgradeMenu: {fileID: 663304916}
   ships: {fileID: 2130923789}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 94d4322c1e08bfc46b4558caa06ac35d, type: 3}
   islandController: {fileID: 2044854790}
   lifebuoys: {fileID: 1805108512}
@@ -89051,7 +89051,7 @@ MonoBehaviour:
   startRaidTime: 14
   startReward: 216000
   speedAngle: 32
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -105078,7 +105078,7 @@ MonoBehaviour:
   descriptionName: Earnings
   startPriceMantissa: 2.187
   startPriceExponent: 9
-  modifier: 0.05
+  modifier: 0.03
   increase: 1.5
   startReward: 1
   maxReward: 2
@@ -113352,7 +113352,7 @@ MonoBehaviour:
   startRaidTime: 10
   startReward: 99000000
   speedAngle: 35
-  speedLinear: 350
+  speedLinear: 310
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
