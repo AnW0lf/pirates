@@ -71,7 +71,7 @@ public class FBEventController : MonoBehaviour
     private void CoinRush(object[] arg0)
     {
         if (arg0.Length < 1) return;
-        int islandNumber = (int)arg0[1];
+        int islandNumber = (int)arg0[0];
         if (islandNumber < 10) islandNumber = 1;
         else if (islandNumber < 35) islandNumber = 2;
         else if (islandNumber < 60) islandNumber = 3;
