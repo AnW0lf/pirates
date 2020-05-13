@@ -24,15 +24,11 @@ public class LeaderboardButton : MonoBehaviour
 
         if (!gameObject.activeSelf) EventManager.Subscribe("LevelUp", CheckLevel);
 
-        btn.interactable = saver.AuthSuccess;
-        if (btn.interactable)
-        {
 #if UNITY_ANDROID
-            (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI(Island.Instance().android_leaderboard_id);
+        (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI(Island.Instance().android_leaderboard_id);
 #elif UNITY_IPHONE
-            (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI(Island.Instance().iphone_leaderboard_id);
+        (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI(Island.Instance().iphone_leaderboard_id);
 #endif
-        }
 
 #if UNITY_ANDROID || UNITY_IPHONE
         btn.onClick.AddListener(Click);
