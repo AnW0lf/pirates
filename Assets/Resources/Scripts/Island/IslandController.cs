@@ -152,9 +152,9 @@ public class IslandController : MonoBehaviour
         if (island.Level <= 25)
             digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) / 1.6f + 1);
         else if (island.Level > 25 && island.Level <= 50)
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) / 1.5f + 1);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow((island.Level - 25), 2.15f) / 1.6f + 1) * 5000;
         else
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (Mathf.Pow(island.Level, 2.15f) * (island.Level - 25) * (island.Level - 50) / 1.5f + 1);
+            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow((island.Level - 50), 2.15f) / 1.6f + 1) * 5000 * 5000;
         return digit;
     }
 
