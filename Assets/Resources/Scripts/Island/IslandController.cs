@@ -133,12 +133,12 @@ public class IslandController : MonoBehaviour
 
     public void Click()
     {
+        Taptic.Light();
         if (forced || clickDelayTimer > 0f) return;
         clickDelayTimer = clickDelay;
         GenerateMoney();
         Pulse();
         GenerateEffect();
-        Taptic.Light();
         clickCounter += 1f;
         hideClickProgressTime = 3f;
         clickTimer = 0.5f;
