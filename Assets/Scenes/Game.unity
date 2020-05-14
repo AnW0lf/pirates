@@ -38429,8 +38429,8 @@ MonoBehaviour:
   clickCountDecrease: 3
   forcingMoneyDuration: 59
   autoclickDelay: 1.8
-  modifierMantissa: 3
-  modifierExponent: 1
+  modifierMantissa: 1
+  modifierExponent: 0
   moneySet: {fileID: 507111229}
   clickEffectSet: {fileID: 1091090204}
   experienceSet: {fileID: 182239934}
@@ -76557,8 +76557,8 @@ MonoBehaviour:
   clickCountDecrease: 3
   forcingMoneyDuration: 59
   autoclickDelay: 1.8
-  modifierMantissa: 6
-  modifierExponent: 2
+  modifierMantissa: 1
+  modifierExponent: 0
   moneySet: {fileID: 923779284}
   clickEffectSet: {fileID: 1070739670}
   experienceSet: {fileID: 1200137115}
@@ -111020,8 +111020,8 @@ MonoBehaviour:
   clickCountDecrease: 3
   forcingMoneyDuration: 30
   autoclickDelay: 0.6
-  modifierMantissa: 0.65
-  modifierExponent: 2
+  modifierMantissa: 1
+  modifierExponent: 0
   moneySet: {fileID: 109926203}
   clickEffectSet: {fileID: 538545369}
   experienceSet: {fileID: 1988514676}
