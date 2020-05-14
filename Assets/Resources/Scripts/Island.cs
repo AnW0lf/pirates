@@ -71,33 +71,35 @@ public class Island
         new BigDigit(4f, 9), // 47
         new BigDigit(5.2f, 9), // 48
 
-        new BigDigit(2.9f, 8), // 49
-        new BigDigit(3.1f, 8), // 50
-        new BigDigit(9f, 8), // 51
-        new BigDigit(1.5f, 9), // 52
-        new BigDigit(6.3f, 9), // 53
-        new BigDigit(9.9f, 9), // 54
-        new BigDigit(1.5f, 10), // 55
-        new BigDigit(2f, 10), // 56
-        new BigDigit(4.5f, 10), // 57
-        new BigDigit(4.7f, 10), // 58
-        new BigDigit(5.3f, 10), // 59
-        new BigDigit(9.4f, 10), // 60
-        new BigDigit(1.11f, 11), // 61
-        new BigDigit(1.29f, 11), // 62
-        new BigDigit(1.7f, 11), // 63
-        new BigDigit(2.1f, 11), // 64
-        new BigDigit(2.6f, 11), // 65
-        new BigDigit(3f, 11), // 66
-        new BigDigit(3.3f, 11), // 67
-        new BigDigit(4f, 11), // 68
-        new BigDigit(4.5f, 11), // 69
-        new BigDigit(4.7f, 11), // 70
-        new BigDigit(4.9f, 11), // 71
-        new BigDigit(5.15f, 11), // 72
-        new BigDigit(5.3f, 11), // 73
-        new BigDigit(5.5f, 11), // 74
-        new BigDigit(7f, 11), // 75
+        new BigDigit(1.5f, 9), // 49
+        new BigDigit(8.23f, 9), // 50
+        new BigDigit(2f, 10), // 51
+        new BigDigit(3.795f, 10), // 52
+        new BigDigit(6.365f, 10), // 53
+        new BigDigit(1f, 11), // 54
+        new BigDigit(1.5f, 11), // 55
+        new BigDigit(2.38f, 11), // 56
+        new BigDigit(3.4f, 11), // 57
+        new BigDigit(4.8f, 11), // 58
+        new BigDigit(6.63f, 11), // 59
+        new BigDigit(9.32f, 11), // 60
+        new BigDigit(1.3f, 12), // 61
+        new BigDigit(1.765f, 12), // 62
+        new BigDigit(2.32f, 12), // 63
+        new BigDigit(3.02f, 12), // 64
+        new BigDigit(3.89f, 12), // 65
+        new BigDigit(4.48f, 12), // 66
+        new BigDigit(5.385f, 12), // 67
+        new BigDigit(5.915f, 12), // 68
+        new BigDigit(7.04f, 12), // 69
+        new BigDigit(9f, 12), // 70
+        new BigDigit(1.3f, 13), // 71
+        new BigDigit(1.8f, 13), // 72
+        new BigDigit(2.5f, 13), // 73
+
+
+        new BigDigit(5.5f, 14), // 74
+        new BigDigit(7f, 15), // 75
     };
     //_______________________________________________________________________________
     private Island()
