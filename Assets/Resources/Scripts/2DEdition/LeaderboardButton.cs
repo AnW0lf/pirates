@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using GooglePlayGames;
-using UnityEngine.SocialPlatforms;
 using System;
 
 [RequireComponent(typeof(Button))]
@@ -24,12 +22,6 @@ public class LeaderboardButton : MonoBehaviour
 
         if (!gameObject.activeSelf) EventManager.Subscribe("LevelUp", CheckLevel);
 
-#if UNITY_ANDROID
-        (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI(Island.Instance().android_leaderboard_id);
-#elif UNITY_IPHONE
-        (Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI(Island.Instance().iphone_leaderboard_id);
-#endif
-
 #if UNITY_ANDROID || UNITY_IPHONE
         btn.onClick.AddListener(Click);
 #endif
@@ -48,8 +40,8 @@ public class LeaderboardButton : MonoBehaviour
 
     private void Click()
     {
-        if (!saver.AuthSuccess) saver.TryAuthenticate();
-        Social.ShowLeaderboardUI();
+        if (!saver.AuthSuccess) saver.SignIn();
+        Saver.ShowLeaderbordUI();
         EventManager.SendEvent("RankingsOpened");
     }
 }

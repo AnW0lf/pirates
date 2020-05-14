@@ -15,17 +15,14 @@ public class Saver : MonoBehaviour
 
     private void Start()
     {
-#if UNITY_ANDROID
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
+        PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.Activate();
-#endif
-        Social.localUser.Authenticate((bool success) =>
-        {
-            AuthSuccess = success;
-            Debug.Log("onProcessAuthentication: " + success);
-        });
+
+        SignIn();
     }
 
-    public void TryAuthenticate()
+    public void SignIn()
     {
         Social.localUser.Authenticate((bool success) =>
         {
@@ -33,6 +30,18 @@ public class Saver : MonoBehaviour
             Debug.Log("onProcessAuthentication: " + success);
         });
     }
+
+    #region Leaderboard
+    public static void AddScoreToLeaderboard(string leaderboardId, long score)
+    {
+        Social.ReportScore(score, leaderboardId, success => { Debug.Log("onReportScore: " + success); });
+    }
+
+    public static void ShowLeaderbordUI()
+    {
+        Social.ShowLeaderboardUI();
+    }
+    #endregion \Leaderboard
 
     private void OnApplicationFocus(bool focus) { Save(); }
 

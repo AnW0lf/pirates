@@ -15,7 +15,6 @@ public class Island
     private List<string> parameters;
 
     private long accumulation;
-    public readonly string android_leaderboard_id = "CgkI96T4suUVEAIQAQ";
     public readonly string iphone_leaderboard_id = "IslandTycoon.Rich_Man";
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
@@ -179,17 +178,9 @@ public class Island
                 if (Social.localUser.authenticated)
                 {
 #if UNITY_IOS
-                    Social.ReportScore(accumulation, iphone_leaderboard_id, (bool success) => {
-                        if (success)
-                            Debug.Log("Report score success");
-                        else Debug.Log("Report score failure");
-                    });
+                    Saver.AddScoreToLeaderboard(iphone_leaderboard_id, accumulation);
 #elif UNITY_ANDROID
-                    Social.ReportScore(accumulation, android_leaderboard_id, (bool success) => {
-                        if (success)
-                            Debug.Log("Report score success");
-                        else Debug.Log("Report score failure");
-                    });
+                    Saver.AddScoreToLeaderboard(GPGSIds.leaderboard_rich_man, accumulation);
 #endif
                 }
             }
