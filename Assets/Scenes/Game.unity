@@ -3357,7 +3357,7 @@ MonoBehaviour:
   maxClickCount: 30
   clickCountDecrease: 3
   forcingMoneyDuration: 59
-  autoclickDelay: 1.5
+  autoclickDelay: 1.8
   modifierMantissa: 1
   modifierExponent: 0
   moneySet: {fileID: 39287204}
@@ -38279,7 +38279,7 @@ MonoBehaviour:
   maxClickCount: 30
   clickCountDecrease: 3
   forcingMoneyDuration: 59
-  autoclickDelay: 1.5
+  autoclickDelay: 1.8
   modifierMantissa: 3
   modifierExponent: 1
   moneySet: {fileID: 507111229}
@@ -76262,7 +76262,7 @@ MonoBehaviour:
   maxClickCount: 30
   clickCountDecrease: 3
   forcingMoneyDuration: 59
-  autoclickDelay: 1.5
+  autoclickDelay: 1.8
   modifierMantissa: 6
   modifierExponent: 2
   moneySet: {fileID: 923779284}
