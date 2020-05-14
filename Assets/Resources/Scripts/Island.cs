@@ -45,31 +45,32 @@ public class Island
         new BigDigit(5.5f, 5), // 22
         new BigDigit(6.9f, 5), // 23
 
-        new BigDigit(2f, 5), // 24
-        new BigDigit(2f, 5), // 25
-        new BigDigit(5f, 5), // 26
-        new BigDigit(6.5f, 5), // 27
-        new BigDigit(2.9f, 6), // 28
-        new BigDigit(4.5f, 6), // 29
-        new BigDigit(6.9f, 6), // 30
-        new BigDigit(9.2f, 6), // 31
-        new BigDigit(1.8f, 7), // 32
-        new BigDigit(2.3f, 7), // 33
-        new BigDigit(2.7f, 7), // 34
-        new BigDigit(4.25f, 7), // 35
-        new BigDigit(5.1f, 7), // 36
-        new BigDigit(5.9f, 7), // 37
-        new BigDigit(7.7f, 7), // 38
-        new BigDigit(9.8f, 7), // 39
-        new BigDigit(1.17f, 8), // 40
-        new BigDigit(1.3f, 8), // 41
-        new BigDigit(1.5f, 8), // 42
-        new BigDigit(1.7f, 8), // 43
-        new BigDigit(1.95f, 8), // 44
-        new BigDigit(2.1f, 8), // 45
-        new BigDigit(2.25f, 8), // 46
-        new BigDigit(2.35f, 8), // 47
-        new BigDigit(2.7f, 8), // 48
+        new BigDigit(5.4f, 5), // 24
+        new BigDigit(2.58f, 6), // 25
+        new BigDigit(6.156f, 6), // 26
+        new BigDigit(1.1556f, 7), // 27
+        new BigDigit(1.93f, 7), // 28
+        new BigDigit(3.042f, 7), // 29
+        new BigDigit(4.58f, 7), // 30
+        new BigDigit(6.95f, 7), // 31
+        new BigDigit(1.029f, 8), // 32
+        new BigDigit(1.4735f, 8), // 33
+        new BigDigit(2.072f, 8), // 34
+        new BigDigit(2.8f, 8), // 35
+        new BigDigit(3.94f, 8), // 36
+        new BigDigit(5.4f, 8), // 37
+        new BigDigit(6.98f, 8), // 38
+        new BigDigit(9.01f, 8), // 39
+        new BigDigit(1.157f, 9), // 40
+        new BigDigit(1.3455f, 9), // 41
+        new BigDigit(1.633f, 9), // 42
+        new BigDigit(1.8184f, 9), // 43
+        new BigDigit(2.155f, 9), // 44
+        new BigDigit(2.58f, 9), // 45
+        new BigDigit(3.3f, 9), // 46
+        new BigDigit(4f, 9), // 47
+        new BigDigit(5.2f, 9), // 48
+
         new BigDigit(2.9f, 8), // 49
         new BigDigit(3.1f, 8), // 50
         new BigDigit(9f, 8), // 51
