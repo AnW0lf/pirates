@@ -138,6 +138,7 @@ public class IslandController : MonoBehaviour
         GenerateMoney();
         Pulse();
         GenerateEffect();
+        Taptic.Light();
         clickCounter += 1f;
         hideClickProgressTime = 3f;
         clickTimer = 0.5f;

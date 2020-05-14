@@ -36,7 +36,7 @@ public class ShipClick : MonoBehaviour
         {
             other.gameObject.GetComponentInParent<BonusPoint>().active = false;
 
-            //Taptic.Medium();
+            Taptic.Light();
 
             _flyingText = Instantiate(flyingText, other.transform.parent);
             _flyingText.transform.localPosition = new Vector3(0f, 0f, 0f);
