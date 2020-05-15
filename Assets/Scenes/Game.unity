@@ -5421,7 +5421,7 @@ MonoBehaviour:
   color: {r: 1, g: 0.3443396, b: 0.7330755, a: 1}
   spriteForMenu: {fileID: 21300000, guid: c3e346e845dd0134fb32e36a5e3c37aa, type: 3}
   islandController: {fileID: 673416820}
-  lifebuoys: {fileID: 0}
+  lifebuoys: {fileID: 1702024806}
 --- !u!1 &132635981
 GameObject:
   m_ObjectHideFlags: 0
@@ -33357,7 +33357,7 @@ MonoBehaviour:
   color: {r: 0.8490566, g: 0.20371896, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 45e0206524a619340b364e33f7694e41, type: 3}
   islandController: {fileID: 673416820}
-  lifebuoys: {fileID: 0}
+  lifebuoys: {fileID: 1702024806}
 --- !u!1 &572901810
 GameObject:
   m_ObjectHideFlags: 0
@@ -45268,7 +45268,7 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 37240ec5aac2762488182d7f59229938, type: 3}
   islandController: {fileID: 673416820}
-  lifebuoys: {fileID: 0}
+  lifebuoys: {fileID: 1702024806}
 --- !u!224 &810971561
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58730,7 +58730,7 @@ MonoBehaviour:
   color: {r: 0.28773582, g: 1, b: 0.47301212, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 8d3414b5b6e1fcf4184c47f11cb8bca5, type: 3}
   islandController: {fileID: 673416820}
-  lifebuoys: {fileID: 0}
+  lifebuoys: {fileID: 1702024806}
 --- !u!1 &1088094026
 GameObject:
   m_ObjectHideFlags: 0
@@ -59579,7 +59579,7 @@ MonoBehaviour:
   color: {r: 0.735849, g: 0.45722795, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: b01fd5100a7aee84099bd7673e77bd34, type: 3}
   islandController: {fileID: 673416820}
-  lifebuoys: {fileID: 0}
+  lifebuoys: {fileID: 1702024806}
 --- !u!224 &1099386693
 RectTransform:
   m_ObjectHideFlags: 0
@@ -89357,7 +89357,7 @@ MonoBehaviour:
   color: {r: 0.8584906, g: 0.8554214, b: 0, a: 1}
   spriteForMenu: {fileID: 21300000, guid: 0d6dea2aad1e8aa4da8c60d9a7231a63, type: 3}
   islandController: {fileID: 673416820}
-  lifebuoys: {fileID: 0}
+  lifebuoys: {fileID: 1702024806}
 --- !u!1 &1637883430
 GameObject:
   m_ObjectHideFlags: 0
