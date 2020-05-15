@@ -5362,7 +5362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: c3e346e845dd0134fb32e36a5e3c37aa, type: 3}
-  minLvl: 26
+  minLvl: 27
   shipDescription: Little boy with a great power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -33298,7 +33298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 45e0206524a619340b364e33f7694e41, type: 3}
-  minLvl: 31
+  minLvl: 42
   shipDescription: Synergy of beauty and power.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -58671,7 +58671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 8d3414b5b6e1fcf4184c47f11cb8bca5, type: 3}
-  minLvl: 27
+  minLvl: 31
   shipDescription: Professional wave tamer.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,
@@ -89298,7 +89298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   islandNumber: 2
   shipIcon: {fileID: 21300000, guid: 0d6dea2aad1e8aa4da8c60d9a7231a63, type: 3}
-  minLvl: 29
+  minLvl: 36
   shipDescription: Emblem of the new world.
   black: 0
   shipPref: {fileID: 1561015050841590755, guid: 11b120b163feba04f826de7947212bf2,

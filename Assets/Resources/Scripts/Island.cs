@@ -42,8 +42,8 @@ public class Island
         new BigDigit(2.42315f, 5), // 19
         new BigDigit(2.90676f, 5), // 20
         new BigDigit(3.852f, 5), // 21
-        new BigDigit(5.5f, 5), // 22
-        new BigDigit(6.9f, 5), // 23
+        new BigDigit(5.8f, 5), // 22
+        new BigDigit(7.5f, 5), // 23
 
         new BigDigit(5.4f, 5), // 24
         new BigDigit(2.58f, 6), // 25
@@ -68,8 +68,8 @@ public class Island
         new BigDigit(2.155f, 9), // 44
         new BigDigit(2.58f, 9), // 45
         new BigDigit(3.3f, 9), // 46
-        new BigDigit(4f, 9), // 47
-        new BigDigit(5.2f, 9), // 48
+        new BigDigit(4.4f, 9), // 47
+        new BigDigit(6f, 9), // 48
 
         new BigDigit(1.5f, 9), // 49
         new BigDigit(8.23f, 9), // 50
@@ -94,8 +94,8 @@ public class Island
         new BigDigit(7.04f, 12), // 69
         new BigDigit(9f, 12), // 70
         new BigDigit(1.3f, 13), // 71
-        new BigDigit(1.8f, 13), // 72
-        new BigDigit(2.5f, 13), // 73
+        new BigDigit(2.1f, 13), // 72
+        new BigDigit(3.5f, 13), // 73
 
 
         new BigDigit(5.5f, 14), // 74
