@@ -15,6 +15,7 @@ public class PolundraTimer : MonoBehaviour
 
     private Island island;
     private TimeSpan ts;
+    private Coroutine coroutine = null;
 
     private void Awake()
     {
@@ -26,7 +27,8 @@ public class PolundraTimer : MonoBehaviour
         if (island.Level >= minLevel)
         {
             pack.SetActive(true);
-            StartCoroutine(Timer(90));
+            if (coroutine != null) StopCoroutine(coroutine);
+            coroutine = StartCoroutine(Timer(90));
         }
         else
         {
@@ -41,7 +43,8 @@ public class PolundraTimer : MonoBehaviour
         if (island.Level >= minLevel)
         {
             pack.SetActive(true);
-            StartCoroutine(Timer(120));
+            if (coroutine != null) StopCoroutine(coroutine);
+            coroutine = StartCoroutine(Timer(120));
             EventManager.Unsubscribe("LevelUp", CheckPolundra);
         }
     }
@@ -49,14 +52,14 @@ public class PolundraTimer : MonoBehaviour
     private IEnumerator Timer(int time)
     {
         WaitForSeconds sec = new WaitForSeconds(1f);
-        for(int i = time; i >= 0; i--)
+        for (int i = time; i >= 0; i--)
         {
             timer.text = SecondsToTimerString(i);
             fill.fillAmount = 1f - ((float)i / seconds);
             yield return sec;
         }
         timer.text = "POLUNDRA";
-        StartCoroutine(Polundra());
+        coroutine = StartCoroutine(Polundra());
     }
 
     private IEnumerator Polundra()
@@ -70,13 +73,13 @@ public class PolundraTimer : MonoBehaviour
         WaitForSeconds sec = new WaitForSeconds(0.2f);
         for (int i = 0; i < 10; i++)
         {
-            for(int j = 0; j <= island.Level / 25 && j < bgs.Count; j++)
+            for (int j = 0; j <= island.Level / 25 && j < bgs.Count; j++)
             {
                 bgs[j].InstantiateRandomBonus(1);
             }
             yield return sec;
         }
-        StartCoroutine(Timer(seconds));
+        coroutine = StartCoroutine(Timer(seconds));
     }
 
     private string SecondsToTimerString(int seconds)
@@ -113,8 +116,8 @@ public class PolundraTimer : MonoBehaviour
             ts = DateTime.Now - DateTime.Parse(island.GetParameter("PauseTime", ""));
             if (ts.TotalMinutes > 10d)
             {
-                StopAllCoroutines();
-                StartCoroutine(Timer(90));
+                if (coroutine != null) StopCoroutine(coroutine);
+                if (island.Level >= minLevel) StartCoroutine(Timer(90));
             }
         }
         else island.SetParameter("PauseTime", DateTime.Now.ToString());
