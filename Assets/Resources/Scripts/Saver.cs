@@ -5,7 +5,7 @@ using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
-//using UnityEngine.SocialPlatforms.GameCenter;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 public class Saver : MonoBehaviour
 {
@@ -15,9 +15,11 @@ public class Saver : MonoBehaviour
 
     private void Start()
     {
+#if UNITY_ANDROID
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.Activate();
+#endif
 
         SignIn();
     }
@@ -31,17 +33,18 @@ public class Saver : MonoBehaviour
         });
     }
 
-    #region Leaderboard
+#region Leaderboard
     public static void AddScoreToLeaderboard(string leaderboardId, long score)
     {
-        Social.ReportScore(score, leaderboardId, success => { Debug.Log("onReportScore: " + success); });
+        if (Social.localUser.authenticated)
+            Social.ReportScore(score, leaderboardId, success => { Debug.Log("onReportScore: " + success); });
     }
 
     public static void ShowLeaderbordUI()
     {
         Social.ShowLeaderboardUI();
     }
-    #endregion \Leaderboard
+#endregion \Leaderboard
 
     private void OnApplicationFocus(bool focus) { Save(); }
 

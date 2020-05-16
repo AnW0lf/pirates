@@ -10,11 +10,6 @@ public class AppsFlyerTrackerCallbacks : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
 	public void didReceiveConversionData(string conversionData) {
 		printCallback ("AppsFlyerTrackerCallbacks:: got conversion data = " + conversionData);
 	}
