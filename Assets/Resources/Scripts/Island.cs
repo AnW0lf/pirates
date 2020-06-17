@@ -13,9 +13,6 @@ public class Island
     public BigDigit StartExp { get; private set; }
 
     private List<string> parameters;
-
-    private long accumulation;
-    public readonly string iphone_leaderboard_id = "IslandTycoon.Rich_Man";
     //_______________________________________________________________________________
     private List<BigDigit> maxExps = new List<BigDigit>() {
         new BigDigit(1.2f, 2), // 0
@@ -141,9 +138,6 @@ public class Island
         InitParameter("StartExpMantissa", 0f);
         InitParameter("StartExpExponent", 0);
         StartExp = new BigDigit(GetParameter("StartExpMantissa", 0f), GetParameter("StartExpExponent", 0));
-
-        InitParameter("Accumulation", "0");
-        accumulation = long.Parse(GetParameter("Accumulation", ""));
     }
 
     public void Save()
@@ -155,7 +149,6 @@ public class Island
         SetParameter("ExpExponent", (int)Exp.Exponent);
         SetParameter("StartExpMantissa", (float)StartExp.Mantissa);
         SetParameter("StartExpExponent", (int)StartExp.Exponent);
-        SetParameter("Accumulation", accumulation.ToString());
     }
 
     public void Resetting()
@@ -170,23 +163,6 @@ public class Island
         if ((Money + other) >= BigDigit.zero)
         {
             Money.Sum(other);
-
-            if (other > 0)
-            {
-                long l = (long)(other.ToDouble());
-
-                accumulation += l;
-                if (accumulation < 0) accumulation = long.MaxValue;
-
-                if (Social.localUser.authenticated)
-                {
-#if UNITY_IOS
-                    Saver.AddScoreToLeaderboard(iphone_leaderboard_id, accumulation);
-#elif UNITY_ANDROID
-                    Saver.AddScoreToLeaderboard(GPGSIds.leaderboard_rich_man, accumulation);
-#endif
-                }
-            }
 
             EventManager.SendEvent("ChangeMoney");
             return true;
