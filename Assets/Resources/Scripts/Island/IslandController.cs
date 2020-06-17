@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class IslandController : MonoBehaviour
 {
     public int minLevel;
-    public float maxClickCount, clickCountDecrease, forcingMoneyDuration, autoclickDelay, modifierMantissa;
+    public float maxClickCount, clickCountDecrease, autoclickDelay, clickDelay, forcingMoneyDuration, modifierMantissa;
     public long modifierExponent;
     public Transform moneySet, clickEffectSet, experienceSet;
     public ProgressBar progressbar;
@@ -16,9 +16,9 @@ public class IslandController : MonoBehaviour
     public static BigDigit islandReward;
 
     private Island island;
-    private bool active = false, forced = false;
+    private bool active = false, forced = false, clicked = false;
     private RectTransform rect;
-    private float clickCounter, autoclickTimer, clickDelay = 0.25f, clickTimer, clickDelayTimer, hideClickProgressTime = 2f;
+    private float clickCounter, hideClickProgressTime = 3f, forcingTimer;
     private Vector2 original;
     private IslandSpriteController islandSpriteController;
 
@@ -32,85 +32,124 @@ public class IslandController : MonoBehaviour
     private void Start()
     {
         original = rect.sizeDelta;
-        autoclickTimer = autoclickDelay;
-        clickDelayTimer = 0f;
-        clickTimer = 0f;
+        StartCoroutine(Clicking());
+    }
+
+    private IEnumerator Clicking()
+    {
+        float clickTimer, progressHideTimer = 0f;
+
+        while (true)
+        {
+            if (!active)
+            {
+                yield return null;
+                continue;
+            }
+
+            clickTimer = 0f;
+
+            while (clickTimer < clickDelay)
+            {
+                clickTimer += Time.deltaTime;
+
+                if (!forced)
+                {
+                    progressHideTimer = Mathf.Max(progressHideTimer - Time.deltaTime, 0f);
+
+                    if (progressHideTimer < 2f) clickCounter = Mathf.Max(clickCounter - Time.deltaTime * clickCountDecrease, 0f);
+
+                    if (!progressbar.Visible && clickCounter > 2f && progressHideTimer > 0f) progressbar.Visible = true;
+                    else if (progressbar.Visible && (clickCounter == 0f || progressHideTimer == 0f)) progressbar.Visible = false;
+
+                    progressbar.Progress = clickCounter / maxClickCount;
+                    progressbar.Label = (GetReward() * 20).ToString();
+                }
+                else
+                {
+                    if (!progressbar.Visible) progressbar.Visible = true;
+
+                    forcingTimer = Mathf.Max(forcingTimer - Time.deltaTime, 0f);
+                    if (forcingTimer == 0f)
+                    {
+                        forced = false;
+                        progressbar.Force = forced;
+                        clickCounter = 0f;
+                    }
+
+                    progressbar.Progress = forcingTimer / forcingMoneyDuration;
+                    progressbar.Timer = Mathf.CeilToInt(forcingTimer);
+                }
+
+                yield return null;
+            }
+
+            clickTimer = 0f;
+
+            while (clickTimer < autoclickDelay)
+            {
+                if (clicked)
+                {
+                    clicked = false;
+                    GenerateMoney();
+                    Pulse();
+                    GenerateEffect();
+                    if (!forced) clickCounter += 1f;
+                    progressHideTimer = 3f;
+
+                    if (clickCounter >= maxClickCount)
+                        ForceClickReward();
+
+                    break;
+                }
+
+                clickTimer += Time.deltaTime;
+
+                if (!forced)
+                {
+                    progressHideTimer = Mathf.Max(progressHideTimer - Time.deltaTime, 0f);
+
+                    if (progressHideTimer < 2f) clickCounter = Mathf.Max(clickCounter - Time.deltaTime * clickCountDecrease, 0f);
+
+                    if (!progressbar.Visible && clickCounter > 2f && progressHideTimer > 0f) progressbar.Visible = true;
+                    else if (progressbar.Visible && (clickCounter == 0f || progressHideTimer == 0f)) progressbar.Visible = false;
+
+                    progressbar.Progress = clickCounter / maxClickCount;
+                    progressbar.Label = (GetReward() * 20).ToString();
+                }
+                else
+                {
+                    if (!progressbar.Visible) progressbar.Visible = true;
+
+                    forcingTimer = Mathf.Max(forcingTimer - Time.deltaTime, 0f);
+                    if (forcingTimer == 0f)
+                    {
+                        forced = false;
+                        progressbar.Force = forced;
+                        clickCounter = 0f;
+                    }
+
+                    progressbar.Progress = forcingTimer / forcingMoneyDuration;
+                    progressbar.Timer = Mathf.CeilToInt(forcingTimer);
+                }
+
+                yield return null;
+            }
+
+            GenerateMoney();
+        }
     }
 
     private void Update()
     {
-        if (!active && island.Level >= minLevel)
-        {
-            active = true;
-        }
-
-        if (active)
-        {
-            if(autoclickTimer > 0f)
-            {
-                autoclickTimer -= Time.deltaTime;
-            }
-            else
-            {
-                autoclickTimer = autoclickDelay;
-                Autoclick();
-            }
-
-            if(clickDelayTimer > 0f) clickDelayTimer -= Time.deltaTime;
-            if (clickTimer > 0f) clickTimer -= Time.deltaTime;
-            else if (clickTimer < 0f) clickTimer = 0f;
-
-            if (!forced)
-            {
-                if(clickCounter > 0f && clickTimer == 0f)
-                {
-                    clickCounter = Mathf.Max(0f, clickCounter - clickCountDecrease * Time.deltaTime);
-                }
-
-                if (clickCounter >= 2f)
-                {
-                    if (!progressbar.Visible && hideClickProgressTime > 0f) progressbar.Visible = true;
-                    progressbar.Progress = clickCounter / maxClickCount;
-                    progressbar.Label = (GetReward() * 20).ToString();
-                }
-                else if (progressbar.Visible) progressbar.Visible = false;
-
-                if (progressbar.Visible)
-                {
-                    if (hideClickProgressTime <= 0f) progressbar.Visible = false;
-                    hideClickProgressTime -= Time.deltaTime;
-                }
-            }
-            else
-            {
-                if (clickCounter > 0f)
-                {
-                    clickCounter = Mathf.Max(0f, clickCounter - maxClickCount / forcingMoneyDuration * Time.deltaTime);
-                    progressbar.Progress = clickCounter / maxClickCount;
-                    float duration = clickCounter / maxClickCount * forcingMoneyDuration;
-                    progressbar.Timer = Mathf.RoundToInt(duration);
-                }
-                else
-                {
-                    forced = false;
-                    progressbar.Force = forced;
-                    progressbar.Visible = false;
-                    fontain.SetActive(false);
-                }
-            }
-        }
-    }
-
-    private void Autoclick()
-    {
-        if (forced || clickDelayTimer > 0f) return;
-        GenerateMoney();
+        if (!active && minLevel <= island.Level) active = true;
     }
 
     private void ForceClickReward()
     {
         forced = true;
         progressbar.Force = forced;
+        forcingTimer = forcingMoneyDuration;
         fontain.SetActive(true);
         var reward = GetReward() * 20;
         GenerateBonusMoney(reward);
@@ -123,7 +162,7 @@ public class IslandController : MonoBehaviour
     private IEnumerator ForceMoney()
     {
         WaitForSeconds delay = new WaitForSeconds(0.4f);
-        while(clickCounter > 0f)
+        while (clickCounter > 0f)
         {
             yield return delay;
             GenerateMoney();
@@ -134,17 +173,7 @@ public class IslandController : MonoBehaviour
     public void Click()
     {
         Taptic.Light();
-        if (forced || clickDelayTimer > 0f) return;
-        clickDelayTimer = clickDelay;
-        GenerateMoney();
-        Pulse();
-        GenerateEffect();
-        clickCounter += 1f;
-        hideClickProgressTime = 3f;
-        clickTimer = 0.5f;
-
-        if (clickCounter >= maxClickCount)
-            ForceClickReward();
+        clicked = true;
     }
 
     public BigDigit GetReward()
