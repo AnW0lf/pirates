@@ -7,10 +7,15 @@ using UnityEngine.UI;
 public class IslandController : MonoBehaviour
 {
     public int minLevel;
-    public float maxClickCount, clickCountDecrease, autoclickDelay, clickDelay, forcingMoneyDuration, modifierMantissa;
+    [Space(20)]
+    public float maxClickCount, clickCountDecrease, autoclickDelay, clickDelay, forcingMoneyDuration, forcingMoneyModifier = 0.5f;
+    [Space(20)]
+    public float modifierMantissa;
     public long modifierExponent;
     public Transform moneySet, clickEffectSet, experienceSet;
+    [Space(20)]
     public ProgressBar progressbar;
+    [Space(20)]
     public GameObject fontain;
 
     public static BigDigit islandReward;
@@ -70,6 +75,7 @@ public class IslandController : MonoBehaviour
                     if (!progressbar.Visible) progressbar.Visible = true;
 
                     forcingTimer = Mathf.Max(forcingTimer - Time.deltaTime, 0f);
+
                     if (forcingTimer == 0f)
                     {
                         forced = false;
@@ -90,15 +96,17 @@ public class IslandController : MonoBehaviour
             {
                 if (clicked)
                 {
-                    clicked = false;
                     GenerateMoney();
                     Pulse();
                     GenerateEffect();
-                    if (!forced) clickCounter += 1f;
                     progressHideTimer = 3f;
 
-                    if (clickCounter >= maxClickCount)
-                        ForceClickReward();
+                    if (!forced)
+                    {
+                        clickCounter += 1f;
+                        if (clickCounter >= maxClickCount)
+                            ForceClickReward();
+                    }
 
                     break;
                 }
@@ -122,6 +130,7 @@ public class IslandController : MonoBehaviour
                     if (!progressbar.Visible) progressbar.Visible = true;
 
                     forcingTimer = Mathf.Max(forcingTimer - Time.deltaTime, 0f);
+
                     if (forcingTimer == 0f)
                     {
                         forced = false;
@@ -136,7 +145,8 @@ public class IslandController : MonoBehaviour
                 yield return null;
             }
 
-            GenerateMoney();
+            if(!clicked) GenerateMoney();
+            clicked = false;
         }
     }
 
@@ -154,20 +164,8 @@ public class IslandController : MonoBehaviour
         var reward = GetReward() * 20;
         GenerateBonusMoney(reward);
         island.ChangeMoney(reward);
-        StartCoroutine(ForceMoney());
 
         EventManager.SendEvent("CoinRush", minLevel);
-    }
-
-    private IEnumerator ForceMoney()
-    {
-        WaitForSeconds delay = new WaitForSeconds(0.4f);
-        while (clickCounter > 0f)
-        {
-            yield return delay;
-            GenerateMoney();
-            GenerateEffect();
-        }
     }
 
     public void Click()
@@ -185,6 +183,10 @@ public class IslandController : MonoBehaviour
             digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow((island.Level - 25), 2.15f) / 1.6f + 1) * 5000;
         else
             digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow((island.Level - 50), 2.15f) / 1.6f + 1) * 5000 * 5000;
+
+        if (forced) digit *= (1f + forcingMoneyModifier);
+        else digit *= (1f + (clickCounter / maxClickCount) * forcingMoneyModifier);
+
         return digit;
     }
 
