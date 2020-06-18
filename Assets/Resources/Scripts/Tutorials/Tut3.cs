@@ -19,7 +19,7 @@ public class Tut3 : MonoBehaviour
 
     private void Update()
     {
-        if (ship.InRaid())
+        if (ship.InRaid)
         {
             quests.opened = true;
             GetComponentInParent<Tutorial>().NextStage();

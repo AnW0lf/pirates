@@ -19,9 +19,12 @@ public class Ship : MonoBehaviour
     public int rewardModifier = 1;
     public float raidTimeModifier = 0f;
 
+    [Header("Tutorial Hand")]
+    [SerializeField] private GameObject hand;
+
     //Рейд
     private bool inRaid = false, isRotate = true;
-    private float speedAngle, speedLinear, speedRaidModifier, circle = 0f;
+    private float speedAngle, speedLinear, speedRaidModifier, circle = 0f, circleMax = 200f;
     private RectTransform _riseRT, _iconRT;
 
     [Header("Детали корабля")]
@@ -30,6 +33,7 @@ public class Ship : MonoBehaviour
     public Transform _coin;
 
     private float riseOutOfScreen = 1700f;
+    private Coroutine raidCoroutine = null;
 
     private void Awake()
     {
@@ -41,6 +45,9 @@ public class Ship : MonoBehaviour
     {
         UpdateShip();
         riseOutOfScreen = Mathf.Clamp(Mathf.Sqrt(Mathf.Pow(Screen.safeArea.height / 2f, 2f) + Mathf.Pow(Screen.safeArea.width / 2f, 2f)) * 1.05f, riseOutOfScreen, 5000f);
+
+        if (ShipTutorial) StartCoroutine(TutorialHand());
+        else if (hand != null) Destroy(hand.gameObject);
     }
 
     private void FixedUpdate()
@@ -48,11 +55,14 @@ public class Ship : MonoBehaviour
         if (!inRaid && isRotate)
         {
             globalSpeedModifier = island.GetParameter("GlobalSpeed" + islandNumber.ToString(), 0f);
-            circle += (speedAngle * globalSpeedModifier) * Time.fixedDeltaTime;
-            angle += (speedAngle * globalSpeedModifier) * Time.fixedDeltaTime;
+
+            float offset = (speedAngle * globalSpeedModifier) * Time.fixedDeltaTime;
+
+            circle += offset;
+            angle += offset;
             _riseRT.localEulerAngles = Vector3.forward * angle;
         }
-        if (Mathf.Abs(circle) >= 200f)
+        if (Mathf.Abs(circle) >= circleMax)
         {
             circle = 0f;
             if (_coin.gameObject.activeInHierarchy)
@@ -61,22 +71,50 @@ public class Ship : MonoBehaviour
         }
     }
 
+    private IEnumerator TutorialHand()
+    {
+        yield return new WaitForSeconds(3f);
+
+        hand.SetActive(true);
+
+        while (ShipTutorial)
+        {
+            hand.transform.eulerAngles = Vector3.zero;
+            yield return null;
+        }
+
+        if (hand != null) Destroy(hand.gameObject);
+    }
+
     public void UpdateShip()
     {
         _rise.GetComponent<RectTransform>().sizeDelta = new Vector2(rise, 10f);
         _rise.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * angle;
         _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
         _icon.GetComponent<RectTransform>().localScale = Vector3.right * size * (!direction ? 1 : -1) + Vector3.up * size + Vector3.forward;
-        speedAngle = Math.Abs(speedAngle) * (direction ? 1 : -1);
+        speedAngle = Math.Abs(ShipTutorial ? speedAngle / 2f : speedAngle) * (direction ? 1 : -1);
         speedLinear = Math.Abs(speedLinear) * (direction ? 1 : -1);
+        circleMax = ShipTutorial ? 400f : 200f;
 
         rewardModifier = 1;
         raidTimeModifier = 0f;
     }
 
-    public bool InRaid()
+    public bool InRaid { get => inRaid; }
+
+    private bool ShipTutorial
     {
-        return inRaid;
+        get
+        {
+            string key = "ShipTutorial";
+            if (!PlayerPrefs.HasKey(key)) PlayerPrefs.SetInt(key, 1);
+            return PlayerPrefs.GetInt(key) > 0;
+        }
+        set
+        {
+            string key = "ShipTutorial";
+            PlayerPrefs.SetInt(key, value ? 1 : 0);
+        }
     }
 
     public void SendStatistic()
@@ -88,16 +126,19 @@ public class Ship : MonoBehaviour
     {
         if (!inRaid)
         {
+            if (ShipTutorial) ShipTutorial = false;
+
             inRaid = true;
             if (_coin.gameObject.activeInHierarchy)
                 _coin.GetComponent<CoinCatcher>().CatchCoin();
-            StopAllCoroutines();
-            StartCoroutine(Raid());
+
+            if (raidCoroutine != null) StopCoroutine(raidCoroutine);
+            raidCoroutine = StartCoroutine(Raid());
 
             EventManager.SendEvent("ShipGoToRaid", ShipName, false);
         }
     }
-    
+
     public void BeginRaidFromIsland()
     {
         if (!inRaid)
@@ -107,18 +148,16 @@ public class Ship : MonoBehaviour
                 inRaid = true;
                 if (_coin.gameObject.activeInHierarchy)
                     _coin.GetComponent<CoinCatcher>().CatchCoin();
-                StopAllCoroutines();
-                StartCoroutine(Raid());
+
+                if (raidCoroutine != null) StopCoroutine(raidCoroutine);
+                raidCoroutine = StartCoroutine(Raid());
 
                 EventManager.SendEvent("ShipGoToRaid", ShipName, true);
             }
         }
     }
 
-    public bool IsRotate()
-    {
-        return isRotate;
-    }
+    public bool IsRotate { get => isRotate; }
 
     private IEnumerator Raid()
     {
