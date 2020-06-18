@@ -14,7 +14,6 @@ public class PolundraTimer : MonoBehaviour
     [SerializeField] List<BonusGenerator> bgs = null;
 
     private Island island;
-    private TimeSpan ts;
     private Coroutine coroutine = null;
 
     private void Awake()
@@ -113,10 +112,10 @@ public class PolundraTimer : MonoBehaviour
         if (focus)
         {
             island.InitParameter("PauseTime", DateTime.Now.ToString());
-            ts = DateTime.Now - DateTime.Parse(island.GetParameter("PauseTime", ""));
-            if (ts.TotalMinutes > 10d)
+            TimeSpan span = DateTime.Now - DateTime.Parse(island.GetParameter("PauseTime", ""));
+            if (span.TotalMinutes > 10d)
             {
-                if (coroutine != null) StopCoroutine(coroutine);
+                StopAllCoroutines();
                 if (island.Level >= minLevel) StartCoroutine(Timer(90));
             }
         }
