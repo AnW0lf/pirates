@@ -4347,7 +4347,7 @@ MonoBehaviour:
   startRaidTime: 15
   startReward: 60000000
   speedAngle: 25
-  speedLinear: 310
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -5484,8 +5484,8 @@ MonoBehaviour:
   startPriceExponent: 6
   startRaidTime: 10
   startReward: 300000
-  speedAngle: 32
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -6068,8 +6068,8 @@ MonoBehaviour:
   startPriceExponent: 0
   startRaidTime: 60
   startReward: 1000
-  speedAngle: 30
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 4
@@ -6474,7 +6474,7 @@ MonoBehaviour:
   startRaidTime: 10
   startReward: 35000000
   speedAngle: 25
-  speedLinear: 310
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -18291,8 +18291,8 @@ MonoBehaviour:
   startPriceExponent: 10
   startRaidTime: 10
   startReward: 1500000000
-  speedAngle: 35
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -27434,7 +27434,7 @@ MonoBehaviour:
   startRaidTime: 22
   startReward: 110000000
   speedAngle: 25
-  speedLinear: 310
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -28090,7 +28090,7 @@ MonoBehaviour:
   startRaidTime: 30
   startReward: 210000000
   speedAngle: 25
-  speedLinear: 310
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -31088,8 +31088,8 @@ MonoBehaviour:
   startPriceExponent: 1
   startRaidTime: 4
   startReward: 9
-  speedAngle: 30
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -33784,8 +33784,8 @@ MonoBehaviour:
   startPriceExponent: 9
   startRaidTime: 30
   startReward: 7500000
-  speedAngle: 32
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -39268,8 +39268,8 @@ MonoBehaviour:
   startPriceExponent: 0
   startRaidTime: 60
   startReward: 50000000000
-  speedAngle: 35
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 4
@@ -45051,8 +45051,8 @@ MonoBehaviour:
   startPriceExponent: 12
   startRaidTime: 22
   startReward: 15000000000
-  speedAngle: 35
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -45921,8 +45921,8 @@ MonoBehaviour:
   startPriceExponent: 0
   startRaidTime: 60
   startReward: 10000000
-  speedAngle: 32
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 4
@@ -46595,8 +46595,8 @@ MonoBehaviour:
   startPriceExponent: 5
   startRaidTime: 22
   startReward: 600
-  speedAngle: 30
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -49741,8 +49741,8 @@ MonoBehaviour:
   startPriceExponent: 13
   startRaidTime: 30
   startReward: 37500000000
-  speedAngle: 35
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -59641,8 +59641,8 @@ MonoBehaviour:
   startPriceExponent: 7
   startRaidTime: 15
   startReward: 1000000
-  speedAngle: 32
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -61116,8 +61116,8 @@ MonoBehaviour:
   startPriceExponent: 4
   startRaidTime: 15
   startReward: 200
-  speedAngle: 30
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -65110,7 +65110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 82, y: 110}
+  m_AnchoredPosition: {x: 81.999756, y: 110}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1203431442
@@ -68927,8 +68927,8 @@ MonoBehaviour:
   startPriceExponent: 5
   startRaidTime: 30
   startReward: 1500
-  speedAngle: 30
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -72067,8 +72067,8 @@ MonoBehaviour:
   startPriceExponent: 2
   startRaidTime: 10
   startReward: 60
-  speedAngle: 30
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -85686,7 +85686,7 @@ MonoBehaviour:
   startRaidTime: 60
   startReward: 300000000
   speedAngle: 25
-  speedLinear: 310
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -90762,8 +90762,8 @@ MonoBehaviour:
   startPriceExponent: 8
   startRaidTime: 22
   startReward: 3000000
-  speedAngle: 32
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
@@ -115620,8 +115620,8 @@ MonoBehaviour:
   startPriceExponent: 11
   startRaidTime: 15
   startReward: 5000000000
-  speedAngle: 35
-  speedLinear: 310
+  speedAngle: 25
+  speedLinear: 350
   speedRaidModifier: 3.5
   detailName1: Hull
   detailMaxLvl1: 3
