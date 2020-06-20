@@ -3415,8 +3415,8 @@ MonoBehaviour:
   minLevel: 0
   maxClickCount: 30
   clickCountDecrease: 3
-  autoclickDelay: 1.8
-  clickDelay: 0.25
+  autoclickDelay: 1
+  clickDelay: 0.33
   forcingMoneyDuration: 40
   forcingMoneyModifier: 0.5
   modifierMantissa: 1
@@ -38979,8 +38979,8 @@ MonoBehaviour:
   minLevel: 25
   maxClickCount: 30
   clickCountDecrease: 3
-  autoclickDelay: 1.8
-  clickDelay: 0.25
+  autoclickDelay: 1
+  clickDelay: 0.33
   forcingMoneyDuration: 40
   forcingMoneyModifier: 0.5
   modifierMantissa: 1
@@ -77826,8 +77826,8 @@ MonoBehaviour:
   minLevel: 50
   maxClickCount: 30
   clickCountDecrease: 3
-  autoclickDelay: 1.8
-  clickDelay: 0.25
+  autoclickDelay: 1
+  clickDelay: 0.33
   forcingMoneyDuration: 40
   forcingMoneyModifier: 0.5
   modifierMantissa: 1
@@ -112639,8 +112639,8 @@ MonoBehaviour:
   minLevel: 10001
   maxClickCount: 30
   clickCountDecrease: 3
-  autoclickDelay: 0.6
-  clickDelay: 0.25
+  autoclickDelay: 1
+  clickDelay: 0.33
   forcingMoneyDuration: 40
   forcingMoneyModifier: 0.5
   modifierMantissa: 1
