@@ -78,7 +78,7 @@ public class WindowLevelUp : WindowBase
         else
             islandProgressText.text = string.Format("Island Up: {0}%", Mathf.RoundToInt(progress * 100f));
 
-        LeanTween.delayedCall(0.75f, () =>
+        LeanTween.delayedCall(0.4f, () =>
         {
             StartCoroutine(ProgressIsland(oldProgress, progress, islandProgressDuration));
 
@@ -102,16 +102,16 @@ public class WindowLevelUp : WindowBase
                 islandProgressText.gameObject.LeanScale(Vector3.one * 1.2f, 0.1f)
                 .setOnComplete(() => islandProgressText.gameObject.LeanScale(Vector3.one, 0.05f));
 
-                LeanTween.delayedCall(1.2f, () =>
+                LeanTween.delayedCall(0.4f, () =>
                  {
                      rewardText.gameObject.SetActive(true);
                      rewardText.Play();
-                     LeanTween.delayedCall(0.75f,
+                     LeanTween.delayedCall(0.4f,
                          () =>
                          {
                              rewardButton.gameObject.SetActive(true);
                              rewardButton.Play("NewLevelButtonShow");
-                             LeanTween.delayedCall(0.75f, () => rewardButton.Play("BonusPulse"));
+                             LeanTween.delayedCall(0.5f, () => rewardButton.Play("BonusPulse"));
                          });
                  });
             });
