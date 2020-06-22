@@ -651,8 +651,8 @@ public class BigDigit
     {
         if (Exponent <= 3)
         {
-            int v = (int)(Mantissa * Math.Pow(10d, Exponent));
-            return v.ToString();
+            double d = Math.Round(Mantissa * Math.Pow(10d, Exponent), Exponent == 3 ? 0 : 1);
+            return d.ToString().Replace(',', '.');
         }
         else
         {
