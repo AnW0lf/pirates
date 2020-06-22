@@ -671,6 +671,30 @@ public class BigDigit
         }
     }
 
+    public string CustomString()
+    {
+        if (Exponent <= 3)
+        {
+            string str = ((int)(Mantissa * Math.Pow(10d, Exponent))).ToString();
+            return str.Replace(',', '.');
+        }
+        else
+        {
+            string str = (Mantissa * Math.Pow(10d, Exponent % 3)).ToString();
+            str = str.Length >= 5 ? str.Substring(0, 5) : str;
+            str = str.Replace(',', '.');
+            for (int i = str.Length - 1; i < 4; i++)
+            {
+                if (i == Exponent % 3)
+                    str += ".";
+                else str += "0";
+            }
+            if (postfix.Length > (Exponent / 3) - 1)
+                return str + postfix[(Exponent / 3) - 1];
+            else return str + "?";
+        }
+    }
+
     private void Normalize()
     {
         if (Mantissa.Equals(0d))

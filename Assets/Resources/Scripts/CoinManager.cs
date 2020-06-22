@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoinManager : MonoBehaviour
 {
-    public string prefix = "";
-
+    [SerializeField] private Text text;
     private BigDigit expectedMoney, money, oldMoney;
-    private TextManager tm;
-    private Island island;
     private Coroutine coroutine = null;
 
     private BigDigit Money
@@ -17,36 +15,23 @@ public class CoinManager : MonoBehaviour
         set
         {
             money = value;
-            SetMoneyText();
+            text.text = Money.CustomString();
         }
-    }
-
-    private void Awake()
-    {
-        island = Island.Instance();
     }
 
     private void Start()
     {
-        money = new BigDigit(island.Money);
+        money = new BigDigit(Island.Instance().Money);
         oldMoney = money;
         expectedMoney = money;
-        tm = GetComponent<TextManager>();
-        tm.postfix = "";
         Money = money;
-    }
-
-    private void SetMoneyText()
-    {
-        tm.prefix = prefix;
-        tm.text = Money.ToString();
     }
 
     private void Update()
     {
-        if (expectedMoney != island.Money)
+        if (expectedMoney != Island.Instance().Money)
         {
-            expectedMoney = new BigDigit(island.Money);
+            expectedMoney = new BigDigit(Island.Instance().Money);
             if (coroutine != null) StopCoroutine(coroutine);
             coroutine = StartCoroutine(ForceMoney(0.5f));
         }
@@ -68,7 +53,6 @@ public class CoinManager : MonoBehaviour
         }
 
         Money = expectedMoney;
-        SetMoneyText();
 
         coroutine = null;
     }

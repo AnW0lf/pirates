@@ -74507,7 +74507,6 @@ GameObject:
   - component: {fileID: 1429629386}
   - component: {fileID: 1429629389}
   - component: {fileID: 1429629388}
-  - component: {fileID: 1429629387}
   - component: {fileID: 1429629390}
   - component: {fileID: 1429629391}
   m_Layer: 5
@@ -74537,21 +74536,6 @@ RectTransform:
   m_AnchoredPosition: {x: -313, y: 0}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1429629387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429629385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 333ba136b291fd84fa22327a460dff5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefix: 
-  text: 
-  postfix: 
 --- !u!114 &1429629388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74604,7 +74588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85166cc90c8df045b7444fb9acf842e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefix: 
+  text: {fileID: 1429629388}
 --- !u!114 &1429629391
 MonoBehaviour:
   m_ObjectHideFlags: 0
