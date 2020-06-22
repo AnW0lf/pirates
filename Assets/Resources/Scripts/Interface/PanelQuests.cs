@@ -12,6 +12,8 @@ public class PanelQuests : MonoBehaviour
     [SerializeField] public bool opened = false;
     [SerializeField] private LevelReward[] levels = null;
     [SerializeField] private string textPattern = null;
+    [SerializeField] private GameObject message = null;
+    [SerializeField] List<BonusGenerator> bgs = null;
 
     private Island island;
     private int questLevel = 0;
@@ -52,6 +54,7 @@ public class PanelQuests : MonoBehaviour
 
     public void QuestDone()
     {
+        StartCoroutine(Reward(levels[questLevel].rewardType));
         questLevel++;
         island.SetParameter("QuestLevel", questLevel);
         button.SetActive(false);
@@ -71,7 +74,7 @@ public class PanelQuests : MonoBehaviour
         Vector2 start = rect.anchoredPosition;
         Vector2 end = Vector2.zero;
 
-        while(timer < 0.5f)
+        while (timer < 0.5f)
         {
             timer += Time.deltaTime;
             rect.anchoredPosition = Vector2.Lerp(start, end, timer / 0.5f);
@@ -79,6 +82,47 @@ public class PanelQuests : MonoBehaviour
         }
 
         island.SetParameter("QuestOpened", 1);
+    }
+
+    private IEnumerator Reward(QuestRewardType type)
+    {
+        message.SetActive(false);
+        message.SetActive(true);
+        Animation anim = message.GetComponent<Animation>();
+
+        yield return new WaitWhile(() => { return anim.IsPlaying("PolundraAnimation"); });
+
+        WaitForSeconds sec = new WaitForSeconds(0.2f);
+
+        int bonusIndex = 4;
+
+        switch (type)
+        {
+            case QuestRewardType.MONEY:
+                bonusIndex = 2;
+                break;
+            case QuestRewardType.SPEED:
+                bonusIndex = 1;
+                break;
+            case QuestRewardType.EXP:
+                bonusIndex = 0;
+                break;
+            default: break;
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j <= island.Level / 25 && j < bgs.Count; j++)
+            {
+                if (type == QuestRewardType.RANDOM)
+                    bgs[j].InstantiateRandomBonus(1);
+                else
+                    bgs[j].Bonus(bonusIndex, 1);
+            }
+            yield return sec;
+        }
+
+        yield return null;
     }
 
     public enum QuestRewardType { MONEY, SPEED, EXP, RANDOM }

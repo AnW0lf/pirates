@@ -66,8 +66,8 @@ public class PolundraTimer : MonoBehaviour
         message.SetActive(false);
         message.SetActive(true);
         Animation anim = message.GetComponent<Animation>();
-        bool b() { return anim.IsPlaying("PolundraAnimation"); }
-        yield return new WaitWhile(b);
+
+        yield return new WaitWhile(() => { return anim.IsPlaying("PolundraAnimation"); });
 
         WaitForSeconds sec = new WaitForSeconds(0.2f);
         for (int i = 0; i < 10; i++)
