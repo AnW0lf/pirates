@@ -154,7 +154,7 @@ public class WindowLevelUp : WindowBase
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * island.Level * 16f);
+                    money += (islandCont.Reward * island.Level * 16f);
             }
         }
         else if (island.Level > 25 && island.Level <= 50)
@@ -162,7 +162,7 @@ public class WindowLevelUp : WindowBase
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * (island.Level - 25) * 16f);
+                    money += (islandCont.Reward * (island.Level - 25) * 16f);
             }
         }
         else
@@ -170,7 +170,7 @@ public class WindowLevelUp : WindowBase
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * (island.Level - 50) * 16f);
+                    money += (islandCont.Reward * (island.Level - 50) * 16f);
             }
         }
 

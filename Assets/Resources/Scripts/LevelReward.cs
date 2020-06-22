@@ -31,7 +31,7 @@ public class LevelReward : MonoBehaviour
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * island.Level * 13f);
+                    money += (islandCont.Reward * island.Level * 13f);
             }
         }
         else if (island.Level > 25 && island.Level <= 50)
@@ -39,7 +39,7 @@ public class LevelReward : MonoBehaviour
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * (island.Level - 25) * 12f);
+                    money += (islandCont.Reward * (island.Level - 25) * 12f);
             }
         }
         else
@@ -47,7 +47,7 @@ public class LevelReward : MonoBehaviour
             foreach (IslandController islandCont in islandsList)
             {
                 if (islandCont.minLevel <= island.Level)
-                    money += (islandCont.GetReward() * (island.Level - 50) * 12f);
+                    money += (islandCont.Reward * (island.Level - 50) * 12f);
             }
         }
 

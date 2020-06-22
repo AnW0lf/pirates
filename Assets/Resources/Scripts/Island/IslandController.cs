@@ -68,7 +68,7 @@ public class IslandController : MonoBehaviour
                     else if (progressbar.Visible && (clickCounter == 0f || progressHideTimer == 0f)) progressbar.Visible = false;
 
                     progressbar.Progress = clickCounter / maxClickCount;
-                    progressbar.Label = (GetReward() * 20).ToString();
+                    progressbar.Label = (Reward * 20).ToString();
                 }
                 else
                 {
@@ -97,7 +97,7 @@ public class IslandController : MonoBehaviour
             {
                 if (clicked)
                 {
-                    GenerateMoney();
+                    GenerateMoney(ForcedReward);
                     Pulse();
                     GenerateEffect();
                     progressHideTimer = 3f;
@@ -124,7 +124,7 @@ public class IslandController : MonoBehaviour
                     else if (progressbar.Visible && (clickCounter == 0f || progressHideTimer == 0f)) progressbar.Visible = false;
 
                     progressbar.Progress = clickCounter / maxClickCount;
-                    progressbar.Label = (GetReward() * 20).ToString();
+                    progressbar.Label = (Reward * 20).ToString();
                 }
                 else
                 {
@@ -146,7 +146,7 @@ public class IslandController : MonoBehaviour
                 yield return null;
             }
 
-            if(!clicked) GenerateMoney();
+            if (!clicked) GenerateMoney(Reward);
             clicked = false;
         }
     }
@@ -162,7 +162,7 @@ public class IslandController : MonoBehaviour
         progressbar.Force = forced;
         forcingTimer = forcingMoneyDuration;
         fontain.SetActive(true);
-        var reward = GetReward() * 20;
+        var reward = Reward * 20;
         GenerateBonusMoney(reward);
         island.ChangeMoney(reward);
 
@@ -175,20 +175,33 @@ public class IslandController : MonoBehaviour
         clicked = true;
     }
 
-    public BigDigit GetReward()
+    public BigDigit Reward
     {
-        BigDigit digit;
-        if (island.Level <= 25)
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) / 1.6f + 1);
-        else if (island.Level > 25 && island.Level <= 50)
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow((island.Level - 25), 2.15f) / 1.6f + 1) * 5000;
-        else
-            digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow((island.Level - 50), 2.15f) / 1.6f + 1) * 5000 * 5000;
+        get
+        {
+            BigDigit digit;
+            if (island.Level <= 25)
+                digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow(island.Level, 2.15f) / 1.6f + 1);
+            else if (island.Level > 25 && island.Level <= 50)
+                digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow((island.Level - 25), 2.15f) / 1.6f + 1) * 5000;
+            else
+                digit = new BigDigit(modifierMantissa, modifierExponent) * (int)(Mathf.Pow((island.Level - 50), 2.15f) / 1.6f + 1) * 5000 * 5000;
 
-        if (forced) digit *= (1f + forcingMoneyModifier);
-        else digit *= (1f + (clickCounter / maxClickCount) * forcingMoneyModifier);
+            return digit;
+        }
+    }
 
-        return digit;
+    public BigDigit ForcedReward
+    {
+        get
+        {
+            BigDigit digit = Reward;
+
+            if (forced) digit *= (1f + forcingMoneyModifier);
+            else digit *= (1f + (clickCounter / maxClickCount) * forcingMoneyModifier);
+
+            return digit;
+        }
     }
 
     public void GenerateBonusExp(BigDigit reward)
@@ -230,9 +243,8 @@ public class IslandController : MonoBehaviour
     }
 
 
-    private void GenerateMoney()
+    private void GenerateMoney(BigDigit reward)
     {
-        BigDigit reward = GetReward();
         GenerateBonusMoney(reward);
         island.ChangeMoney(reward);
     }
