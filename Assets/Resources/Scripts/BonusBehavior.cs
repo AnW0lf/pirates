@@ -10,8 +10,9 @@ public class BonusBehavior : MonoBehaviour
 
     public string textOnClick;
     public GameObject textOnClickObject;
+    [SerializeField] private Outline outline;
 
-    private GameObject _textOnClick;
+    //private GameObject _textOnClick;
 
     //private void OnMouseUp()
     //{
@@ -20,4 +21,13 @@ public class BonusBehavior : MonoBehaviour
     //    _textOnClick.transform.eulerAngles = new Vector3(0f, 0f, 0f);
     //}
 
+    public bool Lighting
+    {
+        get => outline.enabled;
+        set
+        {
+            outline.enabled = value;
+            print(outline.enabled ? "Turn On" : "Turn Off");
+        }
+    }
 }

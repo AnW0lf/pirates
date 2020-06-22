@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 6570949680344847340}
   - component: {fileID: 7035727701658519813}
   - component: {fileID: 525239118966145412}
+  - component: {fileID: 114728218147065250}
   - component: {fileID: 6532589404821189186}
   - component: {fileID: 1690208339221220600}
   - component: {fileID: 7820184063629281489}
   - component: {fileID: 5043633576376841162}
   - component: {fileID: 811584344894724811}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BonusWheel
   m_TagString: Bonus
   m_Icon: {fileID: 0}
@@ -77,6 +78,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
+--- !u!114 &114728218147065250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8520050891739744424}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0.16476418, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!58 &6532589404821189186
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -133,6 +149,7 @@ MonoBehaviour:
   modifier: 1
   textOnClick: 
   textOnClickObject: {fileID: 0}
+  outline: {fileID: 114728218147065250}
 --- !u!114 &5043633576376841162
 MonoBehaviour:
   m_ObjectHideFlags: 0
