@@ -64065,7 +64065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 81.999756, y: 110}
+  m_AnchoredPosition: {x: 82, y: 110}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1203431442
@@ -70593,19 +70593,7 @@ MonoBehaviour:
   rankText: {fileID: 5908471}
   opened: 0
   levels: 02000000050000000a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b000000
-  texts:
-  - Reach level 5
-  - Reach level 10
-  - Reach level 15
-  - Reach level 20
-  - Reach level 30
-  - Reach level 35
-  - Reach level 40
-  - Reach level 45
-  - Reach level 55
-  - Reach level 60
-  - Reach level 65
-  - Reach level 70
+  textPattern: Reach level {0}
 --- !u!1 &1348054914
 GameObject:
   m_ObjectHideFlags: 0
