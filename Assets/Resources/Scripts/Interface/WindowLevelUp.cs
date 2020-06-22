@@ -37,18 +37,18 @@ public class WindowLevelUp : WindowBase
     {
         islandProgressText.transform.localScale = new Vector3 (0.5f, 0.5f, 0.5f);
         islandProgressText.color = new Color(1f, 1f, 1f, 0f);
-        int lessLevel = quest.Levels[quest.Levels.Count - 2],
-            greaterLevel = quest.Levels[quest.Levels.Count - 1],
+        int lessLevel = quest.Levels[quest.Levels.Length - 2].level,
+            greaterLevel = quest.Levels[quest.Levels.Length - 1].level,
             curLevel = Island.Instance().Level,
             spriteId = 0;
 
-        for (int i = 0; i < quest.Levels.Count; i++)
+        for (int i = 0; i < quest.Levels.Length; i++)
         {
-            if (curLevel <= quest.Levels[i])
+            if (curLevel <= quest.Levels[i].level)
             {
-                greaterLevel = quest.Levels[i];
+                greaterLevel = quest.Levels[i].level;
                 if (i == 0) lessLevel = 0;
-                else lessLevel = quest.Levels[i - 1];
+                else lessLevel = quest.Levels[i - 1].level;
                 spriteId = i + 1;
                 break;
             }

@@ -10,13 +10,13 @@ public class PanelQuests : MonoBehaviour
     [SerializeField] private Image progressBar = null;
     [SerializeField] private Text lvlText = null, questText = null, rankText = null;
     [SerializeField] public bool opened = false;
-    [SerializeField] private List<int> levels = null;
+    [SerializeField] private LevelReward[] levels = null;
     [SerializeField] private string textPattern = null;
 
     private Island island;
     private int questLevel = 0;
 
-    public List<int> Levels { get => levels; }
+    public LevelReward[] Levels { get => levels; }
 
     private void Awake()
     {
@@ -39,12 +39,12 @@ public class PanelQuests : MonoBehaviour
 
     public void UpdateInfo()
     {
-        if (questLevel >= levels.Count) return;
-        progressBar.fillAmount = (float)island.Level / levels[questLevel];
-        lvlText.text = island.Level + "/" + levels[questLevel];
-        questText.text = string.Format(textPattern, levels[questLevel]);
+        if (questLevel >= levels.Length) return;
+        progressBar.fillAmount = (float)island.Level / levels[questLevel].level;
+        lvlText.text = island.Level + "/" + levels[questLevel].level;
+        questText.text = string.Format(textPattern, levels[questLevel].level);
         rankText.text = (questLevel + 1).ToString();
-        if (island.Level >= levels[questLevel])
+        if (island.Level >= levels[questLevel].level)
         {
             button.SetActive(true);
         }
@@ -79,5 +79,14 @@ public class PanelQuests : MonoBehaviour
         }
 
         island.SetParameter("QuestOpened", 1);
+    }
+
+    public enum QuestRewardType { MONEY, SPEED, EXP, RANDOM }
+
+    [Serializable]
+    public class LevelReward
+    {
+        public int level;
+        public QuestRewardType rewardType;
     }
 }

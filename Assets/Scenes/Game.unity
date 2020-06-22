@@ -70592,7 +70592,39 @@ MonoBehaviour:
   questText: {fileID: 1230724947}
   rankText: {fileID: 5908471}
   opened: 0
-  levels: 02000000050000000a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b000000
+  levels:
+  - level: 2
+    rewardType: 0
+  - level: 5
+    rewardType: 1
+  - level: 10
+    rewardType: 2
+  - level: 15
+    rewardType: 3
+  - level: 20
+    rewardType: 0
+  - level: 25
+    rewardType: 1
+  - level: 30
+    rewardType: 2
+  - level: 35
+    rewardType: 3
+  - level: 40
+    rewardType: 0
+  - level: 45
+    rewardType: 1
+  - level: 50
+    rewardType: 2
+  - level: 55
+    rewardType: 3
+  - level: 60
+    rewardType: 0
+  - level: 65
+    rewardType: 1
+  - level: 70
+    rewardType: 2
+  - level: 75
+    rewardType: 3
   textPattern: Reach level {0}
 --- !u!1 &1348054914
 GameObject:
@@ -86355,50 +86387,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 71592730}
-        m_MethodName: ChangeSprite
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 673416818}
-        m_MethodName: ChangeSprite
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1481291093}
-        m_MethodName: ChangeSprite
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2044854788}
-        m_MethodName: ChangeSprite
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1347653239}
         m_MethodName: QuestDone
         m_Mode: 1
