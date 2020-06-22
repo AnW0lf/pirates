@@ -6,16 +6,22 @@ using UnityEngine;
 public class ShipBonusLighting : MonoBehaviour
 {
     [SerializeField] private LayerMask mask;
+    [SerializeField] private LineRenderer line;
+    [SerializeField] private ShipClick shipClick;
     private float distance = 5f;
     private BonusBehavior _bh = null;
 
-    private static int disableLevel = 2;
+    private static int disableLevel = 5;
     private static bool locked = false;
 
     private void Start()
     {
         locked = Island.Instance().Level >= disableLevel;
         EventManager.Subscribe("LevelUp", (args) => { locked = Island.Instance().Level >= disableLevel; });
+        Color color = shipClick.color;
+        color.a = 0.4f;
+        line.startColor = color;
+        line.endColor = color;
     }
 
     private bool Raycast(out BonusBehavior bh)
@@ -57,6 +63,14 @@ public class ShipBonusLighting : MonoBehaviour
             _bh = null;
             print("Ship forget");
         }
+
+        if (_bh != null)
+        {
+            if (!line.enabled) line.enabled = true;
+            line.SetPosition(0, transform.position);
+            line.SetPosition(1, _bh.transform.position);
+        }
+        else if (line.enabled) line.enabled = false;
     }
 
     private void OnDrawGizmos()
