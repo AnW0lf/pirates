@@ -79,6 +79,7 @@ public class IslandController : MonoBehaviour
                     if (forcingTimer == 0f)
                     {
                         forced = false;
+                        fontain.SetActive(false);
                         progressbar.Force = forced;
                         clickCounter = 0f;
                     }

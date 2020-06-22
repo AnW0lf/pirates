@@ -88,9 +88,9 @@ public class ShipClick : MonoBehaviour
             borderName = other.gameObject.name;
             Invoke("SwitchEmmiting", 0.15f);
             if (other.gameObject.name.Equals("RightBorder") || other.gameObject.name.Equals("LeftBorder"))
-                StartCoroutine(Timer(ship.GetRaidTime(), ship.GetRaidTime() + 1.5f, true));
+                StartCoroutine(Timer(ship.RaidTime, ship.RaidTime + 1.5f, true));
             else
-                StartCoroutine(Timer(ship.GetRaidTime(), ship.GetRaidTime() + 0.5f, false));
+                StartCoroutine(Timer(ship.RaidTime, ship.RaidTime + 0.5f, false));
         }
         else if (other.CompareTag("Border") && isTimerActive && borderName == other.gameObject.name)
         {

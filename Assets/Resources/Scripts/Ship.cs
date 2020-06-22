@@ -22,9 +22,7 @@ public class Ship : MonoBehaviour
     [Header("Tutorial Hand")]
     [SerializeField] private GameObject hand;
 
-    //Рейд
-    private bool inRaid = false, isRotate = true;
-    private float speedAngle, speedLinear, speedRaidModifier, circle = 0f, circleMax = 200f;
+    private float _speedAngle, speedAngle, speedLinear, speedRaidModifier, circle = 0f, circleMax = 200f;
     private RectTransform _riseRT, _iconRT;
 
     [Header("Детали корабля")]
@@ -52,7 +50,7 @@ public class Ship : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!inRaid && isRotate)
+        if (!InRaid && IsRotate)
         {
             globalSpeedModifier = island.GetParameter("GlobalSpeed" + islandNumber.ToString(), 0f);
 
@@ -92,7 +90,8 @@ public class Ship : MonoBehaviour
         _rise.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * angle;
         _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
         _icon.GetComponent<RectTransform>().localScale = Vector3.right * size * (!direction ? 1 : -1) + Vector3.up * size + Vector3.forward;
-        speedAngle = Math.Abs(ShipTutorial ? speedAngle / 2f : speedAngle) * (direction ? 1 : -1);
+
+        speedAngle = Math.Abs(ShipTutorial ? _speedAngle / 2f : _speedAngle) * (direction ? 1 : -1);
         speedLinear = Math.Abs(speedLinear) * (direction ? 1 : -1);
         circleMax = ShipTutorial ? 400f : 200f;
 
@@ -100,7 +99,7 @@ public class Ship : MonoBehaviour
         raidTimeModifier = 0f;
     }
 
-    public bool InRaid { get => inRaid; }
+    public bool InRaid { get; private set; } = false;
 
     private bool ShipTutorial
     {
@@ -124,11 +123,11 @@ public class Ship : MonoBehaviour
 
     public void BeginRaid()
     {
-        if (!inRaid)
+        if (!InRaid)
         {
             if (ShipTutorial) ShipTutorial = false;
 
-            inRaid = true;
+            InRaid = true;
             if (_coin.gameObject.activeInHierarchy)
                 _coin.GetComponent<CoinCatcher>().CatchCoin();
 
@@ -141,11 +140,11 @@ public class Ship : MonoBehaviour
 
     public void BeginRaidFromIsland()
     {
-        if (!inRaid)
+        if (!InRaid)
         {
-            if (isRotate)
+            if (IsRotate)
             {
-                inRaid = true;
+                InRaid = true;
                 if (_coin.gameObject.activeInHierarchy)
                     _coin.GetComponent<CoinCatcher>().CatchCoin();
 
@@ -157,17 +156,19 @@ public class Ship : MonoBehaviour
         }
     }
 
-    public bool IsRotate { get => isRotate; }
+    public bool IsRotate { get; private set; } = true;
 
     private IEnumerator Raid()
     {
-        isRotate = false;
+        IsRotate = false;
         globalSpeedModifier = island.GetParameter("GlobalSpeed" + islandNumber.ToString(), 0f);
+
         do
         {
             _iconRT.localPosition += Vector3.down * (speedLinear * speedRaidModifier * globalSpeedModifier) * Time.deltaTime;
             yield return null;
         } while (Mathf.Abs(_iconRT.localPosition.y) < riseOutOfScreen);
+
         float seconds = raidTime / Mathf.Pow(2f, raidTimeModifier);
         yield return new WaitForSeconds(seconds);
 
@@ -178,7 +179,7 @@ public class Ship : MonoBehaviour
         _icon.GetComponent<RectTransform>().localScale = Vector3.right * size * (!direction ? 1 : -1) + Vector3.up * size + Vector3.forward;
         _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
 
-        inRaid = false;
+        InRaid = false;
         UpdateShip();
 
         float error = Mathf.Abs(speedLinear * speedRaidModifier * Time.deltaTime * 2f);
@@ -189,8 +190,7 @@ public class Ship : MonoBehaviour
             yield return null;
         }
 
-
-        isRotate = true;
+        IsRotate = true;
         if (_coin.gameObject.activeInHierarchy)
             _coin.GetComponent<CoinCatcher>().CatchCoin();
     }
@@ -217,7 +217,7 @@ public class Ship : MonoBehaviour
 
     public void SetSpeed(float speedAngle, float speedLinear, float speedRaidModifier)
     {
-        this.speedAngle = speedAngle;
+        _speedAngle = speedAngle;
         this.speedLinear = speedLinear;
         this.speedRaidModifier = speedRaidModifier;
 
@@ -242,13 +242,5 @@ public class Ship : MonoBehaviour
         _icon.GetComponent<ShipClick>().islandController = islandController;
     }
 
-    public bool isShipRotating()
-    {
-        return isRotate;
-    }
-
-    public float GetRaidTime()
-    {
-        return raidTime / Mathf.Pow(2f, raidTimeModifier);
-    }
+    public float RaidTime { get => raidTime / Mathf.Pow(2f, raidTimeModifier); }
 }
