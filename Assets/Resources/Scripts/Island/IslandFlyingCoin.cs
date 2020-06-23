@@ -37,6 +37,10 @@ public class IslandFlyingCoin : MonoBehaviour
         {
             transform.localPosition = new Vector3(-40f, transform.localPosition.y, transform.localPosition.z);
         }
+        else if (value.Mantissa % 1 != 0 && value.Mantissa % 1 >= 0.06f)
+        {
+            transform.localPosition = new Vector3(-35f, transform.localPosition.y, transform.localPosition.z);
+        }
         else
         {
             transform.localPosition = new Vector3(-75f, transform.localPosition.y, transform.localPosition.z);
