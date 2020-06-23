@@ -27,7 +27,6 @@ public class BonusBehavior : MonoBehaviour
         set
         {
             outline.enabled = value;
-            print(outline.enabled ? "Turn On" : "Turn Off");
         }
     }
 }

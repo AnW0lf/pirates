@@ -30,7 +30,9 @@ public class InterfaceIerarchy : MonoBehaviour
     public void Next()
     {
         if (windows.Count > ++counter)
+        {
             windows[counter].Open(new object[0]);
+        }
         else
         {
             Done = true;

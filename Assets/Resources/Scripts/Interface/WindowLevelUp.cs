@@ -84,10 +84,10 @@ public class WindowLevelUp : WindowBase
 
             foreach (IslandController ic in islandsList)
             {
-                if (progress == 1f)
+                if (progress >= 1f)
                 {
                     transform.parent.GetComponent<InterfaceIerarchy>().onDone +=
-                        () => ic.GetComponent<IslandSpriteController>().ChangeSprite();
+                        () => { ic.GetComponent<IslandSpriteController>().ChangeSprite(); };
                 }
                 else
                 {

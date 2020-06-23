@@ -56,21 +56,18 @@ public class ShipBonusLighting : MonoBehaviour
             {
                 _bh = bh;
                 _bh.Lighting = true;
-                print("Ship turn light on");
             }
             else if (_bh != bh)
             {
                 _bh.Lighting = false;
                 _bh = bh;
                 _bh.Lighting = true;
-                print("Ship switch BH");
             }
         }
         else if (_bh != null)
         {
             _bh.Lighting = false;
             _bh = null;
-            print("Ship forget");
         }
 
         if (_bh != null)
