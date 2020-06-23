@@ -11,7 +11,7 @@ public class ShipBonusLighting : MonoBehaviour
     private float distance = 5f;
     private BonusBehavior _bh = null;
 
-    private static int disableLevel = 5;
+    private static int disableLevel = 10;
     private static bool locked = false;
 
     private void Start()
@@ -77,7 +77,7 @@ public class ShipBonusLighting : MonoBehaviour
         {
             if (!line.enabled) line.enabled = true;
             Vector3 start, end;
-            start = transform.position;
+            start = line.transform.position;
             end = start - transform.up * Vector3.Distance(start, _bh.transform.position);
             line.SetPosition(0, start);
             line.SetPosition(1, end);
