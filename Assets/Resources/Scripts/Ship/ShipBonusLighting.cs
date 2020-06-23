@@ -49,35 +49,37 @@ public class ShipBonusLighting : MonoBehaviour
     private void Update()
     {
         if (locked) Destroy(this);
-        if (!shipClick.ship.IsRotate) return;
-        if (Raycast(out BonusBehavior bh))
+        if (shipClick.ship.IsRotate)
         {
-            if (_bh == null)
+            if (Raycast(out BonusBehavior bh))
             {
-                _bh = bh;
-                _bh.Lighting = true;
+                if (_bh == null)
+                {
+                    _bh = bh;
+                    _bh.Lighting = true;
+                }
+                else if (_bh != bh)
+                {
+                    _bh.Lighting = false;
+                    _bh = bh;
+                    _bh.Lighting = true;
+                }
             }
-            else if (_bh != bh)
+            else if (_bh != null)
             {
                 _bh.Lighting = false;
-                _bh = bh;
-                _bh.Lighting = true;
+                _bh = null;
             }
-        }
-        else if (_bh != null)
-        {
-            _bh.Lighting = false;
-            _bh = null;
-        }
 
-        if (_bh != null)
-        {
-            if (!line.enabled) line.enabled = true;
-            Vector3 start, end;
-            start = line.transform.position;
-            end = start - transform.up * Vector3.Distance(start, _bh.transform.position);
-            line.SetPosition(0, start);
-            line.SetPosition(1, end);
+            if (_bh != null)
+            {
+                if (!line.enabled) line.enabled = true;
+                Vector3 start, end;
+                start = line.transform.position;
+                end = start - transform.up * Vector3.Distance(start, _bh.transform.position);
+                line.SetPosition(0, start);
+                line.SetPosition(1, end);
+            }
         }
         else if (line.enabled) line.enabled = false;
     }
