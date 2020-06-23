@@ -80,6 +80,7 @@ public class ShipBonusLighting : MonoBehaviour
                 line.SetPosition(0, start);
                 line.SetPosition(1, end);
             }
+            else if (line.enabled) line.enabled = false;
         }
         else if (line.enabled) line.enabled = false;
     }
