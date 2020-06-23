@@ -46592,7 +46592,7 @@ MonoBehaviour:
   rise: 510
   angle: 105
   shipName: King Georg
-  startPriceMantissa: 1
+  startPriceMantissa: 2
   startPriceExponent: 5
   startRaidTime: 22
   startReward: 600
@@ -46605,9 +46605,9 @@ MonoBehaviour:
   detailChangeReward1: 45
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.1
+  detailStartCostMantissa1: 2.2
   detailStartCostExponent1: 5
-  detailCostIncreaseMantissa1: 1
+  detailCostIncreaseMantissa1: 2
   detailCostIncreaseExponent1: 4
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
@@ -46617,9 +46617,9 @@ MonoBehaviour:
   detailChangeReward2: 60
   detailChangeRaidTime2: 0
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 1.54
+  detailStartCostMantissa2: 3.08
   detailStartCostExponent2: 5
-  detailCostIncreaseMantissa2: 2.3
+  detailCostIncreaseMantissa2: 4.6
   detailCostIncreaseExponent2: 4
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
@@ -46629,9 +46629,9 @@ MonoBehaviour:
   detailChangeReward3: 95
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 2.4
+  detailStartCostMantissa3: 4.8
   detailStartCostExponent3: 5
-  detailCostIncreaseMantissa3: 4.5
+  detailCostIncreaseMantissa3: 9
   detailCostIncreaseExponent3: 4
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
@@ -61263,7 +61263,7 @@ MonoBehaviour:
   rise: 450
   angle: 70
   shipName: Saber
-  startPriceMantissa: 1
+  startPriceMantissa: 2
   startPriceExponent: 4
   startRaidTime: 15
   startReward: 200
@@ -61276,9 +61276,9 @@ MonoBehaviour:
   detailChangeReward1: 15
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 1.25
+  detailStartCostMantissa1: 2.5
   detailStartCostExponent1: 4
-  detailCostIncreaseMantissa1: 2.5
+  detailCostIncreaseMantissa1: 5
   detailCostIncreaseExponent1: 3
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
@@ -61288,9 +61288,9 @@ MonoBehaviour:
   detailChangeReward2: 25
   detailChangeRaidTime2: 0
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 2
+  detailStartCostMantissa2: 4
   detailStartCostExponent2: 4
-  detailCostIncreaseMantissa2: 4
+  detailCostIncreaseMantissa2: 8
   detailCostIncreaseExponent2: 3
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
@@ -61300,10 +61300,10 @@ MonoBehaviour:
   detailChangeReward3: 40
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 3.3
+  detailStartCostMantissa3: 6.6
   detailStartCostExponent3: 4
-  detailCostIncreaseMantissa3: 7
-  detailCostIncreaseExponent3: 3
+  detailCostIncreaseMantissa3: 1.4
+  detailCostIncreaseExponent3: 4
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
   shipExist: 0
@@ -69073,8 +69073,8 @@ MonoBehaviour:
   rise: 450
   angle: 140
   shipName: Red Octopus
-  startPriceMantissa: 6
-  startPriceExponent: 5
+  startPriceMantissa: 1.2
+  startPriceExponent: 6
   startRaidTime: 30
   startReward: 1500
   speedAngle: 25
@@ -69086,10 +69086,10 @@ MonoBehaviour:
   detailChangeReward1: 100
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 6.6
-  detailStartCostExponent1: 5
-  detailCostIncreaseMantissa1: 6
-  detailCostIncreaseExponent1: 4
+  detailStartCostMantissa1: 1.32
+  detailStartCostExponent1: 6
+  detailCostIncreaseMantissa1: 1.2
+  detailCostIncreaseExponent1: 5
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
   detailName2: Sail
@@ -69098,10 +69098,10 @@ MonoBehaviour:
   detailChangeReward2: 150
   detailChangeRaidTime2: 0
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 8.7
-  detailStartCostExponent2: 5
-  detailCostIncreaseMantissa2: 9
-  detailCostIncreaseExponent2: 4
+  detailStartCostMantissa2: 1.74
+  detailStartCostExponent2: 6
+  detailCostIncreaseMantissa2: 1.8
+  detailCostIncreaseExponent2: 5
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
   detailName3: Gun
@@ -69110,9 +69110,9 @@ MonoBehaviour:
   detailChangeReward3: 250
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 1.2
+  detailStartCostMantissa3: 2.4
   detailStartCostExponent3: 6
-  detailCostIncreaseMantissa3: 1.5
+  detailCostIncreaseMantissa3: 3
   detailCostIncreaseExponent3: 5
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
@@ -72239,8 +72239,8 @@ MonoBehaviour:
   rise: 510
   angle: 35
   shipName: Pink Queen
-  startPriceMantissa: 6
-  startPriceExponent: 2
+  startPriceMantissa: 1.08
+  startPriceExponent: 3
   startRaidTime: 10
   startReward: 60
   speedAngle: 25
@@ -72252,9 +72252,9 @@ MonoBehaviour:
   detailChangeReward1: 7
   detailChangeRaidTime1: 0
   detailSizeModifier1: 0.02
-  detailStartCostMantissa1: 9
-  detailStartCostExponent1: 2
-  detailCostIncreaseMantissa1: 3
+  detailStartCostMantissa1: 1.62
+  detailStartCostExponent1: 3
+  detailCostIncreaseMantissa1: 5.4
   detailCostIncreaseExponent1: 2
   detailMiniature1: {fileID: 21300000, guid: 37fb11c89e392b54188a1c70c393e71c, type: 3}
   detailShipSprites1: []
@@ -72264,9 +72264,9 @@ MonoBehaviour:
   detailChangeReward2: 10
   detailChangeRaidTime2: 0
   detailSizeModifier2: 0.02
-  detailStartCostMantissa2: 2
+  detailStartCostMantissa2: 3.6
   detailStartCostExponent2: 3
-  detailCostIncreaseMantissa2: 5
+  detailCostIncreaseMantissa2: 9
   detailCostIncreaseExponent2: 2
   detailMiniature2: {fileID: 21300000, guid: 0a85ecde83662b04b9cefc3d67e74696, type: 3}
   detailShipSprites2: []
@@ -72276,9 +72276,9 @@ MonoBehaviour:
   detailChangeReward3: 13
   detailChangeRaidTime3: 0
   detailSizeModifier3: 0.02
-  detailStartCostMantissa3: 4.25
+  detailStartCostMantissa3: 7.65
   detailStartCostExponent3: 3
-  detailCostIncreaseMantissa3: 1.25
+  detailCostIncreaseMantissa3: 2.25
   detailCostIncreaseExponent3: 3
   detailMiniature3: {fileID: 21300000, guid: 86cb1c7b242d8b643b9572b8507182bb, type: 3}
   detailShipSprites3: []
