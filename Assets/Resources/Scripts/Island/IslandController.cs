@@ -146,7 +146,7 @@ public class IslandController : MonoBehaviour
                 yield return null;
             }
 
-            if (!clicked) GenerateMoney(Reward);
+            if (!clicked) GenerateMoney(ForcedReward);
             clicked = false;
         }
     }
