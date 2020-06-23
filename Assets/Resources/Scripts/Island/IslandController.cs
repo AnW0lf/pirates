@@ -97,16 +97,21 @@ public class IslandController : MonoBehaviour
             {
                 if (clicked)
                 {
-                    GenerateMoney(ForcedReward);
                     Pulse();
                     GenerateEffect();
-                    progressHideTimer = 3f;
-
-                    if (!forced)
+                    if (ShipTutorial)
+                        GenerateMoney(Reward);
+                    else
                     {
-                        clickCounter += 1f;
-                        if (clickCounter >= maxClickCount)
-                            ForceClickReward();
+                        GenerateMoney(ForcedReward);
+                        progressHideTimer = 3f;
+
+                        if (!forced)
+                        {
+                            clickCounter += 1f;
+                            if (clickCounter >= maxClickCount)
+                                ForceClickReward();
+                        }
                     }
 
                     break;
@@ -146,7 +151,13 @@ public class IslandController : MonoBehaviour
                 yield return null;
             }
 
-            if (!clicked) GenerateMoney(ForcedReward);
+            if (!clicked)
+            {
+                if (ShipTutorial)
+                    GenerateMoney(Reward);
+                else
+                    GenerateMoney(ForcedReward);
+            }
             clicked = false;
         }
     }
@@ -154,6 +165,16 @@ public class IslandController : MonoBehaviour
     private void Update()
     {
         if (!active && minLevel <= island.Level) active = true;
+    }
+
+    private bool ShipTutorial
+    {
+        get
+        {
+            string key = "ShipTutorial";
+            if (!PlayerPrefs.HasKey(key)) PlayerPrefs.SetInt(key, 1);
+            return PlayerPrefs.GetInt(key) > 0;
+        }
     }
 
     private void ForceClickReward()
