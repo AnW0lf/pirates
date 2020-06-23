@@ -19,7 +19,7 @@ public class ShipBonusLighting : MonoBehaviour
         locked = Island.Instance().Level >= disableLevel;
         EventManager.Subscribe("LevelUp", (args) => { locked = Island.Instance().Level >= disableLevel; });
         Color color = shipClick.color;
-        color.a = 0.4f;
+        color.a = 14f / 255f;
         line.startColor = color;
         line.endColor = color;
     }
@@ -49,6 +49,7 @@ public class ShipBonusLighting : MonoBehaviour
     private void Update()
     {
         if (locked) Destroy(this);
+        if (!shipClick.ship.IsRotate) return;
         if (Raycast(out BonusBehavior bh))
         {
             if (_bh == null)
