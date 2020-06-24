@@ -31,7 +31,7 @@ public class ShipBonusLighting : MonoBehaviour
         Vector3 original = transform.position, directiion;
         RaycastHit2D hit;
 
-        directiion = (-transform.up * distance + transform.right * 0.75f).normalized;
+        directiion = (-transform.up * distance + transform.right * 0.75f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -41,7 +41,7 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance + transform.right * 0.5f).normalized;
+        directiion = (-transform.up * distance + transform.right * 0.5f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -51,7 +51,7 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance + transform.right * 0.25f).normalized;
+        directiion = (-transform.up * distance + transform.right * 0.25f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -61,7 +61,7 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance).normalized;
+        directiion = (-transform.up * distance + transform.right * 0.1f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -130,28 +130,28 @@ public class ShipBonusLighting : MonoBehaviour
         Vector3 start, end;
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.75f;
+        end = start - transform.up * distance + transform.right * 0.75f * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.5f;
+        end = start - transform.up * distance + transform.right * 0.5f * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.25f;
+        end = start - transform.up * distance + transform.right * 0.25f * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
         start = transform.position;
-        end = start - transform.up * distance;
+        end = start - transform.up * distance + transform.right * 0.1f * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
-        //start = transform.position;
-        //end = start - transform.up * distance - transform.right * 0.25f;
+        start = transform.position;
+        end = start + transform.right * distance * (shipClick.ship.Direction ? 1f : -1f);
 
-        //Gizmos.DrawLine(start, end);
+        Gizmos.DrawLine(start, end);
     }
 }

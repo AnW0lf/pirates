@@ -33,6 +33,8 @@ public class Ship : MonoBehaviour
     private float riseOutOfScreen = 1700f;
     private Coroutine raidCoroutine = null;
 
+    public bool Direction { get => direction; }
+
     private void Awake()
     {
         _riseRT = _rise.GetComponent<RectTransform>();
