@@ -134,20 +134,28 @@ public class ShipBonusLighting : MonoBehaviour
 
         Gizmos.DrawLine(start, end);
 
+        Gizmos.color = Color.blue;
+
         start = transform.position;
         end = start - transform.up * distance + transform.right * 0.5f * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
+
+        Gizmos.color = Color.green;
 
         start = transform.position;
         end = start - transform.up * distance + transform.right * 0.25f * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
+        Gizmos.color = Color.yellow;
+
         start = transform.position;
         end = start - transform.up * distance + transform.right * 0.1f * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
+
+        Gizmos.color = Color.cyan;
 
         start = transform.position;
         end = start + transform.right * distance * (shipClick.ship.Direction ? 1f : -1f);
