@@ -27,7 +27,13 @@ public class ShipBonusLighting : MonoBehaviour
     private bool Raycast(out BonusBehavior bh)
     {
         bh = null;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + transform.right * 0.15f, -transform.up, distance, mask);
+
+        Vector3 original = transform.position, directiion;
+        RaycastHit2D hit;
+
+        directiion = (-transform.up * distance + transform.right * 0.8f).normalized;
+
+        hit = Physics2D.Raycast(original, directiion, distance, mask);
 
         if (hit)
         {
@@ -35,7 +41,39 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        hit = Physics2D.Raycast(transform.position - transform.right * 0.15f, -transform.up, distance, mask);
+        directiion = (-transform.up * distance + transform.right * 0.4f).normalized;
+
+        hit = Physics2D.Raycast(original, directiion, distance, mask);
+
+        if (hit)
+        {
+            bh = hit.transform.GetComponent<BonusBehavior>();
+            if (bh != null) return true;
+        }
+
+        directiion = (-transform.up * distance).normalized;
+
+        hit = Physics2D.Raycast(original, directiion, distance, mask);
+
+        if (hit)
+        {
+            bh = hit.transform.GetComponent<BonusBehavior>();
+            if (bh != null) return true;
+        }
+
+        directiion = (-transform.up * distance - transform.right * 0.4f).normalized;
+
+        hit = Physics2D.Raycast(original, directiion, distance, mask);
+
+        if (hit)
+        {
+            bh = hit.transform.GetComponent<BonusBehavior>();
+            if (bh != null) return true;
+        }
+
+        directiion = (-transform.up * distance - transform.right * 0.8f).normalized;
+
+        hit = Physics2D.Raycast(original, directiion, distance, mask);
 
         if (hit)
         {
@@ -91,13 +129,28 @@ public class ShipBonusLighting : MonoBehaviour
 
         Vector3 start, end;
 
-        start = transform.position + transform.right * 0.15f;
+        start = transform.position;
+        end = start - transform.up * distance + transform.right * 0.8f;
+
+        Gizmos.DrawLine(start, end);
+
+        start = transform.position;
+        end = start - transform.up * distance + transform.right * 0.4f;
+
+        Gizmos.DrawLine(start, end);
+
+        start = transform.position;
         end = start - transform.up * distance;
 
         Gizmos.DrawLine(start, end);
 
-        start = transform.position - transform.right * 0.15f;
-        end = start - transform.up * distance;
+        start = transform.position;
+        end = start - transform.up * distance - transform.right * 0.4f;
+
+        Gizmos.DrawLine(start, end);
+
+        start = transform.position;
+        end = start - transform.up * distance - transform.right * 0.8f;
 
         Gizmos.DrawLine(start, end);
     }
