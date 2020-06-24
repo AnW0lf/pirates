@@ -61,7 +61,7 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance + transform.right).normalized;
+        directiion = (-transform.up * distance).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
