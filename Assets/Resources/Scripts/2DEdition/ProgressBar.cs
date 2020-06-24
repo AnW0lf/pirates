@@ -52,6 +52,8 @@ public class ProgressBar : MonoBehaviour
     [SerializeField]
     private Image progress = null;
     [SerializeField]
+    private Image progressForced = null;
+    [SerializeField]
     private Animation anim = null;
     [SerializeField]
     private Text label = null, timer = null;
@@ -86,7 +88,16 @@ public class ProgressBar : MonoBehaviour
         Visible = _visible;
     }
 
-    public float Progress { get => progress.fillAmount; set => progress.fillAmount = value; }
+    public float Progress
+    {
+        get => progress.fillAmount;
+        set
+        {
+            progress.fillAmount = value;
+            progressForced.fillAmount = value;
+        }
+    }
+
     public string Label { get => label.text; set => label.text = value; }
     public int Timer
     {

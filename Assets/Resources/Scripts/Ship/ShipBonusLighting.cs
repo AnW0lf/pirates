@@ -27,7 +27,7 @@ public class ShipBonusLighting : MonoBehaviour
     private bool Raycast(out BonusBehavior bh)
     {
         bh = null;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + transform.right * 0.1f, -transform.up, distance, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + transform.right * 0.15f, -transform.up, distance, mask);
 
         if (hit)
         {
@@ -35,7 +35,7 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        hit = Physics2D.Raycast(transform.position - transform.right * 0.1f, -transform.up, distance, mask);
+        hit = Physics2D.Raycast(transform.position - transform.right * 0.15f, -transform.up, distance, mask);
 
         if (hit)
         {
@@ -91,12 +91,12 @@ public class ShipBonusLighting : MonoBehaviour
 
         Vector3 start, end;
 
-        start = transform.position + transform.right * 0.1f;
+        start = transform.position + transform.right * 0.15f;
         end = start - transform.up * distance;
 
         Gizmos.DrawLine(start, end);
 
-        start = transform.position - transform.right * 0.1f;
+        start = transform.position - transform.right * 0.15f;
         end = start - transform.up * distance;
 
         Gizmos.DrawLine(start, end);
