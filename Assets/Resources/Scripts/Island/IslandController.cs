@@ -8,7 +8,8 @@ public class IslandController : MonoBehaviour
 {
     public int minLevel;
     [Space(20)]
-    public float maxClickCount, clickCountDecrease, autoclickDelay, clickDelay, forcingMoneyDuration, forcingMoneyModifier = 0.5f;
+    public float maxClickCount;
+    public float clickCountDecrease, autoclickStartDelay, autoclickMinDelay, clickDelay, forcingMoneyDuration, forcingMoneyModifier = 0.5f;
     [Space(20)]
     public float modifierMantissa;
     public long modifierExponent;
@@ -42,7 +43,7 @@ public class IslandController : MonoBehaviour
 
     private IEnumerator Clicking()
     {
-        float clickTimer, progressHideTimer = 0f;
+        float clickTimer, progressHideTimer = 0f, delay = 0f;
 
         while (true)
         {
@@ -53,8 +54,9 @@ public class IslandController : MonoBehaviour
             }
 
             clickTimer = 0f;
+            delay = clickDelay;
 
-            while (clickTimer < clickDelay)
+            while (clickTimer < delay)
             {
                 clickTimer += Time.deltaTime;
 
@@ -92,8 +94,9 @@ public class IslandController : MonoBehaviour
             }
 
             clickTimer = 0f;
+            delay = Mathf.Lerp(autoclickStartDelay, autoclickMinDelay, (float)(Island.Instance().Level - 1) / 10f);
 
-            while (clickTimer < autoclickDelay)
+            while (clickTimer < delay)
             {
                 if (clicked)
                 {
