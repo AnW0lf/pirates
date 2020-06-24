@@ -19,7 +19,7 @@ public class ShipBonusLighting : MonoBehaviour
         locked = Island.Instance().Level >= disableLevel;
         EventManager.Subscribe("LevelUp", (args) => { locked = Island.Instance().Level >= disableLevel; });
         Color color = shipClick.color;
-        color.a = 14f / 255f;
+        color.a = 8f / 255f;
         line.startColor = color;
         line.endColor = color;
     }
@@ -56,13 +56,13 @@ public class ShipBonusLighting : MonoBehaviour
                 if (_bh == null)
                 {
                     _bh = bh;
-                    _bh.Lighting = true;
+                    //_bh.Lighting = true;
                 }
                 else if (_bh != bh)
                 {
                     _bh.Lighting = false;
                     _bh = bh;
-                    _bh.Lighting = true;
+                    //_bh.Lighting = true;
                 }
             }
             else if (_bh != null)

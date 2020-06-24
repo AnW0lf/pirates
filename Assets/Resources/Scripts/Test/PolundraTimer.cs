@@ -27,7 +27,7 @@ public class PolundraTimer : MonoBehaviour
         {
             pack.SetActive(true);
             if (coroutine != null) StopCoroutine(coroutine);
-            coroutine = StartCoroutine(Timer(90));
+            coroutine = StartCoroutine(Timer(120));
         }
         else
         {
@@ -116,7 +116,7 @@ public class PolundraTimer : MonoBehaviour
             if (span.TotalMinutes > 10d)
             {
                 StopAllCoroutines();
-                if (island.Level >= minLevel) StartCoroutine(Timer(90));
+                if (island.Level >= minLevel) StartCoroutine(Timer(120));
             }
         }
         else island.SetParameter("PauseTime", DateTime.Now.ToString());
