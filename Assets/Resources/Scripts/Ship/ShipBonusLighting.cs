@@ -61,7 +61,7 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance + transform.right * 0.1f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
+        directiion = (-transform.up * distance + transform.right).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -151,7 +151,7 @@ public class ShipBonusLighting : MonoBehaviour
         Gizmos.color = Color.yellow;
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.1f * (shipClick.ship.Direction ? 1f : -1f);
+        end = start - transform.up * distance;
 
         Gizmos.DrawLine(start, end);
 
