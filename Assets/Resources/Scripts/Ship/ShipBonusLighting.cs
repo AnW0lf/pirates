@@ -8,6 +8,7 @@ public class ShipBonusLighting : MonoBehaviour
     [SerializeField] private LayerMask mask;
     [SerializeField] private LineRenderer line;
     [SerializeField] private ShipClick shipClick;
+    [SerializeField] private float red = 0.65f, blue = 0.5f, green = 0.25f, yellow = 0f;
     private float distance = 5f;
     private BonusBehavior _bh = null;
 
@@ -31,7 +32,7 @@ public class ShipBonusLighting : MonoBehaviour
         Vector3 original = transform.position, directiion;
         RaycastHit2D hit;
 
-        directiion = (-transform.up * distance + transform.right * 0.65f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
+        directiion = (-transform.up * distance + transform.right * red * (shipClick.ship.Direction ? 1f : -1f)).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -41,7 +42,7 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance + transform.right * 0.5f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
+        directiion = (-transform.up * distance + transform.right * blue * (shipClick.ship.Direction ? 1f : -1f)).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -51,7 +52,7 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance + transform.right * 0.25f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
+        directiion = (-transform.up * distance + transform.right * green * (shipClick.ship.Direction ? 1f : -1f)).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -61,7 +62,7 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance).normalized;
+        directiion = (-transform.up * distance + transform.right * yellow * (shipClick.ship.Direction ? 1f : -1f)).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -130,36 +131,36 @@ public class ShipBonusLighting : MonoBehaviour
         Vector3 start, end;
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.65f * (shipClick.ship.Direction ? 1f : -1f);
+        end = start - transform.up * distance + transform.right * red * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
         Gizmos.color = Color.blue;
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.5f * (shipClick.ship.Direction ? 1f : -1f);
+        end = start - transform.up * distance + transform.right * blue * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
         Gizmos.color = Color.green;
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.25f * (shipClick.ship.Direction ? 1f : -1f);
+        end = start - transform.up * distance + transform.right * green * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
         Gizmos.color = Color.yellow;
 
         start = transform.position;
-        end = start - transform.up * distance;
+        end = start - transform.up * distance + transform.right * yellow * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
-        Gizmos.color = Color.cyan;
+        //Gizmos.color = Color.cyan;
 
-        start = transform.position;
-        end = start + transform.right * distance * (shipClick.ship.Direction ? 1f : -1f);
+        //start = transform.position;
+        //end = start + transform.right * distance * (shipClick.ship.Direction ? 1f : -1f);
 
-        Gizmos.DrawLine(start, end);
+        //Gizmos.DrawLine(start, end);
     }
 }
