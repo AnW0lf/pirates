@@ -31,7 +31,7 @@ public class ShipBonusLighting : MonoBehaviour
         Vector3 original = transform.position, directiion;
         RaycastHit2D hit;
 
-        directiion = (-transform.up * distance + transform.right * 0.75f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
+        directiion = (-transform.up * distance + transform.right * 0.65f * (shipClick.ship.Direction ? 1f : -1f)).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -130,7 +130,7 @@ public class ShipBonusLighting : MonoBehaviour
         Vector3 start, end;
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.75f * (shipClick.ship.Direction ? 1f : -1f);
+        end = start - transform.up * distance + transform.right * 0.65f * (shipClick.ship.Direction ? 1f : -1f);
 
         Gizmos.DrawLine(start, end);
 
