@@ -31,7 +31,7 @@ public class ShipBonusLighting : MonoBehaviour
         Vector3 original = transform.position, directiion;
         RaycastHit2D hit;
 
-        directiion = (-transform.up * distance + transform.right * 0.8f).normalized;
+        directiion = (-transform.up * distance + transform.right * 0.75f).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -41,7 +41,17 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance + transform.right * 0.4f).normalized;
+        directiion = (-transform.up * distance + transform.right * 0.5f).normalized;
+
+        hit = Physics2D.Raycast(original, directiion, distance, mask);
+
+        if (hit)
+        {
+            bh = hit.transform.GetComponent<BonusBehavior>();
+            if (bh != null) return true;
+        }
+
+        directiion = (-transform.up * distance + transform.right * 0.25f).normalized;
 
         hit = Physics2D.Raycast(original, directiion, distance, mask);
 
@@ -61,25 +71,15 @@ public class ShipBonusLighting : MonoBehaviour
             if (bh != null) return true;
         }
 
-        directiion = (-transform.up * distance - transform.right * 0.4f).normalized;
+        //directiion = (-transform.up * distance - transform.right * 0.25f).normalized;
 
-        hit = Physics2D.Raycast(original, directiion, distance, mask);
+        //hit = Physics2D.Raycast(original, directiion, distance, mask);
 
-        if (hit)
-        {
-            bh = hit.transform.GetComponent<BonusBehavior>();
-            if (bh != null) return true;
-        }
-
-        directiion = (-transform.up * distance - transform.right * 0.8f).normalized;
-
-        hit = Physics2D.Raycast(original, directiion, distance, mask);
-
-        if (hit)
-        {
-            bh = hit.transform.GetComponent<BonusBehavior>();
-            if (bh != null) return true;
-        }
+        //if (hit)
+        //{
+        //    bh = hit.transform.GetComponent<BonusBehavior>();
+        //    if (bh != null) return true;
+        //}
 
         return false;
     }
@@ -130,12 +130,17 @@ public class ShipBonusLighting : MonoBehaviour
         Vector3 start, end;
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.8f;
+        end = start - transform.up * distance + transform.right * 0.75f;
 
         Gizmos.DrawLine(start, end);
 
         start = transform.position;
-        end = start - transform.up * distance + transform.right * 0.4f;
+        end = start - transform.up * distance + transform.right * 0.5f;
+
+        Gizmos.DrawLine(start, end);
+
+        start = transform.position;
+        end = start - transform.up * distance + transform.right * 0.25f;
 
         Gizmos.DrawLine(start, end);
 
@@ -144,14 +149,9 @@ public class ShipBonusLighting : MonoBehaviour
 
         Gizmos.DrawLine(start, end);
 
-        start = transform.position;
-        end = start - transform.up * distance - transform.right * 0.4f;
+        //start = transform.position;
+        //end = start - transform.up * distance - transform.right * 0.25f;
 
-        Gizmos.DrawLine(start, end);
-
-        start = transform.position;
-        end = start - transform.up * distance - transform.right * 0.8f;
-
-        Gizmos.DrawLine(start, end);
+        //Gizmos.DrawLine(start, end);
     }
 }
