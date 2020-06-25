@@ -12,7 +12,7 @@ public class ShipBonusLighting : MonoBehaviour
     private float distance = 5f;
     private BonusBehavior _bh = null;
 
-    private static int disableLevel = 10;
+    private static int disableLevel = 7;
     private static bool locked = false;
 
     private void Start()
