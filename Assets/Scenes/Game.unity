@@ -6063,7 +6063,7 @@ MonoBehaviour:
     type: 3}
   size: 250
   rise: 510
-  angle: 315
+  angle: 15
   shipName: Black Terror
   startPriceMantissa: 0
   startPriceExponent: 0
@@ -31084,7 +31084,7 @@ MonoBehaviour:
     type: 3}
   size: 135
   rise: 450
-  angle: 0
+  angle: 60
   shipName: Rum Barrel
   startPriceMantissa: 2
   startPriceExponent: 1
@@ -46593,7 +46593,7 @@ MonoBehaviour:
     type: 3}
   size: 168
   rise: 510
-  angle: 105
+  angle: 165
   shipName: King Georg
   startPriceMantissa: 2
   startPriceExponent: 5
@@ -61270,7 +61270,7 @@ MonoBehaviour:
     type: 3}
   size: 157
   rise: 450
-  angle: 70
+  angle: 130
   shipName: Saber
   startPriceMantissa: 2
   startPriceExponent: 4
@@ -69080,7 +69080,7 @@ MonoBehaviour:
     type: 3}
   size: 179
   rise: 450
-  angle: 140
+  angle: 200
   shipName: Red Octopus
   startPriceMantissa: 1.2
   startPriceExponent: 6
@@ -72246,7 +72246,7 @@ MonoBehaviour:
     type: 3}
   size: 146
   rise: 510
-  angle: 35
+  angle: 95
   shipName: Pink Queen
   startPriceMantissa: 1.08
   startPriceExponent: 3
