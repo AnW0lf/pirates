@@ -59,13 +59,13 @@ public class MiniatureContoller : MonoBehaviour
 
         if (pier.minLvl > island.Level)
         {
-            icon.color = Color.black;
+            icon.color = new Color(0.35f, 0.35f, 0.35f);
             level.text = "Level " + pier.minLvl;
         }
         else if (!pier.shipExist)
         {
             if (pier.black)
-                icon.color = Color.black;
+                icon.color = new Color(0.35f, 0.35f, 0.35f);
             else
                 icon.color = Color.white;
             level.text = "0/" + (1 + pier.detailMaxLvl1 + pier.detailMaxLvl2 + pier.detailMaxLvl3).ToString();

@@ -153,7 +153,7 @@ public class WindowController : MonoBehaviour
         if (upgradeBtn.interactable)
             upgradeBtn.interactable = false;
 
-        icon.color = Color.black;
+        icon.color = new Color(0.35f, 0.35f, 0.35f);
         cost.SetActive(false);
         characteristics.gameObject.SetActive(false);
     }
@@ -202,7 +202,7 @@ public class WindowController : MonoBehaviour
         if (titleFade.activeInHierarchy)
             titleFade.SetActive(false);
         if (pier.black)
-            icon.color = Color.black;
+            icon.color = new Color(0.35f, 0.35f, 0.35f);
         else
             icon.color = Color.white;
     }
