@@ -46,7 +46,12 @@ public class Ship : MonoBehaviour
         UpdateShip();
         riseOutOfScreen = Mathf.Clamp(Mathf.Sqrt(Mathf.Pow(Screen.safeArea.height / 2f, 2f) + Mathf.Pow(Screen.safeArea.width / 2f, 2f)) * 1.05f, riseOutOfScreen, 5000f);
 
-        if (ShipTutorial) StartCoroutine(TutorialHand());
+        if (ShipTutorial)
+        {
+            StartCoroutine(TutorialHand());
+            BonusTutorial bonusTutorial = FindObjectOfType<BonusTutorial>();
+            if (bonusTutorial != null) bonusTutorial.Begin();
+        }
         else if (hand != null) Destroy(hand.gameObject);
     }
 
