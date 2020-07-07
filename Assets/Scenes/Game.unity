@@ -65663,6 +65663,16 @@ PrefabInstance:
       propertyPath: quests
       value: 
       objectReference: {fileID: 1347653239}
+    - target: {fileID: 8533541321033390059, guid: 66417a521cc6058449e3a2dff7c4c7d5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533541321033390059, guid: 66417a521cc6058449e3a2dff7c4c7d5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8533541321243115376, guid: 66417a521cc6058449e3a2dff7c4c7d5,
         type: 3}
       propertyPath: m_Animations.Array.size
