@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 93.77925, y: 93.82532}
-  m_SizeDelta: {x: 80, y: 80}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4847662767589843007
 CanvasRenderer:
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3549795131907905418}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -65,6 +65,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: c8254884772afcb419c50210ae8ca164, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -173,6 +175,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 46ceccbc2a01ded43a3dea21f3b2dbd3, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
@@ -251,8 +255,9 @@ MonoBehaviour:
   bonusSpeed: 0
   bonusWheel: 0
   modifier: 1
-  textOnClick: 
-  textOnClickObject: {fileID: 0}
+  textOnClick: Collect with the ship!
+  textOnClickObject: {fileID: 2278700032299362563, guid: bfae0279a89f0e645b19b490077abd5d,
+    type: 3}
   outline: {fileID: 114092973616253586}
 --- !u!114 &8464708658204598479
 MonoBehaviour:

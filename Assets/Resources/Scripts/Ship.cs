@@ -49,6 +49,7 @@ public class Ship : MonoBehaviour
         if (ShipTutorial)
         {
             StartCoroutine(TutorialHand());
+            StartCoroutine(TutorialHandOff());
             BonusTutorial bonusTutorial = FindObjectOfType<BonusTutorial>();
             if (bonusTutorial != null) bonusTutorial.Begin();
         }
@@ -78,7 +79,7 @@ public class Ship : MonoBehaviour
 
     private IEnumerator TutorialHand()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4.5f);
 
         hand.SetActive(true);
 
@@ -91,6 +92,13 @@ public class Ship : MonoBehaviour
         if (hand != null) Destroy(hand.gameObject);
     }
 
+    private IEnumerator TutorialHandOff()
+    {
+        yield return new WaitForSeconds(11f);
+        if (hand.gameObject)
+            hand.SetActive(false);
+    }
+
     public void UpdateShip()
     {
         _rise.GetComponent<RectTransform>().sizeDelta = new Vector2(rise, 10f);
@@ -98,7 +106,7 @@ public class Ship : MonoBehaviour
         _icon.GetComponent<RectTransform>().localEulerAngles = Vector3.forward * 180f * (direction ? 0f : 1f);
         _icon.GetComponent<RectTransform>().localScale = Vector3.right * size * (!direction ? 1 : -1) + Vector3.up * size + Vector3.forward;
 
-        speedAngle = Math.Abs(ShipTutorial ? _speedAngle / 2f : _speedAngle) * (direction ? 1 : -1);
+        speedAngle = Math.Abs(ShipTutorial ? _speedAngle / 2.5f : _speedAngle) * (direction ? 1 : -1);
         speedLinear = Math.Abs(speedLinear) * (direction ? 1 : -1);
         circleMax = ShipTutorial ? 400f : 200f;
 

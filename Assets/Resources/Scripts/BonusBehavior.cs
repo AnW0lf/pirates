@@ -12,14 +12,14 @@ public class BonusBehavior : MonoBehaviour
     public GameObject textOnClickObject;
     [SerializeField] private Outline outline;
 
-    //private GameObject _textOnClick;
+    private GameObject _textOnClick;
 
-    //private void OnMouseUp()
-    //{
-    //    _textOnClick = Instantiate(textOnClickObject, gameObject.transform);
-    //    _textOnClick.GetComponent<Text>().text = textOnClick;
-    //    _textOnClick.transform.eulerAngles = new Vector3(0f, 0f, 0f);
-    //}
+    private void OnMouseUp()
+    {
+        _textOnClick = Instantiate(textOnClickObject, gameObject.transform);
+        _textOnClick.GetComponent<Text>().text = textOnClick;
+        _textOnClick.transform.eulerAngles = new Vector3(0f, 0f, 0f);
+    }
 
     public bool Lighting
     {

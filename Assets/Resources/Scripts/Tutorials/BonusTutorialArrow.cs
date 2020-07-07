@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BonusTutorialArrow : MonoBehaviour
 {
@@ -16,5 +17,16 @@ public class BonusTutorialArrow : MonoBehaviour
     void Update()
     {
         if (!ShipTutorial) Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        StartCoroutine(SpriteOn());
+    }
+
+    IEnumerator SpriteOn()
+    {
+        yield return new WaitForSeconds(4.3f);
+        GetComponent<Image>().enabled = true;
     }
 }

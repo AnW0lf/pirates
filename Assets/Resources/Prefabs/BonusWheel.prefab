@@ -69,6 +69,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: fc22cba30d043a54ab6252f9725dd8aa, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
@@ -147,8 +149,9 @@ MonoBehaviour:
   bonusSpeed: 0
   bonusWheel: 1
   modifier: 1
-  textOnClick: 
-  textOnClickObject: {fileID: 0}
+  textOnClick: Collect with the ship!
+  textOnClickObject: {fileID: 2278700032299362563, guid: bfae0279a89f0e645b19b490077abd5d,
+    type: 3}
   outline: {fileID: 114728218147065250}
 --- !u!114 &5043633576376841162
 MonoBehaviour:

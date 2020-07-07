@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 120}
+  m_SizeDelta: {x: 230, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7812350361619230780
 CanvasRenderer:
@@ -69,19 +69,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9cacd5b81d1e9b640b58f70122b8899d, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: e4849b9d859f853489402a1f59502820, type: 3}
+    m_FontSize: 38
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 3
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Collect bonuses with the ships! '
+    m_LineSpacing: 0.7
+  m_Text: Collect with the ship!
 --- !u!114 &8169295100713963547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,9 +106,9 @@ Animation:
   m_GameObject: {fileID: 2278700032299362563}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 01039aa5436544844af5cfb43ddc4826, type: 2}
+  m_Animation: {fileID: 7400000, guid: 13c66f79e3567f14abb9a4d92034d11b, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 01039aa5436544844af5cfb43ddc4826, type: 2}
+  - {fileID: 7400000, guid: 13c66f79e3567f14abb9a4d92034d11b, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

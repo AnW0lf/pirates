@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.032592773, y: 132.6565}
-  m_SizeDelta: {x: 80, y: 80}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3330121826383679886
 CanvasRenderer:
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125313479789853507}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -65,6 +65,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: c8254884772afcb419c50210ae8ca164, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -165,6 +167,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 4cd10189248c6dd4993561651d0b1a75, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -244,6 +248,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: ac5175e4e06d2134e93d9f2da0c4391b, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
@@ -322,8 +328,9 @@ MonoBehaviour:
   bonusSpeed: 1
   bonusWheel: 0
   modifier: 1
-  textOnClick: 
-  textOnClickObject: {fileID: 0}
+  textOnClick: Collect with the ship!
+  textOnClickObject: {fileID: 2278700032299362563, guid: bfae0279a89f0e645b19b490077abd5d,
+    type: 3}
   outline: {fileID: 114400916560260862}
 --- !u!95 &8137013109645984398
 Animator:
